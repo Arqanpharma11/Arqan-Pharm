@@ -725,7 +725,10 @@
                         <h3 class="text-sm font-black text-arkan-dark">سجل الطلبيات الواردة ومتابعة حالات التوصيل</h3>
                         <p class="text-[11px] text-arkan-bronze font-semibold mt-0.5">حدّث حالة الأوردر لتظهر فوراً في خانة التراكينج لدى الصيدلي</p>
                     </div>
-                    <button onclick="adminClearOrders()" class="text-xs text-rose-700 hover:underline font-bold cursor-pointer">مسح السجل</button>
+                    <div class="flex items-center gap-3 shrink-0">
+                        <button type="button" onclick="openOrdersArchive()" class="text-xs text-arkan-primary hover:underline font-extrabold cursor-pointer">🗄️ باك اب الطلبيات</button>
+                        <button type="button" onclick="adminClearOrders()" class="text-xs text-rose-700 hover:underline font-bold cursor-pointer">مسح السجل</button>
+                    </div>
                 </div>
                 <div id="adm-orders-list" class="space-y-3 max-h-[520px] overflow-y-auto"></div>
             </div>
@@ -808,7 +811,7 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                             </svg>
                             <input type="text" id="pharm-search-input" oninput="renderPharmacistCatalog()"
-                                placeholder="ابحث باسم الصنف (مثال: اوجمنتين، كونكور، التروكسين، اب ديت، انسولين...)"
+                                placeholder="ابحث بالعربي أو بالإنجليزي (مثال: اوجمنتين، Augmentin، panadol، كونكور...)"
                                 class="w-full bg-arkan-light border border-arkan-sand rounded-xl pr-10 pl-8 py-2.5 text-xs sm:text-sm font-bold focus:bg-white focus:border-arkan-primary focus:outline-none">
                             <button type="button" id="pharm-clear-search" onclick="clearPharmSearch()"
                                 class="hidden absolute left-3 top-1/2 -translate-y-1/2 text-arkan-bronze hover:text-arkan-dark font-bold cursor-pointer">✕</button>
@@ -1104,6 +1107,25 @@
                     <label class="block text-xs font-extrabold text-arkan-dark mb-1">اسم الصنف التجاري بالكامل *</label>
                     <input type="text" id="edit-prod-name"
                         class="w-full bg-arkan-light border border-arkan-sand rounded-xl px-3.5 py-2.5 text-xs font-bold focus:bg-white focus:border-arkan-primary focus:outline-none">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-extrabold text-arkan-dark mb-1">الاسم التجاري بالإنجليزي (اتركه فارغاً للتوليد التلقائي)</label>
+                    <input type="text" id="edit-prod-en" dir="ltr" placeholder="Augmentin 1 g Tablets"
+                        class="w-full bg-arkan-light border border-arkan-sand rounded-xl px-3.5 py-2.5 text-xs font-bold focus:bg-white focus:border-arkan-primary focus:outline-none">
+                </div>
+
+                <div class="bg-arkan-light border border-arkan-sand rounded-xl p-3 space-y-2">
+                    <label class="block text-xs font-extrabold text-arkan-dark">صورة المستحضر</label>
+                    <div class="flex items-center gap-3">
+                        <img id="edit-prod-img-preview" class="hidden w-16 h-16 object-contain bg-white border border-arkan-sand rounded-lg" alt="">
+                        <div class="flex-1 space-y-2">
+                            <input type="file" accept="image/*" onchange="onEditImageFile(this)" class="block w-full text-[11px] font-bold">
+                            <input type="text" id="edit-prod-img-url" dir="ltr" oninput="onEditImageUrl(this.value)" placeholder="أو الصق رابط الصورة https://..."
+                                class="w-full bg-white border border-arkan-sand rounded-lg px-2.5 py-1.5 text-[11px] font-bold focus:outline-none">
+                        </div>
+                        <button type="button" onclick="clearEditImage()" class="text-[11px] font-extrabold text-rose-700 cursor-pointer">حذف</button>
+                    </div>
                 </div>
 
                 <div class="grid grid-cols-2 gap-3">
@@ -5555,7 +5577,8 @@
             PHARMACISTS: 'arkan_cairo_pharmacists_v5',
             ORDERS: 'arkan_cairo_orders_v5',
             SESSION: 'arkan_cairo_session_v5',
-            CART: 'arkan_cairo_cart_v5'
+            CART: 'arkan_cairo_cart_v5',
+            ORDERS_ARCHIVE: 'arkan_cairo_orders_archive_v1'
         };
 
         const DEFAULT_ADMIN_PASSWORD = '01027291835';
@@ -5586,6 +5609,7 @@
         let margins = { ...DEFAULT_MARGINS };
         let pharmacists = [];
         let orders = [];
+        let ordersArchive = []; // backup of orders removed by admin
         let currentSession = null; // { role: 'admin' | 'pharmacist', user?: object }
         let cart = {}; // { productId: quantity }
         let pharmPaymentMode = 'cash';
@@ -5754,15 +5778,35 @@
             }
         }
 
+        async function cloudArchiveOrders(list) {
+            if (!firestoreDB || !list.length) return true;
+            try {
+                for (let i = 0; i < list.length; i += 400) {
+                    const batch = firestoreDB.batch();
+                    list.slice(i, i + 400).forEach(o => batch.set(firestoreDB.collection('ordersArchive').doc(String(o.id)), { ...o, archivedAtMs: o.archivedAtMs || Date.now() }));
+                    await batch.commit();
+                }
+                return true;
+            } catch (err) { console.error('cloudArchiveOrders error:', err); return false; }
+        }
+
+        async function cloudDeletePharmacist(phone) {
+            if (!firestoreDB || !phone) return true;
+            try { await firestoreDB.collection('pharmacists').doc(String(phone)).delete(); return true; }
+            catch (err) { console.error('cloudDeletePharmacist error:', err); return false; }
+        }
+
         async function cloudSaveSettings(payload) {
-            if (!firestoreDB) return;
+            if (!firestoreDB) return false;
             try {
                 await firestoreDB.collection('settings').doc('global').set({
                     ...payload,
                     updatedAtMs: Date.now()
                 }, { merge: true });
+                return true;
             } catch (err) {
                 console.error('cloudSaveSettings error:', err);
+                return false;
             }
         }
 
@@ -5862,6 +5906,27 @@
                     }
                 }
             }, (err) => console.error('Catalog snapshot error:', err));
+
+            // 4B. Orders backup archive (shared across admin devices)
+            try { firestoreDB.collection('ordersArchive').onSnapshot((snap) => {
+                const cloudArch = snap.docs.map(d => d.data());
+                const byId = new Map(ordersArchive.map(o => [String(o.id), o]));
+                cloudArch.forEach(o => byId.set(String(o.id), o));
+                ordersArchive = [...byId.values()].sort((a, b) => b.id - a.id);
+                persistState(KEYS.ORDERS_ARCHIVE, ordersArchive);
+                const m = document.getElementById('orders-archive-modal');
+                if (m && !m.classList.contains('hidden')) renderOrdersArchive();
+            }, (err) => console.error('Archive snapshot error:', err)); } catch (e) { console.error(e); }
+
+            // 5. Product images (one small doc per product)
+            try { firestoreDB.collection('productImages').onSnapshot((snap) => {
+                snap.docChanges().forEach(ch => {
+                    if (ch.type === 'removed') delete PROD_IMAGES[ch.doc.id];
+                    else if (ch.doc.data().src) PROD_IMAGES[ch.doc.id] = ch.doc.data().src;
+                });
+                persistState(KEY_IMAGES, PROD_IMAGES);
+                if (currentSession?.role === 'pharmacist') renderPharmacistCatalog();
+            }, (err) => console.error('Images snapshot error:', err)); } catch (imgErr) { console.error(imgErr); }
         }
 
         // =========================================================
@@ -5876,6 +5941,9 @@
                     products = [...MASTER_CATALOG];
                     persistState(KEYS.PRODUCTS, products);
                 }
+
+                const savedImgs = await loadPersistedState(KEY_IMAGES);
+                if (savedImgs && typeof savedImgs === 'object') PROD_IMAGES = savedImgs;
 
                 const savedMargins = await loadPersistedState(KEYS.MARGINS);
                 if (savedMargins) {
@@ -5892,6 +5960,9 @@
                     orders = savedOrders.map(o => ({ status: 'pending', ...o }));
                 }
 
+                const savedArch = await loadPersistedState(KEYS.ORDERS_ARCHIVE);
+                if (Array.isArray(savedArch)) ordersArchive = savedArch;
+
                 const savedCart = await loadPersistedState(KEYS.CART);
                 if (savedCart && typeof savedCart === 'object') {
                     cart = savedCart;
@@ -5905,8 +5976,12 @@
                 products = [...MASTER_CATALOG];
             }
 
-            if (initFirebaseCloud()) {
-                startCloudRealtimeListeners();
+            try {
+                if (initFirebaseCloud()) {
+                    startCloudRealtimeListeners();
+                }
+            } catch (cloudErr) {
+                console.error('Cloud init error (app continues offline):', cloudErr);
             }
 
             if (currentSession && currentSession.role === 'admin') {
@@ -6164,7 +6239,7 @@ ${window.location.href}
             const storedPass = localStorage.getItem(KEYS.ADMIN_PASS) || DEFAULT_ADMIN_PASSWORD;
             const errEl = document.getElementById('admin-gateway-error');
 
-            if (inputPass === storedPass || inputPass === DEFAULT_ADMIN_PASSWORD) {
+            if (inputPass === storedPass) {
                 errEl.classList.add('hidden');
                 document.getElementById('admin-gateway-password').value = '';
                 enterAdminPortal();
@@ -6257,6 +6332,11 @@ ${window.location.href}
             document.getElementById('edit-prod-price').value = prod.price;
             document.getElementById('edit-prod-disc').value = prod.disc;
             document.getElementById('edit-prod-shortage').checked = Boolean(prod.shortage);
+            document.getElementById('edit-prod-en').value = prod.en || '';
+            document.getElementById('edit-prod-en').placeholder = getEn({ name: prod.name });
+            pendingEditImage = null;
+            document.getElementById('edit-prod-img-url').value = /^https?:/.test(PROD_IMAGES[prod.id] || '') ? PROD_IMAGES[prod.id] : '';
+            showEditImagePreview(PROD_IMAGES[prod.id] || '');
 
             document.getElementById('admin-edit-modal').classList.remove('hidden');
         }
@@ -6282,7 +6362,11 @@ ${window.location.href}
                 return;
             }
 
-            products[idx] = { ...products[idx], name, cat, available, price, disc, shortage };
+            const enName = document.getElementById('edit-prod-en').value.trim();
+            const updated = { ...products[idx], name, cat, available, price, disc, shortage };
+            if (enName) updated.en = enName; else delete updated.en;
+            products[idx] = updated;
+            if (pendingEditImage !== null) setProductImage(id, pendingEditImage);
             persistState(KEYS.PRODUCTS, products);
             cloudSaveCatalogOverrides(products);
             closeAdminEditModal();
@@ -6484,16 +6568,17 @@ ${window.location.href}
             showToast('تمت استعادة النسب الافتراضية.');
         }
 
-        function adminChangePassword() {
+        async function adminChangePassword() {
             const newPass = document.getElementById('adm-new-password').value.trim();
             if (newPass.length < 4) {
                 showToast('يرجى إدخال كلمة مرور لا تقل عن 4 أحرف/أرقام.', 'error');
                 return;
             }
             localStorage.setItem(KEYS.ADMIN_PASS, newPass);
-            cloudSaveSettings({ adminPass: newPass });
+            const ok = await cloudSaveSettings({ adminPass: newPass });
             document.getElementById('adm-new-password').value = '';
-            showToast('تم تحديث كلمة مرور الإدارة بنجاح.');
+            if (ok) showToast('تم تحديث كلمة المرور. استخدم الجديدة في الدخول من الآن (القديمة لم تعد تعمل).');
+            else showToast('تم تغييرها على هذا الجهاز فقط، تعذر حفظها في السحابة (تحقق من قواعد Firestore). قد ترجع القديمة على الأجهزة الأخرى.', 'error');
         }
 
         function togglePharmacistCreditAdmin(phone) {
@@ -6537,6 +6622,8 @@ ${window.location.href}
                                 <div>
                                     <p class="font-black text-arkan-dark">${p.pharmName} <span class="font-bold text-arkan-bronze">(${p.docName})</span></p>
                                     <p class="text-arkan-bronze mt-0.5">📞 <span class="num-en font-bold text-arkan-dark">${p.phone}</span> • 📍 ${p.address}</p>
+                                    <p class="text-arkan-bronze mt-1">🔑 كلمة المرور: <span dir="ltr" class="num-en font-black text-arkan-dark bg-white border border-arkan-sand rounded px-1.5 py-0.5 select-all" data-pw="${encodeURIComponent(p.password || '')}" data-shown="0">••••••</span>
+                                        <button type="button" onclick="toggleAdminPw(this)" class="text-[11px] font-extrabold text-arkan-primary underline cursor-pointer mr-1">إظهار</button></p>
                                 </div>
                                 <span class="px-2 py-0.5 rounded-lg text-[10px] font-black shrink-0 ${creditUnlocked ? 'bg-emerald-100 text-emerald-900' : 'bg-amber-100 text-amber-950'}">
                                     ${creditUnlocked ? '🔓 الآجل مفتوح' : '🔒 كاش فقط'}
@@ -6548,6 +6635,8 @@ ${window.location.href}
                                     class="${creditUnlocked ? 'bg-rose-100 hover:bg-rose-600 text-rose-800 hover:text-white' : 'bg-emerald-700 hover:bg-emerald-800 text-white'} px-3 py-1 rounded-lg text-[11px] font-extrabold transition-colors cursor-pointer">
                                     ${creditUnlocked ? 'قفل الآجل' : 'فتح صلاحية الآجل'}
                                 </button>
+                                <button type="button" onclick="adminDeletePharmacist(decodeURIComponent('${encodeURIComponent(p.phone)}'))"
+                                    class="bg-rose-700 hover:bg-rose-800 text-white px-3 py-1 rounded-lg text-[11px] font-extrabold cursor-pointer">🗑 حذف الحساب</button>
                             </div>
                         </div>
                     `;
@@ -6607,13 +6696,83 @@ ${window.location.href}
             }
         }
 
-        function adminClearOrders() {
+        function toggleAdminPw(btn) {
+            const span = btn.previousElementSibling;
+            const shown = span.getAttribute('data-shown') === '1';
+            span.textContent = shown ? '••••••' : (decodeURIComponent(span.getAttribute('data-pw')) || '(فارغة)');
+            span.setAttribute('data-shown', shown ? '0' : '1');
+            btn.textContent = shown ? 'إظهار' : 'إخفاء';
+        }
+
+        async function adminDeletePharmacist(phone) {
+            const idx = pharmacists.findIndex(x => x.phone === phone);
+            if (idx === -1) return;
+            const ph = pharmacists[idx];
+            if (!confirm(`حذف حساب صيدلية "${ph.pharmName}" (${ph.phone}) نهائياً؟\nلن تستطيع الدخول بهذا الحساب بعد الحذف، وستبقى أوردراتها السابقة في السجل.`)) return;
+            pharmacists.splice(idx, 1);
+            persistState(KEYS.PHARMACISTS, pharmacists);
+            renderAdminCRM();
+            const ok = await cloudDeletePharmacist(phone);
+            showToast(ok ? `تم حذف حساب ${ph.pharmName}.` : 'تم الحذف محلياً فقط، تعذر الحذف من السحابة (تحقق من قواعد Firestore).', ok ? 'success' : 'error');
+        }
+
+        // ---------- ORDERS BACKUP ----------
+        function downloadJsonFile(data, name) {
+            const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = name;
+            document.body.appendChild(a); a.click(); a.remove();
+        }
+
+        async function adminClearOrders() {
+            if (!orders.length) { showToast('لا توجد أوردرات لمسحها.', 'error'); return; }
+            if (!confirm(`سيتم مسح ${orders.length} أوردر من السجل، مع حفظ نسخة احتياطية منها يمكنك استرجاعها لاحقاً. متابعة؟`)) return;
+            const now = Date.now();
+            const toArchive = orders.map(o => ({ ...o, archivedAtMs: now }));
+            const byId = new Map(ordersArchive.map(o => [String(o.id), o]));
+            toArchive.forEach(o => byId.set(String(o.id), o));
+            ordersArchive = [...byId.values()].sort((a, b) => b.id - a.id);
+            persistState(KEYS.ORDERS_ARCHIVE, ordersArchive);
+            downloadJsonFile(toArchive, `arkan_orders_backup_${now}.json`);
+            const saved = await cloudArchiveOrders(toArchive);
+            if (!saved) { showToast('تعذر رفع الباك اب للسحابة، لكنه محفوظ على الجهاز ومُنزَّل كملف. لم يتم مسح السجل.', 'error'); return; }
             orders = [];
             persistState(KEYS.ORDERS, orders);
             cloudClearAllOrders();
             renderAdminCRM();
-            showToast('تم مسح سجل الطلبيات.');
+            showToast('تم مسح السجل وحفظ باك اب للطلبيات (زر "باك اب الطلبيات" للاسترجاع).');
         }
+
+        function openOrdersArchive() {
+            renderOrdersArchive();
+            document.getElementById('orders-archive-modal').classList.remove('hidden');
+        }
+        function closeOrdersArchive() { document.getElementById('orders-archive-modal').classList.add('hidden'); }
+        function renderOrdersArchive() {
+            document.getElementById('arch-count').textContent = ordersArchive.length;
+            const el = document.getElementById('arch-list');
+            el.innerHTML = ordersArchive.length ? ordersArchive.map(o => `
+                <div class="bg-arkan-light border border-arkan-sand rounded-xl p-2.5 text-xs flex items-center justify-between gap-2">
+                    <div><span class="num-en font-black text-arkan-primary">#ARK-${String(o.id).slice(-6)}</span> <span class="font-black text-arkan-dark">${o.pharmName || ''}</span>
+                    <div class="text-[11px] text-arkan-bronze">${o.date || ''} • ${o.itemsCount || 0} عبوة • <span class="num-en">${fmtMoney(o.totalClient)}</span> ج.م</div></div>
+                    <button type="button" onclick="restoreArchivedOrder(${o.id})" class="bg-emerald-700 text-white px-2.5 py-1 rounded-lg text-[11px] font-extrabold cursor-pointer shrink-0">استرجاع</button>
+                </div>`).join('') : '<p class="text-xs text-arkan-bronze text-center py-6">لا توجد طلبيات محفوظة في الباك اب.</p>';
+        }
+        async function restoreOrders(list) {
+            const have = new Set(orders.map(o => String(o.id)));
+            const add = list.filter(o => !have.has(String(o.id))).map(o => { const c = { ...o }; delete c.archivedAtMs; return c; });
+            if (!add.length) { showToast('هذه الطلبيات موجودة بالفعل في السجل.', 'error'); return; }
+            orders = [...add, ...orders].sort((a, b) => b.id - a.id);
+            persistState(KEYS.ORDERS, orders);
+            for (const o of add) await cloudSaveOrder(o);
+            renderAdminCRM();
+            showToast(`تم استرجاع ${add.length} أوردر إلى السجل.`);
+        }
+        function restoreArchivedOrder(id) { restoreOrders(ordersArchive.filter(o => o.id === id)); }
+        function restoreAllArchived() { restoreOrders(ordersArchive); }
+        function downloadOrdersNow() { downloadJsonFile(orders, `arkan_orders_current_${Date.now()}.json`); }
+        function downloadArchiveFile() { downloadJsonFile(ordersArchive, `arkan_orders_archive_${Date.now()}.json`); }
 
         function renderAdminProductsTable() {
             const tbody = document.getElementById('adm-products-tbody');
@@ -6625,7 +6784,7 @@ ${window.location.href}
 
             const filtered = products.filter(p => {
                 if (!query) return true;
-                return p.name.toLowerCase().includes(query) || p.cat.toLowerCase().includes(query);
+                return productMatches(p, query) || p.cat.toLowerCase().includes(query);
             });
 
             const totalPages = Math.max(1, Math.ceil(filtered.length / ITEMS_PER_PAGE));
@@ -6643,7 +6802,8 @@ ${window.location.href}
                 return `
                     <tr class="hover:bg-arkan-light transition-colors ${!item.available ? 'opacity-60 bg-rose-50/30' : ''}">
                         <td class="py-3 px-4 font-extrabold text-arkan-dark">
-                            ${item.name}
+                            <span class="cursor-pointer" onclick="openProductImage(${item.id})">${PROD_IMAGES[item.id] ? '🖼️' : '📷'} ${item.name}</span>
+                            <span dir="ltr" class="inline-block text-[11px] font-bold text-arkan-bronze bg-arkan-cream border border-arkan-sand rounded-md px-1.5 py-0.5 mr-1">${getEn(item)}</span>
                             ${item.shortage ? '<span class="inline-block bg-amber-100 text-amber-950 border border-amber-300 text-[10px] px-2 py-0.5 rounded-full mr-1">🔥 ناقص</span>' : ''}
                         </td>
                         <td class="py-3 px-3 text-center text-arkan-bronze font-bold">${item.cat}</td>
@@ -6744,6 +6904,255 @@ ${window.location.href}
             renderPharmacistCatalog();
         }
 
+
+        // =========================================================
+        // BILINGUAL NAMES + PHONETIC SEARCH + PRODUCT IMAGES
+        // =========================================================
+        function normAr(str) {
+            return String(str || '').toLowerCase()
+                .replace(/[\uFEFB\uFEFC\uFEF5-\uFEFA\uFEFB]/g, 'لا').replace(/\uFEFB/g, 'لا')
+                .replace(/[\u064B-\u065F\u0670\u0640]/g, '')
+                .replace(/[أإآٱ]/g, 'ا').replace(/ى/g, 'ي').replace(/ة/g, 'ه')
+                .replace(/ؤ/g, 'و').replace(/ئ/g, 'ي')
+                .replace(/[\uFE70-\uFEFF]/g, ch => ch.normalize('NFKC'));
+        }
+        function tokenizeName(str) {
+            return (String(str || '').match(/[\u0600-\u06FF]+|[a-z]+|\d+(?:[.,\/]\d+)*/gi) || []);
+        }
+        const isArTok = t => /[\u0600-\u06FF]/.test(t);
+
+        // Arabic -> English dictionary (forms, units, common brand/generic names). Normalized on load.
+        const EN_LEX_RAW = {
+            // dosage forms & descriptors
+            'اقراص':'Tablets','قرص':'Tablet','ق':'Tab','كبسول':'Capsules','كبسوله':'Capsule','كبسولة':'Capsule','كبسولات':'Capsules',
+            'شراب':'Syrup','شرب':'Syrup','كريم':'Cream','نقط':'Drops','قطرة':'Eye Drops','قطره':'Eye Drops','امبول':'Ampoules','حقن':'Injection',
+            'اكياس':'Sachets','كيس':'Sachet','جيل':'Gel','جل':'Gel','لبوس':'Suppositories','اقماع':'Suppositories','مرهم':'Ointment',
+            'سبراي':'Spray','اسبراي':'Spray','بخاخ':'Spray','شامبو':'Shampoo','لوسيون':'Lotion','لوشن':'Lotion','سيرم':'Serum','غسول':'Wash',
+            'محلول':'Solution','لبن':'Milk','فوار':'Effervescent','شريط':'Strip','زيت':'Oil','صابون':'Soap','مهبلي':'Vaginal','رول':'Roll-on',
+            'بلس':'Plus','فورت':'Forte','ماكس':'Max','اكسترا':'Extra','بيبي':'Baby','كير':'Care','هير':'Hair','صن':'Sun','نيو':'New','هاي':'High',
+            'كبير':'Large','صغير':'Small','كبار':'Adults','اطفال':'Kids','عادي':'Regular','جديد':'New','للشعر':'for Hair','تفتيح':'Whitening',
+            'بديل':'Alternative','ازرق':'Blue','اخضر':'Green','نعناع':'Mint','فراوله':'Strawberry','باكو':'Pack','لتر':'L','مرطب':'Moisturizer',
+            // units
+            'مجم':'mg','مج':'mg','مم':'mm','ملم':'mm','مل':'ml','ملي':'ml','جم':'g','جرام':'g','وحده':'IU',
+            // letters used in names
+            'ايه':'A','اي':'E','بي':'B','سي':'C','دي':'D','اف':'F','جي':'G','اتش':'H','كيو':'Q','ار':'R','اس':'S','تي':'T','يو':'U','في':'V','اكس':'X','واي':'Y','ام':'M','ان':'N','ال':'L','اوه':'O',
+            // brands / generics (confident spellings)
+            'اوجمنتين':'Augmentin','بنادول':'Panadol','فولتارين':'Voltaren','بروفين':'Brufen','كتافلام':'Cataflam','زيرتك':'Zyrtec','نيكسيوم':'Nexium',
+            'كونكور':'Concor','جلوكوفاج':'Glucophage','كلاريتين':'Claritin','بانثينول':'Panthenol','كولاجرا':'Collagra','ايزيس':'Isis','هيبتا':'Hepta',
+            'اوميجا':'Omega','زنك':'Zinc','كالسيوم':'Calcium','فيتامين':'Vitamin','حديد':'Iron','رافينا':'Ravina','ليمتليس':'Limitless','ادفانس':'Advance',
+            'ابتاميل':'Aptamil','نان':'Nan','سيريلاك':'Cerelac','بيبيلاك':'Bebelac','اوروفكس':'Eurofex','اب':'Up','ديت':'Date',
+            'ليدوكايين':'Lidocaine','ازيثروميسين':'Azithromycin','اموكسيسيللين':'Amoxicillin','باراسيتامول':'Paracetamol','ايبوبروفين':'Ibuprofen',
+            'ميتفورمين':'Metformin','اوميبرازول':'Omeprazole','ديكلوفيناك':'Diclofenac','سيتريزين':'Cetirizine','لوراتادين':'Loratadine',
+            'اتورفاستاتين':'Atorvastatin','انسولين':'Insulin','اسبرين':'Aspirin','كلوروكسين':'Chloroxine','اوميبرازول':'Omeprazole',
+            'سيمفاستاتين':'Simvastatin','املوديبين':'Amlodipine','لوسارتان':'Losartan','فالسارتان':'Valsartan','كارفيديلول':'Carvedilol',
+            'بيسوبرولول':'Bisoprolol','ليفوثيروكسين':'Levothyroxine','التروكسين':'Eltroxin','ديكساميثازون':'Dexamethasone','سيبروفلوكساسين':'Ciprofloxacin',
+            'ميترونيدازول':'Metronidazole','فلاجيل':'Flagyl','انتينال':'Antinal','بيتادين':'Betadine','فيوسيدين':'Fucidin','ديرموفيت':'Dermovate',
+            'كاتافلام':'Cataflam','ابيمول':'Epimol','ميوكوسولفان':'Mucosolvan','فنتولين':'Ventolin','بيروكسيكام':'Piroxicam','كيتوبروفين':'Ketoprofen',
+            'اوميجا3':'Omega 3','كيو':'Q','انزايم':'Enzyme','اوروفكس':'Eurofex'
+        };
+        const EN_LEX = {};
+        Object.keys(EN_LEX_RAW).forEach(k => { EN_LEX[normAr(k)] = EN_LEX_RAW[k]; });
+
+        const AR_TO_LAT = {'ب':'b','ت':'t','ث':'th','ج':'j','ح':'h','خ':'kh','د':'d','ذ':'z','ر':'r','ز':'z','س':'s','ش':'sh','ص':'s','ض':'d','ط':'t','ظ':'z','ع':'a','غ':'gh','ف':'f','ق':'k','ك':'k','ل':'l','م':'m','ن':'n','ه':'h'};
+        function translitArWord(w) {
+            const ch = [...w]; let out = '', run = 0;
+            for (let i = 0; i < ch.length; i++) {
+                const c = ch[i], nx = ch[i + 1];
+                if (c === 'ا') {
+                    if (i === 0 && nx === 'و') { out += 'o'; i++; run = 0; }
+                    else if (i === 0 && nx === 'ي') { out += 'e'; i++; run = 0; }
+                    else { out += 'a'; run = 0; }
+                } else if (c === 'و') { out += (i === 0 ? 'w' : 'o'); run = 0; }
+                else if (c === 'ي') { out += (i === ch.length - 1 ? 'y' : 'i'); run = 0; }
+                else if (c === 'ء') { /* skip */ }
+                else if (AR_TO_LAT[c]) {
+                    if (run >= 2) { out += 'a'; run = 0; }
+                    out += AR_TO_LAT[c]; run++;
+                } else out += c;
+            }
+            return out.charAt(0).toUpperCase() + out.slice(1);
+        }
+        const _enCache = new WeakMap();
+        function getEn(p) {
+            if (p.en && String(p.en).trim()) return String(p.en).trim();
+            let v = _enCache.get(p);
+            if (v === undefined) {
+                v = tokenizeName(normAr(p.name)).map(t => {
+                    if (!isArTok(t)) return t;
+                    return EN_LEX[t] || translitArWord(t);
+                }).join(' ').replace(/\s+/g, ' ').trim();
+                _enCache.set(p, v);
+            }
+            return v;
+        }
+
+        // Phonetic skeleton keys so Arabic spelling and English spelling meet in the middle
+        function keyArabic(w) {
+            let k = '';
+            for (const c of w) {
+                const m = {'ب':'b','ت':'t','ث':'t','ج':'g','ح':'h','خ':'x','د':'d','ذ':'s','ر':'r','ز':'s','س':'s','ش':'S','ص':'s','ض':'d','ط':'t','ظ':'s','غ':'g','ف':'f','ق':'k','ك':'k','ل':'l','م':'m','ن':'n','ه':'h'}[c];
+                if (m) k += m;
+            }
+            return k.replace(/(.)\1+/g, '$1');
+        }
+        function keyLatin(w) {
+            let k = w.toLowerCase().replace(/ph/g, 'f').replace(/ck/g, 'k').replace(/sch|sh|ch/g, 'S').replace(/kh/g, 'x')
+                .replace(/th/g, 't').replace(/gh/g, 'g').replace(/c(?=[eiy])/g, 's').replace(/c/g, 'k').replace(/x/g, 'ks').replace(/q/g, 'k')
+                .replace(/[aeiouyw]/g, '').replace(/v/g, 'f').replace(/p/g, 'b').replace(/z/g, 's').replace(/j/g, 'g');
+            return k.replace(/(.)\1+/g, '$1');
+        }
+        const keyOfTok = t => /^\d/.test(t) ? t : (isArTok(t) ? keyArabic(t) : keyLatin(t));
+
+        const _sIdx = new WeakMap();
+        function getSearchIdx(p) {
+            let c = _sIdx.get(p);
+            if (!c) {
+                const ar = normAr(p.name), en = getEn(p).toLowerCase();
+                c = { ar, en, toks: tokenizeName(ar + ' ' + en).map(t => ({ t: t.toLowerCase(), d: /^\d/.test(t), k: keyOfTok(t.toLowerCase()) })) };
+                _sIdx.set(p, c);
+            }
+            return c;
+        }
+        function productMatches(p, rawQuery) {
+            const q = normAr(rawQuery).trim();
+            if (!q) return true;
+            const c = getSearchIdx(p);
+            if (c.ar.includes(q) || c.en.includes(q)) return true;
+            const qToks = tokenizeName(q);
+            if (!qToks.length) return false;
+            return qToks.every(qt => {
+                if (c.ar.includes(qt) || c.en.includes(qt)) return true;
+                if (/^\d/.test(qt)) return c.toks.some(x => x.d && x.t.startsWith(qt));
+                const kq = keyOfTok(qt);
+                if (kq.length < 2) return false;
+                return c.toks.some(x => !x.d && x.k.startsWith(kq));
+            });
+        }
+
+        // ---- Product images (stored apart from the main catalog so it stays light) ----
+        const KEY_IMAGES = 'arkan_cairo_prod_images_v1';
+        let PROD_IMAGES = {};
+        function setProductImage(id, src) {
+            if (src) PROD_IMAGES[id] = src; else delete PROD_IMAGES[id];
+            persistState(KEY_IMAGES, PROD_IMAGES);
+            try {
+                if (typeof firestoreDB !== 'undefined' && firestoreDB) {
+                    const ref = firestoreDB.collection('productImages').doc(String(id));
+                    (src ? ref.set({ src }) : ref.delete()).catch(e => console.error('image sync error', e));
+                }
+            } catch (e) { console.error(e); }
+        }
+        // ---- LIVE image lookup (Wikimedia Commons + Open Food/Beauty Facts), cached per session ----
+        const LIVE_STOP = new Set(['tablets','tablet','tab','capsules','capsule','syrup','cream','drops','eye','ampoules','injection','sachets','sachet','gel','suppositories','ointment','spray','shampoo','lotion','serum','wash','solution','milk','effervescent','strip','oil','soap','vaginal','roll-on','plus','forte','max','extra','baby','care','hair','sun','new','high','large','small','adults','kids','regular','for','whitening','alternative','blue','green','mint','pack','mg','ml','g','mm','iu','s','r','j','l','up','on']);
+        const _liveCache = {};
+        let _liveToken = 0, _liveCurrent = null;
+        function liveQueryTerms(p) {
+            const words = getEn(p).split(/\s+/).filter(w => /^[A-Za-z][A-Za-z-]+$/.test(w) && !LIVE_STOP.has(w.toLowerCase()));
+            const out = [];
+            if (words.length >= 2) out.push(words.slice(0, 2).join(' '));
+            if (words.length) out.push(words[0]);
+            return [...new Set(out)];
+        }
+        async function fetchJsonTimeout(url, ms = 7000) {
+            const ctl = new AbortController(); const t = setTimeout(() => ctl.abort(), ms);
+            try { const r = await fetch(url, { signal: ctl.signal }); if (!r.ok) throw new Error(r.status); return await r.json(); }
+            finally { clearTimeout(t); }
+        }
+        async function liveSearchImages(p) {
+            const terms = liveQueryTerms(p); const found = []; const seen = new Set();
+            const add = (src, full, label, source) => { if (src && !seen.has(src)) { seen.add(src); found.push({ src, full: full || src, label, source }); } };
+            const tasks = [];
+            for (const q of terms) {
+                tasks.push(fetchJsonTimeout('https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=url|mime&iiurlwidth=420&format=json&origin=*&gsrsearch=' + encodeURIComponent(q + ' ' + (p.cat === 'أدوية' ? 'medicine' : ''))).then(d => {
+                    Object.values((d.query && d.query.pages) || {}).forEach(pg => {
+                        const ii = pg.imageinfo && pg.imageinfo[0];
+                        if (ii && /image\/(jpeg|png)/.test(ii.mime || '')) add(ii.thumburl || ii.url, ii.url, (pg.title || '').replace(/^File:/, ''), 'Wikimedia');
+                    });
+                }).catch(() => {}));
+                if (p.cat !== 'أدوية') {
+                    const host = p.cat === 'مستحضرات تجميل' ? 'world.openbeautyfacts.org' : 'world.openfoodfacts.org';
+                    tasks.push(fetchJsonTimeout('https://' + host + '/cgi/search.pl?search_simple=1&action=process&json=1&page_size=6&fields=product_name,image_front_small_url,image_front_url&search_terms=' + encodeURIComponent(q)).then(d => {
+                        (d.products || []).forEach(x => add(x.image_front_url || x.image_front_small_url, x.image_front_url, x.product_name, host.includes('beauty') ? 'Open Beauty Facts' : 'Open Food Facts'));
+                    }).catch(() => {}));
+                }
+            }
+            await Promise.all(tasks);
+            return found.slice(0, 8);
+        }
+        function showMainImage(src) {
+            const box = document.getElementById('pimg-box');
+            box.innerHTML = '<img id="pimg-el" alt="" class="max-h-full max-w-full object-contain">';
+            const el = document.getElementById('pimg-el');
+            el.onerror = () => { box.innerHTML = '<div class="text-center text-arkan-bronze p-6 text-xs font-bold">تعذر تحميل هذه الصورة</div>'; };
+            el.src = src;
+            if (_liveCurrent) _liveCurrent.shown = src;
+        }
+        async function openProductImage(id) {
+            const p = products.find(x => x.id === id);
+            if (!p) return;
+            const en = getEn(p), src = PROD_IMAGES[id], token = ++_liveToken;
+            _liveCurrent = { id, shown: null };
+            document.getElementById('pimg-name-ar').textContent = p.name;
+            document.getElementById('pimg-name-en').textContent = en;
+            document.getElementById('pimg-cat').textContent = p.cat;
+            document.getElementById('pimg-google').href = 'https://www.google.com/search?tbm=isch&q=' + encodeURIComponent(en + ' ' + p.name);
+            const gal = document.getElementById('pimg-gallery'), st = document.getElementById('pimg-live-status'), sv = document.getElementById('pimg-save-btn');
+            gal.innerHTML = ''; st.textContent = ''; sv.classList.add('hidden');
+            const box = document.getElementById('pimg-box');
+            document.getElementById('product-image-modal').classList.remove('hidden');
+            if (src) { showMainImage(src); st.textContent = 'صورة معتمدة من المخزن'; return; }
+
+            box.innerHTML = '<div class="text-center text-arkan-bronze p-6"><div class="text-4xl mb-2 animate-pulse">🔎</div><div class="text-xs font-bold">جاري البحث عن صورة المستحضر...</div></div>';
+            let results = _liveCache[id];
+            if (!results) { results = await liveSearchImages(p); _liveCache[id] = results; }
+            if (token !== _liveToken) return; // user opened another product meanwhile
+            if (!results.length) {
+                box.innerHTML = '<div class="text-center text-arkan-bronze p-6"><div class="text-5xl mb-2">💊</div><div class="text-xs font-bold">لم أجد صورة تلقائياً لهذا المستحضر</div></div>';
+                st.textContent = 'جرّب زر البحث في جوجل بالأسفل';
+                return;
+            }
+            showMainImage(results[0].full || results[0].src);
+            st.textContent = 'نتائج بحث حية من النت — تأكد من مطابقة العبوة قبل الاعتماد عليها';
+            const esc = v => String(v || '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'%27'}[c]));
+            gal.innerHTML = results.map((r, i) => `<img src="${esc(r.src)}" title="${esc(r.label)} (${esc(r.source)})" onclick="showMainImage('${esc(r.full || r.src)}')" class="h-14 w-14 shrink-0 object-contain bg-white border border-arkan-sand rounded-lg cursor-pointer hover:border-arkan-dark" onerror="this.remove()">`).join('');
+            if (currentSession && currentSession.role === 'admin') sv.classList.remove('hidden');
+        }
+        function saveLiveImageAsOfficial() {
+            if (!_liveCurrent || !_liveCurrent.shown) return;
+            setProductImage(_liveCurrent.id, _liveCurrent.shown);
+            showToast('تم اعتماد الصورة للصنف وستظهر لكل الصيادلة.');
+            openProductImage(_liveCurrent.id);
+        }
+        function closeProductImage() { document.getElementById('product-image-modal').classList.add('hidden'); }
+
+        let pendingEditImage = null; // null = untouched, '' = remove, string = new
+        function onEditImageFile(input) {
+            const f = input.files && input.files[0];
+            if (!f) return;
+            const rd = new FileReader();
+            rd.onload = () => {
+                const im = new Image();
+                im.onload = () => {
+                    const max = 520, r = Math.min(1, max / Math.max(im.width, im.height));
+                    const cv = document.createElement('canvas');
+                    cv.width = Math.round(im.width * r); cv.height = Math.round(im.height * r);
+                    const cx = cv.getContext('2d'); cx.fillStyle = '#fff'; cx.fillRect(0, 0, cv.width, cv.height);
+                    cx.drawImage(im, 0, 0, cv.width, cv.height);
+                    pendingEditImage = cv.toDataURL('image/jpeg', 0.75);
+                    document.getElementById('edit-prod-img-url').value = '';
+                    showEditImagePreview(pendingEditImage);
+                };
+                im.src = rd.result;
+            };
+            rd.readAsDataURL(f);
+        }
+        function onEditImageUrl(v) { pendingEditImage = v.trim(); showEditImagePreview(pendingEditImage); }
+        function clearEditImage() { pendingEditImage = ''; document.getElementById('edit-prod-img-url').value = ''; showEditImagePreview(''); }
+        function showEditImagePreview(src) {
+            const el = document.getElementById('edit-prod-img-preview');
+            if (src) { el.src = src; el.classList.remove('hidden'); } else { el.removeAttribute('src'); el.classList.add('hidden'); }
+        }
+
         function renderPharmacistCatalog() {
             const tbody = document.getElementById('pharm-catalog-tbody');
             const emptyState = document.getElementById('pharm-empty-state');
@@ -6762,7 +7171,7 @@ ${window.location.href}
             const filtered = availableProducts.filter(item => {
                 if (pharmShortageOnly && !item.shortage) return false;
                 if (catFilter !== 'ALL' && item.cat !== catFilter) return false;
-                if (query && !item.name.toLowerCase().includes(query)) return false;
+                if (query && !productMatches(item, query)) return false;
                 return true;
             });
 
@@ -6794,8 +7203,9 @@ ${window.location.href}
                 return `
                     <tr class="hover:bg-arkan-light transition-colors ${qty > 0 ? 'bg-arkan-cream/70' : ''}">
                         <td class="py-3 px-4">
-                            <div class="font-extrabold text-arkan-dark leading-snug">
-                                ${item.name}
+                            <div class="font-extrabold text-arkan-dark leading-snug cursor-pointer" onclick="openProductImage(${item.id})" title="اضغط لعرض صورة المستحضر">
+                                <span class="inline-flex items-center justify-center w-5 h-5 rounded-md ${PROD_IMAGES[item.id] ? 'bg-emerald-100 text-emerald-800' : 'bg-arkan-cream text-arkan-bronze'} text-[11px] align-middle ml-1">📷</span>${item.name}
+                                <span dir="ltr" class="inline-block align-middle text-[11px] font-bold text-arkan-bronze bg-arkan-cream border border-arkan-sand rounded-md px-1.5 py-0.5 mr-1">${getEn(item)}</span>
                                 ${shortageBadge}
                             </div>
                             <span class="text-[10px] text-arkan-bronze font-semibold">${item.cat}</span>
@@ -7593,10 +8003,55 @@ ${url}`);
             }
         }
 
+        window.addEventListener('error', (ev) => {
+            if (!ev.message || ev.message === 'Script error.' || /ResizeObserver/.test(ev.message)) return;
+            let b = document.getElementById('arkan-err-banner');
+            if (!b) {
+                b = document.createElement('div');
+                b.id = 'arkan-err-banner';
+                b.style.cssText = 'position:fixed;bottom:0;left:0;right:0;z-index:99999;background:#7f1d1d;color:#fff;font:12px monospace;padding:6px 10px;direction:ltr;max-height:25vh;overflow:auto';
+                document.body.appendChild(b);
+            }
+            b.textContent = 'JS error: ' + (ev.message || '') + ' @ line ' + (ev.lineno || '?');
+        });
+
         window.addEventListener('DOMContentLoaded', () => {
             initPlatform();
             initPWAAndShareFeatures();
         });
     </script>
+
+    <div id="product-image-modal" class="hidden fixed inset-0 z-[60] bg-black/70 backdrop-blur-sm flex items-center justify-center p-4 no-print" onclick="if(event.target===this)closeProductImage()">
+        <div class="bg-white rounded-3xl max-w-sm w-full p-5 shadow-2xl border border-arkan-sand space-y-3">
+            <div class="flex items-start justify-between gap-3">
+                <div class="min-w-0">
+                    <div id="pimg-name-ar" class="text-sm font-black text-arkan-dark leading-snug"></div>
+                    <div id="pimg-name-en" dir="ltr" class="text-xs font-bold text-arkan-bronze text-right"></div>
+                    <div id="pimg-cat" class="text-[10px] font-bold text-arkan-gold mt-0.5"></div>
+                </div>
+                <button onclick="closeProductImage()" class="text-arkan-bronze hover:text-arkan-dark text-lg font-bold cursor-pointer">✕</button>
+            </div>
+            <div id="pimg-box" class="h-64 bg-arkan-light border border-arkan-sand rounded-2xl flex items-center justify-center overflow-hidden"></div>
+            <div id="pimg-live-status" class="text-[11px] font-bold text-arkan-bronze text-center"></div>
+            <div id="pimg-gallery" class="flex gap-2 overflow-x-auto pb-1"></div>
+            <button id="pimg-save-btn" type="button" onclick="saveLiveImageAsOfficial()" class="hidden w-full text-xs font-extrabold text-white bg-emerald-700 hover:bg-emerald-800 rounded-xl py-2 cursor-pointer">✔ اعتماد الصورة المعروضة كصورة رسمية للصنف</button>
+            <a id="pimg-google" target="_blank" rel="noopener" class="block text-center text-xs font-extrabold text-arkan-dark bg-arkan-cream hover:bg-arkan-sand border border-arkan-sand rounded-xl py-2 cursor-pointer">🔍 عرض صور المستحضر على جوجل</a>
+        </div>
+    </div>
+
+    <div id="orders-archive-modal" class="hidden fixed inset-0 z-[60] bg-black/70 backdrop-blur-sm flex items-center justify-center p-4 no-print" onclick="if(event.target===this)closeOrdersArchive()">
+        <div class="bg-white rounded-3xl max-w-lg w-full p-5 shadow-2xl border border-arkan-sand space-y-3">
+            <div class="flex items-center justify-between">
+                <h3 class="text-sm font-black text-arkan-dark">🗄️ باك اب الطلبيات المحذوفة (<span id="arch-count" class="num-en">0</span>)</h3>
+                <button onclick="closeOrdersArchive()" class="text-arkan-bronze hover:text-arkan-dark text-lg font-bold cursor-pointer">✕</button>
+            </div>
+            <div class="flex flex-wrap gap-2">
+                <button type="button" onclick="restoreAllArchived()" class="bg-emerald-700 hover:bg-emerald-800 text-white px-3 py-1.5 rounded-lg text-[11px] font-extrabold cursor-pointer">استرجاع الكل للسجل</button>
+                <button type="button" onclick="downloadArchiveFile()" class="bg-arkan-dark text-white px-3 py-1.5 rounded-lg text-[11px] font-extrabold cursor-pointer">تنزيل ملف الباك اب</button>
+                <button type="button" onclick="downloadOrdersNow()" class="bg-arkan-cream border border-arkan-sand text-arkan-dark px-3 py-1.5 rounded-lg text-[11px] font-extrabold cursor-pointer">تنزيل نسخة من الطلبيات الحالية</button>
+            </div>
+            <div id="arch-list" class="space-y-2 max-h-80 overflow-y-auto"></div>
+        </div>
+    </div>
 </body>
 </html>
