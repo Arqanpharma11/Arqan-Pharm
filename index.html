@@ -7430,6 +7430,22 @@ ${window.location.href}
             showMainImage(r.full || r.src, r.thumb);
             _liveCurrent.source = r.source + ' — ' + r.link;
         }
+        // فتح صور الصنف مباشرة في Google Images عند ضغط الصيدلي على اسمه
+        function openGoogleProductImage(id) {
+            const product = products.find(item => Number(item.id) === Number(id));
+            if (!product) return;
+
+            const englishName = getEn(product);
+            const searchName = [product.name, englishName, product.cat]
+                .filter(Boolean)
+                .join(' ');
+
+            const googleImagesUrl = 'https://www.google.com/search?tbm=isch&q='
+                + encodeURIComponent(searchName);
+
+            window.open(googleImagesUrl, '_blank', 'noopener,noreferrer');
+        }
+
         async function openProductImage(id) {
             const p = products.find(x => x.id === id);
             if (!p) return;
@@ -7553,7 +7569,7 @@ ${window.location.href}
                 return `
                     <tr class="hover:bg-arkan-light transition-colors ${qty > 0 ? 'bg-arkan-cream/70' : ''}">
                         <td class="py-3 px-4">
-                            <div class="font-extrabold text-arkan-dark leading-snug cursor-pointer" onclick="openProductImage(${item.id})" title="اضغط لعرض صورة المستحضر">
+                            <div class="font-extrabold text-arkan-dark leading-snug cursor-pointer" onclick="openGoogleProductImage(${item.id})" title="اضغط لعرض صور الصنف على Google">
                                 <span class="inline-flex items-center justify-center w-5 h-5 rounded-md ${PROD_IMAGES[item.id] ? 'bg-emerald-100 text-emerald-800' : 'bg-arkan-cream text-arkan-bronze'} text-[11px] align-middle ml-1">📷</span>${item.name}
                                 ${enChip(item, 'align-middle')}
                                 ${shortageBadge}
