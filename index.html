@@ -607,6 +607,17 @@
                 </div>
             </div>
 
+            <!-- English names review tools -->
+            <div class="bg-white border border-arkan-sand rounded-2xl p-4 shadow-sm flex flex-wrap items-center gap-2 text-xs">
+                <span class="font-black text-arkan-dark">الأسماء الإنجليزية:</span>
+                <span id="en-stats" class="font-bold text-emerald-800"></span>
+                <span class="flex-1"></span>
+                <button type="button" onclick="exportEnglishNames(true)" class="bg-arkan-dark text-white px-3 py-1.5 rounded-lg font-extrabold cursor-pointer">تصدير غير المراجَع (CSV)</button>
+                <button type="button" onclick="exportEnglishNames(false)" class="bg-arkan-cream border border-arkan-sand text-arkan-dark px-3 py-1.5 rounded-lg font-extrabold cursor-pointer">تصدير الكل</button>
+                <label class="bg-emerald-700 text-white px-3 py-1.5 rounded-lg font-extrabold cursor-pointer">استيراد أسماء مصحّحة
+                    <input type="file" accept=".csv,.json" class="hidden" onchange="importEnglishNames(this)"></label>
+            </div>
+
             <!-- Admin Comprehensive Products Table -->
             <div class="bg-white border border-arkan-sand rounded-2xl shadow-sm overflow-hidden">
                 <div class="overflow-x-auto">
@@ -5922,7 +5933,7 @@
             try { firestoreDB.collection('productImages').onSnapshot((snap) => {
                 snap.docChanges().forEach(ch => {
                     if (ch.type === 'removed') delete PROD_IMAGES[ch.doc.id];
-                    else if (ch.doc.data().src) PROD_IMAGES[ch.doc.id] = ch.doc.data().src;
+                    else if (ch.doc.data().src) { PROD_IMAGES[ch.doc.id] = ch.doc.data().src; if (ch.doc.data().source) PROD_IMG_SRC[ch.doc.id] = ch.doc.data().source; }
                 });
                 persistState(KEY_IMAGES, PROD_IMAGES);
                 if (currentSession?.role === 'pharmacist') renderPharmacistCatalog();
@@ -5944,6 +5955,8 @@
 
                 const savedImgs = await loadPersistedState(KEY_IMAGES);
                 if (savedImgs && typeof savedImgs === 'object') PROD_IMAGES = savedImgs;
+                const savedImgSrc = await loadPersistedState(KEY_IMG_SRC);
+                if (savedImgSrc && typeof savedImgSrc === 'object') PROD_IMG_SRC = savedImgSrc;
 
                 const savedMargins = await loadPersistedState(KEYS.MARGINS);
                 if (savedMargins) {
@@ -6781,6 +6794,7 @@ ${window.location.href}
             const previewMode = document.getElementById('adm-preview-mode').value;
 
             document.getElementById('adm-total-items-badge').textContent = products.length;
+            updateEnglishStats();
 
             const filtered = products.filter(p => {
                 if (!query) return true;
@@ -6803,7 +6817,7 @@ ${window.location.href}
                     <tr class="hover:bg-arkan-light transition-colors ${!item.available ? 'opacity-60 bg-rose-50/30' : ''}">
                         <td class="py-3 px-4 font-extrabold text-arkan-dark">
                             <span class="cursor-pointer" onclick="openProductImage(${item.id})">${PROD_IMAGES[item.id] ? '🖼️' : '📷'} ${item.name}</span>
-                            <span dir="ltr" class="inline-block text-[11px] font-bold text-arkan-bronze bg-arkan-cream border border-arkan-sand rounded-md px-1.5 py-0.5 mr-1">${getEn(item)}</span>
+                            ${enChip(item, '')}
                             ${item.shortage ? '<span class="inline-block bg-amber-100 text-amber-950 border border-amber-300 text-[10px] px-2 py-0.5 rounded-full mr-1">🔥 ناقص</span>' : ''}
                         </td>
                         <td class="py-3 px-3 text-center text-arkan-bronze font-bold">${item.cat}</td>
@@ -6917,7 +6931,7 @@ ${window.location.href}
                 .replace(/[\uFE70-\uFEFF]/g, ch => ch.normalize('NFKC'));
         }
         function tokenizeName(str) {
-            return (String(str || '').match(/[\u0600-\u06FF]+|[a-z]+|\d+(?:[.,\/]\d+)*/gi) || []);
+            return (String(str || '').match(/[\u0600-\u06FF]+|[a-z]+|\d+(?:[.,\/+\-]\d+)*/gi) || []);
         }
         const isArTok = t => /[\u0600-\u06FF]/.test(t);
 
@@ -6938,24 +6952,63 @@ ${window.location.href}
             'ايه':'A','اي':'E','بي':'B','سي':'C','دي':'D','اف':'F','جي':'G','اتش':'H','كيو':'Q','ار':'R','اس':'S','تي':'T','يو':'U','في':'V','اكس':'X','واي':'Y','ام':'M','ان':'N','ال':'L','اوه':'O',
             // brands / generics (confident spellings)
             'اوجمنتين':'Augmentin','بنادول':'Panadol','فولتارين':'Voltaren','بروفين':'Brufen','كتافلام':'Cataflam','زيرتك':'Zyrtec','نيكسيوم':'Nexium',
-            'كونكور':'Concor','جلوكوفاج':'Glucophage','كلاريتين':'Claritin','بانثينول':'Panthenol','كولاجرا':'Collagra','ايزيس':'Isis','هيبتا':'Hepta',
-            'اوميجا':'Omega','زنك':'Zinc','كالسيوم':'Calcium','فيتامين':'Vitamin','حديد':'Iron','رافينا':'Ravina','ليمتليس':'Limitless','ادفانس':'Advance',
-            'ابتاميل':'Aptamil','نان':'Nan','سيريلاك':'Cerelac','بيبيلاك':'Bebelac','اوروفكس':'Eurofex','اب':'Up','ديت':'Date',
+            'كونكور':'Concor','جلوكوفاج':'Glucophage','كلاريتين':'Claritin','بانثينول':'Panthenol','كولاجرا':'Collagra','ايزيس':'Isis',
+            'اوميجا':'Omega','زنك':'Zinc','كالسيوم':'Calcium','فيتامين':'Vitamin','حديد':'Iron','ادفانس':'Advance',
+            'ابتاميل':'Aptamil','نان':'Nan','سيريلاك':'Cerelac','بيبيلاك':'Bebelac',
             'ليدوكايين':'Lidocaine','ازيثروميسين':'Azithromycin','اموكسيسيللين':'Amoxicillin','باراسيتامول':'Paracetamol','ايبوبروفين':'Ibuprofen',
             'ميتفورمين':'Metformin','اوميبرازول':'Omeprazole','ديكلوفيناك':'Diclofenac','سيتريزين':'Cetirizine','لوراتادين':'Loratadine',
-            'اتورفاستاتين':'Atorvastatin','انسولين':'Insulin','اسبرين':'Aspirin','كلوروكسين':'Chloroxine','اوميبرازول':'Omeprazole',
+            'اتورفاستاتين':'Atorvastatin','انسولين':'Insulin','اسبرين':'Aspirin','اوميبرازول':'Omeprazole',
             'سيمفاستاتين':'Simvastatin','املوديبين':'Amlodipine','لوسارتان':'Losartan','فالسارتان':'Valsartan','كارفيديلول':'Carvedilol',
             'بيسوبرولول':'Bisoprolol','ليفوثيروكسين':'Levothyroxine','التروكسين':'Eltroxin','ديكساميثازون':'Dexamethasone','سيبروفلوكساسين':'Ciprofloxacin',
             'ميترونيدازول':'Metronidazole','فلاجيل':'Flagyl','انتينال':'Antinal','بيتادين':'Betadine','فيوسيدين':'Fucidin','ديرموفيت':'Dermovate',
-            'كاتافلام':'Cataflam','ابيمول':'Epimol','ميوكوسولفان':'Mucosolvan','فنتولين':'Ventolin','بيروكسيكام':'Piroxicam','كيتوبروفين':'Ketoprofen',
-            'اوميجا3':'Omega 3','كيو':'Q','انزايم':'Enzyme','اوروفكس':'Eurofex'
+            'كاتافلام':'Cataflam','ميوكوسولفان':'Mucosolvan','فنتولين':'Ventolin','بيروكسيكام':'Piroxicam','كيتوبروفين':'Ketoprofen',
+            'اوميجا3':'Omega 3','كيو':'Q','انزايم':'Enzyme'
         };
+
+        Object.assign(EN_LEX_RAW, {
+            'توب':'Top','بلاس':'Plus','شعر':'Hair','ثري':'Three','صابونه':'Soap','عرض':'Offer','فريش':'Fresh','شيكولاته':'Chocolate','سنترم':'Centrum',
+            'اكني':'Acne','سكرين':'Screen','استحلاب':'Emulsion','جروث':'Growth','جوينت':'Joint','وان':'One','مساج':'Massage','جولد':'Gold','ماسك':'Mask',
+            'مطهر':'Antiseptic','فانيليا':'Vanilla','وومان':'Woman','هيالو':'Hyalo','سيلفر':'Silver','اكتيف':'Active','الترا':'Ultra','برتقال':'Orange',
+            'بخاخه':'Spray','مضمضه':'Mouthwash','غرغره':'Gargle','فيال':'Vial','مان':'Man','لزقه':'Patch','بانادول':'Panadol','بلوك':'Block','كيدز':'Kids',
+            'مالتي':'Multi','اوريجينال':'Original','مويست':'Moist','ديب':'Deep','فيس':'Face','رويال':'Royal','سترونج':'Strong','فاست':'Fast','كاندي':'Candy',
+            'ناو':'Now','نيوترا':'Nutra','للوجه':'for Face','بلسم':'Conditioner','مكمل':'Supplement','سيدات':'Ladies','تراي':'Tri','دكتور':'Dr.','ابيض':'White',
+            'دش':'Shower','اوليف':'Olive','فيلم':'Film','برطمان':'Jar','ميثيل':'Methyl','اربيبرازول':'Aripiprazole','كو':'Co','ليمتليس':'Limitless'
+        });
+
+        Object.assign(EN_LEX_RAW, {
+            'سعرجديد':'New Price','قرنفل':'Clove','وسط':'Medium','مفرد':'Single','للفم':'Oral','عدسات':'Lenses','مستورد':'Imported','ريحه':'Scent','برومو':'Promo','باك':'Pack','ملغى':'Discontinued','بالعلبه':'with Box','رولاون':'Roll-on','سعر':'Price','ايفا':'EVA','زد':'Z','او':'O',
+            // brands (confident Egyptian-market spellings)
+            'ابيدرا':'Apidra','ابيليفاي':'Abilify','اماريل':'Amaryl','ازاثيوبرين':'Azathioprine','اوميز':'Omez','تجريتول':'Tegretol','ديكلاك':'Diclac',
+            'ديكلوفين':'Diclofen','جليسرين':'Glycerin','سيدوفاج':'Cidophage','سيناكالسيت':'Cinacalcet','سينومارين':'Sinomarin','سيستان':'Systane',
+            'كريستور':'Crestor','كلاسيد':'Klacid','كليكسان':'Clexane','كاردورا':'Cardura','ليبيتور':'Lipitor','ليسترين':'Listerine','نوفورابيد':'NovoRapid',
+            'نوفونورم':'NovoNorm','ميوكوسول':'Mucosol','ليبانتيل':'Lipantil','هيدرا':'Hydra','سوبراكس':'Suprax','فيروجلوبين':'Feroglobin','فيوسيكورت':'Fucicort',
+            'كومفورت':'Comfort','ماجيك':'Magic','ريتارد':'Retard','سيميلاك':'Similac','سيبروسين':'Ciprocin','جاراميسين':'Garamycin','نيفيلوب':'Nevilob',
+            'مونجارو':'Mounjaro','اكسجين':'Oxygen','ميلاتونين':'Melatonin','ارجينين':'Arginine','كارنتين':'Carnitine','كارنيتين':'Carnitine','تريو':'Trio',
+            // descriptors
+            'شاي':'Tea','كولد':'Cold','ماء':'Water','قلم':'Pen','اقلام':'Pens','ينسون':'Anise','سكر':'Sugar','خميره':'Yeast','عسل':'Honey','قمح':'Wheat',
+            'فواكه':'Fruits','ليمون':'Lemon','قرفه':'Cinnamon','كبريت':'Sulfur','طبي':'Medical','حقنه':'Injection','سرنجات':'Syringes','مللي':'ml','مركب':'Compound',
+            'اويل':'Oil','روز':'Rose','باور':'Power','بون':'Bone','فري':'Free','ستوب':'Stop','الفا':'Alpha','سوبر':'Super','ديو':'Duo','برو':'Pro','برايم':'Prime',
+            'بريما':'Prima','ايزي':'Easy','ويل':'Well','ليت':'Lite','ماج':'Mag','يوني':'Uni','ستار':'Star','سويت':'Sweet','ميكس':'Mix','تونيك':'Tonic','هيلثي':'Healthy','كلير':'Clear','توتال':'Total','كيور':'Cure','ماي':'My'
+        });
+        const EN_GENERICS_RAW = {"كلاريثروميسين": "Clarithromycin", "اموكسيسيلين": "Amoxicillin", "سيفترياكسون": "Ceftriaxone", "سيفكسيم": "Cefixime", "سيفوروكسيم": "Cefuroxime", "سيفادروكسيل": "Cefadroxil", "ليفوفلوكساسين": "Levofloxacin", "موكسيفلوكساسين": "Moxifloxacin", "ميلوكسيكام": "Meloxicam", "نابروكسين": "Naproxen", "كيتورولاك": "Ketorolac", "ترامادول": "Tramadol", "بريجابالين": "Pregabalin", "جابابنتين": "Gabapentin", "ايسوميبرازول": "Esomeprazole", "بانتوبرازول": "Pantoprazole", "لانسوبرازول": "Lansoprazole", "رانيتيدين": "Ranitidine", "دومبيريدون": "Domperidone", "ميتوكلوبراميد": "Metoclopramide", "سالبيوتامول": "Salbutamol", "مونتيلوكاست": "Montelukast", "ديسلوراتادين": "Desloratadine", "ليفوسيتريزين": "Levocetirizine", "فيكسوفينادين": "Fexofenadine", "بريدنيزولون": "Prednisolone", "ميثيل بريدنيزولون": "Methylprednisolone", "روسوفاستاتين": "Rosuvastatin", "كلوبيدوجريل": "Clopidogrel", "وارفارين": "Warfarin", "ريفاروكسابان": "Rivaroxaban", "ابيكسابان": "Apixaban", "نيبيفولول": "Nebivolol", "اتينولول": "Atenolol", "كانديسارتان": "Candesartan", "تيلميسارتان": "Telmisartan", "اربيسارتان": "Irbesartan", "فوروسيمايد": "Furosemide", "سبيرونولاكتون": "Spironolactone", "جليميبيريد": "Glimepiride", "جليكلازيد": "Gliclazide", "سيتاجليبتين": "Sitagliptin", "فيلداجليبتين": "Vildagliptin", "لينجاجليبتين": "Linagliptin", "سيلدينافيل": "Sildenafil", "تادالافيل": "Tadalafil", "الوبيورينول": "Allopurinol", "كولشيسين": "Colchicine", "ميثوتريكسات": "Methotrexate", "كاربيمازول": "Carbimazole", "فلوكونازول": "Fluconazole", "ايتراكونازول": "Itraconazole", "تيربينافين": "Terbinafine", "اسيكلوفير": "Acyclovir", "اوسيلتاميفير": "Oseltamivir", "ايفرمكتين": "Ivermectin", "البيندازول": "Albendazole", "نيتازوكسانيد": "Nitazoxanide", "بيزافيبرات": "Bezafibrate", "فينوفيبرات": "Fenofibrate", "ايزوتريتينوين": "Isotretinoin", "كلوتريمازول": "Clotrimazole", "ميكونازول": "Miconazole", "كيتوكونازول": "Ketoconazole", "بيتاميثازون": "Betamethasone", "هيدروكورتيزون": "Hydrocortisone", "ديكسبانثينول": "Dexpanthenol", "اوندانسيترون": "Ondansetron", "لاكتولوز": "Lactulose", "سيميثيكون": "Simethicone", "ميبيفيرين": "Mebeverine", "ماغنسيوم": "Magnesium", "بوتاسيوم": "Potassium", "بروبيوتيك": "Probiotic", "كولاجين": "Collagen", "بيوتين": "Biotin", "فوليك": "Folic", "ميثيلكوبالامين": "Methylcobalamin", "اموكسيسللين": "Amoxicillin", "ازيثرومايسين": "Azithromycin", "باراسيتامول": "Paracetamol", "ميترونيدازول": "Metronidazole", "اوميبرازول": "Omeprazole", "ديكلوفيناك": "Diclofenac", "ايبوبروفين": "Ibuprofen", "ميتفورمين": "Metformin", "اتورفاستاتين": "Atorvastatin", "سيمفاستاتين": "Simvastatin", "املوديبين": "Amlodipine", "لوسارتان": "Losartan", "فالسارتان": "Valsartan", "كارفيديلول": "Carvedilol", "ليفوثيروكسين": "Levothyroxine", "ديكساميثازون": "Dexamethasone", "ليدوكايين": "Lidocaine", "سيتريزين": "Cetirizine", "لوراتادين": "Loratadine", "سيبروفلوكساسين": "Ciprofloxacin", "انسولين": "Insulin", "اسبرين": "Aspirin"};
+
+        // Brand spellings taken from the Egyptian drug database (EDA-registered trade names)
+        const EN_DB_EXACT = {'ابتاميل':'Aptamil','ابياكتو':'Ibiacto','ابياموكس':'Ibiamox','ابيتويد':'Apetoid','ابيجونال':'Epigonal','ابيدرا':'Apidra','ابيروفاستين':'Epirovastin','ابيزيثرو':'Epizithro','ابيسوبت':'Episopt','ابيسيفين':'Epicephin','ابيفاسي':'Epifasi','ابيفورتيل':'Apifortyl','ابيفيناك':'Epifenac','ابيكساتراك':'Apixatrack','ابيكوانتيل':'Epiquantel','ابيكوبريد':'Epicopred','ابيكوتيل':'Epicotil','ابيكوجيل':'Epicogel','ابيكوسيللين':'Epicocillin','ابيكومب':'Epicomb','ابيماج':'Epimag','ابيمول':'Abimol','ابيميرافلو':'Epimiraflu','ابينور':'Epinor','اتاكاند':'Atacand','اتراكتا':'Atrakta','اتراكون':'Itracon','اترانوكس':'Itranox','اتروزيمب':'Atrozemb','اتكوجليفلوزين':'Atcogliflozin','اتور':'Ator','اتورستات':'Atorstat','اتوريزا':'Atoreza','اتوزيت':'Atozet','اجارستين':'Agarstin','اجنوكاستون':'Agnucaston','اجوفالد':'Agovald','اجيرا':'Agera','اجيولاكس':'Agiolax','ادفانسيد':'Advanced','ادفانكريب':'Advancrib','ادكو':'Adco','ادول':'Adol','ارتيسوي':'Artisoy','ارتيكافول':'Articavol','ارثروفاست':'Arthrofast','ارثروهولد':'Arthrohold','اركوكسيا':'Arcoxia','اروميجا':'Aromega','اريكتاليس':'Erectalis','اريكتاماكس':'Erectamax','ازارجا':'Azarga','ازاستاتين':'Ezastatin','ازجوفلوكس':'Azgoflox','ازروليد':'Azrolid','اسباتريند':'Aspatrend','اسبريكارلو':'Aspricarlo','اسبوسيد':'Aspocid','استرامارك':'Estramark','استوهالت':'Estohalt','استيكان':'Estikan','استين':'Astin','اسكوربيك':'Ascorbic','اسيد':'Acid','اسيفيراكس':'Acivirax','افارا':'Avara','افازير':'Avazir','افروميد':'Afromed','افودارت':'Avodart','افيفافاسك':'Avivavasc','افيميو':'Efemyo','اكانزا':'Akanza','اكترابيد':'Actrapid','اكتوس':'Actos','اكتوميثرين':'Ectomethrin','اكتيفاست':'Actifast','اكتيمار':'Actimar','اكديستيرون':'Acdisteron','اكريتين':'Acretin','اكسارونت':'Iksaront','اكساريتيك':'Exaretic','اكسال':'Axal','اكسترا':'Extra','اكستروما':'Extrauma','اكسيدوجاست':'Exeedogast','اكني':'Acne','اكنيلوفيكس':'Acnelofix','اكيروز':'Ekiroz','الافليك':'Alaflic','البافيت':'Elbavit','البالوران':'Elbaluran','البوثيل':'Albothyl','البوستيكس':'Albustix','التروكسين':'Eltroxin','التيازيم':'Altiazem','الدوميت':'Aldomet','الزميندا':'Alzmenda','الزيبيزيل':'Alzepizil','الزيكسا':'Alzixa','الفا':'Alpha','الفابريمو':'Alfabrimo','الفاثرومب':'Alfathromb','الفاديب':'Alfadep','الفاسبيكت':'Alfaspect','الفافيم':'Alphavim','الفافين':'Alphafen','الفاكارينو':'Alfacareno','الفاكالسيدول':'Alfacalcidol','الفانوفا':'Alphanova','الكوفان':'Alcofan','الليربان':'Allerban','الوندا':'Elonda','اليجا':'Elega','اليجون':'Alejon','اليرتام':'Alertam','اليريد':'Alerid','اليكا':'Elica','اليكاسال':'Elicasal','اليكويس':'Eliquis','اليمبوسيس':'Elimbosis','اماجلوست':'Amaglust','اماريل':'Amaryl','امباجليفورم':'Empagliform','امبروبرو':'Ambropro','امبوفير':'Ampofer','امبيزيم':'Ambezim','املو':'Amlo','اموسار':'Amosar','اموسيريبرال':'Amocerebral','امون':'Amoun','اميبازول':'Amebazol','اميجران':'Imigran','اميكاسين':'Amikacin','اميلو':'Amilo','اناسيزياجو':'Anaseziago','انافورتين':'Anaforten','اناناس':'Ananas','انترافير':'Intrafer','انتريستو':'Entresto','انتوبرال':'Antopral','انتوكس':'Antox','انتيجرول':'Integrol','انتيروفير':'Interofer','انتيفير':'Antiver','انتيكرامب':'Antikramp','انتينال':'Antinal','انجيوبلوك':'Angioblock','انجيوسارتان':'Angiosartan','انداجرا':'Andagra','اندليكسابان':'Endlixaban','اندوريستات':'Andouristat','اندوريفابان':'Andorivaban','اندوفلوزين':'Andoflozin','اندوفيت':'Andovit','اندوكاندوكسين':'Andocandoxin','انريتش':'Enrich','انزيماكس':'Enzymax','انسباجو':'Inspago','انسولين':'Insulin','انفلوبروب':'Influprop','انفيجا':'Invega','انفيستا':'Investa','انفينيتي':'Infinity','انكونت':'Incont','انهاليكس':'Inhalex','انورو':'Anoro','انوفوليك':'Inofolic','انوكسيكام':'Anoxicam','انيرجي':'Energy','اواديست':'Awadist','اوبتاديرول':'Optaderol','اوبتاكادو':'Optacado','اوبتيفلوكس':'Optiflox','اوبتيك':'Optic','اوبتيلوبريك':'Optilubric','اوبونوف':'Oponov','اوتريفين':'Otrivin','اوتوكورت':'Otocort','اوجرام':'Augram','اودورال':'Odoral','اوراسين':'Oracin','اوراماكس':'Oramax','اورجينال':'Orginal','اورسوتوين':'Ursotwin','اورسوديول':'Ursodiol','اورسوفالك':'Ursofalk','اورلي':'Orly','اورليستات':'Orlistat','اورليسمارت':'Orlismart','اورنيداز':'Ornidaz','اوروجام':'Orogam','اوريجينال':'Original','اوريدال':'Oridal','اورينت':'Orient','اوستيو':'Osteo','اوفراماكس':'Oframax','اوكاربون':'Eucarbon','اوكايس':'Okays','اوكتو':'Octo','اوكساليبتال':'Oxaleptal','اوكسي':'Oxy','اولازوريكس':'Olazorix','اولانفيكسا':'Olanvexa','اولفين':'Olfen','اوماكور':'Omacor','اومنيفورا':'Omnevora','اوميباك':'Omepak','اوميجا':'Omega','اوميجافيت':'Omegafit','اوميجال':'Omegal','اوميز':'Omez','اوندالينز':'Ondalenz','اونداميتيك':'Ondametic','اونوكرون':'Unocron','ايبيكو':'Eipico','ايرونيل':'Aironyl','بارامول':'Paramol','باروفين':'Parofen','باريتافا':'Baritava','باريشيا':'Parishia','باكتيكلور':'Bacticlor','باكلوفين':'Baclofen','بالكيس':'Balkis','بالم':'Balm','بالمي':'Palmi','بامبيديل':'Bambedil','بانادول':'Panadol','باناكس':'Panax','بانتازول':'Pantazol','بانتوبي':'Pantopi','بانتوجار':'Pantogar','بانتولوك':'Pantoloc','بانتوناب':'Pantonap','بانثوفيرا':'Panthovera','بانثينول':'Panthenol','بانجيستازول':'Pangestazol','بانوفين':'Panoven','براديبيكت':'Bradipect','برافاماكس':'Bravamax','برافوتين':'Pravotin','بران':'Bran','براند':'Brand','برو':'Pro','بروبريك':'Probric','بروتوبان':'Protopan','بروتولوك':'Protoloc','بروتيكا':'Proteca','بروتيكت':'Protect','بروجيست':'Progest','بروست':'Prost','بروستانورم':'Prostanorm','بروفان':'Provan','بروفير':'Profer','بروفيرون':'Proviron','بروفين':'Brufen','بروفينيد':'Profenid','بروكاسوفت':'Prucasoft','بروكسيمول':'Proximol','بروليا':'Prolia','بروماجار':'Bromagar','بروميد':'Bromed','برونتوجيست':'Prontogest','بريانيل':'Prianil','بريج':'Preg','بريجناستيب':'Pregnastep','بريجنافيكس':'Pregnavix','بريدابوكس':'Predapox','بريدسول':'Predsol','بريسمافين':'Prismaven','بريفا':'Breva','بريفاجليب':'Prevaglip','بريفاكوند':'Privacond','بريكسال':'Prexal','بريما':'Prima','بريموكسيزار':'Primoxizar','بريمونوكوند':'Brimonocond','برينجو':'Bringo','بلوك':'Block','بلوكيوم':'Blokium','بليتال':'Pletaal','بلينك':'Blink','بلينكوريست':'Blincorest','بودي':'Body','بوسبار':'Buspar','بوسكوبان':'Buscopan','بوكس':'Box','بوكسيبو':'Boxebo','بوليمارت':'Polymart','بوليمير':'Polymer','بونجيل':'Pongeel','بونو':'Pono','بوينتزام':'Pointzam','بيبرا':'Bepra','بيبزول':'Pepzol','بيبون':'Pepon','بيتا':'Beta','بيتاديرم':'Betaderm','بيتاسيرك':'Betaserc','بيتافوس':'Betafos','بيتاكور':'Betacor','بيتميجا':'Betmiga','بيجو':'Beegu','بيدالكين':'Bidalkin','بيدياميل':'Pediamil','بيرفورما':'Performa','بيرلوك':'Perloc','بيرونتاجونيست':'Pirontagonist','بيريدوفيت':'Pyridovit','بيستول':'Bistol','بيستينون':'Pystinon','بيفاتراسين':'Bivatracin','بيكتول':'Pectol','بيكسي':'Pixe','بيكلو':'Beclo','بيكولاكس':'Picolax','بيلينو':'Bilino','بيمفاست':'Pimfast','بينوجين':'Benogen','بينوكس':'Benox','بيوبريكس':'Bioprex','بيوتيك':'Biotic','بيوتيكافلوكس':'Bioticaflox','بيوتين':'Biotin','بيوجليتا':'Bioglita','بيودكس':'Biodx','بيورازو':'Biorazo','بيوريفامين':'Biorefamin','بيوسترونج':'Biostrong','بيوسيرتازول':'Biosertazol','بيوفيت':'Biovit','بيوفيتا':'Biovita','بيونال':'Bional','تادا':'Tada','تادالونج':'Tadalong','تارجوماش':'Targomash','تاردانزا':'Tardanza','تاريفلوكس':'Tariflox','تافاسين':'Tavacin','تافانيك':'Tavanic','تافلوبرو':'Taflupro','تافونيفلوكس':'Tavoniflox','تافيكسينور':'Tavixinor','تالوبرام':'Talopram','تامسوفيناسين':'Tamsufenacin','تامسول':'Tamsul','تامسولين':'Tamsulin','ترافاتان':'Travatan','ترافوديرمال':'Travodermal','ترافونورم':'Travonorm','تروبيل':'Trobel','ترون':'Tron','ترياكور':'Triacor','تريب':'Trib','تريبتيزول':'Tryptizol','تريبزيم':'Trybzim','تريبسيكان':'Trypsican','تريبسين':'Trypsin','تريبليكسام':'Triplixam','تريترون':'Tritron','تريتوسبوت':'Tritospot','تريفلوكان':'Treflucan','تريكسوزولا':'Trexozola','تريم':'Trim','ترينا':'Trina','تريو':'Trio','تشيكس':'Chicks','توباكين':'Topaken','توبرانو':'Toprano','توبرو':'Topro','توبرين':'Tobrin','توبوبرازان':'Topoprazan','توبولانزا':'Tobolanza','توتافيت':'Totavit','توتاكال':'Totacal','توتال':'Total','توجيو':'Toujeo','تورفاست':'Torvast','تونادوجيست':'Tonadogest','تونيك':'Tonic','تونيكا':'Tonika','توينتي':'Twenty','توينزول':'Twinzol','تيبوفورتين':'Tebofortin','تيبونينا':'Tebonina','تيراتام':'Tiratam','تيراليبسي':'Tiralepsy','تيربين':'Terbin','تيرمينال':'Terminal','تيكافير':'Tecavir','تيموجين':'Timogen','تينتيد':'Tinted','تينورمين':'Tenormin','تينيفلوكساسين':'Tinifloxacin','ثرومبو':'Thrombo','ثرومبونورم':'Thrombonorm','ثري':'Three','ثيروكاربين':'Thyrocarbin','ثيوتاسيد':'Thiotacid','ثيونيرف':'Thionerv','جاباليبسي':'Gabalepsy','جاتيكسيل':'Gatyxel','جاراميسين':'Garamycin','جاست':'Gast','جاسترودومينا':'Gastrodomina','جاسترولوك':'Gastroloc','جاستروموتيل':'Gastromotil','جاسموفاك':'Gasmovac','جاكاراندا':'Jakaranda','جاكودان':'Jackodan','جالينا':'Galena','جامابيون':'Gamabion','جاناتون':'Ganaton','جاناجليب':'Janaglip','جانتوليف':'Gantolief','جرام':'Gram','جرانيا':'Granya','جرانيتريل':'Granitryl','جروزا':'Groza','جرين':'Green','جلوبابروب':'Globaprop','جلوباكاند':'Globacand','جليبتالينا':'Gliptalina','جليبتوميت':'Gleptomet','جليبوفين':'Glybofen','جليفلوزاميت':'Gliflozamet','جليفلوزينو':'Gliflozino','جليكسامبي':'Glyxambi','جليماديل':'Glimadel','جليمبوزين':'Glempozin','جلينوساليك':'Glenosalic','جوتال':'Gotal','جوجيل':'Jogel','جوسبرين':'Jusprin','جوكادو':'Jocado','جولد':'Gold','جولينوساب':'Golinosab','جونيور':'Junior','جوينت':'Joint','جوينتا':'Jointa','جيباريلون':'Jeparilon','جيرلي':'Girly','جيستاميفام':'Jestamivam','جيسترانيل':'Gestranil','جيفلوج':'Giflog','جينسوفيتا':'Ginsovita','جينكو':'Ginko','جينوبروجيست':'Gynoprogest','جينوزول':'Gynozol','جينوسيبت':'Gynocept','جينوفيل':'Genuphil','جينوكونازول':'Gynoconazol','جينونال':'Jenonal','جينيرا':'Gynera','جينيكا':'Genica','جيوبروست':'Geoprost','دابابليكس':'Dapablix','داباجلوزا':'Dapagloza','داباجليف':'Dapaglif','داباجليفلوزين':'Dapagliflozin','دابافيلداكتين':'Dapaveldactin','دابوكستارد':'Dapoxtard','داجو':'Dago','دازول':'Dazol','دافاليندي':'Davalindi','دافروسين':'Dafrocin','دافلون':'Daflon','دالاسين':'Dalacin','داناسيترون':'Danasetron','دانديفيرا':'Dandivera','دروبيجين':'Dropegen','دروبيفلوكس':'Dropiflox','دروسباديول':'Drospadiol','دروسبيفيم':'Drospifem','دوال':'Dual','دوجماتيل':'Dogmatil','دورزولامول':'Dorzolamol','دورمانت':'Dormant','دورميفال':'Dormival','دوزوفا':'Dozova','دوسباتالين':'Duspatalin','دوفاستون':'Duphaston','دوفالاك':'Duphalac','دوكسي':'Doxy','دوكسيرازول':'Doxirazol','دوكسيكوست':'Doxycost','دوكسيوم':'Doxium','دولاجين':'Dulagen','دولسيل':'Dolcyl','دولفين':'Dolphin','دوميجا':'Domega','دونازيل':'Donazil','دونافيرون':'Donaferon','ديابيتونورم':'Diabetonorm','ديابينور':'Diabenor','دياستوب':'Diastop','دياكالديرم':'Diacalderm','دياكس':'Diax','دياكوريماب':'Diacurimap','ديامونريكتا':'Diamonrecta','دياميكرون':'Diamicron','ديبرام':'Depram','ديبروساليك':'Diprosalic','ديبريبان':'Depreban','ديبوفيت':'Depovit','ديجليفلوز':'Diglifloz','ديجيست':'Digest','ديجيكوماج':'Digicomag','ديرم':'Derm','ديرماتين':'Dermatin','ديسا':'Desa','ديسلورات':'Deslorat','ديفارول':'Devarol','ديفلوستيرو':'Diflustero','ديفلوكان':'Diflucan','ديكابرينو':'Decapreno','ديكاديل':'Dekadel','ديكساترول':'Dexatrol','ديكساتوبرين':'Dexatobrin','ديكسافلوكس':'Dexaflox','ديكسافين':'Dexaphen','ديكسانوكورتين':'Dexanocorten','ديكسكيتو':'Dexketo','ديكلوبرو':'Diclopro','ديكلوفين':'Declophen','ديكونادال':'Deconadal','ديلموكسا':'Delmoxa','ديليكار':'Delecar','ديماس':'Demas','ديمرا':'Dimra','ديميكاب':'Dimicap','ديندرا':'Dendra','دينوديفا':'Dienodiva','ديومالين':'Diomalin','رابيد':'Rapid','رابيدوس':'Rapidus','راسبيلوسين':'Raspelocin','رافادا':'Rafada','راميتاكس':'Rametax','رانديل':'Randil','رانسيف':'Rancif','راني':'Rani','رانيكسا':'Ranexa','روزاليا':'Rozalia','روسوفاستاتين':'Rosuvastatin','روسيتور':'Rositor','روكسوتوب':'Ruxotop','روماكسيماب':'Rumaximap','رومانتيجرا':'Romantigra','رونكين':'Ronkin','رويال':'Royal','رويسان':'Roysan','ريباريل':'Reparil','ريبايون':'Repaion','ريتا':'Reta','ريتارد':'Retard','ريتش':'Rich','ريتمونورم':'Rytmonorm','ريتين':'Retin','ريتينول':'Retinol','ريجو':'Rego','ريجيماكس':'Regimax','ريداند':'Redand','ريزوديج':'Ryzodeg','ريسباتيو':'Respatio','ريسبيردال':'Risperdal','ريست':'Rest','ريسدال':'Risdal','ريفادون':'Rivadon','ريفان':'Revan','ريفو':'Rivo','ريفيتال':'Revital','ريكان':'Rekan','ريلي':'Relee','ريموواكس':'Remowax','رينوسكار':'Renoscar','زادوجلوبين':'Zadoglobin','زاندروس':'Zandros','زسويف':'Zswev','زوركال':'Zurcal','زوفيراكس':'Zovirax','زوكوزيت':'Zocozet','زولاديكس':'Zoladex','زيثروكان':'Zithrokan','زيثروماكس':'Zithromax','زيروفازيت':'Zyrovazet','زيستريل':'Zestril','زيسروسين':'Zisrocin','زيلوريك':'Zyloric','زيليا':'Zilia','زيموفاك':'Zymovak','زينول':'Zinol','سافيبليد':'Savibleed','سالجي':'Salgy','سالميتوكورت':'Salmetocort','ساليتروكسيب':'Salitroxib','سانتورين':'Santorin','ساندوز':'Sandoz','سانزال':'Sanzal','سانسو':'Sanso','سانسوفيت':'Sansovit','سانسوكود':'Sansocod','سانوليفوكس':'Sanolevox','سباسكولون':'Spascolon','سبير':'Spir','سبيريفا':'Spiriva','سبيريكس':'Spirex','ستار':'Star','ستارت':'Start','ستراكوبينا':'Strakopina','ستروكا':'Stroka','سترونج':'Strong','ستوب':'Stop','ستوبادول':'Stopadol','ستوموبرال':'Stomopral','ستيبس':'Steps','ستيفيا':'Stevia','ستيم':'Stem','ستيمو':'Stimu','ستيمولان':'Stimulan','سكارو':'Scaro','سكالوجين':'Scalogen','سكرين':'Screen','سكيليتو':'Skeleto','سكين':'Skin','سكينوريتش':'Skinorich','سليم':'Slim','سمارت':'Smart','سنافي':'Snafi','سوابيفينت':'Swabivent','سوبرا':'Supra','سوبراكس':'Suprax','سورال':'Soral','سورتي':'Sorti','سوريانا':'Soriana','سوفت':'Soft','سوفريزا':'Suvreza','سوفيكان':'Suvikan','سوفيناسين':'Sofenacin','سوكابريكسام':'Sokaprixam','سولبادول':'Solpadol','سولباسيف':'Sulbacef','سولبيبتا':'Sulpepta','سولفاكس':'Sulfax','سولو':'Solo','سولوبريد':'Solupred','سولوستار':'Solostar','سولوفريش':'Solofresh','سوليتراكت':'Solitract','سوماتروبين':'Somatropin','سومازينا':'Somazina','سوناكتو':'Sonakto','سويت':'Sweet','سويتال':'Sweetal','سيالونج':'Cialong','سياليس':'Cialis','سيانارو':'Cyanaro','سيانو':'Ciano','سيبالافيل':'Cipalafil','سيبرابرو':'Ciprapro','سيبراليكس':'Cipralex','سيبراماكس':'Cipramax','سيبرو':'Cipro','سيبروسين':'Ciprocin','سيبروفار':'Ciprofar','سيبروفلوكسيراز':'Ciprofloxiraz','سيبروميجا':'Cipromega','سيبورال':'Seboral','سيتاجليفورم':'Sitagliform','سيتال':'Cetal','سيتالو':'Citalo','سيتراك':'Cetrak','سيترونوميت':'Setronomet','سيجما':'Sigma','سيدوكاست':'Sedokast','سيديكو':'Sedico','سيردالود':'Sirdalud','سيرفي':'Servi','سيرفيتام':'Cervitam','سيرفيتولكا':'Cervetolka','سيرليفت':'Serlift','سيروكسات':'Seroxat','سيري':'Siri','سيزار':'Seezar','سيستينول':'Cystinol','سيفاترون':'Cevatron','سيفامول':'Cevamol','سيفزيم':'Cefzim','سيفوتاكس':'Cefotax','سيفوران':'Ceforan','سيفوزون':'Cefozon','سيفيتيل':'Cevitil','سيكا':'Cica','سيكتور':'Sector','سيكلور':'Ceclor','سيكوسيتام':'Sycocetam','سيلجون':'Selgon','سيلدافا':'Sildava','سيلدين':'Silden','سيلكرين':'Silkren','سيلوكينزوك':'Selokenzoc','سيلونا':'Selona','سيليبورج':'Celeborg','سيليكار':'Silicar','سيليكتيفال':'Selectival','سيليكس':'Selex','سيليكون':'Silicon','سيلينجينا':'Selengena','سيلينو':'Seleno','سيمبيون':'Cempion','سيناكالسيت':'Cinacalcet','سينترافيتا':'Centravita','سينجاردي':'Synjardy','سينس':'Sens','سينوبريت':'Sinupret','سينوبريل':'Sinopril','سينوزيم':'Sinozim','سينومارين':'Sinomarin','شاتو':'Shatoo','شارك':'Shark','شامبو':'Shampo','شوتس':'Shots','شورسالين':'Shorsalin','شوما':'Shoma','شيلد':'Shield','فابوزول':'Vapozol','فاجلوزينو':'Faglozino','فاردي':'Varde','فاردينا':'Vardena','فاردينوريكت':'Vardenorect','فاركولين':'Farcolin','فارما':'Pharma','فارماستين':'Pharmastin','فارماكون':'Pharmakon','فاروفيجا':'Faroviga','فاروفين':'Pharofen','فاست':'Fast','فاستاريل':'Vastarel','فاستاسيرو':'Vastasiero','فاسكون':'Vascon','فاكتو':'Faktu','فاكساتو':'Vaxato','فالجيستريل':'Valgestril','فالسارتان':'Valsartan','فالكوناسيا':'Falconacea','فاليو':'Valio','فاموتاك':'Famotak','فاموتين':'Famotin','فاميكس':'Vamix','فانتوكال':'Fantocal','فانفيلدا':'Vanvilda','فانو':'Vano','فايسيد':'Faycid','فرانكوتريتينوين':'Francotretinoin','فروست':'Frost','فري':'Free','فريتز':'Fretz','فريز':'Freez','فريش':'Fresh','فلو':'Flu','فلوبرونك':'Flubronk','فلوجينيل':'Flugenil','فلوراكس':'Florax','فلورودام':'Flurodam','فلوروفلوكس':'Fluroflox','فلوكس':'Flux','فلوكسيبسي':'Floxepci','فلوكورال':'Flucoral','فلوموكس':'Flumox','فليبوتون':'Fleboton','فليكتور':'Flector','فليكس':'Flex','فوربلوبي':'Forblobe','فورت':'Fort','فورتادا':'Fortada','فورتاميند':'Fortamind','فورتروستيب':'Fortrustep','فورتي':'Forte','فورتيموكس':'Fortymox','فورتيو':'Forteo','فورمامي':'Formamy','فوستيمون':'Fostimon','فولافليك':'Folaflic','فولبرازال':'Fulprazal','فولتارين':'Voltaren','فولي':'Foli','فوليك':'Folic','فوليكاب':'Folicap','فوليكس':'Folex','فوناسيدان':'Vonacidan','فونافوت':'Vonafut','فوندالوس':'Vondalous','فونوبرافين':'Vonopravin','فونوبرامير':'Vonopramer','فياترازو':'Viatrazo','فياجرا':'Viagra','فيافاج':'Viavag','فيتاسيد':'Vitacid','فيتال':'Vital','فيتامونت':'Vitamount','فيتامين':'Vitamin','فيتايامي':'Vitayami','فيتموتوس':'Fitmotus','فيتوسيتامول':'Vetocetamol','فيتوياجرا':'Vetoyagra','فيجاموكس':'Vigamox','فيجو':'Vigo','فيجوتون':'Vigoton','فيدروب':'Vidrop','فيرا':'Vera','فيربينو':'Ferpino','فيردابيوتال':'Verdapiotal','فيردو':'Verdo','فيردينوديب':'Verdenodeb','فيرست':'First','فيرسيرك':'Verserc','فيرنوفا':'Vernova','فيرو':'Fero','فيروجلوبين':'Feroglobin','فيروستات':'Virustat','فيفيدول':'Vividol','فيكسون':'Fexon','فيكوفارتيك':'Vecovartec','فيلدافورمين':'Vildaformin','فيلوزاك':'Philozac','فيلوسيف':'Velosef','فيمارا':'Femara','فيموجيسال':'Femogesal','فيناكس':'Vinax','فيناكسان':'Venaxan','فينت':'Vent','فينجوفي':'Finjuve','فينوسين':'Vinosin','فينوماكس':'Vinomax','فينيتين':'Phenytin','فيوسيست':'Viocyst','فيولا':'Viola','كابرون':'Kapron','كابري':'Capry','كابوتريل':'Capotril','كابي':'Kabi','كابيلورين':'Capilorin','كاتيفاروكس':'Kativarox','كاربالتا':'Karbalta','كاربون':'Carbon','كارتيزاد':'Cartizad','كاردورا':'Cardura','كارديفو':'Cardivo','كارديكسين':'Cardixin','كارديلول':'Cardilol','كارفيد':'Carvid','كارلا':'Carla','كارنيتول':'Carnitol','كارنيفيتا':'Carnivita','كالاميل':'Calamyl','كالتيرا':'Caltera','كالدين':'Caldin','كالسيبينو':'Calcipino','كالسيترون':'Calcitron','كالسيتريكس':'Calcitrix','كالسيتونيوم':'Calcitonium','كالسيدول':'Calcidol','كالسيما':'Calcima','كالسيوم':'Calcium','كالم':'Calm','كالما':'Calma','كالمينال':'Calminal','كالوبين':'Kalobin','كالي':'Caly','كاليمابيكس':'Kalemapex','كاندي':'Candy','كانديستان':'Candistan','كرانبي':'Cranby','كريبتوناز':'Cryptonaz','كريستور':'Crestor','كريستوليب':'Crestolip','كلوباسيرك':'Clopacirc','كلوسول':'Closol','كليمادينون':'Klimadynon','كلين':'Kleen','كلينداسول':'Clindasol','كلينداسين':'Clindacin','كليندام':'Clindam','كلينفا':'Klenva','كوباد':'Copad','كوبال':'Cobal','كوبالامون':'Cobalamoun','كوبالامين':'Cobalamin','كوجيكس':'Cogex','كوجينتول':'Cogintol','كودافين':'Codaphen','كوربال':'Corpal','كورت':'Cort','كورتيلون':'Cortilon','كوردو':'Cordo','كورنيفريش':'Cornefresh','كوسيمبريل':'Cosimprel','كوفابريندو':'Covaprendo','كوفي':'Covi','كوفيرام':'Coveram','كوكاست':'Kokast','كوكسريتور':'Coxritor','كوكسينورين':'Coxinorin','كول':'Cool','كولا':'Cola','كولاجرا':'Kolagra','كولانوج':'Kolanog','كولد':'Cold','كولداتريكسي':'Coldatrexy','كولميديتين':'Colmediten','كولوسباتوراز':'Colospatoraz','كولوفيرين':'Coloverin','كولونا':'Colona','كولين':'Colin','كومبي':'Combi','كومفورت':'Comfort','كونتراهيستادين':'Contrahistadin','كونترول':'Control','كونتروليبسي':'Controlepsy','كونتور':'Contour','كونجيستال':'Congestal','كونفيبان':'Conviban','كونكور':'Concor','كونيستوفا':'Conistova','كيبراديل':'Kepradil','كيتوجيسيك':'Ketogesic','كيتورال':'Ketoral','كيتوفان':'Ketofan','كيتولاك':'Ketolac','كيتولجين':'Ketolgin','كيد':'Kid','كيدزونا':'Kidzona','كيراتوهيل':'Keratohyl','كيراتين':'Keratin','كيراكوز':'Keraqouz','كيراكيت':'Keraket','كيروفيت':'Kerovit','كيفبان':'Kifpan','كيناكومب':'Kenacomb','كينوموكسي':'Kinomoxi','لاب':'Lab','لادينيس':'Ladenes','لاروجين':'Larogen','لاروسوزيت':'Larosuzet','لاسيكس':'Lasix','لاكتو':'Lacto','لاكتوديل':'Lactodel','لاكتوماكس':'Lactomax','لاكتيفينور':'Lactevenor','لاكتيول':'Lacteol','لاكسيول':'Laxeol','لاكوفيمب':'Lacovimp','لاميفين':'Lamifen','لاميكتال':'Lamictal','لاناكلور':'Lanaclor','لانتانون':'Lantanon','لانتوبيب':'Lantopep','لانتوس':'Lantus','لانومورا':'Lanomora','لايت':'Lait','لوبيكونت':'Lubicont','لوتون':'Loton','لوتيرانول':'Loteranol','لوراز':'Loraz','لورافاست':'Lorafast','لورنوكسيكام':'Lornoxicam','لورنيكام':'Lornicam','لوسار':'Losar','لوسيدريل':'Lucidril','لوفيترود':'Lovitrod','لوفير':'Lovir','لوكازاندا':'Lokazanda','لوكاستين':'Locasten','لوكسي':'Loxy','لونا':'Luna','لونابيكس':'Lonapex','لوهيدران':'Lohydran','ليبوكومب':'Lipocomb','ليبونا':'Lipona','ليبيترين':'Lipitrin','ليبيتور':'Lipitor','ليتروزول':'Letrozol','ليجالون':'Legalon','ليزبيرج':'Lezberg','ليسيد':'Licid','ليفانوكس':'Levanox','ليفانيك':'Levanic','ليفسيت':'Levcet','ليفوديل':'Levodel','ليفوكتيفان':'Levoctivan','ليفوكسين':'Levoxin','ليفوهيستام':'Levohistam','ليفيترا':'Levitra','ليفيكتام':'Levectam','ليمون':'Lemon','ليناجليفلوزين':'Linagliflozin','ليناجينتا':'Linajenta','لينترا':'Lentra','لينتوجيستون':'Lentojeston','لينجالابس':'Lingalabs','ليندو':'Lindo','ماتريكس':'Matrix','ماج':'Mag','ماجنا':'Magna','ماجناتوب':'Magnatob','ماجيك':'Magic','مارت':'Mart','مارسالاز':'Marsalaz','مارفيل':'Marvel','ماركال':'Marcal','مارياجون':'Mariagon','ماريفان':'Marevan','ماسك':'Mask','مافو':'Mafo','مافيلور':'Mavilor','ماكرو':'Macro','ماكس':'Max','ماكسيكال':'Maxical','مالفا':'Malva','ماليندا':'Malinda','مان':'Man','مايسترو':'Maestro','مديكورفال':'Mdicorval','موبي':'Mobi','موبيتيل':'Mobitil','موبينورم':'Mobinorm','موتيليوم':'Motilium','موتينورم':'Motinorm','موداسوميل':'Modasomil','مورنيجاج':'Mornigag','موزانجليك':'Mozanglic','موف':'Moov','موفكسير':'Movxir','موفلوكس':'Moflox','موفي':'Move','موفيجيت':'Movigit','موفينتور':'Moventor','موكسيسيارو':'Moxyseyaro','موكسيفلوكس':'Moxiflox','موكسين':'Moxen','مومينتا':'Momenta','موناردي':'Monarde','مونتا':'Monta','مونتو':'Monto','مونتيكال':'Montekal','مونجارو':'Mounjaro','موندو':'Mondo','مونوريل':'Monuril','مونوشو':'Monosho','مونوكريست':'Monoqrest','مونوماك':'Monomak','مونوهيكسال':'Monohexal','مويست':'Moist','ميباسيل':'Mepasil','ميبافلوكسين':'Mepafloxin','ميباكليند':'Mepaclind','ميباكو':'Mepaco','ميبو':'Mebo','ميبيفاك':'Mebefac','ميتابسين':'Metapsin','ميتاكارديا':'Metacardia','ميتفورمين':'Metformin','ميثوكويك':'Methoquick','ميثيل':'Methyl','ميجابيو':'Megabio','ميجاموكس':'Megamox','ميديهيالو':'Medihyalo','ميديوم':'Medium','ميرالجو':'Meralgo','ميرتي':'Merti','ميرتيماش':'Mirtimash','ميرفا':'Merva','ميرفيناسين':'Mirfenacin','ميركافا':'Mercava','ميروكسنوريك':'Miroxnoric','ميرونيم':'Meronem','ميريوفيرت':'Meriofert','ميسبورين':'Mesporin','ميستينون':'Mestinon','ميكارديس':'Micardis','ميكرو':'Micro','ميكس':'Mix','ميكسترا':'Mextra','ميكسورا':'Mixora','ميكسيكام':'Mexicam','ميكوناز':'Miconaz','ميلجا':'Milga','ميلو':'Milo','ميلوباك':'Mylobac','ميلوكام':'Melocam','ميلوكسيكام':'Meloxicam','ميموسيتو':'Memocito','مينزوفليك':'Menzoflic','مينوكسيلوك':'Minoxilook','ميني':'Mini','مينيرين':'Minirin','ميوجريل':'Myogrel','ميوفين':'Myofen','ميوكول':'Myocool','ناتاريا':'Nataria','ناتري':'Natry','ناتريكسام':'Natrixam','ناركلين':'Narkleen','نافوبروكسين':'Navoproxin','نافيلوكا':'Naviluca','نانازوكسيد':'Nanazoxid','نودي':'Nody','نورجيستاديول':'Norgestadiol','نورجيسيك':'Norgesic','نورفاسك':'Norvasc','نورمال':'Normal','نورموكارد':'Normocard','نورميفرين':'Normifrin','نوستيفيكس':'Nostifix','نوفورابيد':'Novorapid','نوفونورم':'Novonorm','نوفيستوريك':'Novistoric','نوفيكس':'Novex','نولافير':'Nolaver','نونيميا':'Nonemia','نيتروماك':'Nitromak','نيرفاكتوري':'Nerfactory','نيرفالتا':'Nervalta','نيرفيزام':'Nervizam','نيرموستار':'Nermostar','نيرهاسيلدا':'Nerhasilda','نيستاتين':'Nystatin','نيفروميد':'Nephromed','نيفيلوب':'Nevilob','نيكسيروزوفا':'Nexirozova','نيكسيليكو':'Nixeleco','نيكسيوم':'Nexium','نيوبول':'Neopol','نيوترا':'Neutra','نيورو':'Neuro','نيوروفيت':'Neurovit','نيوريماكس':'Neurimax','نيوزوليد':'Neozolid','هارفي':'Harvy','هاند':'Hand','هيالورونيك':'Hyaluronic','هيبارين':'Heparin','هيبانوكس':'Hepanox','هيبتا':'Hepta','هيدرا':'Hydra','هيدرافيت':'Hydrafeet','هيدروكورت':'Hydrocort','هيربالاند':'Herbaland','هيرباميكس':'Herbamix','هيربانا':'Herbana','هيربولين':'Herbolin','هيرمبرو':'Hermpro','هيرو':'Hero','هيستوتيك':'Histotec','هيلوزين':'Helozin','وومان':'Woman','ويست':'West','وينزوكسيب':'Winzoxib','ياسمين':'Yasmin'};
+        const EN_DB_SOFT = {'ابيجنت':'Apigent','ابيكسيجارد':'Apixaguard','ابيكسيدون':'Apexidone','اترابكس':'Itrapex','اترافنجيكس':'Itrafungex','اتروفنت':'Atrovent','اتكوكوسيب':'Atcocoxib','اتومافيوتكس':'Atomafutix','اتوموكس':'Tomex','اتوميتافلوزين':'Atometaflozine','ادفانس':'Advance','ادلت':'Adult','ادويتين':'Adwitine','ارباتج':'Arbateg','اربيبرازول':'Aripiprazole','اربيبركس':'Aripiprex','ارتيكسبان':'Artixiban','ارجنت':'Argento','ارجنتو':'Argento','ارجينافكت':'Urginafect','اريبكسان':'Arepexane','ازاثيوبرين':'Azathioprine','ازماكاست':'Asmakast','ازمالير':'Asmalair','ازيثرووماش':'Azithromash','اسكرين':'Screen','افيروبايوز':'Averobios','افيروثيازيد':'Averothiazide','افيروكسيب':'Averocoxib','اكتومثرين':'Ectomethrin','اكساميد':'Examide','اكستريم':'Extreme','اكسفو':'Xefo','اكسفورج':'Exforge','اكسفولتينج':'Exfoliating','اكسفولياتنج':'Exfoliating','اكسيلسا':'Excelsa','البندازول':'Albendazole','الترا':'Ultra','التراسولف':'Ultrasolv','التراكايين':'Ultracaine','الترانيل':'Loteranol','الزنتال':'Alzental','الفاكليندامايسين':'Alfaclindamycin','الكانازول':'Alkanazole','الكسوبرين':'Alexoprine','اللليرجي':'Allergy','الليرجكس':'Allergex','الوبانتين':'Alopanthen','اليدييل':'Elidel','اليرجولبير':'Alergoliber','اليرزون':'Allerzone','امبولات':'Mobilat','امبيرستون':'Amiprostone','امريزول':'Amrizole','املوديبين':'Amlodipine','املوسازايد':'Amlosazide','املوسازيد':'Amlosazide','اميبريد':'Amipride','اميبيريد':'Amipride','اناليرج':'Anallerge','انتروجرمينا':'Enterogermina','انتودين':'Antodine','انتينس':'Intense','اندروفيبان':'Andorivaban','اندوباكستين':'Andopoxetine','اندودرما':'Andoderma','اندوفيمبامايد':'Andovimpamide','اندوفيمباميد':'Andovimpamide','اندوكاندكسين':'Andocandoxin','اندوميثازين':'Indomethacin','اوبتامينس':'Optaminess','اوبتوزولين':'Optozoline','اوجمنتين':'Augmentin','اورجوركسيبان':'Orgoroxaban','اورجوروكسبان':'Orgoroxaban','اوركينو':'Rekano','اوسوفورتين':'Ossofortin','اوكتوفنت':'Octovent','اوكسجين':'Oxygen','اوكسيتوفلكس':'Oxytoflex','اوكسيمت':'Oxymet','اوكيوجارد':'Ocuguard','اولابكس':'Olapex','اولوهيستين':'Olohistine','اومنسيف':'Omnicef','اوميجابريس':'Omegapress','اوميدرنك':'Omedrink','اومينيك':'Omnic','اونداميتك':'Ondametic','ايبافكس':'Ebafix','ايتافللين':'Etaphylline','ايتوبرايد':'Itopride','ايجيكوسات':'Egycusate','ايراستابكس':'Erastapex','ايرالونير':'Eraloner','ايردوليتيك':'Erdolytic','ايروكسول':'Rexsol','ايزاكارد':'Ezacard','ايزاليزيبين':'Eslizepine','ايزوتونيك':'Isotonic','ايزوجاست':'Ezogast','ايزوميبرازول':'Esomeprazole','ايسوفاكسول':'Esovaxole','ايفروسبان':'Fresubin','ايفوكسور':'Efexor','ايفيجاد':'Effegad','ايكسوسيرليك':'Exosirylic','ايمباكوزا':'Empacoza','ايمتركس':'Matrix','ايميرست':'Emerest','باراستامول':'Paracetamol','باراسيتاموول':'Paracetamol','بارستامول':'Paracetamol','بارسيتامول':'Paracetamol','بالمينيرف':'Palminerve','بانتامول':'Pentamol','بانتوماكس':'Pantomix','بانتومكس':'Pantomix','بانتوميدراا':'Pantomedra','بانكريت':'Pancreat','بايكرب':'Bicarb','بايولجام':'Biolegam','برناسورس':'Burnasores','بروبيوتك':'Probiotic','بروتكتوبريل':'Protectopril','بروتوفكس':'Protofix','بروتين':'Protein','بروجيسترون':'Progesterone','بروستاسولف':'Prostasolve','بروكورلان':'Procoralan','برونشيكم':'Bronchicum','بريبا':'Berirab','بريدنيزولون':'Prednisolone','بريدوفينكس':'Perdofenex','بريدوكايين':'Pridocaine','بريزولين':'Prisoline','بريفافيوتال':'Brivafutal','بريكسبيرازول':'Brexpiprazole','بريكسيبرازول':'Brexpiprazole','بكيني':'Bikini','بلسم':'Balsam','بلميكورت':'Pulmicort','بلوبريس':'Blopress','بلوكاتنس':'Blokatens','بنتامول':'Pentamol','بنداكس':'Bendax','بوتاسيوم':'Potassium','بورجازون':'Borgasone','بونابكس':'Bonapex','بونفيت':'Bonefit','بيتادين':'Betadine','بيتاديين':'Betadine','بيتاسي':'Biobots','بيتولفكس':'Betolvex','بيدرامين':'Bedremine','بيردوفينكس':'Perdofenex','بيزوكارد':'Bisocard','بيسلوك':'Bisolock','بيكساسبير':'Pixaspire','بيكساسبيرو':'Pixaspire','بيوتادين':'Betadine','بيوفريز':'Biofreeze','بيوفريزو':'Biofreeze','تادانيرف':'Tadanerfi','تارج':'Tareg','تاروليماس':'Tarolimus','تانتم':'Tantum','تتراسيكلين':'Tetracycline','تجريتول':'Tegretol','ترانسيديا':'Trencedia','ترانكس':'Itranox','ترايتون':'Tritone','ترايكتين':'Triactin','ترايكوجين':'Tricogyn','ترايليبتال':'Trileptal','تربسالين':'Trypsalin','تربيسين':'Trypsin','ترنتال':'Trental','ترول':'Utoral','تريباتنس':'Tribatens','تريبلو':'Triple','تريتاس':'Tritace','تريتو':'Treato','تريتيكو':'Trittico','تريكزيمس':'Treczimus','ترينوتركس':'Trinutrex','تلفاست':'Telfast','تمبورال':'Temporal','تنسوبليرون':'Tensopleron','توبرادكس':'Tobradex','توبراميت':'Topiramate','توداسيدون':'Tudasidone','تورسيرتك':'Torseretic','تورسيريتك':'Torseretic','تومكس':'Tomex','تيجنت':'Tigint','تيراليبيسي':'Tiralepsy','تيراميسين':'Terramycin','تيمبستاتين':'Timbestatin','تينور':'Toner','تينوفلوكساسين':'Tinifloxacin','ثيوبنتال':'Thiopental','جابيمدرا':'Gabimedra','جارد':'Guard','جارديانز':'Jardiance','جاردينز':'Jardiance','جاستروبيكس':'Gastropexy','جاستروبيوتك':'Gastrobiotic','جاستين':'Justin','جاوتيفيد':'Goutifade','جرانيتيريل':'Granitryl','جروث':'Growth','جريبيكسون':'Grapexon','جسترز':'Egygastreaz','جلوكوز':'Glucose','جلوكوفاج':'Glucophage','جلوكوفانس':'Glucovance','جليبتس':'Gliptus','جليسرين':'Glycerin','جليم':'Glamy','جليمباكير':'Glimpacare','جليمت':'Glimet','جليميبرايد':'Glimepiride','جنجر':'Ginger','جيبرافيستين':'Gypravastin','جيرون':'Green','جيفيسكون':'Gaviscon','جيلينسيرت':'Glensert','جيماسيستاين':'Gemacysteine','جينوترا':'Genettera','دابابيلكس':'Dapablix','دافلوفكس':'Daflofix','داندل':'Dandel','دانست':'Danset','داونستيرولين':'Downsterolin','داونيبرازول':'Downoprazol','دايجست':'Digest','درلجي':'Derilgy','دلبانتو':'Delpanto','دلتازون':'Deltasone','دولوكسبرين':'Duloxeprin','دولوكسيفيوتال':'Duloxifutal','دوليبران':'Doliprane','دومبيدون':'Dompidone','دومبيريدون':'Domperidone','دونبيزيل':'Donepezil','دونيفوكسات':'Donifoxate','دياسميكتا':'Diasmect','ديافلوزيمات':'Diaflozimet','ديافليوزيمات':'Diaflozimet','دياميدزين':'Diamedizen','ديبافاليي':'Dibavally','ديباكين':'Depakine','ديبروزون':'Diprosone','ديرموفكس':'Dermofix','ديزمودجاست':'Desmodjust','ديسبركام':'Dispercam','ديسكس':'Diskus','ديفاكوت':'Divakote','ديفوبيت':'Daivobet','ديكسيجلوفوزن':'Dexiglofozin','ديكسيجلوفوزون':'Dexiglofozin','ديوزمين':'Diosmin','ديوكسنورزت':'Duxnorzet','راميسفتراكس':'Rameceftrax','رجكور':'Regcor','رليف':'Relief','رواتينكس':'Rowatinex','رواكول':'Uricol','روتاج':'Rootage','روتاسي':'Roots','روتاهيلكس':'Rotahelex','روزافاست':'Rosuvast','روكسوجيسك':'Roxogesic','رومالاكس':'Romalex','رومالكس':'Romalex','ريالكوكستار':'Realcoxstar','ريبلسيس':'Rybelsus','ريثرو':'Retro','ريجيم':'Regime','ريفاروسبير':'Rivarospire','رينجر':'Ringer','زانوجليد':'Zanoglide','زنكوديرم':'Zincoderm','زوفاترون':'Zofatrone','زوليفيوتال':'Zolifutal','زوندكس':'Zondex','زيتاكولست':'Zetacolest','زيثرودوز':'Zithrodose','زيناميونا':'Cinnamon','سابوكيتيك':'Saboctic','ساكنل':'Sacnel','سالبوفنت':'Salbovent','سايمثكون':'Simethicone','ساينس':'Sanso','سبازمورست':'Spasmorest','سبازموسين':'Spasmocin','سبازموفري':'Spasmofree','سبترين':'Septrin','ستاتومين':'Statomain','ستاتيوكاست':'Statukast','ستارفيل':'Starville','ستاركوبركس':'Starkoprex','ستامين':'Statomain','ستربتوكين':'Streptoquin','ستربسيلز':'Strepsils','ستريم':'Sutrim','سترينجازول':'Stringazole','ستوميجاز':'Stomigas','ستيديفيوتال':'Steadyfutal','ستيميولان':'Stimulan','سرنجات':'Sarangiot','سريبروليسين':'Cerebrolysin','سريوبرازول':'Zarroprazole','سكينترا':'Skinnatra','سلفارجين':'Sulphargin','سلفوزنك':'Sulfozinc','سمبيكورت':'Symbicort','سنجولير':'Singulair','سنسوديرم':'Sensoderm','سورالون':'Soralone','سوفيناسيين':'Sofenacin','سولديكس':'Solodex','سوليستار':'Solostar','سيبتازول':'Septazole','سيبيم':'Sebium','سيتابرونكس':'Citapronex','سيدالوستات':'Sedalostate','سيدرال':'Sideral','سيدوفاج':'Cidophage','سيرباس':'Serpass','سيربروفورت':'Cerebroforte','سيريتيد':'Seretide','سيزارلس':'Seizurless','سيفاثرد':'Cefathird','سيفتريوم':'Safetrium','سيفومريكان':'Cefomerican','سيفيديم':'Cefidime','سيكالاب':'Scalp','سيكلوفلكس':'Cycloflex','سيكم':'Sekem','سيلدوكير':'Sildocare','سيمباتكس':'Cymbatex','سيمباكت':'Symmebact','سيناريزين':'Cinnarizine','سينزو':'Sanso','شارتوريج':'Chartoreg','شاركول':'Charcoal','شاركي':'Shark','صغير':'Sugar','صفامود':'Safamood','صوديوم':'Sodium','طفليبرو':'Taflupro','عدسات':'Awadist','فاتاشي':'Fattache','فاجيكلند':'Vagiclind','فاركوتيليام':'Farcotilium','فارمافلدامين':'Pharmavildamin','فاستم':'Fastum','فالساتنس':'Valsatens','فانكومايسين':'Vancomycine','فلدورال':'Feldoral','فلدين':'Feldene','فلوريد':'Fluoride','فليكستا':'Flexeta','فليكسوتيد':'Flixotide','فنتال':'Vental','فنتولين':'Ventolin','فنجيكلير':'Fungiclear','فنيستيل':'Fenistil','فورتام':'Fortum','فورررت':'Forte','فورفولازين':'Forflozin','فورميولا':'Formula','فولات':'Folate','فولدكس':'Foldex','فوليجانت':'Folligant','فومينج':'Foaming','فونيسكا':'Vonseca','فووورت':'Forte','فيتالو':'Vital','فيتاماونت':'Vitamount','فيتامينات':'Vitamount','فيتونكس':'Vitonex','فيروترون':'Ferrotron','فيروديونال':'Ferroduonal','فيسيرالجين':'Visceralgine','فيلداجلوز':'Vildagluse','فيلم':'Oflam','فيمابنت':'Femapent','فينادون':'Phenadone','فيوتاتريت':'Futatreat','فيوتافيلدكس':'Futavildix','فيوتاكوكسيب':'Futacoxib','فيوسيدرم':'Fusiderm','فيوسيدين':'Fucidin','فيوسيكورت':'Fucicort','قراص':'Cruise','كابكسي':'Capixy','كابوتن':'Capoten','كاربابكس':'Carbapex','كارباميد':'Carbamide','كارفالون':'Carivalan','كارمينكس':'Carminex','كارنتين':'Carnitine','كافينو':'Caffeine','كافيين':'Caffeine','كالامين':'Calamine','كالسيزوم':'Calcium','كالسيكولاج':'Calcicolage','كالسيمات':'Calcimate','كالمير':'Calmare','كاندلكان':'Candalkan','كانزارتان':'Kansartan','كانكر':'Concor','كبريت':'Kabrita','كتافاست':'Actifast','كرانبيري':'Cranberry','كريز':'Cruise','كريست':'Crosta','كفلكس':'Keflex','كليرتي':'Clearty','كليكسان':'Clexane','كلينسر':'Cleanser','كنترول':'Control','كوابروفال':'Coaprovel','كوادريدرم':'Quadriderm','كوانزايم':'Coenzyme','كوراسور':'Corasore','كورتوبكت':'Cortopect','كورتيبلكس':'Cortiplex','كوفابروندو':'Covaprendo','كوفرسيل':'Coversyl','كوكسوريزت':'Coxorizet','كوكسيريتور':'Coxritor','كولاجين':'Collagen','كولشيسين':'Colchicine','كولوسبازمين':'Colospasmin','كومبلكس':'Complex','كومبليت':'Complete','كومبيلكس':'Complex','كونتراكتيوبكس':'Contractubex','كونترلوك':'Controloc','كونفيجران':'Convagran','كونيستبرايد':'Constipride','كويتيكول':'Quitcool','كيتادين':'Kitadan','كيترولين':'Ketorolin','كيدز':'Kids','كيفيورك':'Kevork','كيمجرا':'Kemagra','لابيبريس':'Labipress','لاروسوزت':'Larosuzet','لاكتوفيرين':'Lactoferrin','لاكتيوول':'Lacteol','لاكريترز':'Lacritears','لاكوزاميت':'Lacosamet','لاكوفيميب':'Lacovimp','لاموترين':'Lamotrine','لانزابين':'Lanzapine','لجنوكايين':'Lignocaine','للرجال':'Allergyl','لليدين':'Iliadin','لنجوكورت':'Lungocort','لنزوفيوتال':'Lanzofutal','ليبانتيل':'Lipanthyl','ليبوزومال':'Liposomal','ليبوفريك':'Lipoferric','ليبيتوور':'Lipitor','ليبيكول':'Lipicole','ليدوكايين':'Lidocaine','ليدووكايين':'Lidocaine','ليرجي':'Allergy','ليسترين':'Listerine','ليكوفين':'Alcofan','ليمتلس':'Limitless','ليمتليس':'Limitless','لينكس':'Linex','ماتركس':'Matrix','مارفيتنس':'Marvitense','مارينيز':'Marnys','ماسكو':'Mask','ماغنسيوم':'Magnesium','ماغنيسيوم':'Magnesium','ماكروفيوران':'Macrofuran','ماكروو':'Macro','ماكسيبيم':'Maxipime','ماكسيدينير':'Maxdinir','مالتي':'Multi','مساج':'Massage','مستال':'Mustela','مسواك':'Mask','مكستارد':'Mixtard','منتول':'Mannitol','مودابكس':'Moodapex','موزابرايد':'Mosapride','مونيكيور':'Monicure','مياكلسيك':'Miacalcic','ميبافيوران':'Mepafuran','ميبروسين':'Mupirocin','ميدودرين':'Modern','ميديم':'Medium','ميراج':'Mirage','ميفاست':'Muvista','ميكسدرم':'Mixderm','ميللك':'Milky','ميليتوفكس':'Mellitofix','ميليتوفيكس':'Mellitofix','مينوفللين':'Minophylline','ميوبيراكس':'Mupirax','نابيبرادين':'Napibradine','ناتريلكس':'Natrilix','نازوستوب':'Nasostop','نثينول':'Antinal','نركاردو':'Nerkardou','نركافيكس':'Nercafix','نستوجين':'Nestogen','نوفري':'Innofer','نوفكس':'Novex','نياسينميد':'Niacinamide','نيبولايزر':'Nebulizer','نيرهافلكس':'Nerhafluks','نيفيكسال':'Nevxal','نيفيليوب':'Nevilob','نيكتاليا':'Nactalia','نيكسماش':'Neximash','نيوتراديفنس':'Nutradefense','نيوتريفيل':'Nutriville','نيورازين':'Neurazine','هالونيز':'Halonace','هايبوثايرونور':'Hypothyronor','هيباتاكسيم':'Hebitaxime','هيبامكس':'Hipamax','هيبرتونيك':'Hypertonic','هيدروكورتيزون':'Hydrocortisone','هيدورنسا':'Hydrensa','هيردوكسي':'Hairodex','هيرفوجين':'Hairvogine','هيلثي':'Healthy','هيموستاتين':'Haemostatine','هيموستوب':'Haemostop','وبروتين':'Protein','وفوليت':'Folate','وكالسيوم':'Calcium','وكولاجين':'Collagen','ويديبركس':'Wideprex','يوريكودروب':'Uricodrop','يونيبريدول':'Unipridol','يونيفرسال':'Universal','يونيكتام':'Unictam'};
         const EN_LEX = {};
         Object.keys(EN_LEX_RAW).forEach(k => { EN_LEX[normAr(k)] = EN_LEX_RAW[k]; });
+        Object.keys(EN_DB_EXACT).forEach(k => { const n = normAr(k); if (!EN_LEX[n]) EN_LEX[n] = EN_DB_EXACT[k]; });
+        const EN_BY_KEY = {};
+        Object.keys(EN_GENERICS_RAW).forEach(k => {
+            const n = normAr(k).replace(/\s+/g, '');
+            if (!EN_LEX[n]) EN_LEX[n] = EN_GENERICS_RAW[k];
+            const kk = keyArabic(n); if (kk.length >= 5) EN_BY_KEY[kk] = EN_GENERICS_RAW[k];
+        });
 
         const AR_TO_LAT = {'ب':'b','ت':'t','ث':'th','ج':'j','ح':'h','خ':'kh','د':'d','ذ':'z','ر':'r','ز':'z','س':'s','ش':'sh','ص':'s','ض':'d','ط':'t','ظ':'z','ع':'a','غ':'gh','ف':'f','ق':'k','ك':'k','ل':'l','م':'m','ن':'n','ه':'h'};
         function translitArWord(w) {
             const ch = [...w]; let out = '', run = 0;
+            const put = L => { if (run >= 2) { out += 'a'; run = 0; } out += L; run++; };
             for (let i = 0; i < ch.length; i++) {
                 const c = ch[i], nx = ch[i + 1];
                 if (c === 'ا') {
@@ -6965,26 +7018,198 @@ ${window.location.href}
                 } else if (c === 'و') { out += (i === 0 ? 'w' : 'o'); run = 0; }
                 else if (c === 'ي') { out += (i === ch.length - 1 ? 'y' : 'i'); run = 0; }
                 else if (c === 'ء') { /* skip */ }
-                else if (AR_TO_LAT[c]) {
-                    if (run >= 2) { out += 'a'; run = 0; }
-                    out += AR_TO_LAT[c]; run++;
-                } else out += c;
+                else if (c === 'ك' && nx === 'س') { out += 'x'; i++; run = 0; }
+                else if (c === 'ك' || c === 'ق') put(nx === 'ا' || nx === 'و' || nx === 'ل' || nx === 'ر' ? 'c' : 'k');
+                else if (c === 'ج') put('g');
+                else if (AR_TO_LAT[c]) put(AR_TO_LAT[c]);
+                else out += c;
             }
             return out.charAt(0).toUpperCase() + out.slice(1);
         }
-        const _enCache = new WeakMap();
-        function getEn(p) {
-            if (p.en && String(p.en).trim()) return String(p.en).trim();
-            let v = _enCache.get(p);
-            if (v === undefined) {
-                v = tokenizeName(normAr(p.name)).map(t => {
-                    if (!isArTok(t)) return t;
-                    return EN_LEX[t] || translitArWord(t);
-                }).join(' ').replace(/\s+/g, ' ').trim();
-                _enCache.set(p, v);
+        // ===== ARKAN EN-NAME ENGINE v2 (pharmacist-grade review) =====
+        const EN_FIX_RAW = {
+          // --- corrections to the old dictionary (confirmed errors) ---
+          'لايت':'Light','قطره':'Drops','قطرة':'Drops','نقط':'Drops','لزقه':'Patch',
+          // --- dosage forms / routes / descriptors (certain) ---
+          'قرص':'Tablet','اقراص':'Tablets','افراص':'Tablets','اقرص':'Tablets','ق':'Tablet','كبسول':'Capsules','كبسوله':'Capsule','كبسولات':'Capsules','كبسولة':'Capsule',
+          'امبول':'Ampoule','امبوله':'Ampoule','امبولات':'Ampoules','فيال':'Vial','حقن':'Injection','حقنه':'Injection','لبوس':'Suppositories','اقماع':'Suppositories',
+          'شراب':'Syrup','شرب':'Syrup','معلق':'Suspension','محلول':'Solution','كيس':'Sachet','اكياس':'Sachets','حبيبات':'Granules','بودر':'Powder','لبان':'Gum',
+          'مضغ':'Chewable','مصغ':'Chewable','فوار':'Effervescent','فيلم':'Film-Coated','تحتاللسان':'Sublingual','للاستنشاق':'Inhalation','استنشاق':'Inhalation','بالفم':'Oral','للفم':'Oral',
+          'عضل':'IM','وريد':'IV','وريدي':'Intravenous','للعين':'Eye','للاذن':'Ear','للانف':'Nasal','للجلد':'Topical','مهبلي':'Vaginal','للتاخير':'Delay',
+          'كريم':'Cream','جيل':'Gel','جل':'Gel','مرهم':'Ointment','لوسيون':'Lotion','لوشن':'Lotion','سبراي':'Spray','اسبراي':'Spray','اسبري':'Spray','بخاخ':'Spray','بخاخه':'Spray',
+          'شامبو':'Shampoo','غسول':'Wash','صابون':'Soap','صابونه':'Soap','سيرم':'Serum','سيروم':'Serum','بلسم':'Conditioner','كونديشنر':'Conditioner','ماسك':'Mask','مضمضه':'Mouthwash','غرغره':'Gargle',
+          'رضع':'Infant','اطفال':'Kids','للاطفال':'Kids','كبار':'Adults','رجال':'Men','رجالي':'Men','للرجال':'Men','نسايي':'Women','حوامل':'Pregnancy','للحوامل':'Pregnancy',
+          'جفاف':'Rehydration','مخدر':'Anesthetic','مطهر':'Antiseptic','نظيف':'Clean','جراحي':'Surgical','ماكرو':'Macro',
+          'ساده':'Plain','عادي':'Regular','عاادي':'Regular','كبير':'Large','صغير':'Small','صغيره':'Small','كبيره':'Large','وسط':'Medium','ميديم':'Medium','طويل':'Long','حساس':'Sensitive','حساسه':'Sensitive',
+          'بلس':'Plus','بلاس':'Plus','فورت':'Forte','ماكس':'Max','اكسترا':'Extra','الترا':'Ultra','جديد':'New','اوريجينال':'Original',
+          'ريتارد':'Retard','احمر':'Red','اصفر':'Yellow','ازرق':'Blue','اخضر':'Green','ابيض':'White','اسود':'Black',
+          'نعناع':'Mint','بالنعناع':'Mint','ليمون':'Lemon','بالليمون':'Lemon','وليمون':'Lemon','فراوله':'Strawberry','برتقال':'Orange','فانيليا':'Vanilla','شيكولاته':'Chocolate','موز':'Banana','تفاح':'Apple','جوافه':'Guava','كراويه':'Caraway','كركديه':'Hibiscus','ينسون':'Anise','قرفه':'Cinnamon','قرنفل':'Clove','عسل':'Honey','قهوه':'Coffee','توت':'Berry',
+          'مليون':'Million','مجم':'mg','مج':'mg','ملجم':'mg','ملغيم':'mg','ممج':'mg','محم':'mg','مكجم':'mcg','مللي':'ml','ملي':'ml','مل':'ml','ملل':'ml','ملى':'ml','جم':'g','جرام':'g','لتر':'L','سم':'cc','مم':'mm','وحده':'IU',
+          'سرنجات':'Syringes','سرنجه':'Syringe','علبه':'Box','علبتين':'2 Boxes','قطعه':'Piece','قطع':'Pieces','شريط':'Strip','باكت':'Pack','باكو':'Pack','باك':'Pack','قلم':'Pen','اقلام':'Pens','خراطيش':'Cartridges','انبوبه':'Tube','جرعه':'Dose',
+          'فواكه':'Fruits','للشعر':'for Hair','للوجه':'for Face','للجسم':'for Body','للبشره':'for Skin','للقشره':'Anti-Dandruff','للمفاصل':'for Joints','للاعصاب':'for Nerves','للكلي':'for Kidney','للبرد':'for Cold','للصلع':'for Hair Loss','للتخسيس':'Slimming','للاستحمام':'Shower','للعين':'Eye',
+          'ضد':'Anti','مضاد':'Anti','حيوي':'Biotic','طارد':'Expectorant','بلغم':'Mucus','ملينه':'Laxative','مخفض':'Lowering','فحم':'Charcoal','شاركول':'Charcoal','كحول':'Alcohol','ملح':'Salt','سكر':'Sugar','بدون':'Free','خالي':'Free','نهاري':'Day','نايت':'Night',
+          'سعر':'','جديد سعر':'', 'سعرجديد':'','عرض':'','ملغى':'','برومو':'','بالعلبه':'','مستورد':'Imported','مستورده':'Imported',
+          'اكسجين':'Oxygen','سلين':'Saline','سالين':'Saline','ايزوتونيك':'Isotonic','هيبرتونيك':'Hypertonic','هيرتونيك':'Hypertonic',
+          'ايزو':'Iso','ماء':'Water','ووتر':'Water','تونيك':'Tonic','شاي':'Tea',
+          // --- generics / ingredients (certain) ---
+          'كارباميد':'Carbamide','يوريا':'Urea','ديوزمين':'Diosmin','سيلينيوم':'Selenium','ماغنيسيوم':'Magnesium','ماغنسيوم':'Magnesium','ماجنيسيوم':'Magnesium','كافيين':'Caffeine','جنكو':'Ginkgo','جنكوبيلوبا':'Ginkgo Biloba',
+          'كولاكوجين':'Collagen','كولاجين':'Collagen','جينتاميسين':'Gentamicin','جنتاميسين':'Gentamicin','تتراسيكلين':'Tetracycline','بروجيسترون':'Progesterone','ثيوبنتال':'Thiopental','تيمولول':'Timolol',
+          'بيتاكاروتين':'Beta-Carotene','لاكتوفيرين':'Lactoferrin','جلوكوز':'Glucose','صوديوم':'Sodium','بايكرب':'Bicarbonate','كالسيوم':'Calcium','زنك':'Zinc','حديد':'Iron','ايرون':'Iron','فوليك':'Folic','حمض':'Acid','الفوليك':'Folic',
+          'ايبروفين':'Ibuprofen','ايبوبروفين':'Ibuprofen','باراسيتامول':'Paracetamol','بارستامول':'Paracetamol','بارسيتامول':'Paracetamol','باراستامول':'Paracetamol','باراسيتاموول':'Paracetamol','بروبوليس':'Propolis',
+          'دكسترافاست':'Dextrafast','ديكساميثازون':'Dexamethasone','ميتفورمين':'Metformin','اوميبرازول':'Omeprazole','ازيثروميسين':'Azithromycin','سيبروفلوكساسين':'Ciprofloxacin','ميترونيدازول':'Metronidazole',
+          'اميبرامين':'Imipramine','اميتريبتين':'Amitriptyline','كلاريثروميسين':'Clarithromycin','فانكومايسين':'Vancomycin','تيراميسين':'Terramycin','ستربتوكين':'Streptokinase','ليدوكايين':'Lidocaine','لجنوكايين':'Lidocaine','ديبوكايين':'Dibucaine',
+          'ميثوتريكسات':'Methotrexate','اميوتريكسات':'Methotrexate','لاكوزاميت':'Lacosamide','توبراميت':'Topiramate','دونبيزيل':'Donepezil','ايزوتريتينون':'Isotretinoin','اسباني':'Spanish','اوزمبك':'Ozempic','جلوكوفانس':'Glucovance','كلافيموكس':'Clavimox','لينكس':'Linex','اكوا':'Aqua','بيو':'Bio','بايو':'Bio',
+          'ريفاروكسابان':'Rivaroxaban','دبل':'Double','ميديسين':'Medicine','فيتامينات':'Vitamins','بروتين':'Protein','بروبيوتك':'Probiotic','بريبيوتك':'Prebiotic','اومجا':'Omega',
+          // --- confirmed Egyptian-market / international brand spellings ---
+          'اتروفنت':'Atrovent','اندرال':'Inderal','بلافيكس':'Plavix','بيتاديين':'Betadine','بيوتادين':'Betadine','بيتادين':'Betadine','ترنتال':'Trental','سبترين':'Septrin','كيبرا':'Keppra',
+          'زاريلتو':'Xarelto','زالاتان':'Xalatan','زالاكوم':'Xalacom','نولفادكس':'Nolvadex','سنجولير':'Singulair','سمبيكورت':'Symbicort','سليبركس':'Celebrex','سليبريكس':'Celebrex','كوردارون':'Cordarone',
+          'ديكسازون':'Dexazone','هيموستوب':'Hemostop','كونتافيفر':'Contafever','اوستيوكير':'Osteocare','زيثروماكس':'Zithromax','فلاجيل':'Flagyl','اوجمنتين':'Augmentin','بنادول':'Panadol','بانادول':'Panadol',
+          'كتافلام':'Cataflam','كاتافلام':'Cataflam','فولتارين':'Voltaren','بروفين':'Brufen','زيرتك':'Zyrtec','نيكسيوم':'Nexium','كونكور':'Concor','جلوكوفاج':'Glucophage','كلاريتين':'Claritin','فنتولين':'Ventolin',
+          'ميوكوسولفان':'Mucosolvan','انتينال':'Antinal','فيوسيدين':'Fucidin','ديرموفيت':'Dermovate','التروكسين':'Eltroxin','يوثيروكس':'Euthyrox','يوثيركس':'Euthyrox',
+          'كريستور':'Crestor','ليبيتور':'Lipitor','كلاسيد':'Klacid','كليكسان':'Clexane','لاسيكس':'Lasix','لاميكتال':'Lamictal','اركوكسيا':'Arcoxia','اليكويس':'Eliquis','زوفيراكس':'Zovirax','فياجرا':'Viagra','سياليس':'Cialis','ليفيترا':'Levitra','ياسمين':'Yasmin',
+          'اكتوس':'Actos','لانتوس':'Lantus','توجيو':'Toujeo','نوفورابيد':'NovoRapid','ابيدرا':'Apidra','ديفلوكان':'Diflucan','بيتاسيرك':'Betaserc','دوفاستون':'Duphaston','سيروكسات':'Seroxat','ريسبيردال':'Risperdal','تينورمين':'Tenormin','نورفاسك':'Norvasc','دياميكرون':'Diamicron','دافلون':'Daflon',
+        };
+        const EN_FIX = {};
+        Object.keys(EN_FIX_RAW).forEach(k => { EN_FIX[normAr(k).replace(/\s+/g,' ')] = EN_FIX_RAW[k]; });
+        // collapsed-repeat index (شرااااب -> شراب, كييييس -> كيس ...)
+        const collapseRep = w => w.replace(/(.)\1+/g, '$1');
+        const EN_FIX_C = {};
+        Object.keys(EN_FIX).forEach(k => { const c = collapseRep(k); if (!(c in EN_FIX_C)) EN_FIX_C[c] = EN_FIX[k]; });
+        const EN_LEX_C = {};
+        Object.keys(EN_LEX).forEach(k => { const c = collapseRep(k); if (!(c in EN_LEX_C)) EN_LEX_C[c] = EN_LEX[k]; });
+        const LETTER = {'ايه':'A','اي':'E','بي':'B','سي':'C','دي':'D','اف':'F','جي':'G','اتش':'H','كيو':'Q','ار':'R','اس':'S','تي':'T','يو':'U','في':'V','اكس':'X','كس':'X','واي':'Y','ام':'M','ان':'N','ال':'L','اوه':'O','زد':'Z','جى':'G'};
+        const SOLID_FORM = new Set(['Tablet','Tablets','Capsule','Capsules','Sachet','Sachets','Film-Coated','Chewable','Sublingual','Granules']);
+        const LIQ_FORM = new Set(['Syrup','Drops','Solution','Suspension','Ampoule','Ampoules','Injection','Vial','Spray','Lotion','Shampoo','Wash','Serum','Gel','Cream','Ointment']);
+        const FORCE_UNSURE = {'زيمبروسيل':'Zimprosil','ميبافيوران':'Mebafuran'};
+        const SOLID_BRANDS = new Set(['ماريفان']);
+        // brands whose strength is always in mg (list typed 'مل' by mistake)
+        const MG_BRANDS = new Set(['زاريلتو','كليكسان','مونجارو','نوفونورم','دافلون','زوركال','ريسدال','فيناستيورا','فيرنوفا','فولتارين','كريستور','ماريفان']);
+        const THY = /^(يوثيروكس|يوثيركس|التروكسين|ايكويثيرا|ثايروكس|ثيروكس|ثيروكسين|ليفوثيروكسين)/;
+        function cleanArabicName(name) {
+          let s = String(name || '').normalize('NFKC');
+          s = normAr(s)
+            .replace(/(?<![\u0600-\u06FF])س\s*\.?\s*ج(?![\u0600-\u06FF])/g, ' سعرجديد ')
+            .replace(/سعر\s*جديد/g, ' سعرجديد ')
+            .replace(/(?<![\u0600-\u06FF])(?:ش\s*)?س\s*س\s*ج\s*\d*\s*ج?(?![\u0600-\u06FF])/g, ' سعرجديد ')
+            .replace(/(?<![\u0600-\u06FF])(?:ش\s*)?س\s*[قج]\s*\d*\s*ج?(?![\u0600-\u06FF])/g, ' سعرجديد ')
+            .replace(/(?<![\u0600-\u06FF])س\s*\d+\s*ج?(?![\u0600-\u06FF])/g, ' سعرجديد ')
+            .replace(/سعر\s*[\d.]*\s*ج(?![\u0600-\u06FF])/g, ' سعرجديد ')
+            .replace(/س\s*\d+\s*ج(?![\u0600-\u06FF])/g, ' سعرجديد ')
+            .replace(/رو+ل\s*اون/g, 'رولاون')
+            .replace(/تحت\s*اللسان/g, ' تحتاللسان ')
+            .replace(/(\d)\s*\+\s*(\d)/g, '$1+$2')
+            .replace(/[()،\-_]/g, ' ');
+          return s;
+        }
+        function getEnInfo2(p) {
+          if (p.en && String(p.en).trim()) return { text: String(p.en).trim(), verified: true };
+          const s = cleanArabicName(p.name);
+          const toks = (s.match(/[\u0600-\u06FF]+|[a-z]+|\d+(?:[.,\/+]\d+)*%?/gi) || []);
+          const isThy = toks.some(t => THY.test(t));
+          // pass 1: classify
+          let ok = true; const notes = [];
+          const out = []; // {k:'w'|'n'|'u'|'f'|'L'|'x', v}
+          const hasLiq = toks.some(t => { const v = EN_FIX[t] || EN_FIX_C[collapseRep(t)]; return LIQ_FORM.has(v); });
+          const solidBrand = toks.some(t => SOLID_BRANDS.has(t));
+          const mgBrand = toks.some(t => MG_BRANDS.has(t));
+          const hasSupp = toks.some(t => /^(لبوس|لبوسس|لبوووس|اقماع)$/.test(collapseRep(t)) || /^لبوس/.test(t));
+          const hasSolid = solidBrand || toks.some(t => { const v = EN_FIX[t] || EN_FIX_C[collapseRep(t)]; return SOLID_FORM.has(v); });
+          for (let i = 0; i < toks.length; i++) {
+            const t = toks[i];
+            if (!isArTok(t)) { out.push(/^\d/.test(t) ? {k:'n', v:t} : {k:'w', v:t}); continue; }
+            const c = collapseRep(t);
+            if (t === 'ج') continue;
+            if (t === 'س' && toks[i+1] === 'ار') { out.push({k:'L', v:'S'}); continue; }
+            if (t === 'ك' && out.length && out[out.length-1].k === 'n') { out.push({k:'f', v:'Capsules'}); continue; }
+            if (t === 'ك' && /^\d/.test(toks[i+1] || '')) { if (notes.indexOf('check:K') < 0) notes.push('check:K'); }
+            if (FORCE_UNSURE[t]) { ok = false; out.push({k:'w', v:FORCE_UNSURE[t]}); continue; }
+            let v = EN_FIX[t]; if (v === undefined) v = EN_FIX_C[c];
+            if (t !== c && v !== undefined && EN_FIX[t] === undefined && notes.indexOf('typo') < 0) notes.push('typo');
+            let kind = 'w';
+            if (v === undefined && LETTER[t] !== undefined) { out.push({k:'L', v:LETTER[t]}); continue; }
+            if (v === undefined) { v = EN_LEX[t]; if (v === undefined) v = EN_LEX_C[c]; }
+            if (v === undefined) { const g = EN_BY_KEY[keyArabic(t)]; if (g) v = g; }
+            if (v === undefined) { ok = false; v = EN_DB_SOFT[t] || translitArWord(t); }
+            if (v === '') continue;
+            if (['mg','mcg','ml','g','IU','mm','cc','L'].includes(v)) kind = 'u';
+            else if (SOLID_FORM.has(v) || LIQ_FORM.has(v)) kind = 'f';
+            out.push({k:kind, v});
+          }
+          // pass 2: unit sanity (dose-unit typos)
+          for (let i = 0; i < out.length; i++) {
+            const o = out[i];
+            if (o.k === 'u' && i > 0 && out[i-1].k === 'n') {
+              if (isThy && (o.v === 'mg' || o.v === 'ml' || o.v === 'g')) { if (o.v !== 'mcg') notes.push('dose:mcg'); o.v = 'mcg'; }
+              else if (o.v === 'ml' && ((hasSolid && !hasLiq) || hasSupp || (mgBrand && !hasLiq))) { o.v = 'mg'; notes.push('dose:ml>mg'); }
+              else if (o.v === 'ml' && !hasLiq && !hasSolid && p.cat === 'أدوية' && !/ملي|مل\s*$/.test('')) { notes.push('dose:ml?'); }
+              else if (o.v === 'mg' && hasLiq && !hasSolid && /^(Solution|Spray|Wash|Lotion|Shampoo)$/.test((out.find(x=>x.k==='f'&&/^(Solution|Spray|Wash|Lotion|Shampoo)$/.test(x.v))||{}).v||'') && parseFloat(out[i-1].v) >= 30) { notes.push('dose:mg?'); }
+              if (o.v === 'mg' && parseFloat(out[i-1].v) >= 5000) notes.push('dose:huge');
+              else if (o.v === 'cc') o.v = 'ml';
             }
+          }
+          // pass 3: letters merge (XR, HP, D3, B12)
+          const merged = [];
+          for (let i = 0; i < out.length; i++) {
+            const o = out[i];
+            if (o.k === 'L') {
+              let acc = o.v, j = i + 1;
+              while (j < out.length && out[j].k === 'L') { acc += out[j].v; j++; }
+              if (j < out.length && out[j].k === 'n' && /^\d{1,2}$/.test(out[j].v) && !(out[j+1] && (out[j+1].k === 'u' || out[j+1].k === 'f'))) { acc += out[j].v; j++; }
+              merged.push({k:'w', v:acc}); i = j - 1;
+            } else merged.push(o);
+          }
+          // pass 4: numbers + forms (pack counts), plural/singular, strength joins
+          const parts = [];
+          for (let i = 0; i < merged.length; i++) {
+            const o = merged[i], nx = merged[i+1];
+            if (o.k === 'n') {
+              if (nx && nx.k === 'u') { parts.push(o.v + ' ' + nx.v); i++; continue; }
+              if (/%$/.test(o.v)) { parts.push(o.v); continue; }
+              if (nx && nx.k === 'f') {
+                const q = parseFloat(o.v.replace(',', '.'));
+                let f = nx.v;
+                if (q <= 1) f = f.replace(/^Tablets$/, 'Tablet').replace(/^Capsules$/, 'Capsule').replace(/^Sachets$/, 'Sachet');
+                else f = f.replace(/^Tablet$/, 'Tablets').replace(/^Capsule$/, 'Capsules').replace(/^Sachet$/, 'Sachets').replace(/^Ampoule$/, 'Ampoules');
+                parts.push(o.v + ' ' + f); i++; continue;
+              }
+              parts.push(o.v); continue;
+            }
+            if (o.k === 'f') { let f = o.v; if (f === 'Tablet') f = 'Tablets'; if (f === 'Ampoule') f = 'Ampoules'; if (f === 'Capsule') f = 'Capsules'; if (f === 'Sachet') f = 'Sachets'; parts.push(f); continue; }
+            if (o.k === 'u') { parts.push(o.v); continue; }
+            parts.push(o.v);
+          }
+          if (isThy && !/Tablets|Capsules|Ampoule|Injection/.test(parts.join(' '))) parts.push('Tablets');
+          let text = parts.join(' ').replace(/\s+/g, ' ').trim();
+          // wording fixes
+          text = text.replace(/\bFilm-Coated(?! Tablets| Capsules)\b/, m => /Tablets|Capsules/.test(text) ? m : 'Film-Coated Tablets');
+          text = text.replace(/\b(Tablets?|Capsules?|Sachets?) (Effervescent|Chewable|Sublingual)\b/g, '$2 $1');
+          text = text.replace(/\b(Tablets?|Capsules?) Film-Coated\b/g, 'Film-Coated $1');
+          text = text.replace(/\bEye Drops\b/g, 'Eye Drops').replace(/\b(Eye|Ear|Nasal) (.*?)\bDrops\b/, (m, a, mid) => a + ' Drops' + (mid.trim() ? ' ' + mid.trim() : ''));
+          text = text.replace(/\bTablets Tablets\b/g, 'Tablets').replace(/\bCapsules Capsules\b/g, 'Capsules').replace(/\b(\w+) \1\b/gi, '$1');
+          text = text.replace(/\bAlternative\b/g, 'Alt. to');
+          return { text, verified: ok, note: notes.join(',') };
+        }
+
+
+
+        const _enCache = new WeakMap();
+        function getEnInfo(p) {
+            if (p.en && String(p.en).trim()) return { text: String(p.en).trim(), verified: true, note: '' };
+            let v = _enCache.get(p);
+            if (v === undefined) { v = getEnInfo2(p); _enCache.set(p, v); }
             return v;
         }
+        function getEn(p) { return getEnInfo(p).text; }
+        const EN_NOTE_AR = {
+            'dose:ml>mg': 'تم تصحيح وحدة الجرعة من «مل» إلى «مجم» (خطأ كتابة في اسم الصنف)',
+            'dose:mcg': 'الجرعة بالميكروجرام (ليفوثيروكسين) — تم تصحيح الوحدة',
+            'dose:ml?': '⚠ راجع وحدة الجرعة: مكتوب «مل» بدون شكل دوائي سائل',
+            'dose:mg?': '⚠ راجع وحدة الجرعة: «مجم» مع شكل سائل/بخاخ',
+            'dose:huge': '⚠ جرعة غير منطقية — راجع الصنف',
+            'check:K': '⚠ حرف «ك» غير واضح في الاسم العربي — راجع (كبسولة؟)',
+            'typo': 'تم تصحيح تكرار حروف في الاسم العربي'
+        };
+        function enNoteText(note) { return String(note || '').split(',').filter(Boolean).map(n => EN_NOTE_AR[n] || n).join(' — '); }
 
         // Phonetic skeleton keys so Arabic spelling and English spelling meet in the middle
         function keyArabic(w) {
@@ -7029,16 +7254,81 @@ ${window.location.href}
             });
         }
 
+        function enChip(item, extra) {
+            const i = getEnInfo(item);
+            const nt = enNoteText(i.note);
+            const warn = /\?|huge|check/.test(i.note || '') ? '⚠ ' : '';
+            const ttl = nt ? ` title="${nt.replace(/"/g, '&quot;')}"` : '';
+            return i.verified
+                ? `<span dir="ltr"${ttl} class="inline-block ${extra} text-[11px] font-bold ${warn ? 'text-amber-900 bg-amber-50 border-amber-400' : 'text-emerald-900 bg-emerald-50 border-emerald-300'} border rounded-md px-1.5 py-0.5 mr-1">${warn}${i.text}</span>`
+                : `<span dir="ltr" title="${nt ? nt.replace(/"/g, '&quot;') + ' — ' : ''}اسم إنجليزي تقريبي لم تتم مراجعته" class="inline-block ${extra} text-[11px] font-semibold text-arkan-bronze/80 bg-white border border-dashed border-arkan-gold rounded-md px-1.5 py-0.5 mr-1">${warn}~ ${i.text}</span>`;
+        }
+
+        // ---- English names: export / import (to review in batches) ----
+        function csvCell(v) { return '"' + String(v ?? '').replace(/"/g, '""') + '"'; }
+        function exportEnglishNames(onlyUnverified) {
+            const rows = products.filter(p => !onlyUnverified || !getEnInfo(p).verified);
+            const csv = '\uFEFFid,arabic,english,status,note\n' + rows.map(p => { const i = getEnInfo(p); return [p.id, csvCell(p.name), csvCell(i.text), csvCell(i.verified ? 'confirmed' : 'needs-review'), csvCell(enNoteText(i.note))].join(','); }).join('\n');
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(new Blob([csv], { type: 'text/csv;charset=utf-8' }));
+            a.download = onlyUnverified ? 'arkan_english_names_to_review.csv' : 'arkan_english_names_all.csv';
+            document.body.appendChild(a); a.click(); a.remove();
+            showToast(`تم تصدير ${rows.length} صنف.`);
+        }
+        function parseCsvLine(line) {
+            const out = []; let cur = '', q = false;
+            for (let i = 0; i < line.length; i++) {
+                const c = line[i];
+                if (q) { if (c === '"' && line[i + 1] === '"') { cur += '"'; i++; } else if (c === '"') q = false; else cur += c; }
+                else if (c === '"') q = true; else if (c === ',') { out.push(cur); cur = ''; } else cur += c;
+            }
+            out.push(cur); return out;
+        }
+        function importEnglishNames(input) {
+            const f = input.files && input.files[0]; if (!f) return;
+            const rd = new FileReader();
+            rd.onload = () => {
+                let rows = [];
+                const txt = String(rd.result).replace(/^\uFEFF/, '');
+                try {
+                    if (f.name.toLowerCase().endsWith('.json')) rows = JSON.parse(txt).map(r => [r.id, r.arabic, r.english ?? r.en]);
+                    else rows = txt.split(/\r?\n/).slice(1).filter(Boolean).map(parseCsvLine);
+                } catch (e) { showToast('تعذر قراءة الملف.', 'error'); return; }
+                let n = 0;
+                rows.forEach(r => {
+                    const id = Number(r[0]), en = String(r[2] || '').trim();
+                    const idx = products.findIndex(p => p.id === id);
+                    if (idx === -1 || !en || /^~/.test(en)) return;
+                    if (products[idx].en !== en) { products[idx] = { ...products[idx], en }; n++; }
+                });
+                persistState(KEYS.PRODUCTS, products);
+                cloudSaveCatalogOverrides(products);
+                renderAdminProductsTable();
+                showToast(`تم تحديث الاسم الإنجليزي لـ ${n} صنف.`);
+                input.value = '';
+            };
+            rd.readAsText(f, 'utf-8');
+        }
+        function updateEnglishStats() {
+            const el = document.getElementById('en-stats'); if (!el) return;
+            const v = products.filter(p => getEnInfo(p).verified).length;
+            el.textContent = `مراجَع: ${v} من ${products.length} صنف`;
+        }
+
         // ---- Product images (stored apart from the main catalog so it stays light) ----
         const KEY_IMAGES = 'arkan_cairo_prod_images_v1';
+        const KEY_IMG_SRC = 'arkan_cairo_prod_images_src_v1';
         let PROD_IMAGES = {};
-        function setProductImage(id, src) {
+        let PROD_IMG_SRC = {};
+        function setProductImage(id, src, source) {
+            if (src && source) PROD_IMG_SRC[id] = source; else delete PROD_IMG_SRC[id];
+            persistState(KEY_IMG_SRC, PROD_IMG_SRC);
             if (src) PROD_IMAGES[id] = src; else delete PROD_IMAGES[id];
             persistState(KEY_IMAGES, PROD_IMAGES);
             try {
                 if (typeof firestoreDB !== 'undefined' && firestoreDB) {
                     const ref = firestoreDB.collection('productImages').doc(String(id));
-                    (src ? ref.set({ src }) : ref.delete()).catch(e => console.error('image sync error', e));
+                    (src ? ref.set({ src, source: PROD_IMG_SRC[id] || '' }) : ref.delete()).catch(e => console.error('image sync error', e));
                 }
             } catch (e) { console.error(e); }
         }
@@ -7059,33 +7349,86 @@ ${window.location.href}
             finally { clearTimeout(t); }
         }
         async function liveSearchImages(p) {
-            const terms = liveQueryTerms(p); const found = []; const seen = new Set();
-            const add = (src, full, label, source) => { if (src && !seen.has(src)) { seen.add(src); found.push({ src, full: full || src, label, source }); } };
-            const tasks = [];
-            for (const q of terms) {
-                tasks.push(fetchJsonTimeout('https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=url|mime&iiurlwidth=420&format=json&origin=*&gsrsearch=' + encodeURIComponent(q + ' ' + (p.cat === 'أدوية' ? 'medicine' : ''))).then(d => {
-                    Object.values((d.query && d.query.pages) || {}).forEach(pg => {
-                        const ii = pg.imageinfo && pg.imageinfo[0];
-                        if (ii && /image\/(jpeg|png)/.test(ii.mime || '')) add(ii.thumburl || ii.url, ii.url, (pg.title || '').replace(/^File:/, ''), 'Wikimedia');
-                    });
-                }).catch(() => {}));
-                if (p.cat !== 'أدوية') {
-                    const host = p.cat === 'مستحضرات تجميل' ? 'world.openbeautyfacts.org' : 'world.openfoodfacts.org';
-                    tasks.push(fetchJsonTimeout('https://' + host + '/cgi/search.pl?search_simple=1&action=process&json=1&page_size=6&fields=product_name,image_front_small_url,image_front_url&search_terms=' + encodeURIComponent(q)).then(d => {
-                        (d.products || []).forEach(x => add(x.image_front_url || x.image_front_small_url, x.image_front_url, x.product_name, host.includes('beauty') ? 'Open Beauty Facts' : 'Open Food Facts'));
-                    }).catch(() => {}));
-                }
-            }
-            await Promise.all(tasks);
-            return found.slice(0, 8);
+            // Trusted, brand-exact only: Open Food Facts / Open Beauty Facts (manufacturer barcode data).
+            // Medicines get NO automatic image (wrong-pack risk) -> official EDA / manufacturer links instead.
+            if (p.cat === 'أدوية' || !getEnInfo(p).verified) return [];
+            const brand = liveQueryTerms(p)[0]; if (!brand) return [];
+            const first = brand.split(' ')[0].toLowerCase();
+            const host = p.cat === 'مستحضرات تجميل' ? 'world.openbeautyfacts.org' : 'world.openfoodfacts.org';
+            const found = [];
+            try {
+                const d = await fetchJsonTimeout('https://' + host + '/cgi/search.pl?search_simple=1&action=process&json=1&page_size=12&fields=code,product_name,brands,image_front_small_url,image_front_url&search_terms=' + encodeURIComponent(brand));
+                (d.products || []).forEach(x => {
+                    const hay = ((x.product_name || '') + ' ' + (x.brands || '')).toLowerCase();
+                    const img = x.image_front_url || x.image_front_small_url;
+                    if (img && hay.includes(first)) found.push({ src: img, full: img, label: x.product_name || brand, source: host.includes('beauty') ? 'Open Beauty Facts' : 'Open Food Facts', link: 'https://' + host + '/product/' + x.code });
+                });
+            } catch (e) {}
+            return found.slice(0, 6);
         }
-        function showMainImage(src) {
+        function showMainImage(src, fb) {
             const box = document.getElementById('pimg-box');
             box.innerHTML = '<img id="pimg-el" alt="" class="max-h-full max-w-full object-contain">';
             const el = document.getElementById('pimg-el');
-            el.onerror = () => { box.innerHTML = '<div class="text-center text-arkan-bronze p-6 text-xs font-bold">تعذر تحميل هذه الصورة</div>'; };
+            el.onerror = () => {
+                if (fb && el.src !== fb) { el.src = fb; if (_liveCurrent) _liveCurrent.shown = fb; return; }
+                box.innerHTML = '<div class="text-center text-arkan-bronze p-6 text-xs font-bold">تعذر تحميل هذه الصورة</div>';
+            };
             el.src = src;
             if (_liveCurrent) _liveCurrent.shown = src;
+        }
+        const GCSE_KEY = 'arkan_gcse_v1';
+        // ضع هنا مفتاح Google Custom Search (Image) ومعرّف المحرك مرة واحدة ليعمل البحث الداخلي لكل الصيادلة تلقائياً.
+        // البحث يتم من داخل البرنامج ويعرض الصورة داخل النافذة — بدون فتح أي رابط خارجي.
+        const GCSE_DEFAULT = { key: '', cx: '' };
+        function getGcse() {
+            try { const v = JSON.parse(localStorage.getItem(GCSE_KEY) || 'null'); if (v && v.key && v.cx) return v; } catch (e) {}
+            return (GCSE_DEFAULT.key && GCSE_DEFAULT.cx) ? GCSE_DEFAULT : null;
+        }
+        // brand-only query (no strength / form words) so image search targets the pack, not the dose
+        function brandQuery(p) {
+            const out = [];
+            for (const w of getEn(p).split(/\s+/)) {
+                if (!/^[A-Za-z][A-Za-z.-]*$/.test(w) || LIVE_STOP.has(w.toLowerCase()) || /^alt\.?$/i.test(w)) break;
+                out.push(w); if (out.length >= 3) break;
+            }
+            return out.join(' ');
+        }
+        // Wikimedia Commons (no key, CORS-enabled) — exact brand match in the file title only
+        async function wikimediaImages(p) {
+            const brand = brandQuery(p); if (!brand || !getEnInfo(p).verified) return [];
+            const first = brand.split(' ')[0].toLowerCase();
+            try {
+                const d = await fetchJsonTimeout('https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=' + encodeURIComponent(brand + ' box') + '&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=url&iiurlwidth=500&format=json&origin=*');
+                const pages = d.query && d.query.pages ? Object.values(d.query.pages) : [];
+                return pages.filter(pg => (pg.title || '').toLowerCase().includes(first) && pg.imageinfo && pg.imageinfo[0] && /\.(jpe?g|png|webp)$/i.test(pg.title || ''))
+                    .slice(0, 6).map(pg => ({ src: pg.imageinfo[0].thumburl || pg.imageinfo[0].url, full: pg.imageinfo[0].thumburl || pg.imageinfo[0].url, label: pg.title, source: 'Wikimedia Commons', link: pg.imageinfo[0].descriptionurl || '', wiki: true }));
+            } catch (e) { return []; }
+        }
+        function configureGoogleSearch() {
+            const key = prompt('Google API key (Custom Search JSON API):'); if (!key) return;
+            const cx = prompt('Search engine ID (cx):'); if (!cx) return;
+            try { localStorage.setItem(GCSE_KEY, JSON.stringify({ key: key.trim(), cx: cx.trim() })); } catch (e) {}
+            Object.keys(_liveCache).forEach(k => delete _liveCache[k]);
+            if (_liveCurrent) openProductImage(_liveCurrent.id);
+        }
+        let _gErr = '';
+        async function googleImageSearch(p) {
+            const g = getGcse(); _gErr = '';
+            if (!g) return null;
+            const cat = p.cat === 'أدوية' ? 'medicine box' : p.cat === 'ألبان أطفال' ? 'infant formula' : p.cat === 'مستحضرات تجميل' ? 'cosmetic product' : 'supplement';
+            const q = ((brandQuery(p) || getEn(p)) + ' ' + cat + ' Egypt').replace(/\s+/g, ' ').trim();
+            const u = 'https://www.googleapis.com/customsearch/v1?key=' + encodeURIComponent(g.key) + '&cx=' + encodeURIComponent(g.cx) + '&searchType=image&num=6&safe=active&gl=eg&q=' + encodeURIComponent(q);
+            try {
+                const d = await fetchJsonTimeout(u, 9000);
+                if (d.error) { _gErr = d.error.message || 'خطأ من جوجل'; return []; }
+                return (d.items || []).map(x => ({ src: (x.image && x.image.thumbnailLink) || x.link, full: x.link, thumb: (x.image && x.image.thumbnailLink) || '', label: x.title || q, source: 'Google — ' + (x.displayLink || ''), link: (x.image && x.image.contextLink) || x.link, google: true }));
+            } catch (e) { _gErr = 'تعذّر الاتصال ببحث جوجل (المفتاح أو الحصة أو الشبكة)'; return []; }
+        }
+        function pickLive(i) {
+            const r = _liveCurrent && _liveCurrent.results && _liveCurrent.results[i]; if (!r) return;
+            showMainImage(r.full || r.src, r.thumb);
+            _liveCurrent.source = r.source + ' — ' + r.link;
         }
         async function openProductImage(id) {
             const p = products.find(x => x.id === id);
@@ -7095,31 +7438,38 @@ ${window.location.href}
             document.getElementById('pimg-name-ar').textContent = p.name;
             document.getElementById('pimg-name-en').textContent = en;
             document.getElementById('pimg-cat').textContent = p.cat;
-            document.getElementById('pimg-google').href = 'https://www.google.com/search?tbm=isch&q=' + encodeURIComponent(en + ' ' + p.name);
             const gal = document.getElementById('pimg-gallery'), st = document.getElementById('pimg-live-status'), sv = document.getElementById('pimg-save-btn');
             gal.innerHTML = ''; st.textContent = ''; sv.classList.add('hidden');
+            document.getElementById('pimg-gcfg').classList.toggle('hidden', !(currentSession && currentSession.role === 'admin'));
             const box = document.getElementById('pimg-box');
             document.getElementById('product-image-modal').classList.remove('hidden');
-            if (src) { showMainImage(src); st.textContent = 'صورة معتمدة من المخزن'; return; }
+            if (src) { showMainImage(src); st.textContent = 'صورة معتمدة من المخزن' + (PROD_IMG_SRC[id] ? ' — المصدر: ' + PROD_IMG_SRC[id] : ''); return; }
 
             box.innerHTML = '<div class="text-center text-arkan-bronze p-6"><div class="text-4xl mb-2 animate-pulse">🔎</div><div class="text-xs font-bold">جاري البحث عن صورة المستحضر...</div></div>';
             let results = _liveCache[id];
-            if (!results) { results = await liveSearchImages(p); _liveCache[id] = results; }
+            if (!results) {
+                results = await liveSearchImages(p);
+                if (!results.length) { const gr = await googleImageSearch(p); if (gr) results = gr; }
+                if (!results.length && !_gErr) results = await wikimediaImages(p);
+                if (!_gErr) _liveCache[id] = results;
+            }
             if (token !== _liveToken) return; // user opened another product meanwhile
             if (!results.length) {
-                box.innerHTML = '<div class="text-center text-arkan-bronze p-6"><div class="text-5xl mb-2">💊</div><div class="text-xs font-bold">لم أجد صورة تلقائياً لهذا المستحضر</div></div>';
-                st.textContent = 'جرّب زر البحث في جوجل بالأسفل';
+                box.innerHTML = '<div class="text-center text-arkan-bronze p-6"><div class="text-5xl mb-2">💊</div><div class="text-xs font-bold">لا توجد صورة موثّقة تلقائياً (الأدوية لا تُعرض لها صور تخمينية)</div></div>';
+                st.textContent = _gErr ? _gErr : !getGcse() ? ((currentSession && currentSession.role === 'admin') ? 'لا توجد صورة معتمدة — فعّل البحث الداخلي من ⚙️ أو ارفع صورة العبوة من «تعديل الصنف»' : 'لا توجد صورة لهذا الصنف بعد') : getEnInfo(p).verified ? 'لم يتم العثور على صورة — يمكن للأدمن رفع صورة العبوة من «تعديل الصنف»' : 'الاسم الإنجليزي غير مراجَع — راجعه أولاً ثم أعد المحاولة';
                 return;
             }
-            showMainImage(results[0].full || results[0].src);
-            st.textContent = 'نتائج بحث حية من النت — تأكد من مطابقة العبوة قبل الاعتماد عليها';
+            _liveCurrent.results = results;
+            showMainImage(results[0].full || results[0].src, results[0].thumb);
+            st.textContent = results[0].google ? 'نتيجة بحث جوجل التلقائي (' + results[0].source + ') — غير موثّقة: طابق العبوة قبل الاعتماد' : results[0].wiki ? 'من ويكيميديا كومنز — غير موثّقة: طابق العبوة قبل الاعتماد' : 'المصدر: ' + results[0].source + ' (مطابقة تامة للاسم التجاري) — راجع العبوة قبل الاعتماد';
+            _liveCurrent.source = results[0].source + ' — ' + results[0].link;
             const esc = v => String(v || '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'%27'}[c]));
-            gal.innerHTML = results.map((r, i) => `<img src="${esc(r.src)}" title="${esc(r.label)} (${esc(r.source)})" onclick="showMainImage('${esc(r.full || r.src)}')" class="h-14 w-14 shrink-0 object-contain bg-white border border-arkan-sand rounded-lg cursor-pointer hover:border-arkan-dark" onerror="this.remove()">`).join('');
+            gal.innerHTML = results.map((r, i) => `<img src="${esc(r.src)}" title="${esc(r.label)} (${esc(r.source)})" onclick="pickLive(${i})" class="h-14 w-14 shrink-0 object-contain bg-white border border-arkan-sand rounded-lg cursor-pointer hover:border-arkan-dark" onerror="this.remove()">`).join('');
             if (currentSession && currentSession.role === 'admin') sv.classList.remove('hidden');
         }
         function saveLiveImageAsOfficial() {
             if (!_liveCurrent || !_liveCurrent.shown) return;
-            setProductImage(_liveCurrent.id, _liveCurrent.shown);
+            setProductImage(_liveCurrent.id, _liveCurrent.shown, _liveCurrent.source || '');
             showToast('تم اعتماد الصورة للصنف وستظهر لكل الصيادلة.');
             openProductImage(_liveCurrent.id);
         }
@@ -7205,7 +7555,7 @@ ${window.location.href}
                         <td class="py-3 px-4">
                             <div class="font-extrabold text-arkan-dark leading-snug cursor-pointer" onclick="openProductImage(${item.id})" title="اضغط لعرض صورة المستحضر">
                                 <span class="inline-flex items-center justify-center w-5 h-5 rounded-md ${PROD_IMAGES[item.id] ? 'bg-emerald-100 text-emerald-800' : 'bg-arkan-cream text-arkan-bronze'} text-[11px] align-middle ml-1">📷</span>${item.name}
-                                <span dir="ltr" class="inline-block align-middle text-[11px] font-bold text-arkan-bronze bg-arkan-cream border border-arkan-sand rounded-md px-1.5 py-0.5 mr-1">${getEn(item)}</span>
+                                ${enChip(item, 'align-middle')}
                                 ${shortageBadge}
                             </div>
                             <span class="text-[10px] text-arkan-bronze font-semibold">${item.cat}</span>
@@ -8035,7 +8385,7 @@ ${url}`);
             <div id="pimg-live-status" class="text-[11px] font-bold text-arkan-bronze text-center"></div>
             <div id="pimg-gallery" class="flex gap-2 overflow-x-auto pb-1"></div>
             <button id="pimg-save-btn" type="button" onclick="saveLiveImageAsOfficial()" class="hidden w-full text-xs font-extrabold text-white bg-emerald-700 hover:bg-emerald-800 rounded-xl py-2 cursor-pointer">✔ اعتماد الصورة المعروضة كصورة رسمية للصنف</button>
-            <a id="pimg-google" target="_blank" rel="noopener" class="block text-center text-xs font-extrabold text-arkan-dark bg-arkan-cream hover:bg-arkan-sand border border-arkan-sand rounded-xl py-2 cursor-pointer">🔍 عرض صور المستحضر على جوجل</a>
+            <button id="pimg-gcfg" type="button" onclick="configureGoogleSearch()" class="hidden block w-full text-center text-xs font-extrabold text-arkan-dark bg-white border border-arkan-sand rounded-xl py-2 cursor-pointer">⚙️ إعداد بحث جوجل التلقائي (مرة واحدة)</button>
         </div>
     </div>
 
