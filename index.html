@@ -684,14 +684,10 @@
             <div class="bg-white border border-arkan-sand rounded-2xl p-6 shadow-sm max-w-xl">
                 <h3 class="text-sm font-black text-arkan-dark mb-1">تغيير كلمة مرور حساب الأدمن</h3>
                 <p class="text-xs text-arkan-bronze mb-3">سيتم إرسال رابط آمن إلى بريد حساب الأدمن المسجل في Firebase لتغيير كلمة المرور.</p>
-                <div class="flex items-center gap-2">
-                    <input type="text" id="adm-new-password" disabled placeholder="تغيير كلمة المرور عبر البريد الإلكتروني..."
-                        class="num-en flex-1 bg-arkan-light border border-arkan-sand rounded-xl px-4 py-2.5 text-xs font-bold focus:bg-white focus:border-arkan-primary focus:outline-none">
-                    <button type="button" onclick="adminChangePassword()"
-                        class="bg-arkan-dark hover:bg-arkan-primary text-white px-5 py-2.5 rounded-xl text-xs font-extrabold cursor-pointer">
-                        تحديث كلمة المرور
-                    </button>
-                </div>
+                <button type="button" onclick="adminChangePassword()"
+                    class="bg-arkan-dark hover:bg-arkan-primary text-white px-5 py-2.5 rounded-xl text-xs font-extrabold cursor-pointer">
+                    إرسال رابط تغيير كلمة المرور
+                </button>
             </div>
         </div>
 
