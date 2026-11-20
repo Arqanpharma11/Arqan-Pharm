@@ -7118,28 +7118,33 @@ ${window.location.href}
         // Telegram security/audit alerts. The bot token stays inside the Cloudflare Worker.
         const TELEGRAM_ALERT_ENDPOINT = 'https://arkan-telegram-alerts.mostafaalaaqweasdq123.workers.dev/';
 
-        function notifyAdminEvent(eventName, details = {}) {
+        async function notifyAdminEvent(eventName, details = {}) {
             try {
+                const user = firebase.auth().currentUser;
+                if (!user || user.uid !== ADMIN_UID) return;
+                const idToken = await user.getIdToken();
                 const safeDetails = Object.entries(details)
                     .filter(([key, value]) => value !== undefined && value !== null && String(value).trim() !== '')
                     .map(([key, value]) => `${key}: ${String(value).slice(0, 180)}`)
-                    .join('\n');
+                    .join('\\n');
                 const message = [
                     '🔐 تنبيه أمني - مخزن أركان',
                     `الحدث: ${eventName}`,
                     `الوقت: ${new Date().toLocaleString('ar-EG')}`,
                     safeDetails
-                ].filter(Boolean).join('\n');
-                fetch(TELEGRAM_ALERT_ENDPOINT, {
+                ].filter(Boolean).join('\\n');
+                const response = await fetch(TELEGRAM_ALERT_ENDPOINT, {
                     method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${idToken}`
+                    },
                     body: JSON.stringify({ message }),
                     keepalive: true
-                }).then(response => {
-                    if (!response.ok) console.warn('Telegram alert rejected:', response.status);
-                }).catch(error => console.warn('Telegram alert unavailable:', error));
+                });
+                if (!response.ok) console.warn('Telegram alert rejected:', response.status);
             } catch (error) {
-                console.warn('Telegram alert could not be prepared:', error);
+                console.warn('Telegram alert unavailable:', error);
             }
         }
 
