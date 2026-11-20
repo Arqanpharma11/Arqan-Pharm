@@ -6833,28 +6833,45 @@
                 products = enrichProducts([...MASTER_CATALOG]);
             }
 
+            // Remove the legacy plaintext admin password from this browser.
+            try { localStorage.removeItem('arkan_cairo_admin_pass_v5'); } catch (_) {}
+
+            let authReady = false;
             try {
                 if (initFirebaseCloud()) {
-                    firebase.auth().onAuthStateChanged((user) => {
-                        if (user && user.uid === ADMIN_UID) enterAdminPortal();
-                        else if (currentSession?.role === 'admin') {
-                            currentSession = null;
-                            persistState(KEYS.SESSION, null);
-                            showGatewayView();
+                    firebase.auth().onAuthStateChanged(async (user) => {
+                        authReady = true;
+                        if (user && user.uid === ADMIN_UID) {
+                            // One-time cleanup of the legacy plaintext password field.
+                            try {
+                                await firestoreDB.collection('settings').doc('global').update({
+                                    adminPass: firebase.firestore.FieldValue.delete()
+                                });
+                            } catch (cleanupErr) {
+                                if (cleanupErr.code !== 'firestore/not-found') {
+                                    console.warn('Legacy adminPass cleanup pending:', cleanupErr.code || cleanupErr.message);
+                                }
+                            }
+                            enterAdminPortal();
+                        } else {
+                            if (currentSession?.role === 'admin') {
+                                currentSession = null;
+                                persistState(KEYS.SESSION, null);
+                            }
+                            if (currentSession?.role === 'pharmacist' && currentSession.user) {
+                                const freshUser = pharmacists.find(p => p.phone === currentSession.user.phone) || currentSession.user;
+                                enterPharmacistPortal(freshUser);
+                            } else {
+                                showGatewayView();
+                            }
                         }
                     });
                     startCloudRealtimeListeners();
+                } else {
+                    showGatewayView();
                 }
             } catch (cloudErr) {
                 console.error('Cloud init error (app continues offline):', cloudErr);
-            }
-
-            if (currentSession && currentSession.role === 'admin') {
-                enterAdminPortal();
-            } else if (currentSession && currentSession.role === 'pharmacist' && currentSession.user) {
-                const freshUser = pharmacists.find(p => p.phone === currentSession.user.phone) || currentSession.user;
-                enterPharmacistPortal(freshUser);
-            } else {
                 showGatewayView();
             }
         }
