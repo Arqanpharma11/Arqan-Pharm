@@ -6470,6 +6470,7 @@
         let orders = [];
         let ordersArchive = []; // backup of orders removed by admin
         let orderCancellationRequests = [];
+        let orderCancellationRequestsUnsubscribe = null;
         let currentSession = null; // { role: 'admin' | 'pharmacist', user?: object }
         let cart = {}; // { productId: quantity }
         let pharmPaymentMode = 'cash';
@@ -6708,11 +6709,6 @@
                 console.error('Orders snapshot error:', err);
                 setCloudSyncIndicator('error', 'تأكد من تفعيل Test Mode في Firestore');
             });
-
-            firestoreDB.collection('orderCancellationRequests').onSnapshot((snapshot) => {
-                orderCancellationRequests = snapshot.docs.map(doc => ({ ...doc.data(), id: doc.id }));
-                if (currentSession?.role === 'admin') renderAdminCRM();
-            }, (err) => console.error('Cancellation requests snapshot error:', err));
 
             // 2. Real-time Pharmacists Listener
             firestoreDB.collection('pharmacists').onSnapshot((snapshot) => {
@@ -7220,6 +7216,16 @@ ${window.location.href}
             loadAdminMarginsUI();
             renderAdminProductsTable();
             renderAdminCRM();
+            startAdminCancellationRequestListener();
+        }
+
+        function startAdminCancellationRequestListener() {
+            if (!firestoreDB || currentSession?.role !== 'admin') return;
+            if (orderCancellationRequestsUnsubscribe) orderCancellationRequestsUnsubscribe();
+            orderCancellationRequestsUnsubscribe = firestoreDB.collection('orderCancellationRequests').onSnapshot((snapshot) => {
+                orderCancellationRequests = snapshot.docs.map(doc => ({ ...doc.data(), id: doc.id }));
+                if (currentSession?.role === 'admin') renderAdminCRM();
+            }, (err) => console.error('Cancellation requests snapshot error:', err));
         }
 
         // =========================================================
