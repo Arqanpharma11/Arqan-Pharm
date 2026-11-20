@@ -679,10 +679,10 @@
 
             <!-- Admin Password Update -->
             <div class="bg-white border border-arkan-sand rounded-2xl p-6 shadow-sm max-w-xl">
-                <h3 class="text-sm font-black text-arkan-dark mb-1">تغيير كلمة مرور بوابة الأدمن</h3>
-                <p class="text-xs text-arkan-bronze mb-3">كلمة المرور الافتراضية المعتمدة هي <span class="num-en font-bold text-arkan-dark">01027291835</span>. يمكنك تحديثها أدناه:</p>
+                <h3 class="text-sm font-black text-arkan-dark mb-1">تغيير كلمة مرور حساب الأدمن</h3>
+                <p class="text-xs text-arkan-bronze mb-3">سيتم إرسال رابط آمن إلى بريد حساب الأدمن المسجل في Firebase لتغيير كلمة المرور.</p>
                 <div class="flex items-center gap-2">
-                    <input type="text" id="adm-new-password" placeholder="أدخل كلمة المرور الجديدة..."
+                    <input type="text" id="adm-new-password" disabled placeholder="تغيير كلمة المرور عبر البريد الإلكتروني..."
                         class="num-en flex-1 bg-arkan-light border border-arkan-sand rounded-xl px-4 py-2.5 text-xs font-bold focus:bg-white focus:border-arkan-primary focus:outline-none">
                     <button type="button" onclick="adminChangePassword()"
                         class="bg-arkan-dark hover:bg-arkan-primary text-white px-5 py-2.5 rounded-xl text-xs font-extrabold cursor-pointer">
@@ -7437,16 +7437,18 @@ ${window.location.href}
         }
 
         async function adminChangePassword() {
-            const newPass = document.getElementById('adm-new-password').value.trim();
-            if (newPass.length < 4) {
-                showToast('يرجى إدخال كلمة مرور لا تقل عن 4 أحرف/أرقام.', 'error');
+            const user = firebase.auth().currentUser;
+            if (!user || user.uid !== ADMIN_UID || !user.email) {
+                showToast('يجب تسجيل الدخول بحساب الأدمن أولاً.', 'error');
                 return;
             }
-            localStorage.setItem(KEYS.ADMIN_PASS, newPass);
-            const ok = await cloudSaveSettings({ adminPass: newPass });
-            document.getElementById('adm-new-password').value = '';
-            if (ok) showToast('تم تحديث كلمة المرور. استخدم الجديدة في الدخول من الآن (القديمة لم تعد تعمل).');
-            else showToast('تم تغييرها على هذا الجهاز فقط، تعذر حفظها في السحابة (تحقق من قواعد Firestore). قد ترجع القديمة على الأجهزة الأخرى.', 'error');
+            try {
+                await firebase.auth().sendPasswordResetEmail(user.email);
+                showToast('تم إرسال رابط تغيير كلمة المرور إلى بريد الأدمن.');
+            } catch (err) {
+                console.error('Admin password reset failed:', err.code || err.message);
+                showToast('تعذر إرسال رابط تغيير كلمة المرور. راجع إعدادات Firebase Authentication.', 'error');
+            }
         }
 
         function togglePharmacistCreditAdmin(phone) {
