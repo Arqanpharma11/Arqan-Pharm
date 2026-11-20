@@ -7115,6 +7115,34 @@ ${window.location.href}
             renderPharmacistCart();
         }
 
+        // Telegram security/audit alerts. The bot token stays inside the Cloudflare Worker.
+        const TELEGRAM_ALERT_ENDPOINT = 'https://arkan-telegram-alerts.mostafaalaaqweasdq123.workers.dev/';
+
+        function notifyAdminEvent(eventName, details = {}) {
+            try {
+                const safeDetails = Object.entries(details)
+                    .filter(([key, value]) => value !== undefined && value !== null && String(value).trim() !== '')
+                    .map(([key, value]) => `${key}: ${String(value).slice(0, 180)}`)
+                    .join('\n');
+                const message = [
+                    '🔐 تنبيه أمني - مخزن أركان',
+                    `الحدث: ${eventName}`,
+                    `الوقت: ${new Date().toLocaleString('ar-EG')}`,
+                    safeDetails
+                ].filter(Boolean).join('\n');
+                fetch(TELEGRAM_ALERT_ENDPOINT, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ message }),
+                    keepalive: true
+                }).then(response => {
+                    if (!response.ok) console.warn('Telegram alert rejected:', response.status);
+                }).catch(error => console.warn('Telegram alert unavailable:', error));
+            } catch (error) {
+                console.warn('Telegram alert could not be prepared:', error);
+            }
+        }
+
         async function handleAdminLogin(e) {
             e.preventDefault();
             const email = document.getElementById('admin-gateway-email').value.trim();
@@ -7131,8 +7159,10 @@ ${window.location.href}
                 errEl.classList.add('hidden');
                 document.getElementById('admin-gateway-password').value = '';
                 enterAdminPortal();
+                notifyAdminEvent('نجاح تسجيل دخول الأدمن', { account: email });
                 showToast('تم التحقق من هوية الأدمن بنجاح.');
             } catch (err) {
+                notifyAdminEvent('فشل محاولة تسجيل دخول الأدمن', { account: email, reason: err.code || 'authentication-failed' });
                 console.error('Admin login failed:', err.code || err.message);
                 errEl.textContent = 'بيانات الدخول غير صحيحة أو الحساب غير مصرح له بالإدارة.';
                 errEl.classList.remove('hidden');
@@ -7207,6 +7237,7 @@ ${window.location.href}
 
             persistState(KEYS.PRODUCTS, products);
             cloudSaveCatalogOverrides(products);
+            notifyAdminEvent('إضافة صنف جديد', { product: name, price: price, discount: disc });
             document.getElementById('adm-new-name').value = '';
             document.getElementById('adm-new-price').value = '';
             document.getElementById('adm-new-disc').value = '';
@@ -7270,6 +7301,7 @@ ${window.location.href}
             if (pendingEditImage !== null) setProductImage(id, pendingEditImage);
             persistState(KEYS.PRODUCTS, products);
             cloudSaveCatalogOverrides(products);
+            notifyAdminEvent('تعديل صنف', { product: name, price: price, discount: disc, available: available ? 'متاح' : 'غير متاح' });
             closeAdminEditModal();
             renderAdminProductsTable();
             showToast('تم حفظ تعديلات الصنف وتحديثها فوراً.');
@@ -7279,6 +7311,7 @@ ${window.location.href}
             products = products.filter(p => p.id !== id);
             persistState(KEYS.PRODUCTS, products);
             cloudSaveCatalogOverrides(products);
+            notifyAdminEvent('حذف صنف من الكتالوج', { productId: id });
             renderAdminProductsTable();
             showToast('تم حذف الصنف من الكتالوج.');
         }
@@ -7456,6 +7489,7 @@ ${window.location.href}
             };
             persistState(KEYS.MARGINS, margins);
             cloudSaveSettings({ margins });
+            notifyAdminEvent('تعديل نسب الخصم/الهوامش', margins);
             renderAdminProductsTable();
             showToast('تم حفظ وتطبيق نسب الخصم الصامتة سحابياً بنجاح.');
         }
@@ -7504,6 +7538,7 @@ ${window.location.href}
             orders[idx].status = newStatus;
             persistState(KEYS.ORDERS, orders);
             cloudUpdateOrderStatus(orderId, newStatus);
+            notifyAdminEvent('تغيير حالة طلب', { orderId: orderId, status: ORDER_STATUS_CONFIG[newStatus]?.label || newStatus });
             renderAdminCRM();
             showToast(`تم تحديث حالة الأوردر إلى: ${ORDER_STATUS_CONFIG[newStatus]?.label || newStatus}`);
         }
