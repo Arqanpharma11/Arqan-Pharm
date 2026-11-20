@@ -738,7 +738,7 @@
                 </button>
             </div>
             <div class="flex flex-wrap items-center gap-3 text-xs">
-                <span class="font-bold text-arkan-dark">التوصيل داخل القاهرة فقط • الحد الأدنى 10,000 ج.م</span>
+                <span class="font-bold text-arkan-dark">التوصيل داخل القاهرة فقط • الحد الأدنى 10,000 ج.م (إلا للحسابات المعفاة من الإدارة)</span>
                 <span class="text-arkan-sand">|</span>
                 <span class="font-extrabold text-arkan-bronze">المتاح: <span id="pharm-visible-count" class="num-en text-arkan-dark">0</span> صنف</span>
             </div>
@@ -6460,7 +6460,8 @@
             pending: { label: 'قيد المراجعة', badge: 'bg-amber-100 text-amber-950 border-amber-300', step: 1 },
             preparing: { label: 'جاري التجهيز بالمخزن', badge: 'bg-blue-100 text-blue-950 border-blue-300', step: 2 },
             shipping: { label: 'خرج للتوصيل', badge: 'bg-purple-100 text-purple-950 border-purple-300', step: 3 },
-            delivered: { label: 'تم التسليم بنجاح', badge: 'bg-emerald-100 text-emerald-950 border-emerald-300', step: 4 }
+            delivered: { label: 'تم التسليم بنجاح', badge: 'bg-emerald-100 text-emerald-950 border-emerald-300', step: 4 },
+            cancelled: { label: 'ملغي', badge: 'bg-rose-100 text-rose-950 border-rose-300', step: 0 }
         };
 
         let products = [];
@@ -6468,6 +6469,7 @@
         let pharmacists = [];
         let orders = [];
         let ordersArchive = []; // backup of orders removed by admin
+        let orderCancellationRequests = [];
         let currentSession = null; // { role: 'admin' | 'pharmacist', user?: object }
         let cart = {}; // { productId: quantity }
         let pharmPaymentMode = 'cash';
@@ -6707,6 +6709,11 @@
                 setCloudSyncIndicator('error', 'تأكد من تفعيل Test Mode في Firestore');
             });
 
+            firestoreDB.collection('orderCancellationRequests').onSnapshot((snapshot) => {
+                orderCancellationRequests = snapshot.docs.map(doc => ({ ...doc.data(), id: doc.id }));
+                if (currentSession?.role === 'admin') renderAdminCRM();
+            }, (err) => console.error('Cancellation requests snapshot error:', err));
+
             // 2. Real-time Pharmacists Listener
             firestoreDB.collection('pharmacists').onSnapshot((snapshot) => {
                 const cloudPharms = snapshot.docs.map(doc => doc.data());
@@ -6915,6 +6922,22 @@ ${window.location.href}
                 (o.phone && user.phone && o.phone === user.phone) ||
                 (o.pharmName && user.pharmName && o.pharmName === user.pharmName)
             ).filter(o => o.payMode === 'cash' || (o.payLabel && o.payLabel.includes('نقدي'))).length;
+        }
+
+        function isMinimumOrderExempt(user) {
+            if (!user) return false;
+            const latestRecord = pharmacists.find(p => p.phone === user.phone) || user;
+            return latestRecord.minOrderExempt === true;
+        }
+
+        function togglePharmacistMinimumOrderAdmin(phone) {
+            if (currentSession?.role !== 'admin' || firebase.auth().currentUser?.uid !== ADMIN_UID) { showToast('هذه الصلاحية للأدمن فقط.', 'error'); return; }
+            const idx = pharmacists.findIndex(p => p.phone === phone);
+            if (idx === -1) return;
+            pharmacists[idx].minOrderExempt = !isMinimumOrderExempt(pharmacists[idx]);
+            persistState(KEYS.PHARMACISTS, pharmacists);
+            cloudSavePharmacist(pharmacists[idx]); renderAdminCRM();
+            showToast(pharmacists[idx].minOrderExempt ? `تم إعفاء ${pharmacists[idx].pharmName} من الحد الأدنى.` : `تم إعادة الحد الأدنى على ${pharmacists[idx].pharmName}.`);
         }
 
         function isCreditUnlockedForUser(user) {
@@ -7578,6 +7601,7 @@ ${window.location.href}
                                     class="${creditUnlocked ? 'bg-rose-100 hover:bg-rose-600 text-rose-800 hover:text-white' : 'bg-emerald-700 hover:bg-emerald-800 text-white'} px-3 py-1 rounded-lg text-[11px] font-extrabold transition-colors cursor-pointer">
                                     ${creditUnlocked ? 'قفل الآجل' : 'فتح صلاحية الآجل'}
                                 </button>
+                                <button type="button" onclick="togglePharmacistMinimumOrderAdmin(decodeURIComponent('${encodeURIComponent(p.phone)}'))" class="${isMinimumOrderExempt(p) ? 'bg-amber-100 text-amber-900' : 'bg-indigo-700 text-white'} px-3 py-1 rounded-lg text-[11px] font-extrabold cursor-pointer">${isMinimumOrderExempt(p) ? 'إعادة حد 10,000' : 'إعفاء من حد 10,000'}</button>
                                 <button type="button" onclick="adminDeletePharmacist(decodeURIComponent('${encodeURIComponent(p.phone)}'))"
                                     class="bg-rose-700 hover:bg-rose-800 text-white px-3 py-1 rounded-lg text-[11px] font-extrabold cursor-pointer">🗑 حذف الحساب</button>
                             </div>
@@ -7587,10 +7611,12 @@ ${window.location.href}
             }
 
             const ordersListEl = document.getElementById('adm-orders-list');
+            const pendingCancelRequests = orderCancellationRequests.filter(r => r.status === 'pending');
+            const cancelRequestsHtml = pendingCancelRequests.length ? `<div class="bg-rose-50 border border-rose-200 rounded-xl p-3 space-y-2"><p class="font-black text-rose-900">طلبات إلغاء الأوردرات (${pendingCancelRequests.length})</p>${pendingCancelRequests.map(r => `<div class="bg-white rounded-lg p-2 flex flex-wrap justify-between items-center gap-2"><span>#ARK-${String(r.orderId).slice(-6)} • ${r.pharmName || ''} • ${r.phone || ''}</span><span class="flex gap-2"><button onclick="approveOrderCancellation(${r.orderId})" class="bg-emerald-700 text-white rounded px-3 py-1">اعتماد الإلغاء</button><button onclick="rejectOrderCancellation(${r.orderId})" class="bg-rose-700 text-white rounded px-3 py-1">رفض</button></span></div>`).join('')}</div>` : '';
             if (orders.length === 0) {
-                ordersListEl.innerHTML = '<p class="text-xs text-arkan-bronze text-center py-6">لا توجد أوردرات مسجلة بعد.</p>';
+                ordersListEl.innerHTML = cancelRequestsHtml + '<p class="text-xs text-arkan-bronze text-center py-6">لا توجد أوردرات مسجلة بعد.</p>';
             } else {
-                ordersListEl.innerHTML = orders.map(o => {
+                ordersListEl.innerHTML = cancelRequestsHtml + orders.map(o => {
                     const st = o.status || 'pending';
                     const stCfg = ORDER_STATUS_CONFIG[st] || ORDER_STATUS_CONFIG.pending;
                     return `
@@ -8761,6 +8787,7 @@ ${window.location.href}
                 showToast('السلة فارغة! أضف أصنافاً للفاتورة أولاً قبل إتمام الأوردر.', 'error');
                 return;
             }
+            if (!isMinimumOrderExempt(currentSession?.user) && summary.totalClient < 10000) { showToast(`الحد الأدنى للفاتورة 10,000 جنيه. إجمالي سلتك الحالي ${fmtMoney(summary.totalClient)} جنيه.`, 'error'); return; }
             saveOrderRecord(summary);
             cart = {};
             persistState(KEYS.CART, cart);
@@ -8775,6 +8802,7 @@ ${window.location.href}
                 showToast('يرجى إضافة أصناف للسلة أولاً قبل إرسال الأوردر.', 'error');
                 return;
             }
+            if (!isMinimumOrderExempt(currentSession?.user) && summary.totalClient < 10000) { showToast(`الحد الأدنى للفاتورة 10,000 جنيه. إجمالي سلتك الحالي ${fmtMoney(summary.totalClient)} جنيه.`, 'error'); return; }
             saveOrderRecord(summary);
             const text = buildWhatsAppOrderMessage(summary);
             const url = `https://wa.me/${WAREHOUSE_WHATSAPP}?text=${encodeURIComponent(text)}`;
@@ -8847,6 +8875,7 @@ ${window.location.href}
                                     class="bg-arkan-dark hover:bg-arkan-primary text-white px-4 py-2 rounded-xl text-xs font-extrabold shadow-sm cursor-pointer">
                                     🖨️ طباعة الفاتورة
                                 </button>
+                                ${st === 'pending' ? `<button type="button" onclick="requestOrderCancellation(${o.id})" class="bg-rose-100 hover:bg-rose-700 hover:text-white text-rose-800 px-4 py-2 rounded-xl text-xs font-extrabold cursor-pointer">إلغاء الأوردر</button>` : ''}
                             </div>
                         </div>
 
@@ -8883,6 +8912,28 @@ ${window.location.href}
                     </div>
                 `;
             }).join('');
+        }
+
+        async function requestOrderCancellation(orderId) {
+            const user = currentSession?.user, order = orders.find(o => String(o.id) === String(orderId));
+            if (!user || !order || order.status !== 'pending' || String(order.phone || '') !== String(user.phone || '')) { showToast('لا يمكن طلب إلغاء هذا الأوردر.', 'error'); return; }
+            if (!firestoreDB) { showToast('تعذر الاتصال بالسحابة.', 'error'); return; }
+            if (!confirm(`تأكيد طلب إلغاء الأوردر #ARK-${String(orderId).slice(-6)}؟`)) return;
+            try { await firestoreDB.collection('orderCancellationRequests').doc(String(orderId)).set({ orderId: Number(orderId), phone: user.phone, pharmName: user.pharmName, requestedAtMs: Date.now(), status: 'pending' }); showToast('تم إرسال طلب الإلغاء للإدارة لاعتماده.'); }
+            catch (err) { console.error(err); showToast('تعذر إرسال طلب الإلغاء.', 'error'); }
+        }
+        async function approveOrderCancellation(orderId) {
+            if (currentSession?.role !== 'admin' || firebase.auth().currentUser?.uid !== ADMIN_UID) return;
+            const order = orders.find(o => String(o.id) === String(orderId));
+            if (!order || order.status !== 'pending') { showToast('الأوردر لم يعد قابلاً للإلغاء.', 'error'); return; }
+            if (!confirm(`اعتماد إلغاء الأوردر #ARK-${String(orderId).slice(-6)}؟`)) return;
+            try { await firestoreDB.collection('orders').doc(String(orderId)).update({ status: 'cancelled', updatedAtMs: Date.now() }); await firestoreDB.collection('orderCancellationRequests').doc(String(orderId)).update({ status: 'approved', reviewedAtMs: Date.now() }); order.status = 'cancelled'; renderAdminCRM(); notifyAdminEvent('اعتماد إلغاء أوردر', { orderId, pharmName: order.pharmName }); showToast('تم اعتماد إلغاء الأوردر.'); }
+            catch (err) { console.error(err); showToast('تعذر اعتماد الإلغاء. راجع قواعد Firestore.', 'error'); }
+        }
+        async function rejectOrderCancellation(orderId) {
+            if (currentSession?.role !== 'admin' || firebase.auth().currentUser?.uid !== ADMIN_UID) return;
+            try { await firestoreDB.collection('orderCancellationRequests').doc(String(orderId)).update({ status: 'rejected', reviewedAtMs: Date.now() }); renderAdminCRM(); showToast('تم رفض طلب الإلغاء.'); }
+            catch (err) { showToast('تعذر تحديث طلب الإلغاء.', 'error'); }
         }
 
         function openInvoiceSheetWithData(data) {
