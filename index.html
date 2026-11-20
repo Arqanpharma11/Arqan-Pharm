@@ -6836,11 +6836,9 @@
             // Remove the legacy plaintext admin password from this browser.
             try { localStorage.removeItem('arkan_cairo_admin_pass_v5'); } catch (_) {}
 
-            let authReady = false;
             try {
                 if (initFirebaseCloud()) {
                     firebase.auth().onAuthStateChanged(async (user) => {
-                        authReady = true;
                         if (user && user.uid === ADMIN_UID) {
                             // One-time cleanup of the legacy plaintext password field.
                             try {
