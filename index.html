@@ -8816,6 +8816,7 @@ ${window.location.href}
                 showToast('السلة فارغة! أضف أصنافاً للنسخ.', 'error');
                 return;
             }
+            if (!isMinimumOrderExempt(currentSession?.user) && summary.totalClient < 10000) { showToast(`الحد الأدنى للفاتورة 10,000 جنيه. إجمالي سلتك الحالي ${fmtMoney(summary.totalClient)} جنيه.`, 'error'); return; }
             saveOrderRecord(summary);
             const text = buildWhatsAppOrderMessage(summary);
             const box = document.getElementById('clipboard-box');
