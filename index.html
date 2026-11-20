@@ -110,6 +110,7 @@
     <!-- Firebase Cloud Sync SDKs (Firestore Real-Time Database) -->
     <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
 </head>
 <body class="min-h-screen flex flex-col selection:bg-arkan-sand selection:text-arkan-dark">
 
@@ -346,7 +347,9 @@
                             </div>
 
                             <div>
-                                <label class="block text-xs font-extrabold text-arkan-sand mb-1.5">كلمة مرور الإدارة *</label>
+                                <label class="block text-xs font-extrabold text-arkan-sand mb-1.5">البريد الإلكتروني للأدمن *</label>
+                                <input type="email" id="admin-gateway-email" required autocomplete="username" placeholder="admin@example.com" class="num-en w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-sm font-bold text-white placeholder-white/40 focus:bg-white/15 focus:border-amber-400 focus:outline-none">
+                                <label class="block text-xs font-extrabold text-arkan-sand mb-1.5 mt-3">كلمة المرور *</label>
                                 <input type="password" id="admin-gateway-password" required placeholder="أدخل كلمة مرور الأدمن..."
                                     class="num-en w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-sm font-bold text-white placeholder-white/40 focus:bg-white/15 focus:border-amber-400 focus:outline-none">
                                 <p id="admin-gateway-error" class="hidden text-xs text-rose-300 bg-rose-950/60 border border-rose-500/40 px-3 py-2 rounded-xl font-bold mt-2">
@@ -679,16 +682,12 @@
 
             <!-- Admin Password Update -->
             <div class="bg-white border border-arkan-sand rounded-2xl p-6 shadow-sm max-w-xl">
-                <h3 class="text-sm font-black text-arkan-dark mb-1">تغيير كلمة مرور بوابة الأدمن</h3>
-                <p class="text-xs text-arkan-bronze mb-3">كلمة المرور الافتراضية المعتمدة هي <span class="num-en font-bold text-arkan-dark">01027291835</span>. يمكنك تحديثها أدناه:</p>
-                <div class="flex items-center gap-2">
-                    <input type="text" id="adm-new-password" placeholder="أدخل كلمة المرور الجديدة..."
-                        class="num-en flex-1 bg-arkan-light border border-arkan-sand rounded-xl px-4 py-2.5 text-xs font-bold focus:bg-white focus:border-arkan-primary focus:outline-none">
-                    <button type="button" onclick="adminChangePassword()"
-                        class="bg-arkan-dark hover:bg-arkan-primary text-white px-5 py-2.5 rounded-xl text-xs font-extrabold cursor-pointer">
-                        تحديث كلمة المرور
-                    </button>
-                </div>
+                <h3 class="text-sm font-black text-arkan-dark mb-1">تغيير كلمة مرور حساب الأدمن</h3>
+                <p class="text-xs text-arkan-bronze mb-3">سيتم إرسال رابط آمن إلى بريد حساب الأدمن المسجل في Firebase لتغيير كلمة المرور.</p>
+                <button type="button" onclick="adminChangePassword()"
+                    class="bg-arkan-dark hover:bg-arkan-primary text-white px-5 py-2.5 rounded-xl text-xs font-extrabold cursor-pointer">
+                    إرسال رابط تغيير كلمة المرور
+                </button>
             </div>
         </div>
 
@@ -6433,7 +6432,6 @@
         const KEYS = {
             PRODUCTS: 'arkan_cairo_products_master_v5',
             MARGINS: 'arkan_cairo_margins_v5',
-            ADMIN_PASS: 'arkan_cairo_admin_pass_v5',
             PHARMACISTS: 'arkan_cairo_pharmacists_v5',
             ORDERS: 'arkan_cairo_orders_v5',
             SESSION: 'arkan_cairo_session_v5',
@@ -6441,7 +6439,7 @@
             ORDERS_ARCHIVE: 'arkan_cairo_orders_archive_v1'
         };
 
-        const DEFAULT_ADMIN_PASSWORD = '01027291835';
+        const ADMIN_UID = 'qpuH4fWGhSYFq0mqTGfIEIn4VS13';
         const WAREHOUSE_WHATSAPP = '201027291835';
 
         const DEFAULT_MARGINS = {
@@ -6744,9 +6742,6 @@
                             renderPharmacistCart();
                         }
                     }
-                    if (data.adminPass) {
-                        localStorage.setItem(KEYS.ADMIN_PASS, data.adminPass);
-                    }
                 }
             }, (err) => console.error('Settings snapshot error:', err));
 
@@ -6838,20 +6833,43 @@
                 products = enrichProducts([...MASTER_CATALOG]);
             }
 
+            // Remove the legacy plaintext admin password from this browser.
+            try { localStorage.removeItem('arkan_cairo_admin_pass_v5'); } catch (_) {}
+
             try {
                 if (initFirebaseCloud()) {
+                    firebase.auth().onAuthStateChanged(async (user) => {
+                        if (user && user.uid === ADMIN_UID) {
+                            // One-time cleanup of the legacy plaintext password field.
+                            try {
+                                await firestoreDB.collection('settings').doc('global').update({
+                                    adminPass: firebase.firestore.FieldValue.delete()
+                                });
+                            } catch (cleanupErr) {
+                                if (cleanupErr.code !== 'firestore/not-found') {
+                                    console.warn('Legacy adminPass cleanup pending:', cleanupErr.code || cleanupErr.message);
+                                }
+                            }
+                            enterAdminPortal();
+                        } else {
+                            if (currentSession?.role === 'admin') {
+                                currentSession = null;
+                                persistState(KEYS.SESSION, null);
+                            }
+                            if (currentSession?.role === 'pharmacist' && currentSession.user) {
+                                const freshUser = pharmacists.find(p => p.phone === currentSession.user.phone) || currentSession.user;
+                                enterPharmacistPortal(freshUser);
+                            } else {
+                                showGatewayView();
+                            }
+                        }
+                    });
                     startCloudRealtimeListeners();
+                } else {
+                    showGatewayView();
                 }
             } catch (cloudErr) {
                 console.error('Cloud init error (app continues offline):', cloudErr);
-            }
-
-            if (currentSession && currentSession.role === 'admin') {
-                enterAdminPortal();
-            } else if (currentSession && currentSession.role === 'pharmacist' && currentSession.user) {
-                const freshUser = pharmacists.find(p => p.phone === currentSession.user.phone) || currentSession.user;
-                enterPharmacistPortal(freshUser);
-            } else {
                 showGatewayView();
             }
         }
@@ -6948,9 +6966,11 @@ ${window.location.href}
             document.getElementById('header-session-controls').classList.add('hidden');
         }
 
-        function switchPortalLogout() {
+        async function switchPortalLogout() {
+            const wasAdmin = currentSession?.role === 'admin';
             currentSession = null;
             persistState(KEYS.SESSION, null);
+            if (wasAdmin) { try { await firebase.auth().signOut(); } catch (err) { console.error(err); } }
             showGatewayView();
             showToast('تم الخروج والعودة لشاشة البوابات الرئيسية.');
         }
@@ -7095,25 +7115,73 @@ ${window.location.href}
             renderPharmacistCart();
         }
 
-        function handleAdminLogin(e) {
-            e.preventDefault();
-            const inputPass = document.getElementById('admin-gateway-password').value.trim();
-            const storedPass = localStorage.getItem(KEYS.ADMIN_PASS) || DEFAULT_ADMIN_PASSWORD;
-            const errEl = document.getElementById('admin-gateway-error');
+        // Telegram security/audit alerts. The bot token stays inside the Cloudflare Worker.
+        const TELEGRAM_ALERT_ENDPOINT = 'https://arkan-telegram-alerts.mostafaalaaqweasdq123.workers.dev/';
 
-            if (inputPass === storedPass) {
-                errEl.classList.add('hidden');
-                document.getElementById('admin-gateway-password').value = '';
-                enterAdminPortal();
-                showToast('تم تسجيل الدخول إلى لوحة تحكم الأدمن بنجاح.');
-            } else {
-                errEl.classList.remove('hidden');
+        async function notifyAdminEvent(eventName, details = {}) {
+            try {
+                const user = firebase.auth().currentUser;
+                if (!user || user.uid !== ADMIN_UID) return;
+                const idToken = await user.getIdToken();
+                const safeDetails = Object.entries(details)
+                    .filter(([key, value]) => value !== undefined && value !== null && String(value).trim() !== '')
+                    .map(([key, value]) => `${key}: ${String(value).slice(0, 180)}`)
+                    .join('\\n');
+                const message = [
+                    '🔐 تنبيه أمني - مخزن أركان',
+                    `الحدث: ${eventName}`,
+                    `الوقت: ${new Date().toLocaleString('ar-EG')}`,
+                    safeDetails
+                ].filter(Boolean).join('\\n');
+                const response = await fetch(TELEGRAM_ALERT_ENDPOINT, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${idToken}`
+                    },
+                    body: JSON.stringify({ message }),
+                    keepalive: true
+                });
+                if (!response.ok) console.warn('Telegram alert rejected:', response.status);
+            } catch (error) {
+                console.warn('Telegram alert unavailable:', error);
             }
         }
 
+        async function handleAdminLogin(e) {
+            e.preventDefault();
+            const email = document.getElementById('admin-gateway-email').value.trim();
+            const password = document.getElementById('admin-gateway-password').value;
+            const errEl = document.getElementById('admin-gateway-error');
+            const submitBtn = e.submitter || e.target.querySelector('button[type="submit"]');
+            if (submitBtn) submitBtn.disabled = true;
+            try {
+                const credential = await firebase.auth().signInWithEmailAndPassword(email, password);
+                if (credential.user.uid !== ADMIN_UID) {
+                    await firebase.auth().signOut();
+                    throw new Error('not-authorized-admin');
+                }
+                errEl.classList.add('hidden');
+                document.getElementById('admin-gateway-password').value = '';
+                enterAdminPortal();
+                notifyAdminEvent('نجاح تسجيل دخول الأدمن', { account: email });
+                showToast('تم التحقق من هوية الأدمن بنجاح.');
+            } catch (err) {
+                notifyAdminEvent('فشل محاولة تسجيل دخول الأدمن', { account: email, reason: err.code || 'authentication-failed' });
+                console.error('Admin login failed:', err.code || err.message);
+                errEl.textContent = 'بيانات الدخول غير صحيحة أو الحساب غير مصرح له بالإدارة.';
+                errEl.classList.remove('hidden');
+            } finally { if (submitBtn) submitBtn.disabled = false; }
+        }
+
         function enterAdminPortal() {
+            if (!firebase.auth().currentUser || firebase.auth().currentUser.uid !== ADMIN_UID) {
+                currentSession = null;
+                persistState(KEYS.SESSION, null);
+                showGatewayView();
+                return;
+            }
             currentSession = { role: 'admin' };
-            persistState(KEYS.SESSION, currentSession);
 
             document.getElementById('portal-gateway-view').classList.add('hidden');
             document.getElementById('pharmacist-portal-view').classList.add('hidden');
@@ -7174,6 +7242,7 @@ ${window.location.href}
 
             persistState(KEYS.PRODUCTS, products);
             cloudSaveCatalogOverrides(products);
+            notifyAdminEvent('إضافة صنف جديد', { product: name, price: price, discount: disc });
             document.getElementById('adm-new-name').value = '';
             document.getElementById('adm-new-price').value = '';
             document.getElementById('adm-new-disc').value = '';
@@ -7237,6 +7306,7 @@ ${window.location.href}
             if (pendingEditImage !== null) setProductImage(id, pendingEditImage);
             persistState(KEYS.PRODUCTS, products);
             cloudSaveCatalogOverrides(products);
+            notifyAdminEvent('تعديل صنف', { product: name, price: price, discount: disc, available: available ? 'متاح' : 'غير متاح' });
             closeAdminEditModal();
             renderAdminProductsTable();
             showToast('تم حفظ تعديلات الصنف وتحديثها فوراً.');
@@ -7246,6 +7316,7 @@ ${window.location.href}
             products = products.filter(p => p.id !== id);
             persistState(KEYS.PRODUCTS, products);
             cloudSaveCatalogOverrides(products);
+            notifyAdminEvent('حذف صنف من الكتالوج', { productId: id });
             renderAdminProductsTable();
             showToast('تم حذف الصنف من الكتالوج.');
         }
@@ -7423,6 +7494,7 @@ ${window.location.href}
             };
             persistState(KEYS.MARGINS, margins);
             cloudSaveSettings({ margins });
+            notifyAdminEvent('تعديل نسب الخصم/الهوامش', margins);
             renderAdminProductsTable();
             showToast('تم حفظ وتطبيق نسب الخصم الصامتة سحابياً بنجاح.');
         }
@@ -7437,16 +7509,18 @@ ${window.location.href}
         }
 
         async function adminChangePassword() {
-            const newPass = document.getElementById('adm-new-password').value.trim();
-            if (newPass.length < 4) {
-                showToast('يرجى إدخال كلمة مرور لا تقل عن 4 أحرف/أرقام.', 'error');
+            const user = firebase.auth().currentUser;
+            if (!user || user.uid !== ADMIN_UID || !user.email) {
+                showToast('يجب تسجيل الدخول بحساب الأدمن أولاً.', 'error');
                 return;
             }
-            localStorage.setItem(KEYS.ADMIN_PASS, newPass);
-            const ok = await cloudSaveSettings({ adminPass: newPass });
-            document.getElementById('adm-new-password').value = '';
-            if (ok) showToast('تم تحديث كلمة المرور. استخدم الجديدة في الدخول من الآن (القديمة لم تعد تعمل).');
-            else showToast('تم تغييرها على هذا الجهاز فقط، تعذر حفظها في السحابة (تحقق من قواعد Firestore). قد ترجع القديمة على الأجهزة الأخرى.', 'error');
+            try {
+                await firebase.auth().sendPasswordResetEmail(user.email);
+                showToast('تم إرسال رابط تغيير كلمة المرور إلى بريد الأدمن.');
+            } catch (err) {
+                console.error('Admin password reset failed:', err.code || err.message);
+                showToast('تعذر إرسال رابط تغيير كلمة المرور. راجع إعدادات Firebase Authentication.', 'error');
+            }
         }
 
         function togglePharmacistCreditAdmin(phone) {
@@ -7469,6 +7543,7 @@ ${window.location.href}
             orders[idx].status = newStatus;
             persistState(KEYS.ORDERS, orders);
             cloudUpdateOrderStatus(orderId, newStatus);
+            notifyAdminEvent('تغيير حالة طلب', { orderId: orderId, status: ORDER_STATUS_CONFIG[newStatus]?.label || newStatus });
             renderAdminCRM();
             showToast(`تم تحديث حالة الأوردر إلى: ${ORDER_STATUS_CONFIG[newStatus]?.label || newStatus}`);
         }
