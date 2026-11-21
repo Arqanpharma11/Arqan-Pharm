@@ -7164,7 +7164,7 @@
 
                 // Verified package-photo seed: Apple-Lite 30 tablets (catalog item #10).
                 // Source page shows the exact Apple-Lite pack; do not use lookalike images.
-                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v39';;;;;
+                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v40';;;;;
                 if (localStorage.getItem(IMAGE_SEED_VERSION) !== '1') {
                     // Individually checked package photos: brand, strength/stage and form match.
                     const verifiedImageSeeds = {
@@ -7595,7 +7595,15 @@
                         '933': { src: 'https://www.lotusonline.com/cdn/shop/files/3008962_processed.jpg?v=1773305403', source: 'Lotus Pharmacies — Novex Panthenol moisturizing cream, 30 g; exact brand and size verified' },
                         '934': { src: 'https://www.lotusonline.com/cdn/shop/files/3008203_processed.jpg?v=1767613865', source: 'Lotus Pharmacies — Spectra Extra Panthenol cream, 30 g; exact brand and size verified' },
                         '936': { src: 'https://media.zid.store/thumbs/56c63adb-b107-44ce-93c1-2d3f9b75f24e/1b854390-c24d-484b-bed1-7402a229e5d3-thumbnail-1000x1000-70.jpg', source: 'Al-Jazea — El-Nile Panthenol 5% cream, 50 g; exact manufacturer, strength and size verified' },
-                        '937': { src: 'https://media.zid.store/thumbs/56c63adb-b107-44ce-93c1-2d3f9b75f24e/1b854390-c24d-484b-bed1-7402a229e5d3-thumbnail-1000x1000-70.jpg', source: 'Al-Jazea — El-Nile Panthenol 5% cream, 50 g; exact manufacturer, strength and size verified' }
+                        '937': { src: 'https://media.zid.store/thumbs/56c63adb-b107-44ce-93c1-2d3f9b75f24e/1b854390-c24d-484b-bed1-7402a229e5d3-thumbnail-1000x1000-70.jpg', source: 'Al-Jazea — El-Nile Panthenol 5% cream, 50 g; exact manufacturer, strength and size verified' },
+                        '992': { src: 'https://api.c0umyt3cda-pharmaove1-p1-public.model-t.cc.commerce.ondemand.com/medias/000000000000028607.webp?context=bWFzdGVyfGltYWdlc3wyMjM0NHxpbWFnZS9qcGVnfGFESmhMMmhqTlM4eE1UTTFOamt4TWpnME5EZ3pNQzh3TURBd01EQXdNREF3TURBd01qZzJNRGN1ZDJWaWNBfDE2MzNiN2VmOTdkMmJiYzVjNjc4Y2M5ZmI4OGJiYmVjYTExY2M3ZjRmOTVhODVlZDc3YmY2ZmNjYmY0ZmYyNzc', source: 'Pharma eMarket — Progest micronized progesterone 200 mg, 30 soft gelatin capsules; exact strength and pack verified' },
+                        '993': { src: 'https://api.c0umyt3cda-pharmaove1-p1-public.model-t.cc.commerce.ondemand.com/medias/000000000000043049.webp?context=bWFzdGVyfGltYWdlc3wzMDgxMHxpbWFnZS9qcGVnfGFEazBMMmhpTmk4eE1qZzFNVGc0TkRZeU1UZzFOQzh3TURBd01EQXdNREF3TURBd05ETXdORGt1ZDJWaWNBfGEwODk4ZmNiMTdiZmEzMzUwNzg3M2RmNTU0ZjUzZDU0NGFmN2RjMDE3NzM4N2RiOGExN2QzNWZjMmMzODQ5ZjY', source: 'Pharma eMarket — Progest micronized progesterone 400 mg, 15 vaginal soft gelatin capsules; exact strength and pack verified' },
+                        '1005': { src: 'https://www.bloompharmacy.com/cdn/shop/products/brufen-200-mg-30-tablets-693043.jpg?v=1687635232', source: 'Bloom Pharmacy — Brufen ibuprofen 200 mg, 30 sugar-coated tablets; exact strength and pack verified' },
+                        '1006': { src: 'https://egyptdwa.com/dwa/brufen-400mg-30-tab-1767.jpg', source: 'EgyptDwa — Brufen ibuprofen 400 mg, 30 tablets; exact strength and pack verified' },
+                        '1007': { src: 'https://soukare.com/image/catalog/Pharmacy/Product%20Images/Brufen%20600mg%20tablets.jpg', source: 'Soukare — Brufen ibuprofen 600 mg, 30 tablets; exact strength and pack verified' },
+                        '1008': { src: 'https://egyptdwa.com/dwa/brufen-100mg-5ml-susp-150ml-1764.jpg', source: 'EgyptDwa — Brufen ibuprofen 100 mg/5 ml oral suspension; exact brand and concentration verified' },
+                        '1015': { src: 'https://egyptdwa.com/dwa/procoralan-5mg-28-f-c-tabs-25293.jpg', source: 'EgyptDwa — Procoralan ivabradine 5 mg, 28 film-coated tablets; exact strength and pack verified' },
+                        '1016': { src: 'https://kuludonline.com/cdn/shop/files/41038.jpg?v=1703371343&width=480', source: 'Kulud Pharmacy — Procoralan ivabradine 7.5 mg, 28 film-coated tablets; exact strength and pack verified' }
                      };
                     Object.entries(verifiedImageSeeds).forEach(([id, seed]) => {
                         if (seed.src && (PROD_IMG_VERIFIED[id] !== true || PROD_IMG_SRC[id] === seed.source)) {
