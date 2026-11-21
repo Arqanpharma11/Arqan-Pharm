@@ -7164,7 +7164,7 @@
 
                 // Verified package-photo seed: Apple-Lite 30 tablets (catalog item #10).
                 // Source page shows the exact Apple-Lite pack; do not use lookalike images.
-                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v30';;;;;
+                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v31';;;;;
                 if (localStorage.getItem(IMAGE_SEED_VERSION) !== '1') {
                     // Individually checked package photos: brand, strength/stage and form match.
                     const verifiedImageSeeds = {
@@ -7469,7 +7469,19 @@
                         '656': { src: 'https://tdawi.com/media/catalog/product/cache/c02fd180406f0a5f799ad7095a14ddcd/o/r/orovex_clove-500x500.png', source: 'Tdawi — Orovex clove mouthwash, 250 ml; exact flavor and volume verified' },
                         '657': { src: 'https://www.lotusonline.com/cdn/shop/files/3007534_1.jpg?v=1767615678&width=1500', source: 'Lotus Pharmacies — Orovex Miswak mouthwash, 250 ml; exact variant and volume verified' },
                         '658': { src: 'https://lifemasr.com/wp-content/uploads/2024/03/6224000437749.jpg', source: 'Life Masr — Orovex banana mouthwash, 250 ml; exact flavor and volume verified' },
-                        '659': { src: 'https://f.nooncdn.com/p/pzsku/Z6D478E7582E0AB89EC11Z/45/1757846481/59035f86-fa6c-4ba6-a0e6-3b81486c8009.jpg?width=800', source: 'Noon Egypt — Orovex peppermint mouthwash, 250 ml; exact flavor and volume verified' }
+                        '659': { src: 'https://f.nooncdn.com/p/pzsku/Z6D478E7582E0AB89EC11Z/45/1757846481/59035f86-fa6c-4ba6-a0e6-3b81486c8009.jpg?width=800', source: 'Noon Egypt — Orovex peppermint mouthwash, 250 ml; exact flavor and volume verified' },
+                        '673': { src: 'https://dkud4u09qff41.cloudfront.net/Products/6b9f1261-25ce-4855-84f3-dafab2c44299.webp', source: 'Vezeeta Pharmacy — Oframax ceftriaxone 1 g IV vial kit; exact route and presentation verified' },
+                        '674': { src: 'https://www.lotusonline.com/cdn/shop/files/3001239_processed.jpg?v=1767613591&width=750', source: 'Lotus Pharmacies — Oflam 50 mg, 20 quicktabs; exact strength and pack verified' },
+                        '677': { src: 'https://aljawaher.online/cdn/shop/files/EUCARBON_30TAB1.jpg?v=1739770032', source: 'Al-Jawaher Pharmacies — Eucarbon, 30 tablets; exact brand and pack verified' },
+                        '681': { src: 'https://www.lotusonline.com/cdn/shop/files/3003463_processed.jpg?v=1773307902&width=750', source: 'Lotus Pharmacies — Oxaleptal 300 mg/5 ml oral suspension, 100 ml; exact strength and volume verified' },
+                        '682': { src: 'https://4eshopping.com/assets/images/products/EpApxTfj1674134081.webp', source: '4E Shopping — Oxaleptal 300 mg, 30 film-coated tablets; exact strength and pack verified' },
+                        '691': { src: 'https://orchidiapharma.com/storage/tailors/ocubesiflox-2-1.webp', source: 'Orchidia Pharma official — Ocubesiflox besifloxacin 0.6% eye drops, 5 ml; exact brand and volume verified' },
+                        '692': { src: 'https://dwaprices.com/upload/1784564511.png', source: 'DwaPrices — Ocuguard AREDS2, 30 hard gelatin capsules; exact variant and pack verified' },
+                        '694': { src: 'https://www.lotusonline.com/cdn/shop/files/3002462_1.jpg?v=1767616077&width=1500', source: 'Lotus Pharmacies — Ocumethyl eye drops, 10 ml; exact brand and volume verified' },
+                        '695': { src: 'https://www.lotusonline.com/cdn/shop/files/3001242_processed.jpg?v=1773305813', source: 'Lotus Pharmacies — Olapex olanzapine 10 mg; exact brand and strength verified' },
+                        '696': { src: 'https://www.lotusonline.com/cdn/shop/files/3001243_processed.jpg?v=1773305778&width=750', source: 'Lotus Pharmacies — Olapex olanzapine 5 mg; exact brand and strength verified' },
+                        '703': { src: 'https://dkud4u09qff41.cloudfront.net/Products/64584645-6a83-4102-abb4-41f6c1b94121.jpeg', source: 'Vezeeta Pharmacy — Olfen diclofenac 1% gel, 50 g; exact brand, concentration and size verified' },
+                        '704': { src: 'https://eipicoophthalmics.com/pluginfile.php/14/block_cocoon_gallery/content/d5f2028a-ff39-4589-afd3-63d27ce9ff34.jpg', source: 'EIPICO Ophthalmics official — Olohistine Forte olopatadine 0.2% eye drops, 5 ml; exact brand and concentration verified' }
                      };
                     Object.entries(verifiedImageSeeds).forEach(([id, seed]) => {
                         if (seed.src && (PROD_IMG_VERIFIED[id] !== true || PROD_IMG_SRC[id] === seed.source)) {
