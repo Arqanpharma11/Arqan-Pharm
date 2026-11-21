@@ -667,6 +667,7 @@
                         <input id="product-image-manifest-input" type="file" accept=".json,application/json" class="hidden" onchange="importProductImageManifest(this)">
                     </label>
                     <span id="product-image-manifest-status" class="text-[10px] font-bold text-emerald-800" aria-live="polite"></span>
+                    <span id="product-image-coverage" class="text-[10px] font-black text-emerald-900 bg-emerald-50 border border-emerald-200 rounded-lg px-2 py-1"></span>
 
                     <button type="button" onclick="exportDatabaseJSON()"
                         class="bg-arkan-cream hover:bg-arkan-sand text-arkan-dark border border-arkan-sand px-3 py-2 rounded-xl text-xs font-extrabold cursor-pointer">
@@ -8112,6 +8113,9 @@ ${window.location.href}
             const previewMode = document.getElementById('adm-preview-mode').value;
 
             document.getElementById('adm-total-items-badge').textContent = products.length;
+            const approvedImageCount = products.filter(p => PROD_IMG_VERIFIED[p.id] === true && /^https:\/\//i.test(PROD_IMAGES[p.id] || '')).length;
+            const coverage = document.getElementById('product-image-coverage');
+            if (coverage) coverage.textContent = 'صور معتمدة: ' + approvedImageCount + ' / ' + products.length + ' — متبقي: ' + (products.length - approvedImageCount);
             updateEnglishStats();
             updateDrugUseStats();
 
