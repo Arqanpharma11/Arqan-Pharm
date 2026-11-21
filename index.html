@@ -652,6 +652,11 @@
                         class="bg-emerald-700 hover:bg-emerald-800 text-white px-3.5 py-2 rounded-xl text-xs font-black shadow-sm transition-all cursor-pointer flex items-center gap-1.5">
                         <span>⚡ تحديث / إضافة ليستة مجمعة</span>
                     </button>
+                    <button type="button" id="admin-drug-api-btn" onclick="toggleBulkDrugApiEnrichment()"
+                        class="bg-emerald-700 hover:bg-emerald-800 text-white px-3.5 py-2 rounded-xl text-xs font-black shadow-sm transition-all cursor-pointer flex items-center gap-1.5">
+                        <span>🧪 استكمال المواد الفعالة تلقائيًا</span>
+                    </button>
+                    <span id="admin-drug-api-status" class="text-[10px] font-bold text-emerald-800">مطابقة الأصناف غير المكتملة من قاعدة بيانات دوائية</span>
 
                     <button type="button" onclick="exportDatabaseJSON()"
                         class="bg-arkan-cream hover:bg-arkan-sand text-arkan-dark border border-arkan-sand px-3 py-2 rounded-xl text-xs font-extrabold cursor-pointer">
@@ -900,6 +905,7 @@
                             <span id="pharm-shortage-count" class="num-en bg-arkan-dark text-arkan-sand px-2 py-0.5 rounded-full text-[11px]">0</span>
                         </button>
                     </div>
+                    <p class="mt-1 px-1 text-[9px] leading-relaxed text-emerald-700">مصادر بيانات المواد الفعالة: Egyptian Drug Database (CC0) و Egyptian Drug Database by Mahmoud Mohamed (CC BY 4.0).</p>
                 </div>
 
 
@@ -6532,8 +6538,12 @@
         function hasProductUseClassification(p) {
             return !!(p && p.cls && DRUG_USE_LABELS[p.cls] && p.act && !/[?؟]/.test(p.act) && !(!p.act && _FB_CLS.has(p.cls)));
         }
+        function _escapeDrugCatalogText(value) {
+            return String(value || '').replace(/[&<>"']/g, c => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[c]));
+        }
         function getProductUseInfo(p) {
             if (!p) return 'بيانات الاستخدام غير متاحة.';
+            if (p.useText) return _escapeDrugCatalogText(String(p.useText).slice(0, 240));
             if (p.cls && p.act && DRUG_USE_LABELS[p.cls]) return DRUG_USE_LABELS[p.cls];
             if (p.cat === 'أدوية') {
                 if (p.cls && !p.act && _FB_CLS.has(p.cls)) return 'تم تحديد الشكل الدوائي فقط (' + p.cls + ')؛ يلزم مراجعة المادة الفعالة لتحديد الاستخدام بدقة.';
@@ -6554,6 +6564,203 @@
             }
         }
         setInterval(_pushEnrichedIfAdmin, 5000);
+
+        // Admin-only, resumable completion from the public Egyptian Drug Database API.
+        // Requests are paced below the documented 60 requests/minute limit.
+        let _bulkDrugApiRunning = false;
+        let _bulkDrugApiStopRequested = false;
+        const _BULK_DRUG_API_QUEUE_KEY = 'arkan_drug_api_queue_v1';
+        const _BULK_DRUG_API_CURSOR_KEY = 'arkan_drug_api_cursor_v1';
+
+        function _drugApiFirstArabicToken(value) {
+            const match = String(value || '').normalize('NFKC').match(/[\u0600-\u06FF]+/);
+            let token = match ? normAr(match[0]).replace(/\s+/g, '') : '';
+            if (token.length > 7 && token.startsWith('ال')) token = token.slice(2);
+            return token;
+        }
+        function _drugApiEditDistance(a, b, limit) {
+            if (Math.abs(a.length - b.length) > limit) return limit + 1;
+            let previous = Array.from({ length: b.length + 1 }, (_, i) => i);
+            for (let i = 1; i <= a.length; i++) {
+                const current = [i]; let rowMin = i;
+                for (let j = 1; j <= b.length; j++) {
+                    const value = Math.min(current[j - 1] + 1, previous[j] + 1, previous[j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1));
+                    current[j] = value; if (value < rowMin) rowMin = value;
+                }
+                if (rowMin > limit) return limit + 1;
+                previous = current;
+            }
+            return previous[b.length];
+        }
+        function _drugApiNormalizeActive(value) {
+            return String(value || '').toUpperCase().replace(/\([^)]*\)/g, '').replace(/\b(HCL|HYDROCHLORIDE|SODIUM|POTASSIUM|FUMARATE|MALEATE|TARTRATE|CITRATE|SULFATE|SULPHATE|ACETATE|PHOSPHATE)\b/g, '')
+                .split('+').map(x => x.replace(/[^A-Z0-9]/g, '')).filter(Boolean).sort().join('+');
+        }
+        function _classifyApiDrugUse(description, active) {
+            const x = (String(description || '') + ' ' + String(active || '')).toUpperCase();
+            if (/EYE|OPHTHALMIC|GLAUCOMA/.test(x)) return 'عيون';
+            if (/ANTIDIABET|DIABET|INSULIN|SGLT2|DPP.?4|GLP.?1|GLINIDE|SULFONYLUREA|TIRZEPATIDE/.test(x)) return 'سكر';
+            if (/ANTIHYPERTENS|HYPERTENS|ANGIOTENSIN|BETA.?BLOCKER|ACE.?INHIB|CALCIUM.?CHANNEL/.test(x)) return 'ضغط';
+            if (/ANTIHYPERLIPID|STATIN|CHOLESTEROL|LIPID/.test(x)) return 'كوليسترول';
+            if (/ANTICOAGULANT|ANTIPLATELET|HEPARIN|FIBRINOLYTIC/.test(x)) return 'سيولة';
+            if (/ANTIBIOTIC|PENICILLIN|CEPHALOSPORIN|QUINOLONE|MACROLIDE|AMINOGLYCOSIDE|TETRACYCLINE|CARBAPENEM|ANTIBACTERIAL/.test(x)) return 'مضاد حيوي';
+            if (/ANTIFUNGAL/.test(x)) return 'مضاد فطريات';
+            if (/ANTIVIRAL/.test(x)) return 'مضاد فيروسات';
+            if (/ANTINEOPLASTIC|ANTICANCER|ONCOLOGY|AROMATASE/.test(x)) return 'أورام';
+            if (/ANTIHISTAMINE|ANTI.?ALLERGY/.test(x)) return 'حساسية';
+            if (/PROTON PUMP|PEPTIC ULCER|ANTACID|GASTRIC|GASTRO/.test(x)) return 'معدة';
+            if (/ANTIDEPRESSANT|SSRI|TRICYCLIC/.test(x)) return 'اكتئاب';
+            if (/ANTIPSYCHOTIC/.test(x)) return 'ذهان';
+            if (/ANTIEPILEPTIC|ANTICONVULSANT/.test(x)) return 'صرع';
+            if (/CORTICOSTEROID|GLUCOCORTICOID/.test(x)) return 'كورتيزون';
+            if (/ASTHMA|BRONCHODILATOR|RESPIRATORY|ANTIFIBROTIC/.test(x)) return 'صدر وربو';
+            if (/COUGH|MUCOLYTIC|EXPECTORANT|COLD PRODUCTS/.test(x)) return 'كحة وإفرازات';
+            if (/LAXATIVE|CONSTIPATION/.test(x)) return 'ملين';
+            if (/DIURETIC/.test(x)) return 'مدر بول';
+            if (/THYROID|CALCIMIMETIC/.test(x)) return 'غدة درقية';
+            if (/PROSTATE|TAMSULOSIN|FINASTERIDE/.test(x)) return 'بروستاتا';
+            if (/PDE5|ERECTILE|SILDENAFIL|TADALAFIL/.test(x)) return 'ضعف جنسي';
+            if (/OSTEOPOROSIS|OSTEOARTHRITIS|ARTHRITIS|BISPHOSPHONATE/.test(x)) return 'عظام';
+            if (/ANEMIA|IRON DEFICIENCY/.test(x)) return 'أنيميا';
+            if (/VITAMIN|MULTIVITAMIN|SUPPLEMENT|OMEGA|MINERAL|ANTIOXIDANT|COD LIVER OIL/.test(x)) return 'فيتامينات ومكملات';
+            if (/NEUROPATHIC|NEURO|CHOLINESTERASE|CEREBRAL CIRCULATORY|NOOTROPIC|DALFAMPRIDINE/.test(x)) return 'أعصاب';
+            if (/HEMORRHOID|HAEMORRHOID|ANAL FISSURE/.test(x)) return 'بواسير';
+            if (/URINARY|BLADDER|INCONTINENCE|UTI/.test(x)) return 'مسالك بولية';
+            if (/ANTISPASMODIC|ANTIFLATULENT|MOTILITY|IRRITABLE BOWEL|GASTROINTESTINAL/.test(x)) return 'معدة وقولون';
+            if (/ANTIPARASITIC|ANTHELMINTIC|ANTIPROTOZOAL/.test(x)) return 'مضاد طفيليات';
+            if (/CONTRACEPTIVE|PROGESTERONE|GONADOTROPHIN|FERTILITY|MENSTRUAL|GNRH/.test(x)) return 'هرمونات نسائية';
+            if (/ANDROGEN|TESTOSTERONE|HORMONE REPLACEMENT|CABERGOLINE/.test(x)) return 'هرمونات';
+            if (/LOCAL ANESTHETIC/.test(x)) return 'مخدر موضعي';
+            if (/GENERAL ANESTHESIA|ANAESTHESIA/.test(x)) return 'تخدير عام';
+            if (/VERTIGO|BETAHISTINE/.test(x)) return 'دوخة';
+            if (/GOUT/.test(x)) return 'نقرس';
+            if (/HEPATITIS|LIVER/.test(x)) return 'كبد';
+            if (/RENAL|KIDNEY/.test(x)) return 'كلى';
+            if (/CARDIAC|ANTIANGINA|ANTIARRHYTHM|ISCHEMIC/.test(x)) return 'قلب';
+            if (/VASCULAR|BLOOD CIRCULATION/.test(x)) return 'دورة دموية';
+            if (/PARKINSON/.test(x)) return 'باركنسون';
+            if (/ALZHEIMER|MEMANTINE/.test(x)) return 'زهايمر';
+            if (/ANXIOLYTIC|HYPNOTIC|SLEEP/.test(x)) return 'قلق ونوم';
+            if (/MUSCLE RELAXANT/.test(x)) return 'مرخي عضلات';
+            if (/DIARRHOEAL|DIARRHEA/.test(x)) return 'إسهال';
+            if (/ORAL CARE|ORAL CAVITY/.test(x)) return 'حلق';
+            if (/NASAL|DECONGEST/.test(x)) return 'أنف';
+            if (/ANTI.?INFLAMMATORY|ANALGESIC|NSAID|ANTIPYRETIC/.test(x)) return 'مسكن ومضاد التهاب';
+            if (/IMMUNOSUPPRESS|IMMUNOMODULATOR|JAK INHIBITOR|TACROLIMUS/.test(x)) return 'مناعة وزرع أعضاء';
+            if (/IMMUNITY/.test(x)) return 'مناعة وروماتيزم';
+            if (/WEIGHT LOSS|ORLISTAT/.test(x)) return 'سمنة';
+            if (/GROWTH HORMONE|SOMATROPIN/.test(x)) return 'غدة';
+            if (/MIGRAINE|SUMATRIPTAN|ZOLMITRIPTAN/.test(x)) return 'صداع نصفي';
+            if (/SKIN|DERMATOLOG|TOPICAL/.test(x)) return 'جلدية';
+            if (/EARWAX/.test(x)) return 'أذن';
+            if (/HYPOTENSION|MIDODRINE/.test(x)) return 'هبوط ضغط';
+            return 'تصنيف علاجي متخصص';
+        }
+        function _selectDrugApiMatch(product, results) {
+            const brand = _drugApiFirstArabicToken(product.name);
+            if (!brand || !Array.isArray(results)) return null;
+            const productFull = normAr(product.name).replace(/\s+/g, '');
+            const productNums = String(product.name).match(/\d+(?:\.\d+)?/g) || [];
+            const variants = ['بلس', 'اكسترا', 'فورت', 'كومباوند', 'اسار', 'اكسار', 'ممتد'];
+            const scored = results.filter(r => r && r.active && r.arabic).map(r => {
+                const candidateBrand = _drugApiFirstArabicToken(r.arabic);
+                if (!candidateBrand) return null;
+                const candidateFull = normAr(r.arabic).replace(/\s+/g, '');
+                const prefix = productFull.startsWith(candidateFull) || candidateFull.startsWith(productFull);
+                const distance = _drugApiEditDistance(brand, candidateBrand, 1);
+                if (distance > 1 && !prefix) return null;
+                for (const variant of variants) {
+                    const v = normAr(variant).replace(/\s+/g, '');
+                    if (productFull.includes(v) && !candidateFull.includes(v)) return null;
+                }
+                const candidateNums = (String(r.name || '') + ' ' + String(r.arabic || '')).match(/\d+(?:\.\d+)?/g) || [];
+                if (productNums.length && candidateNums.length && !productNums.some(n => candidateNums.includes(n))) return null;
+                return { record: r, score: prefix ? 0 : distance, activeKey: _drugApiNormalizeActive(r.active) };
+            }).filter(Boolean);
+            if (!scored.length) return null;
+            const bestScore = Math.min(...scored.map(x => x.score));
+            const best = scored.filter(x => x.score === bestScore);
+            const activeKeys = [...new Set(best.map(x => x.activeKey))];
+            if (activeKeys.length !== 1 || !activeKeys[0]) return null;
+            const chosen = best.find(x => x.record.uses) || best[0];
+            return { active: String(chosen.record.active).trim(), cls: _classifyApiDrugUse(chosen.record.description, chosen.record.active), uses: String(chosen.record.uses || '').trim().slice(0, 240) };
+        }
+        async function _fetchDrugApiSearch(term) {
+            if (!term) return [];
+            for (let attempt = 0; attempt < 3; attempt++) {
+                await new Promise(resolve => setTimeout(resolve, 1100));
+                const url = 'https://eg-drugs-api.mahmoudfalous.workers.dev/v1/search?q=' + encodeURIComponent(term) + '&page=1&limit=100';
+                const response = await fetch(url, { method: 'GET', headers: { Accept: 'application/json' } });
+                if (response.status === 429) { await new Promise(resolve => setTimeout(resolve, 61000)); continue; }
+                if (!response.ok) throw new Error('Drug database HTTP ' + response.status);
+                const payload = await response.json();
+                return Array.isArray(payload.results) ? payload.results : [];
+            }
+            throw new Error('Drug database rate limit; retry later');
+        }
+        async function toggleBulkDrugApiEnrichment() {
+            if (_bulkDrugApiRunning) { _bulkDrugApiStopRequested = true; return; }
+            if (!currentSession || currentSession.role !== 'admin') { showToast('هذه العملية متاحة للإدارة فقط.', 'error'); return; }
+            const button = document.getElementById('admin-drug-api-btn');
+            const status = document.getElementById('admin-drug-api-status');
+            let queue = null;
+            try { queue = JSON.parse(localStorage.getItem(_BULK_DRUG_API_QUEUE_KEY) || 'null'); } catch (_) {}
+            if (!Array.isArray(queue) || !queue.length) {
+                queue = products.filter(p => p && p.cat === 'أدوية' && (!p.act || /[?؟]/.test(String(p.act)))).map(p => p.name);
+                localStorage.setItem(_BULK_DRUG_API_QUEUE_KEY, JSON.stringify(queue));
+                localStorage.setItem(_BULK_DRUG_API_CURSOR_KEY, '0');
+            }
+            if (!queue.length) { if (status) status.textContent = 'كل الأدوية لديها مادة فعالة مدخلة بالفعل.'; showToast('لا توجد أصناف أدوية ناقصة المادة الفعالة.'); return; }
+            let cursor = Math.max(0, Number(localStorage.getItem(_BULK_DRUG_API_CURSOR_KEY) || 0) || 0);
+            if (cursor >= queue.length) cursor = 0;
+            _bulkDrugApiRunning = true; _bulkDrugApiStopRequested = false;
+            if (button) button.textContent = 'إيقاف الاستكمال';
+            let matched = 0, missed = 0, errors = 0, processed = 0;
+            const saveProgress = async (saveCloud) => {
+                persistState(KEYS.PRODUCTS, products);
+                localStorage.setItem(_BULK_DRUG_API_CURSOR_KEY, String(cursor));
+                if (saveCloud) await cloudSaveCatalogOverrides(products);
+            };
+            try {
+                while (cursor < queue.length && !_bulkDrugApiStopRequested) {
+                    const item = products.find(p => p && p.name === queue[cursor] && p.cat === 'أدوية');
+                    if (!item || (item.act && !/[?؟]/.test(String(item.act)))) { cursor++; processed++; }
+                    else {
+                        let match = null;
+                        const brand = _drugApiFirstArabicToken(item.name);
+                        const terms = [item.name, brand].filter((v, i, arr) => v && arr.indexOf(v) === i);
+                        try {
+                            for (const term of terms) {
+                                const results = await _fetchDrugApiSearch(term);
+                                match = _selectDrugApiMatch(item, results);
+                                if (match) break;
+                            }
+                            if (match) {
+                                item.act = match.active; item.cls = match.cls; item.useText = match.uses;
+                                item.ingredientSource = 'eg-drugs-api-cc-by-4.0'; item.ingredientVerified = true; matched++;
+                            } else missed++;
+                        } catch (error) { errors++; console.warn('Drug ingredient lookup failed:', item.name, error); }
+                        cursor++; processed++;
+                    }
+                    if (status && (processed % 5 === 0 || cursor >= queue.length)) status.textContent = 'تمت مراجعة ' + cursor + ' من ' + queue.length + ' — تم التحقق من ' + matched + ' — غير مطابق ' + missed + ' — أخطاء ' + errors;
+                    if (cursor % 10 === 0) await saveProgress(false);
+                    if (cursor % 25 === 0) await saveProgress(true);
+                }
+                await saveProgress(true);
+                if (cursor >= queue.length) {
+                    localStorage.removeItem(_BULK_DRUG_API_QUEUE_KEY); localStorage.removeItem(_BULK_DRUG_API_CURSOR_KEY);
+                    if (status) status.textContent = 'اكتملت المراجعة: تحقق ' + matched + ' — لم يُعثر على تطابق مؤكد ' + missed + ' — أخطاء ' + errors;
+                    showToast('انتهت مراجعة قاعدة المواد الفعالة. الأصناف غير المؤكدة لم يتم تخمينها.');
+                } else {
+                    if (status) status.textContent = 'تم الإيقاف عند ' + cursor + ' من ' + queue.length + '. اضغط استكمال للمتابعة.';
+                    showToast('تم حفظ التقدم ويمكن استكماله لاحقًا.');
+                }
+            } finally {
+                _bulkDrugApiRunning = false; _bulkDrugApiStopRequested = false;
+                if (button) button.textContent = '🧪 استكمال المواد الفعالة تلقائيًا';
+                try { renderAdminProductsTable(); renderPharmacistCatalog(); } catch (_) {}
+            }
+        }
 
         // =========================================================
         // 2. STATE, INDEXEDDB + LOCALSTORAGE PERSISTENCE
@@ -19062,7 +19269,7 @@ ${window.location.href}
                 const qty = cart[item.id] || 0;
                 const isMedicine = item.cat === 'أدوية';
                 const ingredientValue = item.act && !/[?؟]/.test(String(item.act))
-                    ? String(item.act)
+                    ? _escapeDrugCatalogText(item.act)
                     : isMedicine ? 'غير محددة في قاعدة البيانات الحالية'
                     : item.cat === 'ألبان أطفال' ? 'تركيبة غذائية تختلف حسب المنتج والمرحلة العمرية'
                     : item.cat === 'مستحضرات تجميل' ? 'المكونات الفعالة حسب بيانات العبوة'
