@@ -6808,9 +6808,9 @@
                 }
 
                 const savedImgs = await loadPersistedState(KEY_IMAGES);
-                if (savedImgs && typeof savedImgs === 'object') PROD_IMAGES = savedImgs;
+                if (savedImgs && typeof savedImgs === 'object') PROD_IMAGES = { ...VERIFIED_IMAGE_SEEDS, ...savedImgs };
                 const savedImgSrc = await loadPersistedState(KEY_IMG_SRC);
-                if (savedImgSrc && typeof savedImgSrc === 'object') PROD_IMG_SRC = savedImgSrc;
+                if (savedImgSrc && typeof savedImgSrc === 'object') PROD_IMG_SRC = { ...VERIFIED_IMAGE_SOURCES, ...savedImgSrc };
 
                 const savedMargins = await loadPersistedState(KEYS.MARGINS);
                 if (savedMargins) {
@@ -8697,8 +8697,18 @@ ${window.location.href}
         // ---- Product images (stored apart from the main catalog so it stays light) ----
         const KEY_IMAGES = 'arkan_cairo_prod_images_v1';
         const KEY_IMG_SRC = 'arkan_cairo_prod_images_src_v1';
-        let PROD_IMAGES = {};
-        let PROD_IMG_SRC = {};
+        // Verified package-photo seeds (product IDs follow EXACT_MASTER_ITEMS order).
+        // Keep these as defaults; administrator/cloud-approved images take precedence.
+        const VERIFIED_IMAGE_SEEDS = {
+            310: 'https://anwar.store/cdn/shop/files/acne-stop-face-wash.jpg?v=1691060537',
+            311: 'https://doctormpharmacy.com/cdn/shop/files/116823.jpg?v=1755190336&width=1946'
+        };
+        const VERIFIED_IMAGE_SOURCES = {
+            310: 'Anwar Store — NDGA Acne Stop Facial Wash 250 ml; matched by product name and package',
+            311: 'Doctor M Pharmacy — Mash Premiere NDGA Acne Stop Cream 30 gm; matched by product name and package'
+        };
+        let PROD_IMAGES = { ...VERIFIED_IMAGE_SEEDS };
+        let PROD_IMG_SRC = { ...VERIFIED_IMAGE_SOURCES };
         function setProductImage(id, src, source) {
             if (src && source) PROD_IMG_SRC[id] = source; else delete PROD_IMG_SRC[id];
             persistState(KEY_IMG_SRC, PROD_IMG_SRC);
