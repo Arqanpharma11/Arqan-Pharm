@@ -7164,7 +7164,7 @@
 
                 // Verified package-photo seed: Apple-Lite 30 tablets (catalog item #10).
                 // Source page shows the exact Apple-Lite pack; do not use lookalike images.
-                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v18';;;;;
+                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v19';;;;;
                 if (localStorage.getItem(IMAGE_SEED_VERSION) !== '1') {
                     // Individually checked package photos: brand, strength/stage and form match.
                     const verifiedImageSeeds = {
@@ -7648,7 +7648,10 @@
                         '220': { src: 'https://api.c0umyt3cda-pharmaove1-p1-public.model-t.cc.commerce.ondemand.com/medias/000000000000033248.webp?context=bWFzdGVyfGltYWdlc3wyMTYwMHxpbWFnZS9qcGVnfGFEWTJMMmhoWXk4eE1UTTFOekExTlRNMU1qZzJNaTh3TURBd01EQXdNREF3TURBd016TXlORGd1ZDJWaWNBfGE2NWEyMzZhY2M2NTA2YTczYzgwZmRlOTg3MjcyMjhkNDE1Yjc1NDhlMTNmNGEzMDUzYWEzNjNmMWFmOTc2NDQ', source: 'Pharma eMarket — Aspatrend 3 g granules, 10 sachets; exact pack and formulation matched' },
                         '221': { src: 'https://www.lotusonline.com/cdn/shop/files/3007128_1.jpg?v=1767615947', source: 'Lotus Pharmacies — Asprotect 100 mg, 30 enteric-coated tablets; exact brand and strength matched' },
                         '222': { src: 'https://api.c0umyt3cda-pharmaove1-p1-public.model-t.cc.commerce.ondemand.com/medias/000000000000024941.jpg?context=bWFzdGVyfGltYWdlc3wyMTIwODB8aW1hZ2UvanBlZ3xhRFJrTDJnd1pTOHhNRGc1TnpVNU9EUTRNRFF4TkM4d01EQXdNREF3TURBd01EQXdNalE1TkRFdWFuQm58YmZiZjcxY2RlM2IxYjcwMTcyYzgzNGRiN2Q3ZjRkMzk1NWM4MmQwNGIzMDZmYzc3Mzc1N2YwNDg3YmRmMDc1MQ', source: 'Pharma eMarket — Aspricarlo 81 mg, 30 chewable tablets; exact strength and pack matched' },
-                        '223': { src: 'https://cdn-med-images.vezeeta.com/Products/d7160e04-d6fc-457e-8ac0-f0523ddd5816.jpeg', source: 'Vezeeta Pharmacy — Aspirin Chemipharm 75 mg, 30 chewable tablets; exact brand, strength and pack matched' }
+                        '223': { src: 'https://cdn-med-images.vezeeta.com/Products/d7160e04-d6fc-457e-8ac0-f0523ddd5816.jpeg', source: 'Vezeeta Pharmacy — Aspirin Chemipharm 75 mg, 30 chewable tablets; exact brand, strength and pack matched' },
+                        '226': { src: 'https://egyptdwa.com/dwa/aspocid-paediatric-75mg-30-chewable-tab-14496.jpg', source: 'EgyptDwa — Aspocid Paediatric 75 mg, 30 chewable tablets; exact variant and pack matched' },
+                        '228': { src: 'https://cdn-med-images.vezeeta.com/Products/37a7d713-cfb6-4d73-aaf3-121458d4dbc5.webp', source: 'Vezeeta Pharmacy — Estohalt 40 mg, 14 capsules; exact brand and strength matched' },
+                        '239': { src: 'https://www.lotusonline.com/cdn/shop/files/3007183_2.jpg?v=1768405048&width=1500', source: 'Lotus Pharmacies — Asmatropim inhalation solution, 20 unit-dose vials × 2 ml; exact product matched' }
                      };
                     Object.entries(verifiedImageSeeds).forEach(([id, seed]) => {
                         if (seed.src && (PROD_IMG_VERIFIED[id] !== true || PROD_IMG_SRC[id] === seed.source)) {
