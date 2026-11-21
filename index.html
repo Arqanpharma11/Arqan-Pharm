@@ -7164,7 +7164,7 @@
 
                 // Verified package-photo seed: Apple-Lite 30 tablets (catalog item #10).
                 // Source page shows the exact Apple-Lite pack; do not use lookalike images.
-                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v19';;;;;
+                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v20';;;;;
                 if (localStorage.getItem(IMAGE_SEED_VERSION) !== '1') {
                     // Individually checked package photos: brand, strength/stage and form match.
                     const verifiedImageSeeds = {
@@ -7651,7 +7651,11 @@
                         '223': { src: 'https://cdn-med-images.vezeeta.com/Products/d7160e04-d6fc-457e-8ac0-f0523ddd5816.jpeg', source: 'Vezeeta Pharmacy — Aspirin Chemipharm 75 mg, 30 chewable tablets; exact brand, strength and pack matched' },
                         '226': { src: 'https://egyptdwa.com/dwa/aspocid-paediatric-75mg-30-chewable-tab-14496.jpg', source: 'EgyptDwa — Aspocid Paediatric 75 mg, 30 chewable tablets; exact variant and pack matched' },
                         '228': { src: 'https://cdn-med-images.vezeeta.com/Products/37a7d713-cfb6-4d73-aaf3-121458d4dbc5.webp', source: 'Vezeeta Pharmacy — Estohalt 40 mg, 14 capsules; exact brand and strength matched' },
-                        '239': { src: 'https://www.lotusonline.com/cdn/shop/files/3007183_2.jpg?v=1768405048&width=1500', source: 'Lotus Pharmacies — Asmatropim inhalation solution, 20 unit-dose vials × 2 ml; exact product matched' }
+                        '239': { src: 'https://www.lotusonline.com/cdn/shop/files/3007183_2.jpg?v=1768405048&width=1500', source: 'Lotus Pharmacies — Asmatropim inhalation solution, 20 unit-dose vials × 2 ml; exact product matched' },
+                        '241': { src: 'https://ebrampharmacies.com/wp-content/uploads/2024/03/1az.png', source: 'Ebram Pharmacies — Ascizadex-N topical gel 40 g; exact brand and size matched' },
+                        '249': { src: 'https://orchidiapharma.com/images/pages/Picture13.png', source: 'Orchidia official — Avazir 0.3% ophthalmic ointment, 5 g; exact brand and form matched' },
+                        '252': { src: 'https://dwaprices.com/upload/1780330411.png', source: 'DwaPrices — Afromed, 30 capsules; exact brand and pack matched' },
+                        '255': { src: 'https://www.mouradpharmacy.com/web/image/product.product/277886/image_1920?unique=3853efa', source: 'Mourad Pharmacy — Avetrix Skin Emollient Gel 100 g; exact brand and size matched' }
                      };
                     Object.entries(verifiedImageSeeds).forEach(([id, seed]) => {
                         if (seed.src && (PROD_IMG_VERIFIED[id] !== true || PROD_IMG_SRC[id] === seed.source)) {
