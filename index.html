@@ -9754,12 +9754,12 @@ ${window.location.href}
 
             if (deferredInstallPrompt) {
                 const installEvent = deferredInstallPrompt;
-                deferredInstallPrompt = null;
                 try {
-                    installEvent.prompt();
+                    await installEvent.prompt();
                     const choice = await installEvent.userChoice;
                     if (choice && choice.outcome === 'accepted') {
-                        showToast('تمت الموافقة على تثبيت مخزن أركان. أكمل خطوة التأكيد في المتصفح.');
+                        deferredInstallPrompt = null;
+                        showToast('تمت الموافقة على تثبيت مخزن أركان.');
                     } else {
                         showToast('لم يتم تأكيد التثبيت. يمكنك المحاولة مرة أخرى من الزر.');
                     }
