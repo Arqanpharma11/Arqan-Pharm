@@ -6884,13 +6884,21 @@
         }
 
         async function loadPersistedState(key) {
-            const idbVal = await ArkanDB.get(key);
-            if (idbVal !== null && idbVal !== undefined) return idbVal;
+            // Read localStorage first: it is synchronous and is updated on every save.
+            // IndexedDB is only a fallback, with a hard timeout so a blocked database
+            // can never hold the whole application startup hostage.
             try {
                 const lsVal = localStorage.getItem(key);
-                if (lsVal) return JSON.parse(lsVal);
+                if (lsVal !== null) return JSON.parse(lsVal);
             } catch (_) {}
-            return null;
+            try {
+                return await Promise.race([
+                    ArkanDB.get(key),
+                    new Promise(resolve => setTimeout(() => resolve(null), 2500))
+                ]);
+            } catch (_) {
+                return null;
+            }
         }
 
         // =========================================================
@@ -7145,6 +7153,9 @@
         // 3. INITIALIZATION & CORE HELPERS
         // =========================================================
         async function initPlatform() {
+            // Make the gateway interactive immediately; data restoration and cloud auth
+            // must happen in the background and must not block the first usable screen.
+            try { showGatewayView(); } catch (_) {}
             try {
                 const savedProducts = await loadPersistedState(KEYS.PRODUCTS);
                 if (Array.isArray(savedProducts) && savedProducts.length > 0) {
