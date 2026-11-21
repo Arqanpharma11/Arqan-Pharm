@@ -7175,7 +7175,7 @@
 
                 // Verified package-photo seed: Apple-Lite 30 tablets (catalog item #10).
                 // Source page shows the exact Apple-Lite pack; do not use lookalike images.
-                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v29';;;;;
+                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v30';;;;;
                 if (localStorage.getItem(IMAGE_SEED_VERSION) !== '1') {
                     // Individually checked package photos: brand, strength/stage and form match.
                     const verifiedImageSeeds = {
@@ -7733,6 +7733,10 @@
                         '421': { src: 'https://www.globe-international.com/cdn/shop/files/Gemini_Generated_Image_sj5fqhsj5fqhsj5f_1.png?crop=center&height=900&v=1768993930&width=900', source: 'Globe International manufacturer — Allerdep nasal spray 60 ml; official exact product package verified' },
                         '423': { src: 'https://www.lotusonline.com/cdn/shop/files/3008244_processed_1.jpg?v=1779529604', source: 'Lotus Pharmacies — Alerid 10 mg, 30 film-coated tablets; exact strength and pack verified' },
                         '424': { src: 'https://delmar-test.linkedgates.com/images/items/144441-v1.JPEG', source: 'Delmar & Attalla — Aleavia ear drops 15 ml; exact product, manufacturer and volume visually verified' },
+                        '15': { src: 'https://www.rosheta.com/upload/b05ea49967eb0fdac3a227e30f4afed92b0da1b1b65103b7393c4b1f10ea23a6.webp', source: 'Rosheta — Ibiamox 500 mg, 12 capsules; exact Amoun brand, strength and pack verified' },
+                        '25': { src: 'https://rakizah.com/cdn/shop/files/185012010_b6b90c53-8525-4df8-948d-44b8d4d29d4f.jpg?v=1733487212&width=720', source: 'Rakiza — Epirazole 20 mg omeprazole, 14 capsules; exact EIPICO brand and strength verified' },
+                        '26': { src: 'https://www.eipico.com.eg/DataImages/PRDS/Product_Image520.png', source: 'EIPICO manufacturer — Epirazole 40 mg, 10 enteric-coated capsules; exact official pack verified' },
+                        '29': { src: 'https://www.eipico.com.eg/DataImages/PRDS/Product_Image470.png', source: 'EIPICO manufacturer — Epirovastin 20 mg, 7 film-coated tablets; exact official brand, strength and pack verified' },
                     };
                     Object.entries(verifiedImageSeeds).forEach(([id, seed]) => {
                         if (seed.src && (PROD_IMG_VERIFIED[id] !== true || PROD_IMG_SRC[id] === seed.source)) {
