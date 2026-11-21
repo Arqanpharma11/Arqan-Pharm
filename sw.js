@@ -1,4 +1,4 @@
-const CACHE_NAME = 'arkan-pharma-cloud-v3';
+const CACHE_NAME = 'arkan-pharma-cloud-v4';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
