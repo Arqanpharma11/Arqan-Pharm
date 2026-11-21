@@ -822,7 +822,7 @@
 
 
                 <div class="mt-3 bg-gradient-to-l from-arkan-cream to-white border border-arkan-sand rounded-2xl p-3 flex flex-wrap items-center justify-between gap-3 no-print">
-                    <div><div class="font-black text-sm text-arkan-dark">🎙️ اعمل فاتورتك بالصوت</div><p class="text-[11px] text-arkan-bronze font-semibold">اتكلم بأسماء الأصناف والكميات، وراجع المطابقة قبل إضافتها للطلبية.</p></div>
+                    <div><div class="font-black text-sm text-arkan-dark">🎙️ اعمل فاتورتك بالصوت</div><p class="text-[11px] text-arkan-bronze font-semibold">اتكلم براحتك في جملة طويلة أو أكثر من جملة؛ سأستخرج الأصناف والكميات وأرتبها في فاتورة للمراجعة.</p></div>
                     <button type="button" onclick="openVoiceInvoice()" class="bg-arkan-dark hover:bg-arkan-primary text-white px-4 py-2.5 rounded-xl text-xs font-black shadow-sm cursor-pointer">🎙️ ابدأ الفاتورة الصوتية</button>
                 </div>
                 <!-- Pharmacist Catalog Table -->
@@ -8306,7 +8306,7 @@ ${window.location.href}
             if (!currentSession || currentSession.role!=='pharmacist') { showToast('الفاتورة الصوتية متاحة من حساب الصيدلية فقط.','error'); return; }
             voiceMode='pharmacist'; voiceInvoiceDraft=[];
             document.getElementById('voice-modal-title').textContent='🎙️ اعمل فاتورتك بالصوت';
-            document.getElementById('voice-modal-subtitle').textContent='اتكلم بأسماء الأصناف والكميات، وراجع المطابقة قبل الإضافة.';
+            document.getElementById('voice-modal-subtitle').textContent='اتكلم بشكل طبيعي حتى لو الكلام طويل، واذكر الكميات قبل أو بعد اسم الصنف.';
             document.getElementById('voice-pharmacist-controls').classList.remove('hidden');
             document.getElementById('voice-admin-controls').classList.add('hidden');
             document.getElementById('voice-pharm-review').classList.remove('hidden');
@@ -8321,13 +8321,13 @@ ${window.location.href}
             document.getElementById('voice-recording-status').classList.add('hidden');
         }
         function startVoiceRecognition(mode) {
-            if (mode==='admin' && (!currentSession || currentSession.role!=='admin')) { showToast('البحث الصوتي والخصومات للأدمن فقط.','error'); return; }
-            if (mode==='pharmacist' && (!currentSession || currentSession.role!=='pharmacist')) { showToast('الفاتورة الصوتية لحساب الصيدلية فقط.','error'); return; }
+            if(mode==='admin'&&(!currentSession||currentSession.role!=='admin')){showToast('البحث الصوتي والخصومات للأدمن فقط.','error');return;}
+            if(mode==='pharmacist'&&(!currentSession||currentSession.role!=='pharmacist')){showToast('الفاتورة الصوتية لحساب الصيدلية فقط.','error');return;}
             const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
-            if (!SR) { showToast('المتصفح لا يدعم التعرف الصوتي. استخدم Chrome أو Edge بأحدث إصدار.','error'); return; }
-            if (voiceRecognition) { try { voiceRecognition.stop(); } catch(e) {} }
+            if(!SR){showToast('المتصفح لا يدعم التعرف الصوتي. استخدم Chrome أو Edge بأحدث إصدار.','error');return;}
+            if(voiceRecognition){if(voiceMode===mode){try{voiceRecognition.stop();}catch(e){}return;}try{voiceRecognition.stop();}catch(e){}}
             voiceMode=mode;
-            if (mode==='admin') {
+            if(mode==='admin'){
                 document.getElementById('voice-modal-title').textContent='🎙️ البحث وتعديل الخصم بالصوت';
                 document.getElementById('voice-modal-subtitle').textContent='قل اسم الصنف أو أمر البحث/الخصم، ثم راجع النتيجة قبل الحفظ.';
                 document.getElementById('voice-pharmacist-controls').classList.add('hidden');
@@ -8336,38 +8336,65 @@ ${window.location.href}
                 document.getElementById('voice-admin-review').classList.remove('hidden');
                 document.getElementById('voice-transcript').value='';
                 document.getElementById('voice-admin-result').textContent='';
-                const m=document.getElementById('voice-assistant-modal'); m.classList.remove('hidden'); m.classList.add('flex');
+                const m=document.getElementById('voice-assistant-modal');m.classList.remove('hidden');m.classList.add('flex');
             }
             const status=document.getElementById('voice-recording-status');
-            status.textContent='🔴 جاري الاستماع... اتكلم الآن بوضوح.'; status.classList.remove('hidden');
-            const rec=new SR(); voiceRecognition=rec; rec.lang='ar-EG'; rec.continuous=false; rec.interimResults=false; rec.maxAlternatives=10;
+            status.textContent=mode==='pharmacist'?'🔴 بستمع لك… اتكلم براحتك واضغط الزر مرة تانية لما تخلص.':'🔴 جاري الاستماع... اتكلم الآن بوضوح.';
+            status.classList.remove('hidden');
+            const rec=new SR();voiceRecognition=rec;rec.lang='ar-EG';rec.continuous=mode==='pharmacist';rec.interimResults=mode==='pharmacist';rec.maxAlternatives=10;
             rec.onresult=event=>{
-                const result=event.results[0], transcript=voiceBestTranscript(result);
-                document.getElementById('voice-transcript').value=transcript; status.classList.add('hidden');
-                if(mode==='pharmacist') parseVoiceInvoiceDraft(); else processVoiceAdminCommand(transcript);
+                if(mode==='pharmacist'){
+                    const finalParts=[],interimParts=[];
+                    for(let i=0;i<event.results.length;i++){const item=event.results[i],t=String(item[0]&&item[0].transcript||'').trim();if(!t)continue;if(item.isFinal)finalParts.push(t);else interimParts.push(t);}
+                    const transcript=finalParts.concat(interimParts).join(' ').trim();
+                    if(transcript)document.getElementById('voice-transcript').value=transcript;
+                    if(finalParts.length)document.getElementById('voice-invoice-lines').textContent='وصلني الكلام… كمّل براحتك، وسأرتب الأصناف والكميات بعد إنهاء التسجيل.';
+                }else{
+                    const result=event.results[event.resultIndex]||event.results[0],transcript=voiceBestTranscript(result);
+                    document.getElementById('voice-transcript').value=transcript;status.classList.add('hidden');processVoiceAdminCommand(transcript);
+                }
             };
-            rec.onerror=event=>{
+            rec.onerror=event=>{status.classList.add('hidden');const msg=event.error==='not-allowed'?'اسمح للمتصفح باستخدام الميكروفون من إعدادات الموقع.':event.error==='no-speech'?'لم نسمع كلامًا. جرّب مرة أخرى.':'تعذر التعرف على الصوت. تأكد من الإنترنت وصلاحية الميكروفون.';showToast(msg,'error');};
+            rec.onend=()=>{
                 status.classList.add('hidden');
-                const msg=event.error==='not-allowed'?'اسمح للمتصفح باستخدام الميكروفون من إعدادات الموقع.':event.error==='no-speech'?'لم نسمع كلامًا. جرّب مرة أخرى.':'تعذر التعرف على الصوت. تأكد من الإنترنت وصلاحية الميكروفون.';
-                showToast(msg,'error');
+                if(mode==='pharmacist'&&document.getElementById('voice-transcript').value.trim())parseVoiceInvoiceDraft();
+                if(voiceRecognition===rec)voiceRecognition=null;
+                const btn=document.getElementById('voice-pharm-record-btn');if(btn)btn.textContent='🎙️ ابدأ التسجيل';
             };
-            rec.onend=()=>{status.classList.add('hidden'); if(voiceRecognition===rec) voiceRecognition=null;};
-            try { rec.start(); } catch(e) { status.classList.add('hidden'); voiceRecognition=null; showToast('تعذر تشغيل الميكروفون. أعد المحاولة.','error'); }
+            try{rec.start();const btn=document.getElementById('voice-pharm-record-btn');if(btn&&mode==='pharmacist')btn.textContent='⏹️ إنهاء التسجيل وتحليل الفاتورة';}
+            catch(e){status.classList.add('hidden');voiceRecognition=null;showToast('تعذر تشغيل الميكروفون. أعد المحاولة.','error');}
         }
         function parseVoiceInvoiceDraft() {
             const raw=document.getElementById('voice-transcript').value.trim();
             if(!raw){showToast('اتكلم أو اكتب الأصناف أولاً.','error');return;}
-            const chunks=raw.split(/[,،;؛\n]+|\s+(?:ثم|وبعدها|بعدها)\s+/i).map(x=>x.trim()).filter(Boolean);
-            voiceInvoiceDraft=chunks.map(chunk=>{
-                const qty=voiceNumberFromText(chunk)||1;
-                const query=voiceNormalize(chunk).replace(/\d+(?:\.\d+)?/g,' ')
-                    .replace(/\b(?:واحد|واحده|واحدة|اتنين|اثنين|اثنان|تنين|ثلاثه|ثلاثة|تلاته|تلات|اربعه|أربعة|اربعة|خمسه|خمسة|سته|ستة|سبعه|سبعة|تمانيه|ثمانيه|ثمانية|تسعه|تسعة|عشره|عشرة)\b/g,' ')
-                    .replace(/\b(?:علبه|علب|علبتين|علبتان|عبوه|عبوات|عبوتين|شريط|شرائط|شريطين|باكيت|باكيتين|باكت|قطعه|قطع|زجاجه|زجاجات|من|عايز|عاوزه|ضيف|اضف|حط|محتاج|محتاجه)\b/g,' ')
-                    .replace(/\s+/g,' ').trim();
-                const candidates=voiceFindCandidates(query);
-                return {source:chunk,query,qty,productId:voiceShouldAutoSelect(candidates,query)?candidates[0].id:'',candidates};
-            });
+            const tokens=voiceNormalize(raw).split(/\s+/).filter(Boolean);
+            const found=[], used=Array(tokens.length).fill(false), maxWords=Math.min(10,tokens.length);
+            // Search the entire natural sentence against Arkan's catalog instead of splitting only at commas.
+            for(let i=0;i<tokens.length;i++){
+                if(used[i]) continue;
+                let best=null;
+                for(let len=1;len<=maxWords&&i+len<=tokens.length;len++){
+                    const phrase=tokens.slice(i,i+len).join(' ');
+                    const candidates=voiceFindCandidates(phrase);
+                    if(!candidates.length) continue;
+                    const top=candidates[0], score=top._voiceScore||0, exact=top._voiceExact===true;
+                    if(!exact&&score<650) continue;
+                    const rank=score+len*2;
+                    if(!best||rank>best.rank) best={start:i,end:i+len,phrase,candidates,rank,exact};
+                }
+                if(!best) continue;
+                const qty=voiceSmartQuantity(tokens,best.start,best.end);
+                const source=tokens.slice(Math.max(0,best.start-2),Math.min(tokens.length,best.end+3)).join(' ');
+                found.push({source,query:best.phrase,qty,productId:best.exact?best.candidates[0].id:'',candidates:best.candidates,start:best.start,end:best.end});
+                for(let j=best.start;j<best.end;j++) used[j]=true;
+                i=best.end-1;
+            }
+            const merged=[];
+            found.forEach(line=>{const prior=line.productId&&merged.find(x=>x.productId===line.productId);if(prior)prior.qty+=line.qty;else merged.push(line);});
+            voiceInvoiceDraft=merged;
             renderVoiceInvoiceDraft();
+            if(!merged.length) showToast('لم أستطع استخراج صنف بثقة. جرّب إعادة الكلام أو صحح النص يدويًا.','error');
+            else if(merged.some(x=>!x.productId)) showToast('استخرجت الأصناف، لكن بعض المطابقات تقريبية وتحتاج اختيارك.','info');
         }
         function renderVoiceInvoiceDraft() {
             const host=document.getElementById('voice-invoice-lines'); host.innerHTML='';
@@ -9626,7 +9653,7 @@ ${url}`);
         <div class="bg-white rounded-3xl w-full max-w-3xl max-h-[92vh] overflow-y-auto shadow-2xl border border-arkan-sand p-4 sm:p-6 space-y-4">
             <div class="flex items-start justify-between gap-3"><div><h3 id="voice-modal-title" class="text-lg font-black text-arkan-dark">🎙️ الفاتورة الصوتية</h3><p id="voice-modal-subtitle" class="text-xs text-arkan-bronze font-semibold mt-1">اتكلم بوضوح وراجع المطابقة قبل الإضافة.</p></div><button type="button" onclick="closeVoiceAssistant()" class="text-arkan-bronze text-xl font-black px-2">✕</button></div>
             <div id="voice-recording-status" class="hidden rounded-xl bg-rose-50 border border-rose-200 text-rose-800 px-3 py-2 text-xs font-bold">🔴 جاري الاستماع...</div>
-            <div id="voice-pharmacist-controls" class="space-y-2"><button type="button" onclick="startVoiceRecognition('pharmacist')" class="w-full sm:w-auto bg-arkan-dark text-white px-5 py-3 rounded-xl text-sm font-black cursor-pointer">🎙️ اضغط وتكلم</button><p class="text-[11px] text-arkan-bronze">مثال: بانادول إكسترا 3 علب، أوجمنتين 1 جرام علبتين، فيتامين سي 5 علب.</p></div>
+            <div id="voice-pharmacist-controls" class="space-y-2"><button type="button" id="voice-pharm-record-btn" onclick="startVoiceRecognition('pharmacist')" class="w-full sm:w-auto bg-arkan-dark text-white px-5 py-3 rounded-xl text-sm font-black cursor-pointer">🎙️ اضغط وتكلم</button><p class="text-[11px] text-arkan-bronze">مثال: أنا محتاج بانادول إكسترا ثلاث علب وأوجمنتين واحد جرام علبتين وكمان فيتامين سي خمس علب. اتكلم متواصل ثم اضغط إنهاء التسجيل.</p></div>
             <div id="voice-admin-controls" class="hidden text-[11px] text-arkan-bronze">أمثلة: «ابحث عن بانادول» أو «خصم 10% على بانادول». الخصم لا يُحفظ إلا بعد مراجعتك والضغط على حفظ التعديل.</div>
             <label class="block text-xs font-black text-arkan-dark" for="voice-transcript">النص الذي تم سماعه (يمكنك تصحيحه يدويًا)</label>
             <textarea id="voice-transcript" rows="3" class="w-full border border-arkan-sand bg-arkan-light rounded-xl p-3 text-sm font-bold focus:bg-white focus:outline-none focus:border-arkan-primary" placeholder="سيظهر الكلام هنا..."></textarea>
