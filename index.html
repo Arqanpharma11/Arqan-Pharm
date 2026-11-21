@@ -7175,7 +7175,7 @@
 
                 // Verified package-photo seed: Apple-Lite 30 tablets (catalog item #10).
                 // Source page shows the exact Apple-Lite pack; do not use lookalike images.
-                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v35';;;;;
+                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v36';;;;;
                 if (localStorage.getItem(IMAGE_SEED_VERSION) !== '1') {
                     // Individually checked package photos: brand, strength/stage and form match.
                     const verifiedImageSeeds = {
@@ -7756,6 +7756,11 @@
                         '83': { src: 'https://www.lotusonline.com/cdn/shop/files/3008741_processed.jpg?v=1767615005', source: 'Lotus Pharmacies — Atrozemb 40/10 mg, 30 film-coated tablets; exact Liptis brand and combination verified' },
                         '87': { src: 'https://www.lotusonline.com/cdn/shop/files/3007717_1.jpg?v=1767616447&width=1500', source: 'Lotus Pharmacies — Atcogliflozin 10 mg, 30 film-coated tablets; exact ATCO brand and strength verified' },
                         '88': { src: 'https://delmar-test.linkedgates.com/images/items/141344-v1.JPEG', source: 'Delmar & Attalla — Atcogliflozin 25 mg, 30 film-coated tablets; exact ATCO brand and strength verified' },
+                        '89': { src: 'https://delmar-test.linkedgates.com/images/items/144197-v1.JPEG', source: 'Delmar & Attalla — Atcovildumet 50/1000 mg, 30 film-coated tablets; exact ATCO brand, combination and pack verified' },
+                        '90': { src: 'https://dwaprices.com/upload/1782346099.png', source: 'DwaPrices — Atcocoxib 90 mg etoricoxib, 30 film-coated tablets; exact ATCO product, strength and pack visually verified' },
+                        '92': { src: 'https://www.mouradpharmacy.com/web/image/product.template/464187/image_1024?unique=b945631', source: 'Mourad Pharmacy — Atlabacillus probiotic oral drops, 15 ml; exact brand, form and volume visually verified' },
+                        '93': { src: 'https://www.rosheta.com/upload/749f8207f167e7e49a170ffc5d99518f90db0ecb935001110b8f644334409e0b.webp', source: 'Rosheta — Atlatex pain-relief cream, 50 gm; exact brand, product form and volume verified' },
+                        '96': { src: 'https://api.c0umyt3cda-pharmaove1-p1-public.model-t.cc.commerce.ondemand.com/medias/000000000000034122.webp', source: 'Pharma eMarket — Atlacare joint-support supplement, 20 film-coated tablets; exact brand and pack verified' },
                     };
                     Object.entries(verifiedImageSeeds).forEach(([id, seed]) => {
                         if (seed.src && (PROD_IMG_VERIFIED[id] !== true || PROD_IMG_SRC[id] === seed.source)) {
