@@ -6562,9 +6562,9 @@
         };
 
         const ORDER_STATUS_CONFIG = {
-            pending: { label: 'قيد المراجعة', badge: 'bg-amber-100 text-amber-950 border-amber-300', step: 1 },
-            preparing: { label: 'جاري التجهيز بالمخزن', badge: 'bg-blue-100 text-blue-950 border-blue-300', step: 2 },
-            shipping: { label: 'خرج للتوصيل', badge: 'bg-purple-100 text-purple-950 border-purple-300', step: 3 },
+            pending: { label: 'قيد المراجعة', badge: 'bg-emerald-100 text-emerald-950 border-emerald-300', step: 1 },
+            preparing: { label: 'جاري التجهيز بالمخزن', badge: 'bg-emerald-100 text-emerald-950 border-emerald-300', step: 2 },
+            shipping: { label: 'خرج للتوصيل', badge: 'bg-emerald-100 text-emerald-950 border-emerald-300', step: 3 },
             delivered: { label: 'تم التسليم بنجاح', badge: 'bg-emerald-100 text-emerald-950 border-emerald-300', step: 4 },
             cancelled: { label: 'ملغي', badge: 'bg-emerald-100 text-emerald-950 border-emerald-300', step: 0 }
         };
@@ -7070,10 +7070,10 @@ ${window.location.href}
                     <span class="bg-emerald-200/80 text-emerald-950 px-2.5 py-0.5 rounded-lg font-black">أوردرات الكاش: <span class="num-en">${cashCount}</span></span>
                 `;
             } else {
-                banner.className = 'bg-amber-50 border border-amber-200 rounded-xl px-3.5 py-2 text-[11px] font-bold text-amber-950 flex flex-wrap items-center justify-between gap-2';
+                banner.className = 'bg-emerald-50 border border-emerald-200 rounded-xl px-3.5 py-2 text-[11px] font-bold text-emerald-950 flex flex-wrap items-center justify-between gap-2';
                 banner.innerHTML = `
                     <span>🔒 الدفع بالآجل مغلق حالياً — يُفتح تلقائياً بعد إتمام <strong>2 أوردر نقدي (كاش)</strong> أو بتفعيل من إدارة المخزن.</span>
-                    <span class="bg-amber-200/80 text-amber-950 px-2.5 py-0.5 rounded-lg font-black">أوردرات الكاش: <span class="num-en">${cashCount} / 2</span></span>
+                    <span class="bg-emerald-200/80 text-emerald-950 px-2.5 py-0.5 rounded-lg font-black">أوردرات الكاش: <span class="num-en">${cashCount} / 2</span></span>
                 `;
                 if (pharmPaymentMode !== 'cash') {
                     pharmPaymentMode = 'cash';
@@ -7966,7 +7966,7 @@ ${window.location.href}
             if (pharmShortageOnly) {
                 btn.className = 'flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border-2 border-arkan-dark bg-arkan-dark text-arkan-sand text-xs font-black shadow transition-all cursor-pointer shrink-0';
             } else {
-                btn.className = 'flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border border-amber-400 bg-amber-50 hover:bg-amber-100 text-amber-950 text-xs font-black transition-all cursor-pointer shrink-0';
+                btn.className = 'flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border border-emerald-400 bg-emerald-50 hover:bg-emerald-100 text-emerald-950 text-xs font-black transition-all cursor-pointer shrink-0';
             }
             renderPharmacistCatalog();
         }
