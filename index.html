@@ -7164,7 +7164,7 @@
 
                 // Verified package-photo seed: Apple-Lite 30 tablets (catalog item #10).
                 // Source page shows the exact Apple-Lite pack; do not use lookalike images.
-                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v24';;;;;
+                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v25';;;;;
                 if (localStorage.getItem(IMAGE_SEED_VERSION) !== '1') {
                     // Individually checked package photos: brand, strength/stage and form match.
                     const verifiedImageSeeds = {
@@ -7368,7 +7368,12 @@
                         '442': { src: 'https://media.zid.store/4e24910d-e706-4e18-a65f-fdb5b376262a/5d7beb84-9cae-4c5e-9718-ca935005aa51.png', source: 'Saydali HDeal — Amaryl 4 mg, 30 tablets; exact brand, strength and pack verified' },
                         '443': { src: 'https://re3ayapharmacy.com/cdn/shop/files/amaryl-m-2-mg-500-mg-30-tablets-787527.jpg?v=1735256865', source: 'Re3aya Pharmacy — Amaryl M 2 mg/500 mg, 30 film-coated tablets; exact brand, strength and pack verified' },
                         '453': { src: 'https://www.rosheta.com/upload/f4d7ddbcd6319350fff530e7364d88a3eabdc575efc456322e8d835c4286b318.webp', source: 'Rosheta — Ambropro 20 mg orange-flavored, sugar-free 20 lozenges; exact flavor and pack verified' },
-                        '454': { src: 'https://dwaprices.com/upload/1778346632.png', source: 'DwaPrices — Ambropro 20 mg mint-flavored, 20 lozenges; exact flavor and pack verified' }
+                        '454': { src: 'https://dwaprices.com/upload/1778346632.png', source: 'DwaPrices — Ambropro 20 mg mint-flavored, 20 lozenges; exact flavor and pack verified' },
+                        '425': { src: 'https://stgprevapi.al-dawaa.com/medias/%D8%A7%D9%84%D9%8A%D9%83%D8%A7-%D8%A7%D9%85-%D9%83%D8%B1%D9%8A%D9%85-%D9%84%D9%84%D8%B9%D8%AF%D9%88%D9%8A-%D8%A7%D9%84%D9%81%D8%B7%D8%B1%D9%8A%D8%A9-%D8%B9%D9%84%D9%89-%D8%A7%D9%84%D8%AC%D9%84%D8%AF-30-%D8%AC%D9%85_2_1200.webp?context=bWFzdGVyfGltYWdlc3wzNDM4MDB8aW1hZ2Uvd2VicHxhREV5TDJnM1lTODVNemN3TWpZNE5UTXlOelkyTHpFd01EYzBOVjh5WDJGeVh6RXlNREJYZURFeU1EQklYMWRGUWxBdWQyVmljQXw0N2U5NDllZDMzNTlkODBiZDI0ODIwMWMyOTdkMTQ5Y2FjOTY1MWJjMjJmYmEzZTA2ZjRkYTk2ZmQ0NjJiYTY2', source: 'Al Dawaa — Elica-M cream, 30 g; exact brand, formulation and pack verified' },
+                        '460': { src: 'https://delmar-test.linkedgates.com/images/items/119505-v1.JPEG', source: 'Delmar & Attalla — Amrizole 250 mg, 20 film-coated tablets; exact strength and pack verified' },
+                        '461': { src: 'https://re3ayapharmacy.com/cdn/shop/files/amrizole-500-mg-20-tablets-287542.jpg?v=1735257720', source: 'Re3aya Pharmacy — Amrizole 500 mg, 20 film-coated tablets; exact strength and pack verified' },
+                        '462': { src: 'https://dwaprices.com/upload/1778707390.png', source: 'DwaPrices — Amrizole 125 mg/5 ml oral suspension, 120 ml; exact concentration and volume verified' },
+                        '463': { src: 'https://www.lotusonline.com/cdn/shop/files/3000092_1.jpg?v=1767616646', source: 'Lotus Pharmacies — Amrizole 500 mg/100 ml intravenous infusion, 100 ml; exact concentration and volume verified' }
                      };
                     Object.entries(verifiedImageSeeds).forEach(([id, seed]) => {
                         if (seed.src && (PROD_IMG_VERIFIED[id] !== true || PROD_IMG_SRC[id] === seed.source)) {
