@@ -7175,7 +7175,7 @@
 
                 // Verified package-photo seed: Apple-Lite 30 tablets (catalog item #10).
                 // Source page shows the exact Apple-Lite pack; do not use lookalike images.
-                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v33';;;;;
+                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v34';;;;;
                 if (localStorage.getItem(IMAGE_SEED_VERSION) !== '1') {
                     // Individually checked package photos: brand, strength/stage and form match.
                     const verifiedImageSeeds = {
@@ -7746,6 +7746,11 @@
                         '20': { src: 'https://dwaprices.com/upload/1777486450.png', source: 'DwaPrices — Sanofi Apidra insulin glulisine 100 units/ml, pack of 5 x 3 ml cartridges; exact cartridge pack visually verified' },
                         '17': { src: 'https://dose-images.doseshq.com/1fc4999c-00e4-446a-b937-7be232df0fec.png', source: 'Dose Drugs — EIPICO Epigent 20 mg/2 ml, 3 ampoules; exact strength, dosage form and pack visually verified' },
                         '31': { src: 'https://www.eipico.com.eg/DataImages/PRDS/Product_Image473.png', source: 'EIPICO manufacturer — Epizithro 500 mg azithromycin, 6 hard-gelatin capsules; official exact brand, strength and pack verified' },
+                        '56': { src: 'https://www.dwaprices.com/upload/1777764469.png', source: 'DwaPrices — EPIQUANTEL praziquantel 600 mg, 4 film-coated tablets; exact EIPICO product, strength and pack verified' },
+                        '60': { src: 'https://api.c0umyt3cda-pharmaove1-p1-public.model-t.cc.commerce.ondemand.com/medias/000000000000002334.jpg', source: 'Pharma eMarket — EPICOTIL tenoxicam 20 mg, 5 adult suppositories; exact EIPICO product and pack verified' },
+                        '68': { src: 'https://ecombe.nahdionline.com/media/catalog/product/e/p/epimag-sachet-10pcs-5-gm-5ujpg.jpg', source: 'Nahdi — EPIMAG magnesium citrate effervescent powder, 10 sachets; exact EIPICO product and pack verified' },
+                        '71': { src: 'https://delmar-test.linkedgates.com/images/items/138463-v1.JPEG', source: 'Delmar & Attalla — Epimiraflu oseltamivir 75 mg, 10 hard-gelatin capsules; exact EIPICO brand, strength and pack verified' },
+                        '72': { src: 'https://www.eipico.com.eg/DataImages/PRDS/Product_Image468.png', source: 'EIPICO manufacturer — Epinor norfloxacin 400 mg, 14 tablets; exact official product, strength and pack verified' },
                     };
                     Object.entries(verifiedImageSeeds).forEach(([id, seed]) => {
                         if (seed.src && (PROD_IMG_VERIFIED[id] !== true || PROD_IMG_SRC[id] === seed.source)) {
