@@ -8343,29 +8343,48 @@ ${window.location.href}
             const d=voiceEditDistance(a,b);
             return d<=1 && Math.min(a.length,b.length)>=4 ? .72 : d===2 && Math.min(a.length,b.length)>=7 ? .52 : 0;
         }
+        const voiceProductCache = new WeakMap();
+        const voiceIgnoredTokens = new Set(['عايز','عاوزه','عاوز','محتاج','محتاجه','محتاجين','ضيف','اضف','حط','هات','من','فضلك','لو','سمحت','صنف','الصنف','دواء','دوا','علبه','علب','عبوه','عبوات','شريط','شرائط','باكيت','باكت','عدد','و','ثم','وبعدها','بعدها','وكمان','كمان','عاوزين','عايزين','ممكن','اريد','بص','طيب','تمام']);
+        function getVoiceProductData(p) {
+            let data=voiceProductCache.get(p);
+            if(!data){
+                const ar=voiceNormalize(p.name),en=voiceNormalize(getEn(p)),extra=voiceNormalize(getDrugSearchText(p)||'');
+                const full=ar+' '+en+' '+extra;
+                data={p,ar,en,full,pt:full.split(' ').filter(Boolean),available:p.available!==false};
+                voiceProductCache.set(p,data);
+            }
+            return data;
+        }
         function voiceFindCandidates(query) {
             const q=voiceNormalize(query); if(!q) return [];
-            const ignored=new Set(['عايز','عاوزه','عاوز','محتاج','محتاجه','محتاجين','ضيف','اضف','حط','هات','من','فضلك','لو','سمحت','صنف','الصنف','دواء','دوا','علبه','علب','عبوه','عبوات','شريط','شرائط','باكيت','باكت','عدد','و','ثم','وبعدها','بعدها','وكمان','كمان','عاوزين','عايزين','ممكن','اريد','بص','طيب','تمام']);
-            const qt=q.split(' ').filter(t=>t && !ignored.has(t));
+            const qt=q.split(' ').filter(t=>t && !voiceIgnoredTokens.has(t));
             if(!qt.length) return [];
-            const ranked=products.filter(p=>p.available!==false).map(p=>{
-                const ar=voiceNormalize(p.name), en=voiceNormalize(getEn(p)), extra=voiceNormalize(getDrugSearchText(p)||''), full=ar+' '+en+' '+extra;
-                const pt=full.split(' ').filter(Boolean);
-                if(ar===q || en===q || full===q) return {p,score:1000,exact:true};
-                if(ar.includes(q)||en.includes(q)) return {p,score:940,exact:false};
-                const tokenScores=qt.map(t=>Math.max(0,...pt.map(x=>voiceTokenSimilarity(t,x))));
-                const coverage=tokenScores.filter(x=>x>=.68).length/qt.length;
-                const avg=tokenScores.reduce((a,b)=>a+b,0)/qt.length;
-                const numeric=qt.filter(t=>/^\d/.test(t));
-                const numericOk=numeric.every(t=>pt.some(x=>x.startsWith(t)));
-                let score=Math.round(coverage*600+avg*260-Math.max(0,pt.length-qt.length)*3);
-                if(!numericOk) score-=220;
-                if(coverage===1 && numericOk) score+=80;
-                return {p,score,exact:false};
-            }).filter(x=>x.score>=Math.max(105,qt.length*70)).sort((a,b)=>b.score-a.score).slice(0,8);
-            return ranked.map(x=>Object.assign({},x.p,{_voiceScore:x.score,_voiceExact:x.exact}));
+            const ranked=[];
+            for(const p of products){
+                if(p.available===false) continue;
+                const data=getVoiceProductData(p),{ar,en,full,pt}=data;
+                let score,exact=false;
+                if(ar===q || en===q || full===q){score=1000;exact=true;}
+                else if(ar.includes(q)||en.includes(q)){score=940;}
+                else {
+                    let covered=0,total=0,numericOk=true;
+                    for(const t of qt){
+                        let best=0;
+                        for(const x of pt){const sim=voiceTokenSimilarity(t,x);if(sim>best)best=sim;if(best===1)break;}
+                        if(best>=.68)covered++;
+                        total+=best;
+                        if(/^\\d/.test(t)&&!pt.some(x=>x.startsWith(t)))numericOk=false;
+                    }
+                    const coverage=covered/qt.length,avg=total/qt.length;
+                    score=Math.round(coverage*600+avg*260-Math.max(0,pt.length-qt.length)*3);
+                    if(!numericOk)score-=220;
+                    if(coverage===1&&numericOk)score+=80;
+                }
+                if(score>=Math.max(105,qt.length*70)) ranked.push({p,score,exact});
+            }
+            ranked.sort((a,b)=>b.score-a.score);
+            return ranked.slice(0,8).map(x=>Object.assign({},x.p,{_voiceScore:x.score,_voiceExact:x.exact}));
         }
-        // Keep speech callbacks lightweight: catalog fuzzy matching runs only after recording stops.
         function voiceBestTranscript(result) {
             if(!result || !result.length) return '';
             return String(result[0].transcript||'').trim();
@@ -8497,6 +8516,11 @@ ${window.location.href}
             const normalized=voiceNormalize(raw);
             const tokens=normalized.split(/\s+/).filter(Boolean);
             const found=[],used=Array(tokens.length).fill(false),maxWords=Math.min(8,tokens.length);
+            const candidateCache=new Map();
+            const findCandidatesCached=phrase=>{
+                if(!candidateCache.has(phrase)) candidateCache.set(phrase,voiceFindCandidates(phrase));
+                return candidateCache.get(phrase);
+            };
             for(let i=0;i<tokens.length;i++){
                 // Yield periodically so long orders never monopolize the browser's UI thread.
                 if(i>0 && i%5===0) await new Promise(resolve=>requestAnimationFrame(()=>resolve()));
@@ -8504,7 +8528,7 @@ ${window.location.href}
                 let best=null;
                 for(let len=1;len<=maxWords&&i+len<=tokens.length;len++){
                     const phrase=tokens.slice(i,i+len).join(' ');
-                    const candidates=voiceFindCandidates(phrase);
+                    const candidates=findCandidatesCached(phrase);
                     if(!candidates.length) continue;
                     const top=candidates[0],score=top._voiceScore||0,exact=top._voiceExact===true;
                     if(!exact&&score<650) continue;
@@ -8540,7 +8564,7 @@ ${window.location.href}
                 if(!pending.length)return;
                 const phrase=pending.join(' ').trim(),startAt=pendingStart,endAt=startAt+pending.length;
                 if(phrase && phrase.length>1){
-                    const candidates=voiceFindCandidates(phrase);
+                    const candidates=findCandidatesCached(phrase);
                     unmatched.push({source:phrase,query:phrase,qty:voiceSmartQuantity(tokens,startAt,endAt),productId:'',candidates,start:startAt,end:endAt,unavailable:true,corrected:false});
                 }
                 pending=[];pendingStart=-1;
