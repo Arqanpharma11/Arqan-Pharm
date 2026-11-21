@@ -7175,7 +7175,7 @@
 
                 // Verified package-photo seed: Apple-Lite 30 tablets (catalog item #10).
                 // Source page shows the exact Apple-Lite pack; do not use lookalike images.
-                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v37';;;;;
+                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v38';;;;;
                 if (localStorage.getItem(IMAGE_SEED_VERSION) !== '1') {
                     // Individually checked package photos: brand, strength/stage and form match.
                     const verifiedImageSeeds = {
@@ -7765,6 +7765,17 @@
                         '112': { src: 'https://dkud4u09qff41.cloudfront.net/Products/2fb7b2d3-803d-4adf-8fd8-f923262eed6b.png', source: 'Vezeeta Pharmacy — Atometaflozine 12.5/1000 mg, 30 film-coated tablets; exact brand, combination and pack verified' },
                         '116': { src: 'https://www.lotusonline.com/cdn/shop/files/3000157_1.jpg?v=1767615864', source: 'Lotus Pharmacies — Atenoretic 50/25 mg combination, 30 capsules; exact brand and pack visually verified' },
                         '118': { src: 'https://delmar-test.linkedgates.com/images/items/106155-v1.JPEG', source: 'Delmar & Attalla — Aggrex acetylsalicylic acid 75 mg, 60 tablets; exact brand, strength and pack verified' },
+                        '131': { src: 'https://api.c0umyt3cda-pharmaove1-p1-public.model-t.cc.commerce.ondemand.com/medias/000000000000027323.webp?context=bWFzdGVyfGltYWdlc3wyNDk3N3xpbWFnZS9qcGVnfGFHTTNMMmcwWWk4eE1UTTFOamc0T0RNd01UVTVPQzh3TURBd01EQXdNREF3TURBd01qY3pNak11ZDJWaWNBfDZhNTUxOTM2ZmU1MDA0YWQyYTNlYzJmYjAxZjIwMzQzMmViMWFhMjFlNjRkOTRhMTY0OGM5M2I4NWRhMWQ3YWM', source: 'Pharma eMarket — Adwitine duloxetine 30 mg, 30 delayed-release capsules; exact brand, strength and pack verified' },
+                        '132': { src: 'https://api.c0umyt3cda-pharmaove1-p1-public.model-t.cc.commerce.ondemand.com/medias/000000000000027324.webp?context=bWFzdGVyfGltYWdlc3wyNjgxMXxpbWFnZS9qcGVnfGFHSXdMMmcwTnk4eE1UTTFOamc0T0RRMk5UUXpPQzh3TURBd01EQXdNREF3TURBd01qY3pNalF1ZDJWaWNBfGViZjdkNGQxMDdjMGNhMDk4NGJjNzcxYjc0N2JkMWUzNzBmYWNhYmQwNGJmMjJlNzg1NjRlM2Y5OGM0N2ViZWI', source: 'Pharma eMarket — Adwitine duloxetine 60 mg, 30 delayed-release capsules; exact brand, strength and pack verified' },
+                        '133': { src: 'https://delmar-test.linkedgates.com/images/items/125492-v1.JPEG', source: 'Delmar & Attalla — Adwiflam diclofenac potassium 75 mg/3 ml, 6 I.M. ampoules; exact product and pack verified' },
+                        '150': { src: 'https://delmar-test.linkedgates.com/images/items/125291-v1.JPEG', source: 'Delmar & Attalla — Aripiprazole 10 mg, 20 film-coated tablets; exact strength and pack verified' },
+                        '151': { src: 'https://dkud4u09qff41.cloudfront.net/Products/77348a98-0fba-40a1-bfca-8fcd80bedb68.jpeg', source: 'Vezeeta Pharmacy — Aripiprazole 5 mg, 30 film-coated tablets; exact strength and pack verified' },
+                        '152': { src: 'https://www.lotusonline.com/cdn/shop/files/3008082_processed.jpg?v=1767615015', source: 'Lotus Pharmacies — Aripiprazole 1 mg/ml oral solution, 120 ml; exact strength, form and volume verified' },
+                        '153': { src: 'https://delmar-test.linkedgates.com/images/items/129048-v1.JPEG', source: 'Delmar & Attalla — Aripiprazole 15 mg, 20 film-coated tablets; exact strength and pack verified' },
+                        '155': { src: 'https://egyptdwa.com/dwa/aripiprazole-30mg-20-f-c-tab-14399.jpg', source: 'EgyptDwa — Aripiprazole 30 mg, 20 film-coated tablets; exact strength and pack verified' },
+                        '156': { src: 'https://www.lotusonline.com/cdn/shop/files/3007231_processed.jpg?v=1773306500', source: 'Lotus Pharmacies — Aripiprex 10 mg, 30 film-coated tablets; exact Al Andalous brand, strength and pack verified' },
+                        '157': { src: 'https://www.alandalous.org/storage/uploads/Product/YHQmQm3Ro0_1703068798.png', source: 'Al Andalous manufacturer — Aripiprex 15 mg, 20 film-coated tablets; official exact brand and strength verified' },
+                        '158': { src: 'https://dwaprices.com/upload/1778004008.png', source: 'DwaPrices — Aripiprex 20 mg, 20 film-coated tablets; exact Al Andalous brand, strength and pack verified' },
                     };
                     Object.entries(verifiedImageSeeds).forEach(([id, seed]) => {
                         if (seed.src && (PROD_IMG_VERIFIED[id] !== true || PROD_IMG_SRC[id] === seed.source)) {
