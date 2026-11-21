@@ -15,8 +15,11 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="./og-preview.png">
     <meta property="og:description" content="بوابة الصيادلة والصيدليات المعتمدة للطلب المباشر ومتابعة الأوردرات ونواقص السوق - التوصيل داخل القاهرة فقط.">
-    <link rel="icon" type="image/svg+xml" href="./arkan-logo.svg?v=3">
-    <link rel="shortcut icon" type="image/svg+xml" href="./arkan-logo.svg?v=3">
+    <link rel="icon" type="image/svg+xml" href="./arkan-logo.svg?v=4">
+    <link rel="icon" type="image/png" sizes="192x192" href="./icons/arkan-192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="./icons/arkan-512.png">
+    <link rel="apple-touch-icon" href="./icons/arkan-192.png">
+    <link rel="shortcut icon" type="image/svg+xml" href="./arkan-logo.svg?v=4">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -179,7 +182,7 @@
     </style>
 
     <!-- PWA Manifest & Mobile/Desktop App Support -->
-    <link rel="manifest" href="./manifest.json">
+    <link rel="manifest" href="./manifest.json?v=2">
     <link rel="apple-touch-icon" href="./arkan-logo.svg?v=3">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -9620,9 +9623,10 @@ ${window.location.href}
 
             // Register Service Worker if on HTTP/HTTPS
             if ('serviceWorker' in navigator && (window.location.protocol === 'https:' || window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')) {
-                navigator.serviceWorker.register('./sw.js')
-                    .then(() => {
+                navigator.serviceWorker.register('./sw.js', { updateViaCache: 'none' })
+                    .then((registration) => {
                         swRegistrationSuccess = true;
+                        registration.update().catch(() => {});
                         updatePWAStatusBadge();
                     })
                     .catch(() => {
@@ -9771,9 +9775,15 @@ ${window.location.href}
             }
 
             const isSecure = window.location.protocol === 'https:' || window.location.hostname === 'localhost';
-            const reason = !isSecure
-                ? 'يجب فتح المنصة من رابط HTTPS الآمن حتى يسمح المتصفح بتثبيتها.'
-                : 'المتصفح لم يوفّر نافذة التثبيت المباشر في هذه الجلسة. التثبيت اليدوي من قائمة المتصفح يعمل كبديل.';
+            const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+            const isAndroid = /Android/i.test(navigator.userAgent);
+            const isChromium = /Chrome|Chromium|Edg|SamsungBrowser/i.test(navigator.userAgent);
+            let reason;
+            if (!isSecure) reason = 'التثبيت يتطلب رابط HTTPS آمن. افتح رابط المنصة الرسمي.';
+            else if (isIOS) reason = 'على iPhone لا يسمح Safari بفتح نافذة تثبيت تلقائية من صفحة الويب؛ استخدم مشاركة Safari ثم إضافة إلى الشاشة الرئيسية.';
+            else if (isAndroid) reason = 'لم يرسل المتصفح نافذة التثبيت التلقائي. افتح قائمة المتصفح واختر تثبيت التطبيق أو إضافة إلى الشاشة الرئيسية.';
+            else if (isChromium) reason = 'المتصفح لم يرسل حدث التثبيت التلقائي بعد. افتح قائمة المتصفح واختر تثبيت مخزن أركان أو Install app.';
+            else reason = 'هذا المتصفح لا يدعم تثبيت تطبيقات PWA مباشرة. افتح الرابط في Chrome أو Edge أو Safari حسب جهازك.';
             showInstallHelp(targetDevice, reason);
             updatePWAStatusBadge();
         }
@@ -9876,6 +9886,12 @@ ${url}`);
                 manifestReachable = false;
             }
 
+            let iconChecks = { icon192: false, icon512: false };
+            try {
+                const [i192, i512] = await Promise.all([fetch('./icons/arkan-192.png', { cache: 'no-store' }), fetch('./icons/arkan-512.png', { cache: 'no-store' })]);
+                iconChecks = { icon192: i192.ok, icon512: i512.ok };
+            } catch (e) {}
+
             const checks = [
                 {
                     ok: catalogCount > 4000,
@@ -9883,19 +9899,19 @@ ${url}`);
                     desc: `تم التحقق من تحميل ${catalogCount.toLocaleString('en-US')} صنف بنجاح بدون أي نقص.`
                 },
                 {
-                    ok: hasManifestTag,
-                    title: 'ملف تعريف التطبيق (manifest.json)',
-                    desc: manifestReachable ? 'مرتبط ومتصل بنجاح بأيقونات 192px و 512px.' : 'مربوط في الكود وجاهز للعمل تلقائياً بمجرد الرفع على استضافة GitHub Pages.'
+                    ok: hasManifestTag && manifestReachable && iconChecks.icon192 && iconChecks.icon512,
+                    title: 'ملف تعريف التطبيق وأيقونات التثبيت',
+                    desc: manifestReachable && iconChecks.icon192 && iconChecks.icon512 ? 'ملف التعريف وأيقونتا 192 و512 بكسل متاحة.' : 'تعذر تحميل manifest أو إحدى أيقونات التثبيت؛ راجع مسارات الملفات.'
                 },
                 {
-                    ok: hasSW,
-                    title: 'محرك العمل السريع والتثبيت (Service Worker)',
-                    desc: swRegistrationSuccess ? 'مفعّل ويعمل بنجاح في الخلفية.' : 'مدعوم في المتصفح وجاهز للتفعيل التلقائي على رابط HTTPS الخاص بـ GitHub.'
+                    ok: hasSW && swRegistrationSuccess,
+                    title: 'محرك العمل والتثبيت (Service Worker)',
+                    desc: swRegistrationSuccess ? 'تم تسجيل Service Worker بنجاح.' : 'لم يتم تسجيل Service Worker بعد؛ تحقق من HTTPS أو دعم المتصفح.'
                 },
                 {
-                    ok: true,
-                    title: 'التوافق مع الموبايل (Android & iOS) والكمبيوتر (Windows & Mac)',
-                    desc: isHttps ? 'الرابط آمن (HTTPS) ويدعم التثبيت الفوري على الموبايل والكمبيوتر.' : 'ملاحظة: أنت تفتح الملف حالياً من جهازك مباشرة (file://)؛ بمجرد رفعه على GitHub سيعمل زر التثبيت المباشر 100%.'
+                    ok: isHttps,
+                    title: 'الرابط الآمن المطلوب للتثبيت',
+                    desc: isHttps ? 'الموقع يعمل عبر HTTPS.' : 'يجب فتح الموقع عبر HTTPS حتى يعمل تثبيت PWA.'
                 }
             ];
 
