@@ -8479,6 +8479,7 @@ ${window.location.href}
             });
             flushUnmatched();
             found.push(...unmatched);
+            found.sort((a,b)=>a.start-b.start);
 
             const merged=[];
             found.forEach(line=>{
