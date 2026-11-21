@@ -7164,7 +7164,7 @@
 
                 // Verified package-photo seed: Apple-Lite 30 tablets (catalog item #10).
                 // Source page shows the exact Apple-Lite pack; do not use lookalike images.
-                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v28';;;;;
+                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v29';;;;;
                 if (localStorage.getItem(IMAGE_SEED_VERSION) !== '1') {
                     // Individually checked package photos: brand, strength/stage and form match.
                     const verifiedImageSeeds = {
@@ -7420,7 +7420,18 @@
                         '570': { src: 'https://doctormpharmacy.com/cdn/shop/files/121632.jpg?v=1755355966&width=533', source: 'Doctor M Pharmacy — Inhalex 18 mcg dry-powder capsules, 30 capsules; exact brand and strength verified' },
                         '571': { src: 'https://ecombe.nahdionline.com/media/catalog/product/a/n/anoro-ellipta-62-5-25-mgm-inhalation-powder-30-doses-1_1.jpg', source: 'Nahdi — Anoro Ellipta 62.5/25 mcg inhaler, 30 doses; exact strength and device pack verified' },
                         '574': { src: 'https://taypharmacies.com/wp-content/uploads/2025/03/2025-03-03T104041.017.png', source: 'Tay Pharmacies — Inofolic HP, 30 soft-gelatin capsules; exact brand and pack verified' },
-                        '584': { src: 'https://taypharmacies.com/wp-content/uploads/2024/08/2024-08-24T135631.734.png', source: 'Tay Pharmacies — Awadist 1000 mg, 20 film-coated tablets; exact brand, strength and pack verified' }
+                        '584': { src: 'https://taypharmacies.com/wp-content/uploads/2024/08/2024-08-24T135631.734.png', source: 'Tay Pharmacies — Awadist 1000 mg, 20 film-coated tablets; exact brand, strength and pack verified' },
+                        '573': { src: 'https://dwaprices.com/upload/1781722156.png', source: 'DwaPrices — Inofolic Combi HP, 30 soft gelatin capsules; exact product and pack verified' },
+                        '577': { src: 'https://www.3322000.app/us/120/pidwebp600/32621/f133865188044951024229-1.png', source: '3322000 — Anona Hair Antifrizz Serum, 250 ml; exact product and package verified' },
+                        '593': { src: 'https://dkud4u09qff41.cloudfront.net/Products/1c0f023f-3152-4488-b0f2-53de771da735.jpeg', source: 'Vezeeta Pharmacy — Optipred prednisolone acetate eye drops, 5 ml; exact brand and volume verified' },
+                        '594': { src: 'https://media.myaster.com/images/products/1008377/optidex-t-eye-drops-5ml/1008377_1.jpg', source: 'myAster — Optidex T tobramycin/dexamethasone eye drops, 5 ml; exact brand and volume verified' },
+                        '595': { src: 'https://roshmed.com/web/image/product.template/279276/image_1024?unique=8033535', source: 'Rosh Pharmacy — Optiflox ofloxacin eye drops, 5 ml; exact brand and volume verified' },
+                        '603': { src: 'https://cdn.salla.sa/qgyfSmn9IaT4gF4n2TKVtDfYpQ9aLJ5pChAh82Xs.jpeg', source: 'Body Care Pharmacy — Otrivin Children 0.05% nasal drops; exact age variant and concentration verified' },
+                        '604': { src: 'https://egyptdwa.com/dwa/otrivin-baby-saline-nasal-drops-15-ml-24363.jpg', source: 'EgyptDwa — Otrivin Baby Saline nasal drops, 15 ml; exact baby variant and volume verified' },
+                        '605': { src: 'https://www.bloompharmacy.com/cdn/shop/products/otrivin-adults-nasal-drops-15-ml-154855_1024x.jpg?v=1687731310', source: 'Bloom Pharmacy — Otrivin Adults 0.1% nasal drops, 15 ml; exact adult variant and volume verified' },
+                        '610': { src: 'https://doctormpharmacy.com/cdn/shop/files/103922.jpg?v=1755352415', source: 'Doctor M Pharmacy — Augmentin 1 g, 14 tablets; exact strength and pack verified' },
+                        '611': { src: 'https://kuludonline.com/cdn/shop/files/21177_1225x.jpg?v=1703310009', source: 'Kulud Pharmacy — Augmentin 312.5 mg/5 ml suspension, 100 ml; exact strength and volume verified' },
+                        '612': { src: 'https://media.zid.store/0a395ab0-f830-43d1-a748-253eb7272793/2114997c-b9bd-4a19-b580-4c797e4fd158.jpg', source: 'Taj Addawa — Augmentin 457 mg/5 ml suspension, 70 ml; exact strength and volume verified' }
                      };
                     Object.entries(verifiedImageSeeds).forEach(([id, seed]) => {
                         if (seed.src && (PROD_IMG_VERIFIED[id] !== true || PROD_IMG_SRC[id] === seed.source)) {
