@@ -8236,7 +8236,7 @@ ${window.location.href}
         function voiceNumberFromText(value) {
             const v = voiceNormalize(value), digit = v.match(/\d+(?:\.\d+)?/);
             if (digit) return Number(digit[0]);
-            const words = {'واحد':1,'واحده':1,'واحدة':1,'اتنين':2,'اثنين':2,'اثنان':2,'تنين':2,'علبتين':2,'علبتان':2,'شريطين':2,'عبوتين':2,'ثلاثه':3,'ثلاثة':3,'تلاته':3,'تلات':3,'اربعه':4,'أربعة':4,'اربعة':4,'خمسه':5,'خمسة':5,'سته':6,'ستة':6,'سبعه':7,'سبعة':7,'تمانيه':8,'ثمانيه':8,'ثمانية':8,'تسعه':9,'تسعة':9,'عشره':10,'عشرة':10};
+            const words = {'واحد':1,'واحده':1,'واحدة':1,'اتنين':2,'اثنين':2,'اثنان':2,'تنين':2,'علبتين':2,'علبتان':2,'شريطين':2,'عبوتين':2,'علبتين':2,'علبتان':2,'شريطين':2,'عبوتين':2,'ثلاثه':3,'ثلاثة':3,'تلاته':3,'تلات':3,'اربعه':4,'أربعة':4,'اربعة':4,'خمسه':5,'خمسة':5,'سته':6,'ستة':6,'سبعه':7,'سبعة':7,'تمانيه':8,'ثمانيه':8,'ثمانية':8,'تسعه':9,'تسعة':9,'عشره':10,'عشرة':10};
             for (const token of v.split(' ')) if (words[token]) return words[token];
             return null;
         }
@@ -8306,7 +8306,7 @@ ${window.location.href}
         function parseVoiceInvoiceDraft() {
             const raw=document.getElementById('voice-transcript').value.trim();
             if(!raw){showToast('اتكلم أو اكتب الأصناف أولاً.','error');return;}
-            const chunks=raw.split(/[,،;؛\n]+|\s+(?:ثم|وبعدها|بعدها)\s+/i).map(x=>x.trim()).filter(Boolean);
+            const chunks=raw.split(/[,،;؛\n]+|\s+(?:ثم|وبعدها|بعدها)\s+|\s+و\s*/i).map(x=>x.trim()).filter(Boolean);
             voiceInvoiceDraft=chunks.map(chunk=>{
                 const qty=voiceNumberFromText(chunk)||1;
                 const query=voiceNormalize(chunk).replace(/\d+(?:\.\d+)?/g,' ')
@@ -8351,8 +8351,8 @@ ${window.location.href}
         function processVoiceAdminCommand(transcript) {
             if(!currentSession||currentSession.role!=='admin'){showToast('الأدمن فقط يمكنه استخدام أوامر إدارة الأصناف.','error');return;}
             const raw=String(transcript||'').trim(), normalized=voiceNormalize(raw);
-            const dm=normalized.match(/خصم\s*(\d+(?:\.\d+)?)/);
-            const query=normalized.replace(/خصم\s*\d+(?:\.\d+)?\s*%?/g,' ')
+            const dm=normalized.match(/خصم\s*(\d+(?:\.\d+)?|واحد|واحده|واحدة|اتنين|اثنين|اثنان|تنين|ثلاثه|ثلاثة|تلاته|تلات|اربعه|أربعة|اربعة|خمسه|خمسة|سته|ستة|سبعه|سبعة|تمانيه|ثمانيه|ثمانية|تسعه|تسعة|عشره|عشرة)/);
+            const query=normalized.replace(/خصم\s*(?:\d+(?:\.\d+)?|واحد|واحده|واحدة|اتنين|اثنين|اثنان|تنين|ثلاثه|ثلاثة|تلاته|تلات|اربعه|أربعة|اربعة|خمسه|خمسة|سته|ستة|سبعه|سبعة|تمانيه|ثمانيه|ثمانية|تسعه|تسعة|عشره|عشرة)\s*(?:%|في الميه|بالمية|بالمئه)?/g,' ').replace(/\b(?:في الميه|بالمية|بالمئه)\b/g,' ')
                 .replace(/(?:ابحث|بحث|دور|هات|افتح|عن|على|الصنف|صنف|من فضلك)/g,' ')
                 .replace(/%/g,' ').replace(/\s+/g,' ').trim();
             const input=document.getElementById('adm-search-input');input.value=query||raw;admCurrentPage=1;renderAdminProductsTable();
