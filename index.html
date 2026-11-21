@@ -7164,7 +7164,7 @@
 
                 // Verified package-photo seed: Apple-Lite 30 tablets (catalog item #10).
                 // Source page shows the exact Apple-Lite pack; do not use lookalike images.
-                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v35';;;;;
+                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v36';;;;;
                 if (localStorage.getItem(IMAGE_SEED_VERSION) !== '1') {
                     // Individually checked package photos: brand, strength/stage and form match.
                     const verifiedImageSeeds = {
@@ -7538,7 +7538,18 @@
                         '816': { src: 'https://taypharmacies.com/wp-content/uploads/2025/01/2025-01-21T143458.058.png', source: 'Tay Pharmacies — Isis hibiscus herbal tea, 20 bags; exact flavor and pack verified' },
                         '819': { src: 'https://sekemonline.com/cdn/shop/files/lemon_jinjer_20.jpg?v=1756367047', source: 'Sekem Online — Isis lemon and ginger herbal tea, 20 bags; exact flavor and pack verified' },
                         '821': { src: 'https://cdn.mafrservices.com/pim-content/EGY/media/product/37136/1727017204/37136_main.jpg?im=Resize%3D400', source: 'Carrefour Egypt — Isis anise herbal tea, 12 bags; exact flavor and pack verified' },
-                        '822': { src: 'https://sekemonline.com/cdn/shop/files/Untitled-219.jpg?v=1756366672', source: 'Sekem Online — Isis anise and lemon herbal tea, 20 bags; exact flavor and pack verified' }
+                        '822': { src: 'https://sekemonline.com/cdn/shop/files/Untitled-219.jpg?v=1756366672', source: 'Sekem Online — Isis anise and lemon herbal tea, 20 bags; exact flavor and pack verified' },
+                        '835': { src: 'https://www.mouradpharmacy.com/web/image/product.product/285285/image_1920?unique=166c507', source: 'Mourad Pharmacy — Iverzine ivermectin 6 mg, 24 tablets; exact brand, strength and pack verified' },
+                        '836': { src: 'https://doctormpharmacy.com/cdn/shop/files/wave_2_pic_128723.jpg?v=1765294237', source: 'Doctor M Pharmacy — Iverzine ivermectin 1% topical cream, 30 g; exact concentration and size verified' },
+                        '839': { src: 'https://media.zid.store/8a5f4b81-ebc0-44bd-9005-126976b57582/65194135-4620-46ea-a659-fc67904be6f6.jpg', source: 'KhobaraMed — Effexor XR venlafaxine 150 mg, 14 extended-release capsules; exact strength and pack verified' },
+                        '840': { src: 'https://media.zid.store/thumbs/af67ae11-520e-4132-a131-39a3e5789dac/15dd062c-e73d-4a75-a6b5-fa1bfceaee59-thumbnail-770x770-70.jpeg', source: 'Basma Online — Effexor XR venlafaxine 75 mg, 14 extended-release capsules; exact strength and pack verified' },
+                        '852': { src: 'https://www.mouradpharmacy.com/web/image/product.product/320080/image_1920?unique=63c070c', source: 'Mourad Pharmacy — Euthyrox levothyroxine 100 mcg, 100 tablets; exact strength and pack verified' },
+                        '853': { src: 'https://maipharmacy.co/cdn/shop/files/0_1_26751fed-e886-4788-a339-6dc66d07504d.webp?v=1747839671&width=533', source: 'Mai Pharmacy — Euthyrox levothyroxine 50 mcg, 100 tablets; exact strength and pack verified' },
+                        '862': { src: 'https://www.mouradpharmacy.com/web/image/product.product/282065/image_1920?unique=c5aa1d5', source: 'Mourad Pharmacy — Empacoza empagliflozin 10 mg, 30 film-coated tablets; exact strength and pack verified' },
+                        '863': { src: 'https://egyptdwa.com/dwa/empacoza-25-mg-30-f-c-tabs-18279.jpg', source: 'EgyptDwa — Empacoza empagliflozin 25 mg, 30 film-coated tablets; exact strength and pack verified' },
+                        '864': { src: 'https://chefaa.com/blog/wp-content/uploads/2023/06/ezgif.com-webp-to-jpg-21-768x768.jpg', source: 'Chefaa — Empacoza Plus empagliflozin/linagliptin 25/5 mg, 30 tablets; exact combination and pack verified' },
+                        '865': { src: 'https://cdn.dawaagate.com/images/medicines/empacoza-plus-105mg-30-fc-tabs-1840-7feb21.webp', source: 'Dwaagate — Empacoza Plus empagliflozin/linagliptin 10/5 mg, 30 tablets; exact combination and pack verified' },
+                        '866': { src: 'https://taypharmacies.com/wp-content/uploads/2024/02/2024-02-08T152131.603.png', source: 'Tay Pharmacies — Empacoza Trio XR 10/5/1000 mg, 30 extended-release tablets; exact triple combination and pack verified' }
                      };
                     Object.entries(verifiedImageSeeds).forEach(([id, seed]) => {
                         if (seed.src && (PROD_IMG_VERIFIED[id] !== true || PROD_IMG_SRC[id] === seed.source)) {
