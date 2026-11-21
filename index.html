@@ -7175,7 +7175,7 @@
 
                 // Verified package-photo seed: Apple-Lite 30 tablets (catalog item #10).
                 // Source page shows the exact Apple-Lite pack; do not use lookalike images.
-                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v31';;;;;
+                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v32';;;;;
                 if (localStorage.getItem(IMAGE_SEED_VERSION) !== '1') {
                     // Individually checked package photos: brand, strength/stage and form match.
                     const verifiedImageSeeds = {
@@ -7743,6 +7743,7 @@
                         '47': { src: 'https://www.lotusonline.com/cdn/shop/files/3007383_1.jpg?v=1767615929', source: 'Lotus Pharmacies — Apixatrack 5 mg, 30 film-coated tablets; exact Evapharm brand and strength verified' },
                         '48': { src: 'https://dwaprices.com/upload/1784904640.png', source: 'DwaPrices — Apixaguard 2.5 mg, 30 film-coated tablets; exact brand, strength and pack verified' },
                         '49': { src: 'https://www.mouradpharmacy.com/web/image/product.product/96/image_1024/%5Bcode%20in%20gad%3A68504--code%20in%20mourad%3A%5D%20Apixaguard%205mg%2030%20Tabs%20-%20%D8%A7%D8%A8%D9%8A%D9%83%D8%B3%D8%A7%D8%AC%D8%A7%D8%B1%D8%AF%205%20%D9%85%D8%AC%D9%85%2030%20%D9%82%D8%B1%D8%B5?unique=ea1b271', source: 'Mourad Pharmacy — Apixaguard 5 mg, 30 film-coated tablets; exact brand, strength and pack verified' },
+                        '20': { src: 'https://dwaprices.com/upload/1777486450.png', source: 'DwaPrices — Sanofi Apidra insulin glulisine 100 units/ml, pack of 5 x 3 ml cartridges; exact cartridge pack visually verified' },
                     };
                     Object.entries(verifiedImageSeeds).forEach(([id, seed]) => {
                         if (seed.src && (PROD_IMG_VERIFIED[id] !== true || PROD_IMG_SRC[id] === seed.source)) {
