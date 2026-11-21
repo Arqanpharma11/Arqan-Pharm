@@ -8924,7 +8924,7 @@ ${window.location.href}
                 openInvoiceSheetWithData({ invNum: '#ARK-' + String(record.id).slice(-6), invDate: record.date, pharmName: record.pharmName, docName: record.docName, address: record.address, phone: record.phone, payLabel: record.payLabel, deliverySlot: record.deliverySlot, lines: record.lines, itemsCount: record.itemsCount, totalPublic: record.totalPublic, pharmProfit: record.pharmProfit, totalClient: record.totalClient });
                 return;
             }
-            cart = {}; persistState(KEYS.CART, cart); renderPharmacistCatalog(); renderPharmacistCart(); closeOrderReview();
+            closeOrderReview();
             if (action === 'whatsapp') {
                 const url = 'https://wa.me/' + WAREHOUSE_WHATSAPP + '?text=' + encodeURIComponent(whatsappText);
                 window.open(url, '_blank', 'noopener,noreferrer');
@@ -8932,7 +8932,10 @@ ${window.location.href}
             } else if (action === 'copy') {
                 const box = document.getElementById('clipboard-box'); box.value = buildWhatsAppOrderMessage(summary); box.select(); box.setSelectionRange(0, 99999); document.execCommand('copy');
                 showToast('تم تسجيل الطلب ونسخ تفاصيله للحافظة.');
-            } else { showToast('تم إتمام الأوردر بنجاح! يمكنك متابعة حالته من خانة متابعة الأوردرات.'); }
+            } else {
+                cart = {}; persistState(KEYS.CART, cart); renderPharmacistCatalog(); renderPharmacistCart();
+                showToast('تم إتمام الأوردر بنجاح! يمكنك متابعة حالته من خانة متابعة الأوردرات.');
+            }
         }
 
         function completeOrderAndSendToAdmin() { openOrderReview('admin'); }
