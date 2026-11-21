@@ -7121,8 +7121,9 @@
             // 5. Product images (one small doc per product)
             try { firestoreDB.collection('productImages').onSnapshot((snap) => {
                 snap.docChanges().forEach(ch => {
-                    if (ch.type === 'removed') delete PROD_IMAGES[ch.doc.id];
-                    else if (ch.doc.data().src) { PROD_IMAGES[ch.doc.id] = ch.doc.data().src; if (ch.doc.data().source) PROD_IMG_SRC[ch.doc.id] = ch.doc.data().source; }
+                    if (ch.type === 'removed') { delete PROD_IMAGES[ch.doc.id]; delete PROD_IMG_VERIFIED[ch.doc.id]; delete PROD_IMG_SRC[ch.doc.id]; }
+                    else if (ch.doc.data().src && ch.doc.data().verified === true) { PROD_IMAGES[ch.doc.id] = ch.doc.data().src; PROD_IMG_VERIFIED[ch.doc.id] = true; if (ch.doc.data().source) PROD_IMG_SRC[ch.doc.id] = ch.doc.data().source; }
+                    else { delete PROD_IMAGES[ch.doc.id]; delete PROD_IMG_VERIFIED[ch.doc.id]; }
                 });
                 persistState(KEY_IMAGES, PROD_IMAGES);
                 if (currentSession?.role === 'pharmacist') renderPharmacistCatalog();
@@ -7146,6 +7147,9 @@
                 if (savedImgs && typeof savedImgs === 'object') PROD_IMAGES = savedImgs;
                 const savedImgSrc = await loadPersistedState(KEY_IMG_SRC);
                 if (savedImgSrc && typeof savedImgSrc === 'object') PROD_IMG_SRC = savedImgSrc;
+                const savedImgVerified = await loadPersistedState(KEY_IMG_VERIFIED);
+                if (savedImgVerified && typeof savedImgVerified === 'object') PROD_IMG_VERIFIED = savedImgVerified;
+                Object.keys(PROD_IMAGES).forEach(id => { if (PROD_IMG_VERIFIED[id] !== true) delete PROD_IMAGES[id]; });
 
                 const savedMargins = await loadPersistedState(KEYS.MARGINS);
                 if (savedMargins) {
@@ -8121,7 +8125,7 @@ ${window.location.href}
                 return `
                     <tr class="hover:bg-arkan-light transition-colors ${!item.available ? 'opacity-60 bg-emerald-50/30' : ''}">
                         <td class="py-3 px-4 font-extrabold text-arkan-dark">
-                            <span class="cursor-pointer" onclick="openProductImage(${item.id})">${PROD_IMAGES[item.id] ? '🖼️' : '📷'} ${cleanCatalogDisplayName(item.name)}</span>
+                            <span class="cursor-pointer" onclick="openProductImage(${item.id})">${PROD_IMG_VERIFIED[item.id] === true && PROD_IMAGES[item.id] ? '🖼️' : '📦'} ${cleanCatalogDisplayName(item.name)}</span>
                             ${enChipAdmin(item, '')}
                             ${item.shortage ? '<span class="inline-block bg-amber-100 text-amber-950 border border-amber-300 text-[10px] px-2 py-0.5 rounded-full mr-1">🔥 ناقص</span>' : ''}
                         </td>
@@ -19023,17 +19027,22 @@ ${window.location.href}
         // ---- Product images (stored apart from the main catalog so it stays light) ----
         const KEY_IMAGES = 'arkan_cairo_prod_images_v1';
         const KEY_IMG_SRC = 'arkan_cairo_prod_images_src_v1';
+        const KEY_IMG_VERIFIED = 'arkan_cairo_prod_images_verified_v1';
         let PROD_IMAGES = {};
         let PROD_IMG_SRC = {};
+        let PROD_IMG_VERIFIED = {};
+        // Only administrator-uploaded/confirmed package photos may appear in the catalog.
         function setProductImage(id, src, source) {
             if (src && source) PROD_IMG_SRC[id] = source; else delete PROD_IMG_SRC[id];
             persistState(KEY_IMG_SRC, PROD_IMG_SRC);
-            if (src) PROD_IMAGES[id] = src; else delete PROD_IMAGES[id];
+            if (src) { PROD_IMAGES[id] = src; PROD_IMG_VERIFIED[id] = true; }
+            else { delete PROD_IMAGES[id]; delete PROD_IMG_VERIFIED[id]; }
             persistState(KEY_IMAGES, PROD_IMAGES);
+            persistState(KEY_IMG_VERIFIED, PROD_IMG_VERIFIED);
             try {
                 if (typeof firestoreDB !== 'undefined' && firestoreDB) {
                     const ref = firestoreDB.collection('productImages').doc(String(id));
-                    (src ? ref.set({ src, source: PROD_IMG_SRC[id] || '' }) : ref.delete()).catch(e => console.error('image sync error', e));
+                    (src ? ref.set({ src, source: PROD_IMG_SRC[id] || '', verified: true }) : ref.delete()).catch(e => console.error('image sync error', e));
                 }
             } catch (e) { console.error(e); }
         }
@@ -19135,42 +19144,29 @@ ${window.location.href}
             showMainImage(r.full || r.src, r.thumb);
             _liveCurrent.source = r.source + ' — ' + r.link;
         }
-        async function openProductImage(id) {
+        function openProductImage(id) {
             const p = products.find(x => x.id === id);
             if (!p) return;
-            const en = getEn(p), src = PROD_IMAGES[id], token = ++_liveToken;
-            _liveCurrent = { id, shown: null };
+            const src = PROD_IMG_VERIFIED[id] === true ? PROD_IMAGES[id] : null;
+            _liveCurrent = { id, shown: src || null };
             document.getElementById('pimg-name-ar').textContent = p.name;
-            document.getElementById('pimg-name-en').textContent = en;
+            document.getElementById('pimg-name-en').textContent = getEn(p);
             document.getElementById('pimg-cat').textContent = p.cat;
-            const gal = document.getElementById('pimg-gallery'), st = document.getElementById('pimg-live-status'), sv = document.getElementById('pimg-save-btn');
-            gal.innerHTML = ''; st.textContent = ''; sv.classList.add('hidden');
+            document.getElementById('pimg-gallery').innerHTML = '';
+            const st = document.getElementById('pimg-live-status');
+            document.getElementById('pimg-save-btn').classList.add('hidden');
             document.getElementById('pimg-gcfg').classList.toggle('hidden', !(currentSession && currentSession.role === 'admin'));
             const box = document.getElementById('pimg-box');
             document.getElementById('product-image-modal').classList.remove('hidden');
-            if (src) { showMainImage(src); st.textContent = 'صورة معتمدة من المخزن' + (PROD_IMG_SRC[id] ? ' — المصدر: ' + PROD_IMG_SRC[id] : ''); return; }
-
-            box.innerHTML = '<div class="text-center text-arkan-bronze p-6"><div class="text-4xl mb-2 animate-pulse">🔎</div><div class="text-xs font-bold">جاري البحث عن صورة المستحضر...</div></div>';
-            let results = _liveCache[id];
-            if (!results) {
-                results = await liveSearchImages(p);
-                if (!results.length) { const gr = await googleImageSearch(p); if (gr) results = gr; }
-                if (!results.length && !_gErr) results = await wikimediaImages(p);
-                if (!_gErr) _liveCache[id] = results;
+            if (src) {
+                showMainImage(src);
+                st.textContent = 'صورة العبوة التي اعتمدها الأدمن' + (PROD_IMG_SRC[id] ? ' — ' + PROD_IMG_SRC[id] : '');
+            } else {
+                box.innerHTML = '<div class="text-center text-arkan-bronze p-6"><div class="text-5xl mb-2">📦</div><div class="text-xs font-bold">لا توجد صورة عبوة معتمدة لهذا الصنف حتى الآن</div></div>';
+                st.textContent = (currentSession && currentSession.role === 'admin')
+                    ? 'ارفع صورة العبوة الصحيحة من تعديل الصنف. تم إيقاف نتائج البحث التلقائية لأنها قد تعرض عبوة مختلفة.'
+                    : 'ستظهر صورة العبوة هنا بعد اعتماد الصورة الصحيحة من الإدارة.';
             }
-            if (token !== _liveToken) return; // user opened another product meanwhile
-            if (!results.length) {
-                box.innerHTML = '<div class="text-center text-arkan-bronze p-6"><div class="text-5xl mb-2">💊</div><div class="text-xs font-bold">لا توجد صورة موثّقة تلقائياً (الأدوية لا تُعرض لها صور تخمينية)</div></div>';
-                st.textContent = _gErr ? _gErr : !getGcse() ? ((currentSession && currentSession.role === 'admin') ? 'لا توجد صورة معتمدة — فعّل البحث الداخلي من ⚙️ أو ارفع صورة العبوة من «تعديل الصنف»' : 'لا توجد صورة لهذا الصنف بعد') : getEnInfo(p).verified ? 'لم يتم العثور على صورة — يمكن للأدمن رفع صورة العبوة من «تعديل الصنف»' : 'الاسم الإنجليزي غير مراجَع — راجعه أولاً ثم أعد المحاولة';
-                return;
-            }
-            _liveCurrent.results = results;
-            showMainImage(results[0].full || results[0].src, results[0].thumb);
-            st.textContent = results[0].google ? 'نتيجة بحث جوجل التلقائي (' + results[0].source + ') — غير موثّقة: طابق العبوة قبل الاعتماد' : results[0].wiki ? 'من ويكيميديا كومنز — غير موثّقة: طابق العبوة قبل الاعتماد' : 'المصدر: ' + results[0].source + ' (مطابقة تامة للاسم التجاري) — راجع العبوة قبل الاعتماد';
-            _liveCurrent.source = results[0].source + ' — ' + results[0].link;
-            const esc = v => String(v || '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'%27'}[c]));
-            gal.innerHTML = results.map((r, i) => `<img src="${esc(r.src)}" title="${esc(r.label)} (${esc(r.source)})" onclick="pickLive(${i})" class="h-14 w-14 shrink-0 object-contain bg-white border border-arkan-sand rounded-lg cursor-pointer hover:border-arkan-dark" onerror="this.remove()">`).join('');
-            if (currentSession && currentSession.role === 'admin') sv.classList.remove('hidden');
         }
         function saveLiveImageAsOfficial() {
             if (!_liveCurrent || !_liveCurrent.shown) return;
@@ -19295,9 +19291,9 @@ ${window.location.href}
                                     class="shrink-0 w-14 h-14 rounded-xl border border-arkan-sand bg-white overflow-hidden flex items-center justify-center hover:border-emerald-600 hover:shadow-sm transition"
                                     title="اضغط لعرض صورة العبوة التجارية أو البحث عنها"
                                     aria-label="عرض صورة عبوة ${item.name}">
-                                    ${PROD_IMAGES[item.id]
+                                    ${PROD_IMG_VERIFIED[item.id] === true && PROD_IMAGES[item.id]
                                         ? `<img src="${String(PROD_IMAGES[item.id]).replace(/&/g, '&amp;').replace(/"/g, '&quot;')}" alt="عبوة ${_escapeDrugCatalogText(item.name)}" loading="lazy" decoding="async" class="w-full h-full object-contain p-0.5" onerror="this.outerHTML='<span class=&quot;text-xl&quot;>💊</span>'">`
-                                        : '<span class="text-xl text-emerald-700">📷</span>'}
+                                        : '<span class="text-[10px] text-emerald-700 font-bold text-center leading-tight px-1">بانتظار صورة صحيحة</span>'}
                                 </button>
                                 <div class="min-w-0 flex-1">
                                     <a href="${getGoogleProductImageUrl(item.id)}" target="_blank" rel="noopener noreferrer"
