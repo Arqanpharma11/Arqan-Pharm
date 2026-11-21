@@ -7164,7 +7164,7 @@
 
                 // Verified package-photo seed: Apple-Lite 30 tablets (catalog item #10).
                 // Source page shows the exact Apple-Lite pack; do not use lookalike images.
-                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v29';;;;;
+                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v30';;;;;
                 if (localStorage.getItem(IMAGE_SEED_VERSION) !== '1') {
                     // Individually checked package photos: brand, strength/stage and form match.
                     const verifiedImageSeeds = {
@@ -7438,7 +7438,18 @@
                         '596': { src: 'https://egyptdwa.com/dwa/optic-saline-drops-9285.jpg', source: 'EgyptDwa — Optic Saline 5% ophthalmic solution, 15 ml; exact brand and concentration verified' },
                         '597': { src: 'https://evawebsite.blob.core.windows.net/media/assets/medium_Optilubric_b0c9716584.png', source: 'Eva Pharma official — Optilubric single-dose ophthalmic solution, 30 × 0.5 ml; exact brand and pack verified' },
                         '598': { src: 'https://eldawaelmasry.com/wp-content/uploads/2023/10/Screenshot-2023-10-22-233742-e1732625840537.png', source: 'ElDawa ElMasry — Oplex syrup, 125 ml; exact brand and volume verified' },
-                        '606': { src: 'https://www.rosheta.com/upload/c6677877d3a73fdf381085658b9e085a26c49331a995b73f1be8bcf8e4e39a12.webp', source: 'Rosheta — Otocort ear drops, 10 ml; exact brand and volume verified' }
+                        '606': { src: 'https://www.rosheta.com/upload/c6677877d3a73fdf381085658b9e085a26c49331a995b73f1be8bcf8e4e39a12.webp', source: 'Rosheta — Otocort ear drops, 10 ml; exact brand and volume verified' },
+                        '580': { src: 'https://dkud4u09qff41.cloudfront.net/Products/00c08fac-db55-4414-8d17-75c6cc09ddd6.jpeg', source: 'Vezeeta Pharmacy — ORS oral rehydration salts, 10 sachets; exact product and pack verified' },
+                        '626': { src: 'https://doctormpharmacy.com/cdn/shop/files/121964.jpg?v=1755350501&width=533', source: 'Doctor M Pharmacy — Oracure oral gel, 30 g; exact brand, form and size verified' },
+                        '634': { src: 'https://www.lotusonline.com/cdn/shop/files/3001615_1.jpg?v=1767615118', source: 'Lotus Pharmacies — Ursoplus, 20 capsules; exact brand and pack verified' },
+                        '635': { src: 'https://www.rosheta.com/upload/d76543a165a485972c82f7cc3883bf79acb46ede9190a6e3209989d19015941a.webp', source: 'Rosheta — Ursotwin 500 mg, 20 capsules; exact strength and pack verified' },
+                        '637': { src: 'https://re3ayapharmacy.com/cdn/shop/files/ursofalk-250-mg-20-capsules-163176.jpg?v=1735257809&width=1445', source: 'Re3aya Pharmacy — Ursofalk 250 mg, 20 capsules; exact brand, strength and pack verified' },
+                        '644': { src: 'https://tdawi.com/media/catalog/product/cache/0daeb07bb1d294c1f281fab47369d56a/o/r/orly_2__oylfgxwnbzgiqfvb.jpg', source: 'Tdawi Egypt — Orly 120 mg, 30 capsules; exact brand, strength and pack verified' },
+                        '645': { src: 'https://www.bloompharmacy.com/cdn/shop/files/orlistat-120-mg-30-capsules-832929.jpg?v=1715143085&width=1024', source: 'Bloom Pharmacy — Orlistat 120 mg, 30 hard gelatin capsules; exact strength and pack verified' },
+                        '664': { src: 'https://egyptdwa.com/dwa/ozempic-0-5mg-prefilled-pen-13327.jpg', source: 'EgyptDwa — Ozempic 0.5 mg pre-filled pen; exact strength and presentation verified' },
+                        '665': { src: 'https://cd3c14-whites.akinoncloudcdn.com/products/2025/11/01/29545/d5f19bd2-b77e-45bb-a4ba-498c8bdc536b_size1200x1200_cropCenter.jpg', source: 'Whites — Ozempic 1 mg pre-filled pen; exact strength and presentation verified' },
+                        '669': { src: 'https://cdn.salla.sa/CEXFQEO5vWp504ESY8TJu4JNbRPcmdS9CUMHmCwh.jpeg', source: 'Body Care Pharmacy — Vitabiotics Osteocare, 30 tablets; exact brand and pack verified' },
+                        '670': { src: 'https://media.zid.store/thumbs/739b4fdd-621a-4591-a63b-e21ded3d5ee4/95f1fdef-3057-4eb1-be5c-eeb8959b1fa4-thumbnail-1000x1000-70.jpg', source: 'Astra Glory — Vitabiotics Osteocare Liquid, 200 ml; exact brand and volume verified' }
                      };
                     Object.entries(verifiedImageSeeds).forEach(([id, seed]) => {
                         if (seed.src && (PROD_IMG_VERIFIED[id] !== true || PROD_IMG_SRC[id] === seed.source)) {
