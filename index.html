@@ -656,7 +656,7 @@
                         class="bg-emerald-700 hover:bg-emerald-800 text-white px-3.5 py-2 rounded-xl text-xs font-black shadow-sm transition-all cursor-pointer flex items-center gap-1.5">
                         <span>🧪 استكمال المواد الفعالة تلقائيًا</span>
                     </button>
-                    <span id="admin-drug-api-status" class="text-[10px] font-bold text-emerald-800">مطابقة الأصناف غير المكتملة من قاعدة بيانات دوائية</span>
+                    <span id="admin-drug-api-status" class="text-[10px] font-bold text-emerald-800">مطابقة الأدوية والمكملات ومستحضرات التجميل؛ ألبان الأطفال لها تركيبة غذائية خاصة</span>
 
                     <button type="button" onclick="exportDatabaseJSON()"
                         class="bg-arkan-cream hover:bg-arkan-sand text-arkan-dark border border-arkan-sand px-3 py-2 rounded-xl text-xs font-extrabold cursor-pointer">
@@ -6710,11 +6710,11 @@
             let queue = null;
             try { queue = JSON.parse(localStorage.getItem(_BULK_DRUG_API_QUEUE_KEY) || 'null'); } catch (_) {}
             if (!Array.isArray(queue) || !queue.length) {
-                queue = products.filter(p => p && p.cat === 'أدوية' && (!p.act || /[?؟]/.test(String(p.act)) || p.ingredientSource === 'rule-based-unverified')).map(p => p.name);
+                queue = products.filter(p => p && p.cat !== 'ألبان أطفال' && (!p.act || /[?؟]/.test(String(p.act)) || p.ingredientSource === 'rule-based-unverified')).map(p => p.name);
                 localStorage.setItem(_BULK_DRUG_API_QUEUE_KEY, JSON.stringify(queue));
                 localStorage.setItem(_BULK_DRUG_API_CURSOR_KEY, '0');
             }
-            if (!queue.length) { if (status) status.textContent = 'كل الأدوية لديها مادة فعالة مدخلة بالفعل.'; showToast('لا توجد أصناف أدوية ناقصة المادة الفعالة.'); return; }
+            if (!queue.length) { if (status) status.textContent = 'كل الأصناف القابلة للمطابقة لديها بيانات مكونات مدخلة بالفعل.'; showToast('لا توجد أصناف أدوية ناقصة المادة الفعالة.'); return; }
             let cursor = Math.max(0, Number(localStorage.getItem(_BULK_DRUG_API_CURSOR_KEY) || 0) || 0);
             if (cursor >= queue.length) cursor = 0;
             _bulkDrugApiRunning = true; _bulkDrugApiStopRequested = false;
@@ -6727,7 +6727,7 @@
             };
             try {
                 while (cursor < queue.length && !_bulkDrugApiStopRequested) {
-                    const item = products.find(p => p && p.name === queue[cursor] && p.cat === 'أدوية');
+                    const item = products.find(p => p && p.name === queue[cursor] && p.cat !== 'ألبان أطفال');
                     if (!item || (item.act && !/[?؟]/.test(String(item.act)))) { cursor++; processed++; }
                     else {
                         let match = null;
