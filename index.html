@@ -8356,18 +8356,26 @@ ${window.location.href}
             if(!currentSession||currentSession.role!=='admin'){showToast('الأدمن فقط يمكنه استخدام أوامر إدارة الأصناف.','error');return;}
             const raw=String(transcript||'').trim(), normalized=voiceNormalize(raw);
             const dm=normalized.match(/خصم\s*(\d+(?:\.\d+)?|واحد|واحده|واحدة|اتنين|اثنين|اثنان|تنين|ثلاثه|ثلاثة|تلاته|تلات|اربعه|أربعة|اربعة|خمسه|خمسة|سته|ستة|سبعه|سبعة|تمانيه|ثمانيه|ثمانية|تسعه|تسعة|عشره|عشرة)/);
-            const query=normalized.replace(/خصم\s*(?:\d+(?:\.\d+)?|واحد|واحده|واحدة|اتنين|اثنين|اثنان|تنين|ثلاثه|ثلاثة|تلاته|تلات|اربعه|أربعة|اربعة|خمسه|خمسة|سته|ستة|سبعه|سبعة|تمانيه|ثمانيه|ثمانية|تسعه|تسعة|عشره|عشرة)\s*(?:%|في الميه|بالميه|بالمية|بالمئه)?/g,' ').replace(/\b(?:في الميه|بالميه|بالمية|بالمئه)\b/g,' ')
+            const query=normalized.replace(/خصم\s*(?:\d+(?:\.\d+)?|واحد|واحده|واحدة|اتنين|اثنين|اثنان|تنين|ثلاثه|ثلاثة|تلاته|تلات|اربعه|أربعة|اربعة|خمسه|خمسة|سته|ستة|سبعه|سبعة|تمانيه|ثمانيه|ثمانية|تسعه|تسعة|عشره|عشرة)\s*(?:%|في الميه|بالميه|بالمية|بالمئه)?/g,' ')
+                .replace(/\b(?:في الميه|بالميه|بالمية|بالمئه)\b/g,' ')
                 .replace(/(?:ابحث|بحث|دور|هات|افتح|عن|على|الصنف|صنف|من فضلك)/g,' ')
                 .replace(/%/g,' ').replace(/\s+/g,' ').trim();
             const input=document.getElementById('adm-search-input');input.value=query||raw;admCurrentPage=1;renderAdminProductsTable();
             if(dm){
-                const candidates=voiceFindCandidates(query);
+                const discount=voiceNumberFromText(dm[1]), candidates=voiceFindCandidates(query);
+                if(discount===null || discount<0 || discount>100){closeVoiceAssistant();showToast('لم أتعرف على نسبة الخصم بشكل صحيح.','error');return;}
                 if(candidates.length===1 || (candidates.length&&voiceNormalize(candidates[0].name)===query)){
-                    const p=candidates[0];openAdminEditModal(p.id);document.getElementById('edit-prod-disc').value=String(voiceNumberFromText(dm[1]));
-                    document.getElementById('voice-admin-result').textContent='تم العثور على '+p.name+'. تم وضع الخصم المقترح فقط؛ راجع البيانات واضغط حفظ التعديلات إذا كنت متأكدًا.';
-                } else document.getElementById('voice-admin-result').textContent=candidates.length?'وجدت أكثر من صنف محتمل. راجع نتائج البحث واختر الصنف المقصود يدويًا.':'لم أجد صنفًا مطابقًا. صحح النص أو ابحث من الجدول.';
-            } else document.getElementById('voice-admin-result').textContent=query?'تم تحويل الكلام إلى بحث. راجع نتائج الكتالوج واختر الصنف المطلوب.':'لم أتعرف على اسم الصنف.';
-            document.getElementById('voice-admin-review').classList.remove('hidden');
+                    const p=candidates[0];closeVoiceAssistant();openAdminEditModal(p.id);
+                    document.getElementById('edit-prod-disc').value=String(discount);
+                    showToast('تم تجهيز خصم '+discount+'% للصنف '+p.name+'. راجع البيانات واضغط حفظ التعديلات للتنفيذ.');
+                } else {
+                    closeVoiceAssistant();
+                    showToast(candidates.length?'وجدت أكثر من صنف محتمل. اختر الصنف الصحيح من نتائج البحث ثم افتح التعديل.':'لم أجد صنفًا مطابقًا. راجع نص البحث وحاول مرة أخرى.','error');
+                }
+            } else {
+                closeVoiceAssistant();
+                showToast(query?'تم البحث عن: '+query+'. راجع نتائج الكتالوج.':'لم أتعرف على اسم الصنف.','error');
+            }
         }
 
         function enChip(item, extra) {
