@@ -7164,7 +7164,7 @@
 
                 // Verified package-photo seed: Apple-Lite 30 tablets (catalog item #10).
                 // Source page shows the exact Apple-Lite pack; do not use lookalike images.
-                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v31';;;;;
+                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v32';;;;;
                 if (localStorage.getItem(IMAGE_SEED_VERSION) !== '1') {
                     // Individually checked package photos: brand, strength/stage and form match.
                     const verifiedImageSeeds = {
@@ -7489,6 +7489,13 @@
                         '680': { src: 'https://delmar-test.linkedgates.com/images/items/2683-v1.JPEG', source: 'Delmar & Attalla — Octovent CR 4 mg, 20 controlled-release tablets; exact strength and pack verified' },
                         '698': { src: 'https://delmar-test.linkedgates.com/images/items/92086-v1.JPEG', source: 'Delmar & Attalla — Olazine 10 mg, 7 scored film-coated tablets; exact brand, strength and pack verified' },
                         '705': { src: 'https://lirp.cdn-website.com/1e20772a/dms3rep/multi/opt/Olohistin%2B%281%29-1920w.png', source: 'Catafago — Olohistine 0.1% eye drops, 5 ml; exact concentration and volume verified' }
+                    ,
+                        '709': { src: 'https://api.c0umyt3cda-pharmaove1-p1-public.model-t.cc.commerce.ondemand.com/medias/000000000000034419.webp?context=bWFzdGVyfGltYWdlc3wxODI0NnxpbWFnZS9qcGVnfGFHTTBMMmcxTkM4eE1UTTFOekV3TURBNE1URTRNaTh3TURBd01EQXdNREF3TURBd016UTBNVGt1ZDJWaWNBfDE3NzJkZTkzNGU0ZTQxOTdmNTM0ZWFjZDhkYTcxNDJjMThiYjEyZmQ0NGFiOTk5NWY1NTMzZmNjOWY1MzI3NWU', source: 'Pharma eMarket — Omacor 1000 mg, 28 soft-gelatin capsules; exact strength and pack verified' },
+                        '714': { src: 'https://api.c0umyt3cda-pharmaove1-p1-public.model-t.cc.commerce.ondemand.com/medias/000000000000022082.jpg?context=bWFzdGVyfGltYWdlc3wyMjEyMzJ8aW1hZ2UvanBlZ3xhREkzTDJoalppOHhNRGc1TnpNeU1UWTFOak0xTUM4d01EQXdNREF3TURBd01EQXdNakl3T0RJdWFuQm58OGUwZDQ5NTI0NmNlNWM2NjBjZGNmODE5ZTlhN2FkODE3MTY0ZjUyOTkyYWUzMjQxOTYzMGVmOTJiY2Y4NDk5Nw', source: 'Pharma eMarket — Omepak 40 mg, 14 enteric-coated capsules; exact strength and pack verified' },
+                        '715': { src: 'https://api.c0umyt3cda-pharmaove1-p1-public.model-t.cc.commerce.ondemand.com/medias/000000000000002296.jpg?context=bWFzdGVyfGltYWdlc3wyMTUxNzd8aW1hZ2UvanBlZ3xhREJsTDJobFppOHhNRGc1TmpBMk5qSTBPRGN6TkM4d01EQXdNREF3TURBd01EQXdNREl5T1RZdWFuQm58MjNmZDQ1NWJjYjEyODQ3ZGJhNDVhNmE2YTI2NjIwM2FmNmZlODEwZGQzY2I1NTZhMTZhMmRiY2RiMWNhZTNlNA', source: 'Pharma eMarket — Omepak 20 mg, 14 capsules; exact strength and pack verified' },
+                        '716': { src: 'https://api.c0umyt3cda-pharmaove1-p1-public.model-t.cc.commerce.ondemand.com/medias/000000000000002296.jpg?context=bWFzdGVyfGltYWdlc3wyMTUxNzd8aW1hZ2UvanBlZ3xhREJsTDJobFppOHhNRGc1TmpBMk5qSTBPRGN6TkM4d01EQXdNREF3TURBd01EQXdNREl5T1RZdWFuQm58MjNmZDQ1NWJjYjEyODQ3ZGJhNDVhNmE2YTI2NjIwM2FmNmZlODEwZGQzY2I1NTZhMTZhMmRiY2RiMWNhZTNlNA', source: 'Pharma eMarket — Omepak 20 mg, 14 capsules; exact brand, strength and pack verified' },
+                        '718': { src: 'https://api.c0umyt3cda-pharmaove1-p1-public.model-t.cc.commerce.ondemand.com/medias/000000000000031463.jpg?context=bWFzdGVyfGltYWdlc3w0ODk0NnxpbWFnZS9qcGVnfGFERmtMMmhpTWk4eE1EZzVOemt3TXpNMU16ZzROaTh3TURBd01EQXdNREF3TURBd016RTBOak11YW5CbnwxMGU0YTI5MmZjOTY3ZjUyZTE3YjFkYWNmNjNkZTI3YTdmOGI1Mjg3ZjExOTg0ZGY4NmY5OTZlOGZmNzJlNWY1', source: 'Pharma eMarket — Omega-3 syrup for children, 100 ml; exact formulation and volume verified' },
+                        '721': { src: 'https://www.mouradpharmacy.com/web/image/product.product/289132/image_1920?unique=972b35c', source: 'Mourad Pharmacy — Omega Zad brain-support syrup, 100 ml; exact brand and volume verified' }
                      };
                     Object.entries(verifiedImageSeeds).forEach(([id, seed]) => {
                         if (seed.src && (PROD_IMG_VERIFIED[id] !== true || PROD_IMG_SRC[id] === seed.source)) {
