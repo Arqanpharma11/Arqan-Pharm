@@ -9606,7 +9606,7 @@ ${window.location.href}
             if (href.startsWith('http://') || href.startsWith('https://')) {
                 return href.split('#')[0];
             }
-            return 'https://arkan-pharma.github.io/arkan-pharma/';
+            return 'https://arqanpharma11.github.io/Arqan-Pharm/';
         }
 
         function initPWAAndShareFeatures() {
@@ -9683,29 +9683,99 @@ ${window.location.href}
             }
         }
 
-        async function triggerPlatformInstall(targetDevice) {
-            if (deferredInstallPrompt) {
-                deferredInstallPrompt.prompt();
-                const { outcome } = await deferredInstallPrompt.userChoice;
-                if (outcome === 'accepted') {
-                    showToast('جاري تثبيت تطبيق مخزن أركان...');
+        function isArkanAppInstalled() {
+            return window.matchMedia('(display-mode: standalone)').matches ||
+                window.matchMedia('(display-mode: fullscreen)').matches ||
+                window.navigator.standalone === true;
+        }
+
+        function showInstallHelp(targetDevice, reason = '') {
+            const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+                (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+            const isAndroid = /Android/i.test(navigator.userAgent);
+            const isEdge = /Edg\//i.test(navigator.userAgent);
+            const isChrome = /Chrome\//i.test(navigator.userAgent) && !isEdge;
+            const isSamsung = /SamsungBrowser/i.test(navigator.userAgent);
+            let title = targetDevice === 'mobile' ? 'تثبيت مخزن أركان على الموبايل' : 'تثبيت مخزن أركان على الكمبيوتر';
+            let steps = '';
+
+            if (isArkanAppInstalled()) {
+                showToast('تطبيق مخزن أركان مثبت بالفعل على هذا الجهاز.');
+                return;
+            }
+
+            if (isIOS) {
+                title = 'إضافة مخزن أركان إلى شاشة الآيفون';
+                steps = '<ol class="list-decimal pr-5 space-y-2"><li>افتح الرابط من متصفح <b>Safari</b> مباشرة، وليس من متصفح داخل واتساب أو فيسبوك.</li><li>اضغط زر المشاركة ⬆️ أسفل الشاشة أو أعلاها.</li><li>اختر <b>إضافة إلى الشاشة الرئيسية</b> ثم اضغط <b>إضافة</b>.</li></ol>';
+            } else if (isAndroid) {
+                title = 'تثبيت مخزن أركان على هاتف Android';
+                const browserName = isSamsung ? 'Samsung Internet' : 'Chrome أو Edge';
+                steps = '<ol class="list-decimal pr-5 space-y-2"><li>افتح الموقع في متصفح ' + browserName + ' مباشرة.</li><li>اضغط قائمة المتصفح ⋮.</li><li>اختر <b>تثبيت التطبيق</b> أو <b>إضافة إلى الشاشة الرئيسية</b>.</li><li>أكد التثبيت، وستظهر أيقونة أركان على شاشة الهاتف.</li></ol>';
+            } else {
+                title = 'تثبيت مخزن أركان على الكمبيوتر';
+                if (isChrome || isEdge) {
+                    steps = '<ol class="list-decimal pr-5 space-y-2"><li>افتح الموقع في <b>' + (isEdge ? 'Microsoft Edge' : 'Google Chrome') + '</b>.</li><li>اضغط أيقونة التثبيت (شكل شاشة وبداخلها سهم أو علامة +) بجوار شريط العنوان، إن ظهرت.</li><li>لو لم تظهر، افتح قائمة المتصفح ⋮ ثم اختر <b>تثبيت مخزن أركان</b> أو <b>Apps → Install this site as an app</b>.</li><li>اضغط <b>Install / تثبيت</b>.</li></ol>';
+                } else {
+                    steps = '<p>التثبيت كتطبيق مستقل مدعوم بشكل أفضل على <b>Google Chrome</b> أو <b>Microsoft Edge</b>.</p><ol class="list-decimal pr-5 space-y-2"><li>انسخ رابط مخزن أركان وافتحه في Chrome أو Edge.</li><li>من قائمة المتصفح ⋮ اختر <b>تثبيت مخزن أركان</b>.</li><li>أكد التثبيت.</li></ol>';
                 }
-                deferredInstallPrompt = null;
+            }
+
+            let modal = document.getElementById('arkan-install-help-modal');
+            if (!modal) {
+                modal = document.createElement('div');
+                modal.id = 'arkan-install-help-modal';
+                modal.className = 'fixed inset-0 z-[10050] bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 no-print';
+                modal.innerHTML = '<div class="bg-white rounded-3xl w-full max-w-md p-5 sm:p-6 shadow-2xl border border-arkan-sand text-right" dir="rtl"><div class="flex items-center justify-between gap-3 mb-4"><h3 id="arkan-install-help-title" class="text-lg font-black text-arkan-dark"></h3><button type="button" id="arkan-install-help-close" class="text-arkan-bronze text-2xl font-black px-2" aria-label="إغلاق">×</button></div><div id="arkan-install-help-steps" class="text-sm text-arkan-dark leading-8"></div><div id="arkan-install-help-reason" class="hidden mt-3 rounded-xl bg-amber-50 border border-amber-200 p-3 text-xs text-amber-900"></div><div class="grid grid-cols-2 gap-2 mt-5"><button type="button" id="arkan-install-copy" class="bg-arkan-cream border border-arkan-sand text-arkan-dark rounded-xl py-2.5 px-3 text-xs font-extrabold">نسخ رابط التطبيق</button><button type="button" id="arkan-install-help-done" class="bg-arkan-dark text-white rounded-xl py-2.5 px-3 text-xs font-extrabold">فهمت</button></div></div>';
+                document.body.appendChild(modal);
+                const close = () => modal.classList.add('hidden');
+                modal.addEventListener('click', e => { if (e.target === modal) close(); });
+                modal.querySelector('#arkan-install-help-close').addEventListener('click', close);
+                modal.querySelector('#arkan-install-help-done').addEventListener('click', close);
+                modal.querySelector('#arkan-install-copy').addEventListener('click', copyPlatformLink);
+            }
+            modal.querySelector('#arkan-install-help-title').textContent = title;
+            modal.querySelector('#arkan-install-help-steps').innerHTML = steps;
+            const reasonEl = modal.querySelector('#arkan-install-help-reason');
+            if (reason) {
+                reasonEl.textContent = reason;
+                reasonEl.classList.remove('hidden');
+            } else {
+                reasonEl.classList.add('hidden');
+            }
+            modal.classList.remove('hidden');
+        }
+
+        async function triggerPlatformInstall(targetDevice) {
+            if (isArkanAppInstalled()) {
+                showToast('تطبيق مخزن أركان مثبت بالفعل على هذا الجهاز.');
                 updatePWAStatusBadge();
                 return;
             }
 
-            // Helpful device-specific guide when native prompt isn't triggered automatically
-            const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-            if (targetDevice === 'mobile') {
-                if (isIOS) {
-                    showToast('على الآيفون: اضغط زر المشاركة (⬆️) في سفاري ثم اختر "إضافة إلى الصفحة الرئيسية".');
-                } else {
-                    showToast('على الموبايل: افتح قائمة المتصفح (⋮) ثم اضغط "تثبيت التطبيق / Add to Home Screen".');
+            if (deferredInstallPrompt) {
+                const installEvent = deferredInstallPrompt;
+                deferredInstallPrompt = null;
+                try {
+                    installEvent.prompt();
+                    const choice = await installEvent.userChoice;
+                    if (choice && choice.outcome === 'accepted') {
+                        showToast('تمت الموافقة على تثبيت مخزن أركان. أكمل خطوة التأكيد في المتصفح.');
+                    } else {
+                        showToast('لم يتم تأكيد التثبيت. يمكنك المحاولة مرة أخرى من الزر.');
+                    }
+                } catch (error) {
+                    showInstallHelp(targetDevice, 'المتصفح لم يفتح نافذة التثبيت المباشر؛ استخدم الخطوات التالية لإتمام التثبيت.');
                 }
-            } else {
-                showToast('على الكمبيوتر: اضغط أيقونة التثبيت (⊕) في أعلى شريط عنوان المتصفح أو من القائمة اختر "تثبيت مخزن أركان".');
+                updatePWAStatusBadge();
+                return;
             }
+
+            const isSecure = window.location.protocol === 'https:' || window.location.hostname === 'localhost';
+            const reason = !isSecure
+                ? 'يجب فتح المنصة من رابط HTTPS الآمن حتى يسمح المتصفح بتثبيتها.'
+                : 'المتصفح لم يوفّر نافذة التثبيت المباشر في هذه الجلسة. التثبيت اليدوي من قائمة المتصفح يعمل كبديل.';
+            showInstallHelp(targetDevice, reason);
+            updatePWAStatusBadge();
         }
 
         function scrollToInstallSection() {
