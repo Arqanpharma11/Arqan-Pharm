@@ -8399,29 +8399,66 @@ ${window.location.href}
             persistState(KEYS.CART,cart);renderPharmacistCatalog();renderPharmacistCart();closeVoiceAssistant();
             showToast('تمت إضافة '+added+' وحدة للطلبية بعد مراجعتك.');
         }
+        function showVoiceAdminCandidates(candidates, discount) {
+            const host=document.getElementById('voice-admin-result');
+            host.innerHTML='';
+            if(!candidates.length){
+                host.textContent='لم أجد تطابقًا موثوقًا. جرّب نطق الاسم التجاري ببطء أو اكتب الاسم يدويًا.';
+                return;
+            }
+            const intro=document.createElement('p');
+            intro.className='text-xs font-black text-arkan-dark';
+            intro.textContent=discount===null?'اختر الصنف الأقرب من الكتالوج:':'اختر الصنف المقصود لتجهيز الخصم '+discount+'%:';
+            host.appendChild(intro);
+            candidates.forEach((p,index)=>{
+                const btn=document.createElement('button');
+                btn.type='button';
+                btn.className='w-full text-right bg-white hover:bg-arkan-light border border-arkan-sand rounded-lg px-3 py-2 text-xs font-bold';
+                btn.textContent=(index+1)+'. '+p.name+' — '+(p.cat||'')+(p._voiceExact?' • تطابق حرفي':' • اقتراح تقريبي');
+                btn.addEventListener('click',()=>{
+                    if(discount!==null){
+                        closeVoiceAssistant();
+                        openAdminEditModal(p.id);
+                        const field=document.getElementById('edit-prod-disc');
+                        if(field) field.value=String(discount);
+                        showToast('تم تجهيز خصم '+discount+'% للصنف '+p.name+'. راجع البيانات واضغط حفظ التعديلات.');
+                    } else {
+                        const input=document.getElementById('adm-search-input');
+                        input.value=p.name; admCurrentPage=1; renderAdminProductsTable();
+                        closeVoiceAssistant();
+                        showToast('تم عرض الصنف المحدد في نتائج الكتالوج.');
+                    }
+                });
+                host.appendChild(btn);
+            });
+        }
         function processVoiceAdminCommand(transcript) {
             if(!currentSession||currentSession.role!=='admin'){showToast('الأدمن فقط يمكنه استخدام أوامر إدارة الأصناف.','error');return;}
             const raw=String(transcript||'').trim(), normalized=voiceNormalize(raw);
-            const dm=normalized.match(/خصم\s*(\d+(?:\.\d+)?|واحد|واحده|واحدة|اتنين|اثنين|اثنان|تنين|ثلاثه|ثلاثة|تلاته|تلات|اربعه|أربعة|اربعة|خمسه|خمسة|سته|ستة|سبعه|سبعة|تمانيه|ثمانيه|ثمانية|تسعه|تسعة|عشره|عشرة)/);
-            const query=normalized.replace(/خصم\s*(?:\d+(?:\.\d+)?|واحد|واحده|واحدة|اتنين|اثنين|اثنان|تنين|ثلاثه|ثلاثة|تلاته|تلات|اربعه|أربعة|اربعة|خمسه|خمسة|سته|ستة|سبعه|سبعة|تمانيه|ثمانيه|ثمانية|تسعه|تسعة|عشره|عشرة)\s*(?:%|في الميه|بالميه|بالمية|بالمئه)?/g,' ')
-                .replace(/\b(?:في الميه|بالميه|بالمية|بالمئه)\b/g,' ')
+            const dm=normalized.match(/خصم\\s*(\\d+(?:\\.\\d+)?|واحد|واحده|واحدة|اتنين|اثنين|اثنان|تنين|ثلاثه|ثلاثة|تلاته|تلات|اربعه|أربعة|اربعة|خمسه|خمسة|سته|ستة|سبعه|سبعة|تمانيه|ثمانيه|ثمانية|تسعه|تسعة|عشره|عشرة)/);
+            const query=normalized.replace(/خصم\\s*(?:\\d+(?:\\.\\d+)?|واحد|واحده|واحدة|اتنين|اثنين|اثنان|تنين|ثلاثه|ثلاثة|تلاته|تلات|اربعه|أربعة|اربعة|خمسه|خمسة|سته|ستة|سبعه|سبعة|تمانيه|ثمانيه|ثمانية|تسعه|تسعة|عشره|عشرة)\\s*(?:%|في الميه|بالميه|بالمية|بالمئه)?/g,' ')
+                .replace(/\\b(?:في الميه|بالميه|بالمية|بالمئه)\\b/g,' ')
                 .replace(/(?:ابحث|بحث|دور|هات|افتح|عن|على|الصنف|صنف|من فضلك)/g,' ')
-                .replace(/%/g,' ').replace(/\s+/g,' ').trim();
-            const input=document.getElementById('adm-search-input');input.value=query||raw;admCurrentPage=1;renderAdminProductsTable();
+                .replace(/%/g,' ').replace(/\\s+/g,' ').trim();
+            const input=document.getElementById('adm-search-input');
+            input.value=query||raw; admCurrentPage=1; renderAdminProductsTable();
+            const candidates=voiceFindCandidates(query||raw);
             if(dm){
-                const discount=voiceNumberFromText(dm[1]), candidates=voiceFindCandidates(query);
+                const discount=voiceNumberFromText(dm[1]);
                 if(discount===null || discount<0 || discount>100){closeVoiceAssistant();showToast('لم أتعرف على نسبة الخصم بشكل صحيح.','error');return;}
                 if(voiceShouldAutoSelect(candidates,query)){
                     const p=candidates[0];closeVoiceAssistant();openAdminEditModal(p.id);
-                    document.getElementById('edit-prod-disc').value=String(discount);
-                    showToast('تم تجهيز خصم '+discount+'% للصنف '+p.name+'. راجع البيانات واضغط حفظ التعديلات للتنفيذ.');
+                    const field=document.getElementById('edit-prod-disc'); if(field) field.value=String(discount);
+                    showToast('تم تجهيز خصم '+discount+'% للصنف '+p.name+'. راجع البيانات واضغط حفظ التعديلات.');
                 } else {
-                    closeVoiceAssistant();
-                    showToast(candidates.length?'وجدت أكثر من صنف محتمل. اختر الصنف الصحيح من نتائج البحث ثم افتح التعديل.':'لم أجد صنفًا مطابقًا. راجع نص البحث وحاول مرة أخرى.','error');
+                    document.getElementById('voice-admin-result').textContent='';
+                    showVoiceAdminCandidates(candidates,discount);
+                    showToast(candidates.length?'اختر الصنف الصحيح من قائمة الاقتراحات.':'لم أجد صنفًا مطابقًا. جرّب نطق الاسم مرة أخرى.','error');
                 }
             } else {
-                closeVoiceAssistant();
-                showToast(query?'تم البحث عن: '+query+'. راجع نتائج الكتالوج.':'لم أتعرف على اسم الصنف.','error');
+                document.getElementById('voice-admin-result').textContent='';
+                showVoiceAdminCandidates(candidates,null);
+                if(!candidates.length) showToast('لم أتعرف على اسم الصنف بدقة. جرّب مرة أخرى أو اكتب الاسم.','error');
             }
         }
 
