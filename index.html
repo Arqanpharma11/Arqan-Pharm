@@ -19290,16 +19290,26 @@ ${window.location.href}
                 return `
                     <tr class="hover:bg-arkan-light transition-colors ${qty > 0 ? 'bg-arkan-cream/70' : ''}">
                         <td class="py-3 px-4">
-                            <a href="${getGoogleProductImageUrl(item.id)}" target="_blank" rel="noopener noreferrer"
-                                class="block font-extrabold text-arkan-dark leading-snug cursor-pointer hover:text-arkan-primary hover:underline decoration-arkan-sand underline-offset-2"
-                                title="اضغط للبحث عن صور الصنف في Google Images" aria-label="البحث عن صور ${item.name} في Google Images">
-                                <span class="inline-flex items-center justify-center w-5 h-5 rounded-md ${PROD_IMAGES[item.id] ? 'bg-emerald-100 text-emerald-800' : 'bg-arkan-cream text-arkan-bronze'} text-[11px] align-middle ml-1">📷</span>${item.name}
-                                ${enChip(item, 'align-middle')}
-                                ${shortageBadge}
-                            </a>
-                            <div class="mt-1 flex flex-wrap items-center gap-1"><span class="text-[10px] text-emerald-700 font-bold">${item.cat}</span><span class="inline-block text-[10px] font-extrabold text-emerald-800 bg-emerald-50 border border-emerald-200 rounded-md px-1.5 py-0.5">💊 ${categoryValue}</span></div>
-                            <div class="mt-1 text-[10px] leading-relaxed text-emerald-900"><strong>المادة الفعالة / المكونات:</strong> <span dir="auto">${ingredientValue}</span></div>
-                            <p class="mt-1 text-[10px] leading-relaxed text-emerald-800"><strong>الاستخدام:</strong> ${getProductUseInfo(item)}</p>
+                            <div class="flex items-start gap-2.5">
+                                <button type="button" onclick="openProductImage(${item.id})"
+                                    class="shrink-0 w-14 h-14 rounded-xl border border-arkan-sand bg-white overflow-hidden flex items-center justify-center hover:border-emerald-600 hover:shadow-sm transition"
+                                    title="اضغط لعرض صورة العبوة التجارية أو البحث عنها"
+                                    aria-label="عرض صورة عبوة ${item.name}">
+                                    ${PROD_IMAGES[item.id]
+                                        ? `<img src="${String(PROD_IMAGES[item.id]).replace(/&/g, '&amp;').replace(/"/g, '&quot;')}" alt="عبوة ${_escapeDrugCatalogText(item.name)}" loading="lazy" decoding="async" class="w-full h-full object-contain p-0.5" onerror="this.outerHTML='<span class=&quot;text-xl&quot;>💊</span>'">`
+                                        : '<span class="text-xl text-emerald-700">📷</span>'}
+                                </button>
+                                <div class="min-w-0 flex-1">
+                                    <a href="${getGoogleProductImageUrl(item.id)}" target="_blank" rel="noopener noreferrer"
+                                        class="block font-extrabold text-arkan-dark leading-snug cursor-pointer hover:text-arkan-primary hover:underline decoration-arkan-sand underline-offset-2"
+                                        title="فتح بحث صور الصنف في Google Images" aria-label="البحث عن صور ${item.name} في Google Images">
+                                        ${item.name} ${enChip(item, 'align-middle')} ${shortageBadge}
+                                    </a>
+                                    <div class="mt-1 flex flex-wrap items-center gap-1"><span class="text-[10px] text-emerald-700 font-bold">${item.cat}</span><span class="inline-block text-[10px] font-extrabold text-emerald-800 bg-emerald-50 border border-emerald-200 rounded-md px-1.5 py-0.5">💊 ${categoryValue}</span></div>
+                                    <div class="mt-1 text-[10px] leading-relaxed text-emerald-900"><strong>المادة الفعالة / المكونات:</strong> <span dir="auto">${ingredientValue}</span></div>
+                                    <p class="mt-1 text-[10px] leading-relaxed text-emerald-800"><strong>الاستخدام:</strong> ${getProductUseInfo(item)}</p>
+                                </div>
+                            </div>
                         </td>
                         <td class="py-3 px-3 text-center">
                             <span class="num-en font-bold text-arkan-bronze">${fmtMoney(item.price)}</span>
