@@ -7164,7 +7164,7 @@
 
                 // Verified package-photo seed: Apple-Lite 30 tablets (catalog item #10).
                 // Source page shows the exact Apple-Lite pack; do not use lookalike images.
-                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v17';;;;;
+                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v43';;;;;
                 if (localStorage.getItem(IMAGE_SEED_VERSION) !== '1') {
                     // Individually checked package photos: brand, strength/stage and form match.
                     const verifiedImageSeeds = {
@@ -7638,6 +7638,11 @@
                         '189': { src: 'https://mtalaatpharmacy.com/storage/products/1760887390.png', source: 'Dr Mohamed Talaat Pharmacy — Erectamax 20 mg, 4 film-coated tablets; exact strength and pack verified' },
                         '195': { src: 'https://adwia.com/upfiles/thumbs/000/0005410_25.png', source: 'Adwia official — Ezastatin 10/10 mg, 30 tablets; exact combination and pack verified' },
                         '196': { src: 'https://www.lotusonline.com/cdn/shop/files/3007257_1.jpg?v=1767615813&width=1500', source: 'Lotus Pharmacies — Ezastatin 10/40 mg, 30 tablets; exact combination and pack verified' }
+                    ,
+                        '1027': { src: 'https://doctormpharmacy.com/cdn/shop/files/104931.jpg?v=1755292668', source: 'Doctor M Pharmacy — Bronchopro syrup, 100 ml; exact brand, form and volume verified' },
+                        '1028': { src: 'https://doctormpharmacy.com/cdn/shop/files/106892.png?v=1755292678', source: 'Doctor M Pharmacy — Bronchopro Retard, 10 capsules; exact brand and pack verified' },
+                        '1034': { src: 'https://dkud4u09qff41.cloudfront.net/Products/3409765e-7b71-47f3-890d-d8b560837c51.jpeg', source: 'Vezeeta Pharmacy — Prianil C-R 400 mg, 30 controlled-release tablets; exact strength and pack verified' },
+                        '1038': { src: 'https://www.lotusonline.com/cdn/shop/files/3008752_processed.jpg?v=1773307056', source: 'Lotus Pharmacies — Pretoprazan 20 mg, 14 film-coated tablets; exact brand, strength and pack verified' }
                      };
                     Object.entries(verifiedImageSeeds).forEach(([id, seed]) => {
                         if (seed.src && (PROD_IMG_VERIFIED[id] !== true || PROD_IMG_SRC[id] === seed.source)) {
