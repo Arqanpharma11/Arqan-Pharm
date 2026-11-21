@@ -8234,11 +8234,15 @@ ${window.location.href}
                 .replace(/[،؛,;.!؟?]/g, ' ').replace(/\s+/g, ' ').trim();
         }
         function voiceNumberFromText(value) {
-            const v = voiceNormalize(value), digit = v.match(/\d+(?:\.\d+)?/);
-            if (digit) return Number(digit[0]);
-            const words = {'واحد':1,'واحده':1,'واحدة':1,'اتنين':2,'اثنين':2,'اثنان':2,'تنين':2,'علبتين':2,'علبتان':2,'شريطين':2,'عبوتين':2,'علبتين':2,'علبتان':2,'شريطين':2,'عبوتين':2,'ثلاثه':3,'ثلاثة':3,'تلاته':3,'تلات':3,'اربعه':4,'أربعة':4,'اربعة':4,'خمسه':5,'خمسة':5,'سته':6,'ستة':6,'سبعه':7,'سبعة':7,'تمانيه':8,'ثمانيه':8,'ثمانية':8,'تسعه':9,'تسعة':9,'عشره':10,'عشرة':10};
+            const v = voiceNormalize(value);
+            if (/(علبتين|علبتان|عبوتين|شريطين|باكيتين)/.test(v)) return 2;
+            if (/(ثلاث علب|ثلاثه علب|تلات علب)/.test(v)) return 3;
+            const unitDigit = v.match(/(\d+(?:\.\d+)?)\s*(?:علب|عبوات|شرائط|شريط|باكيت|باكت|قطع|زجاجات)/);
+            if (unitDigit) return Number(unitDigit[1]);
+            const words = {'واحد':1,'واحده':1,'واحدة':1,'اتنين':2,'اثنين':2,'اثنان':2,'تنين':2,'ثلاثه':3,'ثلاثة':3,'تلاته':3,'تلات':3,'اربعه':4,'أربعة':4,'اربعة':4,'خمسه':5,'خمسة':5,'سته':6,'ستة':6,'سبعه':7,'سبعة':7,'تمانيه':8,'ثمانيه':8,'ثمانية':8,'تسعه':9,'تسعة':9,'عشره':10,'عشرة':10};
             for (const token of v.split(' ')) if (words[token]) return words[token];
-            return null;
+            const digit = v.match(/\d+(?:\.\d+)?/);
+            return digit ? Number(digit[0]) : null;
         }
         function voiceFindCandidates(query) {
             const q = voiceNormalize(query); if (!q) return [];
@@ -8311,7 +8315,7 @@ ${window.location.href}
                 const qty=voiceNumberFromText(chunk)||1;
                 const query=voiceNormalize(chunk).replace(/\d+(?:\.\d+)?/g,' ')
                     .replace(/\b(?:واحد|واحده|واحدة|اتنين|اثنين|اثنان|تنين|ثلاثه|ثلاثة|تلاته|تلات|اربعه|أربعة|اربعة|خمسه|خمسة|سته|ستة|سبعه|سبعة|تمانيه|ثمانيه|ثمانية|تسعه|تسعة|عشره|عشرة)\b/g,' ')
-                    .replace(/\b(?:علبه|علب|عبوه|عبوات|شريط|شرائط|باكيت|باكت|قطعه|قطع|زجاجه|زجاجات|من|عايز|عاوزه|ضيف|اضف|حط|محتاج|محتاجه)\b/g,' ')
+                    .replace(/\b(?:علبه|علب|علبتين|علبتان|عبوه|عبوات|عبوتين|شريط|شرائط|شريطين|باكيت|باكيتين|باكت|قطعه|قطع|زجاجه|زجاجات|من|عايز|عاوزه|ضيف|اضف|حط|محتاج|محتاجه)\b/g,' ')
                     .replace(/\s+/g,' ').trim();
                 const candidates=voiceFindCandidates(query);
                 return {source:chunk,query,qty,productId:(candidates.length===1 || (candidates.length && voiceNormalize(candidates[0].name)===voiceNormalize(query)))?candidates[0].id:'',candidates};
@@ -8352,7 +8356,7 @@ ${window.location.href}
             if(!currentSession||currentSession.role!=='admin'){showToast('الأدمن فقط يمكنه استخدام أوامر إدارة الأصناف.','error');return;}
             const raw=String(transcript||'').trim(), normalized=voiceNormalize(raw);
             const dm=normalized.match(/خصم\s*(\d+(?:\.\d+)?|واحد|واحده|واحدة|اتنين|اثنين|اثنان|تنين|ثلاثه|ثلاثة|تلاته|تلات|اربعه|أربعة|اربعة|خمسه|خمسة|سته|ستة|سبعه|سبعة|تمانيه|ثمانيه|ثمانية|تسعه|تسعة|عشره|عشرة)/);
-            const query=normalized.replace(/خصم\s*(?:\d+(?:\.\d+)?|واحد|واحده|واحدة|اتنين|اثنين|اثنان|تنين|ثلاثه|ثلاثة|تلاته|تلات|اربعه|أربعة|اربعة|خمسه|خمسة|سته|ستة|سبعه|سبعة|تمانيه|ثمانيه|ثمانية|تسعه|تسعة|عشره|عشرة)\s*(?:%|في الميه|بالمية|بالمئه)?/g,' ').replace(/\b(?:في الميه|بالمية|بالمئه)\b/g,' ')
+            const query=normalized.replace(/خصم\s*(?:\d+(?:\.\d+)?|واحد|واحده|واحدة|اتنين|اثنين|اثنان|تنين|ثلاثه|ثلاثة|تلاته|تلات|اربعه|أربعة|اربعة|خمسه|خمسة|سته|ستة|سبعه|سبعة|تمانيه|ثمانيه|ثمانية|تسعه|تسعة|عشره|عشرة)\s*(?:%|في الميه|بالميه|بالمية|بالمئه)?/g,' ').replace(/\b(?:في الميه|بالميه|بالمية|بالمئه)\b/g,' ')
                 .replace(/(?:ابحث|بحث|دور|هات|افتح|عن|على|الصنف|صنف|من فضلك)/g,' ')
                 .replace(/%/g,' ').replace(/\s+/g,' ').trim();
             const input=document.getElementById('adm-search-input');input.value=query||raw;admCurrentPage=1;renderAdminProductsTable();
