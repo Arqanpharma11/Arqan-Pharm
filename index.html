@@ -7164,7 +7164,7 @@
 
                 // Verified package-photo seed: Apple-Lite 30 tablets (catalog item #10).
                 // Source page shows the exact Apple-Lite pack; do not use lookalike images.
-                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v33';;;;;
+                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v34';;;;;
                 if (localStorage.getItem(IMAGE_SEED_VERSION) !== '1') {
                     // Individually checked package photos: brand, strength/stage and form match.
                     const verifiedImageSeeds = {
@@ -7514,7 +7514,16 @@
                         '746': { src: 'https://delmar-test.linkedgates.com/images/items/5105-v1.JPEG', source: 'Delmar & Attalla — Item-N shampoo, 60 ml; exact product and volume verified' },
                         '749': { src: 'https://api.c0umyt3cda-pharmaove1-p1-public.model-t.cc.commerce.ondemand.com/medias/000000000000031929.webp?context=bWFzdGVyfGltYWdlc3wzNDg4NHxpbWFnZS9qcGVnfGFHTTNMMmd6WkM4eE1UTTFOekF4TnpJM05qUTBOaTh3TURBd01EQXdNREF3TURBd016RTVNamt1ZDJWaWNBfDZhNDE0MTNmYTQ0ZTE3OTk0ZmNkYmJjNTdiZjFjZGMxMDRiODNiOTcxNTFmMmZhYmRiZGI3NjYxY2ZmNzM2MTg', source: 'Pharma eMarket — Itoferrose iron 100 mg/5 ml IV solution, 5 ampoules × 5 ml; exact product and pack verified' },
                         '751': { src: 'https://www.lotusonline.com/cdn/shop/files/3006114_processed.jpg?v=1773306874', source: 'Lotus Pharmacies — Ethoxa 250 mg/5 ml oral solution, 120 ml; exact brand, concentration and volume verified' },
-                        '758': { src: 'https://www.rosheta.com/upload/a9207c6df658eb68cfbbbf6aecdfe21d5323056955a8931307f7bcda44cb9fe8.webp', source: 'Rosheta — Egynir 125 mg/5 ml oral suspension, 60 ml; exact brand, concentration and pack verified' }
+                        '758': { src: 'https://www.rosheta.com/upload/a9207c6df658eb68cfbbbf6aecdfe21d5323056955a8931307f7bcda44cb9fe8.webp', source: 'Rosheta — Egynir 125 mg/5 ml oral suspension, 60 ml; exact brand, concentration and pack verified' },
+                        '781': { src: 'https://www.lotusonline.com/cdn/shop/files/3008781_processed.jpg?v=1767614452&width=750', source: 'Lotus Pharmacies — Ezapril enalapril 10 mg, 30 tablets; exact brand, strength and pack verified' },
+                        '782': { src: 'https://www.lotusonline.com/cdn/shop/files/3008828_processed.jpg?v=1767614453&width=750', source: 'Lotus Pharmacies — Ezapril enalapril 20 mg, 30 tablets; exact brand, strength and pack verified' },
+                        '783': { src: 'https://taypharmacies.com/wp-content/uploads/2023/12/2024-10-30T145758.204.png', source: 'Tay Pharmacies — Ezacard acetylsalicylic acid 100 mg, 30 enteric-coated tablets; exact strength and pack verified' },
+                        '784': { src: 'https://www.mouradpharmacy.com/web/image/product.product/282588/image_1920?unique=63c070c', source: 'Mourad Pharmacy — Ezacard acetylsalicylic acid 75 mg, 30 enteric-coated tablets; exact strength and pack verified' },
+                        '788': { src: 'https://delmar-test.linkedgates.com/images/items/108848-v1.JPEG', source: 'Delmar & Attalla — Ezamol-C, 20 tablets; exact brand and pack verified' },
+                        '789': { src: 'https://www.rosheta.com/upload/9d3afd76383ad8b799b9ca364caa02f84a92b8ad1313e55d77d8f2023e2bf551.webp', source: 'Rosheta — Iso Acnetin isotretinoin 20 mg, 30 soft gelatin capsules; exact brand, strength and pack verified' },
+                        '793': { src: 'https://www.lotusonline.com/cdn/shop/files/3005934_1.jpg?v=1767615125&width=1500', source: 'Lotus Pharmacies — Ezogast esomeprazole 40 mg, 14 capsules; exact strength and pack verified' },
+                        '794': { src: 'https://www.lotusonline.com/cdn/shop/files/3003339_1.jpg?v=1767615106&width=1500', source: 'Lotus Pharmacies — Ezogast esomeprazole 20 mg, 14 capsules; exact strength and pack verified' },
+                        '801': { src: 'https://www.aldeerahpharmacy.com/web/image/product.template/35327/image_1920?unique=f76f98d', source: 'AlDeerah Pharmacy — Easycol Baby lactase drops, 15 ml; exact baby variant and volume verified' }
                      };
                     Object.entries(verifiedImageSeeds).forEach(([id, seed]) => {
                         if (seed.src && (PROD_IMG_VERIFIED[id] !== true || PROD_IMG_SRC[id] === seed.source)) {
