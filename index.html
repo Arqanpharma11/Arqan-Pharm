@@ -8560,10 +8560,25 @@ ${window.location.href}
         function startVoiceRecognition(mode) {
             if((mode==='admin'||mode==='admin-invoice')&&(!currentSession||currentSession.role!=='admin')){showToast('البحث الصوتي والخصومات للأدمن فقط.','error');return;}
             if(mode==='pharmacist'&&(!currentSession||currentSession.role!=='pharmacist')){showToast('الفاتورة الصوتية لحساب الصيدلية فقط.','error');return;}
-            if(mode==='pharmacist'||mode==='admin-invoice'){startVoiceInvoiceRecording(mode);return;}
+            const isInvoiceMode=mode==='pharmacist'||mode==='admin-invoice';
+            if(isInvoiceMode&&(voiceRecognition|| (voiceMediaRecorder&&voiceMediaRecorder.state==='recording'))){
+                if(voiceRecognition){try{voiceRecognition.stop();}catch(e){}}
+                if(voiceMediaRecorder&&voiceMediaRecorder.state==='recording'){try{voiceMediaRecorder.stop();}catch(e){}}
+                return;
+            }
+            if(isInvoiceMode){
+                const input=document.getElementById('voice-transcript');
+                if(input)input.value='';
+                document.getElementById('voice-invoice-lines').textContent='ابدأ الكلام؛ سيظهر النص هنا مباشرة أثناء التسجيل.';
+                startVoiceInvoiceRecording(mode);
+            }
             const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
-            if(!SR){showToast('المتصفح لا يدعم التعرف الصوتي. استخدم Chrome أو Edge بأحدث إصدار.','error');return;}
-            if(voiceRecognition){if(voiceMode===mode){try{voiceRecognition.stop();}catch(e){}return;}try{voiceRecognition.stop();}catch(e){}}
+            if(!SR){
+                if(!isInvoiceMode)showToast('المتصفح لا يدعم التعرف الصوتي. استخدم Chrome أو Edge بأحدث إصدار.','error');
+                else showToast('التسجيل الصوتي يعمل، لكن الكتابة المباشرة غير مدعومة في هذا المتصفح. يمكنك تحليل التسجيل بعد إنهائه.','info');
+                return;
+            }
+            if(voiceRecognition){try{voiceRecognition.stop();}catch(e){}}
             voiceMode=mode;
             if(mode==='admin'){
                 document.getElementById('voice-modal-title').textContent='🎙️ إدارة الليستة بالصوت';
@@ -8596,10 +8611,12 @@ ${window.location.href}
             };
             rec.onerror=event=>{status.classList.add('hidden');const msg=event.error==='not-allowed'?'اسمح للمتصفح باستخدام الميكروفون من إعدادات الموقع.':event.error==='no-speech'?'لم نسمع كلامًا. جرّب مرة أخرى.':'تعذر التعرف على الصوت. تأكد من الإنترنت وصلاحية الميكروفون.';showToast(msg,'error');};
             rec.onend=()=>{
-                status.classList.add('hidden');
-                // Ending speech capture must not trigger invoice parsing; the user starts analysis explicitly.
                 if(voiceRecognition===rec)voiceRecognition=null;
-                const btn=document.getElementById('voice-pharm-record-btn');if(btn)btn.textContent='🎙️ ابدأ التسجيل';
+                if(!isInvoiceMode || !voiceMediaRecorder || voiceMediaRecorder.state!=='recording'){
+                    status.classList.add('hidden');
+                    const btn=document.getElementById('voice-pharm-record-btn');if(btn)btn.textContent='🎙️ ابدأ التسجيل';
+                }
+                // Live transcription ending never triggers invoice parsing; the user explicitly starts analysis.
             };
             try{rec.start();const btn=document.getElementById('voice-pharm-record-btn');if(btn&&(mode==='pharmacist'||mode==='admin-invoice'))btn.textContent='⏹️ إنهاء التسجيل';}
             catch(e){status.classList.add('hidden');voiceRecognition=null;showToast('تعذر تشغيل الميكروفون. أعد المحاولة.','error');}
