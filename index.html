@@ -7164,7 +7164,7 @@
 
                 // Verified package-photo seed: Apple-Lite 30 tablets (catalog item #10).
                 // Source page shows the exact Apple-Lite pack; do not use lookalike images.
-                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v40';;;;;
+                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v41';;;;;
                 if (localStorage.getItem(IMAGE_SEED_VERSION) !== '1') {
                     // Individually checked package photos: brand, strength/stage and form match.
                     const verifiedImageSeeds = {
@@ -7604,6 +7604,14 @@
                         '1008': { src: 'https://egyptdwa.com/dwa/brufen-100mg-5ml-susp-150ml-1764.jpg', source: 'EgyptDwa — Brufen ibuprofen 100 mg/5 ml oral suspension; exact brand and concentration verified' },
                         '1015': { src: 'https://egyptdwa.com/dwa/procoralan-5mg-28-f-c-tabs-25293.jpg', source: 'EgyptDwa — Procoralan ivabradine 5 mg, 28 film-coated tablets; exact strength and pack verified' },
                         '1016': { src: 'https://kuludonline.com/cdn/shop/files/41038.jpg?v=1703371343&width=480', source: 'Kulud Pharmacy — Procoralan ivabradine 7.5 mg, 28 film-coated tablets; exact strength and pack verified' }
+                    ,
+                        '947': { src: 'https://www.mouradpharmacy.com/web/image/product.product/290452/image_1920?unique=80a2e2b', source: 'Mourad Pharmacy — Power B Complex, 6 ampoules × 2 ml; exact product and pack verified' },
+                        '950': { src: 'https://dkud4u09qff41.cloudfront.net/Products/b646b33c-d94b-43f1-8d90-9bff0197d911.jpeg', source: 'Vezeeta Pharmacy — Alcofan 50 mg, 12 capsules; exact brand, strength and pack verified' },
+                        '957': { src: 'https://aminpharmacyeg.com/wp-content/uploads/2024/12/pedicort-forte-anti-allergic-15mg5ml-100ml-susp-gauv-01720064763.webp', source: 'Amin Pharmacy — Pedicort Forte 15 mg/5 ml oral solution, 100 ml; exact concentration and volume verified' },
+                        '958': { src: 'https://www.lotusonline.com/cdn/shop/files/3003645_1.jpg?v=1767615879', source: 'Lotus Pharmacies — Bradipect 5 mg, 28 film-coated tablets; exact brand, strength and pack verified' },
+                        '959': { src: 'https://delmar-test.linkedgates.com/images/items/111847.JPEG', source: 'Delmar & Attalla — Bradipect 7.5 mg, 28 film-coated tablets; exact brand, strength and pack verified' },
+                        '960': { src: 'https://www.bloompharmacy.com/cdn/shop/files/bravamax-200-mg-10-tablets-390696.jpg?v=1716978381', source: 'Bloom Pharmacy — Bravamax 200 mg, 10 tablets; exact brand, strength and pack verified' },
+                        '961': { src: 'https://www.lotusonline.com/cdn/shop/files/3003623_1.jpg?v=1767615770', source: 'Lotus Pharmacies — Pravotin 100 mg, 14 sachets; exact brand, strength and pack verified' }
                      };
                     Object.entries(verifiedImageSeeds).forEach(([id, seed]) => {
                         if (seed.src && (PROD_IMG_VERIFIED[id] !== true || PROD_IMG_SRC[id] === seed.source)) {
