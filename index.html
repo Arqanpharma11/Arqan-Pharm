@@ -666,7 +666,7 @@
 
             <!-- English names review tools -->
             <div class="bg-white border border-arkan-sand rounded-2xl p-4 shadow-sm flex flex-wrap items-center gap-2 text-xs">
-                <span class="font-black text-arkan-dark">الأسماء الإنجليزية:</span>
+                <span class="font-black text-arkan-dark">الأسماء الإنجليزية التجارية:</span>
                 <span id="en-stats" class="font-bold text-emerald-800"></span>
                 <span class="flex-1"></span>
                 <button type="button" onclick="exportEnglishNames(true)" class="bg-arkan-dark text-white px-3 py-1.5 rounded-lg font-extrabold cursor-pointer">تصدير غير المراجَع (CSV)</button>
@@ -8249,7 +8249,7 @@ ${window.location.href}
           text = text.replace(/\bEye Drops\b/g, 'Eye Drops').replace(/\b(Eye|Ear|Nasal) (.*?)\bDrops\b/, (m, a, mid) => a + ' Drops' + (mid.trim() ? ' ' + mid.trim() : ''));
           text = text.replace(/\bTablets Tablets\b/g, 'Tablets').replace(/\bCapsules Capsules\b/g, 'Capsules').replace(/\b(\w+) \1\b/gi, '$1');
           text = text.replace(/\bAlternative\b/g, 'Alt. to');
-          return { text, verified: ok, note: notes.join(',') };
+          return { text, verified: false, note: [...notes, 'auto-generated'].filter(Boolean).join(',') };
         }
 
 
@@ -8269,7 +8269,8 @@ ${window.location.href}
             'dose:mg?': '⚠ راجع وحدة الجرعة: «مجم» مع شكل سائل/بخاخ',
             'dose:huge': '⚠ جرعة غير منطقية — راجع الصنف',
             'check:K': '⚠ حرف «ك» غير واضح في الاسم العربي — راجع (كبسولة؟)',
-            'typo': 'تم تصحيح تكرار حروف في الاسم العربي'
+            'typo': 'تم تصحيح تكرار حروف في الاسم العربي',
+            'auto-generated': 'اسم مقترح آليًا من قاموس الترجمة، وليس تحققًا من الاسم التجاري الرسمي'
         };
         function enNoteText(note) { return String(note || '').split(',').filter(Boolean).map(n => EN_NOTE_AR[n] || n).join(' — '); }
 
@@ -8365,7 +8366,7 @@ ${window.location.href}
         function updateEnglishStats() {
             const el = document.getElementById('en-stats'); if (!el) return;
             const v = products.filter(p => getEnInfo(p).verified).length;
-            el.textContent = `مراجَع: ${v} من ${products.length} صنف`;
+            el.textContent = `مُدخل يدويًا: ${v} من ${products.length} صنف — مقترح آلي يحتاج مراجعة: ${products.length - v}`;
         }
 
         // ---- Product images (stored apart from the main catalog so it stays light) ----
