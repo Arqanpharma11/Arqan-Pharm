@@ -390,7 +390,7 @@
                             <input type="password" id="login-pharm-password" required placeholder="••••••••"
                                 class="w-full bg-arkan-light border border-arkan-sand rounded-xl px-4 py-3 text-sm font-bold focus:bg-white focus:border-arkan-primary focus:outline-none">
                         </div>
-                        <p id="pharm-login-error" class="hidden text-xs text-rose-700 bg-rose-50 border border-rose-200 px-3 py-2 rounded-xl font-bold">
+                        <p id="pharm-login-error" class="hidden text-xs text-emerald-700 bg-emerald-50 border border-emerald-200 px-3 py-2 rounded-xl font-bold">
                             رقم الموبايل أو كلمة المرور غير صحيحة. يمكنك إنشاء حساب جديد من التبويب المجاور.
                         </p>
                         <div class="pt-2">
@@ -431,7 +431,7 @@
                                 <label class="block text-xs font-extrabold text-arkan-sand mb-1.5 mt-3">كلمة المرور *</label>
                                 <input type="password" id="admin-gateway-password" required placeholder="أدخل كلمة مرور الأدمن..."
                                     class="num-en w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-sm font-bold text-white placeholder-white/40 focus:bg-white/15 focus:border-amber-400 focus:outline-none">
-                                <p id="admin-gateway-error" class="hidden text-xs text-rose-300 bg-rose-950/60 border border-rose-500/40 px-3 py-2 rounded-xl font-bold mt-2">
+                                <p id="admin-gateway-error" class="hidden text-xs text-emerald-300 bg-emerald-950/60 border border-emerald-500/40 px-3 py-2 rounded-xl font-bold mt-2">
                                     كلمة مرور الإدارة غير صحيحة!
                                 </p>
                             </div>
@@ -658,7 +658,7 @@
                         نسخة احتياطية JSON
                     </button>
                     <button type="button" onclick="adminResetDefaultCatalog()"
-                        class="bg-rose-50 hover:bg-rose-100 text-rose-800 border border-rose-200 px-3 py-2 rounded-xl text-xs font-extrabold cursor-pointer">
+                        class="bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-200 px-3 py-2 rounded-xl text-xs font-extrabold cursor-pointer">
                         استعادة الليسته الماستر
                     </button>
                 </div>
@@ -793,7 +793,7 @@
                     </div>
                     <div class="flex items-center gap-3 shrink-0">
                         <button type="button" onclick="openOrdersArchive()" class="text-xs text-arkan-primary hover:underline font-extrabold cursor-pointer">🗄️ باك اب الطلبيات</button>
-                        <button type="button" onclick="adminClearOrders()" class="text-xs text-rose-700 hover:underline font-bold cursor-pointer">مسح السجل</button>
+                        <button type="button" onclick="adminClearOrders()" class="text-xs text-emerald-700 hover:underline font-bold cursor-pointer">مسح السجل</button>
                     </div>
                 </div>
                 <div id="adm-orders-list" class="space-y-3 max-h-[520px] overflow-y-auto"></div>
@@ -863,9 +863,9 @@
                     </div>
 
                     <!-- Credit Policy Status Banner -->
-                    <div id="pharm-credit-status-banner" class="bg-amber-50 border border-amber-200 rounded-xl px-3.5 py-2 text-[11px] font-bold text-amber-950 flex flex-wrap items-center justify-between gap-2">
+                    <div id="pharm-credit-status-banner" class="bg-emerald-50 border border-emerald-200 rounded-xl px-3.5 py-2 text-[11px] font-bold text-emerald-950 flex flex-wrap items-center justify-between gap-2">
                         <span>🔒 الدفع بالآجل مغلق حالياً — يُفتح تلقائياً بعد إتمام <strong>2 أوردر نقدي (كاش)</strong> أو بتفعيل من إدارة المخزن.</span>
-                        <span id="pharm-cash-progress-badge" class="bg-amber-200/80 text-amber-950 px-2.5 py-0.5 rounded-lg font-black">أوردرات الكاش: 0 / 2</span>
+                        <span id="pharm-cash-progress-badge" class="bg-emerald-200/80 text-emerald-950 px-2.5 py-0.5 rounded-lg font-black">أوردرات الكاش: 0 / 2</span>
                     </div>
                 </div>
 
@@ -895,7 +895,7 @@
                         <select id="pharm-use-filter" onchange="renderPharmacistCatalog()" class="bg-arkan-light border border-arkan-sand rounded-xl px-3.5 py-2.5 text-xs font-extrabold text-arkan-dark focus:outline-none"><option value="ALL">كل الاستخدامات</option></select>
 
                         <button type="button" id="pharm-shortage-btn" onclick="togglePharmShortageFilter()"
-                            class="flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border border-amber-400 bg-amber-50 hover:bg-amber-100 text-amber-950 text-xs font-black transition-all cursor-pointer shrink-0">
+                            class="flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border border-emerald-400 bg-emerald-50 hover:bg-emerald-100 text-emerald-950 text-xs font-black transition-all cursor-pointer shrink-0">
                             <span>🔥 نواقص متوفرة</span>
                             <span id="pharm-shortage-count" class="num-en bg-arkan-dark text-arkan-sand px-2 py-0.5 rounded-full text-[11px]">0</span>
                         </button>
@@ -1022,7 +1022,7 @@
                                     طباعة فاتورة
                                 </button>
                                 <button type="button" onclick="clearPharmCart()"
-                                    class="bg-rose-50 hover:bg-rose-100 text-rose-800 border border-rose-200 font-extrabold text-[11px] py-2.5 px-2 rounded-xl transition-all cursor-pointer">
+                                    class="bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-200 font-extrabold text-[11px] py-2.5 px-2 rounded-xl transition-all cursor-pointer">
                                     تفريغ السلة
                                 </button>
                             </div>
@@ -1193,7 +1193,7 @@
                             <input type="text" id="edit-prod-img-url" dir="ltr" oninput="onEditImageUrl(this.value)" placeholder="أو الصق رابط الصورة https://..."
                                 class="w-full bg-white border border-arkan-sand rounded-lg px-2.5 py-1.5 text-[11px] font-bold focus:outline-none">
                         </div>
-                        <button type="button" onclick="clearEditImage()" class="text-[11px] font-extrabold text-rose-700 cursor-pointer">حذف</button>
+                        <button type="button" onclick="clearEditImage()" class="text-[11px] font-extrabold text-emerald-700 cursor-pointer">حذف</button>
                     </div>
                 </div>
 
@@ -5752,7 +5752,7 @@
 ضغط|Perindopril بيريندوبريل|بيريندوبريل بريستاريوم كوفيرام
 ضغط|Methyldopa ميثيل دوبا|الدوميت ميثيلدوبا
 ضغط ومدر|Indapamide ايندابامايد|ايندابامايد
-مدر بول|Furosemide فيوروسيميد|فيوروسيميد لازيكس
+مدر بول|Fuemeraldmide فيوروسيميد|فيوروسيميد لازيكس
 مدر بول|Spironolactone سبيرونولاكتون|سبيرونولاكتون الداكتون
 مدر بول|Acetazolamide اسيتازولاميد|اسيتازولاميد دياموكس
 قلب|Trimetazidine تريميتازيدين|تريميتازيدين فاستاريل
@@ -6092,7 +6092,7 @@
 ضغط ومدر|Amiloride+HCTZ اميلوريد|موديوريتيك
 ضغط|ARB? مثبط مستقبلات انجيوتنسين|زانبرازان
 مدر بول|Spironolactone سبيرونولاكتون|سباسكولون سبكتون لازيلاكتون
-مدر بول|Furosemide فيوروسيمايد|لاسيكس فروساك
+مدر بول|Fuemeraldmide فيوروسيمايد|لاسيكس فروساك
 قلب|Ranolazine رانولازين|رانيكسا
 قلب|Ivabradine ايفابرادين|بروكورلان
 قلب|Propafenone بروبافينون|ريتمونورم
@@ -6566,7 +6566,7 @@
             preparing: { label: 'جاري التجهيز بالمخزن', badge: 'bg-blue-100 text-blue-950 border-blue-300', step: 2 },
             shipping: { label: 'خرج للتوصيل', badge: 'bg-purple-100 text-purple-950 border-purple-300', step: 3 },
             delivered: { label: 'تم التسليم بنجاح', badge: 'bg-emerald-100 text-emerald-950 border-emerald-300', step: 4 },
-            cancelled: { label: 'ملغي', badge: 'bg-rose-100 text-rose-950 border-rose-300', step: 0 }
+            cancelled: { label: 'ملغي', badge: 'bg-emerald-100 text-emerald-950 border-emerald-300', step: 0 }
         };
 
         let products = [];
@@ -6669,8 +6669,8 @@
                 badge.className = 'inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-extrabold bg-emerald-500/20 text-emerald-200 border border-emerald-400/40';
                 badge.innerHTML = `<span class="w-2 h-2 rounded-full bg-emerald-400"></span> ${text || 'متصل بالسحابة لحظياً ✓'}`;
             } else if (status === 'error') {
-                badge.className = 'inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-extrabold bg-rose-500/20 text-rose-200 border border-rose-400/40';
-                badge.innerHTML = `<span class="w-2 h-2 rounded-full bg-rose-400"></span> ${text || 'وضع أوفلاين (تحقق من قواعد Firebase)'}`;
+                badge.className = 'inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-extrabold bg-emerald-500/20 text-emerald-200 border border-emerald-400/40';
+                badge.innerHTML = `<span class="w-2 h-2 rounded-full bg-emerald-400"></span> ${text || 'وضع أوفلاين (تحقق من قواعد Firebase)'}`;
             } else {
                 badge.className = 'inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-extrabold bg-amber-500/20 text-amber-200 border border-amber-400/40';
                 badge.innerHTML = `<span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span> ${text || 'جاري المزامنة...'}`;
@@ -7710,12 +7710,12 @@ ${window.location.href}
                             <div class="flex items-center justify-between pt-1.5 border-t border-arkan-sand/60">
                                 <span class="text-[11px] font-bold text-arkan-bronze">أوردرات الكاش: <strong class="num-en text-arkan-dark">${cashCount}</strong></span>
                                 <button type="button" onclick="togglePharmacistCreditAdmin('${p.phone}')"
-                                    class="${creditUnlocked ? 'bg-rose-100 hover:bg-rose-600 text-rose-800 hover:text-white' : 'bg-emerald-700 hover:bg-emerald-800 text-white'} px-3 py-1 rounded-lg text-[11px] font-extrabold transition-colors cursor-pointer">
+                                    class="${creditUnlocked ? 'bg-emerald-100 hover:bg-emerald-600 text-emerald-800 hover:text-white' : 'bg-emerald-700 hover:bg-emerald-800 text-white'} px-3 py-1 rounded-lg text-[11px] font-extrabold transition-colors cursor-pointer">
                                     ${creditUnlocked ? 'قفل الآجل' : 'فتح صلاحية الآجل'}
                                 </button>
                                 <button type="button" onclick="togglePharmacistMinimumOrderAdmin(decodeURIComponent('${encodeURIComponent(p.phone)}'))" class="${isMinimumOrderExempt(p) ? 'bg-amber-100 text-amber-900' : 'bg-indigo-700 text-white'} px-3 py-1 rounded-lg text-[11px] font-extrabold cursor-pointer">${isMinimumOrderExempt(p) ? 'إعادة حد 10,000' : 'إعفاء من حد 10,000'}</button>
                                 <button type="button" onclick="adminDeletePharmacist(decodeURIComponent('${encodeURIComponent(p.phone)}'))"
-                                    class="bg-rose-700 hover:bg-rose-800 text-white px-3 py-1 rounded-lg text-[11px] font-extrabold cursor-pointer">🗑 حذف الحساب</button>
+                                    class="bg-emerald-700 hover:bg-emerald-800 text-white px-3 py-1 rounded-lg text-[11px] font-extrabold cursor-pointer">🗑 حذف الحساب</button>
                             </div>
                         </div>
                     `;
@@ -7724,7 +7724,7 @@ ${window.location.href}
 
             const ordersListEl = document.getElementById('adm-orders-list');
             const pendingCancelRequests = orderCancellationRequests.filter(r => r.status === 'pending');
-            const cancelRequestsHtml = pendingCancelRequests.length ? `<div class="bg-rose-50 border border-rose-200 rounded-xl p-3 space-y-2"><p class="font-black text-rose-900">طلبات إلغاء الأوردرات (${pendingCancelRequests.length})</p>${pendingCancelRequests.map(r => `<div class="bg-white rounded-lg p-2 flex flex-wrap justify-between items-center gap-2"><span>#ARK-${String(r.orderId).slice(-6)} • ${r.pharmName || ''} • ${r.phone || ''}</span><span class="flex gap-2"><button onclick="approveOrderCancellation(${r.orderId})" class="bg-emerald-700 text-white rounded px-3 py-1">اعتماد الإلغاء</button><button onclick="rejectOrderCancellation(${r.orderId})" class="bg-rose-700 text-white rounded px-3 py-1">رفض</button></span></div>`).join('')}</div>` : '';
+            const cancelRequestsHtml = pendingCancelRequests.length ? `<div class="bg-emerald-50 border border-emerald-200 rounded-xl p-3 space-y-2"><p class="font-black text-emerald-900">طلبات إلغاء الأوردرات (${pendingCancelRequests.length})</p>${pendingCancelRequests.map(r => `<div class="bg-white rounded-lg p-2 flex flex-wrap justify-between items-center gap-2"><span>#ARK-${String(r.orderId).slice(-6)} • ${r.pharmName || ''} • ${r.phone || ''}</span><span class="flex gap-2"><button onclick="approveOrderCancellation(${r.orderId})" class="bg-emerald-700 text-white rounded px-3 py-1">اعتماد الإلغاء</button><button onclick="rejectOrderCancellation(${r.orderId})" class="bg-emerald-700 text-white rounded px-3 py-1">رفض</button></span></div>`).join('')}</div>` : '';
             if (orders.length === 0) {
                 ordersListEl.innerHTML = cancelRequestsHtml + '<p class="text-xs text-arkan-bronze text-center py-6">لا توجد أوردرات مسجلة بعد.</p>';
             } else {
@@ -7883,7 +7883,7 @@ ${window.location.href}
                 const marginEgp = Number((pharmPrice - costPrice).toFixed(2));
 
                 return `
-                    <tr class="hover:bg-arkan-light transition-colors ${!item.available ? 'opacity-60 bg-rose-50/30' : ''}">
+                    <tr class="hover:bg-arkan-light transition-colors ${!item.available ? 'opacity-60 bg-emerald-50/30' : ''}">
                         <td class="py-3 px-4 font-extrabold text-arkan-dark">
                             <span class="cursor-pointer" onclick="openProductImage(${item.id})">${PROD_IMAGES[item.id] ? '🖼️' : '📷'} ${cleanCatalogDisplayName(item.name)}</span>
                             ${enChipAdmin(item, '')}
@@ -7901,7 +7901,7 @@ ${window.location.href}
                             <span class="num-en font-black text-emerald-800">${fmtPercent(marginPct)} (+${fmtMoney(marginEgp)})</span>
                         </td>
                         <td class="py-3 px-3 text-center">
-                            <span class="px-2 py-0.5 rounded-full text-[11px] font-bold ${item.available ? 'bg-emerald-100 text-emerald-800' : 'bg-rose-100 text-rose-800'}">
+                            <span class="px-2 py-0.5 rounded-full text-[11px] font-bold ${item.available ? 'bg-emerald-100 text-emerald-800' : 'bg-emerald-100 text-emerald-800'}">
                                 ${item.available ? 'متوفر' : 'غير متوفر'}
                             </span>
                         </td>
@@ -7912,7 +7912,7 @@ ${window.location.href}
                                     تعديل
                                 </button>
                                 <button onclick="adminDeleteProduct(${item.id})"
-                                    class="bg-rose-100 hover:bg-rose-600 text-rose-800 hover:text-white px-2.5 py-1 rounded-lg text-[11px] font-bold transition-colors cursor-pointer">
+                                    class="bg-emerald-100 hover:bg-emerald-600 text-emerald-800 hover:text-white px-2.5 py-1 rounded-lg text-[11px] font-bold transition-colors cursor-pointer">
                                     حذف
                                 </button>
                             </div>
@@ -8060,7 +8060,7 @@ ${window.location.href}
             'اويل':'Oil','روز':'Rose','باور':'Power','بون':'Bone','فري':'Free','ستوب':'Stop','الفا':'Alpha','سوبر':'Super','ديو':'Duo','برو':'Pro','برايم':'Prime',
             'بريما':'Prima','ايزي':'Easy','ويل':'Well','ليت':'Lite','ماج':'Mag','يوني':'Uni','ستار':'Star','سويت':'Sweet','ميكس':'Mix','تونيك':'Tonic','هيلثي':'Healthy','كلير':'Clear','توتال':'Total','كيور':'Cure','ماي':'My'
         });
-        const EN_GENERICS_RAW = {"كلاريثروميسين": "Clarithromycin", "اموكسيسيلين": "Amoxicillin", "سيفترياكسون": "Ceftriaxone", "سيفكسيم": "Cefixime", "سيفوروكسيم": "Cefuroxime", "سيفادروكسيل": "Cefadroxil", "ليفوفلوكساسين": "Levofloxacin", "موكسيفلوكساسين": "Moxifloxacin", "ميلوكسيكام": "Meloxicam", "نابروكسين": "Naproxen", "كيتورولاك": "Ketorolac", "ترامادول": "Tramadol", "بريجابالين": "Pregabalin", "جابابنتين": "Gabapentin", "ايسوميبرازول": "Esomeprazole", "بانتوبرازول": "Pantoprazole", "لانسوبرازول": "Lansoprazole", "رانيتيدين": "Ranitidine", "دومبيريدون": "Domperidone", "ميتوكلوبراميد": "Metoclopramide", "سالبيوتامول": "Salbutamol", "مونتيلوكاست": "Montelukast", "ديسلوراتادين": "Desloratadine", "ليفوسيتريزين": "Levocetirizine", "فيكسوفينادين": "Fexofenadine", "بريدنيزولون": "Prednisolone", "ميثيل بريدنيزولون": "Methylprednisolone", "روسوفاستاتين": "Rosuvastatin", "كلوبيدوجريل": "Clopidogrel", "وارفارين": "Warfarin", "ريفاروكسابان": "Rivaroxaban", "ابيكسابان": "Apixaban", "نيبيفولول": "Nebivolol", "اتينولول": "Atenolol", "كانديسارتان": "Candesartan", "تيلميسارتان": "Telmisartan", "اربيسارتان": "Irbesartan", "فوروسيمايد": "Furosemide", "سبيرونولاكتون": "Spironolactone", "جليميبيريد": "Glimepiride", "جليكلازيد": "Gliclazide", "سيتاجليبتين": "Sitagliptin", "فيلداجليبتين": "Vildagliptin", "لينجاجليبتين": "Linagliptin", "سيلدينافيل": "Sildenafil", "تادالافيل": "Tadalafil", "الوبيورينول": "Allopurinol", "كولشيسين": "Colchicine", "ميثوتريكسات": "Methotrexate", "كاربيمازول": "Carbimazole", "فلوكونازول": "Fluconazole", "ايتراكونازول": "Itraconazole", "تيربينافين": "Terbinafine", "اسيكلوفير": "Acyclovir", "اوسيلتاميفير": "Oseltamivir", "ايفرمكتين": "Ivermectin", "البيندازول": "Albendazole", "نيتازوكسانيد": "Nitazoxanide", "بيزافيبرات": "Bezafibrate", "فينوفيبرات": "Fenofibrate", "ايزوتريتينوين": "Isotretinoin", "كلوتريمازول": "Clotrimazole", "ميكونازول": "Miconazole", "كيتوكونازول": "Ketoconazole", "بيتاميثازون": "Betamethasone", "هيدروكورتيزون": "Hydrocortisone", "ديكسبانثينول": "Dexpanthenol", "اوندانسيترون": "Ondansetron", "لاكتولوز": "Lactulose", "سيميثيكون": "Simethicone", "ميبيفيرين": "Mebeverine", "ماغنسيوم": "Magnesium", "بوتاسيوم": "Potassium", "بروبيوتيك": "Probiotic", "كولاجين": "Collagen", "بيوتين": "Biotin", "فوليك": "Folic", "ميثيلكوبالامين": "Methylcobalamin", "اموكسيسللين": "Amoxicillin", "ازيثرومايسين": "Azithromycin", "باراسيتامول": "Paracetamol", "ميترونيدازول": "Metronidazole", "اوميبرازول": "Omeprazole", "ديكلوفيناك": "Diclofenac", "ايبوبروفين": "Ibuprofen", "ميتفورمين": "Metformin", "اتورفاستاتين": "Atorvastatin", "سيمفاستاتين": "Simvastatin", "املوديبين": "Amlodipine", "لوسارتان": "Losartan", "فالسارتان": "Valsartan", "كارفيديلول": "Carvedilol", "ليفوثيروكسين": "Levothyroxine", "ديكساميثازون": "Dexamethasone", "ليدوكايين": "Lidocaine", "سيتريزين": "Cetirizine", "لوراتادين": "Loratadine", "سيبروفلوكساسين": "Ciprofloxacin", "انسولين": "Insulin", "اسبرين": "Aspirin"};
+        const EN_GENERICS_RAW = {"كلاريثروميسين": "Clarithromycin", "اموكسيسيلين": "Amoxicillin", "سيفترياكسون": "Ceftriaxone", "سيفكسيم": "Cefixime", "سيفوروكسيم": "Cefuroxime", "سيفادروكسيل": "Cefadroxil", "ليفوفلوكساسين": "Levofloxacin", "موكسيفلوكساسين": "Moxifloxacin", "ميلوكسيكام": "Meloxicam", "نابروكسين": "Naproxen", "كيتورولاك": "Ketorolac", "ترامادول": "Tramadol", "بريجابالين": "Pregabalin", "جابابنتين": "Gabapentin", "ايسوميبرازول": "Esomeprazole", "بانتوبرازول": "Pantoprazole", "لانسوبرازول": "Lansoprazole", "رانيتيدين": "Ranitidine", "دومبيريدون": "Domperidone", "ميتوكلوبراميد": "Metoclopramide", "سالبيوتامول": "Salbutamol", "مونتيلوكاست": "Montelukast", "ديسلوراتادين": "Desloratadine", "ليفوسيتريزين": "Levocetirizine", "فيكسوفينادين": "Fexofenadine", "بريدنيزولون": "Prednisolone", "ميثيل بريدنيزولون": "Methylprednisolone", "روسوفاستاتين": "Rosuvastatin", "كلوبيدوجريل": "Clopidogrel", "وارفارين": "Warfarin", "ريفاروكسابان": "Rivaroxaban", "ابيكسابان": "Apixaban", "نيبيفولول": "Nebivolol", "اتينولول": "Atenolol", "كانديسارتان": "Candesartan", "تيلميسارتان": "Telmisartan", "اربيسارتان": "Irbesartan", "فوروسيمايد": "Fuemeraldmide", "سبيرونولاكتون": "Spironolactone", "جليميبيريد": "Glimepiride", "جليكلازيد": "Gliclazide", "سيتاجليبتين": "Sitagliptin", "فيلداجليبتين": "Vildagliptin", "لينجاجليبتين": "Linagliptin", "سيلدينافيل": "Sildenafil", "تادالافيل": "Tadalafil", "الوبيورينول": "Allopurinol", "كولشيسين": "Colchicine", "ميثوتريكسات": "Methotrexate", "كاربيمازول": "Carbimazole", "فلوكونازول": "Fluconazole", "ايتراكونازول": "Itraconazole", "تيربينافين": "Terbinafine", "اسيكلوفير": "Acyclovir", "اوسيلتاميفير": "Oseltamivir", "ايفرمكتين": "Ivermectin", "البيندازول": "Albendazole", "نيتازوكسانيد": "Nitazoxanide", "بيزافيبرات": "Bezafibrate", "فينوفيبرات": "Fenofibrate", "ايزوتريتينوين": "Isotretinoin", "كلوتريمازول": "Clotrimazole", "ميكونازول": "Miconazole", "كيتوكونازول": "Ketoconazole", "بيتاميثازون": "Betamethasone", "هيدروكورتيزون": "Hydrocortisone", "ديكسبانثينول": "Dexpanthenol", "اوندانسيترون": "Ondansetron", "لاكتولوز": "Lactulose", "سيميثيكون": "Simethicone", "ميبيفيرين": "Mebeverine", "ماغنسيوم": "Magnesium", "بوتاسيوم": "Potassium", "بروبيوتيك": "Probiotic", "كولاجين": "Collagen", "بيوتين": "Biotin", "فوليك": "Folic", "ميثيلكوبالامين": "Methylcobalamin", "اموكسيسللين": "Amoxicillin", "ازيثرومايسين": "Azithromycin", "باراسيتامول": "Paracetamol", "ميترونيدازول": "Metronidazole", "اوميبرازول": "Omeprazole", "ديكلوفيناك": "Diclofenac", "ايبوبروفين": "Ibuprofen", "ميتفورمين": "Metformin", "اتورفاستاتين": "Atorvastatin", "سيمفاستاتين": "Simvastatin", "املوديبين": "Amlodipine", "لوسارتان": "Losartan", "فالسارتان": "Valsartan", "كارفيديلول": "Carvedilol", "ليفوثيروكسين": "Levothyroxine", "ديكساميثازون": "Dexamethasone", "ليدوكايين": "Lidocaine", "سيتريزين": "Cetirizine", "لوراتادين": "Loratadine", "سيبروفلوكساسين": "Ciprofloxacin", "انسولين": "Insulin", "اسبرين": "Aspirin"};
 
         // Brand spellings taken from the Egyptian drug database (EDA-registered trade names)
         const EN_DB_EXACT = {'ابتاميل':'Aptamil','ابياكتو':'Ibiacto','ابياموكس':'Ibiamox','ابيتويد':'Apetoid','ابيجونال':'Epigonal','ابيدرا':'Apidra','ابيروفاستين':'Epirovastin','ابيزيثرو':'Epizithro','ابيسوبت':'Episopt','ابيسيفين':'Epicephin','ابيفاسي':'Epifasi','ابيفورتيل':'Apifortyl','ابيفيناك':'Epifenac','ابيكساتراك':'Apixatrack','ابيكوانتيل':'Epiquantel','ابيكوبريد':'Epicopred','ابيكوتيل':'Epicotil','ابيكوجيل':'Epicogel','ابيكوسيللين':'Epicocillin','ابيكومب':'Epicomb','ابيماج':'Epimag','ابيمول':'Abimol','ابيميرافلو':'Epimiraflu','ابينور':'Epinor','اتاكاند':'Atacand','اتراكتا':'Atrakta','اتراكون':'Itracon','اترانوكس':'Itranox','اتروزيمب':'Atrozemb','اتكوجليفلوزين':'Atcogliflozin','اتور':'Ator','اتورستات':'Atorstat','اتوريزا':'Atoreza','اتوزيت':'Atozet','اجارستين':'Agarstin','اجنوكاستون':'Agnucaston','اجوفالد':'Agovald','اجيرا':'Agera','اجيولاكس':'Agiolax','ادفانسيد':'Advanced','ادفانكريب':'Advancrib','ادكو':'Adco','ادول':'Adol','ارتيسوي':'Artisoy','ارتيكافول':'Articavol','ارثروفاست':'Arthrofast','ارثروهولد':'Arthrohold','اركوكسيا':'Arcoxia','اروميجا':'Aromega','اريكتاليس':'Erectalis','اريكتاماكس':'Erectamax','ازارجا':'Azarga','ازاستاتين':'Ezastatin','ازجوفلوكس':'Azgoflox','ازروليد':'Azrolid','اسباتريند':'Aspatrend','اسبريكارلو':'Aspricarlo','اسبوسيد':'Aspocid','استرامارك':'Estramark','استوهالت':'Estohalt','استيكان':'Estikan','استين':'Astin','اسكوربيك':'Ascorbic','اسيد':'Acid','اسيفيراكس':'Acivirax','افارا':'Avara','افازير':'Avazir','افروميد':'Afromed','افودارت':'Avodart','افيفافاسك':'Avivavasc','افيميو':'Efemyo','اكانزا':'Akanza','اكترابيد':'Actrapid','اكتوس':'Actos','اكتوميثرين':'Ectomethrin','اكتيفاست':'Actifast','اكتيمار':'Actimar','اكديستيرون':'Acdisteron','اكريتين':'Acretin','اكسارونت':'Iksaront','اكساريتيك':'Exaretic','اكسال':'Axal','اكسترا':'Extra','اكستروما':'Extrauma','اكسيدوجاست':'Exeedogast','اكني':'Acne','اكنيلوفيكس':'Acnelofix','اكيروز':'Ekiroz','الافليك':'Alaflic','البافيت':'Elbavit','البالوران':'Elbaluran','البوثيل':'Albothyl','البوستيكس':'Albustix','التروكسين':'Eltroxin','التيازيم':'Altiazem','الدوميت':'Aldomet','الزميندا':'Alzmenda','الزيبيزيل':'Alzepizil','الزيكسا':'Alzixa','الفا':'Alpha','الفابريمو':'Alfabrimo','الفاثرومب':'Alfathromb','الفاديب':'Alfadep','الفاسبيكت':'Alfaspect','الفافيم':'Alphavim','الفافين':'Alphafen','الفاكارينو':'Alfacareno','الفاكالسيدول':'Alfacalcidol','الفانوفا':'Alphanova','الكوفان':'Alcofan','الليربان':'Allerban','الوندا':'Elonda','اليجا':'Elega','اليجون':'Alejon','اليرتام':'Alertam','اليريد':'Alerid','اليكا':'Elica','اليكاسال':'Elicasal','اليكويس':'Eliquis','اليمبوسيس':'Elimbosis','اماجلوست':'Amaglust','اماريل':'Amaryl','امباجليفورم':'Empagliform','امبروبرو':'Ambropro','امبوفير':'Ampofer','امبيزيم':'Ambezim','املو':'Amlo','اموسار':'Amosar','اموسيريبرال':'Amocerebral','امون':'Amoun','اميبازول':'Amebazol','اميجران':'Imigran','اميكاسين':'Amikacin','اميلو':'Amilo','اناسيزياجو':'Anaseziago','انافورتين':'Anaforten','اناناس':'Ananas','انترافير':'Intrafer','انتريستو':'Entresto','انتوبرال':'Antopral','انتوكس':'Antox','انتيجرول':'Integrol','انتيروفير':'Interofer','انتيفير':'Antiver','انتيكرامب':'Antikramp','انتينال':'Antinal','انجيوبلوك':'Angioblock','انجيوسارتان':'Angiosartan','انداجرا':'Andagra','اندليكسابان':'Endlixaban','اندوريستات':'Andouristat','اندوريفابان':'Andorivaban','اندوفلوزين':'Andoflozin','اندوفيت':'Andovit','اندوكاندوكسين':'Andocandoxin','انريتش':'Enrich','انزيماكس':'Enzymax','انسباجو':'Inspago','انسولين':'Insulin','انفلوبروب':'Influprop','انفيجا':'Invega','انفيستا':'Investa','انفينيتي':'Infinity','انكونت':'Incont','انهاليكس':'Inhalex','انورو':'Anoro','انوفوليك':'Inofolic','انوكسيكام':'Anoxicam','انيرجي':'Energy','اواديست':'Awadist','اوبتاديرول':'Optaderol','اوبتاكادو':'Optacado','اوبتيفلوكس':'Optiflox','اوبتيك':'Optic','اوبتيلوبريك':'Optilubric','اوبونوف':'Oponov','اوتريفين':'Otrivin','اوتوكورت':'Otocort','اوجرام':'Augram','اودورال':'Odoral','اوراسين':'Oracin','اوراماكس':'Oramax','اورجينال':'Orginal','اورسوتوين':'Ursotwin','اورسوديول':'Ursodiol','اورسوفالك':'Ursofalk','اورلي':'Orly','اورليستات':'Orlistat','اورليسمارت':'Orlismart','اورنيداز':'Ornidaz','اوروجام':'Orogam','اوريجينال':'Original','اوريدال':'Oridal','اورينت':'Orient','اوستيو':'Osteo','اوفراماكس':'Oframax','اوكاربون':'Eucarbon','اوكايس':'Okays','اوكتو':'Octo','اوكساليبتال':'Oxaleptal','اوكسي':'Oxy','اولازوريكس':'Olazorix','اولانفيكسا':'Olanvexa','اولفين':'Olfen','اوماكور':'Omacor','اومنيفورا':'Omnevora','اوميباك':'Omepak','اوميجا':'Omega','اوميجافيت':'Omegafit','اوميجال':'Omegal','اوميز':'Omez','اوندالينز':'Ondalenz','اونداميتيك':'Ondametic','اونوكرون':'Unocron','ايبيكو':'Eipico','ايرونيل':'Aironyl','بارامول':'Paramol','باروفين':'Parofen','باريتافا':'Baritava','باريشيا':'Parishia','باكتيكلور':'Bacticlor','باكلوفين':'Baclofen','بالكيس':'Balkis','بالم':'Balm','بالمي':'Palmi','بامبيديل':'Bambedil','بانادول':'Panadol','باناكس':'Panax','بانتازول':'Pantazol','بانتوبي':'Pantopi','بانتوجار':'Pantogar','بانتولوك':'Pantoloc','بانتوناب':'Pantonap','بانثوفيرا':'Panthovera','بانثينول':'Panthenol','بانجيستازول':'Pangestazol','بانوفين':'Panoven','براديبيكت':'Bradipect','برافاماكس':'Bravamax','برافوتين':'Pravotin','بران':'Bran','براند':'Brand','برو':'Pro','بروبريك':'Probric','بروتوبان':'Protopan','بروتولوك':'Protoloc','بروتيكا':'Proteca','بروتيكت':'Protect','بروجيست':'Progest','بروست':'Prost','بروستانورم':'Prostanorm','بروفان':'Provan','بروفير':'Profer','بروفيرون':'Proviron','بروفين':'Brufen','بروفينيد':'Profenid','بروكاسوفت':'Prucasoft','بروكسيمول':'Proximol','بروليا':'Prolia','بروماجار':'Bromagar','بروميد':'Bromed','برونتوجيست':'Prontogest','بريانيل':'Prianil','بريج':'Preg','بريجناستيب':'Pregnastep','بريجنافيكس':'Pregnavix','بريدابوكس':'Predapox','بريدسول':'Predsol','بريسمافين':'Prismaven','بريفا':'Breva','بريفاجليب':'Prevaglip','بريفاكوند':'Privacond','بريكسال':'Prexal','بريما':'Prima','بريموكسيزار':'Primoxizar','بريمونوكوند':'Brimonocond','برينجو':'Bringo','بلوك':'Block','بلوكيوم':'Blokium','بليتال':'Pletaal','بلينك':'Blink','بلينكوريست':'Blincorest','بودي':'Body','بوسبار':'Buspar','بوسكوبان':'Buscopan','بوكس':'Box','بوكسيبو':'Boxebo','بوليمارت':'Polymart','بوليمير':'Polymer','بونجيل':'Pongeel','بونو':'Pono','بوينتزام':'Pointzam','بيبرا':'Bepra','بيبزول':'Pepzol','بيبون':'Pepon','بيتا':'Beta','بيتاديرم':'Betaderm','بيتاسيرك':'Betaserc','بيتافوس':'Betafos','بيتاكور':'Betacor','بيتميجا':'Betmiga','بيجو':'Beegu','بيدالكين':'Bidalkin','بيدياميل':'Pediamil','بيرفورما':'Performa','بيرلوك':'Perloc','بيرونتاجونيست':'Pirontagonist','بيريدوفيت':'Pyridovit','بيستول':'Bistol','بيستينون':'Pystinon','بيفاتراسين':'Bivatracin','بيكتول':'Pectol','بيكسي':'Pixe','بيكلو':'Beclo','بيكولاكس':'Picolax','بيلينو':'Bilino','بيمفاست':'Pimfast','بينوجين':'Benogen','بينوكس':'Benox','بيوبريكس':'Bioprex','بيوتيك':'Biotic','بيوتيكافلوكس':'Bioticaflox','بيوتين':'Biotin','بيوجليتا':'Bioglita','بيودكس':'Biodx','بيورازو':'Biorazo','بيوريفامين':'Biorefamin','بيوسترونج':'Biostrong','بيوسيرتازول':'Biosertazol','بيوفيت':'Biovit','بيوفيتا':'Biovita','بيونال':'Bional','تادا':'Tada','تادالونج':'Tadalong','تارجوماش':'Targomash','تاردانزا':'Tardanza','تاريفلوكس':'Tariflox','تافاسين':'Tavacin','تافانيك':'Tavanic','تافلوبرو':'Taflupro','تافونيفلوكس':'Tavoniflox','تافيكسينور':'Tavixinor','تالوبرام':'Talopram','تامسوفيناسين':'Tamsufenacin','تامسول':'Tamsul','تامسولين':'Tamsulin','ترافاتان':'Travatan','ترافوديرمال':'Travodermal','ترافونورم':'Travonorm','تروبيل':'Trobel','ترون':'Tron','ترياكور':'Triacor','تريب':'Trib','تريبتيزول':'Tryptizol','تريبزيم':'Trybzim','تريبسيكان':'Trypsican','تريبسين':'Trypsin','تريبليكسام':'Triplixam','تريترون':'Tritron','تريتوسبوت':'Tritospot','تريفلوكان':'Treflucan','تريكسوزولا':'Trexozola','تريم':'Trim','ترينا':'Trina','تريو':'Trio','تشيكس':'Chicks','توباكين':'Topaken','توبرانو':'Toprano','توبرو':'Topro','توبرين':'Tobrin','توبوبرازان':'Topoprazan','توبولانزا':'Tobolanza','توتافيت':'Totavit','توتاكال':'Totacal','توتال':'Total','توجيو':'Toujeo','تورفاست':'Torvast','تونادوجيست':'Tonadogest','تونيك':'Tonic','تونيكا':'Tonika','توينتي':'Twenty','توينزول':'Twinzol','تيبوفورتين':'Tebofortin','تيبونينا':'Tebonina','تيراتام':'Tiratam','تيراليبسي':'Tiralepsy','تيربين':'Terbin','تيرمينال':'Terminal','تيكافير':'Tecavir','تيموجين':'Timogen','تينتيد':'Tinted','تينورمين':'Tenormin','تينيفلوكساسين':'Tinifloxacin','ثرومبو':'Thrombo','ثرومبونورم':'Thrombonorm','ثري':'Three','ثيروكاربين':'Thyrocarbin','ثيوتاسيد':'Thiotacid','ثيونيرف':'Thionerv','جاباليبسي':'Gabalepsy','جاتيكسيل':'Gatyxel','جاراميسين':'Garamycin','جاست':'Gast','جاسترودومينا':'Gastrodomina','جاسترولوك':'Gastroloc','جاستروموتيل':'Gastromotil','جاسموفاك':'Gasmovac','جاكاراندا':'Jakaranda','جاكودان':'Jackodan','جالينا':'Galena','جامابيون':'Gamabion','جاناتون':'Ganaton','جاناجليب':'Janaglip','جانتوليف':'Gantolief','جرام':'Gram','جرانيا':'Granya','جرانيتريل':'Granitryl','جروزا':'Groza','جرين':'Green','جلوبابروب':'Globaprop','جلوباكاند':'Globacand','جليبتالينا':'Gliptalina','جليبتوميت':'Gleptomet','جليبوفين':'Glybofen','جليفلوزاميت':'Gliflozamet','جليفلوزينو':'Gliflozino','جليكسامبي':'Glyxambi','جليماديل':'Glimadel','جليمبوزين':'Glempozin','جلينوساليك':'Glenosalic','جوتال':'Gotal','جوجيل':'Jogel','جوسبرين':'Jusprin','جوكادو':'Jocado','جولد':'Gold','جولينوساب':'Golinosab','جونيور':'Junior','جوينت':'Joint','جوينتا':'Jointa','جيباريلون':'Jeparilon','جيرلي':'Girly','جيستاميفام':'Jestamivam','جيسترانيل':'Gestranil','جيفلوج':'Giflog','جينسوفيتا':'Ginsovita','جينكو':'Ginko','جينوبروجيست':'Gynoprogest','جينوزول':'Gynozol','جينوسيبت':'Gynocept','جينوفيل':'Genuphil','جينوكونازول':'Gynoconazol','جينونال':'Jenonal','جينيرا':'Gynera','جينيكا':'Genica','جيوبروست':'Geoprost','دابابليكس':'Dapablix','داباجلوزا':'Dapagloza','داباجليف':'Dapaglif','داباجليفلوزين':'Dapagliflozin','دابافيلداكتين':'Dapaveldactin','دابوكستارد':'Dapoxtard','داجو':'Dago','دازول':'Dazol','دافاليندي':'Davalindi','دافروسين':'Dafrocin','دافلون':'Daflon','دالاسين':'Dalacin','داناسيترون':'Danasetron','دانديفيرا':'Dandivera','دروبيجين':'Dropegen','دروبيفلوكس':'Dropiflox','دروسباديول':'Drospadiol','دروسبيفيم':'Drospifem','دوال':'Dual','دوجماتيل':'Dogmatil','دورزولامول':'Dorzolamol','دورمانت':'Dormant','دورميفال':'Dormival','دوزوفا':'Dozova','دوسباتالين':'Duspatalin','دوفاستون':'Duphaston','دوفالاك':'Duphalac','دوكسي':'Doxy','دوكسيرازول':'Doxirazol','دوكسيكوست':'Doxycost','دوكسيوم':'Doxium','دولاجين':'Dulagen','دولسيل':'Dolcyl','دولفين':'Dolphin','دوميجا':'Domega','دونازيل':'Donazil','دونافيرون':'Donaferon','ديابيتونورم':'Diabetonorm','ديابينور':'Diabenor','دياستوب':'Diastop','دياكالديرم':'Diacalderm','دياكس':'Diax','دياكوريماب':'Diacurimap','ديامونريكتا':'Diamonrecta','دياميكرون':'Diamicron','ديبرام':'Depram','ديبروساليك':'Diprosalic','ديبريبان':'Depreban','ديبوفيت':'Depovit','ديجليفلوز':'Diglifloz','ديجيست':'Digest','ديجيكوماج':'Digicomag','ديرم':'Derm','ديرماتين':'Dermatin','ديسا':'Desa','ديسلورات':'Deslorat','ديفارول':'Devarol','ديفلوستيرو':'Diflustero','ديفلوكان':'Diflucan','ديكابرينو':'Decapreno','ديكاديل':'Dekadel','ديكساترول':'Dexatrol','ديكساتوبرين':'Dexatobrin','ديكسافلوكس':'Dexaflox','ديكسافين':'Dexaphen','ديكسانوكورتين':'Dexanocorten','ديكسكيتو':'Dexketo','ديكلوبرو':'Diclopro','ديكلوفين':'Declophen','ديكونادال':'Deconadal','ديلموكسا':'Delmoxa','ديليكار':'Delecar','ديماس':'Demas','ديمرا':'Dimra','ديميكاب':'Dimicap','ديندرا':'Dendra','دينوديفا':'Dienodiva','ديومالين':'Diomalin','رابيد':'Rapid','رابيدوس':'Rapidus','راسبيلوسين':'Raspelocin','رافادا':'Rafada','راميتاكس':'Rametax','رانديل':'Randil','رانسيف':'Rancif','راني':'Rani','رانيكسا':'Ranexa','روزاليا':'Rozalia','روسوفاستاتين':'Rosuvastatin','روسيتور':'Rositor','روكسوتوب':'Ruxotop','روماكسيماب':'Rumaximap','رومانتيجرا':'Romantigra','رونكين':'Ronkin','رويال':'Royal','رويسان':'Roysan','ريباريل':'Reparil','ريبايون':'Repaion','ريتا':'Reta','ريتارد':'Retard','ريتش':'Rich','ريتمونورم':'Rytmonorm','ريتين':'Retin','ريتينول':'Retinol','ريجو':'Rego','ريجيماكس':'Regimax','ريداند':'Redand','ريزوديج':'Ryzodeg','ريسباتيو':'Respatio','ريسبيردال':'Risperdal','ريست':'Rest','ريسدال':'Risdal','ريفادون':'Rivadon','ريفان':'Revan','ريفو':'Rivo','ريفيتال':'Revital','ريكان':'Rekan','ريلي':'Relee','ريموواكس':'Remowax','رينوسكار':'Renoscar','زادوجلوبين':'Zadoglobin','زاندروس':'Zandros','زسويف':'Zswev','زوركال':'Zurcal','زوفيراكس':'Zovirax','زوكوزيت':'Zocozet','زولاديكس':'Zoladex','زيثروكان':'Zithrokan','زيثروماكس':'Zithromax','زيروفازيت':'Zyrovazet','زيستريل':'Zestril','زيسروسين':'Zisrocin','زيلوريك':'Zyloric','زيليا':'Zilia','زيموفاك':'Zymovak','زينول':'Zinol','سافيبليد':'Savibleed','سالجي':'Salgy','سالميتوكورت':'Salmetocort','ساليتروكسيب':'Salitroxib','سانتورين':'Santorin','ساندوز':'Sandoz','سانزال':'Sanzal','سانسو':'Sanso','سانسوفيت':'Sansovit','سانسوكود':'Sansocod','سانوليفوكس':'Sanolevox','سباسكولون':'Spascolon','سبير':'Spir','سبيريفا':'Spiriva','سبيريكس':'Spirex','ستار':'Star','ستارت':'Start','ستراكوبينا':'Strakopina','ستروكا':'Stroka','سترونج':'Strong','ستوب':'Stop','ستوبادول':'Stopadol','ستوموبرال':'Stomopral','ستيبس':'Steps','ستيفيا':'Stevia','ستيم':'Stem','ستيمو':'Stimu','ستيمولان':'Stimulan','سكارو':'Scaro','سكالوجين':'Scalogen','سكرين':'Screen','سكيليتو':'Skeleto','سكين':'Skin','سكينوريتش':'Skinorich','سليم':'Slim','سمارت':'Smart','سنافي':'Snafi','سوابيفينت':'Swabivent','سوبرا':'Supra','سوبراكس':'Suprax','سورال':'Soral','سورتي':'Sorti','سوريانا':'Soriana','سوفت':'Soft','سوفريزا':'Suvreza','سوفيكان':'Suvikan','سوفيناسين':'Sofenacin','سوكابريكسام':'Sokaprixam','سولبادول':'Solpadol','سولباسيف':'Sulbacef','سولبيبتا':'Sulpepta','سولفاكس':'Sulfax','سولو':'Solo','سولوبريد':'Solupred','سولوستار':'Solostar','سولوفريش':'Solofresh','سوليتراكت':'Solitract','سوماتروبين':'Somatropin','سومازينا':'Somazina','سوناكتو':'Sonakto','سويت':'Sweet','سويتال':'Sweetal','سيالونج':'Cialong','سياليس':'Cialis','سيانارو':'Cyanaro','سيانو':'Ciano','سيبالافيل':'Cipalafil','سيبرابرو':'Ciprapro','سيبراليكس':'Cipralex','سيبراماكس':'Cipramax','سيبرو':'Cipro','سيبروسين':'Ciprocin','سيبروفار':'Ciprofar','سيبروفلوكسيراز':'Ciprofloxiraz','سيبروميجا':'Cipromega','سيبورال':'Seboral','سيتاجليفورم':'Sitagliform','سيتال':'Cetal','سيتالو':'Citalo','سيتراك':'Cetrak','سيترونوميت':'Setronomet','سيجما':'Sigma','سيدوكاست':'Sedokast','سيديكو':'Sedico','سيردالود':'Sirdalud','سيرفي':'Servi','سيرفيتام':'Cervitam','سيرفيتولكا':'Cervetolka','سيرليفت':'Serlift','سيروكسات':'Seroxat','سيري':'Siri','سيزار':'Seezar','سيستينول':'Cystinol','سيفاترون':'Cevatron','سيفامول':'Cevamol','سيفزيم':'Cefzim','سيفوتاكس':'Cefotax','سيفوران':'Ceforan','سيفوزون':'Cefozon','سيفيتيل':'Cevitil','سيكا':'Cica','سيكتور':'Sector','سيكلور':'Ceclor','سيكوسيتام':'Sycocetam','سيلجون':'Selgon','سيلدافا':'Sildava','سيلدين':'Silden','سيلكرين':'Silkren','سيلوكينزوك':'Selokenzoc','سيلونا':'Selona','سيليبورج':'Celeborg','سيليكار':'Silicar','سيليكتيفال':'Selectival','سيليكس':'Selex','سيليكون':'Silicon','سيلينجينا':'Selengena','سيلينو':'Seleno','سيمبيون':'Cempion','سيناكالسيت':'Cinacalcet','سينترافيتا':'Centravita','سينجاردي':'Synjardy','سينس':'Sens','سينوبريت':'Sinupret','سينوبريل':'Sinopril','سينوزيم':'Sinozim','سينومارين':'Sinomarin','شاتو':'Shatoo','شارك':'Shark','شامبو':'Shampo','شوتس':'Shots','شورسالين':'Shorsalin','شوما':'Shoma','شيلد':'Shield','فابوزول':'Vapozol','فاجلوزينو':'Faglozino','فاردي':'Varde','فاردينا':'Vardena','فاردينوريكت':'Vardenorect','فاركولين':'Farcolin','فارما':'Pharma','فارماستين':'Pharmastin','فارماكون':'Pharmakon','فاروفيجا':'Faroviga','فاروفين':'Pharofen','فاست':'Fast','فاستاريل':'Vastarel','فاستاسيرو':'Vastasiero','فاسكون':'Vascon','فاكتو':'Faktu','فاكساتو':'Vaxato','فالجيستريل':'Valgestril','فالسارتان':'Valsartan','فالكوناسيا':'Falconacea','فاليو':'Valio','فاموتاك':'Famotak','فاموتين':'Famotin','فاميكس':'Vamix','فانتوكال':'Fantocal','فانفيلدا':'Vanvilda','فانو':'Vano','فايسيد':'Faycid','فرانكوتريتينوين':'Francotretinoin','فروست':'Frost','فري':'Free','فريتز':'Fretz','فريز':'Freez','فريش':'Fresh','فلو':'Flu','فلوبرونك':'Flubronk','فلوجينيل':'Flugenil','فلوراكس':'Florax','فلورودام':'Flurodam','فلوروفلوكس':'Fluroflox','فلوكس':'Flux','فلوكسيبسي':'Floxepci','فلوكورال':'Flucoral','فلوموكس':'Flumox','فليبوتون':'Fleboton','فليكتور':'Flector','فليكس':'Flex','فوربلوبي':'Forblobe','فورت':'Fort','فورتادا':'Fortada','فورتاميند':'Fortamind','فورتروستيب':'Fortrustep','فورتي':'Forte','فورتيموكس':'Fortymox','فورتيو':'Forteo','فورمامي':'Formamy','فوستيمون':'Fostimon','فولافليك':'Folaflic','فولبرازال':'Fulprazal','فولتارين':'Voltaren','فولي':'Foli','فوليك':'Folic','فوليكاب':'Folicap','فوليكس':'Folex','فوناسيدان':'Vonacidan','فونافوت':'Vonafut','فوندالوس':'Vondalous','فونوبرافين':'Vonopravin','فونوبرامير':'Vonopramer','فياترازو':'Viatrazo','فياجرا':'Viagra','فيافاج':'Viavag','فيتاسيد':'Vitacid','فيتال':'Vital','فيتامونت':'Vitamount','فيتامين':'Vitamin','فيتايامي':'Vitayami','فيتموتوس':'Fitmotus','فيتوسيتامول':'Vetocetamol','فيتوياجرا':'Vetoyagra','فيجاموكس':'Vigamox','فيجو':'Vigo','فيجوتون':'Vigoton','فيدروب':'Vidrop','فيرا':'Vera','فيربينو':'Ferpino','فيردابيوتال':'Verdapiotal','فيردو':'Verdo','فيردينوديب':'Verdenodeb','فيرست':'First','فيرسيرك':'Verserc','فيرنوفا':'Vernova','فيرو':'Fero','فيروجلوبين':'Feroglobin','فيروستات':'Virustat','فيفيدول':'Vividol','فيكسون':'Fexon','فيكوفارتيك':'Vecovartec','فيلدافورمين':'Vildaformin','فيلوزاك':'Philozac','فيلوسيف':'Velosef','فيمارا':'Femara','فيموجيسال':'Femogesal','فيناكس':'Vinax','فيناكسان':'Venaxan','فينت':'Vent','فينجوفي':'Finjuve','فينوسين':'Vinosin','فينوماكس':'Vinomax','فينيتين':'Phenytin','فيوسيست':'Viocyst','فيولا':'Viola','كابرون':'Kapron','كابري':'Capry','كابوتريل':'Capotril','كابي':'Kabi','كابيلورين':'Capilorin','كاتيفاروكس':'Kativarox','كاربالتا':'Karbalta','كاربون':'Carbon','كارتيزاد':'Cartizad','كاردورا':'Cardura','كارديفو':'Cardivo','كارديكسين':'Cardixin','كارديلول':'Cardilol','كارفيد':'Carvid','كارلا':'Carla','كارنيتول':'Carnitol','كارنيفيتا':'Carnivita','كالاميل':'Calamyl','كالتيرا':'Caltera','كالدين':'Caldin','كالسيبينو':'Calcipino','كالسيترون':'Calcitron','كالسيتريكس':'Calcitrix','كالسيتونيوم':'Calcitonium','كالسيدول':'Calcidol','كالسيما':'Calcima','كالسيوم':'Calcium','كالم':'Calm','كالما':'Calma','كالمينال':'Calminal','كالوبين':'Kalobin','كالي':'Caly','كاليمابيكس':'Kalemapex','كاندي':'Candy','كانديستان':'Candistan','كرانبي':'Cranby','كريبتوناز':'Cryptonaz','كريستور':'Crestor','كريستوليب':'Crestolip','كلوباسيرك':'Clopacirc','كلوسول':'Closol','كليمادينون':'Klimadynon','كلين':'Kleen','كلينداسول':'Clindasol','كلينداسين':'Clindacin','كليندام':'Clindam','كلينفا':'Klenva','كوباد':'Copad','كوبال':'Cobal','كوبالامون':'Cobalamoun','كوبالامين':'Cobalamin','كوجيكس':'Cogex','كوجينتول':'Cogintol','كودافين':'Codaphen','كوربال':'Corpal','كورت':'Cort','كورتيلون':'Cortilon','كوردو':'Cordo','كورنيفريش':'Cornefresh','كوسيمبريل':'Cosimprel','كوفابريندو':'Covaprendo','كوفي':'Covi','كوفيرام':'Coveram','كوكاست':'Kokast','كوكسريتور':'Coxritor','كوكسينورين':'Coxinorin','كول':'Cool','كولا':'Cola','كولاجرا':'Kolagra','كولانوج':'Kolanog','كولد':'Cold','كولداتريكسي':'Coldatrexy','كولميديتين':'Colmediten','كولوسباتوراز':'Colospatoraz','كولوفيرين':'Coloverin','كولونا':'Colona','كولين':'Colin','كومبي':'Combi','كومفورت':'Comfort','كونتراهيستادين':'Contrahistadin','كونترول':'Control','كونتروليبسي':'Controlepsy','كونتور':'Contour','كونجيستال':'Congestal','كونفيبان':'Conviban','كونكور':'Concor','كونيستوفا':'Conistova','كيبراديل':'Kepradil','كيتوجيسيك':'Ketogesic','كيتورال':'Ketoral','كيتوفان':'Ketofan','كيتولاك':'Ketolac','كيتولجين':'Ketolgin','كيد':'Kid','كيدزونا':'Kidzona','كيراتوهيل':'Keratohyl','كيراتين':'Keratin','كيراكوز':'Keraqouz','كيراكيت':'Keraket','كيروفيت':'Kerovit','كيفبان':'Kifpan','كيناكومب':'Kenacomb','كينوموكسي':'Kinomoxi','لاب':'Lab','لادينيس':'Ladenes','لاروجين':'Larogen','لاروسوزيت':'Larosuzet','لاسيكس':'Lasix','لاكتو':'Lacto','لاكتوديل':'Lactodel','لاكتوماكس':'Lactomax','لاكتيفينور':'Lactevenor','لاكتيول':'Lacteol','لاكسيول':'Laxeol','لاكوفيمب':'Lacovimp','لاميفين':'Lamifen','لاميكتال':'Lamictal','لاناكلور':'Lanaclor','لانتانون':'Lantanon','لانتوبيب':'Lantopep','لانتوس':'Lantus','لانومورا':'Lanomora','لايت':'Lait','لوبيكونت':'Lubicont','لوتون':'Loton','لوتيرانول':'Loteranol','لوراز':'Loraz','لورافاست':'Lorafast','لورنوكسيكام':'Lornoxicam','لورنيكام':'Lornicam','لوسار':'Losar','لوسيدريل':'Lucidril','لوفيترود':'Lovitrod','لوفير':'Lovir','لوكازاندا':'Lokazanda','لوكاستين':'Locasten','لوكسي':'Loxy','لونا':'Luna','لونابيكس':'Lonapex','لوهيدران':'Lohydran','ليبوكومب':'Lipocomb','ليبونا':'Lipona','ليبيترين':'Lipitrin','ليبيتور':'Lipitor','ليتروزول':'Letrozol','ليجالون':'Legalon','ليزبيرج':'Lezberg','ليسيد':'Licid','ليفانوكس':'Levanox','ليفانيك':'Levanic','ليفسيت':'Levcet','ليفوديل':'Levodel','ليفوكتيفان':'Levoctivan','ليفوكسين':'Levoxin','ليفوهيستام':'Levohistam','ليفيترا':'Levitra','ليفيكتام':'Levectam','ليمون':'Lemon','ليناجليفلوزين':'Linagliflozin','ليناجينتا':'Linajenta','لينترا':'Lentra','لينتوجيستون':'Lentojeston','لينجالابس':'Lingalabs','ليندو':'Lindo','ماتريكس':'Matrix','ماج':'Mag','ماجنا':'Magna','ماجناتوب':'Magnatob','ماجيك':'Magic','مارت':'Mart','مارسالاز':'Marsalaz','مارفيل':'Marvel','ماركال':'Marcal','مارياجون':'Mariagon','ماريفان':'Marevan','ماسك':'Mask','مافو':'Mafo','مافيلور':'Mavilor','ماكرو':'Macro','ماكس':'Max','ماكسيكال':'Maxical','مالفا':'Malva','ماليندا':'Malinda','مان':'Man','مايسترو':'Maestro','مديكورفال':'Mdicorval','موبي':'Mobi','موبيتيل':'Mobitil','موبينورم':'Mobinorm','موتيليوم':'Motilium','موتينورم':'Motinorm','موداسوميل':'Modasomil','مورنيجاج':'Mornigag','موزانجليك':'Mozanglic','موف':'Moov','موفكسير':'Movxir','موفلوكس':'Moflox','موفي':'Move','موفيجيت':'Movigit','موفينتور':'Moventor','موكسيسيارو':'Moxyseyaro','موكسيفلوكس':'Moxiflox','موكسين':'Moxen','مومينتا':'Momenta','موناردي':'Monarde','مونتا':'Monta','مونتو':'Monto','مونتيكال':'Montekal','مونجارو':'Mounjaro','موندو':'Mondo','مونوريل':'Monuril','مونوشو':'Monosho','مونوكريست':'Monoqrest','مونوماك':'Monomak','مونوهيكسال':'Monohexal','مويست':'Moist','ميباسيل':'Mepasil','ميبافلوكسين':'Mepafloxin','ميباكليند':'Mepaclind','ميباكو':'Mepaco','ميبو':'Mebo','ميبيفاك':'Mebefac','ميتابسين':'Metapsin','ميتاكارديا':'Metacardia','ميتفورمين':'Metformin','ميثوكويك':'Methoquick','ميثيل':'Methyl','ميجابيو':'Megabio','ميجاموكس':'Megamox','ميديهيالو':'Medihyalo','ميديوم':'Medium','ميرالجو':'Meralgo','ميرتي':'Merti','ميرتيماش':'Mirtimash','ميرفا':'Merva','ميرفيناسين':'Mirfenacin','ميركافا':'Mercava','ميروكسنوريك':'Miroxnoric','ميرونيم':'Meronem','ميريوفيرت':'Meriofert','ميسبورين':'Mesporin','ميستينون':'Mestinon','ميكارديس':'Micardis','ميكرو':'Micro','ميكس':'Mix','ميكسترا':'Mextra','ميكسورا':'Mixora','ميكسيكام':'Mexicam','ميكوناز':'Miconaz','ميلجا':'Milga','ميلو':'Milo','ميلوباك':'Mylobac','ميلوكام':'Melocam','ميلوكسيكام':'Meloxicam','ميموسيتو':'Memocito','مينزوفليك':'Menzoflic','مينوكسيلوك':'Minoxilook','ميني':'Mini','مينيرين':'Minirin','ميوجريل':'Myogrel','ميوفين':'Myofen','ميوكول':'Myocool','ناتاريا':'Nataria','ناتري':'Natry','ناتريكسام':'Natrixam','ناركلين':'Narkleen','نافوبروكسين':'Navoproxin','نافيلوكا':'Naviluca','نانازوكسيد':'Nanazoxid','نودي':'Nody','نورجيستاديول':'Norgestadiol','نورجيسيك':'Norgesic','نورفاسك':'Norvasc','نورمال':'Normal','نورموكارد':'Normocard','نورميفرين':'Normifrin','نوستيفيكس':'Nostifix','نوفورابيد':'Novorapid','نوفونورم':'Novonorm','نوفيستوريك':'Novistoric','نوفيكس':'Novex','نولافير':'Nolaver','نونيميا':'Nonemia','نيتروماك':'Nitromak','نيرفاكتوري':'Nerfactory','نيرفالتا':'Nervalta','نيرفيزام':'Nervizam','نيرموستار':'Nermostar','نيرهاسيلدا':'Nerhasilda','نيستاتين':'Nystatin','نيفروميد':'Nephromed','نيفيلوب':'Nevilob','نيكسيروزوفا':'Nexirozova','نيكسيليكو':'Nixeleco','نيكسيوم':'Nexium','نيوبول':'Neopol','نيوترا':'Neutra','نيورو':'Neuro','نيوروفيت':'Neurovit','نيوريماكس':'Neurimax','نيوزوليد':'Neozolid','هارفي':'Harvy','هاند':'Hand','هيالورونيك':'Hyaluronic','هيبارين':'Heparin','هيبانوكس':'Hepanox','هيبتا':'Hepta','هيدرا':'Hydra','هيدرافيت':'Hydrafeet','هيدروكورت':'Hydrocort','هيربالاند':'Herbaland','هيرباميكس':'Herbamix','هيربانا':'Herbana','هيربولين':'Herbolin','هيرمبرو':'Hermpro','هيرو':'Hero','هيستوتيك':'Histotec','هيلوزين':'Helozin','وومان':'Woman','ويست':'West','وينزوكسيب':'Winzoxib','ياسمين':'Yasmin'};
@@ -14142,35 +14142,35 @@ ${window.location.href}
     "words": 1
   },
   "كوليروز10 مجم اقراص": {
-    "brand": "Cholerose",
+    "brand": "Choleemerald",
     "words": 1
   },
   "كوليروز10/10بلس": {
-    "brand": "Cholerose Plus",
+    "brand": "Choleemerald Plus",
     "words": 2
   },
   "كوليروز10/40بلس": {
-    "brand": "Cholerose Plus",
+    "brand": "Choleemerald Plus",
     "words": 2
   },
   "كوليروز10/5 بلس": {
-    "brand": "Cholerose Plus",
+    "brand": "Choleemerald Plus",
     "words": 2
   },
   "كوليروز20 مجم اقراص": {
-    "brand": "Cholerose",
+    "brand": "Choleemerald",
     "words": 1
   },
   "كوليروز20/10 بلس": {
-    "brand": "Cholerose Plus",
+    "brand": "Choleemerald Plus",
     "words": 2
   },
   "كوليروز40 مجم اقراص": {
-    "brand": "Cholerose",
+    "brand": "Choleemerald",
     "words": 1
   },
   "كوليروز5 مجم اقراص": {
-    "brand": "Cholerose",
+    "brand": "Choleemerald",
     "words": 1
   },
   "كونافيوتال500": {
@@ -16808,17 +16808,17 @@ ${window.location.href}
     "source": "manufacturer-page"
   },
   "برايم روز اى اقراص": {
-    "brand": "Evening Primrose",
+    "brand": "Evening Primemerald",
     "words": 2,
     "source": "standard-name"
   },
   "برايم روز1000 مجم اورا كبسول": {
-    "brand": "Evening Primrose",
+    "brand": "Evening Primemerald",
     "words": 2,
     "source": "standard-name"
   },
   "برايم روز بلس": {
-    "brand": "Evening Primrose",
+    "brand": "Evening Primemerald",
     "words": 2,
     "source": "standard-name"
   },
@@ -18334,7 +18334,7 @@ ${window.location.href}
     "source": "manufacturer-page"
   },
   "تالينوروز غسول سيدات": {
-    "brand": "Talinorose",
+    "brand": "Talinoemerald",
     "words": 1,
     "source": "product-page"
   },
@@ -18641,10 +18641,9 @@ ${window.location.href}
 
         function enChip(p, extraClass) {
             const info = getEnInfo(p), verified = !!info.verified;
-            const safe = String(info.text || '').replace(/[&<>\"']/g, c => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '\"':'&quot;', "'":'&#39;' }[c]));
-            const color = verified ? 'text-emerald-700' : 'text-amber-700';
-            const title = verified ? (info.note === 'reference-match' ? 'مطابق لمرجع منتج أو قاعدة بيانات' : (info.note === 'standard-name' ? 'مصطلح إنجليزي قياسي تمت مراجعته' : 'اسم إنجليزي مدخل يدويًا')) : 'اسم مقترح آليًا ويحتاج مراجعة';
-            return `<span dir="ltr" class="inline-flex items-center gap-1 ${color} font-bold text-[10px] ${extraClass || ''}" title="${title}">${safe}<span aria-hidden="true">${verified ? '✓' : '?'}</span></span>`;
+            const safe = String(info.text || '').replace(/[?؟]/g, '').replace(/[&<>\"']/g, c => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '\"':'&quot;', "'":'&#39;' }[c]));
+            const title = verified ? (info.note === 'reference-match' ? 'مطابق لمرجع منتج أو قاعدة بيانات' : (info.note === 'standard-name' ? 'مصطلح إنجليزي قياسي تمت مراجعته' : 'اسم إنجليزي مدخل يدويًا')) : 'اسم إنجليزي مقترح آليًا وغير مؤكد';
+            return `<span dir="ltr" class="inline-flex items-center gap-1 text-emerald-700 font-bold text-[10px] ${extraClass || ''}" title="${title}">${safe}${verified ? '<span aria-hidden="true">✓</span>' : ''}</span>`;
         }
         const EN_NOTE_AR = {
             'dose:ml>mg': 'تم تصحيح وحدة الجرعة من «مل» إلى «مجم» (خطأ كتابة في اسم الصنف)',
@@ -19037,9 +19036,16 @@ ${window.location.href}
                 const netClientDisc = calcClientDiscount(item.disc, pharmPaymentMode);
                 const pharmUnitPrice = calcPharmacyPrice(item.price, item.disc, pharmPaymentMode);
                 const qty = cart[item.id] || 0;
+                const isMedicine = item.cat === 'أدوية';
+                const ingredientValue = isMedicine
+                    ? (item.act && !/[?؟]/.test(String(item.act)) ? String(item.act) : 'غير محددة في قاعدة البيانات الحالية')
+                    : item.cat === 'ألبان أطفال' ? 'تركيبة غذائية تختلف حسب المنتج والمرحلة العمرية'
+                    : item.cat === 'مستحضرات تجميل' ? 'المكونات الفعالة حسب بيانات العبوة'
+                    : 'المكونات الفعالة حسب بيانات العبوة';
+                const categoryValue = item.cls || (isMedicine ? 'تصنيف علاجي غير محدد' : item.cat === 'ألبان أطفال' ? 'تغذية أطفال' : item.cat === 'مستحضرات تجميل' ? 'عناية شخصية وجلدية' : 'مكملات وفيتامينات');
 
                 const shortageBadge = item.shortage
-                    ? `<span class="shortage-pill inline-flex items-center gap-1 bg-amber-100 text-amber-950 border border-amber-300 text-[10px] font-extrabold px-2 py-0.5 rounded-full mr-1.5">🔥 نواقص متوفرة</span>`
+                    ? `<span class="shortage-pill inline-flex items-center gap-1 bg-emerald-100 text-emerald-900 border border-emerald-300 text-[10px] font-extrabold px-2 py-0.5 rounded-full mr-1.5">🔥 نواقص متوفرة</span>`
                     : '';
 
                 return `
@@ -19052,7 +19058,9 @@ ${window.location.href}
                                 ${enChip(item, 'align-middle')}
                                 ${shortageBadge}
                             </a>
-                            <div class="mt-1 flex flex-wrap items-center gap-1"><span class="text-[10px] text-arkan-bronze font-semibold">${item.cat}</span>${item.cls ? `<span class="inline-block text-[10px] font-extrabold text-sky-900 bg-sky-50 border border-sky-200 rounded-md px-1.5 py-0.5">💊 ${item.cls}</span>` : ''}${item.act ? `<span dir="ltr" class="inline-block text-[10px] font-semibold text-slate-600">${item.act.split(' ')[0]}</span>` : ''}</div><p class="mt-1 text-[10px] leading-relaxed text-slate-600"><strong>الاستخدام:</strong> ${getProductUseInfo(item)}</p>
+                            <div class="mt-1 flex flex-wrap items-center gap-1"><span class="text-[10px] text-emerald-700 font-bold">${item.cat}</span><span class="inline-block text-[10px] font-extrabold text-emerald-800 bg-emerald-50 border border-emerald-200 rounded-md px-1.5 py-0.5">💊 ${categoryValue}</span></div>
+                            <div class="mt-1 text-[10px] leading-relaxed text-emerald-900"><strong>المادة الفعالة / المكونات:</strong> <span dir="auto">${ingredientValue}</span></div>
+                            <p class="mt-1 text-[10px] leading-relaxed text-emerald-800"><strong>الاستخدام:</strong> ${getProductUseInfo(item)}</p>
                         </td>
                         <td class="py-3 px-3 text-center">
                             <span class="num-en font-bold text-arkan-bronze">${fmtMoney(item.price)}</span>
@@ -19207,7 +19215,7 @@ ${window.location.href}
                     '<input type="number" min="0" max="9999" step="1" value="' + qty + '" onchange="setPharmCartQty(' + prod.id + ', this.value)" aria-label="كمية الصنف" class="num-en w-14 h-8 text-center font-black text-arkan-dark focus:outline-none">' +
                     '<button type="button" onclick="changePharmCartQty(' + prod.id + ', 1)" class="w-8 h-8 bg-arkan-dark text-white font-black">+</button></div>' +
                     '<div class="flex items-center gap-2"><span class="num-en font-black text-arkan-dark">' + fmtMoney(lineTotal) + '</span>' +
-                    '<button type="button" onclick="changePharmCartQty(' + prod.id + ', -' + qty + ')" class="text-rose-700 hover:bg-rose-50 px-1.5 py-0.5 rounded font-black cursor-pointer" title="حذف الصنف">✕</button></div></div></div>';
+                    '<button type="button" onclick="changePharmCartQty(' + prod.id + ', -' + qty + ')" class="text-emerald-700 hover:bg-emerald-50 px-1.5 py-0.5 rounded font-black cursor-pointer" title="حذف الصنف">✕</button></div></div></div>';
             }).join('');
         }
         function toggleMobileCart() {
@@ -19388,7 +19396,7 @@ ${window.location.href}
                                     class="bg-arkan-dark hover:bg-arkan-primary text-white px-4 py-2 rounded-xl text-xs font-extrabold shadow-sm cursor-pointer">
                                     🖨️ طباعة الفاتورة
                                 </button>
-                                ${st === 'pending' ? `<button type="button" onclick="requestOrderCancellation(${o.id})" class="bg-rose-100 hover:bg-rose-700 hover:text-white text-rose-800 px-4 py-2 rounded-xl text-xs font-extrabold cursor-pointer">إلغاء الأوردر</button>` : ''}
+                                ${st === 'pending' ? `<button type="button" onclick="requestOrderCancellation(${o.id})" class="bg-emerald-100 hover:bg-emerald-700 hover:text-white text-emerald-800 px-4 py-2 rounded-xl text-xs font-extrabold cursor-pointer">إلغاء الأوردر</button>` : ''}
                             </div>
                         </div>
 
@@ -19554,7 +19562,7 @@ ${window.location.href}
             const container = document.getElementById('toast-container');
             const el = document.createElement('div');
             const style = type === 'error'
-                ? 'bg-rose-900 border-rose-400 text-white'
+                ? 'bg-emerald-900 border-emerald-400 text-white'
                 : 'bg-arkan-dark border-arkan-sand text-arkan-cream';
 
             el.className = `${style} border-r-4 px-4 py-3 rounded-2xl shadow-2xl text-xs font-extrabold transition-all duration-300`;
