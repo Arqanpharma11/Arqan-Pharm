@@ -8356,13 +8356,42 @@ ${window.location.href}
             }
             return data;
         }
+        let voiceCatalogIndex=null,voiceCatalogIndexSource=null;
+        function getVoiceCatalogIndex(){
+            if(voiceCatalogIndex && voiceCatalogIndexSource===products) return voiceCatalogIndex;
+            const index=new Map();
+            for(const p of products){
+                if(p.available===false) continue;
+                const data=getVoiceProductData(p);
+                for(const token of new Set(data.pt)){
+                    if(token.length<2) continue;
+                    let bucket=index.get(token);
+                    if(!bucket){bucket=[];index.set(token,bucket);}
+                    bucket.push(p);
+                }
+            }
+            voiceCatalogIndex=index;voiceCatalogIndexSource=products;
+            return index;
+        }
         function voiceFindCandidates(query) {
             const q=voiceNormalize(query); if(!q) return [];
             const qt=q.split(' ').filter(t=>t && !voiceIgnoredTokens.has(t));
             if(!qt.length) return [];
+            const index=getVoiceCatalogIndex(),pool=new Set();
+            // Narrow the search to products sharing at least one spoken token.
+            for(const token of qt){
+                const exact=index.get(token);
+                if(exact) exact.forEach(p=>pool.add(p));
+                else {
+                    for(const [known,list] of index){
+                        if(known.length<3||Math.abs(known.length-token.length)>2) continue;
+                        if(known.startsWith(token)||token.startsWith(known)||voiceTokenSimilarity(token,known)>=.72)
+                            list.forEach(p=>pool.add(p));
+                    }
+                }
+            }
             const ranked=[];
-            for(const p of products){
-                if(p.available===false) continue;
+            for(const p of pool){
                 const data=getVoiceProductData(p),{ar,en,full,pt}=data;
                 let score,exact=false;
                 if(ar===q || en===q || full===q){score=1000;exact=true;}
@@ -8474,7 +8503,7 @@ ${window.location.href}
             rec.onerror=event=>{status.classList.add('hidden');const msg=event.error==='not-allowed'?'اسمح للمتصفح باستخدام الميكروفون من إعدادات الموقع.':event.error==='no-speech'?'لم نسمع كلامًا. جرّب مرة أخرى.':'تعذر التعرف على الصوت. تأكد من الإنترنت وصلاحية الميكروفون.';showToast(msg,'error');};
             rec.onend=()=>{
                 status.classList.add('hidden');
-                if((mode==='pharmacist'||mode==='admin-invoice')&&document.getElementById('voice-transcript').value.trim())parseVoiceInvoiceDraft();
+                // Ending speech capture must not trigger invoice parsing; the user starts analysis explicitly.
                 if(voiceRecognition===rec)voiceRecognition=null;
                 const btn=document.getElementById('voice-pharm-record-btn');if(btn)btn.textContent='🎙️ ابدأ التسجيل';
             };
@@ -8510,10 +8539,16 @@ ${window.location.href}
             return 1;
         }
 
+        let voiceInvoiceParsing=false;
         async function parseVoiceInvoiceDraft() {
+            if(voiceInvoiceParsing) return;
             const input=document.getElementById('voice-transcript');
             const raw=String(input&&input.value||'').trim();
             if(!raw){showToast('اتكلم أو اكتب الأصناف أولاً.','error');return;}
+            voiceInvoiceParsing=true;
+            const analyzeButton=document.querySelector('#voice-pharm-review button[onclick="parseVoiceInvoiceDraft()"]');
+            if(analyzeButton){analyzeButton.disabled=true;analyzeButton.textContent='جارٍ تحليل الفاتورة…';}
+            try {
             const normalized=voiceNormalize(raw);
             const tokens=normalized.split(/\s+/).filter(Boolean);
             const found=[],used=Array(tokens.length).fill(false),maxWords=Math.min(8,tokens.length);
@@ -8593,6 +8628,13 @@ ${window.location.href}
             else if(merged.some(x=>!x.productId)) showToast('فيه أصناف غير مؤكدة أو غير موجودة في الليستة. راجع التنبيهات قبل اعتماد الفاتورة.','info');
             else if(correctionCount) showToast('تم فهم '+correctionCount+' تصحيحًا للكمية. راجع الفاتورة قبل الإضافة.','success');
             else showToast('تم تجهيز مسودة الفاتورة. راجع الأصناف والكميات قبل الإضافة.','success');
+            } catch(error) {
+                console.error('Voice invoice parsing failed:',error);
+                showToast('حصل خطأ أثناء تحليل الفاتورة. النص ما زال محفوظًا؛ حاول مرة أخرى.','error');
+            } finally {
+                voiceInvoiceParsing=false;
+                if(analyzeButton){analyzeButton.disabled=false;analyzeButton.textContent='تحليل الكلام';}
+            }
         }
         function renderVoiceInvoiceDraft() {
             const host=document.getElementById('voice-invoice-lines'); host.innerHTML='';
