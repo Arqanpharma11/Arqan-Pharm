@@ -8244,16 +8244,64 @@ ${window.location.href}
             const digit = v.match(/\d+(?:\.\d+)?/);
             return digit ? Number(digit[0]) : null;
         }
+        function voiceEditDistance(a,b) {
+            if (a===b) return 0;
+            if (!a || !b) return Math.max((a||'').length,(b||'').length);
+            if (Math.abs(a.length-b.length)>2) return 99;
+            let prev=Array.from({length:b.length+1},(_,i)=>i);
+            for(let i=1;i<=a.length;i++){
+                const cur=[i];
+                for(let j=1;j<=b.length;j++) cur[j]=Math.min(cur[j-1]+1,prev[j]+1,prev[j-1]+(a[i-1]===b[j-1]?0:1));
+                prev=cur;
+            }
+            return prev[b.length];
+        }
+        function voiceTokenSimilarity(a,b) {
+            if(a===b) return 1;
+            if(a.startsWith(b)||b.startsWith(a)) return Math.min(a.length,b.length)/Math.max(a.length,b.length);
+            const ka=keyOfTok(a), kb=keyOfTok(b);
+            if(ka.length>=2 && ka===kb) return .88;
+            const d=voiceEditDistance(a,b);
+            return d<=1 && Math.min(a.length,b.length)>=4 ? .72 : d===2 && Math.min(a.length,b.length)>=7 ? .52 : 0;
+        }
         function voiceFindCandidates(query) {
-            const q = voiceNormalize(query); if (!q) return [];
-            const score = p => {
-                const n = voiceNormalize(p.name), e = voiceNormalize(getEn(p));
-                if (n === q || e === q) return 1000;
-                if (n.includes(q) || e.includes(q)) return 800;
-                const qt=q.split(' ').filter(Boolean), nt=(n+' '+e).split(' ').filter(Boolean);
-                return qt.filter(t=>nt.some(x=>x===t||x.startsWith(t)||t.startsWith(x))).length*20-Math.abs(nt.length-qt.length);
-            };
-            return products.filter(p=>p.available!==false && productMatches(p,q)).map(p=>({p,score:score(p)})).sort((a,b)=>b.score-a.score).slice(0,10).map(x=>x.p);
+            const q=voiceNormalize(query); if(!q) return [];
+            const ignored=new Set(['عايز','عاوزه','عاوز','محتاج','محتاجه','ضيف','اضف','حط','هات','من','فضلك','صنف','الصنف','دواء','دوا','علبه','علب','عبوه','عبوات','شريط','شرائط','باكيت','باكت','عدد']);
+            const qt=q.split(' ').filter(t=>t && !ignored.has(t));
+            if(!qt.length) return [];
+            const ranked=products.filter(p=>p.available!==false).map(p=>{
+                const ar=voiceNormalize(p.name), en=voiceNormalize(getEn(p)), extra=voiceNormalize(getDrugSearchText(p)||''), full=ar+' '+en+' '+extra;
+                const pt=full.split(' ').filter(Boolean);
+                if(ar===q || en===q || full===q) return {p,score:1000,exact:true};
+                if(ar.includes(q)||en.includes(q)) return {p,score:940,exact:false};
+                const tokenScores=qt.map(t=>Math.max(0,...pt.map(x=>voiceTokenSimilarity(t,x))));
+                const coverage=tokenScores.filter(x=>x>=.68).length/qt.length;
+                const avg=tokenScores.reduce((a,b)=>a+b,0)/qt.length;
+                const numeric=qt.filter(t=>/^\\d/.test(t));
+                const numericOk=numeric.every(t=>pt.some(x=>x.startsWith(t)));
+                let score=Math.round(coverage*600+avg*260-Math.max(0,pt.length-qt.length)*3);
+                if(!numericOk) score-=220;
+                if(coverage===1 && numericOk) score+=80;
+                return {p,score,exact:false};
+            }).filter(x=>x.score>=Math.max(105,qt.length*70)).sort((a,b)=>b.score-a.score).slice(0,8);
+            return ranked.map(x=>Object.assign({},x.p,{_voiceScore:x.score,_voiceExact:x.exact}));
+        }
+        function voiceBestTranscript(result) {
+            if(!result || !result.length) return '';
+            let best=result[0], bestScore=-1;
+            for(let i=0;i<result.length;i++){
+                const alt=result[i], text=String(alt.transcript||'').trim();
+                const pieces=text.split(/[,،;؛]+|\\s+(?:ثم|وبعدها|بعدها)\\s+/i).filter(Boolean);
+                const score=pieces.reduce((sum,piece)=>{const c=voiceFindCandidates(piece);return sum+(c[0]?c[0]._voiceScore:0);},0)+(Number(alt.confidence)||0)*8;
+                if(score>bestScore){bestScore=score;best=alt;}
+            }
+            return String(best.transcript||'').trim();
+        }
+        function voiceShouldAutoSelect(candidates,query) {
+            if(!candidates.length) return false;
+            if(candidates[0]._voiceExact) return true;
+            const top=candidates[0]._voiceScore||0, next=candidates[1]?candidates[1]._voiceScore||0:0;
+            return top>=850 && top-next>=100;
         }
         function openVoiceInvoice() {
             if (!currentSession || currentSession.role!=='pharmacist') { showToast('الفاتورة الصوتية متاحة من حساب الصيدلية فقط.','error'); return; }
@@ -8293,9 +8341,9 @@ ${window.location.href}
             }
             const status=document.getElementById('voice-recording-status');
             status.textContent='🔴 جاري الاستماع... اتكلم الآن بوضوح.'; status.classList.remove('hidden');
-            const rec=new SR(); voiceRecognition=rec; rec.lang='ar-EG'; rec.continuous=false; rec.interimResults=false; rec.maxAlternatives=5;
+            const rec=new SR(); voiceRecognition=rec; rec.lang='ar-EG'; rec.continuous=false; rec.interimResults=false; rec.maxAlternatives=10;
             rec.onresult=event=>{
-                const result=event.results[0], transcript=result&&result[0]?result[0].transcript:'';
+                const result=event.results[0], transcript=voiceBestTranscript(result);
                 document.getElementById('voice-transcript').value=transcript; status.classList.add('hidden');
                 if(mode==='pharmacist') parseVoiceInvoiceDraft(); else processVoiceAdminCommand(transcript);
             };
@@ -8318,7 +8366,7 @@ ${window.location.href}
                     .replace(/\b(?:علبه|علب|علبتين|علبتان|عبوه|عبوات|عبوتين|شريط|شرائط|شريطين|باكيت|باكيتين|باكت|قطعه|قطع|زجاجه|زجاجات|من|عايز|عاوزه|ضيف|اضف|حط|محتاج|محتاجه)\b/g,' ')
                     .replace(/\s+/g,' ').trim();
                 const candidates=voiceFindCandidates(query);
-                return {source:chunk,query,qty,productId:(candidates.length===1 || (candidates.length && voiceNormalize(candidates[0].name)===voiceNormalize(query)))?candidates[0].id:'',candidates};
+                return {source:chunk,query,qty,productId:voiceShouldAutoSelect(candidates,query)?candidates[0].id:'',candidates};
             });
             renderVoiceInvoiceDraft();
         }
@@ -8330,13 +8378,13 @@ ${window.location.href}
                 const source=document.createElement('div'); source.className='sm:col-span-4 text-xs font-bold text-arkan-dark'; source.textContent='سمعت: '+line.source;
                 const select=document.createElement('select'); select.className='sm:col-span-6 border border-arkan-sand bg-arkan-light rounded-lg px-2 py-2 text-xs font-bold';
                 const blank=document.createElement('option'); blank.value=''; blank.textContent='اختر الصنف الصحيح'; select.appendChild(blank);
-                line.candidates.forEach(p=>{const o=document.createElement('option');o.value=String(p.id);o.textContent=p.name+' — '+(p.cat||'');select.appendChild(o);});
+                line.candidates.forEach((p,i)=>{const o=document.createElement('option');o.value=String(p.id);o.textContent=p.name+' — '+(p.cat||'')+(p._voiceExact?' • تطابق حرفي':i===0?' • أقرب تطابق':'');select.appendChild(o);});
                 select.value=String(line.productId||''); select.addEventListener('change',()=>line.productId=select.value);
                 const qty=document.createElement('input');qty.type='number';qty.min='1';qty.step='1';qty.value=String(line.qty);qty.className='sm:col-span-2 border border-arkan-sand rounded-lg px-2 py-2 text-xs font-black text-center';
                 qty.addEventListener('change',()=>{line.qty=Math.max(1,Math.floor(Number(qty.value)||1));qty.value=String(line.qty);});
                 wrap.append(source,select,qty);
                 if(!line.candidates.length){const note=document.createElement('p');note.className='sm:col-span-12 text-[11px] text-rose-700 font-bold';note.textContent='لم أجد صنفًا مطابقًا. صحح النص بالأعلى واضغط تحليل الكلام.';wrap.appendChild(note);}
-                else if(line.candidates.length>1){const note=document.createElement('p');note.className='sm:col-span-12 text-[11px] text-amber-800 font-bold';note.textContent='أكثر من احتمال متاح؛ تأكد من الاسم والتركيز والشكل الدوائي.';wrap.appendChild(note);}
+                else if(line.candidates.length>1 || !line.candidates[0]._voiceExact){const note=document.createElement('p');note.className='sm:col-span-12 text-[11px] text-amber-800 font-bold';note.textContent='هذه اقتراحات مرتبة حسب قرب الاسم، وليست تأكيدًا. راجع الاسم والتركيز والشكل الدوائي قبل الإضافة.';wrap.appendChild(note);}
                 host.appendChild(wrap);
             });
         }
@@ -8364,7 +8412,7 @@ ${window.location.href}
             if(dm){
                 const discount=voiceNumberFromText(dm[1]), candidates=voiceFindCandidates(query);
                 if(discount===null || discount<0 || discount>100){closeVoiceAssistant();showToast('لم أتعرف على نسبة الخصم بشكل صحيح.','error');return;}
-                if(candidates.length===1 || (candidates.length&&voiceNormalize(candidates[0].name)===query)){
+                if(voiceShouldAutoSelect(candidates,query)){
                     const p=candidates[0];closeVoiceAssistant();openAdminEditModal(p.id);
                     document.getElementById('edit-prod-disc').value=String(discount);
                     showToast('تم تجهيز خصم '+discount+'% للصنف '+p.name+'. راجع البيانات واضغط حفظ التعديلات للتنفيذ.');
