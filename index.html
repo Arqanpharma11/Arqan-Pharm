@@ -18756,7 +18756,18 @@ ${window.location.href}
             const standardCount = products.filter(p => getEnInfo(p).note === 'standard-name').length;
             const manualCount = products.filter(p => getEnInfo(p).verified && !['reference-match','standard-name'].includes(getEnInfo(p).note)).length;
             const pending = products.length - referenceCount - standardCount - manualCount;
-            el.textContent = `مطابق لمرجع: ${referenceCount} | مصطلح قياسي: ${standardCount} | مدخل يدويًا: ${manualCount} | يحتاج مراجعة: ${pending} من ${products.length}`;
+            const groups = [
+                ['أدوية', 'الأدوية'],
+                ['مكملات وفيتامينات', 'المكملات'],
+                ['ألبان أطفال', 'الألبان'],
+                ['مستحضرات تجميل', 'التجميل']
+            ];
+            const byCategory = groups.map(([cat, label]) => {
+                const list = products.filter(p => p.cat === cat);
+                const checked = list.filter(p => getEnInfo(p).verified).length;
+                return `${label}: ${checked}/${list.length}؛ للمراجعة ${list.length - checked}`;
+            }).join(' | ');
+            el.textContent = `مرجع: ${referenceCount} | مصطلح قياسي: ${standardCount} | مدخل يدويًا: ${manualCount} | يحتاج مراجعة: ${pending}/${products.length} — ${byCategory}`;
         }
 
         function updateDrugUseStats() {
