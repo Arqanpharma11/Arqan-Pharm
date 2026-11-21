@@ -8365,16 +8365,10 @@ ${window.location.href}
             }).filter(x=>x.score>=Math.max(105,qt.length*70)).sort((a,b)=>b.score-a.score).slice(0,8);
             return ranked.map(x=>Object.assign({},x.p,{_voiceScore:x.score,_voiceExact:x.exact}));
         }
+        // Keep speech callbacks lightweight: catalog fuzzy matching runs only after recording stops.
         function voiceBestTranscript(result) {
             if(!result || !result.length) return '';
-            let best=result[0], bestScore=-1;
-            for(let i=0;i<result.length;i++){
-                const alt=result[i], text=String(alt.transcript||'').trim();
-                const pieces=text.split(/[,،;؛]+|\s+(?:ثم|وبعدها|بعدها|وكمان|كمان)\s+/i).filter(Boolean);
-                const score=pieces.reduce((sum,piece)=>{const c=voiceFindCandidates(piece);return sum+(c[0]?c[0]._voiceScore:0);},0)+(Number(alt.confidence)||0)*8;
-                if(score>bestScore){bestScore=score;best=alt;}
-            }
-            return String(best.transcript||'').trim();
+            return String(result[0].transcript||'').trim();
         }
         function voiceShouldAutoSelect(candidates,query) {
             if(!candidates.length) return false;
@@ -8444,7 +8438,7 @@ ${window.location.href}
             const status=document.getElementById('voice-recording-status');
             status.textContent=(mode==='pharmacist'||mode==='admin-invoice')?'🔴 بستمع لك… اتكلم براحتك واضغط الزر مرة تانية لما تخلص.':'🔴 جاري الاستماع... اتكلم الآن بوضوح.';
             status.classList.remove('hidden');
-            const rec=new SR();voiceRecognition=rec;rec.lang='ar-EG';rec.continuous=mode==='pharmacist'||mode==='admin-invoice';rec.interimResults=mode==='pharmacist'||mode==='admin-invoice';rec.maxAlternatives=10;
+            const rec=new SR();voiceRecognition=rec;rec.lang='ar-EG';rec.continuous=mode==='pharmacist'||mode==='admin-invoice';rec.interimResults=mode==='pharmacist'||mode==='admin-invoice';rec.maxAlternatives=1;
             rec.onresult=event=>{
                 if(mode==='pharmacist'||mode==='admin-invoice'){
                     const finalParts=[],interimParts=[];
@@ -8496,7 +8490,7 @@ ${window.location.href}
             return 1;
         }
 
-        function parseVoiceInvoiceDraft() {
+        async function parseVoiceInvoiceDraft() {
             const input=document.getElementById('voice-transcript');
             const raw=String(input&&input.value||'').trim();
             if(!raw){showToast('اتكلم أو اكتب الأصناف أولاً.','error');return;}
@@ -8504,6 +8498,8 @@ ${window.location.href}
             const tokens=normalized.split(/\s+/).filter(Boolean);
             const found=[],used=Array(tokens.length).fill(false),maxWords=Math.min(8,tokens.length);
             for(let i=0;i<tokens.length;i++){
+                // Yield periodically so long orders never monopolize the browser's UI thread.
+                if(i>0 && i%5===0) await new Promise(resolve=>requestAnimationFrame(()=>resolve()));
                 if(used[i]) continue;
                 let best=null;
                 for(let len=1;len<=maxWords&&i+len<=tokens.length;len++){
