@@ -6548,6 +6548,7 @@
         function getProductUseInfo(p) {
             if (!p) return 'بيانات الاستخدام غير متاحة.';
             if (p.useText) return _escapeDrugCatalogText(String(p.useText).slice(0, 240));
+            if (p.ingredientSource === 'rule-based-unverified') return 'تصنيف مبدئي من اسم الصنف؛ يلزم التحقق من المادة الفعالة قبل اعتماد الاستخدام.';
             if (p.cls && p.act && DRUG_USE_LABELS[p.cls]) return DRUG_USE_LABELS[p.cls];
             if (p.cat === 'أدوية') {
                 if (p.cls && !p.act && _FB_CLS.has(p.cls)) return 'تم تحديد الشكل الدوائي فقط (' + p.cls + ')؛ يلزم مراجعة المادة الفعالة لتحديد الاستخدام بدقة.';
@@ -19272,13 +19273,15 @@ ${window.location.href}
                 const pharmUnitPrice = calcPharmacyPrice(item.price, item.disc, pharmPaymentMode);
                 const qty = cart[item.id] || 0;
                 const isMedicine = item.cat === 'أدوية';
-                const ingredientValue = item.act && !/[?؟]/.test(String(item.act))
+                const ingredientValue = item.act && !/[?؟]/.test(String(item.act)) && item.ingredientSource !== 'rule-based-unverified'
                     ? _escapeDrugCatalogText(item.act)
-                    : isMedicine ? 'غير محددة في قاعدة البيانات الحالية'
+                    : isMedicine ? (item.ingredientSource === 'rule-based-unverified' ? 'مادة فعالة مبدئية — جارٍ التحقق منها' : 'غير محددة في قاعدة البيانات الحالية')
                     : item.cat === 'ألبان أطفال' ? 'تركيبة غذائية تختلف حسب المنتج والمرحلة العمرية'
                     : item.cat === 'مستحضرات تجميل' ? 'المكونات الفعالة حسب بيانات العبوة'
                     : 'المكونات الفعالة حسب بيانات العبوة';
-                const categoryValue = item.cls || (isMedicine ? 'تصنيف علاجي غير محدد' : item.cat === 'ألبان أطفال' ? 'تغذية أطفال' : item.cat === 'مستحضرات تجميل' ? 'عناية شخصية وجلدية' : 'مكملات وفيتامينات');
+                const categoryValue = item.cls
+                    ? (item.ingredientSource === 'rule-based-unverified' ? 'تصنيف مبدئي: ' + item.cls : item.cls)
+                    : (isMedicine ? 'تصنيف علاجي غير محدد' : item.cat === 'ألبان أطفال' ? 'تغذية أطفال' : item.cat === 'مستحضرات تجميل' ? 'عناية شخصية وجلدية' : 'مكملات وفيتامينات');
 
                 const shortageBadge = item.shortage
                     ? `<span class="shortage-pill inline-flex items-center gap-1 bg-emerald-100 text-emerald-900 border border-emerald-300 text-[10px] font-extrabold px-2 py-0.5 rounded-full mr-1.5">🔥 نواقص متوفرة</span>`
