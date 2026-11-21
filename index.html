@@ -8610,16 +8610,12 @@ ${window.location.href}
             // Numbers and conversational filler therefore cannot become fake invoice rows.
             found.sort((a,b)=>a.start-b.start);
 
-            const merged=[];
-            found.forEach(line=>{
-                const prior=line.productId&&merged.find(x=>x.productId===line.productId);
-                if(prior){prior.qty+=line.qty;prior.source+=' + '+line.source;prior.corrected=prior.corrected||line.corrected;}
-                else merged.push(Object.assign({},line));
-            });
-            voiceInvoiceDraft=merged;
+            // Preserve every spoken medicine occurrence as its own invoice row.
+            // Do not combine repeated medicines: each mention stays independently editable.
+            voiceInvoiceDraft=found.map(line=>Object.assign({},line));
             renderVoiceInvoiceDraft();
-            if(!merged.length) showToast('لم أستطع استخراج صنف بثقة. راجع النص أو أعد التسجيل.','error');
-            else if(merged.some(x=>!x.productId)) showToast('فيه أصناف غير مؤكدة أو غير موجودة في الليستة. راجع التنبيهات قبل اعتماد الفاتورة.','info');
+            if(!voiceInvoiceDraft.length) showToast('لم أستطع استخراج أصناف أدوية مؤكدة. راجع النص أو أعد التسجيل.','error');
+            else if(voiceInvoiceDraft.some(x=>!x.productId)) showToast('فيه أصناف لها أكثر من احتمال أو تحتاج تأكيدًا. راجع كل سطر قبل الإضافة.','info');
             else if(correctionCount) showToast('تم فهم '+correctionCount+' تصحيحًا للكمية. راجع الفاتورة قبل الإضافة.','success');
             else showToast('تم تجهيز مسودة الفاتورة. راجع الأصناف والكميات قبل الإضافة.','success');
             } catch(error) {
