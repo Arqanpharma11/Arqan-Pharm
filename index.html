@@ -8497,7 +8497,7 @@ ${window.location.href}
                 qty.addEventListener('change',()=>{line.qty=Math.max(1,Math.floor(Number(qty.value)||1));qty.value=String(line.qty);});
                 wrap.append(source,select,qty);
                 if(!line.candidates.length){const note=document.createElement('p');note.className='sm:col-span-12 text-[11px] text-rose-700 font-bold';note.textContent='⚠ الصنف «'+line.query+'» غير موجود في الليستة أو لم أتعرف عليه بدقة. لن تتم إضافته للطلبية؛ راجع الاسم أو تواصل مع المخزن.';wrap.appendChild(note);}
-                else if(line.candidates.length>1 || !line.candidates[0]._voiceExact){const note=document.createElement('p');note.className='sm:col-span-12 text-[11px] text-amber-800 font-bold';note.textContent='هذه اقتراحات مرتبة حسب قرب الاسم، وليست تأكيدًا. راجع الاسم والتركيز والشكل الدوائي قبل الإضافة.';wrap.appendChild(note);}
+                else if(line.candidates.length>1 || !line.candidates[0]._voiceExact){const note=document.createElement('p');note.className='sm:col-span-12 text-[11px] text-amber-800 font-bold';note.textContent='⚠ لم أجد تطابقًا مؤكدًا للصنف «'+line.query+'». قد يكون غير متوفر أو نطق الاسم غير واضح. اختر الصنف الصحيح يدويًا؛ لن تتم إضافته تلقائيًا.';wrap.appendChild(note);}
                 host.appendChild(wrap);
             });
         }
@@ -8559,7 +8559,7 @@ ${window.location.href}
             }
         }
         function processVoiceAdminCatalogCommand(normalized) {
-            let m=normalized.match(/^(?:ضيف|اضف|سجل|اضافه)\s+(?:صنف\s+)?(.+?)\s+(?:بسعر|سعر)\s+(\d+(?:\.\d+)?)\s+(?:و?خصم)\s+(\d+(?:\.\d+)?)(?:\s*(?:%|في الميه|بالمئه|بالميه))?$/);
+            let m=normalized.match(/^(?:ضيف|اضف|سجل|اضافه)\s+(?:صنف\s+)?(.+?)\s+(?:بسعر|سعر)\s+(\d+(?:\.\d+)?)(?:\s*(?:جنيه|جنيهات))?\s+(?:و?خصم)\s+(\d+(?:\.\d+)?)(?:\s*(?:%|في الميه|بالمئه|بالميه))?$/);
             if(m){
                 const name=m[1].trim(),price=Number(m[2]),disc=Number(m[3]);
                 if(!name||!Number.isFinite(price)||price<=0||!Number.isFinite(disc)||disc<0||disc>100){voiceAdminActionMessage('بيانات الصنف غير صحيحة. قل الاسم والسعر والخصم بوضوح.');return true;}
