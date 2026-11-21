@@ -8171,6 +8171,7570 @@ ${window.location.href}
             .replace(/[()،\-_]/g, ' ');
           return s;
         }
+        // Reference-matched English trade-name roots. Source: open Egyptian market database; not an EDA certification.
+        const ENGLISH_BRAND_REFERENCE = {
+  "ابروفال300": {
+    "brand": "Aprovel",
+    "words": 1
+  },
+  "ابروفال150مجم": {
+    "brand": "Aprovel",
+    "words": 1
+  },
+  "ابل لايت اقراص": {
+    "brand": "Apple Lite",
+    "words": 2
+  },
+  "ابى رايز شراب": {
+    "brand": "Appe Raise",
+    "words": 2
+  },
+  "ابياموكس400 شراب": {
+    "brand": "Ibiamox",
+    "words": 1
+  },
+  "ابياموكس500 مجم اقراص": {
+    "brand": "Ibiamox",
+    "words": 1
+  },
+  "ابيتويد20 مجم": {
+    "brand": "Apetoid",
+    "words": 1
+  },
+  "ابيجنت20م 3 امبول": {
+    "brand": "Apigent",
+    "words": 1
+  },
+  "ابيجنت80م 3 امبول": {
+    "brand": "Apigent",
+    "words": 1
+  },
+  "ابيروفاستين10مجم": {
+    "brand": "Epirovastin",
+    "words": 1
+  },
+  "ابيروفاستين20مجم س ج": {
+    "brand": "Epirovastin",
+    "words": 1
+  },
+  "ابيريزين شراب": {
+    "brand": "Epirizine",
+    "words": 1
+  },
+  "ابيزيثرو500 مجم 6اقراص": {
+    "brand": "Epizithro",
+    "words": 1
+  },
+  "ابيزيثرو شراب": {
+    "brand": "Epizithro",
+    "words": 1
+  },
+  "ابيسيفين05جم عضل": {
+    "brand": "Epicephin",
+    "words": 2
+  },
+  "ابيسيفين2 مجم وريد": {
+    "brand": "Epicephin",
+    "words": 2
+  },
+  "ابيفورتيل اقراص": {
+    "brand": "Apifortyl",
+    "words": 1
+  },
+  "ابيكساتراك2.5 مجم": {
+    "brand": "Apixatrack",
+    "words": 1
+  },
+  "ابيكساتراك5 مجم": {
+    "brand": "Apixatrack",
+    "words": 1
+  },
+  "ابيكسيجارد2.5 اقراص": {
+    "brand": "Apixaguard",
+    "words": 1
+  },
+  "ابيكسيجارد5مجم اقراص": {
+    "brand": "Apixaguard",
+    "words": 1
+  },
+  "ابيكسيدون5 مجم": {
+    "brand": "Apexidone",
+    "words": 1
+  },
+  "ابيكسيدون1 مجم": {
+    "brand": "Apexidone",
+    "words": 1
+  },
+  "ابيكسيدون2 مجم": {
+    "brand": "Apexidone",
+    "words": 1
+  },
+  "ابيكسيدون3 مجم": {
+    "brand": "Apexidone",
+    "words": 1
+  },
+  "ابيكسيدون4 مجم": {
+    "brand": "Apexidone",
+    "words": 1
+  },
+  "ابيكسيدون شراب": {
+    "brand": "Apexidone",
+    "words": 1
+  },
+  "ابيكوبريد20 مجم": {
+    "brand": "Epicopred",
+    "words": 1
+  },
+  "ابيكوبريد5 مجم اقراص": {
+    "brand": "Epicopred",
+    "words": 1
+  },
+  "ابيكوتيل اقراص": {
+    "brand": "Epicotil",
+    "words": 1
+  },
+  "ابيكوتيل لبوس": {
+    "brand": "Epicotil",
+    "words": 1
+  },
+  "ابيكوجيل شراب ك20": {
+    "brand": "Epicogel",
+    "words": 1
+  },
+  "ابيكوسيللين12-500ك": {
+    "brand": "Epicocillin",
+    "words": 1
+  },
+  "ابيليفاى10مجم": {
+    "brand": "Abilify",
+    "words": 1
+  },
+  "ابيليفاى15 مجم": {
+    "brand": "Abilify",
+    "words": 1
+  },
+  "ابيليفاى5 مجم": {
+    "brand": "Abilify",
+    "words": 1
+  },
+  "ابيمول اقراص س ج": {
+    "brand": "Abimol",
+    "words": 1
+  },
+  "ابيميرافلو75 مجم10كبسوله": {
+    "brand": "Epimiraflu",
+    "words": 1
+  },
+  "ابينور400 ق": {
+    "brand": "Epinor",
+    "words": 1
+  },
+  "اتاكاند16 بلس س ج": {
+    "brand": "Atacand Plus",
+    "words": 2
+  },
+  "اترابكس15ك س ج": {
+    "brand": "Itrapex",
+    "words": 1
+  },
+  "اترانوكس5 كبسولة": {
+    "brand": "Itranox",
+    "words": 1
+  },
+  "اتروزيمب20/10": {
+    "brand": "Atrozemb",
+    "words": 1
+  },
+  "اتروزيمب40/10": {
+    "brand": "Atrozemb",
+    "words": 1
+  },
+  "اتروزيمب10/80 مل ق": {
+    "brand": "Atrozemb",
+    "words": 1
+  },
+  "اتكوجليفلوزين10 مجم": {
+    "brand": "Atcogliflozin",
+    "words": 1
+  },
+  "اتكوجليفلوزين25 مجم": {
+    "brand": "Atcogliflozin",
+    "words": 1
+  },
+  "اتكوفلدوميت50/1000 اقراص": {
+    "brand": "Atcovildumet",
+    "words": 1
+  },
+  "اتكوكوسيب90 مل 30 قرص س ج": {
+    "brand": "Atcocoxib",
+    "words": 1
+  },
+  "اتﻼتكس كريم50جم": {
+    "brand": "Atlatex",
+    "words": 1
+  },
+  "اتﻼكير اقراص20قرص": {
+    "brand": "Atlacare",
+    "words": 1
+  },
+  "اتور40 مجم س ج": {
+    "brand": "Ator",
+    "words": 1
+  },
+  "اتور80مجم اقراص": {
+    "brand": "Ator",
+    "words": 1
+  },
+  "اتورستات10 مجم": {
+    "brand": "Atorstat",
+    "words": 1
+  },
+  "اتورستات40 مجم": {
+    "brand": "Atorstat",
+    "words": 1
+  },
+  "اتورستات80 مجم": {
+    "brand": "Atorstat",
+    "words": 1
+  },
+  "اتوريزا20/10 مجم": {
+    "brand": "Atoreza",
+    "words": 1
+  },
+  "اتوريزا80/10 س ق": {
+    "brand": "Atoreza",
+    "words": 1
+  },
+  "اتوريزا10/10 مجم س ج": {
+    "brand": "Atoreza",
+    "words": 1
+  },
+  "اتوزيت10/20مجم": {
+    "brand": "Atozet",
+    "words": 1
+  },
+  "اتومافيوتكس شراب": {
+    "brand": "Atomafutix",
+    "words": 1
+  },
+  "اتوموريﻼكس شراب": {
+    "brand": "Atomorelax",
+    "words": 1
+  },
+  "اتوميتافلوزين12.5/1000 مجم 30 قرص": {
+    "brand": "Atometaflozine",
+    "words": 1
+  },
+  "اتوميتافلوزين500/12.5": {
+    "brand": "Atometaflozine",
+    "words": 1
+  },
+  "اتينو50 مجم": {
+    "brand": "Ateno",
+    "words": 1
+  },
+  "اجوفالد25مجم اقراص س ج": {
+    "brand": "Agovald",
+    "words": 1
+  },
+  "ادرينوكورتين حقن": {
+    "brand": "Adrenocortine",
+    "words": 1
+  },
+  "ادفانس صابون": {
+    "brand": "Advance",
+    "words": 1
+  },
+  "ادفانكريب كبسول": {
+    "brand": "Advancrib",
+    "words": 1
+  },
+  "ادويتين30 مجم اقراص": {
+    "brand": "Adwitine",
+    "words": 1
+  },
+  "ادويتين60 مجم": {
+    "brand": "Adwitine",
+    "words": 1
+  },
+  "اديمكس اقراص": {
+    "brand": "Edemex",
+    "words": 1
+  },
+  "اديمكس امبول": {
+    "brand": "Edemex",
+    "words": 1
+  },
+  "ارباتج200مجم اقراص": {
+    "brand": "Arbateg",
+    "words": 1
+  },
+  "اربيبرازول10مجم": {
+    "brand": "Aripiprazole",
+    "words": 1
+  },
+  "اربيبرازول5 مجم": {
+    "brand": "Aripiprazole",
+    "words": 1
+  },
+  "اربيبرازول شراب": {
+    "brand": "Aripiprazole",
+    "words": 1
+  },
+  "اربيبرازول15مل": {
+    "brand": "Aripiprazole",
+    "words": 1
+  },
+  "اربيبرازول20مل": {
+    "brand": "Aripiprazole",
+    "words": 1
+  },
+  "اربيبرازول30مجم": {
+    "brand": "Aripiprazole",
+    "words": 1
+  },
+  "اربيبركس10 مجم": {
+    "brand": "Aripiprex",
+    "words": 1
+  },
+  "اربيبركس15 مجم": {
+    "brand": "Aripiprex",
+    "words": 1
+  },
+  "اربيبركس20 مجم": {
+    "brand": "Aripiprex",
+    "words": 1
+  },
+  "ارتيجا30ك": {
+    "brand": "Artega",
+    "words": 1
+  },
+  "ارتيسوى30قرص": {
+    "brand": "Artisoy",
+    "words": 1
+  },
+  "ارتيكافول امبول": {
+    "brand": "Articavol",
+    "words": 1
+  },
+  "ارتيكسبان2.5 اقراص": {
+    "brand": "Artixiban",
+    "words": 1
+  },
+  "ارتيكسبان5 مجم اقراص": {
+    "brand": "Artixiban",
+    "words": 1
+  },
+  "ارثروفاست150 مجم": {
+    "brand": "Arthrofast",
+    "words": 1
+  },
+  "ارجنت بلس كريم": {
+    "brand": "Urgent Plus",
+    "words": 2
+  },
+  "ارجينافكت5 مجم اقراص": {
+    "brand": "Urginafect",
+    "words": 1
+  },
+  "ارجينافكت شراب": {
+    "brand": "Urginafect",
+    "words": 1
+  },
+  "ارجينين سيترولين1000": {
+    "brand": "Arginine Citrulline",
+    "words": 2
+  },
+  "اركوكسيا60مجم": {
+    "brand": "Arcoxia",
+    "words": 1
+  },
+  "اركوكسيا90 مجم اقراص": {
+    "brand": "Arcoxia",
+    "words": 1
+  },
+  "اركوكسيكا120 مجم 7 قرص": {
+    "brand": "Arcoxia",
+    "words": 1
+  },
+  "ارمو ويك50مجم اقراص": {
+    "brand": "Armowake",
+    "words": 2
+  },
+  "اريبكسان30مجم": {
+    "brand": "Arepexane",
+    "words": 1
+  },
+  "اريسبت10 مجم 14 قرص": {
+    "brand": "Aricept",
+    "words": 1
+  },
+  "اريك اقراص س ج": {
+    "brand": "Erec",
+    "words": 1
+  },
+  "اريكتاليس20 مجم 4 قرص": {
+    "brand": "Erectalis",
+    "words": 1
+  },
+  "اريكتاليس5 مجم": {
+    "brand": "Erectalis",
+    "words": 1
+  },
+  "اريكتاماكس4 قرص": {
+    "brand": "Erectamax",
+    "words": 1
+  },
+  "اريميدكس اقراص": {
+    "brand": "Arimidex",
+    "words": 1
+  },
+  "ازاثيوبرين75 مجم 30 قرص": {
+    "brand": "Azathioprine",
+    "words": 1
+  },
+  "ازجوفانس40 مجم": {
+    "brand": "Azgovanc",
+    "words": 1
+  },
+  "ازجوفلوكس400 مجم 10 قرص س ج": {
+    "brand": "Azgoflox",
+    "words": 1
+  },
+  "ازماتك40 مجم": {
+    "brand": "Esmatac",
+    "words": 1
+  },
+  "ازماتك20مجم قرص": {
+    "brand": "Esmatac",
+    "words": 1
+  },
+  "ازماكاست5 مجم": {
+    "brand": "Asmakast",
+    "words": 1
+  },
+  "ازموراب10مجم اكياس": {
+    "brand": "Esmorap",
+    "words": 1
+  },
+  "ازموراب40 مجم س ج": {
+    "brand": "Esmorap",
+    "words": 1
+  },
+  "اسباتريند اكياس": {
+    "brand": "Aspatrend",
+    "words": 1
+  },
+  "استوهالت40 مجم": {
+    "brand": "Estohalt",
+    "words": 1
+  },
+  "استيروماب10مجم": {
+    "brand": "Estero Map",
+    "words": 1
+  },
+  "استيروماب20مجم س ج": {
+    "brand": "Estero Map",
+    "words": 1
+  },
+  "استيكان20 مجم اقراص": {
+    "brand": "Estikan",
+    "words": 1
+  },
+  "استين20مجم اقراص": {
+    "brand": "Astin",
+    "words": 1
+  },
+  "اسيتابرام20مل": {
+    "brand": "Escitapram",
+    "words": 1
+  },
+  "اسيزادكس ان جل": {
+    "brand": "Ascizadex N Top",
+    "words": 2
+  },
+  "اسيفيراكس400": {
+    "brand": "Acivirax",
+    "words": 1
+  },
+  "اسيفيراكس800مجم": {
+    "brand": "Acivirax",
+    "words": 1
+  },
+  "اسيكلوفير800مجم": {
+    "brand": "Acyclovir",
+    "words": 1
+  },
+  "اشواجاندا اقراص": {
+    "brand": "Ashwagandha",
+    "words": 1
+  },
+  "افارا10مجم": {
+    "brand": "Avara",
+    "words": 1
+  },
+  "افارا20 مجم": {
+    "brand": "Avara",
+    "words": 1
+  },
+  "افروميد اقراص": {
+    "brand": "Afromed",
+    "words": 1
+  },
+  "افوبينو كبسول": {
+    "brand": "Avobeano",
+    "words": 1
+  },
+  "افودارت5 مجم": {
+    "brand": "Avodart",
+    "words": 1
+  },
+  "افيروثيازيد40/12.5/5": {
+    "brand": "Averothiazide",
+    "words": 1
+  },
+  "افيروثيازيد40/10/12.5 مجم": {
+    "brand": "Averothiazide",
+    "words": 1
+  },
+  "افيروميﻼن س ج": {
+    "brand": "Averomilan",
+    "words": 1
+  },
+  "افيفافاسك10/160 مجم": {
+    "brand": "Avivavasc",
+    "words": 1
+  },
+  "افيفافاسك5/160 مجم": {
+    "brand": "Avivavasc",
+    "words": 1
+  },
+  "اكانزا سبراى": {
+    "brand": "Akanza Liquid",
+    "words": 1
+  },
+  "اكتوزنك كبسول": {
+    "brand": "Octozinc",
+    "words": 1
+  },
+  "اكتوس15مجم س ج": {
+    "brand": "Actos",
+    "words": 1
+  },
+  "اكتيف شامبو": {
+    "brand": "Active",
+    "words": 1
+  },
+  "اكتيف كريم شعر": {
+    "brand": "Active",
+    "words": 1
+  },
+  "اكتيفاست50مجم 30قرص": {
+    "brand": "Actifast",
+    "words": 1
+  },
+  "اكتيمار3 شريط": {
+    "brand": "Actimar",
+    "words": 1
+  },
+  "اكتينون30 ق": {
+    "brand": "Achtenon",
+    "words": 1
+  },
+  "اكريتين5/. كريم": {
+    "brand": "Acretin",
+    "words": 1
+  },
+  "اكريتين كريم0.25مجم": {
+    "brand": "Acretin",
+    "words": 1
+  },
+  "اكسارونت2.5 مجم": {
+    "brand": "Iksaront",
+    "words": 1
+  },
+  "اكسارونت5 مجم": {
+    "brand": "Iksaront",
+    "words": 1
+  },
+  "اكساميد100مجم اقراص": {
+    "brand": "Examide",
+    "words": 1
+  },
+  "اكساميد10مجم اقراص": {
+    "brand": "Examide",
+    "words": 1
+  },
+  "اكساميد20مجم اقراص": {
+    "brand": "Examide",
+    "words": 1
+  },
+  "اكساميد5مجم اقراص": {
+    "brand": "Examide",
+    "words": 1
+  },
+  "اكسترا كريم": {
+    "brand": "Extra",
+    "words": 1
+  },
+  "اكستراكين20 كبسوله": {
+    "brand": "Extrakin",
+    "words": 1
+  },
+  "اكستروما كريم": {
+    "brand": "Extrauma Dna",
+    "words": 1
+  },
+  "اكسيدوجاست40 مجم": {
+    "brand": "Exeedogast",
+    "words": 1
+  },
+  "اكسيلسا10مجم": {
+    "brand": "Excelsa",
+    "words": 1
+  },
+  "اكسيلسا20مجم": {
+    "brand": "Excelsa",
+    "words": 1
+  },
+  "اكنى ستوب صابون": {
+    "brand": "Acne Stop",
+    "words": 2
+  },
+  "اكنى ستوب كريم": {
+    "brand": "Acne Stop",
+    "words": 2
+  },
+  "اكنى فرى كريم": {
+    "brand": "Acne Free",
+    "words": 2
+  },
+  "اكنى فيرا صابون": {
+    "brand": "Acnevera",
+    "words": 2
+  },
+  "اكوا بلس شراب ك30": {
+    "brand": "Aqua Plus",
+    "words": 2
+  },
+  "اكيروز40مجم اقراص": {
+    "brand": "Ekiroz",
+    "words": 1
+  },
+  "ال ارجينين ميباكو60قرص": {
+    "brand": "L Arginine Mepaco",
+    "words": 3
+  },
+  "الافليك20كبسوله": {
+    "brand": "Alaflic",
+    "words": 1
+  },
+  "البافيت شراب حديد": {
+    "brand": "Elbavit With Iron",
+    "words": 2
+  },
+  "البالوران120مجم": {
+    "brand": "Elbaluran",
+    "words": 1
+  },
+  "البالوران20 مجم": {
+    "brand": "Elbaluran",
+    "words": 1
+  },
+  "البالوران60 مجم": {
+    "brand": "Elbaluran",
+    "words": 1
+  },
+  "البالوران80 مجم": {
+    "brand": "Elbaluran",
+    "words": 1
+  },
+  "البندازول شراب": {
+    "brand": "Albendazole",
+    "words": 1
+  },
+  "البندازول400 مجم اقراص": {
+    "brand": "Albendazole",
+    "words": 1
+  },
+  "التراسولف كبسول": {
+    "brand": "Ultrasolv",
+    "words": 1
+  },
+  "الترافيت كريم50 جم": {
+    "brand": "Ultra Feet",
+    "words": 1
+  },
+  "التراكايين جل س ج": {
+    "brand": "Ultracaine",
+    "words": 1
+  },
+  "الترانيل20ك": {
+    "brand": "Ultranyl",
+    "words": 1
+  },
+  "التيازيم اقراص": {
+    "brand": "Altiazem",
+    "words": 1
+  },
+  "الدوميت اقراص": {
+    "brand": "Aldomet",
+    "words": 1
+  },
+  "الزميندا5 مجم": {
+    "brand": "Alzmenda",
+    "words": 1
+  },
+  "الزميندا 10 مجم اقراص": {
+    "brand": "Alzmenda",
+    "words": 1
+  },
+  "الزميندا20 مجم": {
+    "brand": "Alzmenda",
+    "words": 1
+  },
+  "الزميندا نقط": {
+    "brand": "Alzmenda",
+    "words": 1
+  },
+  "الزنتال3 شريط": {
+    "brand": "Alzental",
+    "words": 1
+  },
+  "الزنتال شراب": {
+    "brand": "Alzental",
+    "words": 1
+  },
+  "الزيبيزيل5مجم": {
+    "brand": "Alzepizil",
+    "words": 1
+  },
+  "الزيبيزيل10مجم": {
+    "brand": "Alzepizil",
+    "words": 1
+  },
+  "الزيكسا اقراص": {
+    "brand": "Alzixa",
+    "words": 1
+  },
+  "السوريست100مجم 30قرص": {
+    "brand": "Ulsorest",
+    "words": 1
+  },
+  "السيزول60مجم": {
+    "brand": "Ulcezole",
+    "words": 1
+  },
+  "الفاديب كبسول": {
+    "brand": "Alfadep",
+    "words": 1
+  },
+  "الفامور اكياس": {
+    "brand": "Alpha More",
+    "words": 1
+  },
+  "الكابرايد50 مجم": {
+    "brand": "Alkapride",
+    "words": 1
+  },
+  "الكابرس تريو10/160/12.5": {
+    "brand": "Alkapress Trio",
+    "words": 2
+  },
+  "الكابرس تريو10/25/320": {
+    "brand": "Alkapress Trio",
+    "words": 2
+  },
+  "الكابرس تريو5/160/12.5": {
+    "brand": "Alkapress Trio",
+    "words": 2
+  },
+  "الكابرس تريو5/160/25": {
+    "brand": "Alkapress Trio",
+    "words": 2
+  },
+  "الكابرس10/160بلس": {
+    "brand": "Alkapress Plus",
+    "words": 2
+  },
+  "الكانازول2-50ك": {
+    "brand": "Alkanazole",
+    "words": 1
+  },
+  "اللير5مجم اقراص": {
+    "brand": "Allear",
+    "words": 1
+  },
+  "اللير شراب": {
+    "brand": "Allear",
+    "words": 1
+  },
+  "الوكيتا ليف ان": {
+    "brand": "Aloekita Leave In",
+    "words": 3
+  },
+  "الوكيتا هير ماسك": {
+    "brand": "Aloekita",
+    "words": 1
+  },
+  "الوندا اقراص": {
+    "brand": "Elonda",
+    "words": 1
+  },
+  "اليجا غسول وجه": {
+    "brand": "Elega",
+    "words": 1
+  },
+  "اليجون شامبو": {
+    "brand": "Alejon",
+    "words": 1
+  },
+  "اليجون صن سكرين كريم75مجم": {
+    "brand": "Alejon",
+    "words": 1
+  },
+  "اليجون كريم تفتيح": {
+    "brand": "Alejon",
+    "words": 1
+  },
+  "اليجون هير لوسيون": {
+    "brand": "Alejon",
+    "words": 1
+  },
+  "اليريد اقراص س ج": {
+    "brand": "Alerid",
+    "words": 1
+  },
+  "اليكا ام كريم": {
+    "brand": "Elica M",
+    "words": 2
+  },
+  "اليكاسال مرهم س ج": {
+    "brand": "Elicasal",
+    "words": 1
+  },
+  "اليكويس2.5 س ج": {
+    "brand": "Eliquis",
+    "words": 1
+  },
+  "ام اكس3 امبول": {
+    "brand": "Em Ex",
+    "words": 2
+  },
+  "اماجلوست30/2 مجم": {
+    "brand": "Amaglust",
+    "words": 1
+  },
+  "اماجلوست4/30 مجم": {
+    "brand": "Amaglust",
+    "words": 1
+  },
+  "اماريل1 مجم اقراص": {
+    "brand": "Amaryl",
+    "words": 1
+  },
+  "اماريل2 مجم اقراص": {
+    "brand": "Amaryl",
+    "words": 1
+  },
+  "اماريل3 مجم اقراص": {
+    "brand": "Amaryl",
+    "words": 1
+  },
+  "اماريل4 مجم اقراص": {
+    "brand": "Amaryl",
+    "words": 1
+  },
+  "امباجليبفورم30 5/500 قرص س ج": {
+    "brand": "Empagliform",
+    "words": 1
+  },
+  "امباجليبفورم500/12.5": {
+    "brand": "Empagliform",
+    "words": 1
+  },
+  "امبوفير امبول": {
+    "brand": "Ampofer",
+    "words": 1
+  },
+  "امبيزيم اقراص": {
+    "brand": "Ambezim",
+    "words": 1
+  },
+  "امريزول250 اقراص": {
+    "brand": "Amrizole",
+    "words": 1
+  },
+  "امريزول500 اقراص": {
+    "brand": "Amrizole",
+    "words": 1
+  },
+  "املوديبين10مجم": {
+    "brand": "Amlodipine",
+    "words": 1
+  },
+  "املوديبين5 -مجم": {
+    "brand": "Amlodipine",
+    "words": 1
+  },
+  "اموسار فورت100/25م": {
+    "brand": "Amosar Forte",
+    "words": 2
+  },
+  "اموسار100مجم": {
+    "brand": "Amosar",
+    "words": 1
+  },
+  "اميبابين اقراص س.ج": {
+    "brand": "Amypapine",
+    "words": 1
+  },
+  "اميبازول اقراص": {
+    "brand": "Amebazol",
+    "words": 1
+  },
+  "اميبرامين25": {
+    "brand": "Imipramine",
+    "words": 1
+  },
+  "اميبريد400 مجم اقراص": {
+    "brand": "Amipride",
+    "words": 1
+  },
+  "اميبريد50 مجم اقراص": {
+    "brand": "Amipride",
+    "words": 1
+  },
+  "اميبيريد200مجم": {
+    "brand": "Amipride",
+    "words": 1
+  },
+  "اميلو5 مجم اقراص": {
+    "brand": "Amilo",
+    "words": 1
+  },
+  "امينورينوكير100 قرص": {
+    "brand": "Aminorenocare",
+    "words": 1
+  },
+  "اميوجارد اكياس7 كيس": {
+    "brand": "Immuguard",
+    "words": 1
+  },
+  "اميولانت كبسول": {
+    "brand": "Immulant",
+    "words": 1
+  },
+  "اميولانت شراب": {
+    "brand": "Immulant",
+    "words": 1
+  },
+  "ان اند اوت زيت120مل": {
+    "brand": "In And Out",
+    "words": 3
+  },
+  "اناليرج اقراص": {
+    "brand": "Anallerge",
+    "words": 1
+  },
+  "اناليرج شراب": {
+    "brand": "Anallerge",
+    "words": 1
+  },
+  "انترافير اقراص س ج": {
+    "brand": "Intrafer",
+    "words": 1
+  },
+  "انتريستو100 س ج": {
+    "brand": "Entresto",
+    "words": 1
+  },
+  "انتريستو50 مجم": {
+    "brand": "Entresto",
+    "words": 1
+  },
+  "انتودين40 مجم اقراص": {
+    "brand": "Antodine",
+    "words": 1
+  },
+  "انتوكس اقراص س ج": {
+    "brand": "Antox",
+    "words": 1
+  },
+  "انتى كوكس7.5 مل": {
+    "brand": "Anti Cox Ii",
+    "words": 2
+  },
+  "انتيجرول5مل": {
+    "brand": "Integrol",
+    "words": 1
+  },
+  "انتيفﻼم50 مجم ق": {
+    "brand": "Antiflam",
+    "words": 1
+  },
+  "انتيفير اقراص س ج": {
+    "brand": "Antiver",
+    "words": 1
+  },
+  "انتينال كبسول": {
+    "brand": "Antinal",
+    "words": 1
+  },
+  "انجيوسارتان10مجم اقراص": {
+    "brand": "Angiosartan",
+    "words": 1
+  },
+  "انجيوسارتان20/25 مجم": {
+    "brand": "Angiosartan",
+    "words": 1
+  },
+  "انجيوسارتان20مجم اقراص": {
+    "brand": "Angiosartan",
+    "words": 1
+  },
+  "انجيوسارتان40 مل": {
+    "brand": "Angiosartan",
+    "words": 1
+  },
+  "انجيوسارتان بلس40/12.5مجم اقراص": {
+    "brand": "Angiosartan Plus",
+    "words": 2
+  },
+  "انجيوسارتان بلس40/25مجم اقراص": {
+    "brand": "Angiosartan Plus",
+    "words": 2
+  },
+  "انجيوسارتان بلس20/12.5": {
+    "brand": "Angiosartan Plus",
+    "words": 2
+  },
+  "انداجرا100مجم": {
+    "brand": "Andagra",
+    "words": 1
+  },
+  "اندرال40 مجم": {
+    "brand": "Inderal",
+    "words": 1
+  },
+  "اندليكسابان2.5 مل": {
+    "brand": "Endlixaban",
+    "words": 1
+  },
+  "اندليكسابان5 مل": {
+    "brand": "Endlixaban",
+    "words": 1
+  },
+  "اندوريفابان2.5 مجم 20 ق": {
+    "brand": "Andorivaban",
+    "words": 1
+  },
+  "اندوفيت ايرون بلس ش س ق": {
+    "brand": "Andovit Iron Plus",
+    "words": 3
+  },
+  "اندوفيت نيورو اقراص": {
+    "brand": "Andovit Neuro",
+    "words": 2
+  },
+  "اندوفيمبامايد100 مجم": {
+    "brand": "Andovimpamide",
+    "words": 1
+  },
+  "اندوفيمبامايد50مجم": {
+    "brand": "Andovimpamide",
+    "words": 1
+  },
+  "اندوكاندوكسين200مجم 3كبسوله مهبلى": {
+    "brand": "Andocandoxin",
+    "words": 2
+  },
+  "انريتش شراب": {
+    "brand": "Enrich",
+    "words": 1
+  },
+  "انريتش نقط": {
+    "brand": "Enrich",
+    "words": 1
+  },
+  "انسباجو25مل 14ق": {
+    "brand": "Inspago",
+    "words": 1
+  },
+  "انسيﻼكوكس120 مجم": {
+    "brand": "Anselacox",
+    "words": 1
+  },
+  "انسيﻼكوكس60 مجم": {
+    "brand": "Anselacox",
+    "words": 1
+  },
+  "انسيﻼكوكس90 مجم": {
+    "brand": "Anselacox",
+    "words": 1
+  },
+  "انكونت اقراص س ج": {
+    "brand": "Incont L A",
+    "words": 1
+  },
+  "انوفا اقراص": {
+    "brand": "Anuva",
+    "words": 1
+  },
+  "انوكسيكام لبوس": {
+    "brand": "Anoxicam",
+    "words": 1
+  },
+  "انونا زيت": {
+    "brand": "Anona",
+    "words": 1
+  },
+  "انونا سيرم": {
+    "brand": "Anona",
+    "words": 1
+  },
+  "انونا لوسيون": {
+    "brand": "Anona",
+    "words": 1
+  },
+  "او ار اس اكياس": {
+    "brand": "Ors",
+    "words": 1
+  },
+  "اواديست1جم 20قرص": {
+    "brand": "Awadist",
+    "words": 1
+  },
+  "اوبتاديرول بلس كبسول": {
+    "brand": "Optaderol Plus",
+    "words": 2
+  },
+  "اوبتى فونيك نقط": {
+    "brand": "Optiphonic",
+    "words": 2
+  },
+  "اوبونوف اقراص": {
+    "brand": "Oponov",
+    "words": 1
+  },
+  "اوبيدال سيرم60مل": {
+    "brand": "O Pedal",
+    "words": 1
+  },
+  "اوتوكورت نقط س ج": {
+    "brand": "Entocort",
+    "words": 1
+  },
+  "اورا تربيسين": {
+    "brand": "Oratrypsin",
+    "words": 2
+  },
+  "اورازون شراب": {
+    "brand": "Orazone",
+    "words": 1
+  },
+  "اورجالايت بلس كريم": {
+    "brand": "Orgalight Plus",
+    "words": 2
+  },
+  "اورجالايت صابونه": {
+    "brand": "Orgalight",
+    "words": 1
+  },
+  "اورجوركسيبان15 مجم س ج": {
+    "brand": "Orgoroxaban",
+    "words": 1
+  },
+  "اورجوروكسبان2.5مجم 30قرص": {
+    "brand": "Orgoroxaban",
+    "words": 1
+  },
+  "اورسوبلس اقراص": {
+    "brand": "Ursoplus",
+    "words": 1
+  },
+  "اورسوديول250 مجم اقراص": {
+    "brand": "Ursodiol",
+    "words": 1
+  },
+  "اوركينو هيست قطره": {
+    "brand": "Orchinohist",
+    "words": 2
+  },
+  "اورلى120 مجم اقراص": {
+    "brand": "Orly",
+    "words": 1
+  },
+  "اورليستات120مجم اقراص": {
+    "brand": "Orlistat",
+    "words": 1
+  },
+  "اورليسمارت": {
+    "brand": "Orlismart",
+    "words": 1
+  },
+  "اورنيداز500 مجم": {
+    "brand": "Ornidaz",
+    "words": 1
+  },
+  "اوست ماب كبسول": {
+    "brand": "Ost Map",
+    "words": 2
+  },
+  "اوستيوكير اقراص س.ج": {
+    "brand": "Osteocare",
+    "words": 1
+  },
+  "اوستيوكير شراب": {
+    "brand": "Osteocare",
+    "words": 1
+  },
+  "اوستيونات ق": {
+    "brand": "Osteonate",
+    "words": 1
+  },
+  "اوكتوفنت بلس شراب": {
+    "brand": "Octovent Plus",
+    "words": 2
+  },
+  "اوكساليبتال شراب": {
+    "brand": "Oxaleptal",
+    "words": 1
+  },
+  "اوكساليبتال300مجم ج": {
+    "brand": "Oxaleptal",
+    "words": 1
+  },
+  "اوكسانوميج اقراص": {
+    "brand": "Oxanomeg",
+    "words": 1
+  },
+  "اوكسى تروبيل1200 مجم": {
+    "brand": "Oxitropil",
+    "words": 2
+  },
+  "اوكسيبروجست150مل فيال": {
+    "brand": "Oxyprogest",
+    "words": 1
+  },
+  "اوكسيﻼج كبسول": {
+    "brand": "Oxilage",
+    "words": 1
+  },
+  "اوكيوجارد ال اكس كبسول": {
+    "brand": "Ocuguard Lx",
+    "words": 3
+  },
+  "اولابكس10 مجم": {
+    "brand": "Olapex",
+    "words": 1
+  },
+  "اولابكس5 مجم": {
+    "brand": "Olapex",
+    "words": 1
+  },
+  "اولازوريكس5مجم 21قرص": {
+    "brand": "Olazorix",
+    "words": 1
+  },
+  "اولازين10مجم": {
+    "brand": "Olazine",
+    "words": 1
+  },
+  "اولانفيكسا5 مجم اقراص": {
+    "brand": "Olanvexa",
+    "words": 1
+  },
+  "اولانفيكسا10مجم30قرص": {
+    "brand": "Olanvexa",
+    "words": 1
+  },
+  "اولانفيكسا20مجم30قرص": {
+    "brand": "Olanvexa",
+    "words": 1
+  },
+  "اومنسيف كبسول": {
+    "brand": "Omnicef",
+    "words": 1
+  },
+  "اوميباك40 مجم": {
+    "brand": "Omepak",
+    "words": 1
+  },
+  "اوميباك20 مجم 14 كبسوله س ج": {
+    "brand": "Omepak",
+    "words": 1
+  },
+  "اوميباك20-مل 14ك": {
+    "brand": "Omepak",
+    "words": 1
+  },
+  "اوميجا زاد شراب": {
+    "brand": "Omega Zad",
+    "words": 2
+  },
+  "اوميجافيت1000 اكياس": {
+    "brand": "Omegafit",
+    "words": 1
+  },
+  "اوميجافيت500 س ج": {
+    "brand": "Omegafit",
+    "words": 1
+  },
+  "اوميجال مان30كبسول": {
+    "brand": "Omegal Man",
+    "words": 2
+  },
+  "اوميز10 مجم ق": {
+    "brand": "Omez",
+    "words": 1
+  },
+  "اوميز20 مجم": {
+    "brand": "Omez",
+    "words": 1
+  },
+  "اوميز40 مجم 2شريط": {
+    "brand": "Omez",
+    "words": 1
+  },
+  "اونداميتك4 مجم امبول /45": {
+    "brand": "Ondametic",
+    "words": 1
+  },
+  "اونداميتيك8 مل امبول": {
+    "brand": "Ondametic",
+    "words": 1
+  },
+  "اونوكرون60م ام ار": {
+    "brand": "Unocron Mr",
+    "words": 2
+  },
+  "ايبا اكت شامبو": {
+    "brand": "Eba Act",
+    "words": 2
+  },
+  "ايبانتين100 - ك ج": {
+    "brand": "Ipanten",
+    "words": 1
+  },
+  "ايتوبرايد50 مجم": {
+    "brand": "Itopride",
+    "words": 1
+  },
+  "ايتوماش اقراص": {
+    "brand": "Itomash",
+    "words": 1
+  },
+  "ايجيبرو5 مجم اقراص": {
+    "brand": "Egypro",
+    "words": 1
+  },
+  "ايجينير125 مجم شراب": {
+    "brand": "Egynir",
+    "words": 1
+  },
+  "ايدومالتول كبسول": {
+    "brand": "Idomaltol",
+    "words": 1
+  },
+  "ايرالونير50 مجم": {
+    "brand": "Eraloner",
+    "words": 1
+  },
+  "ايرالونير25مجم س.ج": {
+    "brand": "Eraloner",
+    "words": 1
+  },
+  "ايروسبيكت شراب": {
+    "brand": "Irospect",
+    "words": 1
+  },
+  "ايروكسول مرهم": {
+    "brand": "Iruxol",
+    "words": 1
+  },
+  "ايرولامين اقراص س ج": {
+    "brand": "Irolamin",
+    "words": 1
+  },
+  "ايرونيل اقراص": {
+    "brand": "Aironyl",
+    "words": 1
+  },
+  "ايرونيل شراب": {
+    "brand": "Aironyl",
+    "words": 1
+  },
+  "ايزاكارد100 مجم اقراص": {
+    "brand": "Ezacard",
+    "words": 1
+  },
+  "ايزاكارد75 مجم": {
+    "brand": "Ezacard",
+    "words": 1
+  },
+  "ايزوتريتينون10 مجم": {
+    "brand": "Isotretinoin",
+    "words": 1
+  },
+  "ايزوتريتينون20 مجم": {
+    "brand": "Isotretinoin",
+    "words": 1
+  },
+  "ايزوجاست40 مجم 28 قرص": {
+    "brand": "Ezogast",
+    "words": 1
+  },
+  "ايزوجاست40مجم": {
+    "brand": "Ezogast",
+    "words": 1
+  },
+  "ايزوجاست20مل 14ق": {
+    "brand": "Ezogast",
+    "words": 1
+  },
+  "ايزوموبمب40 مجم": {
+    "brand": "Esmopump",
+    "words": 1
+  },
+  "ايزوميبرازول40 مجم اقراص-ايفا": {
+    "brand": "Esomeprazole Eva",
+    "words": 2
+  },
+  "ايزوميم اقراص": {
+    "brand": "Esomium",
+    "words": 1
+  },
+  "ايزيس تيليو20فلتر": {
+    "brand": "Isis Tilia",
+    "words": 3
+  },
+  "ايزيس كاموميل20 فلتر": {
+    "brand": "Isis Chamomile",
+    "words": 3
+  },
+  "ايزيس كركديه باكو12": {
+    "brand": "Isis Hibiscus",
+    "words": 3
+  },
+  "ايسوبتن ريتارد240 مجم س ج": {
+    "brand": "Isoptin Retard",
+    "words": 2
+  },
+  "ايفاستين اقراص": {
+    "brand": "Evastine",
+    "words": 1
+  },
+  "ايفاستين شراب": {
+    "brand": "Evastine",
+    "words": 1
+  },
+  "ايفاكيولاكس ج": {
+    "brand": "Evaculax",
+    "words": 1
+  },
+  "ايفرزين اقراص": {
+    "brand": "Iverzine",
+    "words": 1
+  },
+  "ايفرزين كريم": {
+    "brand": "Iverzine",
+    "words": 1
+  },
+  "ايفى زاد شراب": {
+    "brand": "Ivy Zad",
+    "words": 2
+  },
+  "ايفى كان شراب": {
+    "brand": "Ivycan",
+    "words": 2
+  },
+  "ايفيبرونت شراب س.ج": {
+    "brand": "Ivypront",
+    "words": 1
+  },
+  "ايفيجاد75مجم اقراص": {
+    "brand": "Effegad",
+    "words": 1
+  },
+  "ايكوزاليب اقراص س ج": {
+    "brand": "Icosalip",
+    "words": 1
+  },
+  "ايكوزاليب اقراص س ق276 ج": {
+    "brand": "Icosalip",
+    "words": 1
+  },
+  "ايمباكوزا10 مجم": {
+    "brand": "Empacoza",
+    "words": 1
+  },
+  "ايمباكوزا25 مجم": {
+    "brand": "Empacoza",
+    "words": 1
+  },
+  "ايمباكوزا بلس5/25": {
+    "brand": "Empacoza Plus",
+    "words": 2
+  },
+  "ايمباكوزا بلس10/5": {
+    "brand": "Empacoza Plus",
+    "words": 2
+  },
+  "ايموسوفت كريم15جم س ج": {
+    "brand": "Emo Soft",
+    "words": 1
+  },
+  "ايموفلورا اقراص س ج": {
+    "brand": "Imoflora",
+    "words": 1
+  },
+  "ايموكس250 شراب": {
+    "brand": "E Mox",
+    "words": 1
+  },
+  "ايميرست4مجم حقن": {
+    "brand": "Emerest",
+    "words": 1
+  },
+  "ايميرست8مجم حقن": {
+    "brand": "Emerest",
+    "words": 1
+  },
+  "ايميروزا هير لوشن": {
+    "brand": "Emmyrosa",
+    "words": 1
+  },
+  "اينوفوليك30ك": {
+    "brand": "Inofolic",
+    "words": 1
+  },
+  "اينيرا اكياس كولاجين": {
+    "brand": "Enera Collagen",
+    "words": 2
+  },
+  "ايه اي جى ايزوميبرازول س س ج": {
+    "brand": "Aig Esomeprazole",
+    "words": 4
+  },
+  "باراجيسك لبوس س ج": {
+    "brand": "Paragesic",
+    "words": 1
+  },
+  "بارامول1 جم": {
+    "brand": "Paramol",
+    "words": 1
+  },
+  "بارامول500 مجم اقراص": {
+    "brand": "Paramol",
+    "words": 1
+  },
+  "باركنتريت1 ملى س ج": {
+    "brand": "Parkintreat",
+    "words": 1
+  },
+  "باركيكابون200مل ق": {
+    "brand": "Parkicapone",
+    "words": 1
+  },
+  "باروفين قرص": {
+    "brand": "Parofen",
+    "words": 1
+  },
+  "باريتافا2 مل": {
+    "brand": "Baritava",
+    "words": 1
+  },
+  "باكتيكلور125 شراب": {
+    "brand": "Bacticlor",
+    "words": 1
+  },
+  "باكتيكلور250 شراب": {
+    "brand": "Bacticlor",
+    "words": 1
+  },
+  "باكلوفين10 مل": {
+    "brand": "Baclofen",
+    "words": 1
+  },
+  "بالمينيرف بلس400مجم": {
+    "brand": "Palminerve Plus",
+    "words": 2
+  },
+  "بالمينيرف كبسول": {
+    "brand": "Palminerve",
+    "words": 1
+  },
+  "بامبيديل اقراص ج": {
+    "brand": "Bambedil",
+    "words": 1
+  },
+  "بامبيديل شراب": {
+    "brand": "Bambedil",
+    "words": 1
+  },
+  "بانادول ادفانس4 شريط": {
+    "brand": "Panadol Advance",
+    "words": 2
+  },
+  "باناكس لايف20 كبسول": {
+    "brand": "Panax Life",
+    "words": 2
+  },
+  "بانتازول اقراص": {
+    "brand": "Pantazol",
+    "words": 1
+  },
+  "بانتوبرازول40 مجم ق": {
+    "brand": "Pantoprazole",
+    "words": 1
+  },
+  "بانتوبى20 مجم": {
+    "brand": "Pantopi",
+    "words": 1
+  },
+  "بانتوبى40 مجم": {
+    "brand": "Pantopi",
+    "words": 1
+  },
+  "بانتوجار اقراص": {
+    "brand": "Pantogar",
+    "words": 1
+  },
+  "بانتولوك20 مجم اقراص": {
+    "brand": "Pantoloc",
+    "words": 1
+  },
+  "بانتولوك40 مجم اقراص": {
+    "brand": "Pantoloc",
+    "words": 1
+  },
+  "بانتوناب40 مجم 14 قرص": {
+    "brand": "Pantonap",
+    "words": 1
+  },
+  "بانثوفيرا شامبو250 مل": {
+    "brand": "Panthovera",
+    "words": 1
+  },
+  "بانجيستازول40مجم 14 قرص": {
+    "brand": "Pangestazol",
+    "words": 1
+  },
+  "باور اكت اكياس س ج": {
+    "brand": "Power Act",
+    "words": 2
+  },
+  "باى الكوفان كبسول": {
+    "brand": "Bi Alcofan",
+    "words": 2
+  },
+  "باى كيتوجيسيك س ج81ج": {
+    "brand": "Bi Ketogesic",
+    "words": 2
+  },
+  "بايولجام30مجم اقراص": {
+    "brand": "Biolegam",
+    "words": 1
+  },
+  "بايولجام60مجم 2 شريط": {
+    "brand": "Biolegam",
+    "words": 1
+  },
+  "برافاماكس اقراص": {
+    "brand": "Bravamax",
+    "words": 1
+  },
+  "برافوتين14 كيس س ج": {
+    "brand": "Pravotin",
+    "words": 1
+  },
+  "برافوتين30كيس س ج": {
+    "brand": "Pravotin",
+    "words": 1
+  },
+  "براكسيﻼن200 مل": {
+    "brand": "Praxilene",
+    "words": 1
+  },
+  "بركة فورت500 مجم 30 قرص": {
+    "brand": "Baraka Forte",
+    "words": 2
+  },
+  "برناسورس مرهم15 جم": {
+    "brand": "Burnasores",
+    "words": 1
+  },
+  "برناسورس مرهم30جم": {
+    "brand": "Burnasores",
+    "words": 1
+  },
+  "بروباميثون كريم": {
+    "brand": "Propamethone Top",
+    "words": 1
+  },
+  "بروبريك10مجم اقراص": {
+    "brand": "Probric",
+    "words": 1
+  },
+  "بروبريك شراب ج": {
+    "brand": "Probric",
+    "words": 1
+  },
+  "بروبوزون15 مل قطره": {
+    "brand": "Probo Zone",
+    "words": 1
+  },
+  "بروتكتوبريل5/1.25/5 مجم 20 قرص": {
+    "brand": "Protectopril",
+    "words": 1
+  },
+  "بروتكتوبريل تريو10/2.5/5": {
+    "brand": "Protectopril Trio",
+    "words": 2
+  },
+  "بروتوبان20 مل س ج": {
+    "brand": "Protopan",
+    "words": 1
+  },
+  "بروتوزول اقراص": {
+    "brand": "Protozole",
+    "words": 1
+  },
+  "بروتوفكس20 مجم اقراص س ج": {
+    "brand": "Protofix",
+    "words": 1
+  },
+  "بروتولوك20 مجم": {
+    "brand": "Protoloc",
+    "words": 1
+  },
+  "بروجيست100 مجم كبسول": {
+    "brand": "Progest",
+    "words": 1
+  },
+  "بروجيست200 مجم": {
+    "brand": "Progest",
+    "words": 1
+  },
+  "بروجيست400مجم كبسول": {
+    "brand": "Progest",
+    "words": 1
+  },
+  "بروجيسترون100مجم امبول": {
+    "brand": "Progesterone Kahira",
+    "words": 1
+  },
+  "بروس زيت للشعر250 مل": {
+    "brand": "Pross",
+    "words": 1
+  },
+  "بروس سيرم للشعر": {
+    "brand": "Pross",
+    "words": 1
+  },
+  "بروس شامبو250 مل": {
+    "brand": "Pross",
+    "words": 1
+  },
+  "بروس كريم للشعر150 جرام": {
+    "brand": "Pross",
+    "words": 1
+  },
+  "بروست ايد كبسول س.ج": {
+    "brand": "Prost Ade",
+    "words": 2
+  },
+  "بروستاسولف بلس كبسول": {
+    "brand": "Prostasolve Plus",
+    "words": 2
+  },
+  "بروستالتى اقراص": {
+    "brand": "Prostality",
+    "words": 1
+  },
+  "بروفان14 كيس س.ج": {
+    "brand": "Provan",
+    "words": 1
+  },
+  "بروفين200مجم اقراص": {
+    "brand": "Brufen",
+    "words": 1
+  },
+  "بروفين400مجم اقراص": {
+    "brand": "Brufen",
+    "words": 1
+  },
+  "بروفين600مجم اقراص": {
+    "brand": "Brufen",
+    "words": 1
+  },
+  "بروفين شراب": {
+    "brand": "Brufen",
+    "words": 1
+  },
+  "بروفين فوار": {
+    "brand": "Brufen",
+    "words": 2
+  },
+  "بروكاسوفت2 مجم اقراص": {
+    "brand": "Prucasoft",
+    "words": 1
+  },
+  "بروكسيمول اقراص": {
+    "brand": "Proximol",
+    "words": 1
+  },
+  "بروكورلان5 مجم س ج": {
+    "brand": "Procoralan",
+    "words": 1
+  },
+  "بروكورلان7.5 مجم س ج": {
+    "brand": "Procoralan",
+    "words": 1
+  },
+  "بروكير اقراص": {
+    "brand": "Procare",
+    "words": 1
+  },
+  "برونتوبلس اقراص": {
+    "brand": "Pronto Plus",
+    "words": 1
+  },
+  "برونتوجيست10 امبول": {
+    "brand": "Prontogest",
+    "words": 1
+  },
+  "برونتوجيست200 لبوس": {
+    "brand": "Prontogest",
+    "words": 1
+  },
+  "برونتوجيست400 لبوس": {
+    "brand": "Prontogest",
+    "words": 1
+  },
+  "برونكوبرو شراب": {
+    "brand": "Bronchopro",
+    "words": 1
+  },
+  "برونكوبرو كبسول": {
+    "brand": "Bronchopro",
+    "words": 1
+  },
+  "برونكوبرو نقط": {
+    "brand": "Bronchopro",
+    "words": 1
+  },
+  "برونكوفاكسوم اطفال": {
+    "brand": "Broncho Vaxom Children",
+    "words": 2
+  },
+  "بريانيل400 سى ار": {
+    "brand": "Prianil C R",
+    "words": 2
+  },
+  "بريجنافيكس كبسول س ج": {
+    "brand": "Pregnavix",
+    "words": 1
+  },
+  "بريجناكير بﻼس كبسول": {
+    "brand": "Pregnacare Plus",
+    "words": 2
+  },
+  "بريدابوكس60 مجم 6 قرص": {
+    "brand": "Predapox",
+    "words": 1
+  },
+  "بريسمافين100مجم اقراص": {
+    "brand": "Prismaven",
+    "words": 1
+  },
+  "بريسمافين50 مجم": {
+    "brand": "Prismaven",
+    "words": 1
+  },
+  "بريكسال5 مجم 30 قرص": {
+    "brand": "Prexal",
+    "words": 1
+  },
+  "بريمو بلس لوشن": {
+    "brand": "Primo Plus",
+    "words": 2
+  },
+  "بريموكسيزار400 مجم 10 قرص": {
+    "brand": "Primoxizar",
+    "words": 1
+  },
+  "برينجو لوسيون": {
+    "brand": "Bringo",
+    "words": 2
+  },
+  "بكتى برو شراب": {
+    "brand": "Pectipro",
+    "words": 2
+  },
+  "بﻼتينور75 مجم": {
+    "brand": "Platenor",
+    "words": 1
+  },
+  "بﻼفيكارد75مجم": {
+    "brand": "Plavicard",
+    "words": 1
+  },
+  "بﻼفيكتونال اقراص": {
+    "brand": "Plavictonal",
+    "words": 1
+  },
+  "بﻼفيكس اقراص": {
+    "brand": "Plavix",
+    "words": 1
+  },
+  "بلوبريس8 بلس": {
+    "brand": "Blopress Plus",
+    "words": 2
+  },
+  "بلوبريس16بلس": {
+    "brand": "Blopress Plus",
+    "words": 2
+  },
+  "بلوبريس16مجم": {
+    "brand": "Blopress",
+    "words": 1
+  },
+  "بلوبريس8": {
+    "brand": "Blopress",
+    "words": 1
+  },
+  "بلوك الفا كبسول": {
+    "brand": "Block Alpha",
+    "words": 2
+  },
+  "بلوكاتنس10/160مجم": {
+    "brand": "Blokatens",
+    "words": 1
+  },
+  "بلوكاتنس5/80 مجم": {
+    "brand": "Blokatens",
+    "words": 1
+  },
+  "بلومفيل اقراص": {
+    "brand": "Bloom Ville",
+    "words": 1
+  },
+  "بليتال100مجم اقراص": {
+    "brand": "Pletaal",
+    "words": 1
+  },
+  "بليتال50 مجم اقراص": {
+    "brand": "Pletaal",
+    "words": 1
+  },
+  "بنتافلو شراب": {
+    "brand": "Pentaflu",
+    "words": 1
+  },
+  "بنتاكولد شراب": {
+    "brand": "Pentacold",
+    "words": 1
+  },
+  "بنتال اس ار": {
+    "brand": "Pental",
+    "words": 1
+  },
+  "بنداكس شراب س ك20": {
+    "brand": "Bendax",
+    "words": 1
+  },
+  "بنزانيل جيل": {
+    "brand": "Benzanil",
+    "words": 1
+  },
+  "بنفورا اقراص": {
+    "brand": "Benphora",
+    "words": 1
+  },
+  "بوتاسيوم شراب": {
+    "brand": "Potassium",
+    "words": 1
+  },
+  "بورجازون بلس مرهم": {
+    "brand": "Borgasone Plus Oint",
+    "words": 2
+  },
+  "بورجازون كريم تريو": {
+    "brand": "Borgasone Trio",
+    "words": 2
+  },
+  "بوم شاور جل": {
+    "brand": "Pom",
+    "words": 1
+  },
+  "بون كال اقراص": {
+    "brand": "Bone Cal",
+    "words": 2
+  },
+  "بون كير25": {
+    "brand": "Broncare",
+    "words": 2
+  },
+  "بونابكس70 مجم": {
+    "brand": "Bonapex",
+    "words": 1
+  },
+  "بوينتزام30ق": {
+    "brand": "Pointzam",
+    "words": 1
+  },
+  "بى ايرون بلس كبسول": {
+    "brand": "P Iron Plus",
+    "words": 3
+  },
+  "بى كير كريم": {
+    "brand": "Bee Care",
+    "words": 2
+  },
+  "بيافين كريم40 جم": {
+    "brand": "Biaphine",
+    "words": 1
+  },
+  "بيبرا28 قرص": {
+    "brand": "Bepra",
+    "words": 1
+  },
+  "بيبزول40 مجم 14 قرص": {
+    "brand": "Pepzol",
+    "words": 1
+  },
+  "بيبزول40مجم 7 قرص س ج": {
+    "brand": "Pepzol",
+    "words": 1
+  },
+  "بيبوسبان شراب": {
+    "brand": "Peopospan",
+    "words": 1
+  },
+  "بيبون بلس كبسول س ج": {
+    "brand": "Pepon Plus",
+    "words": 2
+  },
+  "بيبون كبسول": {
+    "brand": "Pepon",
+    "words": 1
+  },
+  "بيبيﻼك1 لبن": {
+    "brand": "Bebelac",
+    "words": 1
+  },
+  "بيبيﻼك2 لبن": {
+    "brand": "Bebelac",
+    "words": 1
+  },
+  "بيبيﻼك3بيبى جونيور": {
+    "brand": "Bebelac",
+    "words": 1
+  },
+  "بيتاديين منظف جراحى": {
+    "brand": "Betadine Surgical Scrub",
+    "words": 3
+  },
+  "بيتازون12ق": {
+    "brand": "Betasone",
+    "words": 1
+  },
+  "بيتاسيرك16 مجم س ج": {
+    "brand": "Betaserc",
+    "words": 1
+  },
+  "بيتاسيرك24مجم اقراص": {
+    "brand": "Betaserc",
+    "words": 1
+  },
+  "بيتاسيريك8 مجم اقراص": {
+    "brand": "Betaserc",
+    "words": 1
+  },
+  "بيتاكور30 قرص": {
+    "brand": "Betacor",
+    "words": 1
+  },
+  "بيتاليرج2مل 30قرص": {
+    "brand": "Betallerge",
+    "words": 1
+  },
+  "بيدياستارت لبن2": {
+    "brand": "Pedia Start",
+    "words": 1
+  },
+  "بيدياستارت لبن رقم1": {
+    "brand": "Pedia Start",
+    "words": 1
+  },
+  "بيدياميل1 لبن": {
+    "brand": "Pediamil",
+    "words": 1
+  },
+  "بيدياميل2": {
+    "brand": "Pediamil",
+    "words": 1
+  },
+  "بيدياميل ايه ار لبن": {
+    "brand": "Pediamil Ar",
+    "words": 2
+  },
+  "بيرلا كريم تفتيح": {
+    "brand": "Pearla",
+    "words": 1
+  },
+  "بيرلايت كريم": {
+    "brand": "Pearlight",
+    "words": 1
+  },
+  "بيرلوك40 مجم اقراص": {
+    "brand": "Perloc",
+    "words": 1
+  },
+  "بيرنازين كريم": {
+    "brand": "Burnazin",
+    "words": 1
+  },
+  "بيروليد10 مل": {
+    "brand": "Perolead",
+    "words": 1
+  },
+  "بيروليد15 مل ق": {
+    "brand": "Perolead",
+    "words": 1
+  },
+  "بيروليد5مجم": {
+    "brand": "Perolead",
+    "words": 1
+  },
+  "بيرونتاجونيست10 مل اقراص": {
+    "brand": "Pirontagonist",
+    "words": 1
+  },
+  "بيزوكارد10مجم": {
+    "brand": "Bisocard",
+    "words": 1
+  },
+  "بيزوكارد2.5 مجم": {
+    "brand": "Bisocard",
+    "words": 1
+  },
+  "بيزوكارد5 بلس": {
+    "brand": "Bisocard Plus",
+    "words": 2
+  },
+  "بيزوكارد5 مجم": {
+    "brand": "Bisocard",
+    "words": 1
+  },
+  "بيستول6.25\\\\2.5بلس 20 ق": {
+    "brand": "Bistol Plus",
+    "words": 2
+  },
+  "بيستول5/6.25 بلس": {
+    "brand": "Bistol Plus",
+    "words": 2
+  },
+  "بيستينون اقراص": {
+    "brand": "Pystinon",
+    "words": 1
+  },
+  "بيسكالدين300مجم 450ج": {
+    "brand": "Piascledine",
+    "words": 1
+  },
+  "بيكساسبير2.5 مجم قرص": {
+    "brand": "Pixaspire",
+    "words": 1
+  },
+  "بيكساسبيرو5 مجم": {
+    "brand": "Pixaspire",
+    "words": 1
+  },
+  "بيﻼستيجك20 مجم اقراص": {
+    "brand": "Bilastigec",
+    "words": 1
+  },
+  "بيﻼستيجيك شراب": {
+    "brand": "Bilastigec",
+    "words": 1
+  },
+  "بيلترسيد اقراص": {
+    "brand": "Biltricide",
+    "words": 1
+  },
+  "بيليكول كبسول": {
+    "brand": "Bilichol",
+    "words": 1
+  },
+  "بيلينو اكياس": {
+    "brand": "Bilino",
+    "words": 1
+  },
+  "بيلينو نقط": {
+    "brand": "Bilino",
+    "words": 1
+  },
+  "بيمفاست1جم حقن": {
+    "brand": "Pimfast",
+    "words": 1
+  },
+  "بين ريليفر كبسول": {
+    "brand": "Pain Reliefer",
+    "words": 2
+  },
+  "بينوجين اكياس س.ج": {
+    "brand": "Benogen",
+    "words": 1
+  },
+  "بيوبريكس5 مجم": {
+    "brand": "Bioprex",
+    "words": 1
+  },
+  "بيوبريكس10 مجم س": {
+    "brand": "Bioprex",
+    "words": 1
+  },
+  "بيوبريكس2.5 مل اقراص": {
+    "brand": "Bioprex",
+    "words": 1
+  },
+  "بيوبريكس7.5مجم 30 قرص": {
+    "brand": "Bioprex",
+    "words": 1
+  },
+  "بيوتاكسيمارك كريم": {
+    "brand": "Butaximark",
+    "words": 1
+  },
+  "بيوتين فورت": {
+    "brand": "Biotin Forte",
+    "words": 2
+  },
+  "بيوجليتا بلس850/15": {
+    "brand": "Bioglita Plus",
+    "words": 2
+  },
+  "بيودكس كريم": {
+    "brand": "Biodex",
+    "words": 1
+  },
+  "بيورلان كريم": {
+    "brand": "Purelan",
+    "words": 1
+  },
+  "بيوريفامين550 مجم قرص": {
+    "brand": "Biorefamin",
+    "words": 1
+  },
+  "بيوسترونج كبسول": {
+    "brand": "Biostrong",
+    "words": 1
+  },
+  "بيوسيرتازول2% كريم 30 جرام": {
+    "brand": "Biosertazol",
+    "words": 1
+  },
+  "بيونال اقراص": {
+    "brand": "Bional",
+    "words": 1
+  },
+  "تادالونج20 مجم": {
+    "brand": "Tadalong",
+    "words": 1
+  },
+  "تادالونج5 مجم": {
+    "brand": "Tadalong",
+    "words": 1
+  },
+  "تارج40 مجم اقراص": {
+    "brand": "Tareg",
+    "words": 1
+  },
+  "تارج160 مجم 28 قرص": {
+    "brand": "Tareg",
+    "words": 1
+  },
+  "تارج160 مجم14قرص س ج": {
+    "brand": "Tareg",
+    "words": 1
+  },
+  "تارج320": {
+    "brand": "Tareg",
+    "words": 1
+  },
+  "تارج80 مجم": {
+    "brand": "Tareg",
+    "words": 1
+  },
+  "تارجوماش12.5/160مجم قرص": {
+    "brand": "Targomash",
+    "words": 1
+  },
+  "تارجوماش12.5/80مجم قرص": {
+    "brand": "Targomash",
+    "words": 1
+  },
+  "تاردانزا": {
+    "brand": "Tardanza",
+    "words": 1
+  },
+  "تافاسين750 مجم": {
+    "brand": "Tavacin",
+    "words": 1
+  },
+  "تافاسين500 مجم س ق": {
+    "brand": "Tavacin",
+    "words": 1
+  },
+  "تافانيك500 اقراص": {
+    "brand": "Tavanic",
+    "words": 1
+  },
+  "تافونيفلوكس500 مجم": {
+    "brand": "Tavoniflox",
+    "words": 1
+  },
+  "تافونيفلوكس750 مجم": {
+    "brand": "Tavoniflox",
+    "words": 1
+  },
+  "تافيكسينور500م اقراص": {
+    "brand": "Tavixinor",
+    "words": 1
+  },
+  "تالوبرام40 مجم": {
+    "brand": "Talopram",
+    "words": 1
+  },
+  "تامسول ق": {
+    "brand": "Tamsul",
+    "words": 1
+  },
+  "تامسولين كبسول": {
+    "brand": "Tamsulin",
+    "words": 1
+  },
+  "تانتم جيل": {
+    "brand": "Tantum",
+    "words": 1
+  },
+  "تانودرم كريم": {
+    "brand": "Tannoderm",
+    "words": 1
+  },
+  "تجريتول400 سى ار": {
+    "brand": "Tegretol Cr",
+    "words": 2
+  },
+  "تجريتول200 سى ار": {
+    "brand": "Tegretol Cr",
+    "words": 2
+  },
+  "تجريتول200 مجم اقراص": {
+    "brand": "Tegretol",
+    "words": 1
+  },
+  "ترافوديرمال كريم س ج": {
+    "brand": "Travodermal",
+    "words": 1
+  },
+  "تراى بى امبول": {
+    "brand": "Tri B",
+    "words": 2
+  },
+  "ترايتون100 مجم اقراص": {
+    "brand": "Tritone",
+    "words": 1
+  },
+  "ترايتون200 مجم اقراص": {
+    "brand": "Tritone",
+    "words": 1
+  },
+  "ترايكتين اقراص": {
+    "brand": "Triactin",
+    "words": 1
+  },
+  "ترايكتين شراب": {
+    "brand": "Triactin",
+    "words": 1
+  },
+  "ترايكوجين جيل50 مجم": {
+    "brand": "Tricogyn Vaginal Jel",
+    "words": 1
+  },
+  "ترايليبتال300مجم اقراص": {
+    "brand": "Trileptal",
+    "words": 1
+  },
+  "ترايليبتال600مجم قرص": {
+    "brand": "Trileptal",
+    "words": 1
+  },
+  "تربسالين اقراص": {
+    "brand": "Trypsalin",
+    "words": 1
+  },
+  "ترنتال400 اس ار اقراص": {
+    "brand": "Trental",
+    "words": 1
+  },
+  "تريب جولد اقراص": {
+    "brand": "Trib Gold",
+    "words": 2
+  },
+  "تريباتنس20/5/12.5": {
+    "brand": "Tribatens",
+    "words": 1
+  },
+  "تريباتنس40/10/12.5": {
+    "brand": "Tribatens",
+    "words": 1
+  },
+  "تريباتنس40/5/25": {
+    "brand": "Tribatens",
+    "words": 1
+  },
+  "تريبتيزول25 مجم اقراص": {
+    "brand": "Tryptizol",
+    "words": 1
+  },
+  "تريبليكسام10/2.5-10مجم15قرص": {
+    "brand": "Triplixam",
+    "words": 1
+  },
+  "تريتاس2.5 مجم اقراص": {
+    "brand": "Tritace",
+    "words": 1
+  },
+  "تريتاس5 مجم اقراص": {
+    "brand": "Tritace",
+    "words": 1
+  },
+  "تريتاس بروتكت س ج": {
+    "brand": "Tritace Protect",
+    "words": 2
+  },
+  "تريتو الس20مجم": {
+    "brand": "Treato Ulc",
+    "words": 2
+  },
+  "تريتو سيرم للشعر": {
+    "brand": "Treato",
+    "words": 1
+  },
+  "تريتو شامبو": {
+    "brand": "Treato",
+    "words": 1
+  },
+  "تريتوسبوت كريم": {
+    "brand": "Tritospot",
+    "words": 1
+  },
+  "تريتيكو100 - ق": {
+    "brand": "Trittico",
+    "words": 1
+  },
+  "تريس زيت شعر250 مجم": {
+    "brand": "Tress",
+    "words": 1
+  },
+  "تريفلوكان كبسول": {
+    "brand": "Treflucan",
+    "words": 1
+  },
+  "% تريكزيمس3 مرهم": {
+    "brand": "Treczimus",
+    "words": 1
+  },
+  "تريكزيمس01% مرهم30 مجم": {
+    "brand": "Treczimus",
+    "words": 1
+  },
+  "تريوكﻼر ق": {
+    "brand": "Trio Clar",
+    "words": 1
+  },
+  "تكساكورت كريم": {
+    "brand": "Texacort",
+    "words": 1
+  },
+  "تكلو اقراص س ج": {
+    "brand": "Teklo",
+    "words": 1
+  },
+  "تكنو فيولا50مجم": {
+    "brand": "Tecnovula",
+    "words": 2
+  },
+  "تكنوسبيرون اقراص": {
+    "brand": "Technospiron",
+    "words": 1
+  },
+  "تلفاست 180مجم اقراص": {
+    "brand": "Telfast",
+    "words": 1
+  },
+  "تمبورال شراب": {
+    "brand": "Temporal",
+    "words": 1
+  },
+  "تنسوبليرون50مجم": {
+    "brand": "Tensopleron",
+    "words": 1
+  },
+  "توب جنج اقراص": {
+    "brand": "Topging",
+    "words": 2
+  },
+  "توب زاد صابونه": {
+    "brand": "Top Zad",
+    "words": 2
+  },
+  "توب مود50 مجم اقراص": {
+    "brand": "Topmode",
+    "words": 2
+  },
+  "توب مود فورت اقراص": {
+    "brand": "Topmode Forte",
+    "words": 3
+  },
+  "توب هير بلسم": {
+    "brand": "Top",
+    "words": 1
+  },
+  "توب هير لوسيون": {
+    "brand": "Top",
+    "words": 1
+  },
+  "توباكين شراب": {
+    "brand": "Topaken",
+    "words": 1
+  },
+  "توبراميت100مجم اقراص": {
+    "brand": "Topiramate",
+    "words": 1
+  },
+  "توبراميت25مجم اقراص": {
+    "brand": "Topiramate",
+    "words": 1
+  },
+  "توبرانو كريم": {
+    "brand": "Toprano",
+    "words": 1
+  },
+  "توبرو اكياس": {
+    "brand": "Topro",
+    "words": 1
+  },
+  "توبوبرازان20 مجم": {
+    "brand": "Topoprazan",
+    "words": 1
+  },
+  "توبولانزا كبسول": {
+    "brand": "Tobolanza",
+    "words": 1
+  },
+  "توتافيت اقراص": {
+    "brand": "Totavit",
+    "words": 1
+  },
+  "توتافيت شراب": {
+    "brand": "Totavit",
+    "words": 1
+  },
+  "تورسا مو لكس20مجم": {
+    "brand": "Torsamolex",
+    "words": 3
+  },
+  "تورسيريتك60 مجم قرص": {
+    "brand": "Torseretic",
+    "words": 1
+  },
+  "تورسيريتك امبول": {
+    "brand": "Torseretic",
+    "words": 1
+  },
+  "تورفاست اقراص": {
+    "brand": "Torvast",
+    "words": 1
+  },
+  "تولانجو سليم س ج": {
+    "brand": "Tulango Slim",
+    "words": 2
+  },
+  "تونيكا شامبو200مل": {
+    "brand": "Tonika",
+    "words": 1
+  },
+  "تيبوستار مرهم30 جم": {
+    "brand": "Tipo Star",
+    "words": 1
+  },
+  "تيبوفورتين80 مجم اقراص": {
+    "brand": "Tebofortin",
+    "words": 1
+  },
+  "تيبوفورتين نقط": {
+    "brand": "Tebofortin",
+    "words": 1
+  },
+  "تيبونينا فورت اقراص": {
+    "brand": "Tebonina Forte",
+    "words": 2
+  },
+  "تيراليبسى120 مل شراب": {
+    "brand": "Tiralepsy",
+    "words": 1
+  },
+  "تيراليبسى500 اكس ار": {
+    "brand": "Tiralepsy Xr",
+    "words": 2
+  },
+  "تيراليبسى500 مجم": {
+    "brand": "Tiralepsy",
+    "words": 1
+  },
+  "تيراليبسى750 اكس ار": {
+    "brand": "Tiralepsy Xr",
+    "words": 2
+  },
+  "تيراليبيسى1000 مجم س ج": {
+    "brand": "Tiralepsy",
+    "words": 1
+  },
+  "تيربين250 مجم": {
+    "brand": "Terbin",
+    "words": 1
+  },
+  "تيرمينال شامبو200مل": {
+    "brand": "Terminal",
+    "words": 1
+  },
+  "تيكافير1 مجم": {
+    "brand": "Tecavir",
+    "words": 1
+  },
+  "تيكافير0.5 مل ج": {
+    "brand": "Tecavir",
+    "words": 1
+  },
+  "تيموجين شراب ك25": {
+    "brand": "Timogen",
+    "words": 1
+  },
+  "تينورمين50 مجم": {
+    "brand": "Tenormin",
+    "words": 1
+  },
+  "تينورمين100 - مجم": {
+    "brand": "Tenormin",
+    "words": 1
+  },
+  "تينوفلوكساسين500مجم اقراص": {
+    "brand": "Tinifloxacin",
+    "words": 1
+  },
+  "تينياكيور كريم": {
+    "brand": "Tineacure",
+    "words": 1
+  },
+  "تينيفلوكساسين كبسول": {
+    "brand": "Tinifloxacin",
+    "words": 1
+  },
+  "ثرومبو75مل ق": {
+    "brand": "Thrombo",
+    "words": 1
+  },
+  "ثرومبونورم اقراص": {
+    "brand": "Thrombonorm",
+    "words": 1
+  },
+  "ثيروكاربين5مجم 100قرص": {
+    "brand": "Thyrocarbin",
+    "words": 1
+  },
+  "ثيروكاربين5مجم 50قرص": {
+    "brand": "Thyrocarbin",
+    "words": 1
+  },
+  "ثيوتكس600 فورت": {
+    "brand": "Thiotex Forte",
+    "words": 2
+  },
+  "ثيودو600 مركب": {
+    "brand": "Thiodio Comb",
+    "words": 2
+  },
+  "ثيونيرف300 مجم 20 قرص": {
+    "brand": "Thionerv",
+    "words": 1
+  },
+  "جاراميسين20 مل ج": {
+    "brand": "Garamycin",
+    "words": 1
+  },
+  "جاراميسين15جم كريم": {
+    "brand": "Garamycin",
+    "words": 1
+  },
+  "جاراميسين30جم كريم": {
+    "brand": "Garamycin",
+    "words": 1
+  },
+  "جاراميسين80 - امبول": {
+    "brand": "Garamycin",
+    "words": 1
+  },
+  "جارديانز10مجم": {
+    "brand": "Jardiance",
+    "words": 1
+  },
+  "جاست ريج200 مجم": {
+    "brand": "Gast Reg",
+    "words": 2
+  },
+  "جاستروبيكس20 مجم 28 قرص": {
+    "brand": "Gastropexy",
+    "words": 1
+  },
+  "جاستروبيوتك550 مجم": {
+    "brand": "Gastrobiotic",
+    "words": 1
+  },
+  "جاسترودومينا40 مجم": {
+    "brand": "Gastrodomina",
+    "words": 1
+  },
+  "جاسترولوك اقراص": {
+    "brand": "Gastroloc",
+    "words": 1
+  },
+  "جاستروموتيل شراب": {
+    "brand": "Gastromotil",
+    "words": 1
+  },
+  "جاكاراندا5 مل": {
+    "brand": "Jakaranda",
+    "words": 1
+  },
+  "جاكودان- جيل": {
+    "brand": "Jackodan",
+    "words": 1
+  },
+  "جاكودان- غسول": {
+    "brand": "Jackodan",
+    "words": 1
+  },
+  "جالينا اكياس": {
+    "brand": "Galena",
+    "words": 1
+  },
+  "جامابيون اقراص": {
+    "brand": "Gamabion",
+    "words": 1
+  },
+  "جاناتون50 مجم اقراص": {
+    "brand": "Ganaton",
+    "words": 1
+  },
+  "جاناجليب50/1000 بﻼس": {
+    "brand": "Janaglip Plus",
+    "words": 2
+  },
+  "جانتوليف50 مجم": {
+    "brand": "Gantolief",
+    "words": 1
+  },
+  "جاوتيفيد40 مجم اقراص": {
+    "brand": "Goutifade",
+    "words": 1
+  },
+  "جاوتيفيد80 مجم": {
+    "brand": "Goutifade",
+    "words": 1
+  },
+  "جرانيتريل2 مجم اقراص": {
+    "brand": "Granitryl",
+    "words": 1
+  },
+  "جرانيتيريل1 مل امبول": {
+    "brand": "Granitryl",
+    "words": 1
+  },
+  "جروزا اقراص س ج": {
+    "brand": "Groza",
+    "words": 1
+  },
+  "جستيكول10 مجم 14 قرص": {
+    "brand": "Justechol",
+    "words": 1
+  },
+  "جستيكول20مجم 14قرص": {
+    "brand": "Justechol",
+    "words": 1
+  },
+  "جستيكول20مجم 28قرص": {
+    "brand": "Justechol",
+    "words": 1
+  },
+  "جﻼبتيفيا بلس50/1000": {
+    "brand": "Glaptivia Plus",
+    "words": 2
+  },
+  "جﻼبتيفيا بلس50/500": {
+    "brand": "Glaptivia Plus",
+    "words": 2
+  },
+  "جﻼريل1 مجم": {
+    "brand": "Glaryl",
+    "words": 1
+  },
+  "جﻼريل2 مجم": {
+    "brand": "Glaryl",
+    "words": 1
+  },
+  "جﻼريل3 مجم": {
+    "brand": "Glaryl",
+    "words": 1
+  },
+  "جﻼريل4 مجم": {
+    "brand": "Glaryl",
+    "words": 1
+  },
+  "جﻼريل6مجم اقراص": {
+    "brand": "Glaryl",
+    "words": 1
+  },
+  "جلوسى سيرم": {
+    "brand": "Glossy",
+    "words": 1
+  },
+  "جلوكوفاج1000 مجم اقراص س ق": {
+    "brand": "Glucophage",
+    "words": 1
+  },
+  "جلوكوفاج1000مجم كس ار": {
+    "brand": "Glucophage Xr",
+    "words": 2
+  },
+  "جلوكوفاج500 مجم س ج": {
+    "brand": "Glucophage",
+    "words": 1
+  },
+  "جلوكوفاج اكس ار500مجم": {
+    "brand": "Glucophage Xr",
+    "words": 2
+  },
+  "جلوكوفانس500/5 س ج": {
+    "brand": "Glucovance",
+    "words": 1
+  },
+  "جلوميثازون امبول8 مجم": {
+    "brand": "Glomethasone",
+    "words": 1
+  },
+  "جليبتالينا1000/2.5 اقراص": {
+    "brand": "Gliptalina",
+    "words": 1
+  },
+  "جليبتالينا2.5/500": {
+    "brand": "Gliptalina",
+    "words": 1
+  },
+  "جليبتس50 ع": {
+    "brand": "Gliptus",
+    "words": 1
+  },
+  "جليبتس50/1000 مجم": {
+    "brand": "Gliptus",
+    "words": 1
+  },
+  "جليبتس850 مجم": {
+    "brand": "Gliptus",
+    "words": 1
+  },
+  "جليبتوميت50/500": {
+    "brand": "Gleptomet",
+    "words": 1
+  },
+  "جليبتوميت1000/50 مجم": {
+    "brand": "Gleptomet",
+    "words": 1
+  },
+  "جليبوفين5/500 مجم س ج": {
+    "brand": "Glybofen",
+    "words": 1
+  },
+  "جليبوفين500/2.5": {
+    "brand": "Glybofen",
+    "words": 1
+  },
+  "جليبوفين اقراص5/1000مجم اقراص": {
+    "brand": "Glybofen",
+    "words": 1
+  },
+  "جليفلوزينو10 مجم": {
+    "brand": "Gliflozino",
+    "words": 1
+  },
+  "جليفلوزينو5 مجم س.ج": {
+    "brand": "Gliflozino",
+    "words": 1
+  },
+  "جليكسامبى25 مجم": {
+    "brand": "Glyxambi",
+    "words": 1
+  },
+  "جليماديل1مجم": {
+    "brand": "Glimadel",
+    "words": 1
+  },
+  "جليماديل2 مجم": {
+    "brand": "Glimadel",
+    "words": 1
+  },
+  "جليماديل3 مجم": {
+    "brand": "Glimadel",
+    "words": 1
+  },
+  "جليماديل4 مل 3 شريط س ج": {
+    "brand": "Glimadel",
+    "words": 1
+  },
+  "جليمباكير10 مل": {
+    "brand": "Glimpacare",
+    "words": 1
+  },
+  "جليمباكير بلس5/10 مجم": {
+    "brand": "Glimpacare Plus",
+    "words": 2
+  },
+  "جليمباكير25 مجم": {
+    "brand": "Glimpacare",
+    "words": 1
+  },
+  "جليمباكير25/5 بلس قرص": {
+    "brand": "Glimpacare Plus",
+    "words": 2
+  },
+  "جليمبوزين10 مجم": {
+    "brand": "Glempozin",
+    "words": 1
+  },
+  "جليمبوزين25 مجم": {
+    "brand": "Glempozin",
+    "words": 1
+  },
+  "جليمت فورت اقراص س ج": {
+    "brand": "Glimet Forte",
+    "words": 2
+  },
+  "جليميبرايد بلس": {
+    "brand": "Glimepiride Plus",
+    "words": 2
+  },
+  "جلينوساليك مرهم": {
+    "brand": "Glenosalic Top Oint",
+    "words": 1
+  },
+  "جوافة شراب ك25": {
+    "brand": "Guava",
+    "words": 1
+  },
+  "جوسبرين اقراص": {
+    "brand": "Jusprin",
+    "words": 1
+  },
+  "جوفلكس كبسول": {
+    "brand": "Joflex",
+    "words": 1
+  },
+  "جوكادو كبسول": {
+    "brand": "Jocado",
+    "words": 1
+  },
+  "جوى بوكس60 مجم": {
+    "brand": "Joypox",
+    "words": 2
+  },
+  "جى بى سى كريم100 جم": {
+    "brand": "J B C",
+    "words": 3
+  },
+  "جى بى سى كريم50 جم": {
+    "brand": "J B C",
+    "words": 3
+  },
+  "جيباريلون10 مجم مضغ": {
+    "brand": "Jeparilon",
+    "words": 2
+  },
+  "جيت كبسول": {
+    "brand": "Git",
+    "words": 1
+  },
+  "جيرلى شامبو": {
+    "brand": "Girly",
+    "words": 1
+  },
+  "جيرلى كريم": {
+    "brand": "Girly",
+    "words": 1
+  },
+  "جيزوميزول40مجم 14قرص": {
+    "brand": "Gesomezol",
+    "words": 1
+  },
+  "جيستاميفام30 قرص 10/20 مجم": {
+    "brand": "Jestamivam",
+    "words": 1
+  },
+  "جيستاميفام40/10 مجم اقراص": {
+    "brand": "Jestamivam",
+    "words": 1
+  },
+  "جيفلوج10 مل": {
+    "brand": "Giflog",
+    "words": 1
+  },
+  "جيفلوج25 اقراص": {
+    "brand": "Giflog",
+    "words": 1
+  },
+  "جينتازون كريم15جم": {
+    "brand": "Gentazone",
+    "words": 1
+  },
+  "جينتاميسين3-80امبول": {
+    "brand": "Gentamicin",
+    "words": 1
+  },
+  "جينوبروجيست2 مجم": {
+    "brand": "Gynoprogest",
+    "words": 1
+  },
+  "جينونال ق": {
+    "brand": "Jenonal",
+    "words": 1
+  },
+  "جينيكا مويست كريم": {
+    "brand": "Genica Moist",
+    "words": 2
+  },
+  "جينيكا مويست لوسيون": {
+    "brand": "Genica Moist",
+    "words": 2
+  },
+  "جيوبروست اقراص": {
+    "brand": "Geoprost",
+    "words": 1
+  },
+  "خميره ميباكو": {
+    "brand": "Yeast Mepaco",
+    "words": 2
+  },
+  "دابابليكس10/1000": {
+    "brand": "Dapablix",
+    "words": 1
+  },
+  "دابابليكس5 مجم": {
+    "brand": "Dapablix",
+    "words": 1
+  },
+  "داباجلوزا10م30قرص": {
+    "brand": "Dapagloza",
+    "words": 1
+  },
+  "داباجليف10 مجم اقراص": {
+    "brand": "Dapaglif",
+    "words": 1
+  },
+  "دابوكستارد60 مجم 3 قرص": {
+    "brand": "Dapoxtard",
+    "words": 1
+  },
+  "داجو بلس شامبو": {
+    "brand": "Dago Plus",
+    "words": 2
+  },
+  "داجو شامبو": {
+    "brand": "Dago",
+    "words": 1
+  },
+  "دافركس اقراص": {
+    "brand": "Dafrex",
+    "words": 1
+  },
+  "دافروسين كبسول": {
+    "brand": "Dafrocin",
+    "words": 1
+  },
+  "دافلوفكس اقراص": {
+    "brand": "Daflofix",
+    "words": 1
+  },
+  "دالاسين سى300 مجم س ج": {
+    "brand": "Dalacin C",
+    "words": 2
+  },
+  "دان اوف شامبو250 مل": {
+    "brand": "Dan Off",
+    "words": 2
+  },
+  "دانتريﻼكس25مجم كبسول": {
+    "brand": "Dantrelax",
+    "words": 1
+  },
+  "داندل شامبو": {
+    "brand": "Dandel",
+    "words": 1
+  },
+  "دانديفيرا شامبو": {
+    "brand": "Dandivera",
+    "words": 1
+  },
+  "داونستيرولين10/40": {
+    "brand": "Downsterolin",
+    "words": 1
+  },
+  "داونيبرازول20 مل اكياس": {
+    "brand": "Downoprazol",
+    "words": 1
+  },
+  "داونيبرازول20 مجم كبسول": {
+    "brand": "Downoprazol",
+    "words": 1
+  },
+  "دايسينون500مجم اقراص": {
+    "brand": "Dicynone",
+    "words": 1
+  },
+  "درامينكس اقراص": {
+    "brand": "Dramenex",
+    "words": 1
+  },
+  "درلجى6 قرص": {
+    "brand": "Derilgy",
+    "words": 1
+  },
+  "دروبيفلوكس نقط اذن": {
+    "brand": "Dropiflox Otic",
+    "words": 2
+  },
+  "دروسباديول اقراص": {
+    "brand": "Drospadiol",
+    "words": 1
+  },
+  "دروسبينيتا28 قرص": {
+    "brand": "Drospinetta",
+    "words": 1
+  },
+  "دكتور اكسجين كالسيوم اقراص": {
+    "brand": "Dr Oxygen Calcium",
+    "words": 3
+  },
+  "دكسترافاست25مجم": {
+    "brand": "Dextrafast",
+    "words": 1
+  },
+  "دلبانتو20 مجم": {
+    "brand": "Delpanto",
+    "words": 1
+  },
+  "دلبانتو40 مجم اقراص": {
+    "brand": "Delpanto",
+    "words": 1
+  },
+  "دلتازون3 شريط": {
+    "brand": "Deltasone",
+    "words": 1
+  },
+  "دلزوسين500 مجم": {
+    "brand": "Delzosin",
+    "words": 1
+  },
+  "دوجماتيل50 مجم": {
+    "brand": "Dogmatil",
+    "words": 1
+  },
+  "دورميفال كبسول": {
+    "brand": "Dormival",
+    "words": 1
+  },
+  "دوزوفا ناد": {
+    "brand": "Dozova Nad",
+    "words": 2
+  },
+  "دوزين2جم": {
+    "brand": "Dosin",
+    "words": 1
+  },
+  "دوزين4 مجم": {
+    "brand": "Dosin",
+    "words": 1
+  },
+  "دوسباتالين ريتارد قرص": {
+    "brand": "Duspatalin Retard",
+    "words": 2
+  },
+  "دوستينكس اقراص": {
+    "brand": "Dostinex",
+    "words": 1
+  },
+  "دوفالاك شراب": {
+    "brand": "Duphalac",
+    "words": 1
+  },
+  "دوكسى مايسين اقراص": {
+    "brand": "Doxymycin",
+    "words": 2
+  },
+  "دولسيل1 مجم": {
+    "brand": "Dolcyl",
+    "words": 1
+  },
+  "دولسيل4 مجم": {
+    "brand": "Dolcyl",
+    "words": 1
+  },
+  "دولسيل6مجم س ج": {
+    "brand": "Dolcyl",
+    "words": 1
+  },
+  "دولوكسبرين20مجم": {
+    "brand": "Duloxeprin",
+    "words": 1
+  },
+  "دولوكسبرين30 مجم اقراص": {
+    "brand": "Duloxeprin",
+    "words": 1
+  },
+  "دولوكسبرين60مجم": {
+    "brand": "Duloxeprin",
+    "words": 1
+  },
+  "دولوكسيفيوتال30مجم اقراص": {
+    "brand": "Duloxifutal",
+    "words": 1
+  },
+  "دولوكسيفيوتال60مجم اقراص": {
+    "brand": "Duloxifutal",
+    "words": 1
+  },
+  "دوليبران اقراص": {
+    "brand": "Doliprane",
+    "words": 1
+  },
+  "دومبيدون اقراص": {
+    "brand": "Dompidone",
+    "words": 1
+  },
+  "دومبيريدون اقراص": {
+    "brand": "Domperidone",
+    "words": 1
+  },
+  "دونازيل5مجم": {
+    "brand": "Donazil",
+    "words": 1
+  },
+  "دونافيرون بلس كبسول": {
+    "brand": "Donaferon Plus",
+    "words": 2
+  },
+  "دونبيزيل10 مجم": {
+    "brand": "Donepezil",
+    "words": 1
+  },
+  "دونبيزيل5 مجم": {
+    "brand": "Donepezil",
+    "words": 1
+  },
+  "دونهايمر5 مجم": {
+    "brand": "Donhimer",
+    "words": 1
+  },
+  "دونيفوكسات40مجم": {
+    "brand": "Donifoxate",
+    "words": 1
+  },
+  "دونيفوكسات80مجم": {
+    "brand": "Donifoxate",
+    "words": 1
+  },
+  "ديابيتونورم اقراص": {
+    "brand": "Diabetonorm",
+    "words": 1
+  },
+  "ديابينور2 مجم": {
+    "brand": "Diabenor",
+    "words": 1
+  },
+  "ديابينور3مجم اقراص": {
+    "brand": "Diabenor",
+    "words": 1
+  },
+  "دياسيرين اقراص س ج": {
+    "brand": "Diacerein",
+    "words": 1
+  },
+  "ديافانس5 مجم اقراص": {
+    "brand": "Diavance",
+    "words": 1
+  },
+  "دياكالديرم مرهم س ق": {
+    "brand": "Diacalderm",
+    "words": 1
+  },
+  "دياكس كبسول": {
+    "brand": "Diax",
+    "words": 1
+  },
+  "ديامونريكتا2 قرص": {
+    "brand": "Diamonrecta",
+    "words": 1
+  },
+  "ديامونريكتا4 قرص": {
+    "brand": "Diamonrecta",
+    "words": 1
+  },
+  "دياميدزين30 مجم ام ار": {
+    "brand": "Diamedizen",
+    "words": 2
+  },
+  "دياميكرون30 مجم ام أر": {
+    "brand": "Diamicron Mr",
+    "words": 2
+  },
+  "ديبافاليى50/1000بلس": {
+    "brand": "Dibavally Plus",
+    "words": 2
+  },
+  "ديبوفيت30 بلس قرص استحﻼب": {
+    "brand": "Depovit Plus",
+    "words": 3
+  },
+  "ديجليفلوز10 مجم": {
+    "brand": "Diglifloz",
+    "words": 1
+  },
+  "ديجليفلوز5 مجم": {
+    "brand": "Diglifloz",
+    "words": 1
+  },
+  "ديجليفلوز5/1000 بلس": {
+    "brand": "Diglifloz Plus",
+    "words": 2
+  },
+  "ديجليفوز850/5 بلس": {
+    "brand": "Diglifloz Plus",
+    "words": 2
+  },
+  "ديدر كريم": {
+    "brand": "Didder",
+    "words": 1
+  },
+  "ديرماتين كريم": {
+    "brand": "Dermatin",
+    "words": 1
+  },
+  "ديرماسوفت بلس كريم100مل": {
+    "brand": "Derma Soft Plus",
+    "words": 2
+  },
+  "ديرماسوفت بلس كريم60مل": {
+    "brand": "Derma Soft Plus",
+    "words": 2
+  },
+  "ديرماوايت غسول": {
+    "brand": "Derma White Facial",
+    "words": 1
+  },
+  "ديرموفكس بودر": {
+    "brand": "Dermofix",
+    "words": 2
+  },
+  "ديسا اقراص": {
+    "brand": "Desa",
+    "words": 1
+  },
+  "ديسا شراب": {
+    "brand": "Desa",
+    "words": 1
+  },
+  "ديسبركام10 مجم": {
+    "brand": "Dispercam",
+    "words": 1
+  },
+  "ديسلورات اقراص": {
+    "brand": "Deslorat",
+    "words": 1
+  },
+  "ديفلوكان150 مجم كبسول": {
+    "brand": "Diflucan",
+    "words": 1
+  },
+  "ديفلوكان50 مجم": {
+    "brand": "Diflucan",
+    "words": 1
+  },
+  "ديفوزين كريم": {
+    "brand": "Divozine",
+    "words": 1
+  },
+  "ديفوزين لوشن": {
+    "brand": "Divozine",
+    "words": 1
+  },
+  "ديكسازون اقراص": {
+    "brand": "Dexazone",
+    "words": 1
+  },
+  "ديكسافين شراب": {
+    "brand": "Dexaphen",
+    "words": 1
+  },
+  "ديكسانوكورتين امبول س30ج": {
+    "brand": "Dexanocorten",
+    "words": 1
+  },
+  "ديكسكيتو كير": {
+    "brand": "Dexketo Care",
+    "words": 2
+  },
+  "ديكسيجلوفوزن بلس10/1000": {
+    "brand": "Dexiglofozin Plus",
+    "words": 2
+  },
+  "ديكسيجلوفوزون10مجم اقراص": {
+    "brand": "Dexiglofozin",
+    "words": 1
+  },
+  "ديكلوفين بلس قرص": {
+    "brand": "Declophen Plus",
+    "words": 2
+  },
+  "ديكونادال10مجم س ق": {
+    "brand": "Deconadal",
+    "words": 1
+  },
+  "ديكونادال20 مجم ق": {
+    "brand": "Deconadal",
+    "words": 1
+  },
+  "ديﻼترول25 مجم": {
+    "brand": "Dilatrol",
+    "words": 1
+  },
+  "ديﻼركس اقراص": {
+    "brand": "Delarex",
+    "words": 1
+  },
+  "ديلموكسا400مل 5قرص": {
+    "brand": "Delmoxa",
+    "words": 1
+  },
+  "ديليكار جيل50 مل": {
+    "brand": "Delecar",
+    "words": 1
+  },
+  "ديليكار كريم": {
+    "brand": "Delecar",
+    "words": 1
+  },
+  "ديمرا اقراص": {
+    "brand": "Dimra",
+    "words": 1
+  },
+  "ديميكاب كريم س ج": {
+    "brand": "Dimicap",
+    "words": 1
+  },
+  "ديندرا30 قرص س ج": {
+    "brand": "Dendra",
+    "words": 1
+  },
+  "ديوراسين1 مل 21 قرص": {
+    "brand": "Duracin",
+    "words": 1
+  },
+  "ديورجوى كبسول": {
+    "brand": "Durjoy",
+    "words": 1
+  },
+  "ديوريسيف1 جم اقراص": {
+    "brand": "Duricef",
+    "words": 1
+  },
+  "ديوريسيف250 شراب": {
+    "brand": "Duricef",
+    "words": 1
+  },
+  "ديوريسيف500 شراب": {
+    "brand": "Duricef",
+    "words": 1
+  },
+  "ديوزمين بلس500": {
+    "brand": "Diosmin Plus",
+    "words": 2
+  },
+  "ديوسيد - سى500 س ج": {
+    "brand": "Diosed C",
+    "words": 2
+  },
+  "ديومالين كبسول": {
+    "brand": "Diomalin",
+    "words": 1
+  },
+  "رابيدوس50مل اقراص": {
+    "brand": "Rapidus",
+    "words": 1
+  },
+  "راسب ابيض مرهم": {
+    "brand": "White Precipitate Oint",
+    "words": 2
+  },
+  "راسبيلوسين400مجم اقراص": {
+    "brand": "Raspelocin",
+    "words": 1
+  },
+  "رامو صابون": {
+    "brand": "Ramo",
+    "words": 1
+  },
+  "رانديل10مجم": {
+    "brand": "Randil",
+    "words": 1
+  },
+  "رانديل20": {
+    "brand": "Randil",
+    "words": 1
+  },
+  "رانى فوار": {
+    "brand": "Rani F",
+    "words": 2
+  },
+  "رجكور10 مجم": {
+    "brand": "Regcor",
+    "words": 1
+  },
+  "رواتينكس كبسول": {
+    "brand": "Rowatinex",
+    "words": 1
+  },
+  "رواكول كبسول": {
+    "brand": "Rowachol",
+    "words": 1
+  },
+  "روتاج شامبو": {
+    "brand": "Rootage",
+    "words": 1
+  },
+  "روتاج كريم للجلد": {
+    "brand": "Rootage Skin",
+    "words": 2
+  },
+  "روتاسى60 اقراص س ج": {
+    "brand": "Ruta C",
+    "words": 1
+  },
+  "روتاهيلكس ادفانس40 مل نقط": {
+    "brand": "Rotahelex Advance",
+    "words": 2
+  },
+  "روتاهيلكس اقراص": {
+    "brand": "Rotahelex",
+    "words": 1
+  },
+  "روتاهيلكس سيستايين شراب": {
+    "brand": "Rotahelex Cysteine",
+    "words": 2
+  },
+  "روتاهيلكس فورت شراب": {
+    "brand": "Rotahelex Forte",
+    "words": 2
+  },
+  "روتاهيلكس نقط30 مل": {
+    "brand": "Rotahelex",
+    "words": 1
+  },
+  "روزافاست10مجم اقراص": {
+    "brand": "Rosuvast",
+    "words": 1
+  },
+  "روزافاست20مجم اقراص": {
+    "brand": "Rosuvast",
+    "words": 1
+  },
+  "روزافاست5مجم اقراص": {
+    "brand": "Rosuvast",
+    "words": 1
+  },
+  "روزاليا شامبو": {
+    "brand": "Rozalia",
+    "words": 1
+  },
+  "روزاليا هير لوسيون": {
+    "brand": "Rozalia",
+    "words": 1
+  },
+  "روزيتا لوسيون شعر ج": {
+    "brand": "Rosita",
+    "words": 1
+  },
+  "روسوفاستاتين10مجم اقراص": {
+    "brand": "Rosuvastatin",
+    "words": 1
+  },
+  "روسيتور10 مجم": {
+    "brand": "Rositor",
+    "words": 1
+  },
+  "روكسوتوب1.5 كريم": {
+    "brand": "Ruxotop",
+    "words": 1
+  },
+  "روكسوجيسك كبسول": {
+    "brand": "Roxogesic",
+    "words": 1
+  },
+  "روكسيكام8مجم اقراص": {
+    "brand": "Rheuxicam",
+    "words": 1
+  },
+  "روماكسيماب120 مجم": {
+    "brand": "Rumaximap",
+    "words": 1
+  },
+  "روماكسيماب60": {
+    "brand": "Rumaximap",
+    "words": 1
+  },
+  "روماكسيماب90 مجم": {
+    "brand": "Rumaximap",
+    "words": 1
+  },
+  "رومالكس6-75 امبول": {
+    "brand": "Romalex",
+    "words": 1
+  },
+  "رومانتيجرا8 قرص": {
+    "brand": "Romantigra",
+    "words": 1
+  },
+  "رونكين كبسول": {
+    "brand": "Ronkin",
+    "words": 1
+  },
+  "رويال جيلى1000مجم": {
+    "brand": "Royal Jelly",
+    "words": 2
+  },
+  "رويال كير كبسول": {
+    "brand": "Royal Care",
+    "words": 2
+  },
+  "رويسان اقراص": {
+    "brand": "Roysan",
+    "words": 1
+  },
+  "ريبايون ان سبراى": {
+    "brand": "Repaion N",
+    "words": 2
+  },
+  "ريبينيرف30 قرص": {
+    "brand": "Repainerve",
+    "words": 1
+  },
+  "ريتا ستار كريم س ج": {
+    "brand": "Reta Star",
+    "words": 2
+  },
+  "ريتمونورم اقراص": {
+    "brand": "Rytmonorm",
+    "words": 1
+  },
+  "ريجو شامبو": {
+    "brand": "Rego",
+    "words": 1
+  },
+  "ريجيماكس اقراص": {
+    "brand": "Regimax",
+    "words": 1
+  },
+  "ريداند20 كبسوله": {
+    "brand": "Redand",
+    "words": 1
+  },
+  "ريسباتيو اقراص": {
+    "brand": "Respatio",
+    "words": 1
+  },
+  "ريسبيردال4 - مجم س ج": {
+    "brand": "Risperdal",
+    "words": 1
+  },
+  "ريسبيردال نقط": {
+    "brand": "Risperdal",
+    "words": 1
+  },
+  "ريسدال2 مل": {
+    "brand": "Risdal",
+    "words": 1
+  },
+  "ريسكيور1مجم": {
+    "brand": "Riscure",
+    "words": 1
+  },
+  "ريسكيور4مل قرص س ج": {
+    "brand": "Riscure",
+    "words": 1
+  },
+  "ريسكيور2مجم": {
+    "brand": "Riscure",
+    "words": 1
+  },
+  "ريفاروسبير10 مجم": {
+    "brand": "Rivarospire",
+    "words": 1
+  },
+  "ريفاروسبير15 مجم": {
+    "brand": "Rivarospire",
+    "words": 1
+  },
+  "ريفاروسبير2.5 مجم": {
+    "brand": "Rivarospire",
+    "words": 1
+  },
+  "ريفاروسبير20 مجم": {
+    "brand": "Rivarospire",
+    "words": 1
+  },
+  "ريفو اقراص": {
+    "brand": "Rivo",
+    "words": 1
+  },
+  "ريفيوديرم كريم60مل": {
+    "brand": "Revivoderm",
+    "words": 1
+  },
+  "ريكوكسيبرايت120 مجم": {
+    "brand": "Recoxibright",
+    "words": 1
+  },
+  "ريكوكسيبرايت60 مجم 30 قرص": {
+    "brand": "Recoxibright",
+    "words": 1
+  },
+  "ريكوكسيبرايت90 مجم س ج": {
+    "brand": "Recoxibright",
+    "words": 1
+  },
+  "ريكوكسيتروو90 مجم": {
+    "brand": "Recoxitro",
+    "words": 1
+  },
+  "ريﻼترولين25 مجم": {
+    "brand": "Relatrolene",
+    "words": 1
+  },
+  "ريﻼكس - جل": {
+    "brand": "Relax",
+    "words": 1
+  },
+  "ريﻼكس كريم": {
+    "brand": "Relax",
+    "words": 1
+  },
+  "ريميجولين2قرص": {
+    "brand": "Remigoline",
+    "words": 1
+  },
+  "رينوتوس شراب": {
+    "brand": "Rhinotus",
+    "words": 1
+  },
+  "رينوسكار جيل30جم": {
+    "brand": "Renoscar",
+    "words": 1
+  },
+  "رينوكساكير100قرص": {
+    "brand": "Renoxacare",
+    "words": 1
+  },
+  "زاترال اكس ال10مجم": {
+    "brand": "Xatral Xl",
+    "words": 3
+  },
+  "زادوجلوبين كبسول": {
+    "brand": "Zadoglobin",
+    "words": 1
+  },
+  "زاريلتو10 مل": {
+    "brand": "Xarelto",
+    "words": 1
+  },
+  "زالتيك شراب": {
+    "brand": "Xaltec",
+    "words": 1
+  },
+  "زانثيبوكس40 مل ق": {
+    "brand": "Xanthibux",
+    "words": 1
+  },
+  "زانثيبوكس80 مجم": {
+    "brand": "Xanthibux",
+    "words": 1
+  },
+  "زاندروس كبسول": {
+    "brand": "Zandros",
+    "words": 1
+  },
+  "زانوجليد2/30 مجم": {
+    "brand": "Zanoglide",
+    "words": 1
+  },
+  "زانوكسيبان10مجم": {
+    "brand": "Xanoxiban",
+    "words": 1
+  },
+  "زانوكسيبان15 مجم": {
+    "brand": "Xanoxiban",
+    "words": 1
+  },
+  "زكاردوفال10/160 س ج": {
+    "brand": "Zkardoval",
+    "words": 1
+  },
+  "زكاردوفال5/160 مجم اقراص": {
+    "brand": "Zkardoval",
+    "words": 1
+  },
+  "زنك اوريجين شراب": {
+    "brand": "Zinc Origin",
+    "words": 2
+  },
+  "زنكترون اقراص": {
+    "brand": "Zinctron",
+    "words": 1
+  },
+  "زنكوميست شراب": {
+    "brand": "Zincomist",
+    "words": 1
+  },
+  "زوركال20 ملى": {
+    "brand": "Zurcal",
+    "words": 1
+  },
+  "زوركال40 مجم 28 قرص": {
+    "brand": "Zurcal",
+    "words": 1
+  },
+  "زوركال40 مجم اقراص س ج": {
+    "brand": "Zurcal",
+    "words": 1
+  },
+  "زورين1جم ك 64": {
+    "brand": "Xorin",
+    "words": 1
+  },
+  "زوفاترون8مل حقن": {
+    "brand": "Zofatrone",
+    "words": 1
+  },
+  "زوفاترون4 مل حقن": {
+    "brand": "Zofatrone",
+    "words": 1
+  },
+  "زوفيراكس - اقراص": {
+    "brand": "Zovirax",
+    "words": 1
+  },
+  "زوفيراكس شراب": {
+    "brand": "Zovirax",
+    "words": 1
+  },
+  "زوكوزيت10/10مجم": {
+    "brand": "Zocozet",
+    "words": 1
+  },
+  "زوكوزيت10/20مجم": {
+    "brand": "Zocozet",
+    "words": 1
+  },
+  "زوليفيوتال500مجم اقراص": {
+    "brand": "Zolifutal",
+    "words": 1
+  },
+  "زوندكس جل": {
+    "brand": "Zondex",
+    "words": 1
+  },
+  "زيتاكولست180": {
+    "brand": "Zetacolest",
+    "words": 1
+  },
+  "زيثروتراك500مجم اقراص": {
+    "brand": "Zithotrac",
+    "words": 1
+  },
+  "زيثرودوز شراب60 مجم ج": {
+    "brand": "Zithrodose",
+    "words": 1
+  },
+  "زيثرودوز اقراص": {
+    "brand": "Zithrodose",
+    "words": 1
+  },
+  "زيثروكان كبسول": {
+    "brand": "Zithrokan",
+    "words": 1
+  },
+  "زيثروكان200 مل شراب": {
+    "brand": "Zithrokan",
+    "words": 1
+  },
+  "زيثروماكس500 مجم كبسول": {
+    "brand": "Zithromax",
+    "words": 1
+  },
+  "زيثرون3- قرص": {
+    "brand": "Xithrone",
+    "words": 1
+  },
+  "زيثرون5 -قرص": {
+    "brand": "Xithrone",
+    "words": 1
+  },
+  "زيثرون15 مل شراب": {
+    "brand": "Xithrone",
+    "words": 1
+  },
+  "زيثرون25 مل شراب": {
+    "brand": "Xithrone",
+    "words": 1
+  },
+  "زيرتك اقراص": {
+    "brand": "Zyrtec",
+    "words": 1
+  },
+  "زيرتك شراب": {
+    "brand": "Zyrtec",
+    "words": 1
+  },
+  "زيرتك نقط": {
+    "brand": "Zyrtec",
+    "words": 1
+  },
+  "زيركوكس60مجم 20قرص": {
+    "brand": "Xyrkux",
+    "words": 1
+  },
+  "زيركوكس90مجم 30قرص": {
+    "brand": "Xyrkux",
+    "words": 1
+  },
+  "زيروفازيت10/10 مجم": {
+    "brand": "Zyrovazet",
+    "words": 1
+  },
+  "زيروفازيت10/20مجم": {
+    "brand": "Zyrovazet",
+    "words": 1
+  },
+  "زيروفازيت10/40 س ج": {
+    "brand": "Zyrovazet",
+    "words": 1
+  },
+  "زيروفازيت10/5": {
+    "brand": "Zyrovazet",
+    "words": 1
+  },
+  "زيسبرون2 ملجم قرص س ج": {
+    "brand": "Zesperone",
+    "words": 1
+  },
+  "زيسبرون4مجم 10قرص": {
+    "brand": "Zesperone",
+    "words": 1
+  },
+  "زيستريل10 مجم اقراص": {
+    "brand": "Zestril",
+    "words": 1
+  },
+  "زيسروسين شراب": {
+    "brand": "Zisrocin",
+    "words": 1
+  },
+  "زيسروسين كبسول": {
+    "brand": "Zisrocin",
+    "words": 1
+  },
+  "زيلوبريد16 مل": {
+    "brand": "Xilopred",
+    "words": 1
+  },
+  "زيلوبريد4 مل": {
+    "brand": "Xilopred",
+    "words": 1
+  },
+  "زيلوريك100 - مجم": {
+    "brand": "Zyloric",
+    "words": 1
+  },
+  "زيلوريك300 - مجم اقراص": {
+    "brand": "Zyloric",
+    "words": 1
+  },
+  "زيلون اقراص ص": {
+    "brand": "Xilone",
+    "words": 1
+  },
+  "زيموفاك اقراص": {
+    "brand": "Zymovak",
+    "words": 1
+  },
+  "زينول1 جرام امبول": {
+    "brand": "Zinol",
+    "words": 1
+  },
+  "سافيبليد500 اقراص": {
+    "brand": "Savibleed",
+    "words": 1
+  },
+  "ساكنل كريم س ج": {
+    "brand": "Sacnel",
+    "words": 1
+  },
+  "ساليتروكسيب60مجم اقراص": {
+    "brand": "Salitroxib",
+    "words": 1
+  },
+  "ساليتروكسيب90مجم اقراص": {
+    "brand": "Salitroxib",
+    "words": 1
+  },
+  "سانتورين اقراص": {
+    "brand": "Santorin",
+    "words": 1
+  },
+  "سانزال سبراى": {
+    "brand": "Sanzal",
+    "words": 1
+  },
+  "سانسو سى بلس اقراص": {
+    "brand": "Sanso C Plus",
+    "words": 3
+  },
+  "سانسوفيت حديد160 مل شراب": {
+    "brand": "Sansovit With Iron",
+    "words": 2
+  },
+  "سبازاوى ق": {
+    "brand": "Spazaway",
+    "words": 1
+  },
+  "سبازموديجستين اقراص": {
+    "brand": "Spasmo Digestin",
+    "words": 1
+  },
+  "سبازمورست10 مجم": {
+    "brand": "Spasmorest",
+    "words": 1
+  },
+  "سبازمورست20مجم اقراص": {
+    "brand": "Spasmorest",
+    "words": 1
+  },
+  "سبازموسين20ق": {
+    "brand": "Spasmocin",
+    "words": 1
+  },
+  "سبازموفرى اقراص": {
+    "brand": "Spasmofree",
+    "words": 1
+  },
+  "سبازموفرى شراب": {
+    "brand": "Spasmofree",
+    "words": 1
+  },
+  "سبازموكيور اقراص": {
+    "brand": "Spasmocure",
+    "words": 1
+  },
+  "سبازمومين اقراص": {
+    "brand": "Spasmomen",
+    "words": 1
+  },
+  "سبايكا3 شريط": {
+    "brand": "Spika",
+    "words": 1
+  },
+  "سبكتون100 مجم": {
+    "brand": "Spectone",
+    "words": 1
+  },
+  "سبكتون25 مجم": {
+    "brand": "Spectone",
+    "words": 1
+  },
+  "ستاتومين اقراص": {
+    "brand": "Statomain",
+    "words": 1
+  },
+  "ستاتيوكاست10 مجم 10قرص": {
+    "brand": "Statukast",
+    "words": 1
+  },
+  "ستاركوبركس5 مجم": {
+    "brand": "Starkoprex",
+    "words": 1
+  },
+  "ستاركوبركس20مجم": {
+    "brand": "Starkoprex",
+    "words": 1
+  },
+  "ستاميجن30 قرص": {
+    "brand": "Stamigen",
+    "words": 1
+  },
+  "ستراكوبينا2.5 مجم": {
+    "brand": "Strakopina",
+    "words": 1
+  },
+  "ستراكوبينا5 مجم": {
+    "brand": "Strakopina",
+    "words": 1
+  },
+  "ستروكا اقراص": {
+    "brand": "Stroka",
+    "words": 1
+  },
+  "سترونج فيل كريم تفتيح": {
+    "brand": "Strongville",
+    "words": 2
+  },
+  "سترونج فيل لوشن": {
+    "brand": "Strongville",
+    "words": 2
+  },
+  "ستريم اقراص": {
+    "brand": "Sutrim",
+    "words": 1
+  },
+  "ستوميجاز40 مل": {
+    "brand": "Stomigas",
+    "words": 1
+  },
+  "ستوميجاز20 مل ج": {
+    "brand": "Stomigas",
+    "words": 1
+  },
+  "ستيديفيوتال16 مجم": {
+    "brand": "Steadyfutal",
+    "words": 1
+  },
+  "ستيديفيوتال24 مجم": {
+    "brand": "Steadyfutal",
+    "words": 1
+  },
+  "ستيم امبول": {
+    "brand": "Stem",
+    "words": 1
+  },
+  "ستيم سيرم": {
+    "brand": "Stem",
+    "words": 1
+  },
+  "ستيم كريم تفتيح": {
+    "brand": "Stem",
+    "words": 1
+  },
+  "ستيم لوشن للشعر": {
+    "brand": "Stem",
+    "words": 1
+  },
+  "ستيمو ماكس اقراص": {
+    "brand": "Stimu Max",
+    "words": 2
+  },
+  "ستيميولان شراب": {
+    "brand": "Stimulan",
+    "words": 1
+  },
+  "سفترياكسون1 جم ساندوز عضل": {
+    "brand": "Ceftriaxone Sandoz",
+    "words": 3
+  },
+  "سكارو بلس كريم": {
+    "brand": "Scaro Plus",
+    "words": 2
+  },
+  "سكارو جل50 جم": {
+    "brand": "Scaro",
+    "words": 1
+  },
+  "سكالوجين سيرم": {
+    "brand": "Scalogen",
+    "words": 1
+  },
+  "سكالوجين شامبو": {
+    "brand": "Scalogen",
+    "words": 1
+  },
+  "سكينوريتش كريم": {
+    "brand": "Skinorich",
+    "words": 1
+  },
+  "سلفوزنك10مجم شراب": {
+    "brand": "Sulfozinc",
+    "words": 1
+  },
+  "سلفوزنك20مجم شراب": {
+    "brand": "Sulfozinc",
+    "words": 1
+  },
+  "سليبريكس100 مجم ك": {
+    "brand": "Celebrex",
+    "words": 1
+  },
+  "سنافى2 قرص": {
+    "brand": "Snafi",
+    "words": 1
+  },
+  "سنجولير10 مجم": {
+    "brand": "Singulair",
+    "words": 1
+  },
+  "سوبر سيز كبسول": {
+    "brand": "Super Seas",
+    "words": 2
+  },
+  "سوبر كال زنك20ق": {
+    "brand": "Super Cal Zinc",
+    "words": 3
+  },
+  "سوبراكس30مل شراب": {
+    "brand": "Suprax",
+    "words": 1
+  },
+  "سوبراكس400 مجم اقراص": {
+    "brand": "Suprax",
+    "words": 1
+  },
+  "سوبراكس60مل شراب": {
+    "brand": "Suprax",
+    "words": 1
+  },
+  "سورال لبوس": {
+    "brand": "Soral",
+    "words": 1
+  },
+  "سورال كبسول": {
+    "brand": "Soral",
+    "words": 1
+  },
+  "سورالون هيدرا كريم جيل100 مل": {
+    "brand": "Soralone Hydra",
+    "words": 2
+  },
+  "سورالون يوريا كريم60 مل": {
+    "brand": "Soralone",
+    "words": 2
+  },
+  "سوفريزا10/10": {
+    "brand": "Suvreza",
+    "words": 1
+  },
+  "سوفريزا10/20": {
+    "brand": "Suvreza",
+    "words": 1
+  },
+  "سوفيكان20مجم": {
+    "brand": "Suvikan",
+    "words": 1
+  },
+  "سوفيناسين5/50 مجم بلس": {
+    "brand": "Sofenacin Plus",
+    "words": 2
+  },
+  "سوكابريكسام5/1.25/5 مجم اقراص": {
+    "brand": "Sokaprixam",
+    "words": 1
+  },
+  "سولبيبتا25 مجم 30 قرص": {
+    "brand": "Sulpepta",
+    "words": 1
+  },
+  "سولفاكس جوينت فورت30 قرص": {
+    "brand": "Sulfax Joint Forte",
+    "words": 3
+  },
+  "سولوسبت اكياس": {
+    "brand": "Solo Sept Foamin Skin Cleanser",
+    "words": 1
+  },
+  "سوليتراكت10 مجم": {
+    "brand": "Solitract",
+    "words": 1
+  },
+  "سومازينا سوبرا اقراص": {
+    "brand": "Somazina Supra",
+    "words": 2
+  },
+  "سوناكتو كريم": {
+    "brand": "Sonakto",
+    "words": 1
+  },
+  "سى اتش الفا بلس س ج370": {
+    "brand": "Ch Alpha Plus",
+    "words": 4
+  },
+  "سى بلس اقراص": {
+    "brand": "C Plus",
+    "words": 2
+  },
+  "سى ريتارد500 مجم": {
+    "brand": "C Retard",
+    "words": 2
+  },
+  "سى زنك كبسول": {
+    "brand": "C Zinc",
+    "words": 2
+  },
+  "سى فال1 جرام اقراص": {
+    "brand": "C Vall",
+    "words": 2
+  },
+  "سى فيت نقط س.ج": {
+    "brand": "C Vit",
+    "words": 2
+  },
+  "سيالونج10 مجم": {
+    "brand": "Cialong",
+    "words": 1
+  },
+  "سيالونج20 مجم": {
+    "brand": "Cialong",
+    "words": 1
+  },
+  "سيالونج5 مجم": {
+    "brand": "Cialong",
+    "words": 1
+  },
+  "سياليس2 قرص": {
+    "brand": "Cialis",
+    "words": 1
+  },
+  "سيانو هيبتان امبول": {
+    "brand": "Cyanoheptan",
+    "words": 2
+  },
+  "سيبازول فورت ج": {
+    "brand": "Cipazole Fort",
+    "words": 2
+  },
+  "سيباكﻼر غسول جل": {
+    "brand": "Sebaclar Purifying Cleansing",
+    "words": 1
+  },
+  "سيباكﻼر هيدرا50مل": {
+    "brand": "Sebaclar Hydra",
+    "words": 2
+  },
+  "سيبتازول شراب": {
+    "brand": "Septazole",
+    "words": 1
+  },
+  "سيبرابرو اقراص": {
+    "brand": "Ciprapro",
+    "words": 1
+  },
+  "سيبراليكس اقراص": {
+    "brand": "Cipralex",
+    "words": 1
+  },
+  "سيبراماكس40مجم س ج": {
+    "brand": "Cipramax",
+    "words": 1
+  },
+  "سيبرو نقط": {
+    "brand": "Cipro",
+    "words": 1
+  },
+  "سيبروديازول اقراص": {
+    "brand": "Ciprodiazole",
+    "words": 1
+  },
+  "سيبروسين250 -اقراص": {
+    "brand": "Ciprocin",
+    "words": 1
+  },
+  "سيبروسين750 مجم": {
+    "brand": "Ciprocin",
+    "words": 1
+  },
+  "سيبروسين مرهم ج": {
+    "brand": "Ciprocin",
+    "words": 1
+  },
+  "سيبروسين نقط": {
+    "brand": "Ciprocin",
+    "words": 1
+  },
+  "سيبروفار500- مجم": {
+    "brand": "Ciprofar",
+    "words": 1
+  },
+  "سيبروفار750- مجم": {
+    "brand": "Ciprofar",
+    "words": 1
+  },
+  "سيبروفلوكسيراز500مجم اقراص": {
+    "brand": "Ciprofloxiraz",
+    "words": 1
+  },
+  "سيبورال شامبو": {
+    "brand": "Seboral",
+    "words": 1
+  },
+  "سيتابرونكس5مجم": {
+    "brand": "Citapronex",
+    "words": 1
+  },
+  "سيتابرونكس20مجم": {
+    "brand": "Citapronex",
+    "words": 1
+  },
+  "سيتال1000 مجم اقراص": {
+    "brand": "Cetal",
+    "words": 1
+  },
+  "سيتال شراب": {
+    "brand": "Cetal",
+    "words": 1
+  },
+  "سيتال500 مجم اقراص": {
+    "brand": "Cetal",
+    "words": 1
+  },
+  "سيتالو20 مجم": {
+    "brand": "Citalo",
+    "words": 1
+  },
+  "سيتالو40 مجم": {
+    "brand": "Citalo",
+    "words": 1
+  },
+  "سيتالو شراب": {
+    "brand": "Citalo",
+    "words": 1
+  },
+  "سيترو10 اكياس": {
+    "brand": "Citro",
+    "words": 1
+  },
+  "سيترونوميت4 مجم اقراص": {
+    "brand": "Setronomet",
+    "words": 1
+  },
+  "سيترونوميت8 مجم 4 قرص": {
+    "brand": "Setronomet",
+    "words": 1
+  },
+  "سيجما تريبزيم اقراص": {
+    "brand": "Sigma Trybzim",
+    "words": 2
+  },
+  "سيدرال اكتيف اكياس": {
+    "brand": "Sideral Active",
+    "words": 2
+  },
+  "سيدرال اكتيف كبسول": {
+    "brand": "Sideral Active",
+    "words": 2
+  },
+  "سيدرال فورت كبسول": {
+    "brand": "Sideral Forte",
+    "words": 2
+  },
+  "سيدرال فوليك اكياس": {
+    "brand": "Sideral Folic",
+    "words": 2
+  },
+  "سيدوفاج1 جم اقراص س ج": {
+    "brand": "Cidophage",
+    "words": 1
+  },
+  "سيدوفاج50 شريط": {
+    "brand": "Cidophage",
+    "words": 1
+  },
+  "سيدوفاج60 ق 96 ج": {
+    "brand": "Cidophage",
+    "words": 1
+  },
+  "سيدوكاست4مجم": {
+    "brand": "Sedokast",
+    "words": 1
+  },
+  "سيدوكاست10مجم": {
+    "brand": "Sedokast",
+    "words": 1
+  },
+  "سيرباس50مجم": {
+    "brand": "Serpass",
+    "words": 1
+  },
+  "سيربروفورت800 مجم": {
+    "brand": "Cerebroforte",
+    "words": 1
+  },
+  "سيربروفورت800مجم كبسول": {
+    "brand": "Cerebroforte",
+    "words": 1
+  },
+  "سيردالود2 مجم اقراص": {
+    "brand": "Sirdalud",
+    "words": 1
+  },
+  "سيرفيتولكا250 مجم 60 مل شراب": {
+    "brand": "Cervetolka",
+    "words": 1
+  },
+  "سيرفيتولكا500 مجم اقراص": {
+    "brand": "Cervetolka",
+    "words": 1
+  },
+  "سيرفيتولكا ادفانس كبسول": {
+    "brand": "Cervetolka Advance",
+    "words": 2
+  },
+  "سيرفيتولكا بلس5/500": {
+    "brand": "Cervetolka Plus",
+    "words": 2
+  },
+  "سيرفيتولكا فورت شراب": {
+    "brand": "Cervetolka Forte",
+    "words": 2
+  },
+  "سيروكسات سى ار12.5مجم": {
+    "brand": "Seroxat Cr",
+    "words": 2
+  },
+  "سيروكسات سى ار25مجم": {
+    "brand": "Seroxat Cr",
+    "words": 2
+  },
+  "سيستينول كبسول س ج": {
+    "brand": "Cystinol",
+    "words": 1
+  },
+  "سيف توب شراب": {
+    "brand": "Safe Top",
+    "words": 2
+  },
+  "سيفاترون اقراص": {
+    "brand": "Cevatron",
+    "words": 1
+  },
+  "سيفاثرد125 شراب": {
+    "brand": "Cefathird",
+    "words": 1
+  },
+  "سيفازون1 جم فيال": {
+    "brand": "Cefazone",
+    "words": 1
+  },
+  "سيفاكسون1 جم عضل": {
+    "brand": "Cefaxone",
+    "words": 2
+  },
+  "سيفتريوم اقراص س ج": {
+    "brand": "Safetrium",
+    "words": 1
+  },
+  "سيفزيم1 جرام ج": {
+    "brand": "Cefzim",
+    "words": 1
+  },
+  "سيفوتاكس1 جم امبول": {
+    "brand": "Cefotax",
+    "words": 1
+  },
+  "سيفوران1 جم حقن ج": {
+    "brand": "Ceforan",
+    "words": 1
+  },
+  "سيفيبيم1جم حقن": {
+    "brand": "Cefepime",
+    "words": 1
+  },
+  "سيفيتيل فوار10ق": {
+    "brand": "Cevitil",
+    "words": 2
+  },
+  "سيفيديم1جم": {
+    "brand": "Cefidime",
+    "words": 1
+  },
+  "سيكا سيلفر مرهم": {
+    "brand": "Cicasilver",
+    "words": 2
+  },
+  "سيكالاب50جم كريم": {
+    "brand": "Cica Lab",
+    "words": 1
+  },
+  "سيكالاب جيل": {
+    "brand": "Cica Lab",
+    "words": 1
+  },
+  "سيكتور صن سكرين": {
+    "brand": "Sector",
+    "words": 1
+  },
+  "سيكلور125 شراب": {
+    "brand": "Ceclor",
+    "words": 1
+  },
+  "سيكلور250 شراب": {
+    "brand": "Ceclor",
+    "words": 1
+  },
+  "سيكنيدازول500مجم": {
+    "brand": "Secnidazole",
+    "words": 1
+  },
+  "سيكوسيتام1000 مجم اقراص": {
+    "brand": "Sycocetam",
+    "words": 1
+  },
+  "سيكوسيتام شراب": {
+    "brand": "Sycocetam",
+    "words": 1
+  },
+  "سيكوسيتام 500 مجم": {
+    "brand": "Sycocetam",
+    "words": 1
+  },
+  "سيكولانز25/3": {
+    "brand": "Psycholanz",
+    "words": 1
+  },
+  "سيلجون اقراص": {
+    "brand": "Selgon",
+    "words": 1
+  },
+  "سيلدافا اقراص": {
+    "brand": "Sildava",
+    "words": 1
+  },
+  "سيلدوكير8مجم اقراص": {
+    "brand": "Sildocare",
+    "words": 1
+  },
+  "سيلدين100مجم اقراص": {
+    "brand": "Silden",
+    "words": 1
+  },
+  "سيلدين25 مجم": {
+    "brand": "Silden",
+    "words": 1
+  },
+  "سيلدين50 مجم اقراص": {
+    "brand": "Silden",
+    "words": 1
+  },
+  "سيلفر بيرن كريم س ج": {
+    "brand": "Silvirburn",
+    "words": 2
+  },
+  "سيلفر سيز شراب": {
+    "brand": "Silver Seas",
+    "words": 2
+  },
+  "سيلوكينزوك50 مجم": {
+    "brand": "Selokenzoc",
+    "words": 1
+  },
+  "سيلى اى بى ام اقراص": {
+    "brand": "Sele Ibm",
+    "words": 4
+  },
+  "سيليبورج200مجم": {
+    "brand": "Celeborg",
+    "words": 1
+  },
+  "سيليكتيفال20ك": {
+    "brand": "Selectival",
+    "words": 1
+  },
+  "سيمباتكس30 مجم": {
+    "brand": "Cymbatex",
+    "words": 1
+  },
+  "سيمباكت او ار اس اكياس": {
+    "brand": "Symmebact Ors",
+    "words": 2
+  },
+  "سيمباكت فيت100 مل شراب": {
+    "brand": "Symmebact Vit",
+    "words": 2
+  },
+  "سيميﻼك1 جولد": {
+    "brand": "Similac Gold",
+    "words": 2
+  },
+  "سيميﻼك نيو شور": {
+    "brand": "Similac Neosure",
+    "words": 3
+  },
+  "سيناريزين25مجم اقراص": {
+    "brand": "Cinnarizine",
+    "words": 1
+  },
+  "سيناريزين75مجم 20كبسوله": {
+    "brand": "Cinnarizine",
+    "words": 1
+  },
+  "سيناكالسيت60 مجم": {
+    "brand": "Cinacalcet",
+    "words": 1
+  },
+  "سينجاردى1000/12.5مجم": {
+    "brand": "Synjardy",
+    "words": 1
+  },
+  "سينزو1 صابون": {
+    "brand": "Senzo",
+    "words": 1
+  },
+  "سينكولين بلس20ك": {
+    "brand": "Cyncholine Plus",
+    "words": 2
+  },
+  "سينوبريت اقراص": {
+    "brand": "Sinupret",
+    "words": 1
+  },
+  "سينوبريت فورت اقراص": {
+    "brand": "Sinupret Forte",
+    "words": 2
+  },
+  "شاتو اقراص": {
+    "brand": "Shatoo",
+    "words": 1
+  },
+  "شارك ليفر اويل كبسول س ج": {
+    "brand": "Shark Liver",
+    "words": 3
+  },
+  "شارنوزام اقراص": {
+    "brand": "Charnozam",
+    "words": 1
+  },
+  "جل_ شان60مل": {
+    "brand": "Shaan Soothing",
+    "words": 1
+  },
+  "شان سيكا كريم": {
+    "brand": "Shaan Cica",
+    "words": 2
+  },
+  "شورسالين150 مجم اقراص": {
+    "brand": "Shorsalin",
+    "words": 1
+  },
+  "شورسالين300مجم": {
+    "brand": "Shorsalin",
+    "words": 1
+  },
+  "شوما كريم": {
+    "brand": "Shoma",
+    "words": 1
+  },
+  "صن توب كريم50 جم": {
+    "brand": "Top",
+    "words": 1
+  },
+  "صوديوم بايكرب1000 مل كبسول": {
+    "brand": "Sodium Bicarb",
+    "words": 2
+  },
+  "فاتاشى جايد اقراص": {
+    "brand": "Fattache Guide",
+    "words": 2
+  },
+  "فاجلوزينو10 مجم": {
+    "brand": "Faglozino",
+    "words": 1
+  },
+  "فاجلوزينو25 مجم": {
+    "brand": "Faglozino",
+    "words": 1
+  },
+  "فاردابكس اقراص": {
+    "brand": "Vardapex",
+    "words": 1
+  },
+  "فاردى اقراص": {
+    "brand": "Varde",
+    "words": 1
+  },
+  "فاردينوريكت10مجم -4قرص س 29ج": {
+    "brand": "Vardenorect",
+    "words": 1
+  },
+  "فاردينوريكت5 مجم": {
+    "brand": "Vardenorect",
+    "words": 1
+  },
+  "فارمافلدامين1000-50 مجم 30 قرص": {
+    "brand": "Pharmavildamin",
+    "words": 1
+  },
+  "فارمافلدامين850-50 مجم 30 قرص": {
+    "brand": "Pharmavildamin",
+    "words": 1
+  },
+  "فاروفيجا اقراص": {
+    "brand": "Faroviga",
+    "words": 1
+  },
+  "فاروفين لبوس": {
+    "brand": "Pharofen",
+    "words": 1
+  },
+  "فاست شراب": {
+    "brand": "Fast",
+    "words": 1
+  },
+  "فاست كير دى شامبو": {
+    "brand": "Fast Care D",
+    "words": 3
+  },
+  "فاست كيور20 مجم": {
+    "brand": "Fastcure",
+    "words": 2
+  },
+  "فاست كيور40 مجم": {
+    "brand": "Fastcure",
+    "words": 2
+  },
+  "فاستاريل - ام أر- اقراص": {
+    "brand": "Vastarel Mr",
+    "words": 2
+  },
+  "فاستاسيرو10مجم": {
+    "brand": "Vastasiero",
+    "words": 1
+  },
+  "فاستاسيرو20مجم": {
+    "brand": "Vastasiero",
+    "words": 1
+  },
+  "فاستل120 مجم": {
+    "brand": "Fastel",
+    "words": 1
+  },
+  "فاسكون اقراص": {
+    "brand": "Vascon",
+    "words": 1
+  },
+  "فاسكون نقط": {
+    "brand": "Vascon",
+    "words": 1
+  },
+  "فافرين50 مجم": {
+    "brand": "Faverin",
+    "words": 1
+  },
+  "فاكتو لبوس": {
+    "brand": "Faktu Oint",
+    "words": 1
+  },
+  "فاكساتو10مجم": {
+    "brand": "Vaxato",
+    "words": 1
+  },
+  "فاكساتو15مجم": {
+    "brand": "Vaxato",
+    "words": 1
+  },
+  "فاكساتو2.5 مجم": {
+    "brand": "Vaxato",
+    "words": 1
+  },
+  "فاكساتو20 مجم": {
+    "brand": "Vaxato",
+    "words": 1
+  },
+  "فاكيشن صن سكرين جيل": {
+    "brand": "Vacation",
+    "words": 1
+  },
+  "فالكوناسيا اقراص س90 ج": {
+    "brand": "Falconacea",
+    "words": 1
+  },
+  "فاموتاك40 مجم": {
+    "brand": "Famotak",
+    "words": 1
+  },
+  "فاموتاك20 مجم": {
+    "brand": "Famotak",
+    "words": 1
+  },
+  "فاموتين40 مجم اقراص": {
+    "brand": "Famotin",
+    "words": 1
+  },
+  "فاموتين20-20قرص": {
+    "brand": "Famotin",
+    "words": 1
+  },
+  "فانتوكال اقراص": {
+    "brand": "Fantocal",
+    "words": 1
+  },
+  "فانفيلدا50/1000": {
+    "brand": "Vanvilda",
+    "words": 1
+  },
+  "فانفيلدا بلس850/50 مجم": {
+    "brand": "Vanvilda Plus",
+    "words": 2
+  },
+  "فانفيلدا500/50مجم اقراص": {
+    "brand": "Vanvilda",
+    "words": 1
+  },
+  "فانفيلدا50مجم30قرص": {
+    "brand": "Vanvilda",
+    "words": 1
+  },
+  "فانو كريم": {
+    "brand": "Vano",
+    "words": 1
+  },
+  "فاين ديرم كريم": {
+    "brand": "Fine Derm",
+    "words": 2
+  },
+  "فاينال2 شامبو": {
+    "brand": "Final",
+    "words": 1
+  },
+  "فبيوريك40مجم اقراص": {
+    "brand": "Feburic",
+    "words": 1
+  },
+  "فبيوريك80 مجم": {
+    "brand": "Feburic",
+    "words": 1
+  },
+  "فبيوريك120مجم": {
+    "brand": "Feburic",
+    "words": 1
+  },
+  "فرافيرو27 اقراص س ج": {
+    "brand": "Phara Fero",
+    "words": 1
+  },
+  "% فرانكوتريتينوين5 جيل 60 جرام": {
+    "brand": "Francotretinoin",
+    "words": 1
+  },
+  "فرتيتونكس اقراص": {
+    "brand": "Fertitonex",
+    "words": 1
+  },
+  "فروست جل": {
+    "brand": "Frost",
+    "words": 1
+  },
+  "فروست سبراى": {
+    "brand": "Frost",
+    "words": 1
+  },
+  "فرى فيت اقراص": {
+    "brand": "Free Vit",
+    "words": 2
+  },
+  "فريتز شراب": {
+    "brand": "Fretz",
+    "words": 1
+  },
+  "فﻼتيديل اقراص": {
+    "brand": "Flatidyl",
+    "words": 1
+  },
+  "فﻼجوشون اقراص": {
+    "brand": "Flagoshown",
+    "words": 1
+  },
+  "فﻼجيﻼت فورت شراب": {
+    "brand": "Flagellat Forte",
+    "words": 2
+  },
+  "فﻼزكور6 مجم اقراص": {
+    "brand": "Flazacor",
+    "words": 1
+  },
+  "فﻼكورت30مجم اقراص": {
+    "brand": "Flacort",
+    "words": 1
+  },
+  "فﻼكورت6مجم اقراص": {
+    "brand": "Flacort",
+    "words": 1
+  },
+  "فﻼموتال400 ق": {
+    "brand": "Flamotal",
+    "words": 1
+  },
+  "فﻼموتال600مجم": {
+    "brand": "Flamotal",
+    "words": 1
+  },
+  "فﻼموتال800مجم": {
+    "brand": "Flamotal",
+    "words": 1
+  },
+  "فﻼموجيست اقراص": {
+    "brand": "Flamogest",
+    "words": 1
+  },
+  "فﻼميفاست كبسول": {
+    "brand": "Flamifast",
+    "words": 1
+  },
+  "فلدورال3-20 امبول": {
+    "brand": "Feldoral",
+    "words": 1
+  },
+  "فلدين20 - كبسول": {
+    "brand": "Feldene",
+    "words": 1
+  },
+  "فلدين3 امبول س ج": {
+    "brand": "Feldene",
+    "words": 1
+  },
+  "فلكسوفان كبسول ج": {
+    "brand": "Flexofan",
+    "words": 1
+  },
+  "فلوروفلوكس400 مجم": {
+    "brand": "Fluroflox",
+    "words": 1
+  },
+  "فلوروكينوموكس قطرة": {
+    "brand": "Fluroquinomox",
+    "words": 1
+  },
+  "فلوكورال اقراص": {
+    "brand": "Flucoral",
+    "words": 1
+  },
+  "فلوموسيل600 س ج": {
+    "brand": "Fluimucil",
+    "words": 1
+  },
+  "فلوموسييل300 امبول": {
+    "brand": "Fluimucil",
+    "words": 1
+  },
+  "فلوموكس1 جم حقن": {
+    "brand": "Flumox",
+    "words": 1
+  },
+  "فلوموكس1 جم اقراص س ق": {
+    "brand": "Flumox",
+    "words": 1
+  },
+  "فلوموكس شراب": {
+    "brand": "Flumox",
+    "words": 1
+  },
+  "فلوموكس500 مجم كبسول": {
+    "brand": "Flumox",
+    "words": 1
+  },
+  "فليبوتون امبول": {
+    "brand": "Fleboton",
+    "words": 1
+  },
+  "فنتوكف شراب بالسكر": {
+    "brand": "Ventocough",
+    "words": 2
+  },
+  "فنتولين بخاخ": {
+    "brand": "Ventolin",
+    "words": 1
+  },
+  "فنجيسولت صابون": {
+    "brand": "Fungisalt",
+    "words": 1
+  },
+  "فنجيكان كبسول": {
+    "brand": "Fungican",
+    "words": 1
+  },
+  "فورتادا20 مجم 4 قرص": {
+    "brand": "Fortada",
+    "words": 1
+  },
+  "فورتام1 جم": {
+    "brand": "Fortum",
+    "words": 1
+  },
+  "فورتام500 - فيال": {
+    "brand": "Fortum",
+    "words": 1
+  },
+  "فورتاميند امبول": {
+    "brand": "Fortamind",
+    "words": 1
+  },
+  "فورتاميند شراب": {
+    "brand": "Fortamind",
+    "words": 1
+  },
+  "فورتيبون اكياس": {
+    "brand": "Fortibone",
+    "words": 1
+  },
+  "فورتيموكس بلس قطرة": {
+    "brand": "Fortymox Plus Ophthalmic Sol",
+    "words": 2
+  },
+  "فورمامى قرص": {
+    "brand": "Formamy",
+    "words": 1
+  },
+  "فولافليك كبسول": {
+    "brand": "Folaflic",
+    "words": 1
+  },
+  "فولبرازال كبسول": {
+    "brand": "Fulprazal",
+    "words": 1
+  },
+  "فوليجانت سيرم": {
+    "brand": "Folligant",
+    "words": 1
+  },
+  "فوليكاب2.5 اقراص": {
+    "brand": "Folicap",
+    "words": 1
+  },
+  "فوميبريك10/10 مجم اقراص": {
+    "brand": "Vomibreak",
+    "words": 1
+  },
+  "فوناسبير10 مجم": {
+    "brand": "Vonaspire",
+    "words": 1
+  },
+  "فوناسبير20 مجم30 قرص": {
+    "brand": "Vonaspire",
+    "words": 1
+  },
+  "فوناسيدان10 مل": {
+    "brand": "Vonacidan",
+    "words": 1
+  },
+  "فوناسيدان20 مجم اقراص": {
+    "brand": "Vonacidan",
+    "words": 1
+  },
+  "فونافوت10مجم20قرص": {
+    "brand": "Vonafut",
+    "words": 1
+  },
+  "فوندالوس20 مجم": {
+    "brand": "Vondalous",
+    "words": 1
+  },
+  "فونوبرافين10مجم س ج": {
+    "brand": "Vonopravin",
+    "words": 1
+  },
+  "فونوبرافين20 مجم اقراص س ج": {
+    "brand": "Vonopravin",
+    "words": 1
+  },
+  "فونوبرامير20 مل 30 قرص": {
+    "brand": "Vonopramer",
+    "words": 1
+  },
+  "فونيسكا10 مجم": {
+    "brand": "Vanisca",
+    "words": 1
+  },
+  "فونيسكا20 مجم 14 قرص": {
+    "brand": "Vanisca",
+    "words": 1
+  },
+  "فياجرا100 مجم": {
+    "brand": "Viagra",
+    "words": 1
+  },
+  "فياجرا50 مجم س ج": {
+    "brand": "Viagra",
+    "words": 1
+  },
+  "فيافاج100 مجم اقراص": {
+    "brand": "Viavag",
+    "words": 1
+  },
+  "فيافاج25مجم": {
+    "brand": "Viavag",
+    "words": 1
+  },
+  "فيت بار صابونه100جم": {
+    "brand": "Fitt Bar",
+    "words": 2
+  },
+  "فيتاسيد سى فوار": {
+    "brand": "Vitacid C",
+    "words": 2
+  },
+  "فيتال زيت شعر": {
+    "brand": "Vital",
+    "words": 1
+  },
+  "فيتالو شوك اكياس": {
+    "brand": "Vitalochoc",
+    "words": 2
+  },
+  "فيتالو شوك بلس اكياس": {
+    "brand": "Vitalochoc Plus",
+    "words": 3
+  },
+  "فيتاماونت للرجال س ج": {
+    "brand": "Vitamount For Men",
+    "words": 2
+  },
+  "فيتاهير اقراص": {
+    "brand": "Vita",
+    "words": 1
+  },
+  "فيتايامى اقراص": {
+    "brand": "Vitayami",
+    "words": 1
+  },
+  "فيتموتوس2شريط": {
+    "brand": "Fitmotus",
+    "words": 1
+  },
+  "فيتونكس اقراص": {
+    "brand": "Vitonex",
+    "words": 1
+  },
+  "فيتوياجرا100مجم 12قرص": {
+    "brand": "Vetoyagra",
+    "words": 1
+  },
+  "فيتى فكت شراب": {
+    "brand": "Vitifect",
+    "words": 2
+  },
+  "فيجوتون بلس اقراص": {
+    "brand": "Vigoton Plus",
+    "words": 2
+  },
+  "فيجون100 مل ق": {
+    "brand": "V Gone",
+    "words": 1
+  },
+  "فيردابيوتال30 قرص": {
+    "brand": "Verdapiotal",
+    "words": 1
+  },
+  "فيردو كبسول س ج": {
+    "brand": "Verdo",
+    "words": 1
+  },
+  "فيرسيرك24 مجم": {
+    "brand": "Verserc",
+    "words": 1
+  },
+  "فيرسيرك16 مجم": {
+    "brand": "Verserc",
+    "words": 1
+  },
+  "فيرنوفا5 مل": {
+    "brand": "Varnova",
+    "words": 1
+  },
+  "فيرنيﻼر اقراص": {
+    "brand": "Fernilar",
+    "words": 1
+  },
+  "فيروترون اقراص": {
+    "brand": "Ferrotron",
+    "words": 1
+  },
+  "فيروترون فورت اقراص": {
+    "brand": "Ferrotron Forte",
+    "words": 2
+  },
+  "فيروجلوبين شراب": {
+    "brand": "Feroglobin",
+    "words": 1
+  },
+  "فيروجلوبين كبسول": {
+    "brand": "Feroglobin",
+    "words": 1
+  },
+  "فيروجلوبين نقط30 مل": {
+    "brand": "Feroglobin",
+    "words": 1
+  },
+  "فيروديب شراب": {
+    "brand": "Ferrodep",
+    "words": 1
+  },
+  "فيروديب كبسول": {
+    "brand": "Ferrodep",
+    "words": 1
+  },
+  "فيروديونال كبسول": {
+    "brand": "Ferroduonal",
+    "words": 1
+  },
+  "فيروستات800 مجم 35 قرص": {
+    "brand": "Virustat",
+    "words": 1
+  },
+  "فيزان2 مجم": {
+    "brand": "Visanne",
+    "words": 1
+  },
+  "فيسرا شراب": {
+    "brand": "Viscera",
+    "words": 1
+  },
+  "فيفيدول كريم للشعر": {
+    "brand": "Vividol",
+    "words": 1
+  },
+  "فيكسون120مجم اقراص": {
+    "brand": "Fexon",
+    "words": 1
+  },
+  "فيكوفارتيك20مجم": {
+    "brand": "Vecovartec",
+    "words": 1
+  },
+  "فيكوفارتيك20/12.5 قرص": {
+    "brand": "Vecovartec",
+    "words": 1
+  },
+  "فيكوفارتيك40/12.5": {
+    "brand": "Vecovartec",
+    "words": 1
+  },
+  "فيلدابيتس30 50/1000 قرص": {
+    "brand": "Vildabetes",
+    "words": 1
+  },
+  "فيلداجلوز50/500": {
+    "brand": "Vildagluse",
+    "words": 1
+  },
+  "فيلداجلوز50 مجم": {
+    "brand": "Vildagluse",
+    "words": 1
+  },
+  "فيلداجلوز50/1000 مجم": {
+    "brand": "Vildagluse",
+    "words": 1
+  },
+  "فيلداجلوز50/850 مجم": {
+    "brand": "Vildagluse",
+    "words": 1
+  },
+  "فيلدافورمين50/1000 مجم": {
+    "brand": "Vildaformin",
+    "words": 1
+  },
+  "فيلوزاك20 كبسول": {
+    "brand": "Philozac",
+    "words": 1
+  },
+  "فيمارا2.5 مجم اقراص": {
+    "brand": "Femara",
+    "words": 1
+  },
+  "فيموجيسال اقراص": {
+    "brand": "Femogesal",
+    "words": 1
+  },
+  "فيمينوزان اقراص": {
+    "brand": "Fiminosan",
+    "words": 1
+  },
+  "فيناستيورا5 مل": {
+    "brand": "Finastura",
+    "words": 1
+  },
+  "فينجوفى سبراى": {
+    "brand": "Finjuve",
+    "words": 1
+  },
+  "فيندكسين شراب": {
+    "brand": "Vendexine",
+    "words": 1
+  },
+  "فينوسين كريم س ج": {
+    "brand": "Vinosin",
+    "words": 1
+  },
+  "فينوكسﻼب10 مجم": {
+    "brand": "Finoxlab",
+    "words": 1
+  },
+  "فينوكسﻼب20 ملى اقراص": {
+    "brand": "Finoxlab",
+    "words": 1
+  },
+  "فينوماكس كريم": {
+    "brand": "Vinomax",
+    "words": 1
+  },
+  "فينيتين100": {
+    "brand": "Phenytin",
+    "words": 1
+  },
+  "فينيتين50 مل": {
+    "brand": "Phenytin",
+    "words": 1
+  },
+  "فينيتين250مجم امبول": {
+    "brand": "Phenytin",
+    "words": 1
+  },
+  "فيوتاتريت100 شراب": {
+    "brand": "Futatreat",
+    "words": 1
+  },
+  "فيوتاتريت1000 مجم 20 قرص": {
+    "brand": "Futatreat",
+    "words": 1
+  },
+  "فيوتاكوكسيب120مجم اقراص": {
+    "brand": "Futacoxib",
+    "words": 1
+  },
+  "فيوتاكوكسيب60 مجم": {
+    "brand": "Futacoxib",
+    "words": 1
+  },
+  "فيوتاكوكسيب90 مجم": {
+    "brand": "Futacoxib",
+    "words": 1
+  },
+  "فيوسيست بلس30 قرص": {
+    "brand": "Viocyst Plus",
+    "words": 2
+  },
+  "فيولا سيرم": {
+    "brand": "Viola",
+    "words": 1
+  },
+  "فيولا شامبو": {
+    "brand": "Viola",
+    "words": 1
+  },
+  "كابرون500 قرص س ج": {
+    "brand": "Kapron",
+    "words": 1
+  },
+  "كابرون امبول": {
+    "brand": "Kapron",
+    "words": 1
+  },
+  "كابري توب صابونة": {
+    "brand": "Capry Top",
+    "words": 2
+  },
+  "كابوتريل25 مجم": {
+    "brand": "Capotril",
+    "words": 1
+  },
+  "كابوتريل50 مجم": {
+    "brand": "Capotril",
+    "words": 1
+  },
+  "كابوتن25مجم اقراص": {
+    "brand": "Capoten",
+    "words": 1
+  },
+  "كابوتن50مجم اقراص": {
+    "brand": "Capoten",
+    "words": 1
+  },
+  "كابيﻼ شراب": {
+    "brand": "Cabella",
+    "words": 1
+  },
+  "كاتيفاروكس50مل امبول": {
+    "brand": "Kativarox",
+    "words": 1
+  },
+  "كاتيفاروكس شراب": {
+    "brand": "Kativarox",
+    "words": 1
+  },
+  "كاتيفاروكس50 مل اقراص": {
+    "brand": "Kativarox",
+    "words": 1
+  },
+  "كاربابكس200سى ار": {
+    "brand": "Carbapex",
+    "words": 2
+  },
+  "كاربابكس400 مجم سى ار": {
+    "brand": "Carbapex",
+    "words": 2
+  },
+  "كاربالتا60مجم": {
+    "brand": "Karbalta",
+    "words": 1
+  },
+  "كاربيمازول اقراص": {
+    "brand": "Carbimazole B P",
+    "words": 1
+  },
+  "كاردورا1 مجم س ج": {
+    "brand": "Cardura",
+    "words": 1
+  },
+  "كاردورا4مجم س ج": {
+    "brand": "Cardura",
+    "words": 1
+  },
+  "كارديفو كير اقراص": {
+    "brand": "Cardivo Care",
+    "words": 2
+  },
+  "كارديكسين0.25مجم اقراص": {
+    "brand": "Cardixin",
+    "words": 1
+  },
+  "كارديكسين5امبول": {
+    "brand": "Cardixin",
+    "words": 1
+  },
+  "كارديلول25 مجم": {
+    "brand": "Cardilol",
+    "words": 1
+  },
+  "كارديلول6.25 مجم": {
+    "brand": "Cardilol",
+    "words": 1
+  },
+  "كارفيد25 مجم": {
+    "brand": "Carvid",
+    "words": 1
+  },
+  "كارمينكس فوار": {
+    "brand": "Carminex",
+    "words": 2
+  },
+  "كارمينكس شراب": {
+    "brand": "Carminex",
+    "words": 1
+  },
+  "كارنيتول حقن": {
+    "brand": "Carnitol",
+    "words": 1
+  },
+  "كازودكس اقراص س ج": {
+    "brand": "Casodex",
+    "words": 1
+  },
+  "كاف الفا كبسول س ج": {
+    "brand": "Cavalpha",
+    "words": 2
+  },
+  "كافا كريم": {
+    "brand": "Kava",
+    "words": 1
+  },
+  "كافينو سبير60مجم": {
+    "brand": "Caffeinospire",
+    "words": 2
+  },
+  "كال فيجو كبسول": {
+    "brand": "Calvigo",
+    "words": 2
+  },
+  "كالسى ماش كبسول": {
+    "brand": "Calci Mash",
+    "words": 2
+  },
+  "كالسى ماكس بلس": {
+    "brand": "Calcimax Plus",
+    "words": 3
+  },
+  "كالسيبينو اقراص": {
+    "brand": "Calcipino",
+    "words": 1
+  },
+  "كالسيترون اقراص": {
+    "brand": "Calcitron",
+    "words": 1
+  },
+  "كالسيتريكس اقراص": {
+    "brand": "Calcitrix",
+    "words": 1
+  },
+  "كالسيدول اقراص كالسيوم": {
+    "brand": "Calcidol Calcium",
+    "words": 2
+  },
+  "كالسيزوم شراب120مجم": {
+    "brand": "Calcium",
+    "words": 1
+  },
+  "كالسيكولاج أقراص": {
+    "brand": "Calcicolage",
+    "words": 1
+  },
+  "كالسيمات500كبسول": {
+    "brand": "Calcimate",
+    "words": 1
+  },
+  "كالسيونات6 امبول": {
+    "brand": "Calcionate",
+    "words": 1
+  },
+  "كالم سكن كريم": {
+    "brand": "Calm Skin",
+    "words": 2
+  },
+  "كالمير بخاخ لﻼنف": {
+    "brand": "Calmare Nasal",
+    "words": 2
+  },
+  "كالمير بلس بخاخ لﻼنف": {
+    "brand": "Calmare Plus Nasal",
+    "words": 3
+  },
+  "كالى اى بى ام شراب": {
+    "brand": "Caly Ibm",
+    "words": 4
+  },
+  "كانتى كولين شراب": {
+    "brand": "Canti Colin",
+    "words": 2
+  },
+  "كانتينيرا": {
+    "brand": "Cantinera",
+    "words": 1
+  },
+  "كاندلكان12.5/16بلس": {
+    "brand": "Candalkan Plus",
+    "words": 2
+  },
+  "كاندلكان16 مجم": {
+    "brand": "Candalkan",
+    "words": 1
+  },
+  "كاندلكان32/12.5 بلس": {
+    "brand": "Candalkan Plus",
+    "words": 2
+  },
+  "كاندلكان8 مجم": {
+    "brand": "Candalkan",
+    "words": 1
+  },
+  "كانزارتان150 مجم": {
+    "brand": "Kansartan",
+    "words": 1
+  },
+  "كانزارتان300مجم اقراص": {
+    "brand": "Kansartan",
+    "words": 1
+  },
+  "كانزارتان بلس300/12.5": {
+    "brand": "Kansartan Plus",
+    "words": 2
+  },
+  "كانزارتان بلس12.5/150مجم اقراص": {
+    "brand": "Kansartan Plus",
+    "words": 2
+  },
+  "كبرجامون0.5مجم": {
+    "brand": "Cabergamoun",
+    "words": 1
+  },
+  "كبريتاج صابون س ج": {
+    "brand": "Kapritage",
+    "words": 1
+  },
+  "كرانبى اقراص": {
+    "brand": "Cranby",
+    "words": 1
+  },
+  "كروماجرين30 كبسوله س ج": {
+    "brand": "Chromagreen",
+    "words": 1
+  },
+  "كروماكس اقراص": {
+    "brand": "Chromax",
+    "words": 1
+  },
+  "كروموفا اقراص": {
+    "brand": "Chromova",
+    "words": 1
+  },
+  "كروميترون اقراص": {
+    "brand": "Chromitron",
+    "words": 1
+  },
+  "كريبتوناز اقراص": {
+    "brand": "Cryptonaz",
+    "words": 1
+  },
+  "كريبتوناز شراب": {
+    "brand": "Cryptonaz",
+    "words": 1
+  },
+  "كريستور10 مل 28 قرص س ج": {
+    "brand": "Crestor",
+    "words": 1
+  },
+  "كريستور20 مجم 28 قرص": {
+    "brand": "Crestor",
+    "words": 1
+  },
+  "كريستور5 مجم 28 قرص": {
+    "brand": "Crestor",
+    "words": 1
+  },
+  "كريستوليب10 مجم": {
+    "brand": "Crestolip",
+    "words": 1
+  },
+  "كريستوليب10/10 مجم": {
+    "brand": "Crestolip",
+    "words": 1
+  },
+  "كريستوليب20 مجم": {
+    "brand": "Crestolip",
+    "words": 1
+  },
+  "كريستوليب20/10": {
+    "brand": "Crestolip",
+    "words": 1
+  },
+  "كفلكس1 جرام س ج": {
+    "brand": "Keflex",
+    "words": 1
+  },
+  "كفلكس500": {
+    "brand": "Keflex",
+    "words": 1
+  },
+  "كﻼتكس ق75 مجم": {
+    "brand": "Clatex",
+    "words": 1
+  },
+  "كﻼرى بلسم300مل": {
+    "brand": "Clary",
+    "words": 1
+  },
+  "كﻼرى سيرم100مل": {
+    "brand": "Clary",
+    "words": 1
+  },
+  "كﻼرى شامبو300مل": {
+    "brand": "Clary",
+    "words": 1
+  },
+  "كﻼريثرو500 مجم اقراص": {
+    "brand": "Clarithro",
+    "words": 1
+  },
+  "كﻼريثرو250مجم": {
+    "brand": "Clarithro",
+    "words": 1
+  },
+  "كﻼريمكس500مجم 14قرص": {
+    "brand": "Klarimix",
+    "words": 1
+  },
+  "كﻼسيد250 - اقراص": {
+    "brand": "Klacid",
+    "words": 1
+  },
+  "كﻼسيد500 مجم اقراص": {
+    "brand": "Klacid",
+    "words": 1
+  },
+  "كﻼسيد اكس ال س": {
+    "brand": "Klacid Xl",
+    "words": 3
+  },
+  "كﻼسينمو1جم اقراص": {
+    "brand": "Clasynmo",
+    "words": 1
+  },
+  "كﻼفوران1 جم امبول": {
+    "brand": "Claforan",
+    "words": 1
+  },
+  "كلير فيس صابونه": {
+    "brand": "Clear",
+    "words": 2
+  },
+  "كليراير10مجم": {
+    "brand": "Clear Air",
+    "words": 1
+  },
+  "كليمادينون30ق س ج": {
+    "brand": "Klimadynon",
+    "words": 1
+  },
+  "كليندام300 مجم اقراص": {
+    "brand": "Clindam",
+    "words": 1
+  },
+  "كو ديﻼترول30قرص": {
+    "brand": "Co Dilatrol",
+    "words": 2
+  },
+  "كو فازوتك160/12.5 قرص": {
+    "brand": "Co Vasotec",
+    "words": 2
+  },
+  "كو فازوتك12.5/180 قرص": {
+    "brand": "Co Vasotec",
+    "words": 2
+  },
+  "كوابروفال150 ق": {
+    "brand": "Coaprovel",
+    "words": 1
+  },
+  "كوابروفال300/12.5": {
+    "brand": "Coaprovel",
+    "words": 1
+  },
+  "كوجيكس اكياس": {
+    "brand": "Cogex",
+    "words": 1
+  },
+  "كوراسور20ق": {
+    "brand": "Corasore",
+    "words": 1
+  },
+  "كوراسور نقط": {
+    "brand": "Corasore",
+    "words": 1
+  },
+  "كورتوبكت بلس300/12.5": {
+    "brand": "Cortopect Plus",
+    "words": 2
+  },
+  "كورتوبكت ادفانس كبسول": {
+    "brand": "Cortopect Advance",
+    "words": 2
+  },
+  "كورتوبكت ادفانس اقراص": {
+    "brand": "Cortopect Advance",
+    "words": 2
+  },
+  "كورتيبلكس فيال كبار": {
+    "brand": "Cortiplex B6 Adult",
+    "words": 2
+  },
+  "كورتيلون": {
+    "brand": "Cortilon",
+    "words": 1
+  },
+  "كوردارون اقراص": {
+    "brand": "Cordarone",
+    "words": 1
+  },
+  "_ كوزموفير5 امبول": {
+    "brand": "Cosmofer",
+    "words": 1
+  },
+  "كوفابروندو10/10 مجم": {
+    "brand": "Covaprendo",
+    "words": 1
+  },
+  "كوفابريندو5/5 مجم": {
+    "brand": "Covaprendo",
+    "words": 1
+  },
+  "كوفابريندو10/5مجم اقراص": {
+    "brand": "Covaprendo",
+    "words": 1
+  },
+  "كوكاست4 مجم قرص": {
+    "brand": "Kokast",
+    "words": 1
+  },
+  "كوكاست10مجم": {
+    "brand": "Kokast",
+    "words": 1
+  },
+  "كوكسريتور60 مل": {
+    "brand": "Coxritor",
+    "words": 1
+  },
+  "كوكسوريزت90 مجم": {
+    "brand": "Coxorizet",
+    "words": 1
+  },
+  "كوكسيريتور120مجم اقراص": {
+    "brand": "Coxritor",
+    "words": 1
+  },
+  "كوكسينورين90مجم ق": {
+    "brand": "Coxinorin",
+    "words": 1
+  },
+  "كولاجرا فيتامين سى سيرم1+1": {
+    "brand": "Kolagra Vitamin C Skin",
+    "words": 3
+  },
+  "كولد كنترول شراب": {
+    "brand": "Cold Control",
+    "words": 2
+  },
+  "كولد كونترول": {
+    "brand": "Cold Control",
+    "words": 2
+  },
+  "كولداتريكسى اقراص": {
+    "brand": "Coldatrexy",
+    "words": 1
+  },
+  "كولميديتين اقراص": {
+    "brand": "Colmediten",
+    "words": 1
+  },
+  "كولوسباتوراز اقراص30 قرص": {
+    "brand": "Colospatoraz",
+    "words": 1
+  },
+  "كولوسبازمين فورت": {
+    "brand": "Colospasmin Forte",
+    "words": 2
+  },
+  "كولونا اقراص": {
+    "brand": "Colona",
+    "words": 1
+  },
+  "كوليتمب ق": {
+    "brand": "Choletimb",
+    "words": 1
+  },
+  "كوليروز10 مجم اقراص": {
+    "brand": "Cholerose",
+    "words": 1
+  },
+  "كوليروز10/10بلس": {
+    "brand": "Cholerose Plus",
+    "words": 2
+  },
+  "كوليروز10/40بلس": {
+    "brand": "Cholerose Plus",
+    "words": 2
+  },
+  "كوليروز10/5 بلس": {
+    "brand": "Cholerose Plus",
+    "words": 2
+  },
+  "كوليروز20 مجم اقراص": {
+    "brand": "Cholerose",
+    "words": 1
+  },
+  "كوليروز20/10 بلس": {
+    "brand": "Cholerose Plus",
+    "words": 2
+  },
+  "كوليروز40 مجم اقراص": {
+    "brand": "Cholerose",
+    "words": 1
+  },
+  "كوليروز5 مجم اقراص": {
+    "brand": "Cholerose",
+    "words": 1
+  },
+  "كونافيوتال500": {
+    "brand": "Conafutal",
+    "words": 1
+  },
+  "كونتراهيستادين اقراص": {
+    "brand": "Contrahistadin",
+    "words": 1
+  },
+  "كونترلوك40 مجم": {
+    "brand": "Controloc",
+    "words": 1
+  },
+  "كونتروليبسى25مجم": {
+    "brand": "Controlepsy",
+    "words": 1
+  },
+  "كونتروليبسى50 مجم": {
+    "brand": "Controlepsy",
+    "words": 1
+  },
+  "كونفيبان100 مجم اقراص": {
+    "brand": "Conviban",
+    "words": 1
+  },
+  "كونفيبان50مجم": {
+    "brand": "Conviban",
+    "words": 1
+  },
+  "كونكور5 بلس": {
+    "brand": "Concor Plus",
+    "words": 2
+  },
+  "كويتاباكس50 اكس ار": {
+    "brand": "Quitapex",
+    "words": 2
+  },
+  "كويتابكس150 مجم اقراص": {
+    "brand": "Quitapex",
+    "words": 1
+  },
+  "كويتابكس25 مجم اقراص": {
+    "brand": "Quitapex",
+    "words": 1
+  },
+  "كويتابكس400 اكس ار": {
+    "brand": "Quitapex",
+    "words": 2
+  },
+  "كويتابكس100 مجم": {
+    "brand": "Quitapex",
+    "words": 1
+  },
+  "كويتابكس200مجم": {
+    "brand": "Quitapex",
+    "words": 1
+  },
+  "كويتابين100 مجم": {
+    "brand": "Quetiapine",
+    "words": 1
+  },
+  "كويتابين200 مجم اقراص": {
+    "brand": "Quetiapine",
+    "words": 1
+  },
+  "كويتابين25 مجم": {
+    "brand": "Quetiapine",
+    "words": 1
+  },
+  "كويتازيك50مجم اكس ار": {
+    "brand": "Quetiazic Xr",
+    "words": 2
+  },
+  "كويتيكول200 اكس ار": {
+    "brand": "Quitcool Xr",
+    "words": 2
+  },
+  "كى ال واى جل42 جم س.ج": {
+    "brand": "K L Y",
+    "words": 3
+  },
+  "كى ال واى جيل82 جم": {
+    "brand": "K L Y",
+    "words": 3
+  },
+  "كيبرا500 مجم س ج": {
+    "brand": "Keppra",
+    "words": 1
+  },
+  "كيبراديل500 مل ج": {
+    "brand": "Kepradil",
+    "words": 1
+  },
+  "كيبراديل1000مجم": {
+    "brand": "Kepradil",
+    "words": 1
+  },
+  "كيبوركس1 جم": {
+    "brand": "Ceporex",
+    "words": 1
+  },
+  "كيبوركس500 اقراص": {
+    "brand": "Ceporex",
+    "words": 1
+  },
+  "كيتورال بلس شامبو": {
+    "brand": "Ketoral Plus",
+    "words": 2
+  },
+  "كيتوفان اقراص150 مجم 30قرص": {
+    "brand": "Ketofan",
+    "words": 1
+  },
+  "كيتوفان كبسول": {
+    "brand": "Ketofan",
+    "words": 1
+  },
+  "كير باى كير بلس كريم": {
+    "brand": "Care By Care Plus",
+    "words": 4
+  },
+  "كير باى كير صابونه100مل": {
+    "brand": "Care By Care",
+    "words": 3
+  },
+  "كيراتوهيل كبسول": {
+    "brand": "Keratohyl",
+    "words": 1
+  },
+  "كيراكوز شامبو": {
+    "brand": "Keraquoz",
+    "words": 1
+  },
+  "كيراكيت شامبو س ج": {
+    "brand": "Keraket",
+    "words": 1
+  },
+  "كيردالود اس ار6مجم": {
+    "brand": "Caredalud S R",
+    "words": 1
+  },
+  "كيرديبين10 مجم": {
+    "brand": "Care Dipine",
+    "words": 1
+  },
+  "كيروفيت كبسول": {
+    "brand": "Kerovit",
+    "words": 1
+  },
+  "كيفبان شراب س ج": {
+    "brand": "Kifpan",
+    "words": 1
+  },
+  "كيمجرا100 مجم 4قرص": {
+    "brand": "Kemagra",
+    "words": 1
+  },
+  "كينو ستار ماكس500 ك": {
+    "brand": "Quinostarmax",
+    "words": 3
+  },
+  "كينوموكسى400مجم 10 قرص": {
+    "brand": "Kinomoxi",
+    "words": 1
+  },
+  "كيوريسيف1جرام كبسول": {
+    "brand": "Curisafe",
+    "words": 1
+  },
+  "كيوريسيف500 كبسول": {
+    "brand": "Curisafe",
+    "words": 1
+  },
+  "كيوريسيف نقط": {
+    "brand": "Curisafe",
+    "words": 1
+  },
+  "لابيبريس100 مجم": {
+    "brand": "Labipress",
+    "words": 1
+  },
+  "لاروجين25 مجم 30 قرص": {
+    "brand": "Larogen",
+    "words": 1
+  },
+  "لاروسوزت10/10 اقراص": {
+    "brand": "Larosuzet",
+    "words": 1
+  },
+  "لاروسوزت10/20 اقراص": {
+    "brand": "Larosuzet",
+    "words": 1
+  },
+  "لاروسوزيت10/40 س ج": {
+    "brand": "Larosuzet",
+    "words": 1
+  },
+  "لاريفكس5-500ق": {
+    "brand": "Larivex",
+    "words": 1
+  },
+  "- لاسيكس3 امبول": {
+    "brand": "Lasix",
+    "words": 1
+  },
+  "لاسيكس اقراص": {
+    "brand": "Lasix",
+    "words": 1
+  },
+  "لاكتو1 لبن": {
+    "brand": "Lacto",
+    "words": 1
+  },
+  "لاكتو2 لبن 400جرام": {
+    "brand": "Lacto",
+    "words": 1
+  },
+  "لاكتوديل20ق": {
+    "brand": "Lactodel",
+    "words": 1
+  },
+  "لاكتيفينور اقراص": {
+    "brand": "Lactevenor",
+    "words": 1
+  },
+  "لاكوزاميت10 شراب": {
+    "brand": "Lacosamet",
+    "words": 1
+  },
+  "لاكوزاميت50 مجم اقراص": {
+    "brand": "Lacosamet",
+    "words": 1
+  },
+  "لاكوفيمب50 مجم س ج": {
+    "brand": "Lacovimp",
+    "words": 1
+  },
+  "لاكوفيميب100 مجم": {
+    "brand": "Lacovimp",
+    "words": 1
+  },
+  "لاميفين125 مجم": {
+    "brand": "Lamifen",
+    "words": 1
+  },
+  "لاميفين250مجم": {
+    "brand": "Lamifen",
+    "words": 1
+  },
+  "لاميفين كريم": {
+    "brand": "Lamifen",
+    "words": 1
+  },
+  "لاميكتال25 مجم": {
+    "brand": "Lamictal",
+    "words": 1
+  },
+  "لاميكتال50 مجم": {
+    "brand": "Lamictal",
+    "words": 1
+  },
+  "لاناكلور250مجم شراب": {
+    "brand": "Lanaclor",
+    "words": 1
+  },
+  "لانتانون كبسول": {
+    "brand": "Lantanon",
+    "words": 1
+  },
+  "لانتوبيب60مجم": {
+    "brand": "Lantopep",
+    "words": 1
+  },
+  "لانزابين قرص": {
+    "brand": "Lanzapine",
+    "words": 1
+  },
+  "لايفوترايبوكس": {
+    "brand": "Lifotribox",
+    "words": 1
+  },
+  "لايفوليز شراب": {
+    "brand": "Lifolase",
+    "words": 1
+  },
+  "لجنوكايين كريم": {
+    "brand": "Lignocaine",
+    "words": 1
+  },
+  "لنجوكورت1مجم امبولات": {
+    "brand": "Lungocort",
+    "words": 1
+  },
+  "لنزوفيوتال15مجم كبسول": {
+    "brand": "Lanzofutal",
+    "words": 1
+  },
+  "لوتون3 امبول": {
+    "brand": "Lutone",
+    "words": 1
+  },
+  "لورنوكسيكام8 مجم اقراص": {
+    "brand": "Lornoxicam",
+    "words": 1
+  },
+  "لورنيكام رابيد": {
+    "brand": "Lornicam",
+    "words": 2
+  },
+  "لوسيدريل250 مجم": {
+    "brand": "Lucidril",
+    "words": 1
+  },
+  "لوسيدريل500 س ج": {
+    "brand": "Lucidril",
+    "words": 1
+  },
+  "لوفير400 مجم": {
+    "brand": "Lovir",
+    "words": 1
+  },
+  "لوفير800 مجم": {
+    "brand": "Lovir",
+    "words": 1
+  },
+  "لوكازاندا سبراي للفم": {
+    "brand": "Lokazanda Mouth",
+    "words": 2
+  },
+  "لوكسى ميون جونيور شراب": {
+    "brand": "Loxymune Junior",
+    "words": 3
+  },
+  "لولا ويست اكياس": {
+    "brand": "Lolawest",
+    "words": 2
+  },
+  "لونابيكس اقراص": {
+    "brand": "Lonapex",
+    "words": 1
+  },
+  "لى فلوكس5-250ق س ج": {
+    "brand": "Lee Flox",
+    "words": 2
+  },
+  "لى فلوكس750 مجم": {
+    "brand": "Lee Flox",
+    "words": 2
+  },
+  "ليبانتيل سوبرا س ج": {
+    "brand": "Lipanthyl Supra",
+    "words": 2
+  },
+  "ليبانتيل145 مجم س ج": {
+    "brand": "Lipanthyl",
+    "words": 1
+  },
+  "ليبانتيل300 مجم كبسول": {
+    "brand": "Lipanthyl",
+    "words": 1
+  },
+  "ليبوفريك فوليك اقراص": {
+    "brand": "Lipoferric Folic",
+    "words": 2
+  },
+  "ليبوفريك فوليك شراب": {
+    "brand": "Lipoferric Folic",
+    "words": 2
+  },
+  "ليبوكومب20/10 مجم س ج": {
+    "brand": "Lipocomb",
+    "words": 1
+  },
+  "ليبونا40 مجم س ج": {
+    "brand": "Lipona",
+    "words": 1
+  },
+  "ليبيترين20/10": {
+    "brand": "Lipitrin",
+    "words": 1
+  },
+  "ليبيترين40/10": {
+    "brand": "Lipitrin",
+    "words": 1
+  },
+  "ليبيتور40 مجم 7 قرص": {
+    "brand": "Lipitor",
+    "words": 1
+  },
+  "ليبيتور10مجم 4 شريط": {
+    "brand": "Lipitor",
+    "words": 1
+  },
+  "ليبيتور40 مجم 14 قرص": {
+    "brand": "Lipitor",
+    "words": 1
+  },
+  "ليبيتوور20 مجم 28 قرص س ج": {
+    "brand": "Lipitor",
+    "words": 1
+  },
+  "ليبيفيبرات105 مجم": {
+    "brand": "Lipifibrate",
+    "words": 1
+  },
+  "ليبيكول40مجم اقراص": {
+    "brand": "Lipicole",
+    "words": 1
+  },
+  "ليت اب سيرم": {
+    "brand": "Lit Up",
+    "words": 2
+  },
+  "ليت اب صابونة100جم": {
+    "brand": "Lit Up",
+    "words": 2
+  },
+  "ليت اب غسول": {
+    "brand": "Lit Up",
+    "words": 2
+  },
+  "ليجالون140كبسول": {
+    "brand": "Legalon",
+    "words": 1
+  },
+  "ليرجى كير شراب": {
+    "brand": "Lergicare",
+    "words": 2
+  },
+  "ليرجيكير اقراص": {
+    "brand": "Lergicare",
+    "words": 1
+  },
+  "ليفاجول450 مل ج": {
+    "brand": "Livagoal",
+    "words": 1
+  },
+  "ليفانيك500 مجم": {
+    "brand": "Levanic",
+    "words": 1
+  },
+  "ليفانيك750 مل": {
+    "brand": "Levanic",
+    "words": 1
+  },
+  "ليفرين اقراص س ج": {
+    "brand": "Liverin",
+    "words": 1
+  },
+  "ليفسيت اقراص": {
+    "brand": "Levcet",
+    "words": 1
+  },
+  "ليفسيت شراب": {
+    "brand": "Levcet",
+    "words": 1
+  },
+  "ليفسيت نقط": {
+    "brand": "Levcet",
+    "words": 1
+  },
+  "ليفوديل500مجم اقراص": {
+    "brand": "Levodel",
+    "words": 1
+  },
+  "ليفوديل750 مجم اقراص": {
+    "brand": "Levodel",
+    "words": 1
+  },
+  "ليفوفلوكساسين500مجم ايفا": {
+    "brand": "Levofloxacin Eva",
+    "words": 2
+  },
+  "ليفوفلوكساسين750 مجم س ج": {
+    "brand": "Levofloxacin Mpi",
+    "words": 1
+  },
+  "ليفوكتيفان5 مجم": {
+    "brand": "Levoctivan",
+    "words": 1
+  },
+  "ليفوكتيفان شراب": {
+    "brand": "Levoctivan",
+    "words": 1
+  },
+  "ليفوكسين250 - ج": {
+    "brand": "Levoxin",
+    "words": 1
+  },
+  "ليفوكسين500 مجم": {
+    "brand": "Levoxin",
+    "words": 1
+  },
+  "ليفوهيستام اقراص": {
+    "brand": "Levohistam",
+    "words": 1
+  },
+  "ليفوهيستام شراب ك25": {
+    "brand": "Levohistam",
+    "words": 1
+  },
+  "ليفوهيستام نقط": {
+    "brand": "Levohistam",
+    "words": 1
+  },
+  "ليفيبكس1000مل": {
+    "brand": "Levepex",
+    "words": 1
+  },
+  "ليفيبكس750مل": {
+    "brand": "Levepex",
+    "words": 1
+  },
+  "ليفيكتام1 جرام اقراص س ج": {
+    "brand": "Levectam",
+    "words": 1
+  },
+  "ليكوسيد ر مرهم": {
+    "brand": "Lucocid R",
+    "words": 1
+  },
+  "ليليبل5 مجم اقراص س ج": {
+    "brand": "Lelipel",
+    "words": 1
+  },
+  "ليليبل اكياس": {
+    "brand": "Lelipel",
+    "words": 1
+  },
+  "ليليبل10مجم اقراص": {
+    "brand": "Lelipel",
+    "words": 1
+  },
+  "ليناجينتا بلس25/5 قرص": {
+    "brand": "Linajenta Plus",
+    "words": 2
+  },
+  "لينجالابس بلس10/5/1000 مجم 30 قرص": {
+    "brand": "Lingalabs Plus",
+    "words": 2
+  },
+  "لينجالابس بلس1000/2.5/12.5 اقراص": {
+    "brand": "Lingalabs Plus",
+    "words": 2
+  },
+  "ماتيو جاك اقراص": {
+    "brand": "Matujac",
+    "words": 2
+  },
+  "ماج وايتس30 قرص": {
+    "brand": "Mag Whites",
+    "words": 2
+  },
+  "ماجيك شامبو": {
+    "brand": "Magic",
+    "words": 1
+  },
+  "ماربالين كريم30جم": {
+    "brand": "Marpalene",
+    "words": 1
+  },
+  "مارسالاز500مجم اقراص": {
+    "brand": "Marsalaz",
+    "words": 1
+  },
+  "مارفيتنس20/5/12.5 اقراص": {
+    "brand": "Marvitense",
+    "words": 1
+  },
+  "مارفيتنس40/10/25": {
+    "brand": "Marvitense",
+    "words": 1
+  },
+  "مارفيتنس40/5/12.5 اقراص": {
+    "brand": "Marvitense",
+    "words": 1
+  },
+  "ماركال اقراص": {
+    "brand": "Marcal",
+    "words": 1
+  },
+  "ماركال بلس اقراص": {
+    "brand": "Marcal Plus",
+    "words": 2
+  },
+  "مارياجون10ق": {
+    "brand": "Mariagon",
+    "words": 1
+  },
+  "ماريفان3 مل س ج": {
+    "brand": "Marevan",
+    "words": 1
+  },
+  "ماغنيسيوم بلس اقراص": {
+    "brand": "Magnesium Plus",
+    "words": 2
+  },
+  "مافو400 مجم 30 قرص": {
+    "brand": "Mafo",
+    "words": 1
+  },
+  "مافيلور بﻼس5/25 مجم": {
+    "brand": "Mavilor Plus",
+    "words": 2
+  },
+  "مافيلور10 مجم": {
+    "brand": "Mavilor",
+    "words": 1
+  },
+  "مافيلور2.5": {
+    "brand": "Mavilor",
+    "words": 1
+  },
+  "مافيلور5 مجم اقراص س ج": {
+    "brand": "Mavilor",
+    "words": 1
+  },
+  "مافيلور5/12.5 مجم": {
+    "brand": "Mavilor",
+    "words": 1
+  },
+  "ماكروفيوران100 مجم": {
+    "brand": "Macrofuran",
+    "words": 1
+  },
+  "ماكروفيوران30-50ك س.ج": {
+    "brand": "Macrofuran",
+    "words": 1
+  },
+  "ماكسوفاج1000 اكس ار": {
+    "brand": "Maxophage Xr",
+    "words": 2
+  },
+  "ماكسيبيم1 جم حقن": {
+    "brand": "Maxipime",
+    "words": 1
+  },
+  "ماكسيكال600 اقراص": {
+    "brand": "Maxical",
+    "words": 1
+  },
+  "ماكسيكال بلس": {
+    "brand": "Maxical Plus",
+    "words": 2
+  },
+  "ماكسيكال شراب": {
+    "brand": "Maxical",
+    "words": 1
+  },
+  "مالكون كريم": {
+    "brand": "Malcon",
+    "words": 1
+  },
+  "ماليندا جيل غسول": {
+    "brand": "Malinda",
+    "words": 1
+  },
+  "ماليندا كريم": {
+    "brand": "Malinda",
+    "words": 1
+  },
+  "ماى كيدز شامبو": {
+    "brand": "Mi Kids",
+    "words": 2
+  },
+  "ماى كيدز لوشن": {
+    "brand": "Mi Kids",
+    "words": 2
+  },
+  "مايوسيﻼ شراب": {
+    "brand": "Myocella",
+    "words": 1
+  },
+  "مو اجار اكياس": {
+    "brand": "Mooagar",
+    "words": 2
+  },
+  "موبيتيل15 مجم اقراص": {
+    "brand": "Mobitil",
+    "words": 1
+  },
+  "موبيتيل10-7.5ق": {
+    "brand": "Mobitil",
+    "words": 1
+  },
+  "موبيتيل7.5 مجم اقراص س 24": {
+    "brand": "Mobitil",
+    "words": 1
+  },
+  "موبيتيل لبوس": {
+    "brand": "Mobitil",
+    "words": 1
+  },
+  "موبيلكس اكياس": {
+    "brand": "Mobilex",
+    "words": 1
+  },
+  "موتيليوم اقراص": {
+    "brand": "Motilium",
+    "words": 1
+  },
+  "مودابكس100 مل س ج": {
+    "brand": "Moodapex",
+    "words": 1
+  },
+  "موداسوميل200 مجم": {
+    "brand": "Modasomil",
+    "words": 1
+  },
+  "مورنيجاج10/10مجم اقراص": {
+    "brand": "Mornigag",
+    "words": 1
+  },
+  "موزابرايد5 مجم": {
+    "brand": "Mosapride",
+    "words": 1
+  },
+  "موزانجليك اقراص": {
+    "brand": "Mozanglic",
+    "words": 1
+  },
+  "موف مساج روتكس": {
+    "brand": "Moov Massage Rutex",
+    "words": 3
+  },
+  "موفلوكس400 مجم": {
+    "brand": "Moflox",
+    "words": 1
+  },
+  "موفى ايز10مجم": {
+    "brand": "Mobiease",
+    "words": 2
+  },
+  "موفيجيت50مجم": {
+    "brand": "Movigit",
+    "words": 1
+  },
+  "موفينتور ادفانس": {
+    "brand": "Moventor Advance",
+    "words": 2
+  },
+  "موفينتور اقراص": {
+    "brand": "Moventor",
+    "words": 1
+  },
+  "موكسيفلوكس400اقراص": {
+    "brand": "Moxiflox",
+    "words": 1
+  },
+  "موكسيفلوكس- قطرة": {
+    "brand": "Moxiflox",
+    "words": 1
+  },
+  "موكسيفلوكساسين اقراص": {
+    "brand": "Moxifloxacin",
+    "words": 1
+  },
+  "موكسين7.5 مجم": {
+    "brand": "Moxen",
+    "words": 1
+  },
+  "مونتيكال5مجم اقراص": {
+    "brand": "Montekal",
+    "words": 1
+  },
+  "موندو كريم": {
+    "brand": "Mondo",
+    "words": 1
+  },
+  "مونوريل اكياس": {
+    "brand": "Monuril",
+    "words": 1
+  },
+  "مونوشو اقراص": {
+    "brand": "Monosho",
+    "words": 1
+  },
+  "مونوكريست ق": {
+    "brand": "Monoqrest",
+    "words": 1
+  },
+  "مونوماك20 س ج": {
+    "brand": "Monomak",
+    "words": 1
+  },
+  "مونوماك40 - اقراص": {
+    "brand": "Monomak",
+    "words": 1
+  },
+  "مونوهيكسال شراب": {
+    "brand": "Monohexal",
+    "words": 1
+  },
+  "مويست غسول س ج": {
+    "brand": "Moist",
+    "words": 1
+  },
+  "ميباسيل اقراص": {
+    "brand": "Mepasil",
+    "words": 1
+  },
+  "ميبافلوكسين750مجم كبسول": {
+    "brand": "Mepafloxin",
+    "words": 1
+  },
+  "ميباكليند300اقراص": {
+    "brand": "Mepaclind",
+    "words": 1
+  },
+  "ميبيفاك200مجم": {
+    "brand": "Mebefac",
+    "words": 1
+  },
+  "ميتاكارديا اقراص س.ج": {
+    "brand": "Metacardia",
+    "words": 1
+  },
+  "ميتاكارديا ام ار- اقراص": {
+    "brand": "Metacardia Mr",
+    "words": 2
+  },
+  "ميثوكويك كبسول": {
+    "brand": "Methoquick",
+    "words": 1
+  },
+  "ميجابيو750 قرص س ج0": {
+    "brand": "Megabio",
+    "words": 1
+  },
+  "ميجافين اقراص س ج": {
+    "brand": "Megafen",
+    "words": 1
+  },
+  "ميجاليز اقراص": {
+    "brand": "Megalase",
+    "words": 1
+  },
+  "ميدودرين ق": {
+    "brand": "Midodrine",
+    "words": 1
+  },
+  "ميدودرين نقط": {
+    "brand": "Midodrine",
+    "words": 1
+  },
+  "ميديكسافﻼم15مجم قرص ج": {
+    "brand": "Medexaflam",
+    "words": 1
+  },
+  "ميديهيالو كريم س ج": {
+    "brand": "Medihyalo",
+    "words": 1
+  },
+  "ميراج1 جم امبول": {
+    "brand": "Mirage",
+    "words": 1
+  },
+  "ميرالجو كبسول": {
+    "brand": "Meralgo",
+    "words": 1
+  },
+  "ميرتوفيوتال30 مجم اقراص": {
+    "brand": "Mirtofutal",
+    "words": 1
+  },
+  "ميرتى كبسول": {
+    "brand": "Merti",
+    "words": 1
+  },
+  "ميرتيماش اقراص": {
+    "brand": "Mirtimash",
+    "words": 1
+  },
+  "ميرفيناسين ام ار50/5 اقراص": {
+    "brand": "Mirfenacin Mr",
+    "words": 2
+  },
+  "ميركافا أكياس": {
+    "brand": "Mercava",
+    "words": 1
+  },
+  "ميروكسنوريك10مجم 30 قرص": {
+    "brand": "Miroxnoric",
+    "words": 1
+  },
+  "ميروكسنوريك15مجم 10قرص": {
+    "brand": "Miroxnoric",
+    "words": 1
+  },
+  "ميروكسنوريك5مجم 10قرص": {
+    "brand": "Miroxnoric",
+    "words": 1
+  },
+  "ميكارديس80/12.5مجم بلس": {
+    "brand": "Micardis Plus",
+    "words": 2
+  },
+  "ميكسورا اقراص": {
+    "brand": "Mixora",
+    "words": 1
+  },
+  "ميكسيكام15 اقماع": {
+    "brand": "Mexicam",
+    "words": 1
+  },
+  "ميكوناز كريم": {
+    "brand": "Miconaz",
+    "words": 1
+  },
+  "ميﻼنثينول جل": {
+    "brand": "Melanthenol",
+    "words": 1
+  },
+  "ميﻼنثينول كريم": {
+    "brand": "Melanthenol",
+    "words": 1
+  },
+  "ميﻼنوفرى كريم": {
+    "brand": "Melanofree",
+    "words": 1
+  },
+  "ميلجا ادفانس": {
+    "brand": "Milga Advance",
+    "words": 2
+  },
+  "ميلوباك10 مجم": {
+    "brand": "Mylobac",
+    "words": 1
+  },
+  "ميلوباك25 مجم اقراص": {
+    "brand": "Mylobac",
+    "words": 1
+  },
+  "ميلوفﻼم اقراص": {
+    "brand": "Meloflam",
+    "words": 1
+  },
+  "ميلوكام7.5 مجم": {
+    "brand": "Melocam",
+    "words": 1
+  },
+  "ميلوكسيكام10قرص": {
+    "brand": "Meloxicam",
+    "words": 1
+  },
+  "ميليتوفيكس تريو10/5/1000 مجم": {
+    "brand": "Mellitofix Trio",
+    "words": 2
+  },
+  "ميليتوفيكس تريو5/25/1000 مجم": {
+    "brand": "Mellitofix Trio",
+    "words": 2
+  },
+  "ميمكسا10 مجم": {
+    "brand": "Memexa",
+    "words": 1
+  },
+  "***** ميموسيتو كالم اكياس": {
+    "brand": "Memocito Calm",
+    "words": 2
+  },
+  "ميموسيتو كبسول س ج": {
+    "brand": "Memocito",
+    "words": 1
+  },
+  "مينزوفليك كبسول": {
+    "brand": "Menzoflic F C",
+    "words": 1
+  },
+  "مينوفللين اس ار س ج": {
+    "brand": "Minophylline",
+    "words": 1
+  },
+  "مينيرين120 مجم س ج": {
+    "brand": "Minirin",
+    "words": 1
+  },
+  "ميوبيراكس مرهم10مجم": {
+    "brand": "Mupirax",
+    "words": 1
+  },
+  "ميوبيراكس مرهم30 جم": {
+    "brand": "Mupirax",
+    "words": 1
+  },
+  "ميوجريل اقراص": {
+    "brand": "Myogrel",
+    "words": 1
+  },
+  "ميوفين كبسول": {
+    "brand": "Myofen",
+    "words": 1
+  },
+  "ميوكوتك300 ج": {
+    "brand": "Mucotec",
+    "words": 1
+  },
+  "ميوكوستا اقراص": {
+    "brand": "Mucosta",
+    "words": 1
+  },
+  "ميوكوفللين شراب": {
+    "brand": "Mucophylline",
+    "words": 1
+  },
+  "ميوكول كريم100 جم": {
+    "brand": "Myocool",
+    "words": 1
+  },
+  "ميوكول كريم60 جم": {
+    "brand": "Myocool",
+    "words": 1
+  },
+  "نابى فيت اقراص": {
+    "brand": "Napifit",
+    "words": 2
+  },
+  "نابيبرادين7.5 مجم": {
+    "brand": "Napibradine",
+    "words": 1
+  },
+  "نابيبرادين5 مجم س ج": {
+    "brand": "Napibradine",
+    "words": 1
+  },
+  "ناتاريا بلس كريم50 جرام": {
+    "brand": "Nataria Plus",
+    "words": 2
+  },
+  "ناتاريا كريم": {
+    "brand": "Nataria",
+    "words": 1
+  },
+  "ناترى صابونة": {
+    "brand": "Natry",
+    "words": 1
+  },
+  "ناتريلكس اس ار اقراص": {
+    "brand": "Natrilix Sr",
+    "words": 1
+  },
+  "ناركلين كبسول": {
+    "brand": "Narkleen",
+    "words": 1
+  },
+  "نافوبروكسين اقراص": {
+    "brand": "Navoproxin",
+    "words": 1
+  },
+  "نافوبروكسين لبوس": {
+    "brand": "Navoproxin",
+    "words": 1
+  },
+  "نافيلوكا150": {
+    "brand": "Naviluca",
+    "words": 1
+  },
+  "نافيلوكا200 مجم قرص": {
+    "brand": "Naviluca",
+    "words": 1
+  },
+  "نان1 لبن": {
+    "brand": "Nan",
+    "words": 1
+  },
+  "نان2 ك 12": {
+    "brand": "Nan",
+    "words": 1
+  },
+  "نان3 لبن ك12": {
+    "brand": "Nan",
+    "words": 1
+  },
+  "نانازوكسيد اقراص": {
+    "brand": "Nanazoxid",
+    "words": 1
+  },
+  "نت لوك20 مجم كبسول س ج": {
+    "brand": "Netlook",
+    "words": 2
+  },
+  "نت لوك40مجم كبسول": {
+    "brand": "Netlook",
+    "words": 2
+  },
+  "نت لوك10مجم كبسول": {
+    "brand": "Netlook",
+    "words": 2
+  },
+  "نورجيستاديول اقراص": {
+    "brand": "Norgestadiol",
+    "words": 1
+  },
+  "نورفاسك10 مجم 15 قرص": {
+    "brand": "Norvasc",
+    "words": 1
+  },
+  "نورفاسك5 مجم 30 قرص": {
+    "brand": "Norvasc",
+    "words": 1
+  },
+  "نورموكارد10 مجم 30 قرص": {
+    "brand": "Normocard",
+    "words": 1
+  },
+  "نورموكارد5مجم اقراص": {
+    "brand": "Normocard",
+    "words": 1
+  },
+  "نورموكارد7.5 مجم 30 قرص": {
+    "brand": "Normocard",
+    "words": 1
+  },
+  "نوستيفيكس اقراص": {
+    "brand": "Nostifix",
+    "words": 1
+  },
+  "نوفونورم0.5 مل": {
+    "brand": "Novonorm",
+    "words": 1
+  },
+  "نوفونورم30-1ق": {
+    "brand": "Novonorm",
+    "words": 1
+  },
+  "نوفونورم2 مجم س.ج": {
+    "brand": "Novonorm",
+    "words": 1
+  },
+  "نوفيستوريك10مجم": {
+    "brand": "Novistoric",
+    "words": 1
+  },
+  "نوفيستوريك20مجم": {
+    "brand": "Novistoric",
+    "words": 1
+  },
+  "نولافير- جل": {
+    "brand": "Nolaver",
+    "words": 1
+  },
+  "نولافير- كريم": {
+    "brand": "Nolaver",
+    "words": 1
+  },
+  "نولفادكس اقراص س ج": {
+    "brand": "Nolvadex",
+    "words": 1
+  },
+  "نويوريك100مجم اقراص": {
+    "brand": "No Uric",
+    "words": 1
+  },
+  "نويوريك20-300ق": {
+    "brand": "No Uric",
+    "words": 1
+  },
+  "نيرفاكتوري": {
+    "brand": "Nerfactory",
+    "words": 1
+  },
+  "نيرفالتا60مجم": {
+    "brand": "Nervalta",
+    "words": 1
+  },
+  "نيرفيزام30 كبسوله": {
+    "brand": "Nervizam",
+    "words": 1
+  },
+  "نيفروميد ادفانس اكياس": {
+    "brand": "Nephromed Advance",
+    "words": 2
+  },
+  "نيفيلوب25/5 بلس اقراص س ج": {
+    "brand": "Nevilob Plus",
+    "words": 2
+  },
+  "نيفيلوب5/12.5 بلس": {
+    "brand": "Nevilob Plus",
+    "words": 2
+  },
+  "نيكسماش40 مل 28 قرص": {
+    "brand": "Neximash",
+    "words": 1
+  },
+  "نيكسيروزوفا10 مجم اقراص": {
+    "brand": "Nexirozova",
+    "words": 1
+  },
+  "نيكسيروزوفا5 مجم 14 قرص": {
+    "brand": "Nexirozova",
+    "words": 1
+  },
+  "نيكسيكيور10مجم اكياس": {
+    "brand": "Nexicure",
+    "words": 1
+  },
+  "نيكسيكيور20 مجم": {
+    "brand": "Nexicure",
+    "words": 1
+  },
+  "نيكسيكيور40 مجم 2 شريط": {
+    "brand": "Nexicure",
+    "words": 1
+  },
+  "نيكسيكيور بلس14**40/1680كيس": {
+    "brand": "Nexicure Plus",
+    "words": 2
+  },
+  "نيكسيوم20 مجم اقراص": {
+    "brand": "Nexium",
+    "words": 1
+  },
+  "نيكسيوم40 مجم 28قرص": {
+    "brand": "Nexium",
+    "words": 1
+  },
+  "نيوبريشن1 مجم": {
+    "brand": "Neopression",
+    "words": 1
+  },
+  "نيوبريشن2 مجم": {
+    "brand": "Neopression",
+    "words": 1
+  },
+  "نيوترا تريبسين اقراص": {
+    "brand": "Neutra Trypsin",
+    "words": 2
+  },
+  "نيورازين20-100 قرص": {
+    "brand": "Neurazine",
+    "words": 1
+  },
+  "نيوروفيت اقراص": {
+    "brand": "Neurovit",
+    "words": 1
+  },
+  "نيوروفيت باور كبسولات": {
+    "brand": "Neurovit Power",
+    "words": 2
+  },
+  "نيوريماكس ادفانس كبسول": {
+    "brand": "Neurimax Advance",
+    "words": 2
+  },
+  "نيوريماكس بﻼس اقراص": {
+    "brand": "Neurimax Plus",
+    "words": 2
+  },
+  "نيوزوليد اقراص": {
+    "brand": "Neozolid",
+    "words": 1
+  },
+  "هارفى كريم": {
+    "brand": "Harvy",
+    "words": 1
+  },
+  "هالونيز5مجم": {
+    "brand": "Halonace",
+    "words": 1
+  },
+  "هانتر كريم": {
+    "brand": "Hunter",
+    "words": 1
+  },
+  "هاى بيوتك1 جم اقراص": {
+    "brand": "Hibiotic",
+    "words": 2
+  },
+  "هاى بيوتك312 شراب": {
+    "brand": "Hibiotic",
+    "words": 2
+  },
+  "هاى بيوتك375مجم اقراص": {
+    "brand": "Hibiotic",
+    "words": 2
+  },
+  "هاى بيوتك ان457 شراب": {
+    "brand": "Hibiotic N",
+    "words": 3
+  },
+  "هاى بيوتك ان600 شراب": {
+    "brand": "Hibiotic N",
+    "words": 3
+  },
+  "هاى جليتازون15 مجم": {
+    "brand": "Hi Glitazone",
+    "words": 2
+  },
+  "هاى جليتازون30 مل": {
+    "brand": "Hi Glitazone",
+    "words": 2
+  },
+  "هاى ديرم صابون": {
+    "brand": "Hiderm",
+    "words": 2
+  },
+  "هاى ديرم كريم": {
+    "brand": "Hiderm",
+    "words": 2
+  },
+  "هاى ديرم لوسيون ج": {
+    "brand": "Hiderm",
+    "words": 3
+  },
+  "هاى كال شراب ك25": {
+    "brand": "Hi Cal",
+    "words": 2
+  },
+  "هاى ماكس سبراى": {
+    "brand": "Himax",
+    "words": 2
+  },
+  "هاى ماكس كريم": {
+    "brand": "Himax",
+    "words": 2
+  },
+  "هيالو كونيكس سيرم": {
+    "brand": "Hyalokonex Facial",
+    "words": 2
+  },
+  "هيباتاكسيم1 جم امبول س ج": {
+    "brand": "Hebitaxime",
+    "words": 1
+  },
+  "هيباتيكم شراب": {
+    "brand": "Hepaticum",
+    "words": 1
+  },
+  "هيبامكس بلس اقراص": {
+    "brand": "Hipamax Plus",
+    "words": 2
+  },
+  "هيبانوكس كبسول س ج": {
+    "brand": "Hepanox",
+    "words": 1
+  },
+  "هيبتا بانثينول بينك غسول": {
+    "brand": "Hepta Panthenol Pink",
+    "words": 3
+  },
+  "هيبتا بانثينول بلس كارباميد كريم": {
+    "brand": "Hepta Panthenol Plus Carbamide",
+    "words": 4
+  },
+  "هيبتا بانثينول بلس كارباميد لوشن": {
+    "brand": "Hepta Panthenol Plus Carbamide",
+    "words": 4
+  },
+  "هيبتا بانثينول بلسم": {
+    "brand": "Hepta Panthenol",
+    "words": 2
+  },
+  "هيبتا بانثينول بيتا كريم": {
+    "brand": "Hepta Panthenol Beta",
+    "words": 3
+  },
+  "هيبتا بانثينول بينك كريم": {
+    "brand": "Hepta Panthenol Pink",
+    "words": 3
+  },
+  "هيبتا بانثينول جيل للوجه": {
+    "brand": "Hepta Panthenol",
+    "words": 3
+  },
+  "هيبتا بانثينول ريتش لوشن": {
+    "brand": "Hepta Panthenol Rich",
+    "words": 3
+  },
+  "هيبتا بانثينول زيت للشعر": {
+    "brand": "Hepta Panthenol",
+    "words": 2
+  },
+  "هيبتا بانثينول سيرم للشعر": {
+    "brand": "Hepta Panthenol",
+    "words": 2
+  },
+  "هيبتا بانثينول شامبو للشعر": {
+    "brand": "Hepta Panthenol",
+    "words": 2
+  },
+  "هيبتا بانثينول كريم للوجه": {
+    "brand": "Hepta Panthenol",
+    "words": 3
+  },
+  "هيبتا بانثينول لايت لوشن": {
+    "brand": "Hepta Panthenol Light",
+    "words": 3
+  },
+  "هيبتا بانثينول ماكس كريم": {
+    "brand": "Hepta Panthenol Max",
+    "words": 3
+  },
+  "هيبتا بانثينول هير ماسك": {
+    "brand": "Hepta Panthenol",
+    "words": 2
+  },
+  "هيبتا كارباميد غسول للجسم": {
+    "brand": "Hepta Carbamide",
+    "words": 3
+  },
+  "هيبتا كارباميد كريم": {
+    "brand": "Hepta Carbamide",
+    "words": 2
+  },
+  "هيبتا كارباميد لوشن": {
+    "brand": "Hepta Carbamide",
+    "words": 2
+  },
+  "هيدرافيت كريم": {
+    "brand": "Hydrafeet",
+    "words": 1
+  },
+  "هيدروكورت20مجم كريم": {
+    "brand": "Hydrocort",
+    "words": 1
+  },
+  "هيربولين اكياس": {
+    "brand": "Herbolin",
+    "words": 1
+  },
+  "هيرتونيك اقراص": {
+    "brand": "Hairtonic",
+    "words": 1
+  },
+  "هيرفوجين اقراص": {
+    "brand": "Hairvogine",
+    "words": 1
+  },
+  "هيرفوجين بلسم": {
+    "brand": "Hairvogine",
+    "words": 1
+  },
+  "هيرمبرو10مجم": {
+    "brand": "Hermpro",
+    "words": 1
+  },
+  "هيرو بيبى1 لبن": {
+    "brand": "Hero Baby",
+    "words": 1
+  },
+  "هيرو بيبى2 لبن": {
+    "brand": "Hero Baby",
+    "words": 1
+  },
+  "هيرو بيبى ايه ار لبن": {
+    "brand": "Hero Baby Ar",
+    "words": 2
+  },
+  "هيرو نيوترا سينس1": {
+    "brand": "Hero Baby Nutrasense",
+    "words": 3
+  },
+  "هيرو نيوترا سينس2": {
+    "brand": "Hero Baby Nutrasense",
+    "words": 3
+  },
+  "هيرو نيوترا سينس3": {
+    "brand": "Hero Baby Nutrasense",
+    "words": 3
+  },
+  "هيستازين اقراص": {
+    "brand": "Histazine",
+    "words": 1
+  },
+  "هيستروجيت200مجم كبسول": {
+    "brand": "Hystrogest",
+    "words": 1
+  },
+  "هيستوتيك16مجم": {
+    "brand": "Histotec",
+    "words": 1
+  },
+  "هيلوزين لوسيون120مل 70ج": {
+    "brand": "Helozin",
+    "words": 2
+  },
+  "هيم هيلثى كبسول": {
+    "brand": "Heam Healthy",
+    "words": 2
+  },
+  "هيموجين نقط": {
+    "brand": "Haemojet",
+    "words": 1
+  },
+  "وان الفا1 مكجم": {
+    "brand": "One Alpha",
+    "words": 3
+  },
+  "وصايا زيت": {
+    "brand": "Wesaya",
+    "words": 1
+  },
+  "وى جل75جم": {
+    "brand": "We",
+    "words": 1
+  },
+  "ويست اير اكياس": {
+    "brand": "Westair",
+    "words": 2
+  },
+  "ويل ديرم كريم": {
+    "brand": "Well Derm",
+    "words": 2
+  },
+  "وينزوكسيب90مجم": {
+    "brand": "Winzoxib",
+    "words": 1
+  },
+  "وينزوكسيب120مجم": {
+    "brand": "Winzoxib",
+    "words": 1
+  },
+  "يترو كير200 مجم": {
+    "brand": "Utrocare",
+    "words": 2
+  },
+  "يوروكوكس200مجم": {
+    "brand": "Eurocox",
+    "words": 1
+  },
+  "يورونيميا امبول ج": {
+    "brand": "Euronemia",
+    "words": 1
+  },
+  "يوريبان شراب": {
+    "brand": "Uripan",
+    "words": 1
+  },
+  "يوريكودروب120مجم اقراص": {
+    "brand": "Uricodrop",
+    "words": 1
+  },
+  "يوريكودروب80 مجم س ج": {
+    "brand": "Uricodrop",
+    "words": 1
+  },
+  "يورينكس ق س ج": {
+    "brand": "Urinex",
+    "words": 1
+  },
+  "يونيزيثرين 6 ق 500 مجم": {
+    "brand": "Unizithrin",
+    "words": 1
+  },
+  "يونيزيسرين500اقراص": {
+    "brand": "Unizithrin",
+    "words": 1
+  },
+  "يونيفرسال كريم": {
+    "brand": "Universal",
+    "words": 1
+  },
+  "يونيكتام1500 حقن": {
+    "brand": "Unictam",
+    "words": 1
+  },
+  "يونيكتام750 حقن": {
+    "brand": "Unictam",
+    "words": 1
+  }
+};
+
         function getEnInfo2(p) {
           if (p.en && String(p.en).trim()) return { text: String(p.en).trim(), verified: true };
           const s = cleanArabicName(p.name);
@@ -8257,6 +15821,13 @@ ${window.location.href}
           text = text.replace(/\bEye Drops\b/g, 'Eye Drops').replace(/\b(Eye|Ear|Nasal) (.*?)\bDrops\b/, (m, a, mid) => a + ' Drops' + (mid.trim() ? ' ' + mid.trim() : ''));
           text = text.replace(/\bTablets Tablets\b/g, 'Tablets').replace(/\bCapsules Capsules\b/g, 'Capsules').replace(/\b(\w+) \1\b/gi, '$1');
           text = text.replace(/\bAlternative\b/g, 'Alt. to');
+          const reference = ENGLISH_BRAND_REFERENCE[p.name];
+          if (reference) {
+            const generated = text.split(/\s+/);
+            const suffix = generated.slice(Math.max(1, reference.words || 1)).join(' ');
+            const matchedText = [reference.brand, suffix].filter(Boolean).join(' ').replace(/\s+/g, ' ').trim();
+            return { text: matchedText, verified: true, note: 'reference-match' };
+          }
           return { text, verified: false, note: [...notes, 'auto-generated'].filter(Boolean).join(',') };
         }
 
@@ -8270,6 +15841,13 @@ ${window.location.href}
             return v;
         }
         function getEn(p) { return getEnInfo(p).text; }
+        function enChip(p, extraClass) {
+            const info = getEnInfo(p), verified = !!info.verified;
+            const safe = String(info.text || '').replace(/[&<>\"']/g, c => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '\"':'&quot;', "'":'&#39;' }[c]));
+            const color = verified ? 'text-emerald-700' : 'text-amber-700';
+            const title = verified ? (info.note === 'reference-match' ? 'مطابق لمرجع تجاري مصري مفتوح' : 'اسم إنجليزي مدخل يدويًا') : 'اسم مقترح آليًا ويحتاج مراجعة';
+            return `<span dir="ltr" class="inline-flex items-center gap-1 ${color} font-bold text-[10px] ${extraClass || ''}" title="${title}">${safe}<span aria-hidden="true">${verified ? '✓' : '?'}</span></span>`;
+        }
         const EN_NOTE_AR = {
             'dose:ml>mg': 'تم تصحيح وحدة الجرعة من «مل» إلى «مجم» (خطأ كتابة في اسم الصنف)',
             'dose:mcg': 'الجرعة بالميكروجرام (ليفوثيروكسين) — تم تصحيح الوحدة',
@@ -8278,7 +15856,8 @@ ${window.location.href}
             'dose:huge': '⚠ جرعة غير منطقية — راجع الصنف',
             'check:K': '⚠ حرف «ك» غير واضح في الاسم العربي — راجع (كبسولة؟)',
             'typo': 'تم تصحيح تكرار حروف في الاسم العربي',
-            'auto-generated': 'اسم مقترح آليًا من قاموس الترجمة، وليس تحققًا من الاسم التجاري الرسمي'
+            'auto-generated': 'اسم مقترح آليًا من قاموس الترجمة، وليس تحققًا من الاسم التجاري الرسمي',
+            'reference-match': 'تمت مطابقة الاسم التجاري مع قاعدة بيانات مصرية مفتوحة؛ لا يعني ذلك اعتمادًا رسميًا من هيئة الدواء'
         };
         function enNoteText(note) { return String(note || '').split(',').filter(Boolean).map(n => EN_NOTE_AR[n] || n).join(' — '); }
 
@@ -8330,7 +15909,7 @@ ${window.location.href}
         function csvCell(v) { return '"' + String(v ?? '').replace(/"/g, '""') + '"'; }
         function exportEnglishNames(onlyUnverified) {
             const rows = products.filter(p => !onlyUnverified || !getEnInfo(p).verified);
-            const csv = '\uFEFFid,arabic,english,status,note\n' + rows.map(p => { const i = getEnInfo(p); return [p.id, csvCell(p.name), csvCell(i.text), csvCell(i.verified ? 'confirmed' : 'needs-review'), csvCell(enNoteText(i.note))].join(','); }).join('\n');
+            const csv = '\uFEFFid,arabic,english,status,note\n' + rows.map(p => { const i = getEnInfo(p); return [p.id, csvCell(p.name), csvCell(i.text), csvCell(i.note === 'reference-match' ? 'reference-matched' : (i.verified ? 'manually-confirmed' : 'needs-review')), csvCell(enNoteText(i.note))].join(','); }).join('\n');
             const a = document.createElement('a');
             a.href = URL.createObjectURL(new Blob([csv], { type: 'text/csv;charset=utf-8' }));
             a.download = onlyUnverified ? 'arkan_english_names_to_review.csv' : 'arkan_english_names_all.csv';
@@ -8373,8 +15952,10 @@ ${window.location.href}
         }
         function updateEnglishStats() {
             const el = document.getElementById('en-stats'); if (!el) return;
-            const v = products.filter(p => getEnInfo(p).verified).length;
-            el.textContent = `مُدخل يدويًا: ${v} من ${products.length} صنف — مقترح آلي يحتاج مراجعة: ${products.length - v}`;
+            const referenceCount = products.filter(p => getEnInfo(p).note === 'reference-match').length;
+            const manualCount = products.filter(p => getEnInfo(p).verified && getEnInfo(p).note !== 'reference-match').length;
+            const pending = products.length - referenceCount - manualCount;
+            el.textContent = `مطابق لمرجع: ${referenceCount} | مدخل يدويًا: ${manualCount} | يحتاج مراجعة: ${pending} من ${products.length}`;
         }
 
         function updateDrugUseStats() {
@@ -8769,6 +16350,7 @@ ${window.location.href}
                 lines.push({
                     name: prod.name,
                     englishName: getEn(prod),
+                    englishVerified: getEnInfo(prod).verified,
                     use: getProductUseInfo(prod),
                     qty,
                     pubPrice: prod.price,
@@ -8901,7 +16483,7 @@ ${window.location.href}
             if (!isMinimumOrderExempt(currentSession?.user) && summary.totalClient < 10000) { showToast('الحد الأدنى للفاتورة 10,000 جنيه. إجمالي سلتك الحالي ' + fmtMoney(summary.totalClient) + ' جنيه.', 'error'); return; }
             pendingOrderAction = action;
             const host = document.getElementById('order-review-items');
-            host.innerHTML = summary.lines.map((line, index) => '<div class="py-3 border-b border-arkan-sand/70 last:border-0"><div class="flex justify-between gap-3"><div class="min-w-0"><p class="font-black text-arkan-dark">' + (index + 1) + '. ' + line.name + '</p><p dir="ltr" class="text-[10px] text-arkan-bronze text-right">' + (line.englishName || '') + '</p><p class="text-[10px] text-slate-600 mt-1"><strong>الاستخدام:</strong> ' + (line.use || 'غير محدد') + '</p></div><div class="text-left shrink-0"><p class="font-black text-arkan-dark">' + fmtMoney(line.lineClient) + ' ج.م</p><p class="text-[10px] text-arkan-bronze">' + line.qty + ' × ' + fmtMoney(line.pharmPrice) + '</p></div></div></div>').join('');
+            host.innerHTML = summary.lines.map((line, index) => '<div class="py-3 border-b border-arkan-sand/70 last:border-0"><div class="flex justify-between gap-3"><div class="min-w-0"><p class="font-black text-arkan-dark">' + (index + 1) + '. ' + line.name + '</p><p dir="ltr" class="text-[10px] text-right ' + (line.englishVerified ? 'text-emerald-700 font-bold' : 'text-amber-700') + '">' + (line.englishName || '') + (line.englishVerified ? ' ✓' : ' ?') + '</p><p class="text-[10px] text-slate-600 mt-1"><strong>الاستخدام:</strong> ' + (line.use || 'غير محدد') + '</p></div><div class="text-left shrink-0"><p class="font-black text-arkan-dark">' + fmtMoney(line.lineClient) + ' ج.م</p><p class="text-[10px] text-arkan-bronze">' + line.qty + ' × ' + fmtMoney(line.pharmPrice) + '</p></div></div></div>').join('');
             document.getElementById('order-review-count').textContent = summary.itemsCount;
             document.getElementById('order-review-total').textContent = fmtMoney(summary.totalClient) + ' EGP';
             document.getElementById('order-review-title').textContent = action === 'whatsapp' ? 'مراجعة الطلب قبل إرساله عبر واتساب' : (action === 'copy' ? 'مراجعة الطلب قبل نسخه' : (action === 'print' ? 'مراجعة الأصناف قبل طباعة الفاتورة' : 'مراجعة الطلب قبل إرساله للإدارة'));
@@ -9071,7 +16653,7 @@ ${window.location.href}
                 return `
                     <tr>
                         <td class="py-2 px-3 text-center num-en font-bold">${idx + 1}</td>
-                        <td class='py-2 px-3 font-extrabold text-arkan-dark'><div>${line.name}</div><div dir='ltr' class='text-[10px] text-arkan-bronze font-semibold'>${line.englishName || (origProd ? getEn(origProd) : '')}</div><div class='text-[10px] text-slate-600 font-normal mt-1'>الاستخدام: ${line.use || (origProd ? getProductUseInfo(origProd) : 'غير محدد')}</div></td>
+                        <td class='py-2 px-3 font-extrabold text-arkan-dark'><div>${line.name}</div><div dir='ltr' class='text-[10px] ${line.englishVerified || (origProd && getEnInfo(origProd).verified) ? 'text-emerald-700' : 'text-amber-700'} font-semibold'>${line.englishName || (origProd ? getEn(origProd) : '')}${line.englishVerified || (origProd && getEnInfo(origProd).verified) ? ' ✓' : ' ?'}</div><div class='text-[10px] text-slate-600 font-normal mt-1'>الاستخدام: ${line.use || (origProd ? getProductUseInfo(origProd) : 'غير محدد')}</div></td>
                         <td class="py-2 px-3 text-center num-en font-black">${line.qty}</td>
                         <td class="py-2 px-3 text-center num-en font-bold text-arkan-bronze">${fmtMoney(pubPrice)}</td>
                         <td class="py-2 px-3 text-center num-en font-black text-arkan-primary">${fmtPercent(line.clientDisc)}</td>
