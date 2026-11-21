@@ -8277,7 +8277,7 @@ ${window.location.href}
                 const tokenScores=qt.map(t=>Math.max(0,...pt.map(x=>voiceTokenSimilarity(t,x))));
                 const coverage=tokenScores.filter(x=>x>=.68).length/qt.length;
                 const avg=tokenScores.reduce((a,b)=>a+b,0)/qt.length;
-                const numeric=qt.filter(t=>/^\\d/.test(t));
+                const numeric=qt.filter(t=>/^\d/.test(t));
                 const numericOk=numeric.every(t=>pt.some(x=>x.startsWith(t)));
                 let score=Math.round(coverage*600+avg*260-Math.max(0,pt.length-qt.length)*3);
                 if(!numericOk) score-=220;
@@ -8291,7 +8291,7 @@ ${window.location.href}
             let best=result[0], bestScore=-1;
             for(let i=0;i<result.length;i++){
                 const alt=result[i], text=String(alt.transcript||'').trim();
-                const pieces=text.split(/[,،;؛]+|\\s+(?:ثم|وبعدها|بعدها)\\s+/i).filter(Boolean);
+                const pieces=text.split(/[,،;؛]+|\s+(?:ثم|وبعدها|بعدها)\s+/i).filter(Boolean);
                 const score=pieces.reduce((sum,piece)=>{const c=voiceFindCandidates(piece);return sum+(c[0]?c[0]._voiceScore:0);},0)+(Number(alt.confidence)||0)*8;
                 if(score>bestScore){bestScore=score;best=alt;}
             }
@@ -8358,7 +8358,7 @@ ${window.location.href}
         function parseVoiceInvoiceDraft() {
             const raw=document.getElementById('voice-transcript').value.trim();
             if(!raw){showToast('اتكلم أو اكتب الأصناف أولاً.','error');return;}
-            const chunks=raw.split(/[,،;؛\n]+|\s+(?:ثم|وبعدها|بعدها)\s+|\s+و\s*/i).map(x=>x.trim()).filter(Boolean);
+            const chunks=raw.split(/[,،;؛\n]+|\s+(?:ثم|وبعدها|بعدها)\s+/i).map(x=>x.trim()).filter(Boolean);
             voiceInvoiceDraft=chunks.map(chunk=>{
                 const qty=voiceNumberFromText(chunk)||1;
                 const query=voiceNormalize(chunk).replace(/\d+(?:\.\d+)?/g,' ')
