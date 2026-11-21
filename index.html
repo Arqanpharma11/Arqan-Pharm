@@ -8435,11 +8435,11 @@ ${window.location.href}
         function processVoiceAdminCommand(transcript) {
             if(!currentSession||currentSession.role!=='admin'){showToast('الأدمن فقط يمكنه استخدام أوامر إدارة الأصناف.','error');return;}
             const raw=String(transcript||'').trim(), normalized=voiceNormalize(raw);
-            const dm=normalized.match(/خصم\\s*(\\d+(?:\\.\\d+)?|واحد|واحده|واحدة|اتنين|اثنين|اثنان|تنين|ثلاثه|ثلاثة|تلاته|تلات|اربعه|أربعة|اربعة|خمسه|خمسة|سته|ستة|سبعه|سبعة|تمانيه|ثمانيه|ثمانية|تسعه|تسعة|عشره|عشرة)/);
-            const query=normalized.replace(/خصم\\s*(?:\\d+(?:\\.\\d+)?|واحد|واحده|واحدة|اتنين|اثنين|اثنان|تنين|ثلاثه|ثلاثة|تلاته|تلات|اربعه|أربعة|اربعة|خمسه|خمسة|سته|ستة|سبعه|سبعة|تمانيه|ثمانيه|ثمانية|تسعه|تسعة|عشره|عشرة)\\s*(?:%|في الميه|بالميه|بالمية|بالمئه)?/g,' ')
-                .replace(/\\b(?:في الميه|بالميه|بالمية|بالمئه)\\b/g,' ')
+            const dm=normalized.match(/خصم\s*(\d+(?:\.\d+)?|واحد|واحده|واحدة|اتنين|اثنين|اثنان|تنين|ثلاثه|ثلاثة|تلاته|تلات|اربعه|أربعة|اربعة|خمسه|خمسة|سته|ستة|سبعه|سبعة|تمانيه|ثمانيه|ثمانية|تسعه|تسعة|عشره|عشرة)/);
+            const query=normalized.replace(/خصم\s*(?:\d+(?:\.\d+)?|واحد|واحده|واحدة|اتنين|اثنين|اثنان|تنين|ثلاثه|ثلاثة|تلاته|تلات|اربعه|أربعة|اربعة|خمسه|خمسة|سته|ستة|سبعه|سبعة|تمانيه|ثمانيه|ثمانية|تسعه|تسعة|عشره|عشرة)\s*(?:%|في الميه|بالميه|بالمية|بالمئه)?/g,' ')
+                .replace(/\b(?:في الميه|بالميه|بالمية|بالمئه)\b/g,' ')
                 .replace(/(?:ابحث|بحث|دور|هات|افتح|عن|على|الصنف|صنف|من فضلك)/g,' ')
-                .replace(/%/g,' ').replace(/\\s+/g,' ').trim();
+                .replace(/%/g,' ').replace(/\s+/g,' ').trim();
             const input=document.getElementById('adm-search-input');
             input.value=query||raw; admCurrentPage=1; renderAdminProductsTable();
             const candidates=voiceFindCandidates(query||raw);
