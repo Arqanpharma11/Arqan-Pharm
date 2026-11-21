@@ -97,6 +97,49 @@
                 padding: 12px !important;
             }
         }
+    
+        /* ARQAN branded launch intro — isolated from the existing application UI. */
+        #arkan-launch-intro {
+            position: fixed; inset: 0; z-index: 10000; display: flex;
+            align-items: center; justify-content: center; padding: 24px;
+            background: radial-gradient(ellipse at 50% 38%, #6D4C41 0%, #4E342E 48%, #3E2723 100%);
+            opacity: 1; visibility: visible; pointer-events: none;
+            animation: arqanIntroExit .55s ease-in 2.15s forwards;
+        }
+        #arkan-launch-intro .arkan-intro-content {
+            display: flex; flex-direction: column; align-items: center; gap: 15px;
+            text-align: center; animation: arqanLogoReveal .9s cubic-bezier(.2,.8,.2,1) both;
+        }
+        #arkan-launch-intro img {
+            width: clamp(104px, 22vw, 156px); height: auto; display: block;
+            filter: drop-shadow(0 12px 24px rgba(0,0,0,.28));
+            animation: arqanLogoFloat 2.2s ease-in-out .35s infinite;
+        }
+        #arkan-launch-intro .arkan-intro-name {
+            color: #FAF7F2; font-size: clamp(23px, 5vw, 34px); font-weight: 900;
+            letter-spacing: .04em; line-height: 1.25;
+        }
+        #arkan-launch-intro .arkan-intro-tagline {
+            color: #E6D7C3; font-size: 12px; font-weight: 700; letter-spacing: .12em;
+            opacity: .9;
+        }
+        #arkan-launch-intro .arkan-intro-rule {
+            width: 86px; height: 2px; margin-top: 4px; border-radius: 9px;
+            background: linear-gradient(90deg, transparent, #E6D7C3, transparent);
+            transform-origin: center; animation: arqanRuleIn .8s ease .45s both;
+        }
+        @keyframes arqanLogoReveal {
+            from { opacity: 0; transform: translateY(18px) scale(.94); filter: blur(5px); }
+            to { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+        }
+        @keyframes arqanLogoFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+        @keyframes arqanRuleIn { from { opacity: 0; transform: scaleX(.2); } to { opacity: 1; transform: scaleX(1); } }
+        @keyframes arqanIntroExit { to { opacity: 0; visibility: hidden; } }
+        @media (prefers-reduced-motion: reduce) {
+            #arkan-launch-intro, #arkan-launch-intro * { animation: none !important; }
+            #arkan-launch-intro { opacity: 0; visibility: hidden; }
+        }
+
     </style>
 
     <!-- PWA Manifest & Mobile/Desktop App Support -->
@@ -113,6 +156,14 @@
     <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
 </head>
 <body class="min-h-screen flex flex-col selection:bg-arkan-sand selection:text-arkan-dark">
+    <div id="arkan-launch-intro" aria-label="أركان فارما" role="presentation">
+        <div class="arkan-intro-content">
+            <img src="./arkan-logo.svg" alt="" width="512" height="512" fetchpriority="high">
+            <div class="arkan-intro-name">أركان فارما</div>
+            <div class="arkan-intro-tagline">SMART PHARMACY MANAGEMENT</div>
+            <div class="arkan-intro-rule"></div>
+        </div>
+    </div>
 
     <!-- Toast Notifications Container -->
     <div id="toast-container" class="fixed bottom-5 left-5 z-50 flex flex-col gap-2.5 max-w-sm w-full pointer-events-none px-4 sm:px-0 no-print"></div>
