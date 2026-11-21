@@ -7164,7 +7164,7 @@
 
                 // Verified package-photo seed: Apple-Lite 30 tablets (catalog item #10).
                 // Source page shows the exact Apple-Lite pack; do not use lookalike images.
-                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v20';;;;;
+                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v21';;;;;
                 if (localStorage.getItem(IMAGE_SEED_VERSION) !== '1') {
                     // Individually checked package photos: brand, strength/stage and form match.
                     const verifiedImageSeeds = {
@@ -7327,6 +7327,13 @@
                         '319': { src: 'https://www.cphi-online.com/product/l-argenine-sedico/l-arginine-purple-2306.png', source: 'CPHI / SEDICO — L-Arginine SEDICO 1000 mg tablets; exact brand and strength verified' },
                         '322': { src: 'https://www.cphi-online.com/product/l-carnitine-sedico-syrup/l-carnitine-syrup-en.png', source: 'CPHI / SEDICO — L-Carnitine syrup, 1500 mg levocarnitine; exact product and form matched' },
                         '323': { src: 'https://www.bloompharmacy.com/cdn/shop/products/l-carnitine-plus-20-tablets-367250.jpg?v=1687635767', source: 'Bloom Pharmacy — L-Carnitine Plus, 20 film-coated tablets; exact product name and pack matched' }
+                    ,
+                        '351': { src: 'https://delmar-test.linkedgates.com/images/items/106930-v1.JPEG', source: 'Delmar & Attalla — Alzmenda 5 mg, 14 film-coated tablets; exact brand, strength and pack verified' },
+                        '352': { src: 'https://www.lotusonline.com/cdn/shop/files/3003504_processed.jpg?v=1773306137&width=750', source: 'Lotus Pharmacies — Alzmenda 10 mg, 21 film-coated tablets; exact brand, strength and pack verified' },
+                        '353': { src: 'https://dkud4u09qff41.cloudfront.net/Products/09188ee3-2e88-4ef9-9f74-4abca80e4a65.jpeg', source: 'Vezeeta Pharmacy — Alzmenda 20 mg, 21 film-coated tablets; exact brand, strength and pack verified' },
+                        '364': { src: 'https://api.c0umyt3cda-pharmaove1-p1-public.model-t.cc.commerce.ondemand.com/medias/000000000000033066.webp?context=bWFzdGVyfGltYWdlc3wxNzIxN3xpbWFnZS9qcGVnfGFEa3pMMmcwTWk4eE1UTTFOekEwTmpJeE1EVTVNQzh3TURBd01EQXdNREF3TURBd016TXdOall1ZDJWaWNBfGQxNDY4YWI5MjRiYWVjMzc4MDZhOTI3MTNjODg5ZjQyZjY1OGU4Mzc5NTFiYmEwN2YzMjVjM2IxNzEwNmFiMGQ', source: 'Pharma eMarket — AlfabRimo Plus eye drops 5 ml; exact brand and volume verified' },
+                        '373': { src: 'https://dkud4u09qff41.cloudfront.net/Products/ef9beaff-8ac8-4828-85d2-bbf330655b57.jpeg', source: 'Vezeeta Pharmacy — Alfacalcidol oral drops 2 mcg/ml, 20 ml; exact ingredient, concentration and volume verified' },
+                        '381': { src: 'https://re3ayapharmacy.com/cdn/shop/files/alphintern-30-tablets-238243.jpg?v=1735258116', source: 'Re3aya Pharmacy — Alphintern 30 enteric-coated tablets; exact brand and pack verified' }
                      };
                     Object.entries(verifiedImageSeeds).forEach(([id, seed]) => {
                         if (seed.src && (PROD_IMG_VERIFIED[id] !== true || PROD_IMG_SRC[id] === seed.source)) {
