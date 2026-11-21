@@ -7164,7 +7164,7 @@
 
                 // Verified package-photo seed: Apple-Lite 30 tablets (catalog item #10).
                 // Source page shows the exact Apple-Lite pack; do not use lookalike images.
-                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v16';;;;;
+                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v17';;;;;
                 if (localStorage.getItem(IMAGE_SEED_VERSION) !== '1') {
                     // Individually checked package photos: brand, strength/stage and form match.
                     const verifiedImageSeeds = {
@@ -7299,6 +7299,10 @@
                         '187': { src: 'https://alfouadpharmacies.com/cdn/shop/files/148709.webp?v=1771837897', source: 'AlFouad Pharmacies — Erectalis 20 mg, 4 film-coated tablets; exact brand, strength and pack verified' },
                         '192': { src: 'https://mtalaatpharmacy.com/storage/products/1759776863.webp', source: 'Dr. Mohamed Talaat Pharmacy — Evapharma Azathioprine 75 mg, 30 film-coated tablets; exact manufacturer, strength and pack verified' },
                         '193': { src: 'https://mtalaatpharmacy.com/storage/products/1759776747.webp', source: 'Dr. Mohamed Talaat Pharmacy — Evapharma Azathioprine 100 mg, 30 film-coated tablets; exact manufacturer, strength and pack verified' }
+                    ,
+                        '231': { src: 'https://doctorak.com/uploads/medicines/4cd776404be2b6cc0b89db00edf2e57c.png', source: 'Doctorak — Estikan 20 mg, 14 film-coated tablets; exact brand and strength verified' },
+                        '234': { src: 'https://www.lotusonline.com/cdn/shop/files/3006294_1.jpg?v=1767616993&width=1500', source: 'Lotus Pharmacies — Astin 20 mg, 20 film-coated tablets; exact brand, strength and pack verified' },
+                        '235': { src: 'https://cdn-med-images.vezeeta.com/Products/41fd47f9-17a3-4496-b10b-7d936a2b91ba.jpeg', source: 'Vezeeta Pharmacy — Astin 10 mg, 10 tablets; exact brand, strength and pack verified' }
                      };
                     Object.entries(verifiedImageSeeds).forEach(([id, seed]) => {
                         if (seed.src && (PROD_IMG_VERIFIED[id] !== true || PROD_IMG_SRC[id] === seed.source)) {
