@@ -8326,6 +8326,8 @@ ${window.location.href}
             document.getElementById('voice-modal-subtitle').textContent='نفس محرك الفاتورة الذكي ببوابة الصيدلي، مع تنبيه الأصناف غير الموجودة ومراجعة الكميات.';
             document.getElementById('voice-pharmacist-controls').classList.remove('hidden');
             document.getElementById('voice-admin-controls').classList.add('hidden');
+            document.getElementById('voice-transcript').classList.remove('hidden');
+            const transcriptLabel=document.querySelector('label[for="voice-transcript"]');if(transcriptLabel)transcriptLabel.classList.remove('hidden');
             document.getElementById('voice-pharm-review').classList.remove('hidden');
             document.getElementById('voice-admin-review').classList.add('hidden');
             document.getElementById('voice-pharm-record-btn').setAttribute('onclick',"startVoiceRecognition('admin-invoice')");
@@ -8460,45 +8462,26 @@ ${window.location.href}
             // Keep meaningful unmatched speech visible as unavailable catalog lines.
             const ignoredSpeech=new Set(['انا','احنا','عايز','عاوزه','عاوز','محتاج','محتاجه','محتاجين','ضيف','اضف','حط','هات','من','فضلك','لو','سمحت','صنف','الصنف','دواء','دوا','ادويه','ادوية','علاج','علبه','علب','عبوه','عبوات','شريط','شرائط','باكيت','باكت','عدد','و','ثم','وبعدها','بعدها','وكمان','كمان','عاوزين','عايزين','ممكن','اريد','بص','طيب','تمام']);
             const unmatched=[];
-            let pending=[];
+            let pending=[],pendingStart=-1;
             const flushUnmatched=()=>{
                 if(!pending.length)return;
-                const phrase=pending.join(' ').trim();
-                if(phrase && phrase.length>1) unmatched.push({source:phrase,query:phrase,qty:1,productId:'',candidates:[],start:-1,end:-1,unavailable:true});
-                pending=[];
+                const phrase=pending.join(' ').trim(),startAt=pendingStart,endAt=startAt+pending.length;
+                if(phrase && phrase.length>1){
+                    const candidates=voiceFindCandidates(phrase);
+                    unmatched.push({source:phrase,query:phrase,qty:voiceSmartQuantity(tokens,startAt,endAt),productId:'',candidates,start:startAt,end:endAt,unavailable:true,corrected:false});
+                }
+                pending=[];pendingStart=-1;
             };
             tokens.forEach((token,index)=>{
                 if(used[index]){flushUnmatched();return;}
                 const clean=token.replace(/^و(?=[\u0600-\u06FF]{3,})/,'');
                 if(!clean || ignoredSpeech.has(clean) || voiceQuantityValue(clean)!==null || /^\d+$/.test(clean)){flushUnmatched();return;}
+                if(pendingStart<0)pendingStart=index;
                 pending.push(clean);
             });
             flushUnmatched();
             found.push(...unmatched);
 
-            // Preserve unrecognized spoken product names instead of silently dropping them.
-            const ignoredVoiceTokens=new Set(['عايز','عاوزه','عاوز','محتاج','محتاجه','محتاجين','عاوزين','عايزين','من','فضلك','لو','سمحت','صنف','الصنف','دواء','دوا','علبه','علب','عبوه','عبوات','شريط','شرائط','باكيت','باكت','عدد','و','ثم','وبعدها','بعدها','وكمان','كمان','ممكن','اريد','هات','ضيف','اضف','لي','جنيه','جنيهات','واحد','واحده','واحدة','اتنين','اثنين','اثنان','تنين','ثلاثه','ثلاثة','تلاته','تلات','اربعه','اربعة','خمسه','خمسة','سته','ستة','سبعه','سبعة','تمانيه','ثمانيه','ثمانية','تسعه','تسعة','عشره','عشرة','حداشر','احداشر','اتناشر','اثناشر','تلتاشر','عشرين','ثلاثين','اربعين','خمسين','ستين','سبعين','تمانين','تسعين','ميه','مئه']);
-            const unknownRuns=[]; let run=[];
-            const flushUnknown=()=>{
-                const clean=run.filter(t=>!ignoredVoiceTokens.has(t)&&!/^\\d+(?:\\.\\d+)?$/.test(t));
-                if(clean.length){
-                    const query=clean.join(' ').trim();
-                    if(query.length>=2){
-                        const candidates=voiceFindCandidates(query);
-                        unknownRuns.push({source:run.join(' '),query,qty:1,productId:'',candidates,start:tokens.indexOf(run[0]),end:tokens.indexOf(run[run.length-1])+1,corrected:false,unavailable:true});
-                    }
-                }
-                run=[];
-            };
-            for(let ti=0;ti<tokens.length;ti++){
-                if(used[ti]){flushUnknown();continue;}
-                const t=tokens[ti];
-                if(ignoredVoiceTokens.has(t)||/^\\d+(?:\\.\\d+)?$/.test(t)){flushUnknown();continue;}
-                run.push(t);
-            }
-            flushUnknown();
-            found.push(...unknownRuns);
-            found.sort((a,b)=>a.start-b.start);
             const merged=[];
             found.forEach(line=>{
                 const prior=line.productId&&merged.find(x=>x.productId===line.productId);
