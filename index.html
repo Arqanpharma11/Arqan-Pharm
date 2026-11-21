@@ -8353,7 +8353,7 @@ ${window.location.href}
                 // active ingredient, class, or broad search keywords.
                 const ar=voiceNormalize(p.name),en=voiceNormalize(getEn(p));
                 const full=(ar+' '+en).trim();
-                data={signature,ar,en,full,pt:[...new Set(full.split(' ').filter(Boolean))]};
+                data={signature,ar,en,full,pt:[...new Set((full.match(/\\d+(?:\\.\\d+)?|[a-z\\u0600-\\u06ff]+/g)||[]))]};
                 voiceProductCache.set(p,data);
             }
             return data;
@@ -8377,7 +8377,7 @@ ${window.location.href}
         }
         function voiceFindCandidates(query) {
             const q=voiceNormalize(query); if(!q) return [];
-            const qt=q.split(' ').filter(t=>t && !voiceIgnoredTokens.has(t));
+            const qt=(q.match(/\\d+(?:\\.\\d+)?|[a-z\\u0600-\\u06ff]+/g)||[]).filter(t=>t && !voiceIgnoredTokens.has(t));
             if(!qt.length) return [];
             // A number in the spoken phrase is treated as medicine strength/pack detail,
             // not as a product by itself. It must match the catalog entry exactly.
