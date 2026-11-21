@@ -8347,10 +8347,11 @@ ${window.location.href}
         const voiceIgnoredTokens = new Set(['عايز','عاوزه','عاوز','محتاج','محتاجه','محتاجين','ضيف','اضف','حط','هات','من','فضلك','لو','سمحت','صنف','الصنف','دواء','دوا','علبه','علب','عبوه','عبوات','شريط','شرائط','باكيت','باكت','عدد','و','ثم','وبعدها','بعدها','وكمان','كمان','عاوزين','عايزين','ممكن','اريد','بص','طيب','تمام']);
         function getVoiceProductData(p) {
             let data=voiceProductCache.get(p);
-            if(!data){
+            const signature=[p.name,p.en,p.cls,p.act,p.available].join('|');
+            if(!data||data.signature!==signature){
                 const ar=voiceNormalize(p.name),en=voiceNormalize(getEn(p)),extra=voiceNormalize(getDrugSearchText(p)||'');
                 const full=ar+' '+en+' '+extra;
-                data={p,ar,en,full,pt:full.split(' ').filter(Boolean),available:p.available!==false};
+                data={signature,ar,en,full,pt:full.split(' ').filter(Boolean)};
                 voiceProductCache.set(p,data);
             }
             return data;
