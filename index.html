@@ -668,6 +668,8 @@
             <div class="bg-white border border-arkan-sand rounded-2xl p-4 shadow-sm flex flex-wrap items-center gap-2 text-xs">
                 <span class="font-black text-arkan-dark">الأسماء الإنجليزية التجارية:</span>
                 <span id="en-stats" class="font-bold text-emerald-800"></span>
+                <span id="drug-use-stats" class="font-bold text-sky-800"></span>
+                <button type="button" onclick="exportDrugUseReview()" class="bg-sky-800 text-white px-3 py-1.5 rounded-lg font-extrabold cursor-pointer">تصدير أدوية تحتاج تحديد الاستخدام</button>
                 <span class="flex-1"></span>
                 <button type="button" onclick="exportEnglishNames(true)" class="bg-arkan-dark text-white px-3 py-1.5 rounded-lg font-extrabold cursor-pointer">تصدير غير المراجَع (CSV)</button>
                 <button type="button" onclick="exportEnglishNames(false)" class="bg-arkan-cream border border-arkan-sand text-arkan-dark px-3 py-1.5 rounded-lg font-extrabold cursor-pointer">تصدير الكل</button>
@@ -7857,6 +7859,7 @@ ${window.location.href}
 
             document.getElementById('adm-total-items-badge').textContent = products.length;
             updateEnglishStats();
+            updateDrugUseStats();
 
             const filtered = products.filter(p => {
                 if (!query) return true;
@@ -8368,6 +8371,21 @@ ${window.location.href}
             const el = document.getElementById('en-stats'); if (!el) return;
             const v = products.filter(p => getEnInfo(p).verified).length;
             el.textContent = `مُدخل يدويًا: ${v} من ${products.length} صنف — مقترح آلي يحتاج مراجعة: ${products.length - v}`;
+        }
+
+        function updateDrugUseStats() {
+            const el = document.getElementById('drug-use-stats'); if (!el) return;
+            const medicines = products.filter(p => p && p.cat === 'أدوية');
+            const pending = medicines.filter(p => !p.cls || !DRUG_USE_LABELS[p.cls]).length;
+            el.textContent = 'استخدام محدد: ' + (medicines.length - pending) + ' / ' + medicines.length + ' — يحتاج مراجعة: ' + pending;
+        }
+
+        function exportDrugUseReview() {
+            const rows = products.filter(p => p && p.cat === 'أدوية' && (!p.cls || !DRUG_USE_LABELS[p.cls]));
+            const csv = '\uFEFFid,arabic,english,classification,active_ingredient,status\n' + rows.map(p => [p.id, csvCell(p.name), csvCell(getEn(p)), csvCell(p.cls || ''), csvCell(p.act || ''), csvCell('needs-review')].join(',')).join('\n');
+            const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([csv], { type: 'text/csv;charset=utf-8' }));
+            a.download = 'arkan_medicines_use_to_review.csv'; document.body.appendChild(a); a.click(); a.remove();
+            showToast('تم تصدير ' + rows.length + ' صنف دوائي يحتاج تحديد الاستخدام.');
         }
 
         // ---- Product images (stored apart from the main catalog so it stays light) ----
