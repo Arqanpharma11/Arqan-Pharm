@@ -8299,9 +8299,8 @@ ${window.location.href}
         }
         function voiceShouldAutoSelect(candidates,query) {
             if(!candidates.length) return false;
-            if(candidates[0]._voiceExact) return true;
-            const top=candidates[0]._voiceScore||0, next=candidates[1]?candidates[1]._voiceScore||0:0;
-            return top>=850 && top-next>=100;
+            // Never auto-select a fuzzy/partial match: medication names and strengths must be verified.
+            return candidates[0]._voiceExact===true || voiceNormalize(candidates[0].name)===voiceNormalize(query);
         }
         function openVoiceInvoice() {
             if (!currentSession || currentSession.role!=='pharmacist') { showToast('الفاتورة الصوتية متاحة من حساب الصيدلية فقط.','error'); return; }
