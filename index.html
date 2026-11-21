@@ -9700,6 +9700,7 @@ ${window.location.href}
             const isEdge = /Edg\//i.test(navigator.userAgent);
             const isChrome = /Chrome\//i.test(navigator.userAgent) && !isEdge;
             const isSamsung = /SamsungBrowser/i.test(navigator.userAgent);
+            const isMacSafari = /Macintosh|Mac OS X/i.test(navigator.userAgent) && /Safari/i.test(navigator.userAgent) && !/Chrome|Chromium|Edg/i.test(navigator.userAgent);
             let title = targetDevice === 'mobile' ? 'تثبيت مخزن أركان على الموبايل' : 'تثبيت مخزن أركان على الكمبيوتر';
             let steps = '';
 
@@ -9717,7 +9718,9 @@ ${window.location.href}
                 steps = '<ol class="list-decimal pr-5 space-y-2"><li>افتح الموقع في متصفح ' + browserName + ' مباشرة.</li><li>اضغط قائمة المتصفح ⋮.</li><li>اختر <b>تثبيت التطبيق</b> أو <b>إضافة إلى الشاشة الرئيسية</b>.</li><li>أكد التثبيت، وستظهر أيقونة أركان على شاشة الهاتف.</li></ol>';
             } else {
                 title = 'تثبيت مخزن أركان على الكمبيوتر';
-                if (isChrome || isEdge) {
+                if (isMacSafari) {
+                    steps = '<p>على أجهزة Mac التي تعمل بإصدار macOS Sonoma أو أحدث:</p><ol class="list-decimal pr-5 space-y-2"><li>افتح الموقع في Safari.</li><li>من شريط القوائم اختر <b>File</b>.</li><li>اختر <b>Add to Dock</b> ثم أكد الإضافة.</li></ol>';
+                } else if (isChrome || isEdge) {
                     steps = '<ol class="list-decimal pr-5 space-y-2"><li>افتح الموقع في <b>' + (isEdge ? 'Microsoft Edge' : 'Google Chrome') + '</b>.</li><li>اضغط أيقونة التثبيت (شكل شاشة وبداخلها سهم أو علامة +) بجوار شريط العنوان، إن ظهرت.</li><li>لو لم تظهر، افتح قائمة المتصفح ⋮ ثم اختر <b>تثبيت مخزن أركان</b> أو <b>Apps → Install this site as an app</b>.</li><li>اضغط <b>Install / تثبيت</b>.</li></ol>';
                 } else {
                     steps = '<p>التثبيت كتطبيق مستقل مدعوم بشكل أفضل على <b>Google Chrome</b> أو <b>Microsoft Edge</b>.</p><ol class="list-decimal pr-5 space-y-2"><li>انسخ رابط مخزن أركان وافتحه في Chrome أو Edge.</li><li>من قائمة المتصفح ⋮ اختر <b>تثبيت مخزن أركان</b>.</li><li>أكد التثبيت.</li></ol>';
