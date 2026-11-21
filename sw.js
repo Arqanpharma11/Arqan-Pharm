@@ -1,8 +1,9 @@
-const CACHE_NAME = 'arkan-pharma-cloud-v2';
+const CACHE_NAME = 'arkan-pharma-cloud-v3';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
   './manifest.json',
+  './arkan-logo.svg',
   './icon-192.png',
   './icon-512.png'
 ];
