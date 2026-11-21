@@ -1,7 +1,7 @@
 {
-  "name": "مخزن أركان لتوزيع الأدوية ومستحضرات التجميل",
-  "short_name": "مخزن أركان",
-  "description": "منصة الطلب الإلكتروني المعتمدة لمخزن أركان لتوزيع الأدوية ومستحضرات التجميل وألبان الأطفال - القاهرة",
+  "name": "أركان فارما | مخزن أركان",
+  "short_name": "أركان فارما",
+  "description": "منصة أركان لإدارة وتوزيع الأدوية ومستحضرات التجميل وألبان الأطفال - القاهرة",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
@@ -17,16 +17,22 @@
   ],
   "icons": [
     {
+      "src": "./arkan-logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
       "src": "./icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
     },
     {
       "src": "./icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
     }
   ]
 }
