@@ -7164,7 +7164,7 @@
 
                 // Verified package-photo seed: Apple-Lite 30 tablets (catalog item #10).
                 // Source page shows the exact Apple-Lite pack; do not use lookalike images.
-                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v34';;;;;
+                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v35';;;;;
                 if (localStorage.getItem(IMAGE_SEED_VERSION) !== '1') {
                     // Individually checked package photos: brand, strength/stage and form match.
                     const verifiedImageSeeds = {
@@ -7524,6 +7524,21 @@
                         '793': { src: 'https://www.lotusonline.com/cdn/shop/files/3005934_1.jpg?v=1767615125&width=1500', source: 'Lotus Pharmacies — Ezogast esomeprazole 40 mg, 14 capsules; exact strength and pack verified' },
                         '794': { src: 'https://www.lotusonline.com/cdn/shop/files/3003339_1.jpg?v=1767615106&width=1500', source: 'Lotus Pharmacies — Ezogast esomeprazole 20 mg, 14 capsules; exact strength and pack verified' },
                         '801': { src: 'https://www.aldeerahpharmacy.com/web/image/product.template/35327/image_1920?unique=f76f98d', source: 'AlDeerah Pharmacy — Easycol Baby lactase drops, 15 ml; exact baby variant and volume verified' }
+                    ,
+                        '786': { src: 'https://www.lotusonline.com/cdn/shop/files/3006019_processed.jpg?v=1773306532&width=750', source: 'Lotus Pharmacies — Eslizepine 400 mg, 20 tablets; exact brand, strength and pack verified' },
+                        '796': { src: 'https://www.lotusonline.com/cdn/shop/files/3003485_1.jpg?v=1767615184', source: 'Lotus Pharmacies — Esmopump 40 mg, 14 enteric-coated tablets; exact brand, strength and pack verified' },
+                        '798': { src: 'https://cdn-med-images.vezeeta.com/Products/9fca1dcf-6106-4121-bb46-3b699ec414a8.webp', source: 'Vezeeta Pharmacy — Esomeprazole Eva Pharma 40 mg, 20 enteric-coated tablets; exact manufacturer, strength and pack verified' },
+                        '803': { src: 'https://www.osmanmarket.com/us/136/pidwebp600/1509/f132785190301676565385-1.webp', source: 'Osman Market — Isis Tilia herbal tea, 12 bags; exact flavor and pack verified' },
+                        '806': { src: 'https://cdn.mafrservices.com/sys-master-root/h9d/hd1/50311402979358/73004_main.jpg', source: 'Carrefour Egypt — Isis organic green tea with mint, 20 bags; exact flavor and pack verified' },
+                        '809': { src: 'https://cdn.mafrservices.com/pim-content/EGY/media/product/37132/1727017204/37132_main.jpg', source: 'Carrefour Egypt — Isis cinnamon herbal tea, 12 bags; exact flavor and pack verified' },
+                        '810': { src: 'https://cdn.mafrservices.com/pim-content/EGY/media/product/177920/1727017204/177920_main.jpg', source: 'Carrefour Egypt — Isis cinnamon and ginger herbal tea, 12 bags; exact flavor and pack verified' },
+                        '812': { src: 'https://sekemonline.com/cdn/shop/files/6223000470107_1.jpg?v=1712391329', source: 'Sekem Online — Isis chamomile herbal tea, 20 bags; exact flavor and pack verified' },
+                        '814': { src: 'https://ashiae-bucket.s3.eu-west-3.amazonaws.com/products/5670-ex-0.jpg', source: 'FillOffer — Isis organic caraway tea, 20 bags; exact flavor and pack verified' },
+                        '815': { src: 'https://talabat.dhmedia.io/image/product-information-management/6919eca23d05d83205ac05f7.png', source: 'Talabat — Isis parsley and celery herbal tea, 20 envelopes; exact flavor and pack verified' },
+                        '816': { src: 'https://taypharmacies.com/wp-content/uploads/2025/01/2025-01-21T143458.058.png', source: 'Tay Pharmacies — Isis hibiscus herbal tea, 20 bags; exact flavor and pack verified' },
+                        '819': { src: 'https://sekemonline.com/cdn/shop/files/lemon_jinjer_20.jpg?v=1756367047', source: 'Sekem Online — Isis lemon and ginger herbal tea, 20 bags; exact flavor and pack verified' },
+                        '821': { src: 'https://cdn.mafrservices.com/pim-content/EGY/media/product/37136/1727017204/37136_main.jpg?im=Resize%3D400', source: 'Carrefour Egypt — Isis anise herbal tea, 12 bags; exact flavor and pack verified' },
+                        '822': { src: 'https://sekemonline.com/cdn/shop/files/Untitled-219.jpg?v=1756366672', source: 'Sekem Online — Isis anise and lemon herbal tea, 20 bags; exact flavor and pack verified' }
                      };
                     Object.entries(verifiedImageSeeds).forEach(([id, seed]) => {
                         if (seed.src && (PROD_IMG_VERIFIED[id] !== true || PROD_IMG_SRC[id] === seed.source)) {
