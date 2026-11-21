@@ -15,7 +15,8 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="./og-preview.png">
     <meta property="og:description" content="بوابة الصيادلة والصيدليات المعتمدة للطلب المباشر ومتابعة الأوردرات ونواقص السوق - التوصيل داخل القاهرة فقط.">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%233E2723'/%3E%3Cpath d='M8 22L32 8L56 22H8Z' fill='%23E6D7C3'/%3E%3Crect x='13' y='26' width='5.5' height='24' rx='1.5' fill='%23E6D7C3'/%3E%3Crect x='45.5' y='26' width='5.5' height='24' rx='1.5' fill='%23E6D7C3'/%3E%3Crect x='28.5' y='28' width='7' height='20' rx='2' fill='%23FFFFFF'/%3E%3Crect x='22' y='34.5' width='20' height='7' rx='2' fill='%23FFFFFF'/%3E%3C/svg%3E">
+    <link rel="icon" type="image/svg+xml" href="./arkan-logo.svg?v=2">
+    <link rel="shortcut icon" href="./arkan-logo.svg?v=2">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -102,18 +103,33 @@
         #arkan-launch-intro {
             position: fixed; inset: 0; z-index: 10000; display: flex;
             align-items: center; justify-content: center; padding: 24px;
-            background: radial-gradient(ellipse at 50% 38%, #6D4C41 0%, #4E342E 48%, #3E2723 100%);
+            overflow: hidden;
+            background: radial-gradient(ellipse at 50% 38%, #806052 0%, #4E342E 48%, #241613 100%);
             opacity: 1; visibility: visible; pointer-events: none;
-            animation: arqanIntroExit .55s ease-in 2.15s forwards;
+            animation: arqanIntroExit .45s cubic-bezier(.4,0,.2,1) 2.55s forwards;
+            isolation: isolate;
+        }
+        #arkan-launch-intro::before {
+            content: ""; position: absolute; width: min(72vw, 520px); aspect-ratio: 1;
+            border: 1px solid rgba(230,215,195,.2); border-radius: 50%;
+            box-shadow: 0 0 0 22px rgba(230,215,195,.035), 0 0 0 54px rgba(230,215,195,.025),
+                        0 0 90px rgba(230,215,195,.12);
+            animation: arqanOrbit 3s ease-out both;
+        }
+        #arkan-launch-intro::after {
+            content: ""; position: absolute; inset: 0; z-index: -1;
+            background: linear-gradient(115deg, transparent 25%, rgba(255,255,255,.075) 48%, transparent 68%);
+            transform: translateX(-110%); animation: arqanLightSweep 1.25s ease .45s both;
         }
         #arkan-launch-intro .arkan-intro-content {
+            position: relative; z-index: 1;
             display: flex; flex-direction: column; align-items: center; gap: 15px;
             text-align: center; animation: arqanLogoReveal .9s cubic-bezier(.2,.8,.2,1) both;
         }
         #arkan-launch-intro img {
-            width: clamp(104px, 22vw, 156px); height: auto; display: block;
-            filter: drop-shadow(0 12px 24px rgba(0,0,0,.28));
-            animation: arqanLogoFloat 2.2s ease-in-out .35s infinite;
+            width: clamp(112px, 20vw, 168px); height: auto; display: block;
+            filter: drop-shadow(0 16px 32px rgba(0,0,0,.38));
+            animation: arqanLogoFloat 2.4s ease-in-out .35s infinite, arqanLogoGlow 2s ease-in-out .5s infinite alternate;
         }
         #arkan-launch-intro .arkan-intro-name {
             color: #FAF7F2; font-size: clamp(23px, 5vw, 34px); font-weight: 900;
@@ -132,12 +148,17 @@
             from { opacity: 0; transform: translateY(18px) scale(.94); filter: blur(5px); }
             to { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
         }
-        @keyframes arqanLogoFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+        @keyframes arqanLogoFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
+        @keyframes arqanLogoGlow { from { filter: drop-shadow(0 12px 22px rgba(230,215,195,.12)); } to { filter: drop-shadow(0 18px 34px rgba(230,215,195,.34)); } }
         @keyframes arqanRuleIn { from { opacity: 0; transform: scaleX(.2); } to { opacity: 1; transform: scaleX(1); } }
+        @keyframes arqanOrbit { from { opacity: 0; transform: scale(.72) rotate(-18deg); } to { opacity: 1; transform: scale(1) rotate(0); } }
+        @keyframes arqanLightSweep { 0% { transform: translateX(-110%); } 100% { transform: translateX(110%); } }
         @keyframes arqanIntroExit { to { opacity: 0; visibility: hidden; } }
         @media (prefers-reduced-motion: reduce) {
-            #arkan-launch-intro, #arkan-launch-intro * { animation: none !important; }
-            #arkan-launch-intro { opacity: 0; visibility: hidden; }
+            #arkan-launch-intro::before, #arkan-launch-intro::after,
+            #arkan-launch-intro .arkan-intro-content, #arkan-launch-intro img,
+            #arkan-launch-intro .arkan-intro-rule { animation: none !important; }
+            #arkan-launch-intro { animation: arqanIntroExit .3s linear 2.7s forwards; }
         }
 
     </style>
@@ -176,18 +197,8 @@
             <div class="flex flex-wrap items-center justify-between gap-4">
                 <!-- Custom SVG Logo & Brand Title -->
                 <div class="flex items-center gap-3.5">
-                    <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-br from-arkan-dark via-arkan-primary to-arkan-bronze p-2 shadow-md flex items-center justify-center shrink-0 border border-arkan-sand">
-                        <svg viewBox="0 0 64 64" class="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M8 22L32 8L56 22H8Z" fill="#E6D7C3" stroke="#FAF7F2" stroke-width="2" stroke-linejoin="round"/>
-                            <rect x="10" y="22" width="44" height="3.5" rx="1.5" fill="#FAF7F2"/>
-                            <rect x="13" y="26" width="5.5" height="24" rx="1.5" fill="#E6D7C3"/>
-                            <rect x="45.5" y="26" width="5.5" height="24" rx="1.5" fill="#E6D7C3"/>
-                            <rect x="28.5" y="28" width="7" height="20" rx="2" fill="#FFFFFF"/>
-                            <rect x="22" y="34.5" width="20" height="7" rx="2" fill="#FFFFFF"/>
-                            <circle cx="32" cy="38" r="2.2" fill="#4E342E"/>
-                            <rect x="9" y="50.5" width="46" height="3.5" rx="1.5" fill="#E6D7C3"/>
-                            <rect x="6" y="54.5" width="52" height="3.5" rx="1.5" fill="#FAF7F2"/>
-                        </svg>
+                    <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-br from-arkan-dark via-arkan-primary to-arkan-bronze p-1.5 shadow-md flex items-center justify-center shrink-0 border border-arkan-sand">
+                        <img src="./arkan-logo.svg?v=2" alt="شعار أركان فارما" class="w-full h-full object-contain" width="512" height="512">
                     </div>
                     <div>
                         <div class="flex items-center gap-2">
