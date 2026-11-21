@@ -7164,7 +7164,7 @@
 
                 // Verified package-photo seed: Apple-Lite 30 tablets (catalog item #10).
                 // Source page shows the exact Apple-Lite pack; do not use lookalike images.
-                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v25';;;;;
+                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v26';;;;;
                 if (localStorage.getItem(IMAGE_SEED_VERSION) !== '1') {
                     // Individually checked package photos: brand, strength/stage and form match.
                     const verifiedImageSeeds = {
@@ -7390,7 +7390,9 @@
                         '502': { src: 'https://re3ayapharmacy.com/cdn/shop/files/entresto-50-mg-28-tablets-845743.jpg?v=1735257821', source: 'Re3aya Pharmacy — Entresto 50 mg, 28 film-coated tablets; exact strength and pack verified' },
                         '503': { src: 'https://egyptdwa.com/dwa/antopral-20-mg-14-tab-14260.jpg', source: 'EgyptDwa — Antopral 20 mg, 14 gastro-resistant tablets; exact brand, strength and pack verified' },
                         '504': { src: 'https://www.bloompharmacy.com/cdn/shop/products/antopral-40-mg-14-tablets-612976.jpg?v=1710536014', source: 'Bloom Pharmacy — Antopral 40 mg, 14 gastro-resistant tablets; exact brand, strength and pack verified' },
-                        '505': { src: 'https://doctormpharmacy.com/cdn/shop/files/wave_2_pic_104051.jpg?v=1765280027&width=533', source: 'Doctor M Pharmacy — Antodine 40 mg, 30 tablets; exact brand and strength verified' }
+                        '505': { src: 'https://doctormpharmacy.com/cdn/shop/files/wave_2_pic_104051.jpg?v=1765280027&width=533', source: 'Doctor M Pharmacy — Antodine 40 mg, 30 tablets; exact brand and strength verified' },
+                        '510': { src: 'https://ebrampharmacies.com/wp-content/uploads/2024/02/antiflam-500x500.png', source: 'Ebram Pharmacies — Antiflam 50 mg, 20 film-coated tablets; exact brand, strength and pack verified' },
+                        '514': { src: 'https://www.bloompharmacy.com/cdn/shop/products/antinal-200-mg-24-capsules-256020.jpg?v=1687634962', source: 'Bloom Pharmacy — Antinal 200 mg, 24 capsules; exact brand, strength and pack verified' }
                      };
                     Object.entries(verifiedImageSeeds).forEach(([id, seed]) => {
                         if (seed.src && (PROD_IMG_VERIFIED[id] !== true || PROD_IMG_SRC[id] === seed.source)) {
