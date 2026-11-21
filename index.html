@@ -7175,7 +7175,7 @@
 
                 // Verified package-photo seed: Apple-Lite 30 tablets (catalog item #10).
                 // Source page shows the exact Apple-Lite pack; do not use lookalike images.
-                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v28';;;;;
+                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v29';;;;;
                 if (localStorage.getItem(IMAGE_SEED_VERSION) !== '1') {
                     // Individually checked package photos: brand, strength/stage and form match.
                     const verifiedImageSeeds = {
@@ -7726,6 +7726,13 @@
                             imageSeedBatch = firestoreDB.batch();
                             imageSeedBatchCount = 0;
                         }
+                        '414': { src: 'https://maipharmacy.co/cdn/shop/files/1_7cbc745d-fe64-4fe2-b464-d2d3b739a36d.webp?v=1780150174&width=720', source: 'Mai Pharmacy — Alejon Hair Lotion 150 ml; exact brand, product and volume visually verified' },
+                        '417': { src: 'https://mohieldeenpharmacy.com/web/image/product.template/1856/image_1920?unique=5e024e9', source: 'Mohieldeen Pharmacy — Alertam 180 mg, 10 coated tablets; exact strength and pack verified' },
+                        '419': { src: 'https://taypharmacies.com/wp-content/uploads/2023/08/ALERGOLIBER-10MG-1.jpg', source: 'Tay Pharmacies — Alergoliber 10 mg, 20 film-coated tablets; exact brand, ingredient strength and pack verified' },
+                        '420': { src: 'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/c0b34c157112183.63735a94f1bfd.jpg', source: 'Behance packaging portfolio — Allergicasone metered nasal spray, 140 puffs; exact brand and dosage pack visually verified' },
+                        '421': { src: 'https://www.globe-international.com/cdn/shop/files/Gemini_Generated_Image_sj5fqhsj5fqhsj5f_1.png?crop=center&height=900&v=1768993930&width=900', source: 'Globe International manufacturer — Allerdep nasal spray 60 ml; official exact product package verified' },
+                        '423': { src: 'https://www.lotusonline.com/cdn/shop/files/3008244_processed_1.jpg?v=1779529604', source: 'Lotus Pharmacies — Alerid 10 mg, 30 film-coated tablets; exact strength and pack verified' },
+                        '424': { src: 'https://delmar-test.linkedgates.com/images/items/144441-v1.JPEG', source: 'Delmar & Attalla — Aleavia ear drops 15 ml; exact product, manufacturer and volume visually verified' },
                     };
                     Object.entries(verifiedImageSeeds).forEach(([id, seed]) => {
                         if (seed.src && (PROD_IMG_VERIFIED[id] !== true || PROD_IMG_SRC[id] === seed.source)) {
