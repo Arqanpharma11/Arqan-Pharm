@@ -7885,8 +7885,8 @@ ${window.location.href}
                 return `
                     <tr class="hover:bg-arkan-light transition-colors ${!item.available ? 'opacity-60 bg-rose-50/30' : ''}">
                         <td class="py-3 px-4 font-extrabold text-arkan-dark">
-                            <span class="cursor-pointer" onclick="openProductImage(${item.id})">${PROD_IMAGES[item.id] ? '🖼️' : '📷'} ${item.name}</span>
-                            ${enChip(item, '')}
+                            <span class="cursor-pointer" onclick="openProductImage(${item.id})">${PROD_IMAGES[item.id] ? '🖼️' : '📷'} ${cleanCatalogDisplayName(item.name)}</span>
+                            ${enChipAdmin(item, '')}
                             ${item.shortage ? '<span class="inline-block bg-amber-100 text-amber-950 border border-amber-300 text-[10px] px-2 py-0.5 rounded-full mr-1">🔥 ناقص</span>' : ''}
                         </td>
                         <td class="py-3 px-3 text-center text-arkan-bronze font-bold">${item.cat}</td>
@@ -18609,6 +18609,32 @@ ${window.location.href}
             return v;
         }
         function getEn(p) { return getEnInfo(p).text; }
+        function cleanCatalogDisplayName(value) {
+            let name = String(value || '').normalize('NFKC')
+                .replace(/[\u064B-\u065F\u0670]/g, '')
+                .replace(/\u0640/g, '')
+                .replace(/([\u0621-\u064A])\1{2,}/g, '$1')
+                .replace(/\s+/g, ' ')
+                .trim();
+            const words = name.split(' ');
+            const cleaned = [];
+            for (const word of words) {
+                if (word && word !== cleaned[cleaned.length - 1]) cleaned.push(word);
+            }
+            return cleaned.join(' ');
+        }
+
+        // Admin-only English chip: one green palette, while preserving truthful verification status.
+        function enChipAdmin(p, extraClass) {
+            const info = getEnInfo(p);
+            const safe = String(info.text || '').replace(/[&<>\\"']/g, c => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '\\"':'&quot;', "'":'&#39;' }[c]));
+            const marker = info.verified ? '✓' : '·';
+            const title = info.verified
+                ? (info.note === 'reference-match' ? 'مطابق لمرجع منتج؛ وليس اعتمادًا رسميًا' : (info.note === 'standard-name' ? 'مصطلح إنجليزي قياسي تمت مراجعته' : 'اسم إنجليزي مدخل يدويًا'))
+                : 'اسم إنجليزي مقترح آليًا — اللون موحد في لوحة الإدارة لكنه لا يعني تأكيد الاسم التجاري';
+            return `<span dir="ltr" class="inline-flex items-center gap-1 text-emerald-700 font-bold text-[10px] ${extraClass || ''}" title="${title}">${safe}<span aria-hidden="true">${marker}</span></span>`;
+        }
+
         function enChip(p, extraClass) {
             const info = getEnInfo(p), verified = !!info.verified;
             const safe = String(info.text || '').replace(/[&<>\"']/g, c => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '\"':'&quot;', "'":'&#39;' }[c]));
