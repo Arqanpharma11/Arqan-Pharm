@@ -658,6 +658,16 @@
                     </button>
                     <span id="admin-drug-api-status" class="text-[10px] font-bold text-emerald-800">مطابقة الأدوية والمكملات ومستحضرات التجميل؛ ألبان الأطفال لها تركيبة غذائية خاصة</span>
 
+                    <button type="button" onclick="exportProductImageManifest()"
+                        class="bg-emerald-700 hover:bg-emerald-800 text-white px-3 py-2 rounded-xl text-xs font-extrabold cursor-pointer">
+                        تصدير كشف الصور لـ 4218 صنف
+                    </button>
+                    <label class="bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-200 px-3 py-2 rounded-xl text-xs font-extrabold cursor-pointer">
+                        استيراد صور مؤكدة دفعة واحدة
+                        <input id="product-image-manifest-input" type="file" accept=".json,application/json" class="hidden" onchange="importProductImageManifest(this)">
+                    </label>
+                    <span id="product-image-manifest-status" class="text-[10px] font-bold text-emerald-800" aria-live="polite"></span>
+
                     <button type="button" onclick="exportDatabaseJSON()"
                         class="bg-arkan-cream hover:bg-arkan-sand text-arkan-dark border border-arkan-sand px-3 py-2 rounded-xl text-xs font-extrabold cursor-pointer">
                         نسخة احتياطية JSON
@@ -19022,6 +19032,77 @@ ${window.location.href}
             const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([csv], { type: 'text/csv;charset=utf-8' }));
             a.download = 'arkan_medicines_use_to_review.csv'; document.body.appendChild(a); a.click(); a.remove();
             showToast('تم تصدير ' + rows.length + ' صنف دوائي يحتاج تحديد الاستخدام.');
+        }
+
+        // Bulk product-image manifest: exact product IDs prevent name-only or fuzzy cross-matching.
+        function exportProductImageManifest() {
+            if (!currentSession || currentSession.role !== 'admin') { showToast('هذه الأداة متاحة للأدمن فقط.', 'error'); return; }
+            const rows = products.map(p => ({
+                id: p.id, name: p.name, category: p.cat, englishName: getEn(p),
+                barcode: p.barcode || '', imageUrl: PROD_IMG_VERIFIED[p.id] === true ? (PROD_IMAGES[p.id] || '') : '',
+                sourceName: PROD_IMG_VERIFIED[p.id] === true ? (PROD_IMG_SRC[p.id] || '') : '',
+                exactMatchConfirmed: false
+            }));
+            const payload = {
+                format: 'arkan-product-image-manifest',
+                version: 1,
+                exportedAt: new Date().toISOString(),
+                instruction: 'Fill imageUrl and sourceName only with a real photo of this exact commercial pack. Set exactMatchConfirmed=true only after checking trade name, strength/form, company and pack. Never use a similar product photo.',
+                total: rows.length,
+                items: rows
+            };
+            const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json;charset=utf-8' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url; a.download = 'arkan-product-images-manifest-' + new Date().toISOString().slice(0,10) + '.json';
+            document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+            const status = document.getElementById('product-image-manifest-status');
+            if (status) status.textContent = 'تم تجهيز كشف ' + rows.length + ' صنف؛ الصور الحالية موضحة داخله.';
+        }
+
+        async function importProductImageManifest(input) {
+            if (!currentSession || currentSession.role !== 'admin') { showToast('هذه الأداة متاحة للأدمن فقط.', 'error'); input.value = ''; return; }
+            const file = input.files && input.files[0];
+            if (!file) return;
+            const status = document.getElementById('product-image-manifest-status');
+            const say = msg => { if (status) status.textContent = msg; };
+            try {
+                const data = JSON.parse(await file.text());
+                if (!data || data.format !== 'arkan-product-image-manifest' || data.version !== 1 || !Array.isArray(data.items)) {
+                    throw new Error('صيغة الملف غير صحيحة. استخدم كشف الصور الصادر من البرنامج.');
+                }
+                const byId = new Map(products.map(p => [String(p.id), p]));
+                const seen = new Set();
+                const approved = [];
+                let rejected = 0;
+                for (const row of data.items) {
+                    const id = String(row && row.id || '');
+                    if (!id || seen.has(id)) { rejected++; continue; }
+                    seen.add(id);
+                    const product = byId.get(id);
+                    if (!product || row.exactMatchConfirmed !== true || typeof row.imageUrl !== 'string' ||
+                        !/^https:\/\//i.test(row.imageUrl.trim()) || typeof row.sourceName !== 'string' || !row.sourceName.trim()) {
+                        if (row && row.imageUrl) rejected++;
+                        continue;
+                    }
+                    approved.push({ id: product.id, src: row.imageUrl.trim(), source: row.sourceName.trim() });
+                }
+                if (!approved.length) throw new Error('لم يتم العثور على صور مستوفية للشروط. يلزم رابط HTTPS ومصدر واضح وتأكيد المطابقة الدقيقة.');
+                if (!confirm('سيتم اعتماد ' + approved.length + ' صورة للصنف المطابق حسب رقم ID. الصور غير المؤكدة لن تُعتمد. هل تريد المتابعة؟')) return;
+                let done = 0;
+                for (const row of approved) {
+                    setProductImage(row.id, row.src, row.source);
+                    done++;
+                    if (done % 20 === 0) say('جارٍ اعتماد الصور: ' + done + ' / ' + approved.length);
+                    await new Promise(resolve => setTimeout(resolve, 35));
+                }
+                say('تم اعتماد ' + done + ' صورة. تم تجاهل ' + rejected + ' صف غير مستوفٍ للشروط.');
+                showToast('اكتمل استيراد ' + done + ' صورة مؤكدة.');
+                if (currentSession && currentSession.role === 'admin') renderAdminProductsTable();
+            } catch (e) {
+                say('تعذر الاستيراد: ' + (e.message || 'ملف غير صالح'));
+                showToast('تعذر استيراد ملف الصور: ' + (e.message || ''), 'error');
+            } finally { input.value = ''; }
         }
 
         // ---- Product images (stored apart from the main catalog so it stays light) ----
