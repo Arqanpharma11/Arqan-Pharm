@@ -8311,6 +8311,8 @@ ${window.location.href}
             document.getElementById('voice-modal-subtitle').textContent='اتكلم بشكل طبيعي حتى لو الكلام طويل، واذكر الكميات قبل أو بعد اسم الصنف.';
             document.getElementById('voice-pharmacist-controls').classList.remove('hidden');
             document.getElementById('voice-admin-controls').classList.add('hidden');
+            document.getElementById('voice-transcript').classList.remove('hidden');
+            const transcriptLabel=document.querySelector('label[for="voice-transcript"]');if(transcriptLabel)transcriptLabel.classList.remove('hidden');
             document.getElementById('voice-pharm-review').classList.remove('hidden');
             document.getElementById('voice-admin-review').classList.add('hidden');
             document.getElementById('voice-transcript').value='';
@@ -8346,13 +8348,17 @@ ${window.location.href}
             if(voiceRecognition){if(voiceMode===mode){try{voiceRecognition.stop();}catch(e){}return;}try{voiceRecognition.stop();}catch(e){}}
             voiceMode=mode;
             if(mode==='admin'){
-                document.getElementById('voice-modal-title').textContent='🎙️ البحث وتعديل الخصم بالصوت';
-                document.getElementById('voice-modal-subtitle').textContent='قل اسم الصنف أو أمر البحث/الخصم، ثم راجع النتيجة قبل الحفظ.';
+                document.getElementById('voice-modal-title').textContent='🎙️ إدارة الليستة بالصوت';
+                document.getElementById('voice-modal-subtitle').textContent='قل أمرًا واحدًا، راجع التفاصيل، ثم أكّد الحفظ بنفسك.';
                 document.getElementById('voice-pharmacist-controls').classList.add('hidden');
                 document.getElementById('voice-admin-controls').classList.remove('hidden');
+                document.getElementById('voice-transcript').classList.add('hidden');
+                const transcriptLabel=document.querySelector('label[for="voice-transcript"]');if(transcriptLabel)transcriptLabel.classList.add('hidden');
                 document.getElementById('voice-pharm-review').classList.add('hidden');
                 document.getElementById('voice-admin-review').classList.remove('hidden');
                 document.getElementById('voice-transcript').value='';
+                document.getElementById('voice-transcript').classList.add('hidden');
+                const transcriptLabel=document.querySelector('label[for="voice-transcript"]');if(transcriptLabel)transcriptLabel.classList.add('hidden');
                 document.getElementById('voice-admin-result').textContent='';
                 const m=document.getElementById('voice-assistant-modal');m.classList.remove('hidden');m.classList.add('flex');
             }
@@ -8470,6 +8476,29 @@ ${window.location.href}
             flushUnmatched();
             found.push(...unmatched);
 
+            // Preserve unrecognized spoken product names instead of silently dropping them.
+            const ignoredVoiceTokens=new Set(['عايز','عاوزه','عاوز','محتاج','محتاجه','محتاجين','عاوزين','عايزين','من','فضلك','لو','سمحت','صنف','الصنف','دواء','دوا','علبه','علب','عبوه','عبوات','شريط','شرائط','باكيت','باكت','عدد','و','ثم','وبعدها','بعدها','وكمان','كمان','ممكن','اريد','هات','ضيف','اضف','لي','جنيه','جنيهات','واحد','واحده','واحدة','اتنين','اثنين','اثنان','تنين','ثلاثه','ثلاثة','تلاته','تلات','اربعه','اربعة','خمسه','خمسة','سته','ستة','سبعه','سبعة','تمانيه','ثمانيه','ثمانية','تسعه','تسعة','عشره','عشرة','حداشر','احداشر','اتناشر','اثناشر','تلتاشر','عشرين','ثلاثين','اربعين','خمسين','ستين','سبعين','تمانين','تسعين','ميه','مئه']);
+            const unknownRuns=[]; let run=[];
+            const flushUnknown=()=>{
+                const clean=run.filter(t=>!ignoredVoiceTokens.has(t)&&!/^\\d+(?:\\.\\d+)?$/.test(t));
+                if(clean.length){
+                    const query=clean.join(' ').trim();
+                    if(query.length>=2){
+                        const candidates=voiceFindCandidates(query);
+                        unknownRuns.push({source:run.join(' '),query,qty:1,productId:'',candidates,start:tokens.indexOf(run[0]),end:tokens.indexOf(run[run.length-1])+1,corrected:false,unavailable:true});
+                    }
+                }
+                run=[];
+            };
+            for(let ti=0;ti<tokens.length;ti++){
+                if(used[ti]){flushUnknown();continue;}
+                const t=tokens[ti];
+                if(ignoredVoiceTokens.has(t)||/^\\d+(?:\\.\\d+)?$/.test(t)){flushUnknown();continue;}
+                run.push(t);
+            }
+            flushUnknown();
+            found.push(...unknownRuns);
+            found.sort((a,b)=>a.start-b.start);
             const merged=[];
             found.forEach(line=>{
                 const prior=line.productId&&merged.find(x=>x.productId===line.productId);
@@ -8479,7 +8508,7 @@ ${window.location.href}
             voiceInvoiceDraft=merged;
             renderVoiceInvoiceDraft();
             if(!merged.length) showToast('لم أستطع استخراج صنف بثقة. راجع النص أو أعد التسجيل.','error');
-            else if(merged.some(x=>!x.productId)) showToast('بعض الأصناف تحتاج اختيارًا يدويًا؛ لن أختار دواءً بالتخمين.','info');
+            else if(merged.some(x=>!x.productId)) showToast('فيه أصناف غير مؤكدة أو غير موجودة في الليستة. راجع التنبيهات قبل اعتماد الفاتورة.','info');
             else if(correctionCount) showToast('تم فهم '+correctionCount+' تصحيحًا للكمية. راجع الفاتورة قبل الإضافة.','success');
             else showToast('تم تجهيز مسودة الفاتورة. راجع الأصناف والكميات قبل الإضافة.','success');
         }
@@ -8496,7 +8525,7 @@ ${window.location.href}
                 const qty=document.createElement('input');qty.type='number';qty.min='1';qty.step='1';qty.value=String(line.qty);qty.className='sm:col-span-2 border border-arkan-sand rounded-lg px-2 py-2 text-xs font-black text-center';
                 qty.addEventListener('change',()=>{line.qty=Math.max(1,Math.floor(Number(qty.value)||1));qty.value=String(line.qty);});
                 wrap.append(source,select,qty);
-                if(!line.candidates.length){const note=document.createElement('p');note.className='sm:col-span-12 text-[11px] text-rose-700 font-bold';note.textContent='⚠ الصنف «'+line.query+'» غير موجود في الليستة أو لم أتعرف عليه بدقة. لن تتم إضافته للطلبية؛ راجع الاسم أو تواصل مع المخزن.';wrap.appendChild(note);}
+                if(!line.candidates.length){const note=document.createElement('p');note.className='sm:col-span-12 text-[11px] text-rose-700 font-bold';note.textContent='⚠ الصنف «'+line.query+'» غير موجود في الليستة أو لم أتعرف عليه. لن تتم إضافته. راجع الاسم أو تواصل مع المخزن لإضافته.';wrap.appendChild(note);}
                 else if(line.candidates.length>1 || !line.candidates[0]._voiceExact){const note=document.createElement('p');note.className='sm:col-span-12 text-[11px] text-amber-800 font-bold';note.textContent='⚠ لم أجد تطابقًا مؤكدًا للصنف «'+line.query+'». قد يكون غير متوفر أو نطق الاسم غير واضح. اختر الصنف الصحيح يدويًا؛ لن تتم إضافته تلقائيًا.';wrap.appendChild(note);}
                 host.appendChild(wrap);
             });
@@ -8559,9 +8588,9 @@ ${window.location.href}
             }
         }
         function processVoiceAdminCatalogCommand(normalized) {
-            let m=normalized.match(/^(?:ضيف|اضف|سجل|اضافه)\s+(?:صنف\s+)?(.+?)\s+(?:بسعر|سعر)\s+(\d+(?:\.\d+)?)(?:\s*(?:جنيه|جنيهات))?\s+(?:و?خصم)\s+(\d+(?:\.\d+)?)(?:\s*(?:%|في الميه|بالمئه|بالميه))?$/);
+            let m=normalized.match(/^(?:ضيف|اضف|سجل|اضافه)\s+(?:صنف\s+)?(.+?)\s+(?:بسعر|سعر)\s+(\d+(?:\.\d+)?)(?:\s*(?:جنيه|جنيهات))?(?:\s+(?:و?خصم)\s+(\d+(?:\.\d+)?)(?:\s*(?:%|في الميه|بالمئه|بالميه))?)?$/);
             if(m){
-                const name=m[1].trim(),price=Number(m[2]),disc=Number(m[3]);
+                const name=m[1].trim(),price=Number(m[2]),disc=m[3]===undefined?0:Number(m[3]);
                 if(!name||!Number.isFinite(price)||price<=0||!Number.isFinite(disc)||disc<0||disc>100){voiceAdminActionMessage('بيانات الصنف غير صحيحة. قل الاسم والسعر والخصم بوضوح.');return true;}
                 document.getElementById('adm-new-name').value=name;
                 document.getElementById('adm-new-price').value=String(price);
@@ -8577,16 +8606,22 @@ ${window.location.href}
                 voiceAdminActionMessage('تأكيد حذف الصنف: '+p.name+'. هذا الإجراء سيزيله من الكتالوج.', 'تأكيد الحذف',()=>{adminDeleteProduct(p.id);document.getElementById('voice-admin-result').textContent='تم تنفيذ أمر الحذف.';});
                 return true;
             }
-            m=normalized.match(/^(?:عدل|غير)\s+(سعر|الخصم|خصم|اسم)\s+(.+?)\s+(?:الى|إلى|ل)\s+(.+)$/);
+            m=normalized.match(/^(?:عدل|غير)\s+(سعر|الخصم|خصم|اسم|قسم|التصنيف)\s+(.+?)\s+(?:الى|إلى|ل)\s+(.+)$/);
             if(m){
                 const field=m[1],query=m[2].trim(),value=m[3].trim(),candidates=voiceFindCandidates(query);
                 if(!voiceShouldAutoSelect(candidates,query)){showVoiceAdminCandidates(candidates,null);showToast('لم أجد تطابقًا حرفيًا آمنًا للصنف. اختره من الاقتراحات.','error');return true;}
                 const p=candidates[0];openAdminEditModal(p.id);
-                const target=field==='سعر'?'edit-prod-price':field==='اسم'?'edit-prod-name':'edit-prod-disc';
+                const target=field==='سعر'?'edit-prod-price':field==='اسم'?'edit-prod-name':(field==='قسم'||field==='التصنيف')?'edit-prod-cat':'edit-prod-disc';
                 const input=document.getElementById(target);
                 if(field==='اسم'){if(!value){showToast('لم أتعرف على الاسم الجديد.','error');return true;}input.value=value;}
-                else {const n=voiceNumberFromText(value);if(n===null||!Number.isFinite(n)||(field==='سعر'?n<=0:n<0||n>100)){closeAdminEditModal();showToast('القيمة المنطوقة غير صحيحة.','error');return true;}input.value=String(n);}
-                voiceAdminActionMessage('تم تجهيز تعديل '+(field==='اسم'?'اسم':field==='سعر'?'سعر':'خصم')+' الصنف '+p.name+'. راجع نافذة التعديل واضغط حفظ التعديلات لإتمامه.');
+                else if(field==='قسم'||field==='التصنيف'){
+                    const cats=['أدوية','مستحضرات تجميل','ألبان أطفال','مكملات وفيتامينات'];
+                    const normalizedValue=voiceNormalize(value);
+                    const cat=cats.find(c=>voiceNormalize(c)===normalizedValue)||cats.find(c=>normalizedValue.includes(voiceNormalize(c)));
+                    if(!cat){closeAdminEditModal();showToast('القسم غير واضح. الأقسام المتاحة: أدوية، مستحضرات تجميل، ألبان أطفال، مكملات وفيتامينات.','error');return true;}
+                    input.value=cat;
+                } else {const n=voiceNumberFromText(value);if(n===null||!Number.isFinite(n)||(field==='سعر'?n<=0:n<0||n>100)){closeAdminEditModal();showToast('القيمة المنطوقة غير صحيحة.','error');return true;}input.value=String(n);}
+                voiceAdminActionMessage('تم تجهيز تعديل '+(field==='اسم'?'اسم':field==='سعر'?'سعر':(field==='قسم'||field==='التصنيف')?'قسم':'خصم')+' الصنف '+p.name+'. راجع نافذة التعديل واضغط حفظ التعديلات لإتمامه.');
                 showToast('تم تجهيز التعديل للمراجعة فقط؛ لم يتم الحفظ تلقائيًا.');
                 return true;
             }
@@ -9798,7 +9833,7 @@ ${url}`);
             <div class="flex items-start justify-between gap-3"><div><h3 id="voice-modal-title" class="text-lg font-black text-arkan-dark">🎙️ الفاتورة الصوتية</h3><p id="voice-modal-subtitle" class="text-xs text-arkan-bronze font-semibold mt-1">اتكلم بوضوح وراجع المطابقة قبل الإضافة.</p></div><button type="button" onclick="closeVoiceAssistant()" class="text-arkan-bronze text-xl font-black px-2">✕</button></div>
             <div id="voice-recording-status" class="hidden rounded-xl bg-rose-50 border border-rose-200 text-rose-800 px-3 py-2 text-xs font-bold">🔴 جاري الاستماع...</div>
             <div id="voice-pharmacist-controls" class="space-y-2"><button type="button" id="voice-pharm-record-btn" onclick="startVoiceRecognition('pharmacist')" class="w-full sm:w-auto bg-arkan-dark text-white px-5 py-3 rounded-xl text-sm font-black cursor-pointer">🎙️ اضغط وتكلم</button><p class="text-[11px] text-arkan-bronze">مثال: أنا محتاج بانادول إكسترا ثلاث علب وأوجمنتين واحد جرام علبتين وكمان فيتامين سي خمس علب. اتكلم متواصل ثم اضغط إنهاء التسجيل.</p></div>
-            <div id="voice-admin-controls" class="hidden text-[11px] text-arkan-bronze">أوامر البحث والخصم وتعديل الليستة بالصوت. أمثلة: «ابحث عن بانادول»، «خصم 10% على بانادول»، «ضيف صنف اسم الصنف بسعر 120 وخصم 15»، «عدل سعر اسم الصنف إلى 130»، «احذف صنف اسم الصنف». كل تعديل يحتاج مراجعتك وتأكيدك قبل الحفظ. <button type="button" onclick="openVoiceAdminInvoice()" class="mt-2 bg-arkan-dark text-white rounded-lg px-3 py-2 text-xs font-black">🎙️ تحليل فاتورة صوتية بنفس محرك الصيدلي</button></div>
+            <div id="voice-admin-controls" class="hidden text-[11px] text-arkan-bronze">إدارة الليستة بالصوت فقط — قل أمرًا واحدًا في كل مرة. أمثلة: «ابحث عن بانادول»، «ضيف صنف اسم الصنف بسعر 120»، «عدل سعر اسم الصنف إلى 130»، «عدل قسم اسم الصنف إلى مستحضرات تجميل»، «خلي اسم الصنف غير متاح»، «احذف صنف اسم الصنف». كل تعديل يحتاج مراجعتك وتأكيدك قبل الحفظ. <button type="button" onclick="startVoiceRecognition('admin')" class="mt-2 bg-arkan-dark text-white rounded-lg px-3 py-2 text-xs font-black">🎙️ أمر صوتي جديد لليستة</button> <button type="button" onclick="openVoiceAdminInvoice()" class="mt-2 bg-arkan-dark text-white rounded-lg px-3 py-2 text-xs font-black">🎙️ تحليل فاتورة صوتية بنفس محرك الصيدلي</button></div>
             <label class="block text-xs font-black text-arkan-dark" for="voice-transcript">النص الذي تم سماعه (يمكنك تصحيحه يدويًا)</label>
             <textarea id="voice-transcript" rows="3" class="w-full border border-arkan-sand bg-arkan-light rounded-xl p-3 text-sm font-bold focus:bg-white focus:outline-none focus:border-arkan-primary" placeholder="سيظهر الكلام هنا..."></textarea>
             <div id="voice-pharm-review" class="space-y-3"><div class="flex flex-wrap items-center justify-between gap-2"><span class="text-sm font-black text-arkan-dark">مراجعة الفاتورة</span><button type="button" onclick="parseVoiceInvoiceDraft()" class="bg-arkan-cream border border-arkan-sand text-arkan-dark px-3 py-2 rounded-lg text-xs font-black cursor-pointer">تحليل الكلام</button></div><p class="text-[11px] text-arkan-bronze">اختار الصنف الصحيح وحدد الكمية لكل سطر. لن تُضاف الأصناف قبل ضغطك على تأكيد الإضافة.</p><div id="voice-invoice-lines" class="space-y-2"></div><button type="button" id="voice-invoice-confirm-btn" onclick="confirmVoiceInvoice()" class="w-full bg-emerald-700 text-white px-4 py-3 rounded-xl text-sm font-black cursor-pointer">تأكيد وإضافة الأصناف للطلبية</button></div>
