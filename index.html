@@ -7164,7 +7164,7 @@
 
                 // Verified package-photo seed: Apple-Lite 30 tablets (catalog item #10).
                 // Source page shows the exact Apple-Lite pack; do not use lookalike images.
-                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v36';;;;;
+                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v37';;;;;
                 if (localStorage.getItem(IMAGE_SEED_VERSION) !== '1') {
                     // Individually checked package photos: brand, strength/stage and form match.
                     const verifiedImageSeeds = {
@@ -7555,7 +7555,19 @@
                         '830': { src: 'https://www.bloompharmacy.com/cdn/shop/products/evastine-10-mg-20-tablets-946217.jpg?v=1687635435', source: 'Bloom Pharmacy — Evastine 10 mg, 20 film-coated tablets; exact brand, strength and pack verified' },
                         '831': { src: 'https://dkud4u09qff41.cloudfront.net/Products/c54323b8-5ff2-4fd4-85ff-204c1857dd1e.jpeg', source: 'Vezeeta Pharmacy — Evastine 5 mg/5 ml oral solution, 100 ml; exact brand, concentration and volume verified' },
                         '858': { src: 'https://ebluebell.com/cdn/shop/files/shampoo_d968bfb9-9fdc-4652-b5e9-a12854e22b8f.png?crop=center&height=1200&v=1771240232&width=1200', source: 'Bluebell official — Elone keratin shampoo, 200 ml; exact brand and product type verified' },
-                        '860': { src: 'https://bluebellpharma.com/i/pr/elone_hair_conditioner_200_ml_05.png', source: 'Bluebell official — Elone keratin hair conditioner, 200 ml; exact brand and product type verified' }
+                        '860': { src: 'https://bluebellpharma.com/i/pr/elone_hair_conditioner_200_ml_05.png', source: 'Bluebell official — Elone keratin hair conditioner, 200 ml; exact brand and product type verified' },
+                        '872': { src: 'https://cdn.salla.sa/gZVWBw/95217a0d-ea79-43b9-a6b4-70c5c30cf32a-500x500-dY0ujRYJ3QEEuAZRTk3yG23bHzxRXUk5YTzJLfUb.jpg', source: 'Health Future Pharmacy — E-Mox amoxicillin 250 mg/5 ml suspension, 100 ml; exact concentration and volume verified' },
+                        '873': { src: 'https://www.lotusonline.com/cdn/shop/files/3000650_processed.jpg?v=1767614482', source: 'Lotus Pharmacies — E-Moxclav 156 mg/5 ml suspension, 60 ml; exact concentration and volume verified' },
+                        '874': { src: 'https://www.cphi-online.com/product/e-moxclav-amoxcillin-clav/E-moxclav%201%20gm%20tablets.png', source: 'CPHI Online / EIPICO — E-Moxclav 1 g, 10 film-coated tablets; exact strength and pack verified' },
+                        '875': { src: 'https://doctormpharmacy.com/cdn/shop/files/43407.jpg?v=1755283820&width=1946', source: 'Doctor M Pharmacy — E-Moxclav 228.5 mg/5 ml suspension, 75 ml; exact concentration and volume verified' },
+                        '876': { src: 'https://www.rosheta.com/upload/81ae23bbe41c6659e49d6a6c898dfc2b866ae70f60e4cfd671735ed6dff39d12.webp', source: 'Rosheta — E-Moxclav 625 mg, 10 film-coated tablets; exact strength and pack verified' },
+                        '877': { src: 'https://www.lotusonline.com/cdn/shop/files/3008000_1.jpg?v=1767616681', source: 'Lotus Pharmacies — E-Moxclav 642.9 mg/5 ml suspension, 75 ml; exact concentration and volume verified' },
+                        '878': { src: 'https://www.mouradpharmacy.com/web/image/product.product/282059/image_1920?unique=20d13fc', source: 'Mourad Pharmacy — E-Moxclav 457 mg/5 ml suspension, 70 ml; exact concentration and volume verified' },
+                        '879': { src: 'https://mohieldeenpharmacy.com/web/image/product.template/12126/image_1920?unique=3427e15', source: 'Mohieldeen Pharmacy — Emerest ondansetron 4 mg/2 ml, 5 ampoules; exact strength and pack verified' },
+                        '880': { src: 'https://taypharmacies.com/wp-content/uploads/2024/09/2024-09-07T134809.873.png', source: 'Tay Pharmacies — Emerest ondansetron 8 mg/4 ml, 3 ampoules; exact strength and pack verified' },
+                        '882': { src: 'https://www.mouradpharmacy.com/web/image/product.product/285049/image_1920?unique=88db6a1', source: 'Mourad Pharmacy — Inofolic Softgel, 30 capsules; exact product and pack verified' },
+                        '884': { src: 'https://cdn-med-images.vezeeta.com/Products/074d4714-3283-4479-93b7-e24e10807a23.webp', source: 'Vezeeta Pharmacy — Enera Collagen, 10 sachets; exact variant and pack verified' },
+                        '885': { src: 'https://dwaprices.com/upload/1778089142.png', source: 'DwaPrices — Enera Collagen Shots, 10 drinkable ampoules × 25 ml; exact variant and pack verified' }
                      };
                     Object.entries(verifiedImageSeeds).forEach(([id, seed]) => {
                         if (seed.src && (PROD_IMG_VERIFIED[id] !== true || PROD_IMG_SRC[id] === seed.source)) {
