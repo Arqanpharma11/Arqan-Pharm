@@ -18627,7 +18627,7 @@ ${window.location.href}
         // Admin-only English chip: one green palette, while preserving truthful verification status.
         function enChipAdmin(p, extraClass) {
             const info = getEnInfo(p);
-            const safe = String(info.text || '').replace(/[&<>\\"']/g, c => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '\\"':'&quot;', "'":'&#39;' }[c]));
+            const safe = String(info.text || '').replace(/[&<>"']/g, c => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[c]));
             const marker = info.verified ? '✓' : '·';
             const title = info.verified
                 ? (info.note === 'reference-match' ? 'مطابق لمرجع منتج؛ وليس اعتمادًا رسميًا' : (info.note === 'standard-name' ? 'مصطلح إنجليزي قياسي تمت مراجعته' : 'اسم إنجليزي مدخل يدويًا'))
