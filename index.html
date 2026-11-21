@@ -890,6 +890,8 @@
                             <option value="مكملات وفيتامينات">مكملات وفيتامينات</option>
                         </select>
 
+                        <select id="pharm-use-filter" onchange="renderPharmacistCatalog()" class="bg-arkan-light border border-arkan-sand rounded-xl px-3.5 py-2.5 text-xs font-extrabold text-arkan-dark focus:outline-none"><option value="ALL">كل الاستخدامات</option></select>
+
                         <button type="button" id="pharm-shortage-btn" onclick="togglePharmShortageFilter()"
                             class="flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border border-amber-400 bg-amber-50 hover:bg-amber-100 text-amber-950 text-xs font-black transition-all cursor-pointer shrink-0">
                             <span>🔥 نواقص متوفرة</span>
@@ -6498,6 +6500,22 @@
         function getDrugSearchText(p) {
             return ((p.cls || '') + ' ' + (CLS_SYN[p.cls] || '') + ' ' + (p.act || ''));
         }
+
+        const DRUG_USE_LABELS = {
+            'مضاد حيوي':'لعلاج العدوى البكتيرية حسب التشخيص والمادة الفعالة.','مسكن وخافض حرارة':'لتخفيف الألم وخفض الحرارة.','مسكن ومضاد التهاب':'لتخفيف الألم والالتهاب.','مسكن قوي':'لتسكين الألم الشديد؛ بعض هذه الأدوية يحتاج إشرافًا طبيًا خاصًا.','أعصاب وألم عصبي':'لعلاج بعض حالات ألم والتهاب الأعصاب.','حساسية':'لتخفيف أعراض الحساسية.','حساسية وربو':'للحساسية وبعض حالات الربو حسب المادة الفعالة.','معدة':'لعلاج اضطرابات المعدة والحموضة أو القرحة حسب المادة الفعالة.','معدة وقولون':'لبعض اضطرابات المعدة والقولون.','غثيان وقيء':'للوقاية من الغثيان والقيء أو علاجهما.','قولون ومغص':'لتخفيف تقلصات ومغص الجهاز الهضمي.','ملين':'لعلاج الإمساك وتسهيل الإخراج.','ضغط':'لعلاج ارتفاع ضغط الدم.','ضغط وقلب':'لعلاج ارتفاع ضغط الدم وبعض حالات القلب.','ضغط ومدر':'لعلاج ارتفاع ضغط الدم و/أو احتباس السوائل.','مدر بول':'لزيادة إخراج السوائل وعلاج بعض حالات احتباسها أو ارتفاع الضغط.','قلب':'لعلاج بعض أمراض القلب أو تنظيم وظائفه حسب المادة الفعالة.','كوليسترول':'لخفض الكوليسترول والدهون في الدم.','سيولة':'للوقاية من الجلطات أو علاجها وتقليل تجلط الدم.','سكر':'للمساعدة في ضبط مستوى سكر الدم.','سكر وانسولين':'لضبط سكر الدم، وتشمل مستحضرات الإنسولين وبعض علاجات السكري.','غدة درقية':'لعلاج اضطرابات الغدة الدرقية.','كورتيزون':'لعلاج حالات الالتهاب والحساسية وبعض اضطرابات المناعة.','كورتيزون موضعي':'لتخفيف التهابات الجلد والحكة في الحالات المناسبة.','صدر وربو':'لعلاج بعض حالات الربو وتقلص الشعب الهوائية وأمراض الجهاز التنفسي.','كحة وإفرازات':'لتخفيف السعال أو المساعدة على إذابة وطرد البلغم حسب المادة الفعالة.','أنف':'لعلاج بعض أعراض الأنف والاحتقان والحساسية.','اكتئاب':'لعلاج اضطرابات الاكتئاب وبعض اضطرابات المزاج.','قلق ونوم':'لعلاج بعض حالات القلق أو اضطرابات النوم؛ الاستخدام حسب وصف الطبيب.','ذهان':'لعلاج اضطرابات ذهانية وبعض الاضطرابات النفسية.','نفسي':'لعلاج بعض الاضطرابات النفسية؛ يختلف الاستخدام حسب المادة الفعالة.','صرع':'للوقاية من نوبات الصرع والسيطرة عليها، وبعضها له استخدامات عصبية أخرى.','باركنسون':'لعلاج أعراض مرض باركنسون.','زهايمر':'للمساعدة في علاج أعراض مرض ألزهايمر.','فرط حركة':'لعلاج اضطراب فرط الحركة وتشتت الانتباه في الحالات المحددة.','مرخي عضلات':'لتخفيف التقلصات والتشنجات العضلية.','بروستاتا ومسالك':'لعلاج بعض أعراض تضخم البروستاتا واضطرابات المسالك البولية.','بروستاتا':'لعلاج بعض أعراض تضخم البروستاتا.','مثانة':'لعلاج بعض اضطرابات المثانة والتبول.','مسالك بولية':'لعلاج بعض اضطرابات وأعراض الجهاز البولي.','نقرس':'لعلاج نوبات النقرس أو خفض حمض اليوريك حسب المادة الفعالة.','مضاد فطريات':'لعلاج العدوى الفطرية.','مضاد فيروسات':'لعلاج بعض العدوى الفيروسية المحددة.','مناعة وروماتيزم':'لعلاج بعض أمراض المناعة الذاتية والروماتيزم.','مناعة وزرع أعضاء':'لتثبيط المناعة في حالات محددة مثل زراعة الأعضاء وتحت إشراف متخصص.','هرمونات نسائية':'للاستخدامات الهرمونية وتنظيم الدورة أو منع الحمل حسب التركيبة.','نسا وتوليد':'لبعض استخدامات أمراض النساء والتوليد حسب المادة الفعالة.','جلدية':'لعلاج بعض الأمراض أو الالتهابات الجلدية حسب المادة الفعالة.','كلى':'لدعم أو علاج بعض اضطرابات وظائف الكلى حسب المادة الفعالة.','سمنة':'للمساعدة في علاج السمنة ضمن متابعة طبية ونظام علاجي مناسب.','محاليل':'للتعويض عن السوائل أو الأملاح أو لأغراض علاجية أخرى حسب التركيبة.','صداع نصفي':'لعلاج أو الوقاية من نوبات الصداع النصفي.','دوخة':'لعلاج الدوار وبعض اضطرابات الاتزان.','عظام':'لدعم صحة العظام أو علاج بعض اضطراباتها حسب التركيبة.','مضاد طفيليات':'لعلاج بعض العدوى الطفيلية والديدان.','أورام':'لعلاج بعض أنواع الأورام والسرطان تحت إشراف طبي متخصص.','مسكن':'لتخفيف الألم؛ يختلف الاستخدام حسب المادة الفعالة.','عيون':'لعلاج بعض أمراض أو التهابات العين حسب المادة الفعالة.','عيون وأذن':'لعلاج بعض حالات العين أو الأذن حسب التركيبة.','مطهر':'للتطهير وتقليل الميكروبات على الجلد أو الأسطح وفق تعليمات المنتج.','مخدر موضعي':'لتخدير موضعي مؤقت وتقليل الإحساس بالألم.','أنيميا':'لعلاج أو الوقاية من بعض أنواع الأنيميا ونقص العناصر المكونة للدم.','أملاح':'لتعويض أو تنظيم بعض الأملاح والمعادن حسب التركيبة.','كبد':'لعلاج أو دعم بعض حالات الكبد حسب المادة الفعالة.','إسهال':'لعلاج بعض حالات الإسهال أو تعويض السوائل والأملاح حسب التركيبة.','نزيف':'للسيطرة على بعض أنواع النزيف حسب المادة الفعالة وتحت إشراف طبي.','أعصاب':'لعلاج بعض اضطرابات الجهاز العصبي حسب المادة الفعالة.','غدة':'لعلاج بعض اضطرابات الغدد والهرمونات حسب المادة الفعالة.','ضعف جنسي':'لعلاج بعض حالات ضعف الانتصاب أو الاضطرابات الجنسية حسب المادة الفعالة.','كحة ونزلات برد':'لتخفيف بعض أعراض نزلات البرد والسعال.','مفاصل':'لتخفيف أعراض بعض اضطرابات والتهابات المفاصل.','حلق':'لتخفيف بعض أعراض والتهابات الحلق والفم.','دوالي':'لعلاج أو تخفيف أعراض بعض اضطرابات الأوردة والدوالي.','بواسير':'لتخفيف أعراض البواسير.','لبن وغذاء أطفال':'لتغذية الرضع والأطفال وفق العمر والتركيبة وتعليمات الطبيب.','مستلزمات طبية':'مستلزم للاستخدام الطبي؛ لا ينطبق عليه استخدام دوائي علاجي.'
+        };
+        function getProductUseInfo(p) {
+            if (!p) return 'بيانات الاستخدام غير متاحة.';
+            if (p.cat === 'أدوية') {
+                if (p.cls && DRUG_USE_LABELS[p.cls]) return DRUG_USE_LABELS[p.cls];
+                if (p.cls) return 'التصنيف: ' + p.cls + ' — يلزم تحديد المادة الفعالة لتأكيد الاستخدام.';
+                return 'الاستخدام العلاجي غير محدد من الاسم التجاري وحده؛ يلزم مراجعة المادة الفعالة.';
+            }
+            if (p.cat === 'مكملات وفيتامينات') return 'مكمل غذائي أو فيتامين؛ الاستخدام يتحدد حسب المكونات والتركيز.';
+            if (p.cat === 'ألبان أطفال') return 'تغذية الرضع أو الأطفال حسب المرحلة العمرية والتركيبة المدونة على العبوة.';
+            if (p.cat === 'مستحضرات تجميل') return 'للعناية الشخصية أو الجلدية حسب نوع المستحضر ومكوناته.';
+            return 'الاستخدام غير محدد من بيانات الصنف الحالية.';
+        }
         // push enriched catalog to the cloud once, from an admin session, so every pharmacy device gets it
         function _pushEnrichedIfAdmin() {
             if (_enrichChanged && typeof currentSession !== 'undefined' && currentSession && currentSession.role === 'admin') {
@@ -8275,7 +8293,7 @@ ${window.location.href}
         function getSearchIdx(p) {
             let c = _sIdx.get(p);
             if (!c) {
-                const ar = normAr(p.name + ' ' + getDrugSearchText(p)), en = (getEn(p) + ' ' + (p.act || '')).toLowerCase();
+                const ar = normAr(p.name + ' ' + getDrugSearchText(p) + ' ' + getProductUseInfo(p)), en = (getEn(p) + ' ' + (p.act || '')).toLowerCase();
                 c = { ar, en, toks: tokenizeName(ar + ' ' + en).map(t => ({ t: t.toLowerCase(), d: /^\d/.test(t), k: keyOfTok(t.toLowerCase()) })) };
                 _sIdx.set(p, c);
             }
@@ -8563,10 +8581,20 @@ ${window.location.href}
 
             const availableProducts = products.filter(p => p.available !== false);
             document.getElementById('pharm-shortage-count').textContent = availableProducts.filter(p => p.shortage).length;
-
+            const useFilter = document.getElementById('pharm-use-filter');
+            if (useFilter) {
+                const previousUse = useFilter.value || 'ALL';
+                const classes = [...new Set(availableProducts.filter(p => p.cat === 'أدوية' && p.cls).map(p => String(p.cls).trim()).filter(Boolean))].sort((a,b) => a.localeCompare(b, 'ar'));
+                useFilter.innerHTML = '';
+                const allOption = document.createElement('option'); allOption.value = 'ALL'; allOption.textContent = 'كل الاستخدامات'; useFilter.appendChild(allOption);
+                classes.forEach(cls => { const option = document.createElement('option'); option.value = cls; option.textContent = cls; useFilter.appendChild(option); });
+                useFilter.value = classes.includes(previousUse) ? previousUse : 'ALL';
+            }
+            const selectedUse = useFilter ? useFilter.value : 'ALL';
             const filtered = availableProducts.filter(item => {
                 if (pharmShortageOnly && !item.shortage) return false;
                 if (catFilter !== 'ALL' && item.cat !== catFilter) return false;
+                if (selectedUse !== 'ALL' && item.cls !== selectedUse) return false;
                 if (query && !productMatches(item, query)) return false;
                 return true;
             });
@@ -8606,9 +8634,7 @@ ${window.location.href}
                                 ${enChip(item, 'align-middle')}
                                 ${shortageBadge}
                             </a>
-                            <span class="text-[10px] text-arkan-bronze font-semibold">${item.cat}</span>
-                            ${item.cls ? `<span class="inline-block text-[10px] font-extrabold text-sky-900 bg-sky-50 border border-sky-200 rounded-md px-1.5 py-0.5 mr-1">💊 ${item.cls}</span>` : ''}
-                            ${item.act ? `<span dir="ltr" class="inline-block text-[10px] font-semibold text-slate-600">${item.act.split(' ')[0]}</span>` : ''}
+                            <div class="mt-1 flex flex-wrap items-center gap-1"><span class="text-[10px] text-arkan-bronze font-semibold">${item.cat}</span>${item.cls ? `<span class="inline-block text-[10px] font-extrabold text-sky-900 bg-sky-50 border border-sky-200 rounded-md px-1.5 py-0.5">💊 ${item.cls}</span>` : ''}${item.act ? `<span dir="ltr" class="inline-block text-[10px] font-semibold text-slate-600">${item.act.split(' ')[0]}</span>` : ''}</div><p class="mt-1 text-[10px] leading-relaxed text-slate-600"><strong>الاستخدام:</strong> ${getProductUseInfo(item)}</p>
                         </td>
                         <td class="py-3 px-3 text-center">
                             <span class="num-en font-bold text-arkan-bronze">${fmtMoney(item.price)}</span>
