@@ -7164,7 +7164,7 @@
 
                 // Verified package-photo seed: Apple-Lite 30 tablets (catalog item #10).
                 // Source page shows the exact Apple-Lite pack; do not use lookalike images.
-                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v3';
+                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v4';
                 if (localStorage.getItem(IMAGE_SEED_VERSION) !== '1') {
                     // Individually checked package photos: brand, strength/stage and form match.
                     const verifiedImageSeeds = {
@@ -7178,7 +7178,6 @@
                         '8': { src: 'https://images.matjrah.online/2744/image/cache/catalog/productimage/05793ba0a3a41b06e045ad3d4f169b9a7-1100x1100w.jpg', source: 'Mawareed — Aprovel 150 mg, 28 tablets; exact brand and strength verified' },
                         '10': { src: 'https://dose-images.doseshq.com/b4e5ffd1-c47b-4401-85a4-31918d37096e.jpg', source: 'Dose Drugs — Apple-lite 30 tablets; exact package image verified against product title' },
                         '14': { src: 'https://dkud4u09qff41.cloudfront.net/Products/aa32f8e5-263e-4509-b6a2-a7c74341e4c6.jpeg', source: 'Vezeeta Pharmacy — Ibiamox 400 mg oral suspension; exact brand and strength verified' },
-                        '15': { src: 'https://doctormpharmacy.com/cdn/shop/files/113140.jpg?v=1755285258&width=1946', source: 'Doctor M Pharmacy — Ibiamox 500 mg, 12 capsules; exact brand, strength and form verified' },
                         '16': { src: 'https://www.rosheta.com/upload/fdc2c37a591b90b7e3a8a166f595ce810e69ef0a7f99768e56a30980c3fbf40a7.webp', source: 'Rosheta — Apetoid 20 mg tablets; exact brand and strength verified' },
                         '18': { src: 'https://egyptdwa.com/dwa/epigent-80mg-2ml-i-m-i-v-3-amps-18417.jpg', source: 'EgyptDwa — Epigent 80 mg/2 ml, 3 ampoules; exact strength, form and pack count verified' },
                         '19': { src: 'https://cdn.salla.sa/qVbqW/e04b431d-920c-4b28-8619-ea16700b4a90-1000x1000-TizQoB1iHJ6dybu1mOGCRgPPY6xYLLeD0z855WZ0.jpg', source: 'Taif AlMasia Pharmacy — Epigonal 75 injection; exact brand and strength verified' },
@@ -7191,6 +7190,10 @@
                             setProductImage(id, seed.src, seed.source);
                         }
                     });
+                    // Remove a prior seed that was later found to show capsules, not the catalog's tablets.
+                    if (PROD_IMG_SRC['15'] === 'Doctor M Pharmacy — Ibiamox 500 mg, 12 capsules; exact brand, strength and form verified') {
+                        setProductImage('15', null, null);
+                    }
                     persistState(KEY_IMAGES, PROD_IMAGES);
                     persistState(KEY_IMG_SRC, PROD_IMG_SRC);
                     persistState(KEY_IMG_VERIFIED, PROD_IMG_VERIFIED);
