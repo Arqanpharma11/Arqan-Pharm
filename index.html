@@ -7162,6 +7162,29 @@
                 if (savedImgVerified && typeof savedImgVerified === 'object') PROD_IMG_VERIFIED = savedImgVerified;
                 Object.keys(PROD_IMAGES).forEach(id => { if (PROD_IMG_VERIFIED[id] !== true) delete PROD_IMAGES[id]; });
 
+                // Verified package-photo seed: Apple-Lite 30 tablets (catalog item #10).
+                // Source page shows the exact Apple-Lite pack; do not use lookalike images.
+                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v1';
+                if (localStorage.getItem(IMAGE_SEED_VERSION) !== '1') {
+                    const verifiedImageSeeds = {
+                        '10': {
+                            src: 'https://dose-images.doseshq.com/b4e5ffd1-c47b-4401-85a4-31918d37096e.jpg',
+                            source: 'Dose Drugs — Apple-lite 30 tablets; exact package image verified against product title'
+                        }
+                    };
+                    Object.entries(verifiedImageSeeds).forEach(([id, seed]) => {
+                        if (PROD_IMG_VERIFIED[id] !== true && seed.src) {
+                            PROD_IMAGES[id] = seed.src;
+                            PROD_IMG_SRC[id] = seed.source;
+                            PROD_IMG_VERIFIED[id] = true;
+                        }
+                    });
+                    persistState(KEY_IMAGES, PROD_IMAGES);
+                    persistState(KEY_IMG_SRC, PROD_IMG_SRC);
+                    persistState(KEY_IMG_VERIFIED, PROD_IMG_VERIFIED);
+                    try { localStorage.setItem(IMAGE_SEED_VERSION, '1'); } catch (_) {}
+                }
+
                 const savedMargins = await loadPersistedState(KEYS.MARGINS);
                 if (savedMargins) {
                     margins = { ...DEFAULT_MARGINS, ...savedMargins };
