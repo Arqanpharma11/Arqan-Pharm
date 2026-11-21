@@ -7164,7 +7164,7 @@
 
                 // Verified package-photo seed: Apple-Lite 30 tablets (catalog item #10).
                 // Source page shows the exact Apple-Lite pack; do not use lookalike images.
-                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v37';;;;;
+                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v38';;;;;
                 if (localStorage.getItem(IMAGE_SEED_VERSION) !== '1') {
                     // Individually checked package photos: brand, strength/stage and form match.
                     const verifiedImageSeeds = {
@@ -7574,7 +7574,15 @@
                         '871': { src: 'https://dwaprices.com/upload/1778247031.png', source: 'DwaPrices — Imoflora 2/125 mg, 20 tablets; exact brand, combination and pack verified' },
                         '889': { src: 'https://delmar-test.linkedgates.com/images/items/111636-v1.JPEG', source: 'Delmar & Attalla — Eucal herbal massage gel, 30 g; exact brand and size verified' },
                         '891': { src: 'https://www.lotusonline.com/cdn/shop/files/3002823_1.jpg?v=1767615533', source: 'Lotus Pharmacies — Paragesic 500 mg, 5 rectal suppositories; exact brand, strength and pack verified' },
-                        '895': { src: 'https://www.lotusonline.com/cdn/shop/files/3008214_processed.jpg?v=1773307699', source: 'Lotus Pharmacies — Paramol 1 g, 20 tablets; exact brand, strength and pack verified' }
+                        '895': { src: 'https://www.lotusonline.com/cdn/shop/files/3008214_processed.jpg?v=1773307699', source: 'Lotus Pharmacies — Paramol 1 g, 20 tablets; exact brand, strength and pack verified' },
+                        '924': { src: 'https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/7e/7e4ef3787969d91d8d6cd900bef8dd69b5f7a38a253d2f7ea8802758184db565.jpg', source: 'Lotus Pharmacies — Pantogar, 90 hard gelatin capsules; exact brand and pack verified' },
+                        '925': { src: 'https://allschoolabs.com/wp-content/uploads/2024/06/pantoloc-20-mg-14-tablets-334962.jpg', source: 'AllSchool Labs — Pantoloc pantoprazole 20 mg, 14 enteric-coated tablets; exact strength and pack verified' },
+                        '926': { src: 'https://re3ayapharmacy.com/cdn/shop/files/pantoloc-40-mg-14-tablets-481524.jpg?v=1735257677', source: 'Re3aya Pharmacy — Pantoloc pantoprazole 40 mg, 14 enteric-coated tablets; exact strength and pack verified' },
+                        '929': { src: 'https://delmar-test.linkedgates.com/images/items/144431-v1.JPEG', source: 'Delmar & Attalla — Pantomedra pantoprazole 40 mg, 28 enteric-coated tablets; exact strength and pack verified' },
+                        '931': { src: 'https://dkud4u09qff41.cloudfront.net/Products/e706f121-6984-416c-8d4d-2cf89969c161.jpeg', source: 'Vezeeta Pharmacy — Panthovera hair-strengthening shampoo, 250 ml; exact brand and volume verified' },
+                        '941': { src: 'https://f.nooncdn.com/p/pzsku/Z8293A63BDC9BD69C54F7Z/45/_/1732953793/1816635d-fae6-4061-b4b8-8b78f7cee722.jpg?width=800', source: 'Noon Egypt — Pancreat Plus anti-hair-loss shampoo, 250 ml; exact brand and product type verified' },
+                        '943': { src: 'https://taypharmacies.com/wp-content/uploads/2024/11/2024-11-16T103926.673.png', source: 'Tay Pharmacies — Pancreat Plus anti-hair-loss lotion, 120 ml; exact brand and volume verified' },
+                        '946': { src: 'https://dwastores.com/upload/1739036216.png', source: 'Dwa Stores — Power Act protein supplement, 10 sachets × 15 g; exact product and pack verified' }
                      };
                     Object.entries(verifiedImageSeeds).forEach(([id, seed]) => {
                         if (seed.src && (PROD_IMG_VERIFIED[id] !== true || PROD_IMG_SRC[id] === seed.source)) {
