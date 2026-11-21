@@ -7164,7 +7164,7 @@
 
                 // Verified package-photo seed: Apple-Lite 30 tablets (catalog item #10).
                 // Source page shows the exact Apple-Lite pack; do not use lookalike images.
-                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v45';;;;;
+                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v21';;;;;
                 if (localStorage.getItem(IMAGE_SEED_VERSION) !== '1') {
                     // Individually checked package photos: brand, strength/stage and form match.
                     const verifiedImageSeeds = {
@@ -7670,7 +7670,14 @@
                         '1096': { src: 'https://egyptdwa.com/dwa/blopress-16mg-28-tab-1635.jpg', source: 'EgyptDwa — Blopress 16 Plus 16/12.5 mg, 28 tablets; exact combination and pack verified' },
                         '1097': { src: 'https://stgprevapi.al-dawaa.com/medias/%D8%A8%D9%84%D9%88%D8%A8%D8%B1%D9%8A%D8%B3-16-%D9%85%D8%AC%D9%85-%D9%84%D8%AD%D8%A7%D9%84%D8%A7%D8%AA-%D8%B6%D8%BA%D8%B7-%D8%A7%D9%84%D8%AF%D9%85-%D8%A7%D9%84%D9%85%D8%B1%D8%AA%D9%81%D8%B9-28-%D9%82%D8%B1%D8%B5_0_515.webp?context=bWFzdGVyfGltYWdlc3w3NzYxMnxpbWFnZS93ZWJwfGFHVXpMMmd4Tnk4NU16WTVPVFUwTWpJeU1URXdMekV3TURNek5GOHdYMkZ5WHpVeE5WZDROVEUxU0Y5WFJVSlFMbmRsWW5BfDczZjk1MDYxMmFiYWIwMTAyZDZmODVlMWM4ZjQ5N2NkOTFkY2Q5NTQxMTU4MjNhY2Q2ZTk5Yzg1Yjk4MzJmZGQ', source: 'Al-Dawaa — Blopress 16 mg, 28 tablets; exact strength and pack verified' },
                         '1098': { src: 'https://www.adamonline.com/uploads/products/medium/1000377.png', source: 'Adam Pharmacies — Blopress 8 mg, 28 tablets; exact strength and pack verified' },
-                        '1100': { src: 'https://www.mouradpharmacy.com/web/image/product.product/278293/image_1920?unique=b18e765', source: 'Mourad Pharmacy — Blokatens 10/160 mg, 28 film-coated tablets; exact combination and pack verified' }
+                        '1100': { src: 'https://www.mouradpharmacy.com/web/image/product.product/278293/image_1920?unique=b18e765', source: 'Mourad Pharmacy — Blokatens 10/160 mg, 28 film-coated tablets; exact combination and pack verified' },
+                        '257': { src: 'https://dlildwa.com/medrg/upload/1631955964.png', source: 'Averroes Pharma listing — Averothiazide 40/12.5/5 mg, 30 film-coated tablets; exact combination and pack matched' },
+                        '258': { src: 'https://cdn-med-images.vezeeta.com/Products/e74ad9b8-7dee-484b-8e1c-01fef14960a2.png', source: 'Vezeeta Pharmacy — Averothiazide 40/12.5/10 mg, 30 film-coated tablets; exact combination and pack matched' },
+                        '259': { src: 'https://www.lotusonline.com/cdn/shop/files/3008108_processed.jpg?v=1767614997&width=750', source: 'Lotus Pharmacies — Averocoxib 90 mg, 20 film-coated tablets; exact brand and strength matched' },
+                        '261': { src: 'https://www.lotusonline.com/cdn/shop/files/3006029_2.jpg?v=1768406142&width=1500', source: 'Lotus Pharmacies — Avivavasc 10/160 mg, 28 film-coated tablets; exact combination and strength matched' },
+                        '262': { src: 'https://delmar-test.linkedgates.com/images/items/120038-v1.JPEG', source: 'Delmar & Attalla — Avivavasc 5/160 mg, 28 film-coated tablets; exact combination and strength matched' },
+                        '264': { src: 'https://4eshopping.com/assets/images/products/9575491666269746.webp', source: '4E Shopping — Akanza Spray 15 ml; exact brand and package size matched' },
+                        '267': { src: 'https://dkud4u09qff41.cloudfront.net/Products/a52b10e5-72bb-4b1f-b981-50baee9501d7.jpeg', source: 'Vezeeta Pharmacy — Octozac 20 mg, 10 capsules; exact brand, strength and pack matched' }
                      };
                     Object.entries(verifiedImageSeeds).forEach(([id, seed]) => {
                         if (seed.src && (PROD_IMG_VERIFIED[id] !== true || PROD_IMG_SRC[id] === seed.source)) {
