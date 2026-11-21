@@ -7188,9 +7188,7 @@
                     };
                     Object.entries(verifiedImageSeeds).forEach(([id, seed]) => {
                         if (PROD_IMG_VERIFIED[id] !== true && seed.src) {
-                            PROD_IMAGES[id] = seed.src;
-                            PROD_IMG_SRC[id] = seed.source;
-                            PROD_IMG_VERIFIED[id] = true;
+                            setProductImage(id, seed.src, seed.source);
                         }
                     });
                     persistState(KEY_IMAGES, PROD_IMAGES);
