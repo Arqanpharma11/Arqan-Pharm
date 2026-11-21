@@ -7175,7 +7175,7 @@
 
                 // Verified package-photo seed: Apple-Lite 30 tablets (catalog item #10).
                 // Source page shows the exact Apple-Lite pack; do not use lookalike images.
-                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v25';;;;;
+                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v26';;;;;
                 if (localStorage.getItem(IMAGE_SEED_VERSION) !== '1') {
                     // Individually checked package photos: brand, strength/stage and form match.
                     const verifiedImageSeeds = {
@@ -7710,8 +7710,17 @@
                     // Apply the entire verified seed set in memory first. The previous per-item
                     // setProductImage() loop serialized and persisted three full maps for every
                     // product and launched hundreds of independent Firestore writes, freezing startup.
-                    const imageSeedBatch = (typeof firestoreDB !== 'undefined' && firestoreDB) ? firestoreDB.batch() : null;
+                    const imageSeedBatches = (typeof firestoreDB !== 'undefined' && firestoreDB) ? [] : null;
+                    let imageSeedBatch = imageSeedBatches ? firestoreDB.batch() : null;
                     let imageSeedBatchCount = 0;
+                    const queueImageSeedWrite = () => {
+                        imageSeedBatchCount++;
+                        if (imageSeedBatchCount >= 400) {
+                            imageSeedBatches.push(imageSeedBatch.commit());
+                            imageSeedBatch = firestoreDB.batch();
+                            imageSeedBatchCount = 0;
+                        }
+                    };
                     Object.entries(verifiedImageSeeds).forEach(([id, seed]) => {
                         if (seed.src && (PROD_IMG_VERIFIED[id] !== true || PROD_IMG_SRC[id] === seed.source)) {
                             PROD_IMAGES[id] = seed.src;
@@ -7721,7 +7730,7 @@
                                 imageSeedBatch.set(firestoreDB.collection('productImages').doc(String(id)), {
                                     src: seed.src, source: seed.source, verified: true
                                 });
-                                imageSeedBatchCount++;
+                                queueImageSeedWrite();
                             }
                         }
                     });
@@ -7732,15 +7741,16 @@
                         delete PROD_IMG_VERIFIED['15'];
                         if (imageSeedBatch) {
                             imageSeedBatch.delete(firestoreDB.collection('productImages').doc('15'));
-                            imageSeedBatchCount++;
+                            queueImageSeedWrite();
                         }
                     }
                     // Persist each map once, rather than once per product.
                     persistState(KEY_IMAGES, PROD_IMAGES);
                     persistState(KEY_IMG_SRC, PROD_IMG_SRC);
                     persistState(KEY_IMG_VERIFIED, PROD_IMG_VERIFIED);
-                    if (imageSeedBatch && imageSeedBatchCount) {
-                        imageSeedBatch.commit().catch(err => console.error('Verified image seed batch sync error:', err));
+                    if (imageSeedBatch && imageSeedBatchCount) imageSeedBatches.push(imageSeedBatch.commit());
+                    if (imageSeedBatches && imageSeedBatches.length) {
+                        Promise.all(imageSeedBatches).catch(err => console.error('Verified image seed batch sync error:', err));
                     }
                     try { localStorage.setItem(IMAGE_SEED_VERSION, '1'); } catch (_) {}
                 }
