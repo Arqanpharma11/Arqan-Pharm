@@ -8692,7 +8692,9 @@ ${window.location.href}
                 else showToast('تم تحليل التسجيل واستخراج '+voiceInvoiceDraft.length+' سطرًا مستقلًا. راجع الفاتورة قبل الإضافة.','success');
             } catch(error) {
                 console.error('AI voice invoice parsing failed:',error);
-                showToast(error&&error.message?error.message:'حدث خطأ أثناء تحليل الفاتورة. النص محفوظ ويمكنك المحاولة مرة أخرى.','error');
+                const errorMessage=String(error&&error.message||'');
+                if(/Missing Firebase authentication|Method not allowed|404|Workers AI binding/i.test(errorMessage)) showToast('خدمة الذكاء الاصطناعي لم تُفعّل بعد على Cloudflare. حدّث كود Worker وأضف ربط Workers AI باسم AI.', 'error');
+                else showToast(errorMessage||'حدث خطأ أثناء تحليل الفاتورة. النص أو التسجيل محفوظ ويمكنك المحاولة مرة أخرى.','error');
             } finally {
                 voiceInvoiceParsing=false;
                 if(analyzeButton){analyzeButton.disabled=false;analyzeButton.textContent='تحليل الكلام بالذكاء الاصطناعي';}
@@ -8700,7 +8702,7 @@ ${window.location.href}
         }
         function renderVoiceInvoiceDraft() {
             const host=document.getElementById('voice-invoice-lines'); host.innerHTML='';
-            if(!voiceInvoiceDraft.length){host.textContent='لم يتم استخراج أصناف. افصل الأصناف بفواصل ثم أعد التحليل.';return;}
+            if(!voiceInvoiceDraft.length){host.textContent='لم يتم استخراج أصناف مؤكدة. راجع النص أو أعد التسجيل بوضوح.';return;}
             voiceInvoiceDraft.forEach((line,index)=>{
                 const wrap=document.createElement('div'); wrap.className='border border-arkan-sand rounded-xl p-3 grid grid-cols-1 sm:grid-cols-12 gap-2 items-center';
                 const source=document.createElement('div'); source.className='sm:col-span-4 text-xs font-bold text-arkan-dark'; source.textContent='سمعت: '+line.source;
