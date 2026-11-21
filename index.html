@@ -8359,8 +8359,6 @@ ${window.location.href}
                 document.getElementById('voice-pharm-review').classList.add('hidden');
                 document.getElementById('voice-admin-review').classList.remove('hidden');
                 document.getElementById('voice-transcript').value='';
-                document.getElementById('voice-transcript').classList.add('hidden');
-                const transcriptLabel=document.querySelector('label[for="voice-transcript"]');if(transcriptLabel)transcriptLabel.classList.add('hidden');
                 document.getElementById('voice-admin-result').textContent='';
                 const m=document.getElementById('voice-assistant-modal');m.classList.remove('hidden');m.classList.add('flex');
             }
