@@ -8305,6 +8305,8 @@ ${window.location.href}
 
         // Browser-native speech recognition and safe catalog matching
         let voiceRecognition = null, voiceMode = null, voiceInvoiceDraft = [];
+        let voiceMediaRecorder = null, voiceMediaStream = null, voiceAudioChunks = [], voiceRecordedBlob = null, voiceAudioStarting = false;
+        const VOICE_AI_ENDPOINT = 'https://arkan-telegram-alerts.mostafaalaaqweasdq123.workers.dev';
 
         function voiceNormalize(value) {
             return normAr(String(value || '').toLowerCase()).replace(/[ًٌٍَُِّْـ]/g, '')
@@ -8440,7 +8442,7 @@ ${window.location.href}
         }
         function openVoiceInvoice() {
             if (!currentSession || currentSession.role!=='pharmacist') { showToast('الفاتورة الصوتية متاحة من حساب الصيدلية فقط.','error'); return; }
-            voiceMode='pharmacist'; voiceInvoiceDraft=[];
+            voiceMode='pharmacist'; voiceInvoiceDraft=[]; voiceRecordedBlob=null;
             document.getElementById('voice-invoice-confirm-btn').classList.remove('hidden');
             document.getElementById('voice-pharm-record-btn').setAttribute('onclick',"startVoiceRecognition('pharmacist')");
             document.getElementById('voice-modal-title').textContent='🎙️ اعمل فاتورتك بالصوت';
@@ -8457,7 +8459,7 @@ ${window.location.href}
         }
         function openVoiceAdminInvoice() {
             if(!currentSession||currentSession.role!=='admin'){showToast('تحليل الفاتورة الصوتية للأدمن فقط.','error');return;}
-            voiceMode='admin-invoice';voiceInvoiceDraft=[];
+            voiceMode='admin-invoice';voiceInvoiceDraft=[];voiceRecordedBlob=null;
             document.getElementById('voice-modal-title').textContent='🎙️ تحليل فاتورة صوتية — الأدمن';
             document.getElementById('voice-modal-subtitle').textContent='نفس محرك الفاتورة الذكي ببوابة الصيدلي، مع تنبيه الأصناف غير الموجودة ومراجعة الكميات.';
             document.getElementById('voice-pharmacist-controls').classList.remove('hidden');
@@ -8475,12 +8477,90 @@ ${window.location.href}
         }
         function closeVoiceAssistant() {
             if (voiceRecognition) { try { voiceRecognition.stop(); } catch(e) {} voiceRecognition=null; }
+            if (voiceMediaRecorder) {
+                voiceMediaRecorder.onstop = null;
+                try { if (voiceMediaRecorder.state !== 'inactive') voiceMediaRecorder.stop(); } catch (_) {}
+                voiceMediaRecorder = null;
+            }
+            if (voiceMediaStream) voiceMediaStream.getTracks().forEach(track => track.stop());
+            voiceMediaStream = null; voiceAudioChunks = []; voiceRecordedBlob = null;
             const m=document.getElementById('voice-assistant-modal'); m.classList.add('hidden'); m.classList.remove('flex');
             document.getElementById('voice-recording-status').classList.add('hidden');
         }
+        async function startVoiceInvoiceRecording(mode) {
+            if (voiceMediaRecorder && voiceMediaRecorder.state === 'recording') {
+                try { voiceMediaRecorder.stop(); } catch (_) {}
+                return;
+            }
+            if (voiceAudioStarting) return;
+            voiceAudioStarting = true;
+            try {
+                if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia || !window.MediaRecorder) {
+                    throw new Error('المتصفح لا يدعم تسجيل الصوت المطلوب. استخدم Chrome أو Edge أو Safari حديثًا.');
+                }
+                const stream = await navigator.mediaDevices.getUserMedia({
+                    audio: { echoCancellation: true, noiseSuppression: true, autoGainControl: true }
+                });
+                const mimeOptions = ['audio/webm;codecs=opus', 'audio/webm', 'audio/mp4', 'audio/ogg;codecs=opus'];
+                const mimeType = mimeOptions.find(type => MediaRecorder.isTypeSupported && MediaRecorder.isTypeSupported(type));
+                const recorder = mimeType ? new MediaRecorder(stream, { mimeType }) : new MediaRecorder(stream);
+                voiceMediaStream = stream;
+                voiceMediaRecorder = recorder;
+                voiceAudioChunks = [];
+                voiceRecordedBlob = null;
+                voiceMode = mode;
+                recorder.ondataavailable = event => {
+                    if (event.data && event.data.size) voiceAudioChunks.push(event.data);
+                };
+                recorder.onerror = () => {
+                    try { recorder.stop(); } catch (_) {}
+                    showToast('حدث خطأ أثناء تسجيل الصوت. أعد المحاولة.', 'error');
+                };
+                recorder.onstop = () => {
+                    const blob = new Blob(voiceAudioChunks, { type: recorder.mimeType || 'audio/webm' });
+                    voiceAudioChunks = [];
+                    if (voiceMediaStream) voiceMediaStream.getTracks().forEach(track => track.stop());
+                    voiceMediaStream = null;
+                    if (voiceMediaRecorder === recorder) voiceMediaRecorder = null;
+                    const status = document.getElementById('voice-recording-status');
+                    const btn = document.getElementById('voice-pharm-record-btn');
+                    if (btn) btn.textContent = '🎙️ ابدأ التسجيل';
+                    if (blob.size >= 500) {
+                        voiceRecordedBlob = blob;
+                        if (status) {
+                            status.textContent = 'تم إيقاف الميكروفون وحفظ التسجيل. اضغط «تحليل الكلام» لتحويله إلى فاتورة ذكية.';
+                            status.classList.remove('hidden');
+                        }
+                    } else {
+                        voiceRecordedBlob = null;
+                        if (status) status.classList.add('hidden');
+                        showToast('التسجيل قصير جدًا أو لم يصل صوت واضح. أعد التسجيل.', 'error');
+                    }
+                };
+                recorder.start(1000);
+                const status = document.getElementById('voice-recording-status');
+                if (status) {
+                    status.textContent = '🔴 جاري تسجيل صوتك مباشرة لتحليله بنموذج ذكاء اصطناعي… اضغط إنهاء التسجيل عند الانتهاء.';
+                    status.classList.remove('hidden');
+                }
+                const btn = document.getElementById('voice-pharm-record-btn');
+                if (btn) btn.textContent = '⏹️ إنهاء التسجيل';
+            } catch (error) {
+                if (voiceMediaStream) voiceMediaStream.getTracks().forEach(track => track.stop());
+                voiceMediaStream = null;
+                voiceMediaRecorder = null;
+                const status = document.getElementById('voice-recording-status');
+                if (status) status.classList.add('hidden');
+                showToast(error && error.message ? error.message : 'تعذر الوصول إلى الميكروفون. تحقق من صلاحيات الموقع.', 'error');
+            } finally {
+                voiceAudioStarting = false;
+            }
+        }
+
         function startVoiceRecognition(mode) {
             if((mode==='admin'||mode==='admin-invoice')&&(!currentSession||currentSession.role!=='admin')){showToast('البحث الصوتي والخصومات للأدمن فقط.','error');return;}
             if(mode==='pharmacist'&&(!currentSession||currentSession.role!=='pharmacist')){showToast('الفاتورة الصوتية لحساب الصيدلية فقط.','error');return;}
+            if(mode==='pharmacist'||mode==='admin-invoice'){startVoiceInvoiceRecording(mode);return;}
             const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
             if(!SR){showToast('المتصفح لا يدعم التعرف الصوتي. استخدم Chrome أو Edge بأحدث إصدار.','error');return;}
             if(voiceRecognition){if(voiceMode===mode){try{voiceRecognition.stop();}catch(e){}return;}try{voiceRecognition.stop();}catch(e){}}
@@ -8521,7 +8601,7 @@ ${window.location.href}
                 if(voiceRecognition===rec)voiceRecognition=null;
                 const btn=document.getElementById('voice-pharm-record-btn');if(btn)btn.textContent='🎙️ ابدأ التسجيل';
             };
-            try{rec.start();const btn=document.getElementById('voice-pharm-record-btn');if(btn&&(mode==='pharmacist'||mode==='admin-invoice'))btn.textContent='⏹️ إنهاء التسجيل وتحليل الفاتورة';}
+            try{rec.start();const btn=document.getElementById('voice-pharm-record-btn');if(btn&&(mode==='pharmacist'||mode==='admin-invoice'))btn.textContent='⏹️ إنهاء التسجيل';}
             catch(e){status.classList.add('hidden');voiceRecognition=null;showToast('تعذر تشغيل الميكروفون. أعد المحاولة.','error');}
         }
         function voiceQuantityValue(token) {
@@ -8558,72 +8638,64 @@ ${window.location.href}
             if(voiceInvoiceParsing) return;
             const input=document.getElementById('voice-transcript');
             const raw=String(input&&input.value||'').trim();
-            if(!raw){showToast('اتكلم أو اكتب الأصناف أولاً.','error');return;}
+            if(!raw && !voiceRecordedBlob){showToast('سجل صوتك أو اكتب أسماء الأصناف أولاً.','error');return;}
             voiceInvoiceParsing=true;
             const analyzeButton=document.querySelector('#voice-pharm-review button[onclick="parseVoiceInvoiceDraft()"]');
-            if(analyzeButton){analyzeButton.disabled=true;analyzeButton.textContent='جارٍ تحليل الفاتورة…';}
+            if(analyzeButton){analyzeButton.disabled=true;analyzeButton.textContent='النموذج الذكي يحلل الفاتورة…';}
             try {
-            const normalized=voiceNormalize(raw);
-            const tokens=normalized.split(/\s+/).filter(Boolean);
-            const found=[],used=Array(tokens.length).fill(false),maxWords=Math.min(8,tokens.length);
-            const candidateCache=new Map();
-            const findCandidatesCached=phrase=>{
-                if(!candidateCache.has(phrase)) candidateCache.set(phrase,voiceFindCandidates(phrase));
-                return candidateCache.get(phrase);
-            };
-            for(let i=0;i<tokens.length;i++){
-                // Yield periodically so long orders never monopolize the browser's UI thread.
-                if(i>0 && i%5===0) await new Promise(resolve=>requestAnimationFrame(()=>resolve()));
-                if(used[i]) continue;
-                let best=null;
-                for(let len=1;len<=maxWords&&i+len<=tokens.length;len++){
-                    const phrase=tokens.slice(i,i+len).join(' ');
-                    const candidates=findCandidatesCached(phrase);
-                    if(!candidates.length) continue;
-                    const top=candidates[0],score=top._voiceScore||0,exact=top._voiceExact===true;
-                    if(!exact&&score<650) continue;
-                    const rank=score+len*2;
-                    if(!best||rank>best.rank) best={start:i,end:i+len,phrase,candidates,rank,exact};
+                const catalog=products.filter(p=>p&&p.available!==false).map(p=>({
+                    id:String(p.id),name:String(p.name||''),en:String(getEn(p)||''),available:true
+                })).filter(p=>p.id&&p.name);
+                if(!catalog.length) throw new Error('كتالوج الأصناف غير محمل. حدّث الصفحة وحاول مرة أخرى.');
+                let requestOptions;
+                if(voiceRecordedBlob && !raw){
+                    const form=new FormData();
+                    const ext=(voiceRecordedBlob.type||'').includes('mp4')?'m4a':(voiceRecordedBlob.type||'').includes('ogg')?'ogg':'webm';
+                    form.append('audio',voiceRecordedBlob,'voice-invoice.'+ext);
+                    form.append('catalog',JSON.stringify(catalog));
+                    requestOptions={method:'POST',body:form};
+                }else{
+                    requestOptions={
+                        method:'POST',
+                        headers:{'Content-Type':'application/json'},
+                        body:JSON.stringify({transcript:raw,catalog})
+                    };
                 }
-                if(!best) continue;
-                const qty=voiceSmartQuantity(tokens,best.start,best.end);
-                const source=best.phrase;
-                found.push({source,query:best.phrase,qty,productId:best.exact?best.candidates[0].id:'',candidates:best.candidates,start:best.start,end:best.end,corrected:false});
-                for(let j=best.start;j<best.end;j++) used[j]=true;
-                i=best.end-1;
-            }
-
-            // Explicit spoken corrections such as "لا خليهم خمسة" update the last mentioned line;
-            // they do not add another quantity or duplicate the product.
-            const correctionRe=/(?:لا\s*)?(?:خليهم|خليها|خليهم|خلي\s+الكميه|بدلهم|بدلها|غيرهم|غيرها)\s+(\d{1,4}|واحده?|اتنين|اثنين|اثنان|تنين|ثلاثه|ثلاثة|تلاته|تلات|اربعه|اربعة|خمسه|خمسة|سته|ستة|سبعه|سبعة|تمانيه|ثمانيه|ثمانية|تسعه|تسعة|عشره|عشرة|حداشر|احداشر|اتناشر|اثناشر|تلتاشر|اربعتاشر|خمستاشر|ستاشر|سبعتاشر|تمنتاشر|تسعتاشر|عشرين|ثلاثين|اربعين|خمسين|ستين|سبعين|تمانين|تسعين|ميه)/g;
-            let correctionCount=0,match;
-            while((match=correctionRe.exec(normalized))!==null){
-                const value=voiceQuantityValue(match[1]);
-                if(value===null) continue;
-                const tokenAt=normalized.slice(0,match.index).trim().split(/\s+/).filter(Boolean).length;
-                let target=null;
-                found.forEach(line=>{if(line.end<=tokenAt&&(!target||line.end>target.end))target=line;});
-                if(target){target.qty=value;target.corrected=true;correctionCount++;}
-            }
-
-            // Ignore all speech that is not confidently matched to an available catalog medicine.
-            // Numbers and conversational filler therefore cannot become fake invoice rows.
-            found.sort((a,b)=>a.start-b.start);
-
-            // Preserve every spoken medicine occurrence as its own invoice row.
-            // Do not combine repeated medicines: each mention stays independently editable.
-            voiceInvoiceDraft=found.map(line=>Object.assign({},line));
-            renderVoiceInvoiceDraft();
-            if(!voiceInvoiceDraft.length) showToast('لم أستطع استخراج أصناف أدوية مؤكدة. راجع النص أو أعد التسجيل.','error');
-            else if(voiceInvoiceDraft.some(x=>!x.productId)) showToast('فيه أصناف لها أكثر من احتمال أو تحتاج تأكيدًا. راجع كل سطر قبل الإضافة.','info');
-            else if(correctionCount) showToast('تم فهم '+correctionCount+' تصحيحًا للكمية. راجع الفاتورة قبل الإضافة.','success');
-            else showToast('تم تجهيز مسودة الفاتورة. راجع الأصناف والكميات قبل الإضافة.','success');
+                const response=await fetch(VOICE_AI_ENDPOINT+'/ai/invoice',requestOptions);
+                const payload=await response.json().catch(()=>({}));
+                if(!response.ok||!payload.ok) throw new Error(payload.error||'تعذر الاتصال بمحرك الفاتورة الذكي.');
+                const transcript=String(payload.transcript||raw).trim();
+                if(input&&transcript) input.value=transcript;
+                voiceRecordedBlob=null;
+                const found=[];
+                (Array.isArray(payload.items)?payload.items:[]).forEach(item=>{
+                    if(!item||!String(item.spoken||'').trim()) return;
+                    const ids=[...new Set((Array.isArray(item.candidateIds)?item.candidateIds:[]).map(String))];
+                    const candidates=ids.map(id=>products.find(p=>String(p.id)===id&&p.available!==false)).filter(Boolean);
+                    const confidence=Math.max(0,Math.min(1,Number(item.confidence)||0));
+                    const productId=String(item.productId||'');
+                    const safeSelection=productId&&candidates.length===1&&String(candidates[0].id)===productId&&confidence>=0.93?productId:'';
+                    found.push({
+                        source:String(item.spoken).slice(0,160),
+                        query:String(item.matchedName||item.spoken).slice(0,160),
+                        qty:Math.max(1,Math.min(10000,Math.floor(Number(item.quantity)||1))),
+                        productId:safeSelection,
+                        candidates:candidates.map(p=>Object.assign({},p,{_voiceExact:String(p.id)===safeSelection})),
+                        confidence,
+                        corrected:false
+                    });
+                });
+                voiceInvoiceDraft=found;
+                renderVoiceInvoiceDraft();
+                if(!voiceInvoiceDraft.length) showToast('النموذج لم يتعرف على أصناف أدوية مؤكدة. راجع النص أو أعد التسجيل بوضوح.','error');
+                else if(voiceInvoiceDraft.some(x=>!x.productId)) showToast('تم التحليل بالذكاء الاصطناعي. راجع الأسطر غير المؤكدة واختر الصنف الصحيح قبل الإضافة.','info');
+                else showToast('تم تحليل التسجيل واستخراج '+voiceInvoiceDraft.length+' سطرًا مستقلًا. راجع الفاتورة قبل الإضافة.','success');
             } catch(error) {
-                console.error('Voice invoice parsing failed:',error);
-                showToast('حصل خطأ أثناء تحليل الفاتورة. النص ما زال محفوظًا؛ حاول مرة أخرى.','error');
+                console.error('AI voice invoice parsing failed:',error);
+                showToast(error&&error.message?error.message:'حدث خطأ أثناء تحليل الفاتورة. النص محفوظ ويمكنك المحاولة مرة أخرى.','error');
             } finally {
                 voiceInvoiceParsing=false;
-                if(analyzeButton){analyzeButton.disabled=false;analyzeButton.textContent='تحليل الكلام';}
+                if(analyzeButton){analyzeButton.disabled=false;analyzeButton.textContent='تحليل الكلام بالذكاء الاصطناعي';}
             }
         }
         function renderVoiceInvoiceDraft() {
@@ -8634,13 +8706,13 @@ ${window.location.href}
                 const source=document.createElement('div'); source.className='sm:col-span-4 text-xs font-bold text-arkan-dark'; source.textContent='سمعت: '+line.source;
                 const select=document.createElement('select'); select.className='sm:col-span-6 border border-arkan-sand bg-arkan-light rounded-lg px-2 py-2 text-xs font-bold';
                 const blank=document.createElement('option'); blank.value=''; blank.textContent='اختر الصنف الصحيح'; select.appendChild(blank);
-                line.candidates.forEach((p,i)=>{const o=document.createElement('option');o.value=String(p.id);o.textContent=p.name+' — '+(p.cat||'')+(p._voiceExact?' • تطابق حرفي':i===0?' • أقرب تطابق':'');select.appendChild(o);});
+                line.candidates.forEach((p,i)=>{const o=document.createElement('option');o.value=String(p.id);o.textContent=p.name+' — '+(p.cat||'')+(p._voiceExact?' • اختيار النموذج':' • اقتراح للمراجعة');select.appendChild(o);});
                 select.value=String(line.productId||''); select.addEventListener('change',()=>line.productId=select.value);
                 const qty=document.createElement('input');qty.type='number';qty.min='1';qty.step='1';qty.value=String(line.qty);qty.className='sm:col-span-2 border border-arkan-sand rounded-lg px-2 py-2 text-xs font-black text-center';
                 qty.addEventListener('change',()=>{line.qty=Math.max(1,Math.floor(Number(qty.value)||1));qty.value=String(line.qty);});
                 wrap.append(source,select,qty);
                 if(!line.candidates.length){const note=document.createElement('p');note.className='sm:col-span-12 text-[11px] text-rose-700 font-bold';note.textContent='⚠ الصنف «'+line.query+'» غير موجود في الليستة أو لم أتعرف عليه. لن تتم إضافته. راجع الاسم أو تواصل مع المخزن لإضافته.';wrap.appendChild(note);}
-                else if(line.candidates.length>1 || !line.candidates[0]._voiceExact){const note=document.createElement('p');note.className='sm:col-span-12 text-[11px] text-amber-800 font-bold';note.textContent='⚠ لم أجد تطابقًا مؤكدًا للصنف «'+line.query+'». قد يكون غير متوفر أو نطق الاسم غير واضح. اختر الصنف الصحيح يدويًا؛ لن تتم إضافته تلقائيًا.';wrap.appendChild(note);}
+                else if(line.candidates.length>1 || !line.productId){const note=document.createElement('p');note.className='sm:col-span-12 text-[11px] text-amber-800 font-bold';note.textContent='⚠ توجد أكثر من مطابقة أو أن ثقة النموذج غير كافية للصنف «'+line.query+'». راجع الاسم والتركيز واختر الصنف الصحيح؛ لن تتم إضافته تلقائيًا.';wrap.appendChild(note);}
                 host.appendChild(wrap);
             });
         }
@@ -10040,9 +10112,9 @@ ${url}`);
             <div id="voice-admin-controls" class="hidden text-[11px] text-arkan-bronze">إدارة الليستة بالصوت فقط — قل أمرًا واحدًا في كل مرة. أمثلة: «ابحث عن بانادول»، «ضيف صنف اسم الصنف بسعر 120»، «عدل سعر اسم الصنف إلى 130»، «عدل قسم اسم الصنف إلى مستحضرات تجميل»، «خلي اسم الصنف غير متاح»، «احذف صنف اسم الصنف». كل تعديل يحتاج مراجعتك وتأكيدك قبل الحفظ. <button type="button" onclick="startVoiceRecognition('admin')" class="mt-2 bg-arkan-dark text-white rounded-lg px-3 py-2 text-xs font-black">🎙️ أمر صوتي جديد لليستة</button> <button type="button" onclick="openVoiceAdminInvoice()" class="mt-2 bg-arkan-dark text-white rounded-lg px-3 py-2 text-xs font-black">🎙️ تحليل فاتورة صوتية بنفس محرك الصيدلي</button></div>
             <label class="block text-xs font-black text-arkan-dark" for="voice-transcript">النص الذي تم سماعه (يمكنك تصحيحه يدويًا)</label>
             <textarea id="voice-transcript" rows="3" class="w-full border border-arkan-sand bg-arkan-light rounded-xl p-3 text-sm font-bold focus:bg-white focus:outline-none focus:border-arkan-primary" placeholder="سيظهر الكلام هنا..."></textarea>
-            <div id="voice-pharm-review" class="space-y-3"><div class="flex flex-wrap items-center justify-between gap-2"><span class="text-sm font-black text-arkan-dark">مراجعة الفاتورة</span><button type="button" onclick="parseVoiceInvoiceDraft()" class="bg-arkan-cream border border-arkan-sand text-arkan-dark px-3 py-2 rounded-lg text-xs font-black cursor-pointer">تحليل الكلام</button></div><p class="text-[11px] text-arkan-bronze">اختار الصنف الصحيح وحدد الكمية لكل سطر. لن تُضاف الأصناف قبل ضغطك على تأكيد الإضافة.</p><div id="voice-invoice-lines" class="space-y-2"></div><button type="button" id="voice-invoice-confirm-btn" onclick="confirmVoiceInvoice()" class="w-full bg-emerald-700 text-white px-4 py-3 rounded-xl text-sm font-black cursor-pointer">تأكيد وإضافة الأصناف للطلبية</button></div>
+            <div id="voice-pharm-review" class="space-y-3"><div class="flex flex-wrap items-center justify-between gap-2"><span class="text-sm font-black text-arkan-dark">مراجعة الفاتورة</span><button type="button" onclick="parseVoiceInvoiceDraft()" class="bg-arkan-cream border border-arkan-sand text-arkan-dark px-3 py-2 rounded-lg text-xs font-black cursor-pointer">تحليل الكلام بالذكاء الاصطناعي</button></div><p class="text-[11px] text-arkan-bronze">اختار الصنف الصحيح وحدد الكمية لكل سطر. لن تُضاف الأصناف قبل ضغطك على تأكيد الإضافة.</p><div id="voice-invoice-lines" class="space-y-2"></div><button type="button" id="voice-invoice-confirm-btn" onclick="confirmVoiceInvoice()" class="w-full bg-emerald-700 text-white px-4 py-3 rounded-xl text-sm font-black cursor-pointer">تأكيد وإضافة الأصناف للطلبية</button></div>
             <div id="voice-admin-review" class="hidden rounded-xl bg-arkan-cream border border-arkan-sand p-3 space-y-2"><p id="voice-admin-result" class="text-xs font-bold text-arkan-dark"></p><p class="text-[11px] text-arkan-bronze">راجع الصنف والخصم في نافذة التعديل. لن يتم حفظ أي تغيير تلقائيًا.</p></div>
-            <p class="text-[10px] text-arkan-bronze leading-relaxed border-t border-arkan-sand pt-3">التعرف الصوتي يعتمد على دعم المتصفح والإنترنت وقد يخطئ في أسماء الأدوية المتشابهة. راجع الاسم والتركيز والشكل الدوائي دائمًا. الصوت يُعالج بواسطة خدمة التعرف التي يوفرها المتصفح، وليس بواسطة خادم أركان.</p>
+            <p class="text-[10px] text-arkan-bronze leading-relaxed border-t border-arkan-sand pt-3">يتم إرسال التسجيل إلى محرك Whisper لتحويل الصوت إلى نص، ثم يحلل نموذج GLM أسماء الأدوية والكميات ويطابقها مع كتالوج أركان. راجع الاسم والتركيز والشكل الدوائي دائمًا قبل الإضافة. لا تتم إضافة أي صنف للطلبية قبل تأكيدك.</p>
         </div>
     </div>
 
