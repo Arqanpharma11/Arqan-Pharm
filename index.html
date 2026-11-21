@@ -7164,7 +7164,7 @@
 
                 // Verified package-photo seed: Apple-Lite 30 tablets (catalog item #10).
                 // Source page shows the exact Apple-Lite pack; do not use lookalike images.
-                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v13';;;;;
+                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v14';;;;;
                 if (localStorage.getItem(IMAGE_SEED_VERSION) !== '1') {
                     // Individually checked package photos: brand, strength/stage and form match.
                     const verifiedImageSeeds = {
@@ -7239,7 +7239,11 @@
                         '111': { src: 'https://www.lotusonline.com/cdn/shop/files/3004702_processed.jpg?v=1773305705&width=750', source: 'Lotus Pharmacies — Atomox Apex 40 mg; exact brand and strength verified' },
                         '114': { src: 'https://www.cphi-online.com/product/ateno-atenolol/Ateno%2050%20copy.png', source: 'CPHI Online / EIPICO — Ateno 50 mg, 20 film-coated tablets; exact brand, strength and pack verified' },
                         '119': { src: 'https://www.lotusonline.com/cdn/shop/files/3000042_processed.jpg?v=1767615071', source: 'Lotus Pharmacies — Agnucaston 30 film-coated tablets; exact brand and pack verified' },
-                        '45': { src: 'https://dwaprices.com/upload/1777755890.png', source: 'DwaPrices — Epifenac 100 mg, 5 rectal suppositories; exact brand, strength and form verified' }
+                        '45': { src: 'https://dwaprices.com/upload/1777755890.png', source: 'DwaPrices — Epifenac 100 mg, 5 rectal suppositories; exact brand, strength and form verified' },
+                        '138': { src: 'https://www.lotusonline.com/cdn/shop/files/3004782_1.jpg?v=1767615529&width=1500', source: 'Lotus Pharmacies — Adwiflam Emulgel 50 g; catalog price and package size matched' },
+                        '139': { src: 'https://adwia.com/upfiles/thumbs/000/0005387_3.png', source: 'Adwia official — Adwiflam 50 mg granules, 10 sachets × 2 g; exact formulation and pack verified' },
+                        '146': { src: 'https://re3ayapharmacy.com/cdn/shop/files/RX-Massage-gel-50-gm.webp?v=1779979750', source: 'Re3aya Pharmacy — R.X Massage Gel 50 g; exact brand and package size verified' },
+                        '147': { src: 'https://delmar-test.linkedgates.com/images/items/145472-v1.JPEG', source: 'Delmar & Attalla — R.X Massage Spray 100 ml; exact brand, form and size verified' }
                     };
                     Object.entries(verifiedImageSeeds).forEach(([id, seed]) => {
                         if (seed.src && (PROD_IMG_VERIFIED[id] !== true || PROD_IMG_SRC[id] === seed.source)) {
