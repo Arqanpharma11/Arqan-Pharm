@@ -905,7 +905,7 @@
                             <span id="pharm-shortage-count" class="num-en bg-arkan-dark text-arkan-sand px-2 py-0.5 rounded-full text-[11px]">0</span>
                         </button>
                     </div>
-                    <p class="mt-1 px-1 text-[9px] leading-relaxed text-emerald-700">مصادر بيانات المواد الفعالة: Egyptian Drug Database (CC0) و Egyptian Drug Database by Mahmoud Mohamed (CC BY 4.0).</p>
+                    <p class="mt-1 px-1 text-[9px] leading-relaxed text-emerald-700">مصادر بيانات المواد الفعالة: <a href="https://github.com/karem505/egyptian-drug-database" target="_blank" rel="noopener" class="underline">Egyptian Drug Database (CC0)</a> و <a href="https://github.com/mahmoudfalous/eg-drugs" target="_blank" rel="noopener" class="underline">Egyptian Drug Database by Mahmoud Mohamed (CC BY 4.0)</a>.</p>
                 </div>
 
 
@@ -6496,16 +6496,20 @@
                 const canApplyExternal = !!(external && (!p.act || /[?؟]/.test(String(p.act)) || p.ingredientSource === 'egypt-drugs-cc0' || isRuleGenerated));
                 if (canApplyExternal) {
                     if (p.act !== external[0] || p.cls !== external[1] || p.ingredientSource !== 'egypt-drugs-cc0') {
-                        p.act = external[0]; p.cls = external[1]; p.ingredientSource = 'egypt-drugs-cc0'; _enrichChanged = true;
+                        p.act = external[0]; p.cls = external[1]; p.ingredientSource = 'egypt-drugs-cc0'; p.ingredientVerified = true; _enrichChanged = true;
                     }
                 }
                 if (p.cat !== 'أدوية') return;
+                if (ruleMatch && p.act && p.act === ruleMatch.act && !p.ingredientSource) {
+                    p.ingredientSource = 'rule-based-unverified'; p.ingredientVerified = false; _enrichChanged = true;
+                }
                 if (/^\s*سرنج/.test(normAr(p.name))) return;
                 // يتصنف الصنف لو لسه فاضي، أو لو تصنيفه القديم كان مجرد تخمين من شكل الدوا (كريم/قطرة/حقن...)
                 if (!p.act && (!p.cls || _FB_CLS.has(p.cls))) {
                     const r = _matchDrugTokens(p.name, _drugMap) || _inferByFragments(p.name);
                     if (r) {
                         if (p.act !== r.act || p.cls !== r.cls) { p.act = r.act; p.cls = r.cls; _enrichChanged = true; }
+                        if (p.act && !p.ingredientSource) { p.ingredientSource = 'rule-based-unverified'; p.ingredientVerified = false; _enrichChanged = true; }
                     } else {
                         const fc = _fallbackClass(p.name);
                         if (fc && p.cls !== fc) { p.act = ''; p.cls = fc; _enrichChanged = true; }
@@ -6706,7 +6710,7 @@
             let queue = null;
             try { queue = JSON.parse(localStorage.getItem(_BULK_DRUG_API_QUEUE_KEY) || 'null'); } catch (_) {}
             if (!Array.isArray(queue) || !queue.length) {
-                queue = products.filter(p => p && p.cat === 'أدوية' && (!p.act || /[?؟]/.test(String(p.act)))).map(p => p.name);
+                queue = products.filter(p => p && p.cat === 'أدوية' && (!p.act || /[?؟]/.test(String(p.act)) || p.ingredientSource === 'rule-based-unverified')).map(p => p.name);
                 localStorage.setItem(_BULK_DRUG_API_QUEUE_KEY, JSON.stringify(queue));
                 localStorage.setItem(_BULK_DRUG_API_CURSOR_KEY, '0');
             }
