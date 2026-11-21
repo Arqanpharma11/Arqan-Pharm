@@ -7690,18 +7690,41 @@
                         '300': { src: 'https://www.lotusonline.com/cdn/shop/files/3001723_1.jpg?v=1767615797&width=1500', source: 'Lotus Pharmacies — X-Tension 300 mg, 28 scored tablets; exact strength and pack matched' },
 
                      };
+                    // Apply the entire verified seed set in memory first. The previous per-item
+                    // setProductImage() loop serialized and persisted three full maps for every
+                    // product and launched hundreds of independent Firestore writes, freezing startup.
+                    const imageSeedBatch = (typeof firestoreDB !== 'undefined' && firestoreDB) ? firestoreDB.batch() : null;
+                    let imageSeedBatchCount = 0;
                     Object.entries(verifiedImageSeeds).forEach(([id, seed]) => {
                         if (seed.src && (PROD_IMG_VERIFIED[id] !== true || PROD_IMG_SRC[id] === seed.source)) {
-                            setProductImage(id, seed.src, seed.source);
+                            PROD_IMAGES[id] = seed.src;
+                            PROD_IMG_SRC[id] = seed.source;
+                            PROD_IMG_VERIFIED[id] = true;
+                            if (imageSeedBatch) {
+                                imageSeedBatch.set(firestoreDB.collection('productImages').doc(String(id)), {
+                                    src: seed.src, source: seed.source, verified: true
+                                });
+                                imageSeedBatchCount++;
+                            }
                         }
                     });
                     // Remove a prior seed that was later found to show capsules, not the catalog's tablets.
                     if (PROD_IMG_SRC['15'] === 'Doctor M Pharmacy — Ibiamox 500 mg, 12 capsules; exact brand, strength and form verified') {
-                        setProductImage('15', null, null);
+                        delete PROD_IMAGES['15'];
+                        delete PROD_IMG_SRC['15'];
+                        delete PROD_IMG_VERIFIED['15'];
+                        if (imageSeedBatch) {
+                            imageSeedBatch.delete(firestoreDB.collection('productImages').doc('15'));
+                            imageSeedBatchCount++;
+                        }
                     }
+                    // Persist each map once, rather than once per product.
                     persistState(KEY_IMAGES, PROD_IMAGES);
                     persistState(KEY_IMG_SRC, PROD_IMG_SRC);
                     persistState(KEY_IMG_VERIFIED, PROD_IMG_VERIFIED);
+                    if (imageSeedBatch && imageSeedBatchCount) {
+                        imageSeedBatch.commit().catch(err => console.error('Verified image seed batch sync error:', err));
+                    }
                     try { localStorage.setItem(IMAGE_SEED_VERSION, '1'); } catch (_) {}
                 }
 
