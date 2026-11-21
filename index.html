@@ -7175,7 +7175,7 @@
 
                 // Verified package-photo seed: Apple-Lite 30 tablets (catalog item #10).
                 // Source page shows the exact Apple-Lite pack; do not use lookalike images.
-                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v38';;;;;
+                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v39';;;;;
                 if (localStorage.getItem(IMAGE_SEED_VERSION) !== '1') {
                     // Individually checked package photos: brand, strength/stage and form match.
                     const verifiedImageSeeds = {
@@ -7776,6 +7776,12 @@
                         '156': { src: 'https://www.lotusonline.com/cdn/shop/files/3007231_processed.jpg?v=1773306500', source: 'Lotus Pharmacies — Aripiprex 10 mg, 30 film-coated tablets; exact Al Andalous brand, strength and pack verified' },
                         '157': { src: 'https://www.alandalous.org/storage/uploads/Product/YHQmQm3Ro0_1703068798.png', source: 'Al Andalous manufacturer — Aripiprex 15 mg, 20 film-coated tablets; official exact brand and strength verified' },
                         '158': { src: 'https://dwaprices.com/upload/1778004008.png', source: 'DwaPrices — Aripiprex 20 mg, 20 film-coated tablets; exact Al Andalous brand, strength and pack verified' },
+                        '161': { src: 'https://www.mouradpharmacy.com/web/image/product.product/277044/image_1920?unique=f6f140f', source: 'Mourad Pharmacy — Articu-Safe diacerein 50 mg, 30 hard-gelatin capsules; exact Global Napi brand, strength and pack verified' },
+                        '164': { src: 'https://doctormpharmacy.com/cdn/shop/files/119291.jpg?v=1755300388&width=1946', source: 'Doctor M Pharmacy — Articavol diclofenac sodium 75 mg/3 ml, 3 ampoules; exact GPI product and pack verified' },
+                        '165': { src: 'https://mohieldeenpharmacy.com/web/image/product.template/2213/image_1920?unique=8bceb46', source: 'Mohieldeen Pharmacy — Artixiban apixaban 2.5 mg, 30 film-coated tablets; exact Mash Premiere brand and strength verified' },
+                        '166': { src: 'https://dkud4u09qff41.cloudfront.net/Products/90178dd2-3b81-45a1-bd28-2c17a32ee32d.png', source: 'Vezeeta Pharmacy — Artixiban apixaban 5 mg, 30 film-coated tablets; exact Mash Premiere brand, strength and pack verified' },
+                        '167': { src: 'https://doctormpharmacy.com/cdn/shop/files/97925.png?v=1755190145&width=533', source: 'Doctor M Pharmacy — Arthfree leflunomide 20 mg, 30 film-coated tablets; exact EVA Pharma brand and pack verified' },
+                        '169': { src: 'https://www.lotusonline.com/cdn/shop/files/3009386_processed.jpg?v=1773308121&width=750', source: 'Lotus Pharmacies — Arthrohold avocado/soybean unsaponifiables 400 mg, 30 hard-gelatin capsules; exact product and pack verified' },
                     };
                     Object.entries(verifiedImageSeeds).forEach(([id, seed]) => {
                         if (seed.src && (PROD_IMG_VERIFIED[id] !== true || PROD_IMG_SRC[id] === seed.source)) {
