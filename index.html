@@ -7164,7 +7164,7 @@
 
                 // Verified package-photo seed: Apple-Lite 30 tablets (catalog item #10).
                 // Source page shows the exact Apple-Lite pack; do not use lookalike images.
-                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v21';;;;;
+                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v22';;;;;
                 if (localStorage.getItem(IMAGE_SEED_VERSION) !== '1') {
                     // Individually checked package photos: brand, strength/stage and form match.
                     const verifiedImageSeeds = {
@@ -7677,7 +7677,11 @@
                         '261': { src: 'https://www.lotusonline.com/cdn/shop/files/3006029_2.jpg?v=1768406142&width=1500', source: 'Lotus Pharmacies — Avivavasc 10/160 mg, 28 film-coated tablets; exact combination and strength matched' },
                         '262': { src: 'https://delmar-test.linkedgates.com/images/items/120038-v1.JPEG', source: 'Delmar & Attalla — Avivavasc 5/160 mg, 28 film-coated tablets; exact combination and strength matched' },
                         '264': { src: 'https://4eshopping.com/assets/images/products/9575491666269746.webp', source: '4E Shopping — Akanza Spray 15 ml; exact brand and package size matched' },
-                        '267': { src: 'https://dkud4u09qff41.cloudfront.net/Products/a52b10e5-72bb-4b1f-b981-50baee9501d7.jpeg', source: 'Vezeeta Pharmacy — Octozac 20 mg, 10 capsules; exact brand, strength and pack matched' }
+                        '267': { src: 'https://dkud4u09qff41.cloudfront.net/Products/a52b10e5-72bb-4b1f-b981-50baee9501d7.jpeg', source: 'Vezeeta Pharmacy — Octozac 20 mg, 10 capsules; exact brand, strength and pack matched' },
+                        '271': { src: 'https://mtalaatpharmacy.com/storage/products/01KXJNFHT7MYGDY0QYC55SQ4WZ.webp', source: 'Dr Mohamed Talaat Pharmacy — Ectomethrin 5% lotion 50 ml; exact product and size matched' },
+                        '276': { src: 'https://avordim.com/upload/product/orginal/61fd49adcf4cb.jpg', source: 'Avordim — Active Hair Shampoo 400 g; exact brand and product matched' },
+                        '279': { src: 'https://delmar-test.linkedgates.com/images/items/139344-v1.JPEG', source: 'Delmar & Attalla — Actimar, 30 hard gelatin capsules; exact brand and pack matched' },
+                        '281': { src: 'https://taypharmacies.com/wp-content/uploads/2024/05/2024-06-01T133008.347.png', source: 'Tay Pharmacies — Acdisteron 25 mg, 20 film-coated tablets; exact brand, strength and pack matched' }
                      };
                     Object.entries(verifiedImageSeeds).forEach(([id, seed]) => {
                         if (seed.src && (PROD_IMG_VERIFIED[id] !== true || PROD_IMG_SRC[id] === seed.source)) {
