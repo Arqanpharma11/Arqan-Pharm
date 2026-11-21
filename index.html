@@ -8347,11 +8347,13 @@ ${window.location.href}
         const voiceIgnoredTokens = new Set(['عايز','عاوزه','عاوز','محتاج','محتاجه','محتاجين','ضيف','اضف','حط','هات','من','فضلك','لو','سمحت','صنف','الصنف','دواء','دوا','علبه','علب','عبوه','عبوات','شريط','شرائط','باكيت','باكت','عدد','و','ثم','وبعدها','بعدها','وكمان','كمان','عاوزين','عايزين','ممكن','اريد','بص','طيب','تمام']);
         function getVoiceProductData(p) {
             let data=voiceProductCache.get(p);
-            const signature=[p.name,p.en,p.cls,p.act,p.available].join('|');
+            const signature=[p.name,p.en,p.available].join('|');
             if(!data||data.signature!==signature){
-                const ar=voiceNormalize(p.name),en=voiceNormalize(getEn(p)),extra=voiceNormalize(getDrugSearchText(p)||'');
-                const full=ar+' '+en+' '+extra;
-                data={signature,ar,en,full,pt:full.split(' ').filter(Boolean)};
+                // Invoice recognition must use the actual medicine name only, never category,
+                // active ingredient, class, or broad search keywords.
+                const ar=voiceNormalize(p.name),en=voiceNormalize(getEn(p));
+                const full=(ar+' '+en).trim();
+                data={signature,ar,en,full,pt:[...new Set(full.split(' ').filter(Boolean))]};
                 voiceProductCache.set(p,data);
             }
             return data;
@@ -8377,9 +8379,13 @@ ${window.location.href}
             const q=voiceNormalize(query); if(!q) return [];
             const qt=q.split(' ').filter(t=>t && !voiceIgnoredTokens.has(t));
             if(!qt.length) return [];
+            // A number in the spoken phrase is treated as medicine strength/pack detail,
+            // not as a product by itself. It must match the catalog entry exactly.
+            const queryNumbers=(q.match(/\\d+(?:\\.\\d+)?/g)||[]);
+            if(!qt.some(t=>/[a-z\\u0600-\\u06ff]{3,}/i.test(t))) return [];
             const index=getVoiceCatalogIndex(),pool=new Set();
-            // Narrow the search to products sharing at least one spoken token.
             for(const token of qt){
+                if(/^\\d+(?:\\.\\d+)?$/.test(token)) continue;
                 const exact=index.get(token);
                 if(exact) exact.forEach(p=>pool.add(p));
                 else {
@@ -8392,25 +8398,33 @@ ${window.location.href}
             }
             const ranked=[];
             for(const p of pool){
-                const data=getVoiceProductData(p),{ar,en,full,pt}=data;
-                let score,exact=false;
-                if(ar===q || en===q || full===q){score=1000;exact=true;}
-                else if(ar.includes(q)||en.includes(q)){score=940;}
-                else {
-                    let covered=0,total=0,numericOk=true;
-                    for(const t of qt){
-                        let best=0;
-                        for(const x of pt){const sim=voiceTokenSimilarity(t,x);if(sim>best)best=sim;if(best===1)break;}
-                        if(best>=.68)covered++;
-                        total+=best;
-                        if(/^\\d/.test(t)&&!pt.some(x=>x.startsWith(t)))numericOk=false;
+                if(p.available===false) continue;
+                const data=getVoiceProductData(p),{ar,en,pt}=data;
+                const productNumbers=(data.full.match(/\\d+(?:\\.\\d+)?/g)||[]);
+                // Do not guess a strength: if the catalog name has a strength/number,
+                // the spoken text must contain the same number(s).
+                if(productNumbers.length && (queryNumbers.length!==productNumbers.length ||
+                    productNumbers.some((n,i)=>n!==queryNumbers[i]))) continue;
+                if(queryNumbers.some(n=>!productNumbers.includes(n))) continue;
+                let covered=0,total=0;
+                for(const t of qt){
+                    if(/^\\d+(?:\\.\\d+)?$/.test(t)) { covered++; total++; continue; }
+                    let best=0;
+                    for(const x of pt){
+                        if(/\\d/.test(x)) continue;
+                        const sim=voiceTokenSimilarity(t,x);
+                        if(sim>best) best=sim;
+                        if(best===1) break;
                     }
-                    const coverage=covered/qt.length,avg=total/qt.length;
-                    score=Math.round(coverage*600+avg*260-Math.max(0,pt.length-qt.length)*3);
-                    if(!numericOk)score-=220;
-                    if(coverage===1&&numericOk)score+=80;
+                    if(best>=.68) covered++;
+                    total+=best;
                 }
-                if(score>=Math.max(105,qt.length*70)) ranked.push({p,score,exact});
+                const coverage=covered/qt.length,avg=total/qt.length;
+                // Require every meaningful spoken word to belong to the medicine name.
+                if(coverage<1) continue;
+                const exact=ar===q||en===q||data.full===q;
+                const score=exact?1000:Math.round(760+avg*180-Math.max(0,pt.length-qt.length)*5);
+                if(score>=700) ranked.push({p,score,exact});
             }
             ranked.sort((a,b)=>b.score-a.score);
             return ranked.slice(0,8).map(x=>Object.assign({},x.p,{_voiceScore:x.score,_voiceExact:x.exact}));
@@ -8592,28 +8606,8 @@ ${window.location.href}
                 if(target){target.qty=value;target.corrected=true;correctionCount++;}
             }
 
-            // Keep meaningful unmatched speech visible as unavailable catalog lines.
-            const ignoredSpeech=new Set(['انا','احنا','عايز','عاوزه','عاوز','محتاج','محتاجه','محتاجين','ضيف','اضف','حط','هات','من','فضلك','لو','سمحت','صنف','الصنف','دواء','دوا','ادويه','ادوية','علاج','علبه','علب','عبوه','عبوات','شريط','شرائط','باكيت','باكت','عدد','و','ثم','وبعدها','بعدها','وكمان','كمان','عاوزين','عايزين','ممكن','اريد','بص','طيب','تمام','لا','خليهم','خليها','خلي','الكميه','بدلهم','بدلها','غيرهم','غيرها']);
-            const unmatched=[];
-            let pending=[],pendingStart=-1;
-            const flushUnmatched=()=>{
-                if(!pending.length)return;
-                const phrase=pending.join(' ').trim(),startAt=pendingStart,endAt=startAt+pending.length;
-                if(phrase && phrase.length>1){
-                    const candidates=findCandidatesCached(phrase);
-                    unmatched.push({source:phrase,query:phrase,qty:voiceSmartQuantity(tokens,startAt,endAt),productId:'',candidates,start:startAt,end:endAt,unavailable:true,corrected:false});
-                }
-                pending=[];pendingStart=-1;
-            };
-            tokens.forEach((token,index)=>{
-                if(used[index]){flushUnmatched();return;}
-                const clean=token.replace(/^و(?=[\u0600-\u06FF]{3,})/,'');
-                if(!clean || ignoredSpeech.has(clean) || voiceQuantityValue(clean)!==null || /^\d+$/.test(clean)){flushUnmatched();return;}
-                if(pendingStart<0)pendingStart=index;
-                pending.push(clean);
-            });
-            flushUnmatched();
-            found.push(...unmatched);
+            // Ignore all speech that is not confidently matched to an available catalog medicine.
+            // Numbers and conversational filler therefore cannot become fake invoice rows.
             found.sort((a,b)=>a.start-b.start);
 
             const merged=[];
