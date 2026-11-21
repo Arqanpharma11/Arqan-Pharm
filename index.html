@@ -7164,55 +7164,27 @@
 
                 // Verified package-photo seed: Apple-Lite 30 tablets (catalog item #10).
                 // Source page shows the exact Apple-Lite pack; do not use lookalike images.
-                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v2';
+                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v3';
                 if (localStorage.getItem(IMAGE_SEED_VERSION) !== '1') {
-                    // Individually checked package photos: Arabic/English brand, strength or stage,
-                    // and pack form must agree with the corresponding catalog entry.
+                    // Individually checked package photos: brand, strength/stage and form match.
                     const verifiedImageSeeds = {
-                        '1': {
-                            src: 'https://dwaprices.com/upload/1777764684.png',
-                            source: 'Dose/DwaPrices — Update Body Oil 60 ml; exact brand, product and size verified'
-                        },
-                        '2': {
-                            src: 'https://taypharmacies.com/wp-content/uploads/2025/01/2025-01-05T113747.508.png',
-                            source: 'Tay Pharmacies — Update Whitening Cream 50 gm; exact Update cream pack verified'
-                        },
-                        '3': {
-                            src: 'https://www.lotusonline.com/cdn/shop/files/3005093_2.jpg?v=1768408351&width=1500',
-                            source: 'Lotus Pharmacies — Ibandrocare 150 mg, 2 film-coated tablets; exact brand and strength verified'
-                        },
-                        '4': {
-                            src: 'https://kidzmarket-eg.com/cdn/shop/files/Aptamil_1_Infant_Formula_0_6M_400g.webp?v=1752456511',
-                            source: 'Kidz Market Egypt — Aptamil Advance Stage 1, 400 g; exact stage and brand verified'
-                        },
-                        '5': {
-                            src: 'https://alfouadpharmacies.com/cdn/shop/files/rn-image_picker_lib_temp_e032c83d-078c-446c-bc0a-5e7fe2d6d2d6.jpg?v=1771526633',
-                            source: 'AlFouad Pharmacies — Aptamil Milk Stage 2, 400 g; exact stage and brand verified'
-                        },
-                        '6': {
-                            src: 'https://cdnprod.mafretailproxy.com/sys-master-root/he5/h6f/48488005533726/480Wx480H_557896_main.jpg',
-                            source: 'Carrefour Egypt — Aptajunior Stage 3, 400 g; exact product and stage verified'
-                        },
-                        '7': {
-                            src: 'https://cdn.salla.sa/qaXdd/nlsuvicVbB0knmYjEiApnwKnbZMM5HcfCQncDsPZ.jpg',
-                            source: 'Fooz Pharmacy — Aprovel 300 mg, 28 tablets; exact brand and strength verified'
-                        },
-                        '8': {
-                            src: 'https://images.matjrah.online/2744/image/cache/catalog/productimage/05793ba0a3a41b06e045ad3d4f169b9a7-1100x1100w.jpg',
-                            source: 'Mawareed — Aprovel 150 mg, 28 tablets; exact brand and strength verified'
-                        },
-                        '10': {
-                            src: 'https://dose-images.doseshq.com/b4e5ffd1-c47b-4401-85a4-31918d37096e.jpg',
-                            source: 'Dose Drugs — Apple-lite 30 tablets; exact package image verified against product title'
-                        },
-                        '14': {
-                            src: 'https://dkud4u09qff41.cloudfront.net/Products/aa32f8e5-263e-4509-b6a2-a7c74341e4c6.jpeg',
-                            source: 'Vezeeta Pharmacy — Ibiamox 400 mg oral suspension; exact brand and strength verified'
-                        },
-                        '15': {
-                            src: 'https://doctormpharmacy.com/cdn/shop/files/113140.jpg?v=1755285258&width=1946',
-                            source: 'Doctor M Pharmacy — Ibiamox 500 mg, 12 capsules; exact brand, strength and form verified'
-                        }
+                        '1': { src: 'https://dwaprices.com/upload/1777764684.png', source: 'Dose/DwaPrices — Update Body Oil 60 ml; exact brand, product and size verified' },
+                        '2': { src: 'https://taypharmacies.com/wp-content/uploads/2025/01/2025-01-05T113747.508.png', source: 'Tay Pharmacies — Update Whitening Cream 50 gm; exact Update cream pack verified' },
+                        '3': { src: 'https://www.lotusonline.com/cdn/shop/files/3005093_2.jpg?v=1768408351&width=1500', source: 'Lotus Pharmacies — Ibandrocare 150 mg, 2 film-coated tablets; exact brand and strength verified' },
+                        '4': { src: 'https://kidzmarket-eg.com/cdn/shop/files/Aptamil_1_Infant_Formula_0_6M_400g.webp?v=1752456511', source: 'Kidz Market Egypt — Aptamil Advance Stage 1, 400 g; exact stage and brand verified' },
+                        '5': { src: 'https://alfouadpharmacies.com/cdn/shop/files/rn-image_picker_lib_temp_e032c83d-078c-446c-bc0a-5e7fe2d6d2d6.jpg?v=1771526633', source: 'AlFouad Pharmacies — Aptamil Milk Stage 2, 400 g; exact stage and brand verified' },
+                        '6': { src: 'https://cdnprod.mafretailproxy.com/sys-master-root/he5/h6f/48488005533726/480Wx480H_557896_main.jpg', source: 'Carrefour Egypt — Aptajunior Stage 3, 400 g; exact product and stage verified' },
+                        '7': { src: 'https://cdn.salla.sa/qaXdd/nlsuvicVbB0knmYjEiApnwKnbZMM5HcfCQncDsPZ.jpg', source: 'Fooz Pharmacy — Aprovel 300 mg, 28 tablets; exact brand and strength verified' },
+                        '8': { src: 'https://images.matjrah.online/2744/image/cache/catalog/productimage/05793ba0a3a41b06e045ad3d4f169b9a7-1100x1100w.jpg', source: 'Mawareed — Aprovel 150 mg, 28 tablets; exact brand and strength verified' },
+                        '10': { src: 'https://dose-images.doseshq.com/b4e5ffd1-c47b-4401-85a4-31918d37096e.jpg', source: 'Dose Drugs — Apple-lite 30 tablets; exact package image verified against product title' },
+                        '14': { src: 'https://dkud4u09qff41.cloudfront.net/Products/aa32f8e5-263e-4509-b6a2-a7c74341e4c6.jpeg', source: 'Vezeeta Pharmacy — Ibiamox 400 mg oral suspension; exact brand and strength verified' },
+                        '15': { src: 'https://doctormpharmacy.com/cdn/shop/files/113140.jpg?v=1755285258&width=1946', source: 'Doctor M Pharmacy — Ibiamox 500 mg, 12 capsules; exact brand, strength and form verified' },
+                        '16': { src: 'https://www.rosheta.com/upload/fdc2c37a591b90b7e3a8a166f595ce810e69ef0a7f99768e56a30980c3fbf40a7.webp', source: 'Rosheta — Apetoid 20 mg tablets; exact brand and strength verified' },
+                        '18': { src: 'https://egyptdwa.com/dwa/epigent-80mg-2ml-i-m-i-v-3-amps-18417.jpg', source: 'EgyptDwa — Epigent 80 mg/2 ml, 3 ampoules; exact strength, form and pack count verified' },
+                        '19': { src: 'https://cdn.salla.sa/qVbqW/e04b431d-920c-4b28-8619-ea16700b4a90-1000x1000-TizQoB1iHJ6dybu1mOGCRgPPY6xYLLeD0z855WZ0.jpg', source: 'Taif AlMasia Pharmacy — Epigonal 75 injection; exact brand and strength verified' },
+                        '21': { src: 'https://dwaprices.com/upload/1777486450.png', source: 'DwaPrices — Apidra 100 IU/ml, 5 cartridges; exact insulin brand, concentration and cartridge pack verified' },
+                        '22': { src: 'https://media.zid.store/0cd60bb9-2c75-403f-b4b2-53e643da1ba9/6c3894f7-51b8-4aa3-90fc-884bb57055ac.png', source: 'Care Outlet — Apidra SoloStar 100 IU/ml prefilled pens; exact brand and pen form verified' },
+                        '27': { src: 'https://aljawaher.online/cdn/shop/files/185012029.jpg?v=1767085819', source: 'Al-Jawaher Pharmacy — Epirelefan 40 mg/ml injection; exact brand and concentration verified' }
                     };
                     Object.entries(verifiedImageSeeds).forEach(([id, seed]) => {
                         if (PROD_IMG_VERIFIED[id] !== true && seed.src) {
