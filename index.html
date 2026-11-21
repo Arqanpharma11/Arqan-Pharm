@@ -7175,7 +7175,7 @@
 
                 // Verified package-photo seed: Apple-Lite 30 tablets (catalog item #10).
                 // Source page shows the exact Apple-Lite pack; do not use lookalike images.
-                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v39';;;;;
+                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v40';;;;;
                 if (localStorage.getItem(IMAGE_SEED_VERSION) !== '1') {
                     // Individually checked package photos: brand, strength/stage and form match.
                     const verifiedImageSeeds = {
@@ -7782,6 +7782,16 @@
                         '166': { src: 'https://dkud4u09qff41.cloudfront.net/Products/90178dd2-3b81-45a1-bd28-2c17a32ee32d.png', source: 'Vezeeta Pharmacy — Artixiban apixaban 5 mg, 30 film-coated tablets; exact Mash Premiere brand, strength and pack verified' },
                         '167': { src: 'https://doctormpharmacy.com/cdn/shop/files/97925.png?v=1755190145&width=533', source: 'Doctor M Pharmacy — Arthfree leflunomide 20 mg, 30 film-coated tablets; exact EVA Pharma brand and pack verified' },
                         '169': { src: 'https://www.lotusonline.com/cdn/shop/files/3009386_processed.jpg?v=1773308121&width=750', source: 'Lotus Pharmacies — Arthrohold avocado/soybean unsaponifiables 400 mg, 30 hard-gelatin capsules; exact product and pack verified' },
+                        '171': { src: 'https://healthwell-eg.com/cdn/shop/files/TubeUrgent.webp?v=1786287913&width=832', source: 'Health Well Egypt — Urgent massage cream 50 gm; exact product tube and volume verified' },
+                        '172': { src: 'https://healthwell-eg.com/cdn/shop/files/Urgent-Plus-50-gm-2022-New-Size-2022.png?v=1780676599&width=1600', source: 'Health Well Egypt — Urgent Plus massage cream 50 gm; exact product tube, carton and volume verified' },
+                        '175': { src: 'https://www.utopiapharma.com/sites/default/files/styles/medium/public/portfolio-images/Urginafect%205mg_0.png?itok=DTz4GaNs', source: 'Utopia manufacturer — Urginafect solifenacin succinate 5 mg, 20 film-coated tablets; official exact pack verified' },
+                        '176': { src: 'https://www.utopiapharma.com/sites/default/files/portfolio-images/Urginafect%20120ml_0.png', source: 'Utopia manufacturer — Urginafect solifenacin succinate 1 mg/ml oral suspension, 120 ml; official exact bottle and concentration verified' },
+                        '204': { src: 'https://dwaprices.com/upload/1777940143.png', source: 'DwaPrices — Esmatac esomeprazole 40 mg, 28 delayed-release hard-gelatin capsules; exact EGPI product and pack verified' },
+                        '205': { src: 'https://dwaprices.com/upload/1777940083.png', source: 'DwaPrices — Esmatac esomeprazole 20 mg, 14 delayed-release hard-gelatin capsules; exact EGPI product and pack verified' },
+                        '206': { src: 'https://api.c0umyt3cda-pharmaove1-p1-public.model-t.cc.commerce.ondemand.com/medias/000000000000047901.webp?context=bWFzdGVyfGltYWdlc3wxODI0NXxpbWFnZS9qcGVnfGFETTNMMmc0TUM4eE1qZzFNak13TnpBMk5qa3hNQzh3TURBd01EQXdNREF3TURBd05EYzVNREV1ZDJWaWNBfDE2NDQ3YzUxYzc4ZjhkZThhYjk1Y2VhZjRlMTg1YmUzMGE4MzdiODk2MGUzZTQ0ZmZmNjE4MGE0ZmMyNmU4N2I', source: 'Pharma eMarket — Asmazon climbazole skin-care spray, 60 ml; exact brand, active ingredient and volume verified' },
+                        '207': { src: 'https://www.lotusonline.com/cdn/shop/files/3008792_processed.jpg?v=1767615013', source: 'Lotus Pharmacies — Asmazon climbazole soothing/moisturizing cream, 30 gm; exact brand, ingredient and volume verified' },
+                        '213': { src: 'https://alba-egypt.com/cdn/shop/files/azha-body-lotionazha-body-lotionmy-store101az0201azhabodylotion100m-8157372.png?v=1782206780&width=1946', source: 'Alba Pharma manufacturer — Azha whitening body lotion, 100 ml; official exact product and volume verified' },
+                        '215': { src: 'https://dwaprices.com/upload/1777407350.png', source: 'DwaPrices — Azithromash azithromycin 500 mg, 3 film-coated tablets; exact Mash Premiere brand and pack verified' },
                     };
                     Object.entries(verifiedImageSeeds).forEach(([id, seed]) => {
                         if (seed.src && (PROD_IMG_VERIFIED[id] !== true || PROD_IMG_SRC[id] === seed.source)) {
