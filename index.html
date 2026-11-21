@@ -8236,7 +8236,7 @@ ${window.location.href}
         function voiceNumberFromText(value) {
             const v = voiceNormalize(value), digit = v.match(/\d+(?:\.\d+)?/);
             if (digit) return Number(digit[0]);
-            const words = {'واحد':1,'واحده':1,'واحدة':1,'اتنين':2,'اثنين':2,'اثنان':2,'تنين':2,'ثلاثه':3,'ثلاثة':3,'تلاته':3,'تلات':3,'اربعه':4,'أربعة':4,'اربعة':4,'خمسه':5,'خمسة':5,'سته':6,'ستة':6,'سبعه':7,'سبعة':7,'تمانيه':8,'ثمانيه':8,'ثمانية':8,'تسعه':9,'تسعة':9,'عشره':10,'عشرة':10};
+            const words = {'واحد':1,'واحده':1,'واحدة':1,'اتنين':2,'اثنين':2,'اثنان':2,'تنين':2,'علبتين':2,'علبتان':2,'شريطين':2,'عبوتين':2,'ثلاثه':3,'ثلاثة':3,'تلاته':3,'تلات':3,'اربعه':4,'أربعة':4,'اربعة':4,'خمسه':5,'خمسة':5,'سته':6,'ستة':6,'سبعه':7,'سبعة':7,'تمانيه':8,'ثمانيه':8,'ثمانية':8,'تسعه':9,'تسعة':9,'عشره':10,'عشرة':10};
             for (const token of v.split(' ')) if (words[token]) return words[token];
             return null;
         }
@@ -8314,7 +8314,7 @@ ${window.location.href}
                     .replace(/\b(?:علبه|علب|عبوه|عبوات|شريط|شرائط|باكيت|باكت|قطعه|قطع|زجاجه|زجاجات|من|عايز|عاوزه|ضيف|اضف|حط|محتاج|محتاجه)\b/g,' ')
                     .replace(/\s+/g,' ').trim();
                 const candidates=voiceFindCandidates(query);
-                return {source:chunk,query,qty,productId:candidates.length?candidates[0].id:'',candidates};
+                return {source:chunk,query,qty,productId:(candidates.length===1 || (candidates.length && voiceNormalize(candidates[0].name)===voiceNormalize(query)))?candidates[0].id:'',candidates};
             });
             renderVoiceInvoiceDraft();
         }
@@ -8359,7 +8359,7 @@ ${window.location.href}
             if(dm){
                 const candidates=voiceFindCandidates(query);
                 if(candidates.length===1 || (candidates.length&&voiceNormalize(candidates[0].name)===query)){
-                    const p=candidates[0];openAdminEditModal(p.id);document.getElementById('edit-prod-disc').value=String(Number(dm[1]));
+                    const p=candidates[0];openAdminEditModal(p.id);document.getElementById('edit-prod-disc').value=String(voiceNumberFromText(dm[1]));
                     document.getElementById('voice-admin-result').textContent='تم العثور على '+p.name+'. تم وضع الخصم المقترح فقط؛ راجع البيانات واضغط حفظ التعديلات إذا كنت متأكدًا.';
                 } else document.getElementById('voice-admin-result').textContent=candidates.length?'وجدت أكثر من صنف محتمل. راجع نتائج البحث واختر الصنف المقصود يدويًا.':'لم أجد صنفًا مطابقًا. صحح النص أو ابحث من الجدول.';
             } else document.getElementById('voice-admin-result').textContent=query?'تم تحويل الكلام إلى بحث. راجع نتائج الكتالوج واختر الصنف المطلوب.':'لم أتعرف على اسم الصنف.';
@@ -9526,7 +9526,7 @@ ${url}`);
     </script>
 
 
-    <div id="voice-assistant-modal" class="hidden fixed inset-0 z-[90] bg-black/60 backdrop-blur-sm items-center justify-center p-3 sm:p-5 no-print" onclick="if(event.target===this)closeVoiceAssistant()">
+    <div id="voice-assistant-modal" class="hidden fixed inset-0 z-[40] bg-black/60 backdrop-blur-sm items-center justify-center p-3 sm:p-5 no-print" onclick="if(event.target===this)closeVoiceAssistant()">
         <div class="bg-white rounded-3xl w-full max-w-3xl max-h-[92vh] overflow-y-auto shadow-2xl border border-arkan-sand p-4 sm:p-6 space-y-4">
             <div class="flex items-start justify-between gap-3"><div><h3 id="voice-modal-title" class="text-lg font-black text-arkan-dark">🎙️ الفاتورة الصوتية</h3><p id="voice-modal-subtitle" class="text-xs text-arkan-bronze font-semibold mt-1">اتكلم بوضوح وراجع المطابقة قبل الإضافة.</p></div><button type="button" onclick="closeVoiceAssistant()" class="text-arkan-bronze text-xl font-black px-2">✕</button></div>
             <div id="voice-recording-status" class="hidden rounded-xl bg-rose-50 border border-rose-200 text-rose-800 px-3 py-2 text-xs font-bold">🔴 جاري الاستماع...</div>
