@@ -7164,7 +7164,7 @@
 
                 // Verified package-photo seed: Apple-Lite 30 tablets (catalog item #10).
                 // Source page shows the exact Apple-Lite pack; do not use lookalike images.
-                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v38';;;;;
+                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v39';;;;;
                 if (localStorage.getItem(IMAGE_SEED_VERSION) !== '1') {
                     // Individually checked package photos: brand, strength/stage and form match.
                     const verifiedImageSeeds = {
@@ -7583,6 +7583,19 @@
                         '941': { src: 'https://f.nooncdn.com/p/pzsku/Z8293A63BDC9BD69C54F7Z/45/_/1732953793/1816635d-fae6-4061-b4b8-8b78f7cee722.jpg?width=800', source: 'Noon Egypt — Pancreat Plus anti-hair-loss shampoo, 250 ml; exact brand and product type verified' },
                         '943': { src: 'https://taypharmacies.com/wp-content/uploads/2024/11/2024-11-16T103926.673.png', source: 'Tay Pharmacies — Pancreat Plus anti-hair-loss lotion, 120 ml; exact brand and volume verified' },
                         '946': { src: 'https://dwastores.com/upload/1739036216.png', source: 'Dwa Stores — Power Act protein supplement, 10 sachets × 15 g; exact product and pack verified' }
+                    ,
+                        '906': { src: 'https://almasrypharmacy.com/media/catalog/product/p/a/palminerve-600-mg-30-hard-gelatin-capsules.jpg', source: 'Almasry Pharmacy — Palminerve 600 mg, 30 capsules; exact brand, strength and pack verified' },
+                        '910': { src: 'https://api.c0umyt3cda-pharmaove1-p1-public.model-t.cc.commerce.ondemand.com/medias/000000000000004082.jpg?context=bWFzdGVyfGltYWdlc3w0MjM2NTV8aW1hZ2UvanBlZ3xhREV4TDJneU5TOHhNRGc1TmpJME5qazVOekF5TWk4d01EQXdNREF3TURBd01EQXdNRFF3T0RJdWFuQm58YmE5ZTJkOWE1OTNlM2EwN2RmY2VjNjFmZTQwZmM3NzRmYWI1NzFlZTBlODhhNzE2NjY5NjE2NzUzNjNiYWEyMg', source: 'Pharma eMarket — Pan-D moisturizing lotion, 120 ml; exact product and volume verified' },
+                        '911': { src: 'https://alfouadpharmacies.com/cdn/shop/files/PANADOLADVANCE48TAB.webp?v=1765880919&width=500', source: 'AlFouad Pharmacies — Panadol Advance, 48 tablets; exact variant and pack verified' },
+                        '912': { src: 'https://api.malyaan.net/uploads/malyaan/products/thumbs/08815408.jpg', source: 'Zahra Egypt — Panadol Extra, 24 tablets; exact variant and pack verified' },
+                        '913': { src: 'https://cdn11.bigcommerce.com/s-4fff2/images/stencil/1280x1280/products/88042/881436/PanadolExtraTabs48s__68290.1693894041.jpg?c=2&imbypass=on', source: 'NextDoorMed — Panadol Extra, 48 tablets; exact variant and pack verified' },
+                        '915': { src: 'https://i0.wp.com/e-vitahub.com/wp-content/uploads/2021/11/1426.png?fit=800%2C800&ssl=1', source: 'Evita — Panadol Sinus, 24 caplets; exact variant and pack verified' },
+                        '917': { src: 'https://alfouadpharmacies.com/cdn/shop/files/Panadol_ColdFlu_Day_24Tabs_PureWhite_1615x1615_68e3dc29-4c17-41d8-99fd-c00df33e1feb.webp?v=1772229613', source: 'AlFouad Pharmacies — Panadol Cold & Flu Day, 24 tablets; exact variant and pack verified' },
+                        '919': { src: 'https://www.lotusonline.com/cdn/shop/files/3006174_1.jpg?v=1767615162', source: 'Lotus Pharmacies — Pantazol 40 mg, 14 enteric-coated tablets; exact brand, strength and pack verified' },
+                        '933': { src: 'https://www.lotusonline.com/cdn/shop/files/3008962_processed.jpg?v=1773305403', source: 'Lotus Pharmacies — Novex Panthenol moisturizing cream, 30 g; exact brand and size verified' },
+                        '934': { src: 'https://www.lotusonline.com/cdn/shop/files/3008203_processed.jpg?v=1767613865', source: 'Lotus Pharmacies — Spectra Extra Panthenol cream, 30 g; exact brand and size verified' },
+                        '936': { src: 'https://media.zid.store/thumbs/56c63adb-b107-44ce-93c1-2d3f9b75f24e/1b854390-c24d-484b-bed1-7402a229e5d3-thumbnail-1000x1000-70.jpg', source: 'Al-Jazea — El-Nile Panthenol 5% cream, 50 g; exact manufacturer, strength and size verified' },
+                        '937': { src: 'https://media.zid.store/thumbs/56c63adb-b107-44ce-93c1-2d3f9b75f24e/1b854390-c24d-484b-bed1-7402a229e5d3-thumbnail-1000x1000-70.jpg', source: 'Al-Jazea — El-Nile Panthenol 5% cream, 50 g; exact manufacturer, strength and size verified' }
                      };
                     Object.entries(verifiedImageSeeds).forEach(([id, seed]) => {
                         if (seed.src && (PROD_IMG_VERIFIED[id] !== true || PROD_IMG_SRC[id] === seed.source)) {
