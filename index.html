@@ -8368,7 +8368,7 @@ ${window.location.href}
             const t=voiceNormalize(token);
             const words={'واحد':1,'واحده':1,'اتنين':2,'اثنين':2,'اثنان':2,'تنين':2,'ثلاثه':3,'ثلاثة':3,'تلاته':3,'تلات':3,'اربعه':4,'اربعة':4,'خمسه':5,'خمسة':5,'سته':6,'ستة':6,'سبعه':7,'سبعة':7,'تمانيه':8,'ثمانيه':8,'ثمانية':8,'تسعه':9,'تسعة':9,'عشره':10,'عشرة':10,'حداشر':11,'احداشر':11,'اتناشر':12,'اثناشر':12,'تلتاشر':13,'اربعتاشر':14,'خمستاشر':15,'ستاشر':16,'سبعتاشر':17,'تمنتاشر':18,'تسعتاشر':19,'عشرين':20,'ثلاثين':30,'اربعين':40,'خمسين':50,'ستين':60,'سبعين':70,'تمانين':80,'تسعين':90,'ميه':100,'مئه':100};
             if(Object.prototype.hasOwnProperty.call(words,t)) return words[t];
-            if(/^\\d{1,4}$/.test(t)){const n=Number(t);return n>=1&&n<=10000?n:null;}
+            if(/^\d{1,4}$/.test(t)){const n=Number(t);return n>=1&&n<=10000?n:null;}
             return null;
         }
         function voiceSmartQuantity(tokens, start, end) {
@@ -8398,7 +8398,7 @@ ${window.location.href}
             const raw=String(input&&input.value||'').trim();
             if(!raw){showToast('اتكلم أو اكتب الأصناف أولاً.','error');return;}
             const normalized=voiceNormalize(raw);
-            const tokens=normalized.split(/\\s+/).filter(Boolean);
+            const tokens=normalized.split(/\s+/).filter(Boolean);
             const found=[],used=Array(tokens.length).fill(false),maxWords=Math.min(8,tokens.length);
             for(let i=0;i<tokens.length;i++){
                 if(used[i]) continue;
@@ -8422,12 +8422,12 @@ ${window.location.href}
 
             // Explicit spoken corrections such as "لا خليهم خمسة" update the last mentioned line;
             // they do not add another quantity or duplicate the product.
-            const correctionRe=/(?:لا\\s*)?(?:خليهم|خليها|خليهم|خلي\\s+الكميه|بدلهم|بدلها|غيرهم|غيرها)\\s+(\\d{1,4}|واحده?|اتنين|اثنين|اثنان|تنين|ثلاثه|ثلاثة|تلاته|تلات|اربعه|اربعة|خمسه|خمسة|سته|ستة|سبعه|سبعة|تمانيه|ثمانيه|ثمانية|تسعه|تسعة|عشره|عشرة|حداشر|احداشر|اتناشر|اثناشر|تلتاشر|اربعتاشر|خمستاشر|ستاشر|سبعتاشر|تمنتاشر|تسعتاشر|عشرين|ثلاثين|اربعين|خمسين|ستين|سبعين|تمانين|تسعين|ميه)/g;
+            const correctionRe=/(?:لا\s*)?(?:خليهم|خليها|خليهم|خلي\s+الكميه|بدلهم|بدلها|غيرهم|غيرها)\s+(\d{1,4}|واحده?|اتنين|اثنين|اثنان|تنين|ثلاثه|ثلاثة|تلاته|تلات|اربعه|اربعة|خمسه|خمسة|سته|ستة|سبعه|سبعة|تمانيه|ثمانيه|ثمانية|تسعه|تسعة|عشره|عشرة|حداشر|احداشر|اتناشر|اثناشر|تلتاشر|اربعتاشر|خمستاشر|ستاشر|سبعتاشر|تمنتاشر|تسعتاشر|عشرين|ثلاثين|اربعين|خمسين|ستين|سبعين|تمانين|تسعين|ميه)/g;
             let correctionCount=0,match;
             while((match=correctionRe.exec(normalized))!==null){
                 const value=voiceQuantityValue(match[1]);
                 if(value===null) continue;
-                const tokenAt=normalized.slice(0,match.index).trim().split(/\\s+/).filter(Boolean).length;
+                const tokenAt=normalized.slice(0,match.index).trim().split(/\s+/).filter(Boolean).length;
                 let target=null;
                 found.forEach(line=>{if(line.end<=tokenAt&&(!target||line.end>target.end))target=line;});
                 if(target){target.qty=value;target.corrected=true;correctionCount++;}
