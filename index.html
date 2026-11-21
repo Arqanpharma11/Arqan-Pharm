@@ -8649,19 +8649,9 @@ ${window.location.href}
                         </td>
                         <td class="py-3 px-4 text-center no-print">
                             ${qty === 0 ? `
-                                <button onclick="changePharmCartQty(${item.id}, 1)"
-                                    class="bg-arkan-dark hover:bg-arkan-primary text-white text-xs font-extrabold px-3.5 py-1.5 rounded-xl shadow-sm transition-all cursor-pointer">
-                                    + إضافة
-                                </button>
+                                <div class="flex flex-col sm:flex-row items-center justify-center gap-1.5"><input id="pharm-add-qty-${item.id}" type="number" min="1" max="9999" step="1" value="1" inputmode="numeric" aria-label="كمية ${item.name}" class="num-en w-16 text-center bg-white border border-arkan-sand rounded-lg px-2 py-2 text-xs font-black text-arkan-dark focus:outline-none focus:border-arkan-primary"><button type="button" onclick="addPharmCartFromInput(${item.id})" class="bg-arkan-dark hover:bg-arkan-primary text-white text-xs font-extrabold px-3 py-2 rounded-xl shadow-sm cursor-pointer whitespace-nowrap">+ إضافة</button></div>
                             ` : `
-                                <div class="inline-flex items-center bg-white border border-arkan-dark rounded-xl overflow-hidden shadow-sm">
-                                    <button onclick="changePharmCartQty(${item.id}, -1)"
-                                        class="w-7 h-7 flex items-center justify-center bg-arkan-cream hover:bg-arkan-sand text-arkan-dark font-black cursor-pointer">-</button>
-                                    <input type="number" min="0" value="${qty}" onchange="setPharmCartQty(${item.id}, this.value)"
-                                        class="num-en w-10 text-center text-xs font-black text-arkan-dark focus:outline-none">
-                                    <button onclick="changePharmCartQty(${item.id}, 1)"
-                                        class="w-7 h-7 flex items-center justify-center bg-arkan-dark hover:bg-arkan-primary text-white font-black cursor-pointer">+</button>
-                                </div>
+                                <div class="inline-flex items-center bg-white border border-arkan-dark rounded-xl overflow-hidden shadow-sm"><button type="button" onclick="changePharmCartQty(${item.id}, -1)" class="w-7 h-8 flex items-center justify-center bg-arkan-cream hover:bg-arkan-sand text-arkan-dark font-black cursor-pointer">-</button><input type="number" min="0" max="9999" step="1" value="${qty}" onchange="setPharmCartQty(${item.id}, this.value)" class="num-en w-12 text-center text-xs font-black text-arkan-dark focus:outline-none"><button type="button" onclick="changePharmCartQty(${item.id}, 1)" class="w-7 h-8 flex items-center justify-center bg-arkan-dark hover:bg-arkan-primary text-white font-black cursor-pointer">+</button></div>
                             `}
                         </td>
                     </tr>
@@ -8705,6 +8695,17 @@ ${window.location.href}
             renderPharmacistCart();
         }
 
+        function addPharmCartFromInput(id) {
+            const input = document.getElementById('pharm-add-qty-' + id);
+            const qty = Number(input && input.value);
+            if (!Number.isInteger(qty) || qty < 1 || qty > 9999) { showToast('اكتب كمية صحيحة من 1 إلى 9999 قبل الإضافة.', 'error'); if (input) input.focus(); return; }
+            cart[id] = (Number(cart[id]) || 0) + qty;
+            persistState(KEYS.CART, cart);
+            renderPharmacistCatalog();
+            renderPharmacistCart();
+            showToast('تمت إضافة ' + qty + ' وحدة إلى الطلب.');
+        }
+
         function clearPharmCart() {
             cart = {};
             persistState(KEYS.CART, cart);
@@ -8741,6 +8742,8 @@ ${window.location.href}
 
                 lines.push({
                     name: prod.name,
+                    englishName: getEn(prod),
+                    use: getProductUseInfo(prod),
                     qty,
                     pubPrice: prod.price,
                     clientDisc,
@@ -8761,53 +8764,32 @@ ${window.location.href}
 
         function renderPharmacistCart() {
             const summary = calculateOrderSummary();
-
             document.getElementById('cart-badge-total').textContent = summary.itemsCount;
             document.getElementById('mobile-cart-count').textContent = summary.itemsCount;
-
-            document.getElementById('cart-sum-public').textContent = `${fmtMoney(summary.totalPublic)} EGP`;
-            document.getElementById('cart-sum-profit').textContent = `${fmtMoney(summary.pharmProfit)} EGP`;
-            document.getElementById('cart-sum-net').textContent = `${fmtMoney(summary.totalClient)} EGP`;
-
+            document.getElementById('cart-sum-public').textContent = fmtMoney(summary.totalPublic) + ' EGP';
+            document.getElementById('cart-sum-profit').textContent = fmtMoney(summary.pharmProfit) + ' EGP';
+            document.getElementById('cart-sum-net').textContent = fmtMoney(summary.totalClient) + ' EGP';
             const container = document.getElementById('pharm-cart-items');
-            if (summary.lines.length === 0) {
-                container.innerHTML = `
-                    <div class="py-8 text-center text-xs text-arkan-bronze font-semibold">
-                        السلة فارغة حالياً. اختر الأصناف من القائمة لإضافتها للأوردر.
-                    </div>
-                `;
-                return;
-            }
-
+            if (summary.lines.length === 0) { container.innerHTML = '<div class="py-8 text-center text-xs text-arkan-bronze font-semibold">السلة فارغة حالياً. اختر الأصناف من القائمة لإضافتها للأوردر.</div>'; return; }
             container.innerHTML = Object.keys(cart).map(idStr => {
-                const id = Number(idStr);
-                const qty = cart[id];
-                const prod = products.find(p => p.id === id);
+                const id = Number(idStr), qty = cart[id], prod = products.find(p => p.id === id);
                 if (!prod || qty <= 0) return '';
-
                 const clientDisc = calcClientDiscount(prod.disc, pharmPaymentMode);
                 const pharmPrice = calcPharmacyPrice(prod.price, prod.disc, pharmPaymentMode);
                 const lineTotal = Number((pharmPrice * qty).toFixed(2));
-
-                return `
-                    <div class="py-2.5 flex items-center justify-between gap-2 text-xs">
-                        <div class="min-w-0 flex-1">
-                            <p class="font-extrabold text-arkan-dark truncate">${prod.name}</p>
-                            <p class="text-[11px] text-arkan-bronze">
-                                <span class="num-en font-bold">${qty}</span> × <span class="num-en font-bold">${fmtMoney(pharmPrice)}</span>
-                                <span class="text-arkan-primary font-extrabold">(خصم <span class="num-en">${fmtPercent(clientDisc)}</span>)</span>
-                            </p>
-                        </div>
-                        <div class="flex items-center gap-1.5 shrink-0">
-                            <span class="num-en font-black text-arkan-dark">${fmtMoney(lineTotal)}</span>
-                            <button type="button" onclick="changePharmCartQty(${prod.id}, -${qty})"
-                                class="text-rose-700 hover:bg-rose-50 px-1.5 py-0.5 rounded font-black cursor-pointer" title="حذف">✕</button>
-                        </div>
-                    </div>
-                `;
+                return '<div class="py-3 space-y-2 text-xs"><div class="min-w-0">' +
+                    '<p class="font-extrabold text-arkan-dark leading-snug">' + prod.name + '</p>' +
+                    '<p dir="ltr" class="text-[10px] text-arkan-bronze text-right">' + getEn(prod) + '</p>' +
+                    '<p class="mt-1 text-[10px] leading-relaxed text-slate-600"><strong>الاستخدام:</strong> ' + getProductUseInfo(prod) + '</p>' +
+                    '<p class="mt-1 text-[11px] text-arkan-bronze">' + qty + ' × ' + fmtMoney(pharmPrice) + ' <span class="text-arkan-primary font-extrabold">(خصم ' + fmtPercent(clientDisc) + ')</span></p></div>' +
+                    '<div class="flex items-center justify-between gap-2"><div class="inline-flex items-center bg-white border border-arkan-sand rounded-xl overflow-hidden">' +
+                    '<button type="button" onclick="changePharmCartQty(' + prod.id + ', -1)" class="w-8 h-8 bg-arkan-cream text-arkan-dark font-black">−</button>' +
+                    '<input type="number" min="0" max="9999" step="1" value="' + qty + '" onchange="setPharmCartQty(' + prod.id + ', this.value)" aria-label="كمية الصنف" class="num-en w-14 h-8 text-center font-black text-arkan-dark focus:outline-none">' +
+                    '<button type="button" onclick="changePharmCartQty(' + prod.id + ', 1)" class="w-8 h-8 bg-arkan-dark text-white font-black">+</button></div>' +
+                    '<div class="flex items-center gap-2"><span class="num-en font-black text-arkan-dark">' + fmtMoney(lineTotal) + '</span>' +
+                    '<button type="button" onclick="changePharmCartQty(' + prod.id + ', -' + qty + ')" class="text-rose-700 hover:bg-rose-50 px-1.5 py-0.5 rounded font-black cursor-pointer" title="حذف الصنف">✕</button></div></div></div>';
             }).join('');
         }
-
         function toggleMobileCart() {
             const sidebar = document.getElementById('pharm-cart-sidebar');
             if (!sidebar) return;
