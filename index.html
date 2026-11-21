@@ -8433,6 +8433,25 @@ ${window.location.href}
                 if(target){target.qty=value;target.corrected=true;correctionCount++;}
             }
 
+            // Keep meaningful unmatched speech visible as unavailable catalog lines.
+            const ignoredSpeech=new Set(['انا','احنا','عايز','عاوزه','عاوز','محتاج','محتاجه','محتاجين','ضيف','اضف','حط','هات','من','فضلك','لو','سمحت','صنف','الصنف','دواء','دوا','ادويه','ادوية','علاج','علبه','علب','عبوه','عبوات','شريط','شرائط','باكيت','باكت','عدد','و','ثم','وبعدها','بعدها','وكمان','كمان','عاوزين','عايزين','ممكن','اريد','بص','طيب','تمام']);
+            const unmatched=[];
+            let pending=[];
+            const flushUnmatched=()=>{
+                if(!pending.length)return;
+                const phrase=pending.join(' ').trim();
+                if(phrase && phrase.length>1) unmatched.push({source:phrase,query:phrase,qty:1,productId:'',candidates:[],start:-1,end:-1,unavailable:true});
+                pending=[];
+            };
+            tokens.forEach((token,index)=>{
+                if(used[index]){flushUnmatched();return;}
+                const clean=token.replace(/^و(?=[\u0600-\u06FF]{3,})/,'');
+                if(!clean || ignoredSpeech.has(clean) || voiceQuantityValue(clean)!==null || /^\d+$/.test(clean)){flushUnmatched();return;}
+                pending.push(clean);
+            });
+            flushUnmatched();
+            found.push(...unmatched);
+
             const merged=[];
             found.forEach(line=>{
                 const prior=line.productId&&merged.find(x=>x.productId===line.productId);
@@ -8459,7 +8478,7 @@ ${window.location.href}
                 const qty=document.createElement('input');qty.type='number';qty.min='1';qty.step='1';qty.value=String(line.qty);qty.className='sm:col-span-2 border border-arkan-sand rounded-lg px-2 py-2 text-xs font-black text-center';
                 qty.addEventListener('change',()=>{line.qty=Math.max(1,Math.floor(Number(qty.value)||1));qty.value=String(line.qty);});
                 wrap.append(source,select,qty);
-                if(!line.candidates.length){const note=document.createElement('p');note.className='sm:col-span-12 text-[11px] text-rose-700 font-bold';note.textContent='لم أجد صنفًا مطابقًا. صحح النص بالأعلى واضغط تحليل الكلام.';wrap.appendChild(note);}
+                if(!line.candidates.length){const note=document.createElement('p');note.className='sm:col-span-12 text-[11px] text-rose-700 font-bold';note.textContent='⚠ الصنف «'+line.query+'» غير موجود في الليستة أو لم أتعرف عليه بدقة. لن تتم إضافته للطلبية؛ راجع الاسم أو تواصل مع المخزن.';wrap.appendChild(note);}
                 else if(line.candidates.length>1 || !line.candidates[0]._voiceExact){const note=document.createElement('p');note.className='sm:col-span-12 text-[11px] text-amber-800 font-bold';note.textContent='هذه اقتراحات مرتبة حسب قرب الاسم، وليست تأكيدًا. راجع الاسم والتركيز والشكل الدوائي قبل الإضافة.';wrap.appendChild(note);}
                 host.appendChild(wrap);
             });
