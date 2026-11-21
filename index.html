@@ -7164,7 +7164,7 @@
 
                 // Verified package-photo seed: Apple-Lite 30 tablets (catalog item #10).
                 // Source page shows the exact Apple-Lite pack; do not use lookalike images.
-                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v22';;;;;
+                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v23';;;;;
                 if (localStorage.getItem(IMAGE_SEED_VERSION) !== '1') {
                     // Individually checked package photos: brand, strength/stage and form match.
                     const verifiedImageSeeds = {
@@ -7342,7 +7342,19 @@
                         '397': { src: 'https://doctormpharmacy.com/cdn/shop/files/2027.png?v=1755291979', source: 'Doctor M Pharmacy — Allergex Caffeine, 20 tablets; exact brand and pack verified' },
                         '406': { src: 'https://cdn.shopify.com/s/files/1/0693/7529/5649/files/22_1.png?v=1768895650', source: 'Globe International — Elonda 0.5 mg cabergoline, 2 tablets; exact brand and strength verified' },
                         '415': { src: 'https://www.lotusonline.com/cdn/shop/files/3007737_1.jpg?v=1767616744', source: 'Lotus Pharmacies — Elidel 1% cream, 30 g; exact brand, strength and pack verified' },
-                        '416': { src: 'https://www.lotusonline.com/cdn/shop/files/3004664_1.jpg?v=1767616978', source: 'Lotus Pharmacies — Alertam 120 mg, 10 film-coated tablets; exact brand and strength verified' }
+                        '416': { src: 'https://www.lotusonline.com/cdn/shop/files/3004664_1.jpg?v=1767616978', source: 'Lotus Pharmacies — Alertam 120 mg, 10 film-coated tablets; exact brand and strength verified' },
+                        '378': { src: 'https://www.bloompharmacy.com/cdn/shop/products/alphanova-plus-eye-drops-5-ml-772937_1024x.jpg?v=1697768198', source: 'Bloom Pharmacy — Alphanova Plus eye drops 5 ml; exact brand and volume verified' },
+                        '379': { src: 'https://www.bloompharmacy.com/cdn/shop/products/alphanova-015-eye-drops-5-ml-815093.jpg?v=1687731993', source: 'Bloom Pharmacy — Alphanova 0.15% eye drops 5 ml; exact concentration and volume verified' },
+                        '385': { src: 'https://almasrypharmacy.com/media/catalog/product/u/n/unnamed_1__1.png', source: 'Almasry Pharmacy — Alkapress 10 mg, 30 tablets; exact strength and pack verified' },
+                        '390': { src: 'https://www.lotusonline.com/cdn/shop/files/3008103_processed.jpg?v=1767615044&width=750', source: 'Lotus Pharmacies — Alkapress Trio 5/160/25 mg, 14 tablets; exact triple strength and pack verified' },
+                        '391': { src: 'https://tdawi.com/media/catalog/product/cache/0daeb07bb1d294c1f281fab47369d56a/B/L/BLOOM-ALKAPRESS-PLUS-10-MG-160-MG-20-TABLETS_0.jpg', source: 'Tdawi Egypt — Alkapress Plus 10/160 mg, 20 tablets; exact combination and pack verified' },
+                        '399': { src: 'https://m.media-amazon.com/images/I/41rVG8RV3zL.jpg', source: 'Amazon Egypt — Aloekita DSDA shampoo, 250 ml; exact product line and volume matched' },
+                        '400': { src: 'https://chancestoreegy.com/cdn/shop/files/Aloekita_Hair_Nouurishing_Conditioner_200ml.png?v=1765027491', source: 'Chance Store Egypt — Aloekita Hair Nourishing Conditioner, 200 ml; exact product and volume verified' },
+                        '401': { src: 'https://stuhm.com/wp-content/uploads/2025/05/%D8%A7%D9%84%D9%88%D9%83%D9%8A%D8%AA%D8%A7-%D9%87%D9%8A%D8%B1-%D8%AC%D8%B1%D9%88%D8%AB-min.png', source: 'Stuhm — Aloekita Hair Growth Spray, 200 ml; exact product and volume verified' },
+                        '402': { src: 'https://anwar.store/cdn/shop/files/New_Template-Photoroom_34.jpg?v=1733258287', source: 'Anwar Store — Aloekita Caffeine Shampoo Blue, 200 ml; exact color variant and volume verified' },
+                        '403': { src: 'https://i.ebayimg.com/images/g/LU8AAOSw1MVnWHim/s-l400.png', source: 'eBay Egypt listing — Aloekita Anti-Dandruff Shampoo, 200 ml; exact variant and volume verified' },
+                        '404': { src: 'https://aldawaaegy.com/cdn/shop/files/aloekita-leave-in-cream-120gm-3329313.webp?v=1769034366', source: 'Al Dawaa Pharmacies — Aloekita Leave-In Cream, 120 g; exact product and size verified' },
+                        '405': { src: 'https://dwaprices.com/upload/1782151572.png', source: 'DwaPrices — Aloekita Hair Mask Omega 3,6,9, 200 g; exact product and size verified' }
                      };
                     Object.entries(verifiedImageSeeds).forEach(([id, seed]) => {
                         if (seed.src && (PROD_IMG_VERIFIED[id] !== true || PROD_IMG_SRC[id] === seed.source)) {
