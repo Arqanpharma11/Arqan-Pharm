@@ -1,11 +1,11 @@
-const CACHE_NAME = 'arkan-pharma-cloud-v4';
+const CACHE_NAME = 'arkan-pharma-cloud-v5';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
   './manifest.json',
   './arkan-logo.svg',
-  './icon-192.png',
-  './icon-512.png'
+  './icon-192-v3.png',
+  './icon-512-v3.png'
 ];
 
 self.addEventListener('install', (event) => {
