@@ -7175,7 +7175,7 @@
 
                 // Verified package-photo seed: Apple-Lite 30 tablets (catalog item #10).
                 // Source page shows the exact Apple-Lite pack; do not use lookalike images.
-                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v30';;;;;
+                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v31';;;;;
                 if (localStorage.getItem(IMAGE_SEED_VERSION) !== '1') {
                     // Individually checked package photos: brand, strength/stage and form match.
                     const verifiedImageSeeds = {
@@ -7737,6 +7737,12 @@
                         '25': { src: 'https://rakizah.com/cdn/shop/files/185012010_b6b90c53-8525-4df8-948d-44b8d4d29d4f.jpg?v=1733487212&width=720', source: 'Rakiza — Epirazole 20 mg omeprazole, 14 capsules; exact EIPICO brand and strength verified' },
                         '26': { src: 'https://www.eipico.com.eg/DataImages/PRDS/Product_Image520.png', source: 'EIPICO manufacturer — Epirazole 40 mg, 10 enteric-coated capsules; exact official pack verified' },
                         '29': { src: 'https://www.eipico.com.eg/DataImages/PRDS/Product_Image470.png', source: 'EIPICO manufacturer — Epirovastin 20 mg, 7 film-coated tablets; exact official brand, strength and pack verified' },
+                        '37': { src: 'https://www.bloompharmacy.com/cdn/shop/products/apifortyl-30-capsules-782923.jpg?v=1687731996', source: 'Bloom Pharmacy — Apifortyl, 30 capsules; exact October Pharma brand and pack verified' },
+                        '38': { src: 'https://delmar-test.linkedgates.com/images/items/120642-v1.JPEG', source: 'Delmar & Attalla — Epifenac 100 mg sustained-release, 10 film-coated tablets; exact EIPICO brand and strength verified' },
+                        '46': { src: 'https://www.lotusonline.com/cdn/shop/files/3007384_1.jpg?v=1767615875', source: 'Lotus Pharmacies — Apixatrack 2.5 mg, 30 film-coated tablets; exact Evapharm brand and strength verified' },
+                        '47': { src: 'https://www.lotusonline.com/cdn/shop/files/3007383_1.jpg?v=1767615929', source: 'Lotus Pharmacies — Apixatrack 5 mg, 30 film-coated tablets; exact Evapharm brand and strength verified' },
+                        '48': { src: 'https://dwaprices.com/upload/1784904640.png', source: 'DwaPrices — Apixaguard 2.5 mg, 30 film-coated tablets; exact brand, strength and pack verified' },
+                        '49': { src: 'https://www.mouradpharmacy.com/web/image/product.product/96/image_1024/%5Bcode%20in%20gad%3A68504--code%20in%20mourad%3A%5D%20Apixaguard%205mg%2030%20Tabs%20-%20%D8%A7%D8%A8%D9%8A%D9%83%D8%B3%D8%A7%D8%AC%D8%A7%D8%B1%D8%AF%205%20%D9%85%D8%AC%D9%85%2030%20%D9%82%D8%B1%D8%B5?unique=ea1b271', source: 'Mourad Pharmacy — Apixaguard 5 mg, 30 film-coated tablets; exact brand, strength and pack verified' },
                     };
                     Object.entries(verifiedImageSeeds).forEach(([id, seed]) => {
                         if (seed.src && (PROD_IMG_VERIFIED[id] !== true || PROD_IMG_SRC[id] === seed.source)) {
