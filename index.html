@@ -8882,8 +8882,8 @@ ${window.location.href}
             host.innerHTML = summary.lines.map((line, index) => '<div class="py-3 border-b border-arkan-sand/70 last:border-0"><div class="flex justify-between gap-3"><div class="min-w-0"><p class="font-black text-arkan-dark">' + (index + 1) + '. ' + line.name + '</p><p dir="ltr" class="text-[10px] text-arkan-bronze text-right">' + (line.englishName || '') + '</p><p class="text-[10px] text-slate-600 mt-1"><strong>الاستخدام:</strong> ' + (line.use || 'غير محدد') + '</p></div><div class="text-left shrink-0"><p class="font-black text-arkan-dark">' + fmtMoney(line.lineClient) + ' ج.م</p><p class="text-[10px] text-arkan-bronze">' + line.qty + ' × ' + fmtMoney(line.pharmPrice) + '</p></div></div></div>').join('');
             document.getElementById('order-review-count').textContent = summary.itemsCount;
             document.getElementById('order-review-total').textContent = fmtMoney(summary.totalClient) + ' EGP';
-            document.getElementById('order-review-title').textContent = action === 'whatsapp' ? 'مراجعة الطلب قبل إرساله عبر واتساب' : (action === 'copy' ? 'مراجعة الطلب قبل نسخه' : 'مراجعة الطلب قبل إرساله للإدارة');
-            document.getElementById('order-review-confirm-btn').textContent = action === 'whatsapp' ? 'تأكيد وفتح واتساب' : (action === 'copy' ? 'تأكيد ونسخ الطلب' : 'تأكيد وإرسال للإدارة');
+            document.getElementById('order-review-title').textContent = action === 'whatsapp' ? 'مراجعة الطلب قبل إرساله عبر واتساب' : (action === 'copy' ? 'مراجعة الطلب قبل نسخه' : (action === 'print' ? 'مراجعة الأصناف قبل طباعة الفاتورة' : 'مراجعة الطلب قبل إرساله للإدارة'));
+            document.getElementById('order-review-confirm-btn').textContent = action === 'whatsapp' ? 'تأكيد وفتح واتساب' : (action === 'copy' ? 'تأكيد ونسخ الطلب' : (action === 'print' ? 'تأكيد وطباعة الفاتورة' : 'تأكيد وإرسال للإدارة'));
             const modal = document.getElementById('order-review-modal'); modal.classList.remove('hidden'); modal.classList.add('flex');
         }
 
@@ -8900,7 +8900,12 @@ ${window.location.href}
             if (!summary.lines.length) { closeOrderReview(); showToast('السلة فارغة. أعد إضافة الأصناف.', 'error'); return; }
             if (!isMinimumOrderExempt(currentSession?.user) && summary.totalClient < 10000) { closeOrderReview(); showToast('الحد الأدنى للفاتورة 10,000 جنيه. إجمالي سلتك الحالي ' + fmtMoney(summary.totalClient) + ' جنيه.', 'error'); return; }
             const whatsappText = action === 'whatsapp' ? buildWhatsAppOrderMessage(summary) : '';
-            saveOrderRecord(summary);
+            const record = saveOrderRecord(summary);
+            if (action === 'print') {
+                closeOrderReview();
+                openInvoiceSheetWithData({ invNum: '#ARK-' + String(record.id).slice(-6), invDate: record.date, pharmName: record.pharmName, docName: record.docName, address: record.address, phone: record.phone, payLabel: record.payLabel, deliverySlot: record.deliverySlot, lines: record.lines, itemsCount: record.itemsCount, totalPublic: record.totalPublic, pharmProfit: record.pharmProfit, totalClient: record.totalClient });
+                return;
+            }
             cart = {}; persistState(KEYS.CART, cart); renderPharmacistCatalog(); renderPharmacistCart(); closeOrderReview();
             if (action === 'whatsapp') {
                 const url = 'https://wa.me/' + WAREHOUSE_WHATSAPP + '?text=' + encodeURIComponent(whatsappText);
@@ -9041,7 +9046,7 @@ ${window.location.href}
                 return `
                     <tr>
                         <td class="py-2 px-3 text-center num-en font-bold">${idx + 1}</td>
-                        <td class="py-2 px-3 font-extrabold text-arkan-dark">${line.name}</td>
+                        <td class='py-2 px-3 font-extrabold text-arkan-dark'><div>${line.name}</div><div dir='ltr' class='text-[10px] text-arkan-bronze font-semibold'>${line.englishName || (origProd ? getEn(origProd) : '')}</div><div class='text-[10px] text-slate-600 font-normal mt-1'>الاستخدام: ${line.use || (origProd ? getProductUseInfo(origProd) : 'غير محدد')}</div></td>
                         <td class="py-2 px-3 text-center num-en font-black">${line.qty}</td>
                         <td class="py-2 px-3 text-center num-en font-bold text-arkan-bronze">${fmtMoney(pubPrice)}</td>
                         <td class="py-2 px-3 text-center num-en font-black text-arkan-primary">${fmtPercent(line.clientDisc)}</td>
@@ -9059,31 +9064,9 @@ ${window.location.href}
             document.getElementById('invoice-print-modal').classList.remove('hidden');
         }
 
-        function printOrderInvoice() {
-            const summary = calculateOrderSummary();
-            if (summary.lines.length === 0) {
-                showToast('السلة فارغة! أضف أصنافاً للطباعة.', 'error');
-                return;
-            }
-            const record = saveOrderRecord(summary);
-            openInvoiceSheetWithData({
-                invNum: `#ARK-${String(record.id).slice(-6)}`,
-                invDate: record.date,
-                pharmName: record.pharmName,
-                docName: record.docName,
-                address: record.address,
-                phone: record.phone,
-                payLabel: record.payLabel,
-                deliverySlot: record.deliverySlot,
-                lines: record.lines,
-                itemsCount: record.itemsCount,
-                totalPublic: record.totalPublic,
-                pharmProfit: record.pharmProfit,
-                totalClient: record.totalClient
-            });
-        }
+        function printOrderInvoice() { openOrderReview('print'); }
 
-        function printSavedOrderInvoice(orderId) {
+                function printSavedOrderInvoice(orderId) {
             const record = orders.find(o => o.id === Number(orderId));
             if (!record) return;
             openInvoiceSheetWithData({
