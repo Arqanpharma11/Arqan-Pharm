@@ -7164,7 +7164,7 @@
 
                 // Verified package-photo seed: Apple-Lite 30 tablets (catalog item #10).
                 // Source page shows the exact Apple-Lite pack; do not use lookalike images.
-                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v43';;;;;
+                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v18';;;;;
                 if (localStorage.getItem(IMAGE_SEED_VERSION) !== '1') {
                     // Individually checked package photos: brand, strength/stage and form match.
                     const verifiedImageSeeds = {
@@ -7642,7 +7642,13 @@
                         '1027': { src: 'https://doctormpharmacy.com/cdn/shop/files/104931.jpg?v=1755292668', source: 'Doctor M Pharmacy — Bronchopro syrup, 100 ml; exact brand, form and volume verified' },
                         '1028': { src: 'https://doctormpharmacy.com/cdn/shop/files/106892.png?v=1755292678', source: 'Doctor M Pharmacy — Bronchopro Retard, 10 capsules; exact brand and pack verified' },
                         '1034': { src: 'https://dkud4u09qff41.cloudfront.net/Products/3409765e-7b71-47f3-890d-d8b560837c51.jpeg', source: 'Vezeeta Pharmacy — Prianil C-R 400 mg, 30 controlled-release tablets; exact strength and pack verified' },
-                        '1038': { src: 'https://www.lotusonline.com/cdn/shop/files/3008752_processed.jpg?v=1773307056', source: 'Lotus Pharmacies — Pretoprazan 20 mg, 14 film-coated tablets; exact brand, strength and pack verified' }
+                        '1038': { src: 'https://www.lotusonline.com/cdn/shop/files/3008752_processed.jpg?v=1773307056', source: 'Lotus Pharmacies — Pretoprazan 20 mg, 14 film-coated tablets; exact brand, strength and pack verified' },
+                        '202': { src: 'https://doctormpharmacy.com/cdn/shop/files/123416.jpg?v=1755363317', source: 'Doctor M Pharmacy — Azrolid 200 mg/5 ml oral suspension, 22.5 ml; exact volume and strength verified' },
+                        '203': { src: 'https://re3ayapharmacy.com/cdn/shop/files/azrolid-500-mg-3-tablets-495071.jpg?v=1735256883', source: 'Re3aya Pharmacy — Azrolid 500 mg, 3 film-coated tablets; exact strength and pack verified' },
+                        '220': { src: 'https://api.c0umyt3cda-pharmaove1-p1-public.model-t.cc.commerce.ondemand.com/medias/000000000000033248.webp?context=bWFzdGVyfGltYWdlc3wyMTYwMHxpbWFnZS9qcGVnfGFEWTJMMmhoWXk4eE1UTTFOekExTlRNMU1qZzJNaTh3TURBd01EQXdNREF3TURBd016TXlORGd1ZDJWaWNBfGE2NWEyMzZhY2M2NTA2YTczYzgwZmRlOTg3MjcyMjhkNDE1Yjc1NDhlMTNmNGEzMDUzYWEzNjNmMWFmOTc2NDQ', source: 'Pharma eMarket — Aspatrend 3 g granules, 10 sachets; exact pack and formulation matched' },
+                        '221': { src: 'https://www.lotusonline.com/cdn/shop/files/3007128_1.jpg?v=1767615947', source: 'Lotus Pharmacies — Asprotect 100 mg, 30 enteric-coated tablets; exact brand and strength matched' },
+                        '222': { src: 'https://api.c0umyt3cda-pharmaove1-p1-public.model-t.cc.commerce.ondemand.com/medias/000000000000024941.jpg?context=bWFzdGVyfGltYWdlc3wyMTIwODB8aW1hZ2UvanBlZ3xhRFJrTDJnd1pTOHhNRGc1TnpVNU9EUTRNRFF4TkM4d01EQXdNREF3TURBd01EQXdNalE1TkRFdWFuQm58YmZiZjcxY2RlM2IxYjcwMTcyYzgzNGRiN2Q3ZjRkMzk1NWM4MmQwNGIzMDZmYzc3Mzc1N2YwNDg3YmRmMDc1MQ', source: 'Pharma eMarket — Aspricarlo 81 mg, 30 chewable tablets; exact strength and pack matched' },
+                        '223': { src: 'https://cdn-med-images.vezeeta.com/Products/d7160e04-d6fc-457e-8ac0-f0523ddd5816.jpeg', source: 'Vezeeta Pharmacy — Aspirin Chemipharm 75 mg, 30 chewable tablets; exact brand, strength and pack matched' }
                      };
                     Object.entries(verifiedImageSeeds).forEach(([id, seed]) => {
                         if (seed.src && (PROD_IMG_VERIFIED[id] !== true || PROD_IMG_SRC[id] === seed.source)) {
