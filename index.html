@@ -7164,7 +7164,7 @@
 
                 // Verified package-photo seed: Apple-Lite 30 tablets (catalog item #10).
                 // Source page shows the exact Apple-Lite pack; do not use lookalike images.
-                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v41';;;;;
+                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v42';;;;;
                 if (localStorage.getItem(IMAGE_SEED_VERSION) !== '1') {
                     // Individually checked package photos: brand, strength/stage and form match.
                     const verifiedImageSeeds = {
@@ -7611,7 +7611,21 @@
                         '958': { src: 'https://www.lotusonline.com/cdn/shop/files/3003645_1.jpg?v=1767615879', source: 'Lotus Pharmacies — Bradipect 5 mg, 28 film-coated tablets; exact brand, strength and pack verified' },
                         '959': { src: 'https://delmar-test.linkedgates.com/images/items/111847.JPEG', source: 'Delmar & Attalla — Bradipect 7.5 mg, 28 film-coated tablets; exact brand, strength and pack verified' },
                         '960': { src: 'https://www.bloompharmacy.com/cdn/shop/files/bravamax-200-mg-10-tablets-390696.jpg?v=1716978381', source: 'Bloom Pharmacy — Bravamax 200 mg, 10 tablets; exact brand, strength and pack verified' },
-                        '961': { src: 'https://www.lotusonline.com/cdn/shop/files/3003623_1.jpg?v=1767615770', source: 'Lotus Pharmacies — Pravotin 100 mg, 14 sachets; exact brand, strength and pack verified' }
+                        '961': { src: 'https://www.lotusonline.com/cdn/shop/files/3003623_1.jpg?v=1767615770', source: 'Lotus Pharmacies — Pravotin 100 mg, 14 sachets; exact brand, strength and pack verified' },
+                        '1022': { src: 'https://dwastores.com/upload/1741889953.png', source: 'Dwa Stores — Prontogest progesterone 100 mg/2 ml, 10 IM ampoules; exact strength and pack verified' },
+                        '1023': { src: 'https://re3ayapharmacy.com/cdn/shop/files/prontogest-200-mg-30-vaginal-suppositories-910337.jpg?v=1735257176', source: 'Re3aya Pharmacy — Prontogest progesterone 200 mg, 30 pessaries; exact strength and pack verified' },
+                        '1024': { src: 'https://re3ayapharmacy.com/cdn/shop/files/prontogest-400-mg-30-vaginal-suppositories-467525.jpg?v=1735257518', source: 'Re3aya Pharmacy — Prontogest progesterone 400 mg, 30 pessaries; exact strength and pack verified' },
+                        '1025': { src: 'https://alfouadpharmacies.com/cdn/shop/files/Bronchicum_Cool_Mint_20Lozenges_1615x1615_1d4e508f-fc45-4d90-944c-91771c847d20.webp?v=1772266778&width=1946', source: 'AlFouad Pharmacies — Bronchicum thyme extract, 20 lozenges; exact product and pack verified' },
+                        '1026': { src: 'https://www.bronchi-arabia.com/dam/jcr%3Ac4ed4b93-0852-43df-89ef-bcb1b9ade9cc/Bronchicare_EGY%20v4_trans.png', source: 'Bronchicum official — Bronchicum Elixir thyme/primula syrup, 100 ml; exact product and volume verified' },
+                        '1031': { src: 'https://dwaprices.com/upload/1778004103.png', source: 'DwaPrices — Broncho-Vaxom Children 3.5 mg, 10 capsules; exact age variant and pack verified' },
+                        '1032': { src: 'https://image-cdn.ubuy.com/1-broncho-vaxom-increases-the/400_400_100/697d99f8a77477127a0d6e0d.jpg', source: 'Ubuy Egypt — Broncho-Vaxom Adults 7 mg, 10 capsules; exact adult variant and pack verified' },
+                        '1039': { src: 'https://waelsamirpharma.com/public/uploads/all/h6ifuzNiYWIPwckjiefTJZhUpNoaJdKpYk24yTKQ.jpg', source: 'Wael Samir Pharma — Prettier Whitening Cream, 50 g; exact product and size verified' },
+                        '1040': { src: 'https://taypharmacies.com/wp-content/uploads/2023/03/ex.jpg', source: 'Tay Pharmacies — Prettier Facial Exfoliating Gel, 250 g; exact product and size verified' },
+                        '1041': { src: 'https://waelsamirpharma.com/public/uploads/all/IrZmIzRdy4OkkMXqpoHMhHFifxEaIjWKCEvns998.jpg', source: 'Wael Samir Pharma — Prettier Emollient Cream, 60 g; exact product and size verified' },
+                        '1042': { src: 'https://www.waelsamirpharma.com/public/uploads/all/YoI315flrrzEqWAvKu4hfhwzIMwHuBTGunpRcCbX.jpg', source: 'Wael Samir Pharma — Prettier Eye Contour Gel, 35 g; exact product and size verified' },
+                        '1044': { src: 'https://glowroom-eg.com/cdn/shop/files/3_8103075f-534e-486c-b759-05b3ad01f48e.webp?v=1776010247&width=1946', source: 'GlowRoom Egypt — Prettier Anti-Dandruff Shampoo, 120 ml; exact product and volume verified' },
+                        '1045': { src: 'https://www.3322000.app/us/120/pidwebp600/34221/f132711733072813575023-1.webp', source: '3322000 — Prettier Sunscreen Cream SPF 50+, 60 g; exact protection level and size verified' },
+                        '1052': { src: 'https://code-grow.com/horizon/prod_img/2021-06-21_63739.jpg', source: 'Nile Horizon — Predsol Forte prednisolone sodium phosphate syrup, 60 ml; exact brand and volume verified' }
                      };
                     Object.entries(verifiedImageSeeds).forEach(([id, seed]) => {
                         if (seed.src && (PROD_IMG_VERIFIED[id] !== true || PROD_IMG_SRC[id] === seed.source)) {
