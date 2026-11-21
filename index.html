@@ -7164,7 +7164,7 @@
 
                 // Verified package-photo seed: Apple-Lite 30 tablets (catalog item #10).
                 // Source page shows the exact Apple-Lite pack; do not use lookalike images.
-                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v17';;;;;
+                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v16';;;;;
                 if (localStorage.getItem(IMAGE_SEED_VERSION) !== '1') {
                     // Individually checked package photos: brand, strength/stage and form match.
                     const verifiedImageSeeds = {
@@ -7280,7 +7280,13 @@
                         '266': { src: 'https://www.bloompharmacy.com/cdn/shop/files/actrapid-penfill-3-ml-100-iu-ml-5-cartridge-725491.jpg?v=1716286285', source: 'Bloom Pharmacy — Actrapid Penfill 100 IU/ml, 5 cartridges × 3 ml; exact presentation and pack verified' },
                         '269': { src: 'https://www.bloompharmacy.com/cdn/shop/files/actos-15-mg-30-tablets-681548.jpg?v=1715231149', source: 'Bloom Pharmacy — Actos 15 mg, 30 tablets; exact strength and pack verified' },
                         '270': { src: 'https://cdn.ghpharmacy.store/products/16089-ai-1772841659628.png', source: 'Green Heart Pharmacy — Actos 30 mg, 30 tablets; exact strength and pack verified' }
-                    };
+                   ,
+                        '182': { src: 'https://www.lotusonline.com/cdn/shop/files/3006700_processed.jpg?v=1773305568', source: 'Lotus Pharmacies — Armowake 50 mg, 20 tablets; exact brand, strength and pack verified' },
+                        '183': { src: 'https://elixirpharmashop.com/cdn/shop/files/AromegaTube2.png?v=1770554389', source: 'Elixir Pharma Shop — Aromega Massage Gel 60 g; exact brand, product and pack size verified' },
+                        '187': { src: 'https://alfouadpharmacies.com/cdn/shop/files/148709.webp?v=1771837897', source: 'AlFouad Pharmacies — Erectalis 20 mg, 4 film-coated tablets; exact brand, strength and pack verified' },
+                        '192': { src: 'https://mtalaatpharmacy.com/storage/products/1759776863.webp', source: 'Dr. Mohamed Talaat Pharmacy — Evapharma Azathioprine 75 mg, 30 film-coated tablets; exact manufacturer, strength and pack verified' },
+                        '193': { src: 'https://mtalaatpharmacy.com/storage/products/1759776747.webp', source: 'Dr. Mohamed Talaat Pharmacy — Evapharma Azathioprine 100 mg, 30 film-coated tablets; exact manufacturer, strength and pack verified' }
+                     };
                     Object.entries(verifiedImageSeeds).forEach(([id, seed]) => {
                         if (seed.src && (PROD_IMG_VERIFIED[id] !== true || PROD_IMG_SRC[id] === seed.source)) {
                             setProductImage(id, seed.src, seed.source);
