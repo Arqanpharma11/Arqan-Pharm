@@ -7164,7 +7164,7 @@
 
                 // Verified package-photo seed: Apple-Lite 30 tablets (catalog item #10).
                 // Source page shows the exact Apple-Lite pack; do not use lookalike images.
-                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v16';;;;;
+                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v17';;;;;
                 if (localStorage.getItem(IMAGE_SEED_VERSION) !== '1') {
                     // Individually checked package photos: brand, strength/stage and form match.
                     const verifiedImageSeeds = {
@@ -7266,7 +7266,20 @@
                         '217': { src: 'https://talabat.dhmedia.io/image/product-information-management/68a6d00cb7a6ac8be5ab8b76.webp', source: 'Talabat Egypt — S-26 Gold Stage 1 infant formula 400 g; exact stage and pack size verified' },
                         '218': { src: 'https://www.avicenonline.com/cdn/shop/files/s-26-gold-growing-up-milk-formula-vanilla-flavor-stage-3-1-3-years-900g_68072289-b615-486b-82ba-5566a4794fd1.png?v=1770652994', source: 'Avicen Online — S-26 Gold Stage 3 infant formula 900 g; exact stage and pack size verified' },
                         '219': { src: 'https://kidzmarket-eg.com/cdn/shop/files/S-26_A.R_Gold_Anti-Reflux_Formula_400g.jpg?v=1752374442&width=1000', source: 'KidzMarket Egypt — S-26 A.R Gold anti-reflux formula 400 g; exact variant and pack size verified' },
-                        '224': { src: 'https://tdawi.com/media/catalog/product/cache/72f8467a5043ecc9af047df47b9246a4/a/s/asprin_protect_100_2__h1lra4xqyhp7b744.jpg', source: 'Tdawi Egypt — Bayer Aspirin Protect 100 mg, 20 enteric-coated tablets; exact brand verified' }
+                        '224': { src: 'https://tdawi.com/media/catalog/product/cache/72f8467a5043ecc9af047df47b9246a4/a/s/asprin_protect_100_2__h1lra4xqyhp7b744.jpg', source: 'Tdawi Egypt — Bayer Aspirin Protect 100 mg, 20 enteric-coated tablets; exact brand verified' },
+                        '225': { src: 'https://www.rosheta.com/upload/86c752925a6c95faba2a6e0661ce521add4e950ae325174f749d70e62e0592f3.webp', source: 'Rosheta — Aspocid 75 mg, 30 tablets; exact strength and pack count verified' },
+                        '232': { src: 'https://cdn-med-images.vezeeta.com/Products/668bc5fb-752f-4c7d-900f-578cc1f3c2ee.webp', source: 'Vezeeta Pharmacy — Sedico Acetylcistein 200 mg, 10 effervescent sachets; exact strength and pack verified' },
+                        '233': { src: 'https://tdawi.com/media/catalog/product/cache/0daeb07bb1d294c1f281fab47369d56a/a/c/acc600-new-english_1.png', source: 'Tdawi Egypt — Acetylcistein 600 mg, 10 effervescent sachets; exact strength and pack verified' },
+                        '242': { src: 'https://dkud4u09qff41.cloudfront.net/Products/1cbb38d7-f22d-464d-b61c-415c9594e824.png', source: 'Vezeeta Pharmacy — Acivirax 400 mg, 30 tablets; exact brand, strength and pack verified' },
+                        '243': { src: 'https://4eshopping.com/assets/images/products/bogDXs041674128251.webp', source: '4E Shopping — Acivirax 800 mg, 20 tablets; exact brand, strength and pack verified' },
+                        '246': { src: 'https://www.rosheta.com/upload/57d0c2898245665a2c098908b9921e23a008eaf61c8199205d5cdb56f09ed565.webp', source: 'Rosheta — Avara 10 mg, 30 film-coated tablets; exact brand, strength and pack verified' },
+                        '247': { src: 'https://www.bloompharmacy.com/cdn/shop/products/avara-20-mg-30-tablets-702207.jpg?v=1710536084', source: 'Bloom Pharmacy — Avara 20 mg, 30 film-coated tablets; exact brand, strength and pack verified' },
+                        '248': { src: 'https://www.lotusonline.com/cdn/shop/files/3003452_1.jpg?v=1767616125&width=1500', source: 'Lotus Pharmacies — Avazir Tobramycin 0.3% eye drops, 10 ml; exact brand and size verified' },
+                        '254': { src: 'https://www.bloompharmacy.com/cdn/shop/products/avodart-05-mg-30-capsules-479880.jpg?v=1695227445', source: 'Bloom Pharmacy — Avodart 0.5 mg, 30 soft gelatin capsules; exact strength and pack verified' },
+                        '265': { src: 'https://media.zid.store/739b4fdd-621a-4591-a63b-e21ded3d5ee4/a9e2e896-70d6-4f27-aee1-be74ba8912c7.jpg', source: 'Astra Glory — Actrapid 100 IU/ml, 10 ml vial; exact presentation and concentration verified' },
+                        '266': { src: 'https://www.bloompharmacy.com/cdn/shop/files/actrapid-penfill-3-ml-100-iu-ml-5-cartridge-725491.jpg?v=1716286285', source: 'Bloom Pharmacy — Actrapid Penfill 100 IU/ml, 5 cartridges × 3 ml; exact presentation and pack verified' },
+                        '269': { src: 'https://www.bloompharmacy.com/cdn/shop/files/actos-15-mg-30-tablets-681548.jpg?v=1715231149', source: 'Bloom Pharmacy — Actos 15 mg, 30 tablets; exact strength and pack verified' },
+                        '270': { src: 'https://cdn.ghpharmacy.store/products/16089-ai-1772841659628.png', source: 'Green Heart Pharmacy — Actos 30 mg, 30 tablets; exact strength and pack verified' }
                     };
                     Object.entries(verifiedImageSeeds).forEach(([id, seed]) => {
                         if (seed.src && (PROD_IMG_VERIFIED[id] !== true || PROD_IMG_SRC[id] === seed.source)) {
