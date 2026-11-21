@@ -19225,6 +19225,62 @@ ${window.location.href}
             showMainImage(r.full || r.src, r.thumb);
             _liveCurrent.source = r.source + ' — ' + r.link;
         }
+        // Egyptian drug metadata -> barcode -> Open Food/Beauty Facts image lookup.
+        // Candidates are never auto-approved: an administrator must inspect the exact pack.
+        let _egDrugCandidates = [];
+        async function searchEgyptDrugBarcodeMatches() {
+            if (!currentSession || currentSession.role !== 'admin' || !_liveCurrent) return;
+            const p = products.find(x => String(x.id) === String(_liveCurrent.id));
+            if (!p) return;
+            const box = document.getElementById('pimg-eg-results');
+            box.classList.remove('hidden');
+            box.innerHTML = '<div class="p-2 text-center font-bold text-emerald-800">جارٍ البحث في قاعدة بيانات الأدوية المصرية...</div>';
+            const q = (getEn(p) || p.name || '').trim();
+            try {
+                const url = 'https://eg-drugs-api.mahmoudfalous.workers.dev/v1/search?q=' + encodeURIComponent(q) + '&page=1&limit=10';
+                const data = await fetchJsonTimeout(url, 12000);
+                _egDrugCandidates = Array.isArray(data.results) ? data.results : Array.isArray(data.data) ? data.data : [];
+                if (!_egDrugCandidates.length) {
+                    box.innerHTML = '<div class="p-2 text-center font-bold">لم تظهر نتائج. جرّب الاسم الإنجليزي من تعديل الصنف.</div>';
+                    return;
+                }
+                box.innerHTML = _egDrugCandidates.map((d,i) => {
+                    const esc = v => String(v || '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+                    return '<button type="button" onclick="loadEgyptDrugBarcodeImage(' + i + ')" class="block w-full text-right bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 rounded-lg p-2"><strong>' + esc(d.name || d.arabic || 'منتج') + '</strong><div>الشركة: ' + esc(d.company) + ' | المادة: ' + esc(d.active) + '</div><div dir="ltr">Barcode: ' + esc(d.barcode) + '</div></button>';
+                }).join('');
+            } catch (e) {
+                box.innerHTML = '<div class="p-2 text-center font-bold text-red-700">تعذر الاتصال بقاعدة الأدوية: ' + String(e.message || e).replace(/[&<>]/g, '') + '</div>';
+            }
+        }
+        async function loadEgyptDrugBarcodeImage(index) {
+            const d = _egDrugCandidates[index];
+            if (!d || !d.barcode) { showToast('النتيجة لا تحتوي على باركود.', 'error'); return; }
+            const box = document.getElementById('pimg-eg-results');
+            box.innerHTML = '<div class="p-2 text-center font-bold text-emerald-800">جارٍ البحث عن صورة مرتبطة بالباركود ' + String(d.barcode).replace(/[^0-9]/g,'') + '...</div>';
+            const barcode = String(d.barcode).replace(/[^0-9]/g, '');
+            const hosts = ['world.openfoodfacts.org','world.openbeautyfacts.org'];
+            const found = [];
+            for (const host of hosts) {
+                try {
+                    const data = await fetchJsonTimeout('https://' + host + '/api/v2/product/' + encodeURIComponent(barcode) + '.json', 9000);
+                    const product = data && data.product;
+                    const image = product && (product.image_front_url || product.image_front_small_url);
+                    if (data && data.status === 1 && image) {
+                        found.push({src:image,full:image,label:product.product_name || d.name || 'منتج',source:host + ' — barcode ' + barcode,link:'https://' + host + '/product/' + barcode});
+                    }
+                } catch (e) {}
+            }
+            if (!found.length) {
+                box.innerHTML = '<div class="p-2 text-center font-bold">لم نعثر على صورة لهذا الباركود في قواعد الصور المتاحة. لم يتم اعتماد أي صورة.</div>';
+                return;
+            }
+            _liveCurrent.results = found;
+            _liveCurrent.source = found[0].source + ' — ' + found[0].link;
+            showMainImage(found[0].full);
+            document.getElementById('pimg-save-btn').classList.remove('hidden');
+            box.innerHTML = '<div class="p-2 text-center font-bold text-emerald-800">تم العثور على صورة مرتبطة بالباركود. راجع الاسم والتركيز والشركة والعبوة قبل الاعتماد.</div>';
+        }
+
         function openProductImage(id) {
             const p = products.find(x => x.id === id);
             if (!p) return;
@@ -19237,6 +19293,9 @@ ${window.location.href}
             const st = document.getElementById('pimg-live-status');
             document.getElementById('pimg-save-btn').classList.add('hidden');
             document.getElementById('pimg-gcfg').classList.toggle('hidden', !(currentSession && currentSession.role === 'admin'));
+            document.getElementById('pimg-eg-search').classList.toggle('hidden', !(currentSession && currentSession.role === 'admin'));
+            document.getElementById('pimg-eg-results').classList.add('hidden');
+            document.getElementById('pimg-eg-results').innerHTML = '';
             const box = document.getElementById('pimg-box');
             document.getElementById('product-image-modal').classList.remove('hidden');
             if (src) {
@@ -20304,6 +20363,8 @@ ${url}`);
             <div id="pimg-box" class="h-64 bg-arkan-light border border-arkan-sand rounded-2xl flex items-center justify-center overflow-hidden"></div>
             <div id="pimg-live-status" class="text-[11px] font-bold text-arkan-bronze text-center"></div>
             <div id="pimg-gallery" class="flex gap-2 overflow-x-auto pb-1"></div>
+            <button id="pimg-eg-search" type="button" onclick="searchEgyptDrugBarcodeMatches()" class="hidden w-full text-xs font-extrabold text-white bg-emerald-700 hover:bg-emerald-800 rounded-xl py-2 cursor-pointer">بحث في قاعدة الأدوية المصرية عن باركود وصورة العبوة</button>
+            <div id="pimg-eg-results" class="hidden max-h-36 overflow-y-auto space-y-1 text-[10px]"></div>
             <button id="pimg-save-btn" type="button" onclick="saveLiveImageAsOfficial()" class="hidden w-full text-xs font-extrabold text-white bg-emerald-700 hover:bg-emerald-800 rounded-xl py-2 cursor-pointer">✔ اعتماد الصورة المعروضة كصورة رسمية للصنف</button>
             <button id="pimg-gcfg" type="button" onclick="configureGoogleSearch()" class="hidden block w-full text-center text-xs font-extrabold text-arkan-dark bg-white border border-arkan-sand rounded-xl py-2 cursor-pointer">⚙️ إعداد بحث جوجل التلقائي (مرة واحدة)</button>
         </div>
