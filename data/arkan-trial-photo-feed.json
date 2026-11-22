@@ -3,10 +3,10 @@
   "minimumVerifiedConfidence": 95,
   "approvedForProduction": false,
   "version": 2,
-  "ambiguousLinksSkipped": 357,
-  "generatedAt": "2026-11-22T16:14:25.780Z",
+  "ambiguousLinksSkipped": 0,
+  "generatedAt": "2026-11-22T16:16:36.350Z",
   "catalogTotal": 4218,
-  "trialImages": 933,
+  "trialImages": 937,
   "notice": "UNVERIFIED IMAGES. Not for dispensing or identifying medicine. Never imported into approved pharmacy photo seeds.",
   "items": [
     {
@@ -29,18 +29,6 @@
       "source": "Azzam Pharmacy",
       "sourcePage": "https://azzampharmacy.com/products/epifenac-50-mg-20-tab-5592",
       "title": "Epifenac  50 Mg  20 Tab",
-      "status": "trial_unverified",
-      "catalogMatch": "not_visually_verified",
-      "rights": "source_rights_unconfirmed"
-    },
-    {
-      "id": "46",
-      "name": "ابيكساتراك2.5 مجم",
-      "category": "أدوية",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/396197.webp?v=1786652073",
-      "source": "Azzam Pharmacy",
-      "sourcePage": "https://azzampharmacy.com/products/apixatrack-2-5-mg-30-tab-18834",
-      "title": "Apixatrack  2.5 Mg  30 Tab",
       "status": "trial_unverified",
       "catalogMatch": "not_visually_verified",
       "rights": "source_rights_unconfirmed"
@@ -89,18 +77,6 @@
       "source": "Azzam Pharmacy",
       "sourcePage": "https://azzampharmacy.com/products/epilat-10-mg-30-caps-soft-568",
       "title": "Epilat  10 Mg  30 Caps  (Soft)",
-      "status": "trial_unverified",
-      "catalogMatch": "not_visually_verified",
-      "rights": "source_rights_unconfirmed"
-    },
-    {
-      "id": "69",
-      "name": "ابيمول اقراص س ج",
-      "category": "أدوية",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/33051.webp?v=1786648360",
-      "source": "Azzam Pharmacy",
-      "sourcePage": "https://azzampharmacy.com/products/abimol-extra-20-tab-2030",
-      "title": "Abimol  Extra  20 Tab",
       "status": "trial_unverified",
       "catalogMatch": "not_visually_verified",
       "rights": "source_rights_unconfirmed"
@@ -173,6 +149,18 @@
       "source": "world.openbeautyfacts.org",
       "sourcePage": "https://world.openbeautyfacts.org/product/6001087357081",
       "title": "Vaseline Vaseline advance repair 400ml",
+      "status": "trial_unverified",
+      "catalogMatch": "not_visually_verified",
+      "rights": "source_rights_unconfirmed"
+    },
+    {
+      "id": "138",
+      "name": "ادويفﻼم جيل",
+      "category": "أدوية",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/302826.webp?v=1786652097",
+      "source": "Azzam Pharmacy",
+      "sourcePage": "https://azzampharmacy.com/products/adwiflam-50-gm-emulgel-10612",
+      "title": "Adwiflam  50 Gm  Emulgel",
       "status": "trial_unverified",
       "catalogMatch": "not_visually_verified",
       "rights": "source_rights_unconfirmed"
@@ -305,6 +293,18 @@
       "source": "Azzam Pharmacy",
       "sourcePage": "https://azzampharmacy.com/products/esmorap-40-mg-28-cap-324022-15466",
       "title": "Esmorap  40 Mg  28 Cap  (324022)",
+      "status": "trial_unverified",
+      "catalogMatch": "not_visually_verified",
+      "rights": "source_rights_unconfirmed"
+    },
+    {
+      "id": "230",
+      "name": "استيروماب20مجم س ج",
+      "category": "أدوية",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/344362.webp?v=1786660322",
+      "source": "Azzam Pharmacy",
+      "sourcePage": "https://azzampharmacy.com/products/estero-map-20-mg-20-tab-602199-13302",
+      "title": "Estero - Map  20 Mg  20 Tab  (602199)",
       "status": "trial_unverified",
       "catalogMatch": "not_visually_verified",
       "rights": "source_rights_unconfirmed"
@@ -625,10 +625,10 @@
       "id": "412",
       "name": "اليجون صن سكرين كريم75مجم",
       "category": "مستحضرات تجميل",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/alejon-cica-cream-75-gm-6711349.jpg?v=1787523581",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/Foot-Cream.png?v=1781967462",
       "source": "Re3aya Pharmacy",
-      "sourcePage": "https://re3ayapharmacy.com/products/alejon-cica-cream-75-gm",
-      "title": "ALEJON CICA CREAM 75 GM",
+      "sourcePage": "https://re3ayapharmacy.com/products/alejon-foot-cream-urea-30-75ml",
+      "title": "ALEJON FOOT CREAM UREA 30% 75ML",
       "status": "trial_unverified",
       "catalogMatch": "not_visually_verified",
       "rights": "source_rights_unconfirmed"
@@ -653,18 +653,6 @@
       "source": "Azzam Pharmacy",
       "sourcePage": "https://azzampharmacy.com/products/alerid-10-mg-30-tab-186827-34438",
       "title": "Alerid  10 Mg  30 Tab (186827)",
-      "status": "trial_unverified",
-      "catalogMatch": "not_visually_verified",
-      "rights": "source_rights_unconfirmed"
-    },
-    {
-      "id": "433",
-      "name": "اليمبوسيس2.5مجم اقراص",
-      "category": "أدوية",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/384369.webp?v=1786649278",
-      "source": "Azzam Pharmacy",
-      "sourcePage": "https://azzampharmacy.com/products/elimbosis-2-5-mg-30-tab-16890",
-      "title": "Elimbosis  2.5 Mg  30 Tab",
       "status": "trial_unverified",
       "catalogMatch": "not_visually_verified",
       "rights": "source_rights_unconfirmed"
@@ -1114,18 +1102,6 @@
       "rights": "source_rights_unconfirmed"
     },
     {
-      "id": "721",
-      "name": "اوميجا زاد شراب",
-      "category": "مكملات وفيتامينات",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/605204.webp?v=1786654209",
-      "source": "Azzam Pharmacy",
-      "sourcePage": "https://azzampharmacy.com/products/omega-zad-syrup-100-ml-22856",
-      "title": "Omega Zad  Syrup  100 Ml",
-      "status": "trial_unverified",
-      "catalogMatch": "not_visually_verified",
-      "rights": "source_rights_unconfirmed"
-    },
-    {
       "id": "722",
       "name": "اوميجا كف شراب",
       "category": "مكملات وفيتامينات",
@@ -1297,10 +1273,10 @@
       "id": "791",
       "name": "ايزوتريتينون20 مجم",
       "category": "أدوية",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/76996.webp?v=1786661506",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/610346.webp?v=1786648462",
       "source": "Azzam Pharmacy",
-      "sourcePage": "https://azzampharmacy.com/products/isotretinoin-20-mg-10-cap-4236",
-      "title": "Isotretinoin  20 Mg  10 Cap#",
+      "sourcePage": "https://azzampharmacy.com/products/isotretinoin-20-mg-30-cap-76996-27090",
+      "title": "Isotretinoin  20 Mg  30 Cap (76996)",
       "status": "trial_unverified",
       "catalogMatch": "not_visually_verified",
       "rights": "source_rights_unconfirmed"
@@ -1678,6 +1654,18 @@
       "rights": "source_rights_unconfirmed"
     },
     {
+      "id": "963",
+      "name": "برافوتين كبسوول",
+      "category": "أدوية",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/pravotin-400x400_27580efb-c7ee-4bbc-9e46-389b43fab381.png?v=1735268129",
+      "source": "Re3aya Pharmacy",
+      "sourcePage": "https://re3ayapharmacy.com/products/pravotin-100-mg-lactofferin-7-sachets",
+      "title": "Pravotin 100 mg ( Lactofferin ) 7 sachets",
+      "status": "trial_unverified",
+      "catalogMatch": "not_visually_verified",
+      "rights": "source_rights_unconfirmed"
+    },
+    {
       "id": "965",
       "name": "بران كبسول ميباكو",
       "category": "مكملات وفيتامينات",
@@ -1969,10 +1957,10 @@
       "id": "1126",
       "name": "بوباى كريم صن سكرين50",
       "category": "مستحضرات تجميل",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/418lWkBETLL._AC_US40.jpg?v=1787517644",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/51dZYaimBiL._AC_SL1080.jpg?v=1779466528",
       "source": "Re3aya Pharmacy",
-      "sourcePage": "https://re3ayapharmacy.com/products/bobai-cream-bundle-spf50",
-      "title": "BOBAI Cream bundle SPF+50",
+      "sourcePage": "https://re3ayapharmacy.com/products/bobai-sunscreen-tinted-cream-spf50-60-gm",
+      "title": "Bobai Sunscreen Tinted Cream SPF50 60 gm",
       "status": "trial_unverified",
       "catalogMatch": "not_visually_verified",
       "rights": "source_rights_unconfirmed"
@@ -2045,6 +2033,18 @@
       "source": "Re3aya Pharmacy",
       "sourcePage": "https://re3ayapharmacy.com/products/pepzol-mr-20-mg-14-capsules",
       "title": "Pepzol MR 20 mg - 14 Capsules",
+      "status": "trial_unverified",
+      "catalogMatch": "not_visually_verified",
+      "rights": "source_rights_unconfirmed"
+    },
+    {
+      "id": "1178",
+      "name": "بيبيﻼك1 لبن",
+      "category": "ألبان أطفال",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/3784.webp?v=1786651555",
+      "source": "Azzam Pharmacy",
+      "sourcePage": "https://azzampharmacy.com/products/bebelac-1-400-g-milk-1154",
+      "title": "Bebelac  - 1 -  400 G  Milk",
       "status": "trial_unverified",
       "catalogMatch": "not_visually_verified",
       "rights": "source_rights_unconfirmed"
@@ -2134,6 +2134,30 @@
       "rights": "source_rights_unconfirmed"
     },
     {
+      "id": "1221",
+      "name": "بيرفكتيل اوريجينال اقراص",
+      "category": "مكملات وفيتامينات",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/614450-1759928987.webp?v=1786648539",
+      "source": "Azzam Pharmacy",
+      "sourcePage": "https://azzampharmacy.com/products/perfectil-hair-extra-support-60-tab-34840",
+      "title": "Perfectil  Hair Extra Support  60 Tab",
+      "status": "trial_unverified",
+      "catalogMatch": "not_visually_verified",
+      "rights": "source_rights_unconfirmed"
+    },
+    {
+      "id": "1222",
+      "name": "بيرفكتيل هير اكسترا",
+      "category": "مكملات وفيتامينات",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/51558_b4f104ab-af01-460f-9af1-8f2b88ebf79e.png?v=1735258289",
+      "source": "Re3aya Pharmacy",
+      "sourcePage": "https://re3ayapharmacy.com/products/perfectil-max",
+      "title": "Perfectil Max",
+      "status": "trial_unverified",
+      "catalogMatch": "not_visually_verified",
+      "rights": "source_rights_unconfirmed"
+    },
+    {
       "id": "1236",
       "name": "بيزوكارد10مجم",
       "category": "أدوية",
@@ -2141,18 +2165,6 @@
       "source": "Re3aya Pharmacy",
       "sourcePage": "https://re3ayapharmacy.com/products/bisocard-10-mg-30-tablets",
       "title": "Bisocard 10 mg - 30 Tablets",
-      "status": "trial_unverified",
-      "catalogMatch": "not_visually_verified",
-      "rights": "source_rights_unconfirmed"
-    },
-    {
-      "id": "1237",
-      "name": "بيزوكارد2.5 مجم",
-      "category": "أدوية",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/383160.webp?v=1786648740",
-      "source": "Azzam Pharmacy",
-      "sourcePage": "https://azzampharmacy.com/products/bisocard-2-5-mg-30-tab-16538",
-      "title": "Bisocard  2.5 Mg  30 Tab",
       "status": "trial_unverified",
       "catalogMatch": "not_visually_verified",
       "rights": "source_rights_unconfirmed"
@@ -2194,18 +2206,6 @@
       "rights": "source_rights_unconfirmed"
     },
     {
-      "id": "1241",
-      "name": "بيستول6.25\\\\2.5بلس 20 ق",
-      "category": "أدوية",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/183178.webp?v=1786649147",
-      "source": "Azzam Pharmacy",
-      "sourcePage": "https://azzampharmacy.com/products/bistol-plus-2-5-6-25-mg-20-tab-7230",
-      "title": "Bistol  Plus  2.5 / 6.25 Mg  20 Tab",
-      "status": "trial_unverified",
-      "catalogMatch": "not_visually_verified",
-      "rights": "source_rights_unconfirmed"
-    },
-    {
       "id": "1242",
       "name": "بيستول2.5مجم اقراص",
       "category": "أدوية",
@@ -2213,6 +2213,18 @@
       "source": "Azzam Pharmacy",
       "sourcePage": "https://azzampharmacy.com/products/bistol-2-5-mg-20-tab-7126",
       "title": "Bistol  2.5 Mg  20 Tab",
+      "status": "trial_unverified",
+      "catalogMatch": "not_visually_verified",
+      "rights": "source_rights_unconfirmed"
+    },
+    {
+      "id": "1245",
+      "name": "بيستول5مجم اقراص",
+      "category": "أدوية",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/185873.webp?v=1786656847",
+      "source": "Azzam Pharmacy",
+      "sourcePage": "https://azzampharmacy.com/products/bistol-plus-5-12-5-mg-20-tab-7298",
+      "title": "Bistol  Plus  5 / 12.5 Mg  20 Tab",
       "status": "trial_unverified",
       "catalogMatch": "not_visually_verified",
       "rights": "source_rights_unconfirmed"
@@ -2285,18 +2297,6 @@
       "source": "Azzam Pharmacy",
       "sourcePage": "https://azzampharmacy.com/products/benox-0-4-eye-drops-10-ml-656",
       "title": "Benox  0.4%  Eye Drops  10 Ml",
-      "status": "trial_unverified",
-      "catalogMatch": "not_visually_verified",
-      "rights": "source_rights_unconfirmed"
-    },
-    {
-      "id": "1272",
-      "name": "بيوبريكس2.5 مل اقراص",
-      "category": "أدوية",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/613827.webp?v=1786651352",
-      "source": "Azzam Pharmacy",
-      "sourcePage": "https://azzampharmacy.com/products/bioprex-2-5-mg-30-tab-31858",
-      "title": "Bioprex  2.5 Mg  30 Tab",
       "status": "trial_unverified",
       "catalogMatch": "not_visually_verified",
       "rights": "source_rights_unconfirmed"
@@ -2518,18 +2518,6 @@
       "rights": "source_rights_unconfirmed"
     },
     {
-      "id": "1335",
-      "name": "تجريتول200 سى ار",
-      "category": "أدوية",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/tegretol-cr-200-mg-20-tablets-492716.jpg?v=1735257639",
-      "source": "Re3aya Pharmacy",
-      "sourcePage": "https://re3ayapharmacy.com/products/tegretol-cr-200-mg-20-tablets",
-      "title": "Tegretol CR 200 mg - 20 Tablets",
-      "status": "trial_unverified",
-      "catalogMatch": "not_visually_verified",
-      "rights": "source_rights_unconfirmed"
-    },
-    {
       "id": "1336",
       "name": "تجريتول200 مجم اقراص",
       "category": "أدوية",
@@ -2698,13 +2686,13 @@
       "rights": "source_rights_unconfirmed"
     },
     {
-      "id": "1379",
-      "name": "تريتو الس20مجم",
+      "id": "1374",
+      "name": "تريتاس5 مجم اقراص",
       "category": "أدوية",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/317202.webp?v=1786651111",
-      "source": "Azzam Pharmacy",
-      "sourcePage": "https://azzampharmacy.com/products/treato-ulc-20-1100-mg-14-cap-11918",
-      "title": "Treato - Ulc  20 / 1100 Mg  14 Cap",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/tritace-5-mg-14-tablets-631142.jpg?v=1735257135",
+      "source": "Re3aya Pharmacy",
+      "sourcePage": "https://re3ayapharmacy.com/products/tritace-5-mg-14-tablets",
+      "title": "Tritace 5 mg - 14 Tablets",
       "status": "trial_unverified",
       "catalogMatch": "not_visually_verified",
       "rights": "source_rights_unconfirmed"
@@ -2845,10 +2833,10 @@
       "id": "1411",
       "name": "توب ريﻼكس كريم",
       "category": "أدوية",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/155072.webp?v=1786661297",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/103710.webp?v=1786653661",
       "source": "Azzam Pharmacy",
-      "sourcePage": "https://azzampharmacy.com/products/top-flam-15-gm-cream-6060",
-      "title": "Top - Flam  15 Gm  Cream",
+      "sourcePage": "https://azzampharmacy.com/products/top-4-15-gm-cream-5042",
+      "title": "Top-4  15 Gm  Cream",
       "status": "trial_unverified",
       "catalogMatch": "not_visually_verified",
       "rights": "source_rights_unconfirmed"
@@ -3005,18 +2993,6 @@
       "source": "Re3aya Pharmacy",
       "sourcePage": "https://re3ayapharmacy.com/products/tebonina-forte-40-mg-20-tablets",
       "title": "Tebonina Forte 40 mg - 20 Tablets",
-      "status": "trial_unverified",
-      "catalogMatch": "not_visually_verified",
-      "rights": "source_rights_unconfirmed"
-    },
-    {
-      "id": "1468",
-      "name": "تيراتام1000 مجم اقراص",
-      "category": "أدوية",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/57386.webp?v=1786661626",
-      "source": "Azzam Pharmacy",
-      "sourcePage": "https://azzampharmacy.com/products/tiratam-1000-mg-20-tab-404063-3222",
-      "title": "Tiratam  1000 Mg  20 Tab  (404063)",
       "status": "trial_unverified",
       "catalogMatch": "not_visually_verified",
       "rights": "source_rights_unconfirmed"
@@ -3682,6 +3658,18 @@
       "rights": "source_rights_unconfirmed"
     },
     {
+      "id": "1722",
+      "name": "داجو شامبو",
+      "category": "مستحضرات تجميل",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/257922.webp?v=1786660940",
+      "source": "Azzam Pharmacy",
+      "sourcePage": "https://azzampharmacy.com/products/dago-shampoo-200-ml-8808",
+      "title": "Dago  Shampoo  200 Ml",
+      "status": "trial_unverified",
+      "catalogMatch": "not_visually_verified",
+      "rights": "source_rights_unconfirmed"
+    },
+    {
       "id": "1726",
       "name": "دافركس اقراص",
       "category": "أدوية",
@@ -3737,18 +3725,6 @@
       "source": "Azzam Pharmacy",
       "sourcePage": "https://azzampharmacy.com/products/dan-off-shampoo-250-ml-11666",
       "title": "Dan - Off  Shampoo  250 Ml",
-      "status": "trial_unverified",
-      "catalogMatch": "not_visually_verified",
-      "rights": "source_rights_unconfirmed"
-    },
-    {
-      "id": "1735",
-      "name": "دانتريﻼكس25مجم كبسول",
-      "category": "أدوية",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/dantrelax-25-mg-30-capsules-779265.jpg?v=1735257319",
-      "source": "Re3aya Pharmacy",
-      "sourcePage": "https://re3ayapharmacy.com/products/dantrelax-25-mg-30-capsules",
-      "title": "Dantrelax 25 mg - 30 Capsules",
       "status": "trial_unverified",
       "catalogMatch": "not_visually_verified",
       "rights": "source_rights_unconfirmed"
@@ -3929,6 +3905,18 @@
       "source": "Azzam Pharmacy",
       "sourcePage": "https://azzampharmacy.com/products/dogmatil-50-mg-30-cap-240",
       "title": "Dogmatil  50 Mg  30 Cap",
+      "status": "trial_unverified",
+      "catalogMatch": "not_visually_verified",
+      "rights": "source_rights_unconfirmed"
+    },
+    {
+      "id": "1796",
+      "name": "دوزوفا ناد",
+      "category": "مكملات وفيتامينات",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/DozovaNAD_0e9413e0-5148-412d-90a5-93c2275130e7.png?v=1779571292",
+      "source": "Re3aya Pharmacy",
+      "sourcePage": "https://re3ayapharmacy.com/products/dozova-nad-300mg-60-caps",
+      "title": "Dozova  NAD 300mg 60 Caps",
       "status": "trial_unverified",
       "catalogMatch": "not_visually_verified",
       "rights": "source_rights_unconfirmed"
@@ -4222,18 +4210,6 @@
       "rights": "source_rights_unconfirmed"
     },
     {
-      "id": "1870",
-      "name": "ديامونريكتا4 قرص",
-      "category": "أدوية",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/362481.webp?v=1786648316",
-      "source": "Azzam Pharmacy",
-      "sourcePage": "https://azzampharmacy.com/products/diamonrecta-20-mg-4-tab-340057-14286",
-      "title": "Diamonrecta  20 Mg  4 Tab  (340057)",
-      "status": "trial_unverified",
-      "catalogMatch": "not_visually_verified",
-      "rights": "source_rights_unconfirmed"
-    },
-    {
       "id": "1871",
       "name": "دياميدزين30 مجم ام ار",
       "category": "أدوية",
@@ -4258,18 +4234,6 @@
       "rights": "source_rights_unconfirmed"
     },
     {
-      "id": "1873",
-      "name": "دياميكرون 60 مجم س ج",
-      "category": "أدوية",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/diamicron-mr-60-mg-30-tablets-983068.jpg?v=1735257480",
-      "source": "Re3aya Pharmacy",
-      "sourcePage": "https://re3ayapharmacy.com/products/diamicron-mr-60-mg-30-tablets",
-      "title": "Diamicron MR 60 mg - 30 Tablets",
-      "status": "trial_unverified",
-      "catalogMatch": "not_visually_verified",
-      "rights": "source_rights_unconfirmed"
-    },
-    {
       "id": "1877",
       "name": "ديباكين نقط",
       "category": "أدوية",
@@ -4277,6 +4241,18 @@
       "source": "Azzam Pharmacy",
       "sourcePage": "https://azzampharmacy.com/products/depakine-200-mg-ml-oral-drops-solution-40-ml-972",
       "title": "Depakine  200 Mg / Ml  Oral Drops (Solution)  40 Ml",
+      "status": "trial_unverified",
+      "catalogMatch": "not_visually_verified",
+      "rights": "source_rights_unconfirmed"
+    },
+    {
+      "id": "1878",
+      "name": "ديبرام20 مجم س ج",
+      "category": "أدوية",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/118788.webp?v=1786649350",
+      "source": "Azzam Pharmacy",
+      "sourcePage": "https://azzampharmacy.com/products/depram-20-mg-20-tab-5302",
+      "title": "Depram  20 Mg  20 Tab",
       "status": "trial_unverified",
       "catalogMatch": "not_visually_verified",
       "rights": "source_rights_unconfirmed"
@@ -4477,10 +4453,10 @@
       "id": "1938",
       "name": "ديكﻼك150 مجم اقراص",
       "category": "أدوية",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/diclac-150-id-20-tablets-693972.jpg?v=1735257324",
-      "source": "Re3aya Pharmacy",
-      "sourcePage": "https://re3ayapharmacy.com/products/diclac-150-id-20-tablets",
-      "title": "Diclac 150 ID - 20 Tablets",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/77943.webp?v=1786661500",
+      "source": "Azzam Pharmacy",
+      "sourcePage": "https://azzampharmacy.com/products/diclac-id-150-mg-10-tab-403479-4262",
+      "title": "Diclac - Id  150 Mg  10 Tab (403479)",
       "status": "trial_unverified",
       "catalogMatch": "not_visually_verified",
       "rights": "source_rights_unconfirmed"
@@ -5101,10 +5077,10 @@
       "id": "2134",
       "name": "زنك اوليف كريم هيبتا",
       "category": "مستحضرات تجميل",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/zinc-olive-cream-75-gm-235766.jpg?v=1735258095",
-      "source": "Re3aya Pharmacy",
-      "sourcePage": "https://re3ayapharmacy.com/products/zinc-olive-cream-75-gm",
-      "title": "Zinc Olive Cream - 75 gm",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/98930.webp?v=1786648712",
+      "source": "Azzam Pharmacy",
+      "sourcePage": "https://azzampharmacy.com/products/zinc-olive-75-gm-cream-4912",
+      "title": "Zinc Olive  75 Gm  Cream",
       "status": "trial_unverified",
       "catalogMatch": "not_visually_verified",
       "rights": "source_rights_unconfirmed"
@@ -5446,6 +5422,18 @@
       "rights": "source_rights_unconfirmed"
     },
     {
+      "id": "2242",
+      "name": "سبازمورست20مجم اقراص",
+      "category": "أدوية",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/1277.webp?v=1786649468",
+      "source": "Azzam Pharmacy",
+      "sourcePage": "https://azzampharmacy.com/products/spasmorest-20-mg-20-tab-300",
+      "title": "Spasmorest  20 Mg  20 Tab",
+      "status": "trial_unverified",
+      "catalogMatch": "not_visually_verified",
+      "rights": "source_rights_unconfirmed"
+    },
+    {
       "id": "2244",
       "name": "سبازموفرى اقراص",
       "category": "أدوية",
@@ -5569,10 +5557,10 @@
       "id": "2294",
       "name": "سترونج فيل كريم تفتيح",
       "category": "مستحضرات تجميل",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/51YS-RXfAdL._AC_SL1080.jpg?v=1780066966",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/feel22packshots_44.jpg?v=1735266450",
       "source": "Re3aya Pharmacy",
-      "sourcePage": "https://re3ayapharmacy.com/products/strongville-hair-cream-120-gm",
-      "title": "Strongville Hair Cream 120 gm",
+      "sourcePage": "https://re3ayapharmacy.com/products/strongville-nourishing-hair-cream-for-men-120g",
+      "title": "Strongville Nourishing Hair Cream For Men 120g",
       "status": "trial_unverified",
       "catalogMatch": "not_visually_verified",
       "rights": "source_rights_unconfirmed"
@@ -5926,18 +5914,6 @@
       "rights": "source_rights_unconfirmed"
     },
     {
-      "id": "2411",
-      "name": "سويتال100قرص س.ج",
-      "category": "مكملات وفيتامينات",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/235407.webp?v=1786650757",
-      "source": "Azzam Pharmacy",
-      "sourcePage": "https://azzampharmacy.com/products/sweetal-100-tab-8-gm-8452",
-      "title": "Sweetal  100 Tab  8 Gm",
-      "status": "trial_unverified",
-      "catalogMatch": "not_visually_verified",
-      "rights": "source_rights_unconfirmed"
-    },
-    {
       "id": "2412",
       "name": "سويتال300 قرص س.ج",
       "category": "مكملات وفيتامينات",
@@ -6250,18 +6226,6 @@
       "rights": "source_rights_unconfirmed"
     },
     {
-      "id": "2461",
-      "name": "سيتال500 مجم اقراص",
-      "category": "أدوية",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/cetal-500-mg-20-tablets-569536.jpg?v=1735257312",
-      "source": "Re3aya Pharmacy",
-      "sourcePage": "https://re3ayapharmacy.com/products/cetal-500-mg-20-tablets",
-      "title": "Cetal 500 mg - 20 Tablets",
-      "status": "trial_unverified",
-      "catalogMatch": "not_visually_verified",
-      "rights": "source_rights_unconfirmed"
-    },
-    {
       "id": "2462",
       "name": "سيتالو20 مجم",
       "category": "أدوية",
@@ -6517,10 +6481,10 @@
       "id": "2539",
       "name": "سيفوتاكس1 جم امبول",
       "category": "أدوية",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/2241.webp?v=1786661898",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/237805.webp?v=1786660987",
       "source": "Azzam Pharmacy",
-      "sourcePage": "https://azzampharmacy.com/products/cefotax-500-mg-1-vial-1-amp-solvent-676",
-      "title": "Cefotax  500 Mg  1 Vial + 1 Amp  Solvent",
+      "sourcePage": "https://azzampharmacy.com/products/cefotax-2-gm-1-vial-2-amp-solvent-8476",
+      "title": "Cefotax  2 Gm  1 Vial + 2 Amp  Solvent",
       "status": "trial_unverified",
       "catalogMatch": "not_visually_verified",
       "rights": "source_rights_unconfirmed"
@@ -6653,30 +6617,6 @@
       "source": "Azzam Pharmacy",
       "sourcePage": "https://azzampharmacy.com/products/sildava-100-mg-12-tab-9564",
       "title": "Sildava  100 Mg  12 Tab",
-      "status": "trial_unverified",
-      "catalogMatch": "not_visually_verified",
-      "rights": "source_rights_unconfirmed"
-    },
-    {
-      "id": "2580",
-      "name": "سيلدين100مجم اقراص",
-      "category": "أدوية",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/257939.webp?v=1786660939",
-      "source": "Azzam Pharmacy",
-      "sourcePage": "https://azzampharmacy.com/products/silden-100-mg-4-tab-8812",
-      "title": "Silden  100 Mg  4 Tab",
-      "status": "trial_unverified",
-      "catalogMatch": "not_visually_verified",
-      "rights": "source_rights_unconfirmed"
-    },
-    {
-      "id": "2583",
-      "name": "سيلدين50 مجم اقراص",
-      "category": "أدوية",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/301490.webp?v=1786647622",
-      "source": "Azzam Pharmacy",
-      "sourcePage": "https://azzampharmacy.com/products/silden-50-mg-4-tab-10468",
-      "title": "Silden  50 Mg  4 Tab",
       "status": "trial_unverified",
       "catalogMatch": "not_visually_verified",
       "rights": "source_rights_unconfirmed"
@@ -6838,13 +6778,13 @@
       "rights": "source_rights_unconfirmed"
     },
     {
-      "id": "2630",
-      "name": "سينوبريل10مجم اقراص",
+      "id": "2633",
+      "name": "سينومارين بخاخ اطفال",
       "category": "أدوية",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/301600.webp?v=1786649885",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/269803.webp?v=1786652524",
       "source": "Azzam Pharmacy",
-      "sourcePage": "https://azzampharmacy.com/products/sinopril-10-mg-30-tab-10470",
-      "title": "Sinopril  10 Mg  30 Tab",
+      "sourcePage": "https://azzampharmacy.com/products/sinomarin-e-n-t-nasal-spray-200-ml-9148",
+      "title": "Sinomarin  E.n.t.  Nasal Spray  200 Ml",
       "status": "trial_unverified",
       "catalogMatch": "not_visually_verified",
       "rights": "source_rights_unconfirmed"
@@ -6889,10 +6829,10 @@
       "id": "2654",
       "name": "شان سيكا كريم",
       "category": "مستحضرات تجميل",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0774/7151/4932/files/shaan-cica-cream-face-body-double-repair-moisturizer-60gm-826563.jpg?v=1739273607",
-      "source": "Bloom Pharmacy",
-      "sourcePage": "https://www.bloompharmacy.com/products/shaan-cica-cream-double-repair-moisturizer-face-body-60gm",
-      "title": "Shaan Cica Cream Face & Body Double Repair Moisturizer - 60gm",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/shaan-cica-a-cream_front_photo_original_1.jpg?v=1779986566",
+      "source": "Re3aya Pharmacy",
+      "sourcePage": "https://re3ayapharmacy.com/products/shaan-cica-arnica-cream-40gm",
+      "title": "Shaan CICA ARNICA+ CREAM 40GM",
       "status": "trial_unverified",
       "catalogMatch": "not_visually_verified",
       "rights": "source_rights_unconfirmed"
@@ -7093,10 +7033,10 @@
       "id": "2741",
       "name": "فاكيشن نياسينميد سيرم30مل",
       "category": "مستحضرات تجميل",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0774/7151/4932/files/vacation-aqua-repair-spf-30-pina-colada-lip-balm-15gm-1152687.jpg?v=1787867834",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0774/7151/4932/files/vacation-caffeine-5-serum-30ml-1472772.jpg?v=1767115386",
       "source": "Bloom Pharmacy",
-      "sourcePage": "https://www.bloompharmacy.com/products/vacation-aqua-repair-spf-30-pina-colada-lip-balm-15gm",
-      "title": "Vacation Aqua-Repair SPF 30+ Pina Colada Lip Balm - 15gm",
+      "sourcePage": "https://www.bloompharmacy.com/products/vacation-caffeine-5-serum-30ml",
+      "title": "Vacation Caffeine 5% Serum - 30ml",
       "status": "trial_unverified",
       "catalogMatch": "not_visually_verified",
       "rights": "source_rights_unconfirmed"
@@ -7109,6 +7049,42 @@
       "source": "Azzam Pharmacy",
       "sourcePage": "https://azzampharmacy.com/products/valgestril-21-tab-25974",
       "title": "Valgestril  21 Tab",
+      "status": "trial_unverified",
+      "catalogMatch": "not_visually_verified",
+      "rights": "source_rights_unconfirmed"
+    },
+    {
+      "id": "2747",
+      "name": "فاموتاك20 مجم",
+      "category": "أدوية",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/2506.webp?v=1786649104",
+      "source": "Azzam Pharmacy",
+      "sourcePage": "https://azzampharmacy.com/products/famotak-20-mg-20-tab-768",
+      "title": "Famotak  20 Mg  20 Tab",
+      "status": "trial_unverified",
+      "catalogMatch": "not_visually_verified",
+      "rights": "source_rights_unconfirmed"
+    },
+    {
+      "id": "2749",
+      "name": "فاموتين20-20قرص",
+      "category": "أدوية",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/1085.webp?v=1786657684",
+      "source": "Azzam Pharmacy",
+      "sourcePage": "https://azzampharmacy.com/products/famotin-20-mg-20-tab-262",
+      "title": "Famotin  20 Mg  20 Tab",
+      "status": "trial_unverified",
+      "catalogMatch": "not_visually_verified",
+      "rights": "source_rights_unconfirmed"
+    },
+    {
+      "id": "2756",
+      "name": "فانفيلدا50مجم30قرص",
+      "category": "أدوية",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/614381-1760271721.webp?v=1786653506",
+      "source": "Azzam Pharmacy",
+      "sourcePage": "https://azzampharmacy.com/products/vanvilda-50-mg-30-tab-34734",
+      "title": "Vanvilda  50 Mg  30 Tab",
       "status": "trial_unverified",
       "catalogMatch": "not_visually_verified",
       "rights": "source_rights_unconfirmed"
@@ -7474,18 +7450,6 @@
       "rights": "source_rights_unconfirmed"
     },
     {
-      "id": "2885",
-      "name": "فوناسيدان10 مل",
-      "category": "أدوية",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/605033.webp?v=1786656111",
-      "source": "Azzam Pharmacy",
-      "sourcePage": "https://azzampharmacy.com/products/vonacidan-10-mg-20-tab-22814",
-      "title": "Vonacidan  10 Mg  20 Tab",
-      "status": "trial_unverified",
-      "catalogMatch": "not_visually_verified",
-      "rights": "source_rights_unconfirmed"
-    },
-    {
       "id": "2886",
       "name": "فوناسيدان20 مجم اقراص",
       "category": "أدوية",
@@ -7517,6 +7481,18 @@
       "source": "Azzam Pharmacy",
       "sourcePage": "https://azzampharmacy.com/products/vonopravin-20-mg-28-tab-25420",
       "title": "Vonopravin  20 Mg  28 Tab",
+      "status": "trial_unverified",
+      "catalogMatch": "not_visually_verified",
+      "rights": "source_rights_unconfirmed"
+    },
+    {
+      "id": "2897",
+      "name": "فياترازو لبوووس",
+      "category": "أدوية",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/334788.webp?v=1786647979",
+      "source": "Azzam Pharmacy",
+      "sourcePage": "https://azzampharmacy.com/products/viatrazo-80-mg-3-vag-supp-12894",
+      "title": "Viatrazo  80 Mg  3 Vag Supp",
       "status": "trial_unverified",
       "catalogMatch": "not_visually_verified",
       "rights": "source_rights_unconfirmed"
@@ -7918,18 +7894,6 @@
       "rights": "source_rights_unconfirmed"
     },
     {
-      "id": "3001",
-      "name": "فينيتين100",
-      "category": "أدوية",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/64571.webp?v=1786661564",
-      "source": "Azzam Pharmacy",
-      "sourcePage": "https://azzampharmacy.com/products/phenytin-epanutin-100-mg-50-cap-3764",
-      "title": "Phenytin ( Epanutin )  100 Mg  50 Cap",
-      "status": "trial_unverified",
-      "catalogMatch": "not_visually_verified",
-      "rights": "source_rights_unconfirmed"
-    },
-    {
       "id": "3002",
       "name": "فينيتين50 مل",
       "category": "أدوية",
@@ -8086,18 +8050,6 @@
       "rights": "source_rights_unconfirmed"
     },
     {
-      "id": "3069",
-      "name": "كاردورا4مجم س ج",
-      "category": "أدوية",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/cardura-4-mg-14-tablets-209120.jpg?v=1735256902",
-      "source": "Re3aya Pharmacy",
-      "sourcePage": "https://re3ayapharmacy.com/products/cardura-4-mg-14-tablets",
-      "title": "Cardura 4 mg - 14 Tablets",
-      "status": "trial_unverified",
-      "catalogMatch": "not_visually_verified",
-      "rights": "source_rights_unconfirmed"
-    },
-    {
       "id": "3073",
       "name": "كارديكسين5امبول",
       "category": "أدوية",
@@ -8105,6 +8057,18 @@
       "source": "Azzam Pharmacy",
       "sourcePage": "https://azzampharmacy.com/products/cardixin-0-5-mg-2-ml-5-amp-33668",
       "title": "Cardixin  0.5 Mg / 2 Ml  5 Amp",
+      "status": "trial_unverified",
+      "catalogMatch": "not_visually_verified",
+      "rights": "source_rights_unconfirmed"
+    },
+    {
+      "id": "3074",
+      "name": "كارديلول25 مجم",
+      "category": "أدوية",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/290027.webp?v=1786648252",
+      "source": "Azzam Pharmacy",
+      "sourcePage": "https://azzampharmacy.com/products/cardilol-25-mg-30-tab-9876",
+      "title": "Cardilol  25 Mg  30 Tab",
       "status": "trial_unverified",
       "catalogMatch": "not_visually_verified",
       "rights": "source_rights_unconfirmed"
@@ -8129,18 +8093,6 @@
       "source": "Re3aya Pharmacy",
       "sourcePage": "https://re3ayapharmacy.com/products/carminex-6-sachets",
       "title": "Carminex - 6 Sachets",
-      "status": "trial_unverified",
-      "catalogMatch": "not_visually_verified",
-      "rights": "source_rights_unconfirmed"
-    },
-    {
-      "id": "3081",
-      "name": "كارمينكس شراب",
-      "category": "أدوية",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/602227.webp?v=1786652778",
-      "source": "Azzam Pharmacy",
-      "sourcePage": "https://azzampharmacy.com/products/carminex-syrup-120-ml-new-21858",
-      "title": "Carminex  Syrup  120 Ml (New)",
       "status": "trial_unverified",
       "catalogMatch": "not_visually_verified",
       "rights": "source_rights_unconfirmed"
@@ -8230,6 +8182,18 @@
       "rights": "source_rights_unconfirmed"
     },
     {
+      "id": "3138",
+      "name": "كاندلكان16 مجم",
+      "category": "أدوية",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/235090.webp?v=1786648355",
+      "source": "Azzam Pharmacy",
+      "sourcePage": "https://azzampharmacy.com/products/candalkan-16-mg-14-tab-8406",
+      "title": "Candalkan  16 Mg  14 Tab",
+      "status": "trial_unverified",
+      "catalogMatch": "not_visually_verified",
+      "rights": "source_rights_unconfirmed"
+    },
+    {
       "id": "3140",
       "name": "كاندلكان8 مجم",
       "category": "أدوية",
@@ -8249,6 +8213,30 @@
       "source": "Azzam Pharmacy",
       "sourcePage": "https://azzampharmacy.com/products/candistan-2-20-gm-vag-cream-1100",
       "title": "Candistan  2%  20 Gm  Vag  Cream",
+      "status": "trial_unverified",
+      "catalogMatch": "not_visually_verified",
+      "rights": "source_rights_unconfirmed"
+    },
+    {
+      "id": "3147",
+      "name": "كانزارتان150 مجم",
+      "category": "أدوية",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/281705.webp?v=1786656295",
+      "source": "Azzam Pharmacy",
+      "sourcePage": "https://azzampharmacy.com/products/kansartan-150-mg-30-tab-9542",
+      "title": "Kansartan  150 Mg  30 Tab",
+      "status": "trial_unverified",
+      "catalogMatch": "not_visually_verified",
+      "rights": "source_rights_unconfirmed"
+    },
+    {
+      "id": "3148",
+      "name": "كانزارتان300مجم اقراص",
+      "category": "أدوية",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/281706.webp?v=1786656814",
+      "source": "Azzam Pharmacy",
+      "sourcePage": "https://azzampharmacy.com/products/kansartan-300-mg-30-tab-9544",
+      "title": "Kansartan  300 Mg  30 Tab",
       "status": "trial_unverified",
       "catalogMatch": "not_visually_verified",
       "rights": "source_rights_unconfirmed"
@@ -8393,18 +8381,6 @@
       "source": "Re3aya Pharmacy",
       "sourcePage": "https://re3ayapharmacy.com/products/klacid-500-mg-14-tablets",
       "title": "Klacid 500 mg - 14 Tablets",
-      "status": "trial_unverified",
-      "catalogMatch": "not_visually_verified",
-      "rights": "source_rights_unconfirmed"
-    },
-    {
-      "id": "3195",
-      "name": "كﻼسيد اكس ال س",
-      "category": "أدوية",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/255109.webp?v=1786648143",
-      "source": "Azzam Pharmacy",
-      "sourcePage": "https://azzampharmacy.com/products/klacid-xl-500-mg-14-tab-8772",
-      "title": "Klacid Xl  500 Mg  14 Tab",
       "status": "trial_unverified",
       "catalogMatch": "not_visually_verified",
       "rights": "source_rights_unconfirmed"
@@ -8602,13 +8578,25 @@
       "rights": "source_rights_unconfirmed"
     },
     {
+      "id": "3290",
+      "name": "كولاجرا صن سكرين لوشن120 مل",
+      "category": "مستحضرات تجميل",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/61Y9iTCHJYL._AC_SL1500.jpg?v=1779754784",
+      "source": "Re3aya Pharmacy",
+      "sourcePage": "https://re3ayapharmacy.com/products/kolagra-whitening-roll-on-2x1-promopack-11-oud-120ml-yellow",
+      "title": "Kolagra Whitening Roll On 2X1 Promopack 1+1 Oud 120ML Yellow",
+      "status": "trial_unverified",
+      "catalogMatch": "not_visually_verified",
+      "rights": "source_rights_unconfirmed"
+    },
+    {
       "id": "3299",
       "name": "كولاجرا وايتنج كريم فيتامين سى",
       "category": "مستحضرات تجميل",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/Hand_Cream.webp?v=1787431514",
-      "source": "Re3aya Pharmacy",
-      "sourcePage": "https://re3ayapharmacy.com/products/hydrensa-cica-cream-repairing-cream-spf-15-50ml-copy",
-      "title": "KOLAGRA HYDRENSA REPARATIVE HAND CREAM 50ml",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/608833.webp?v=1786649123",
+      "source": "Azzam Pharmacy",
+      "sourcePage": "https://azzampharmacy.com/products/kolagra-whiten-cr-sunscreen-gel-cream-50ml-25332",
+      "title": "Kolagra Whiten. Cr. + Sunscreen Gel Cream 50Ml #",
       "status": "trial_unverified",
       "catalogMatch": "not_visually_verified",
       "rights": "source_rights_unconfirmed"
@@ -8933,18 +8921,6 @@
       "source": "Azzam Pharmacy",
       "sourcePage": "https://azzampharmacy.com/products/ketolgin-100-mg-2-ml-i-m-3-amp-2196",
       "title": "Ketolgin  100 Mg / 2 Ml  I.m  3 Amp",
-      "status": "trial_unverified",
-      "catalogMatch": "not_visually_verified",
-      "rights": "source_rights_unconfirmed"
-    },
-    {
-      "id": "3390",
-      "name": "كير باى كير بلس كريم",
-      "category": "مستحضرات تجميل",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/383257.webp?v=1786653094",
-      "source": "Azzam Pharmacy",
-      "sourcePage": "https://azzampharmacy.com/products/care-by-care-plus-100-gm-cream-16564",
-      "title": "Care By Care  Plus  100 Gm  Cream",
       "status": "trial_unverified",
       "catalogMatch": "not_visually_verified",
       "rights": "source_rights_unconfirmed"
@@ -9358,18 +9334,6 @@
       "rights": "source_rights_unconfirmed"
     },
     {
-      "id": "3538",
-      "name": "ليت اب صابونة100جم",
-      "category": "مستحضرات تجميل",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0935/9550/0847/files/lit_up_soap_1615x1615_under100kb.webp?v=1791469820",
-      "source": "AlFouad Pharmacies",
-      "sourcePage": "https://alfouadpharmacies.com/products/lit-up-soap-100-mg",
-      "title": "LIT UP SOAP 100 MG",
-      "status": "trial_unverified",
-      "catalogMatch": "not_visually_verified",
-      "rights": "source_rights_unconfirmed"
-    },
-    {
       "id": "3539",
       "name": "ليت اب غسول",
       "category": "مستحضرات تجميل",
@@ -9533,6 +9497,18 @@
       "source": "Azzam Pharmacy",
       "sourcePage": "https://azzampharmacy.com/products/levofloxacin-eva-pharma-500-mg-10-tab-31060",
       "title": "Levofloxacin - Eva Pharma  500 Mg  10 Tab",
+      "status": "trial_unverified",
+      "catalogMatch": "not_visually_verified",
+      "rights": "source_rights_unconfirmed"
+    },
+    {
+      "id": "3575",
+      "name": "ليفوكتيفان5 مجم",
+      "category": "أدوية",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/265849.webp?v=1786649712",
+      "source": "Azzam Pharmacy",
+      "sourcePage": "https://azzampharmacy.com/products/levoctivan-5-mg-30-tab-9054",
+      "title": "Levoctivan  5 Mg  30 Tab",
       "status": "trial_unverified",
       "catalogMatch": "not_visually_verified",
       "rights": "source_rights_unconfirmed"
@@ -9886,13 +9862,13 @@
       "rights": "source_rights_unconfirmed"
     },
     {
-      "id": "3715",
-      "name": "موبيتيل10-7.5ق",
+      "id": "3717",
+      "name": "موبيتيل لبوس",
       "category": "أدوية",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/38475.webp?v=1786655506",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/38992.webp?v=1786652680",
       "source": "Azzam Pharmacy",
-      "sourcePage": "https://azzampharmacy.com/products/mobitil-7-5-mg-10-tab-2278",
-      "title": "Mobitil  7.5 Mg  10 Tab",
+      "sourcePage": "https://azzampharmacy.com/products/mobitil-15-mg-6-supp-2292",
+      "title": "Mobitil  15 Mg  6 Supp",
       "status": "trial_unverified",
       "catalogMatch": "not_visually_verified",
       "rights": "source_rights_unconfirmed"
@@ -10093,10 +10069,10 @@
       "id": "3763",
       "name": "مونجارو7.5",
       "category": "أدوية",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0774/7151/4932/files/mounjaro-75-mg-prefilled-pen-1-pen-4-doses-7932409.jpg?v=1755044894",
-      "source": "Bloom Pharmacy",
-      "sourcePage": "https://www.bloompharmacy.com/products/mounjaro-7-5-mg-prefilled-pen-1-pen-4-doses",
-      "title": "Mounjaro Kwikpen 7.5 Mg / 0.6 Ml x 4 Doses",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/615204.webp?v=1786657708",
+      "source": "Azzam Pharmacy",
+      "sourcePage": "https://azzampharmacy.com/products/mounjaro-7-5-mg-0-5-ml-s-c-4-vial-32880",
+      "title": "Mounjaro  7.5 Mg / 0.5 Ml  S.c.  4 Vial",
       "status": "trial_unverified",
       "catalogMatch": "not_visually_verified",
       "rights": "source_rights_unconfirmed"
@@ -10282,6 +10258,18 @@
       "rights": "source_rights_unconfirmed"
     },
     {
+      "id": "3851",
+      "name": "ميﻼنوفرى لوسيون",
+      "category": "أدوية",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/61BF2q69fUL._AC_SL1500.jpg?v=1779823044",
+      "source": "Re3aya Pharmacy",
+      "sourcePage": "https://re3ayapharmacy.com/products/melano-pharma-melanofree-lotion-200ml-white",
+      "title": "MELANOFREE  Lotion 200ml - White",
+      "status": "trial_unverified",
+      "catalogMatch": "not_visually_verified",
+      "rights": "source_rights_unconfirmed"
+    },
+    {
       "id": "3854",
       "name": "ميلوباك10 مجم",
       "category": "أدوية",
@@ -10426,6 +10414,18 @@
       "rights": "source_rights_unconfirmed"
     },
     {
+      "id": "3897",
+      "name": "نابيبرادين5 مجم س ج",
+      "category": "أدوية",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/284104.webp?v=1786648012",
+      "source": "Azzam Pharmacy",
+      "sourcePage": "https://azzampharmacy.com/products/napibradine-5-mg-30-tab-9614",
+      "title": "Napibradine  5 Mg  30 Tab",
+      "status": "trial_unverified",
+      "catalogMatch": "not_visually_verified",
+      "rights": "source_rights_unconfirmed"
+    },
+    {
       "id": "3901",
       "name": "ناتاريا كريم",
       "category": "أدوية",
@@ -10462,18 +10462,6 @@
       "rights": "source_rights_unconfirmed"
     },
     {
-      "id": "3911",
-      "name": "نافوبروكسين اقراص",
-      "category": "أدوية",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/45013.webp?v=1786654903",
-      "source": "Azzam Pharmacy",
-      "sourcePage": "https://azzampharmacy.com/products/navoproxin-plus-20-tab-2532",
-      "title": "Navoproxin  Plus  20 Tab",
-      "status": "trial_unverified",
-      "catalogMatch": "not_visually_verified",
-      "rights": "source_rights_unconfirmed"
-    },
-    {
       "id": "3912",
       "name": "نافوبروكسين لبوس",
       "category": "أدوية",
@@ -10493,6 +10481,42 @@
       "source": "Azzam Pharmacy",
       "sourcePage": "https://azzampharmacy.com/products/nan-1-hmo-optipro-400-gm-powder-21106",
       "title": "Nan - ( 1 )  Hmo Optipro 400 Gm  Powder",
+      "status": "trial_unverified",
+      "catalogMatch": "not_visually_verified",
+      "rights": "source_rights_unconfirmed"
+    },
+    {
+      "id": "3920",
+      "name": "نانازوكسيد شرااب",
+      "category": "أدوية",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/nanazoxid-100-mg-5-ml-suspension-60-ml-654438.jpg?v=1735257511",
+      "source": "Re3aya Pharmacy",
+      "sourcePage": "https://re3ayapharmacy.com/products/nanazoxid-100-mg-5-ml-suspension-60-ml",
+      "title": "Nanazoxid 100 mg-5 ml Suspension - 60 ml",
+      "status": "trial_unverified",
+      "catalogMatch": "not_visually_verified",
+      "rights": "source_rights_unconfirmed"
+    },
+    {
+      "id": "3921",
+      "name": "ناو ال كارنتين1000",
+      "category": "مكملات وفيتامينات",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0774/7151/4932/products/now-msm-1000-mg-joint-health-120-capsules-632078.jpg?v=1687733249",
+      "source": "Bloom Pharmacy",
+      "sourcePage": "https://www.bloompharmacy.com/products/now-msm-1000-mg-joint-health-120-capsules",
+      "title": "Now Foods MSM 1000 mg  Joint Health - 120 capsules",
+      "status": "trial_unverified",
+      "catalogMatch": "not_visually_verified",
+      "rights": "source_rights_unconfirmed"
+    },
+    {
+      "id": "3922",
+      "name": "ناو ام اس ام100 مل",
+      "category": "مكملات وفيتامينات",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0774/7151/4932/files/now-foods-l-lysine-500-mg-100-capsules-4673385.jpg?v=1794299526",
+      "source": "Bloom Pharmacy",
+      "sourcePage": "https://www.bloompharmacy.com/products/now-l-lysine-500-mg-100-capsules",
+      "title": "Now Foods L Lysine 500 mg - 100 Capsules",
       "status": "trial_unverified",
       "catalogMatch": "not_visually_verified",
       "rights": "source_rights_unconfirmed"
@@ -10822,18 +10846,6 @@
       "rights": "source_rights_unconfirmed"
     },
     {
-      "id": "4078",
-      "name": "هيالو فور كونترول100 جم",
-      "category": "أدوية",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/381707.webp?v=1786649571",
-      "source": "Azzam Pharmacy",
-      "sourcePage": "https://azzampharmacy.com/products/hyalo-4-control-100-gm-cream-322691-16164",
-      "title": "Hyalo 4 Control  100 Gm  Cream  (322691)",
-      "status": "trial_unverified",
-      "catalogMatch": "not_visually_verified",
-      "rights": "source_rights_unconfirmed"
-    },
-    {
       "id": "4079",
       "name": "هيالو فور كونترول صغير كريم",
       "category": "أدوية",
@@ -10858,6 +10870,18 @@
       "rights": "source_rights_unconfirmed"
     },
     {
+      "id": "4092",
+      "name": "هيبتا بانثينول بلس كارباميد لوشن",
+      "category": "مستحضرات تجميل",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/1_0078ddc7-8209-43de-9d6e-180f594b993c.jpg?v=1779731497",
+      "source": "Re3aya Pharmacy",
+      "sourcePage": "https://re3ayapharmacy.com/products/hepta-panthenol-plus-carbamide-body-lotion-120gm",
+      "title": "HEPTA PANTHENOL PLUS CARBAMIDE BODY LOTION 120GM",
+      "status": "trial_unverified",
+      "catalogMatch": "not_visually_verified",
+      "rights": "source_rights_unconfirmed"
+    },
+    {
       "id": "4095",
       "name": "هيبتا بانثينول بينك كريم",
       "category": "مستحضرات تجميل",
@@ -10865,18 +10889,6 @@
       "source": "Re3aya Pharmacy",
       "sourcePage": "https://re3ayapharmacy.com/products/hepta-panthenol-pink-cream-50gm",
       "title": "HEPTA Panthenol Pink Cream 50gm",
-      "status": "trial_unverified",
-      "catalogMatch": "not_visually_verified",
-      "rights": "source_rights_unconfirmed"
-    },
-    {
-      "id": "4107",
-      "name": "هيبتا بانثينول لايت لوشن",
-      "category": "مستحضرات تجميل",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0774/7151/4932/files/hepta-panthenol-light-body-lotion-100ml-635778.jpg?v=1747694044",
-      "source": "Bloom Pharmacy",
-      "sourcePage": "https://www.bloompharmacy.com/products/hepta-panthenol-light-body-lotion-100ml",
-      "title": "Hepta Panthenol Light Body Lotion - 100ml",
       "status": "trial_unverified",
       "catalogMatch": "not_visually_verified",
       "rights": "source_rights_unconfirmed"
@@ -10894,13 +10906,25 @@
       "rights": "source_rights_unconfirmed"
     },
     {
-      "id": "4113",
-      "name": "هيبتا كارباميد غسول للجسم",
+      "id": "4114",
+      "name": "هيبتا كارباميد كريم",
       "category": "مستحضرات تجميل",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/2025-10-02T153736.605.png?v=1779731524",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/608915-1760358138.webp?v=1786652706",
+      "source": "Azzam Pharmacy",
+      "sourcePage": "https://azzampharmacy.com/products/hepta-carbamide-50-gm-cream-34500",
+      "title": "Hepta Carbamide  50 Gm  Cream",
+      "status": "trial_unverified",
+      "catalogMatch": "not_visually_verified",
+      "rights": "source_rights_unconfirmed"
+    },
+    {
+      "id": "4115",
+      "name": "هيبتا كارباميد لوشن",
+      "category": "مستحضرات تجميل",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/download_06c96229-c203-4286-a2af-fdc13e1c1d44.jpg?v=1779731539",
       "source": "Re3aya Pharmacy",
-      "sourcePage": "https://re3ayapharmacy.com/products/hepta-carbamide-body-wash-for-dry-to-very-dry-skin-300ml",
-      "title": "HEPTA CARBAMIDE BODY WASH FOR DRY TO VERY DRY SKIN 300ML",
+      "sourcePage": "https://re3ayapharmacy.com/products/hepta-carbamide-lotion",
+      "title": "HEPTA CARBAMIDE LOTION 120ML",
       "status": "trial_unverified",
       "catalogMatch": "not_visually_verified",
       "rights": "source_rights_unconfirmed"
@@ -10954,6 +10978,18 @@
       "rights": "source_rights_unconfirmed"
     },
     {
+      "id": "4140",
+      "name": "هيرو بيبى2 لبن",
+      "category": "ألبان أطفال",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/61dLcJ8aRAL._AC_SL1500.jpg?v=1784062043",
+      "source": "Re3aya Pharmacy",
+      "sourcePage": "https://re3ayapharmacy.com/products/hero-baby-milk-nutradefense-2-plus",
+      "title": "Hero baby milk Nutradefense 2 Plus",
+      "status": "trial_unverified",
+      "catalogMatch": "not_visually_verified",
+      "rights": "source_rights_unconfirmed"
+    },
+    {
       "id": "4143",
       "name": "هيرو بيبى ايه ار لبن",
       "category": "ألبان أطفال",
@@ -10969,10 +11005,22 @@
       "id": "4149",
       "name": "هيرو نيوترا سينس1",
       "category": "ألبان أطفال",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/61kpStW_CDL._AC_SL1500.jpg?v=1784062069",
-      "source": "Re3aya Pharmacy",
-      "sourcePage": "https://re3ayapharmacy.com/products/hero-baby-nutrasense-1-milk-400-grams",
-      "title": "Hero Baby Nutrasense 1 milk- 400 grams",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/398055.webp?v=1786648737",
+      "source": "Azzam Pharmacy",
+      "sourcePage": "https://azzampharmacy.com/products/hero-baby-nutrasense-1-milk-400-g-نيوترا-سينس-جديد-19228",
+      "title": "Hero Baby  Nutrasense - 1 - Milk  400 G  نيوترا سينس - جديد",
+      "status": "trial_unverified",
+      "catalogMatch": "not_visually_verified",
+      "rights": "source_rights_unconfirmed"
+    },
+    {
+      "id": "4150",
+      "name": "هيرو نيوترا سينس2",
+      "category": "ألبان أطفال",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/398056.webp?v=1786650016",
+      "source": "Azzam Pharmacy",
+      "sourcePage": "https://azzampharmacy.com/products/hero-baby-nutrasense-2-milk-400-g-نيوترا-سينس-جديد-19230",
+      "title": "Hero Baby  Nutrasense - 2 - Milk  400 G  نيوترا سينس - جديد",
       "status": "trial_unverified",
       "catalogMatch": "not_visually_verified",
       "rights": "source_rights_unconfirmed"
