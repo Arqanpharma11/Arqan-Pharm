@@ -1,12 +1,15 @@
 name: Discover batch product photos for 4218 Arqan items
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '23 2 * * *'
   push:
     paths:
       - 'scripts/bulk_pharmacy_image_discovery.py'
       - 'scripts/test_bulk_image_matcher.py'
       - 'scripts/enrich_image_search_aliases.py'
       - 'scripts/build_bulk_image_upload_file.py'
+      - 'scripts/build_fast_catalog_images.py'
       - 'scripts/stage_image_approvals.py'
       - 'data/arkan-all-4218-image-manifest.json'
       - '.github/workflows/bulk-image-discovery.yml'
@@ -26,12 +29,14 @@ jobs:
           python-version: '3.12'
       - name: Verify bulk matching rules and script syntax
         run: |
-          python -m py_compile scripts/bulk_pharmacy_image_discovery.py scripts/test_bulk_image_matcher.py scripts/enrich_image_search_aliases.py scripts/build_bulk_image_upload_file.py scripts/stage_image_approvals.py
+          python -m py_compile scripts/bulk_pharmacy_image_discovery.py scripts/test_bulk_image_matcher.py scripts/enrich_image_search_aliases.py scripts/build_bulk_image_upload_file.py scripts/build_fast_catalog_images.py scripts/stage_image_approvals.py
           python scripts/test_bulk_image_matcher.py
       - name: Expand missing search names from Egyptian CC0 medicine dataset
         run: python scripts/enrich_image_search_aliases.py
       - name: Collect public pharmacy product photo metadata in batches
         run: python scripts/bulk_pharmacy_image_discovery.py --max-pages 60 --delay 0.8
+      - name: Update lightweight pharmacist image preview feed
+        run: python scripts/build_fast_catalog_images.py
       - name: Stage conservative metadata review with zero unverified approvals
         run: python scripts/stage_image_approvals.py
       - name: Generate one-file 4218-product admin upload template
@@ -40,7 +45,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/arkan-image-candidate-review.json data/arkan-english-image-search-aliases.json data/arkan-4218-bulk-image-upload-template.json data/arkan-image-approval-worklist.json
+          git add data/arkan-quick-image-candidates.json data/arkan-image-candidate-review.json data/arkan-english-image-search-aliases.json data/arkan-4218-bulk-image-upload-template.json data/arkan-image-approval-worklist.json
           if ! git diff --cached --quiet; then
             git commit -m "Index public pharmacy image candidate links for Arqan 4218-item catalog"
             git fetch origin "${GITHUB_REF_NAME}"
@@ -53,6 +58,7 @@ jobs:
         with:
           name: arqan-4218-image-candidate-review
           path: |
+            data/arkan-quick-image-candidates.json
             data/arkan-image-candidate-review.json
             data/arkan-english-image-search-aliases.json
             data/arkan-4218-bulk-image-upload-template.json
