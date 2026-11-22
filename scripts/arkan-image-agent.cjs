@@ -186,7 +186,10 @@ async function main(){
     previous.lastStatus=current;previous.checkedAt=new Date().toISOString();
     if(!state.publishedChecks)state.publishedChecks={};
     state.publishedChecks[id]=previous;
-    if(previous.failures>=3){delete published.byId[id];delete state.searched[id];}
+    if(previous.failures>=3){
+      delete published.byId[id];delete state.searched[id];
+      queue.byId[id]={name:byId.get(id)?.name||'',reason:'published_image_repeated_404_410',results:[],retiredAt:new Date().toISOString()};
+    }
   }
   if(publishedEntries.length)state.publishedCursor=(Number(state.publishedCursor||0)+publishBudget)%publishedEntries.length;
 
@@ -201,14 +204,17 @@ async function main(){
   const missingPriority=all.filter(x=>!candidates.byId[x.id] && eligibleForSearch(x));
   // Candidates are not verified: revisit every unpublished candidate periodically.
   const questionable=all.filter(x=>candidates.byId[x.id] && eligibleForSearch(x));
-  const outstanding=[...missingPriority,...questionable];
+  // Sort by the oldest search attempt. This avoids skipping items as the
+  // eligible set shrinks between scheduled executions.
+  const oldestFirst=(a,b)=>Date.parse(state.searched[a.id]?.at||'1970-01-01')-Date.parse(state.searched[b.id]?.at||'1970-01-01');
+  const outstanding=[...missingPriority.sort(oldestFirst),...questionable.sort(oldestFirst)];
   missing=all.filter(x=>!candidates.byId[x.id] && !published.byId[x.id]).length;
   state.searchPipeline={remainingMissing:missingPriority.length,remainingSuspect:questionable.length,
     eligibleThisRun:outstanding.length};
   if(outstanding.length){
-    const searchBudget=Math.min(Number(process.env.IMAGE_SEARCH_BUDGET||5),outstanding.length);
+    const searchBudget=Math.min(Math.max(0,Number(process.env.IMAGE_SEARCH_BUDGET||5)),outstanding.length);
     for(let i=0;i<searchBudget;i++){
-      const item=outstanding[(state.searchCursor+i)%outstanding.length];
+      const item=outstanding[i];
       try{
         const searchedItem=await resolveEgyptDrugName(item);
         const found=await imageSearch(searchedItem);
@@ -220,9 +226,12 @@ async function main(){
             if(!output)continue;
             if(await imageAlive(output.url)==='ok')eligible.push(output);
           }
-          if(eligible.length===1 && !candidates.byId[item.id] && !published.byId[item.id]){
+          if(eligible.length===1 && !published.byId[item.id]){
+            // This is an eligible external image record, not a visually
+            // verified medicine pack; do not overwrite admin-approved media.
             published.byId[item.id]=eligible[0];
             publishedNow++;
+            delete queue.byId[item.id];
           }else {
             queue.byId[item.id]={name:item.name,en:searchedItem.en||'',results:found,
               reason:eligible.length>1?'ambiguous_multiple_valid_packages':'needs_review'};
@@ -232,7 +241,7 @@ async function main(){
       }catch(e){console.error('Search error',item.id,e.message);break}
       await pause(700);
     }
-    state.searchCursor=(state.searchCursor+searchBudget)%Math.max(1,outstanding.length);
+    state.searchCursor=0; // no index in a moving eligible list
   }
   state.lastRun=new Date().toISOString();
   state.lastCatalogSize=all.length;
