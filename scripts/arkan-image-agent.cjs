@@ -137,10 +137,41 @@ function exactEnough(item,title){
 // Both require polite request rates. Candidate metadata goes to review queue ONLY.
 const userAgent = 'ArkanPharmImageIndexer/1.0 (github.com/Arqanpharma11/Arqan-Pharm; public catalogue matching)';
 const stripHtml = s => String(s||'').replace(/<[^>]*>/g,' ').replace(/&[^;]+;/g,' ').trim();
+// Central provider circuit breaker: never hammer an unavailable public API.
+// Rate-limit and 5xx errors are outages, not product "no match" decisions.
 async function fetchJson(url) {
-  const r=await fetch(url,{headers:{'User-Agent':userAgent,Accept:'application/json'},signal:AbortSignal.timeout(12000)});
-  if(!r.ok) throw Error('Public database '+r.status);
-  return r.json();
+  const host=new URL(url).hostname;
+  if(!state.providerHealth) state.providerHealth={};
+  const health=state.providerHealth[host]||{failures:0,retryAt:null};
+  if(health.retryAt && Date.parse(health.retryAt)>Date.now())
+    throw Error('provider_cooldown:'+host);
+  try{
+    const r=await fetch(url,{headers:{'User-Agent':userAgent,Accept:'application/json'},signal:AbortSignal.timeout(12000)});
+    if(!r.ok){
+      if(r.status===429 || r.status>=500){
+        health.failures=Math.min(8,(health.failures||0)+1);
+        const retryHeader=Number(r.headers.get('retry-after'));
+        const retryMs=Number.isFinite(retryHeader)&&retryHeader>0?retryHeader*1000:0;
+        const backoff=Math.min(6*3600*1000,Math.max(20*60*1000,retryMs,2**health.failures*5*60*1000));
+        health.retryAt=new Date(Date.now()+backoff).toISOString();
+        health.lastError=String(r.status);
+        state.providerHealth[host]=health;
+      }
+      throw Error('Public database '+r.status);
+    }
+    const data=await r.json();
+    state.providerHealth[host]={failures:0,retryAt:null,lastSuccess:new Date().toISOString()};
+    return data;
+  }catch(err){
+    // Timeouts and network failures deserve cooling off too.
+    if(!(String(err.message||'').startsWith('Public database')||String(err.message||'').startsWith('provider_cooldown'))){
+      health.failures=Math.min(8,(health.failures||0)+1);
+      health.retryAt=new Date(Date.now()+Math.min(60*60*1000,Math.max(10*60*1000,2**health.failures*60*1000))).toISOString();
+      health.lastError=String(err.message||err).slice(0,80);
+      state.providerHealth[host]=health;
+    }
+    throw err;
+  }
 }
 function candidate(item,title,imageUrl,sourcePage,provider,license){
   if(!/^https:\/\//.test(imageUrl||'') || !exactEnough(item,title)) return null;
@@ -174,18 +205,20 @@ async function searchOpenFacts(item,host){
 }
 async function imageSearch(item){
   const sources=[];
+  let successfulSources=0;
   const category=String(item.cat||'');
   const hosts=/تجميل|عناية|بشرة|شعر/.test(category)?['world.openbeautyfacts.org']:
     /ألبان|غذاء|مكمل|تغذية/.test(category)?['world.openfoodfacts.org']:
     ['world.openfoodfacts.org','world.openbeautyfacts.org'];
   // Always inspect openly licensed Wikimedia files. No third-party API key needed.
-  try{sources.push(...await searchCommons(item));}
+  try{sources.push(...await searchCommons(item));successfulSources++;}
   catch(e){console.warn('Commons unavailable:',e.message);}
   await pause(400);
   for(const host of hosts.slice(0,1)){
-    try{sources.push(...await searchOpenFacts(item,host));}
+    try{sources.push(...await searchOpenFacts(item,host));successfulSources++;}
     catch(e){console.warn(host+' unavailable:',e.message);}
   }
+  if(!successfulSources)throw Error('all_sources_unavailable');
   const seen=new Set();
   return sources.filter(x=>{if(seen.has(x.imageUrl))return false;seen.add(x.imageUrl);return true}).slice(0,4);
 }
@@ -294,7 +327,12 @@ async function main(){
             queued++;
           }
         }
-      }catch(e){searchErrors++;console.error('Search error',item.id,e.message);state.searched[item.id]={at:new Date().toISOString(),hits:0,error:String(e.message).slice(0,160)};continue}
+      }catch(e){
+        searchErrors++;console.error('Search error',item.id,e.message);
+        if(e.message==='all_sources_unavailable')break; // Do not falsely mark the item as searched.
+        state.searched[item.id]={at:new Date().toISOString(),hits:0,error:String(e.message).slice(0,160)};
+        continue;
+      }
       await pause(700);
     }
     state.searchCursor=0; // no index in a moving eligible list
