@@ -22,3 +22,12 @@ test('reject unknown license',()=>assert.equal(qualify(milk,{...base,license:''}
 test('reject ambiguous product without pack size',()=>assert.equal(qualify({name:'Aptamil Milk',cat:'ألبان أطفال'},
  {...base,title:'Aptamil Milk'}).pass,false));
 test('reject unknown category from newly added Firestore product',()=>assert.equal(qualify({name:'Aptamil Stage 2 400g',cat:''},base).pass,false));
+
+test('reject wrong pack unit even if amount is identical',()=>assert.equal(
+ qualify(milk,{...base,title:'Aptamil Stage 2 400ml'}).pass,false));
+test('reject extra variant not present in catalog',()=>assert.equal(
+ qualify(milk,{...base,title:'Aptamil Stage 2 400g Extra'}).pass,false));
+test('accept correct exact pack metadata for allowed source',()=>assert.equal(
+ qualify(milk,base).pass,true));
+test('reject required dosage form omitted from product title',()=>assert.equal(
+ qualify({name:'Aptamil Stage 2 400g milk',cat:'ألبان أطفال'}, {...base,title:'Aptamil Stage 2 400g'}).pass,false));
