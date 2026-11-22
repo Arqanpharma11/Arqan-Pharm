@@ -4,9 +4,9 @@
   "approvedForProduction": false,
   "version": 2,
   "ambiguousLinksSkipped": 0,
-  "generatedAt": "2026-11-22T16:16:36.350Z",
+  "generatedAt": "2026-11-22T17:15:35.421Z",
   "catalogTotal": 4218,
-  "trialImages": 937,
+  "trialImages": 940,
   "notice": "UNVERIFIED IMAGES. Not for dispensing or identifying medicine. Never imported into approved pharmacy photo seeds.",
   "items": [
     {
@@ -334,6 +334,18 @@
       "rights": "source_rights_unconfirmed"
     },
     {
+      "id": "237",
+      "name": "اسكوربيك اسيد نقط فيتامين",
+      "category": "مكملات وفيتامينات",
+      "imageUrl": "https://images.openfoodfacts.org/images/products/011/792/915/7002/front_en.8.400.jpg",
+      "source": "world.openfoodfacts.org",
+      "sourcePage": "https://world.openfoodfacts.org/product/0117929157002",
+      "title": "Red star Active Dry Yeast SPM Without Ascorbic Acid",
+      "status": "trial_unverified",
+      "catalogMatch": "not_visually_verified",
+      "rights": "source_rights_unconfirmed"
+    },
+    {
       "id": "244",
       "name": "اسيكلوفير800مجم",
       "category": "أدوية",
@@ -341,6 +353,18 @@
       "source": "Azzam Pharmacy",
       "sourcePage": "https://azzampharmacy.com/products/acyclovir-800-mg-35-tab-stada-2770",
       "title": "Acyclovir  800 Mg  35 Tab ( Stada ) #",
+      "status": "trial_unverified",
+      "catalogMatch": "not_visually_verified",
+      "rights": "source_rights_unconfirmed"
+    },
+    {
+      "id": "245",
+      "name": "اشواجاندا اقراص",
+      "category": "مكملات وفيتامينات",
+      "imageUrl": "https://images.openfoodfacts.org/images/products/401/282/440/6025/front_fr.7.400.jpg",
+      "source": "world.openfoodfacts.org",
+      "sourcePage": "https://world.openfoodfacts.org/product/4012824406025",
+      "title": "Yogi Tea Ashwagandha relaxation",
       "status": "trial_unverified",
       "catalogMatch": "not_visually_verified",
       "rights": "source_rights_unconfirmed"
@@ -389,6 +413,18 @@
       "source": "Re3aya Pharmacy",
       "sourcePage": "https://re3ayapharmacy.com/products/acti-colla-c-advanced-30-sachets",
       "title": "Acti Colla C Advanced - 30 Sachets",
+      "status": "trial_unverified",
+      "catalogMatch": "not_visually_verified",
+      "rights": "source_rights_unconfirmed"
+    },
+    {
+      "id": "277",
+      "name": "اكتيف كريم شعر",
+      "category": "مستحضرات تجميل",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8a/Eat_healthy%2C_be_active_community_workshops_%28IA_CAT31310857%29.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "source": "Wikimedia Commons",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Eat_healthy,_be_active_community_workshops_(IA_CAT31310857).pdf",
+      "title": "Eat healthy, be active community workshops (IA CAT31310857).pdf",
       "status": "trial_unverified",
       "catalogMatch": "not_visually_verified",
       "rights": "source_rights_unconfirmed"
