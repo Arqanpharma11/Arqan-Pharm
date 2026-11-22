@@ -76,9 +76,18 @@ async function imageAlive(url){
     if([404,410].includes(response.status)){response.body?.cancel();return 'gone'}
     if(!response.ok){response.body?.cancel();return 'unknown'}
     const contentType=(response.headers.get('content-type')||'').toLowerCase();
-    const bytes=new Uint8Array(await response.arrayBuffer());
-    const signature=(bytes[0]===0x89&&bytes[1]===0x50)||(bytes[0]===0xff&&bytes[1]===0xd8)||(bytes[0]===0x52&&bytes[1]===0x49)||(bytes[0]===0x47&&bytes[1]===0x49);
-    return (contentType.startsWith('image/')&&signature)?'ok':'unknown';
+    // Read only a tiny prefix. Some CDNs ignore Range and stream multi-MB images.
+    // Never buffer the entire asset during a lightweight health check.
+    const reader=response.body?.getReader();
+    if(!reader) return 'unknown';
+    const first=await reader.read();
+    await reader.cancel().catch(()=>{});
+    const bytes=first.value||new Uint8Array();
+    const png=bytes.length>=8 && bytes[0]===0x89&&bytes[1]===0x50&&bytes[2]===0x4e&&bytes[3]===0x47;
+    const jpeg=bytes.length>=3 && bytes[0]===0xff&&bytes[1]===0xd8&&bytes[2]===0xff;
+    const webp=bytes.length>=12 && Buffer.from(bytes.subarray(0,4)).toString()==='RIFF' && Buffer.from(bytes.subarray(8,12)).toString()==='WEBP';
+    const gif=bytes.length>=6 && Buffer.from(bytes.subarray(0,3)).toString()==='GIF';
+    return (contentType.startsWith('image/')&&(png||jpeg||webp||gif))?'ok':'unknown';
   }catch{return 'unknown'}
 }
 const norm=x=>String(x||'').toLowerCase().normalize('NFKC').replace(/[\u064b-\u065f]/g,'').replace(/[^\p{L}\p{N}]+/gu,' ').trim();
@@ -168,6 +177,10 @@ async function main(){
     const entry=state.checks[id]||{failures:0};
     if(status==='ok'){entry.failures=0;healthy++}
     if(status==='gone'){entry.failures++;gone++}
+    if(entry.failures>=3){
+      queue.byId[id]={name:byId.get(id)?.name||'',reason:'candidate_repeated_404_410',results:[],detectedAt:new Date().toISOString()};
+      queued++;
+    }
     entry.lastStatus=status;entry.checkedAt=new Date().toISOString();
     state.checks[id]=entry;checked++;
     // Never delete a historical or approved image automatically from an uncertain network test.
@@ -219,6 +232,9 @@ async function main(){
         const searchedItem=await resolveEgyptDrugName(item);
         const found=await imageSearch(searchedItem);
         state.searched[item.id]={at:new Date().toISOString(),hits:found.length};
+        if(!found.length){
+          queue.byId[item.id]={name:item.name,en:searchedItem.en||'',results:[],reason:'no_match_found',searchedAt:new Date().toISOString()};
+        }
         if(found.length) {
           const eligible=[];
           for(const hit of found){
