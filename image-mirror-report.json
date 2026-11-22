@@ -1,21 +1,16 @@
 {
-  "attempted": 150,
-  "mirrored": 103,
-  "failed": 47,
-  "locally_stored_unique_product_ids": 360,
-  "locally_referenced_seed_ids": 360,
+  "attempted": 98,
+  "mirrored": 65,
+  "failed": 33,
+  "locally_stored_unique_product_ids": 425,
+  "locally_referenced_seed_ids": 425,
   "verified_seed_ids": 608,
-  "unresolved_failed_urls": 154,
+  "unresolved_failed_urls": 183,
   "failures": [
     {
       "id": "2",
       "url": "https://taypharmacies.com/wp-content/uploads/2025/01/2025-01-05T113747.508.png",
       "error": "HTTP Error 403: Forbidden"
-    },
-    {
-      "id": "3",
-      "url": "https://www.lotusonline.com/cdn/shop/files/3005093_2.jpg?v=1768408351&width=1500",
-      "error": "HTTP Error 404: Not Found"
     },
     {
       "id": "5",
@@ -33,19 +28,9 @@
       "error": "HTTP Error 404: Not Found"
     },
     {
-      "id": "36",
-      "url": "https://pharmaciaty.com/media/catalog/product/cache/060579c5d0e77942dc3e3b187d95947b/e/p/epifas-1-1.jpg",
-      "error": "<urlopen error [Errno -5] No address associated with hostname>"
-    },
-    {
       "id": "51",
       "url": "https://tdawi.com/media/catalog/product/cache/72f8467a5043ecc9af047df47b9246a4/a/p/apexidone_1_mg_2__hfbwxha2nvafommw.jpg",
       "error": "invalid size"
-    },
-    {
-      "id": "75",
-      "url": "https://www.lotusonline.com/cdn/shop/files/3000152_2_43dd08bc-29ff-4fae-bded-42cf104a4056.jpg?v=1768406584&width=1500",
-      "error": "HTTP Error 404: Not Found"
     },
     {
       "id": "85",
@@ -85,11 +70,6 @@
     {
       "id": "100",
       "url": "https://www.lotusonline.com/cdn/shop/files/3000161_1.jpg?v=1767615853",
-      "error": "HTTP Error 404: Not Found"
-    },
-    {
-      "id": "101",
-      "url": "https://www.lotusonline.com/cdn/shop/files/3004548_1.jpg?v=1767615867&width=1500",
       "error": "HTTP Error 404: Not Found"
     },
     {
@@ -775,6 +755,171 @@
     {
       "id": "423",
       "url": "https://www.lotusonline.com/cdn/shop/files/3008244_processed_1.jpg?v=1779529604",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "519",
+      "url": "https://www.lotusonline.com/cdn/shop/files/3003494_1.jpg?v=1767615927&width=1500",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "575",
+      "url": "https://abdinpharmacies.com/web/image/product.template/28005/image_1920?unique=dd54b75",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "533",
+      "url": "https://www.alandalous.org/storage/uploads/Product/tyUCvEZYi7_1702890295.jpg",
+      "error": "image decode failed"
+    },
+    {
+      "id": "546",
+      "url": "https://re3ayapharmacy.com/cdn/shop/files/enrich-50-mg-1-ml-oral-drops-30-ml-942443.jpg?v=1735256967&width=1445",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "511",
+      "url": "https://abdinpharmacies.com/web/image/product.template/28015/image_1920?unique=dd54b75",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "487",
+      "url": "https://www.lotusonline.com/cdn/shop/files/3008474_processed.jpg?v=1773306098",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "465",
+      "url": "https://www.lotusonline.com/cdn/shop/files/3003757_processed_9710489c-661d-44f9-a0bb-c2a8e6e5b121.jpg?v=1767615025",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "452",
+      "url": "https://www.mouradpharmacy.com/web/image/product.product/282071/image_1920?unique=3a4105f",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "450",
+      "url": "https://www.mouradpharmacy.com/web/image/product.template/483593/image_1024?unique=43fd190",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "449",
+      "url": "https://www.mouradpharmacy.com/web/image/product.product/282072/image_1920?unique=3a4105f",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "447",
+      "url": "https://www.lotusonline.com/cdn/shop/files/3007505_1.jpg?v=1767616408",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "446",
+      "url": "https://www.lotusonline.com/cdn/shop/files/3007187_1.jpg?v=1767616420&width=1500",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "445",
+      "url": "https://www.lotusonline.com/cdn/shop/files/3006909_1.jpg?v=1767616389",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "444",
+      "url": "https://www.lotusonline.com/cdn/shop/files/3007816_1.jpg?v=1767616436",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "429",
+      "url": "https://www.lotusonline.com/cdn/shop/files/3008850_processed.jpg?v=1767615050",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "207",
+      "url": "https://www.lotusonline.com/cdn/shop/files/3008792_processed.jpg?v=1767615013",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "169",
+      "url": "https://www.lotusonline.com/cdn/shop/files/3009386_processed.jpg?v=1773308121&width=750",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "161",
+      "url": "https://www.mouradpharmacy.com/web/image/product.product/277044/image_1920?unique=f6f140f",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "157",
+      "url": "https://www.alandalous.org/storage/uploads/Product/YHQmQm3Ro0_1703068798.png",
+      "error": "image decode failed"
+    },
+    {
+      "id": "156",
+      "url": "https://www.lotusonline.com/cdn/shop/files/3007231_processed.jpg?v=1773306500",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "152",
+      "url": "https://www.lotusonline.com/cdn/shop/files/3008082_processed.jpg?v=1767615015",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "116",
+      "url": "https://www.lotusonline.com/cdn/shop/files/3000157_1.jpg?v=1767615864",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "105",
+      "url": "https://stgprevapi.al-dawaa.com/medias/Atozet-10-Mg20-Mg-Antihyperlipidemic-30-Tablets_2_1200.webp?context=bWFzdGVyfGltYWdlc3wzNDYyMnxpbWFnZS93ZWJwfGFEVTNMMmcyWkM4NU16QXpNRFV3TVRVNE1URXdMekV3TlRBeU1GOHlYMlZ1WHpFeU1EQlhlREV5TURCSVgxZEZRbEF1ZDJWaWNBfGMwODE3ODdiZTkzMGFhM2UwZjk0ODQyNjk3YWRkNDM4NDc0MzdiNTU0YmRiNWVmZmVlODE4N2MyZWFhZGM2ZWU",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "96",
+      "url": "https://api.c0umyt3cda-pharmaove1-p1-public.model-t.cc.commerce.ondemand.com/medias/000000000000034122.webp",
+      "error": "HTTP Error 400: "
+    },
+    {
+      "id": "92",
+      "url": "https://www.mouradpharmacy.com/web/image/product.template/464187/image_1024?unique=b945631",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "87",
+      "url": "https://www.lotusonline.com/cdn/shop/files/3007717_1.jpg?v=1767616447&width=1500",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "83",
+      "url": "https://www.lotusonline.com/cdn/shop/files/3008741_processed.jpg?v=1767615005",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "82",
+      "url": "https://www.lotusonline.com/cdn/shop/files/3006672_1.jpg?v=1767615842&width=1500",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "79",
+      "url": "https://mtalaatpharmacy.com/storage/products/1759665557.png",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "60",
+      "url": "https://api.c0umyt3cda-pharmaove1-p1-public.model-t.cc.commerce.ondemand.com/medias/000000000000002334.jpg",
+      "error": "HTTP Error 400: "
+    },
+    {
+      "id": "49",
+      "url": "https://www.mouradpharmacy.com/web/image/product.product/96/image_1024/%5Bcode%20in%20gad%3A68504--code%20in%20mourad%3A%5D%20Apixaguard%205mg%2030%20Tabs%20-%20%D8%A7%D8%A8%D9%8A%D9%83%D8%B3%D8%A7%D8%AC%D8%A7%D8%B1%D8%AF%205%20%D9%85%D8%AC%D9%85%2030%20%D9%82%D8%B1%D8%B5?unique=ea1b271",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "47",
+      "url": "https://www.lotusonline.com/cdn/shop/files/3007383_1.jpg?v=1767615929",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "46",
+      "url": "https://www.lotusonline.com/cdn/shop/files/3007384_1.jpg?v=1767615875",
       "error": "HTTP Error 404: Not Found"
     }
   ],
