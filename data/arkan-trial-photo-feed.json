@@ -1,0 +1,11 @@
+{
+  "mode": "trial",
+  "version": 1,
+  "catalogTotal": 4218,
+  "trialImages": 0,
+  "generatedAt": null,
+  "approvedForProduction": false,
+  "minimumVerifiedConfidence": 95,
+  "notice": "Waiting for first successful scheduled trial feed build; no images are approved.",
+  "items": []
+}
