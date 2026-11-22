@@ -23,9 +23,9 @@ small,.sub{color:#496555}.candidates{display:grid;grid-template-columns:repeat(a
 <p class="sub">اعتمد الصورة فقط بعد فحص اسم المستحضر والتركيز والشكل الدوائي وعدد الوحدات على العبوة. الاختيار لا يغيّر البوابة حتى تصدّر الملف وترفعه من بوابة الأدمن.</p>
 <div class="row">
 <label class="file">فتح ملف الصور المرشحة <input id="file" type="file" accept=".json,application/json" hidden></label>
-<button class="secondary" id="load">تحميل آخر نتائج بحث</button>
+<button class="secondary" id="load">تحميل قائمة المراجعة بالأولوية</button>
 <button id="export" disabled>تصدير ملف الاستيراد الموحد</button>
-</div><p id="status" aria-live="polite">افتح ملف arkan-image-approval-worklist.json أو حمّله من مجلد data.</p></div>
+</div><p id="status" aria-live="polite">افتح ملف arkan-photo-review-priority.json أو حمّله من مجلد data.</p></div>
 <div class="panel"><div class="row"><button class="secondary" id="prev" disabled>السابق</button>
 <strong id="counter" class="grow">—</strong><button class="secondary" id="next" disabled>التالي</button></div>
 <h2 id="productName">لم يتم تحميل القائمة</h2><p id="englishName" class="sub"></p>
@@ -53,18 +53,25 @@ function render(){
    const card=document.createElement('article');card.className='option'+(approvals.get(item.id)?.imageUrl===candidate.imageUrl?' selected':'');
    const img=document.createElement('img');img.loading='lazy';img.decoding='async';img.referrerPolicy='no-referrer';
    img.alt='صورة مرشحة للمراجعة فقط';img.src=candidate.imageUrl;
-   img.onerror=()=>{img.style.display='none';const msg=document.createElement('p');msg.textContent='تعذّر عرض الصورة — لا تعتمدها';card.prepend(msg)};
+   img.onerror=()=>{img.style.display='none';approve.disabled=true;const msg=document.createElement('p');msg.textContent='تعذّر عرض الصورة — لا تعتمدها';card.prepend(msg)};
    const title=document.createElement('strong');title.textContent=candidate.title||'بدون عنوان';
    const source=document.createElement('p');source.textContent=(candidate.sourceName||'')+' • درجة ترشيح '+(candidate.score??'—');
    const a=document.createElement('a');a.href=candidate.productPage||'#';a.textContent='صفحة المنتج الأصلية';a.target='_blank';a.rel='noopener noreferrer';
+   const shared=Array.isArray(candidate.sharedImageWithIds)&&candidate.sharedImageWithIds.length>1;
    const approve=button('أكّدت المطابقة — اعتمد',()=>{approvals.set(item.id,candidate);advance()},'');
+   approve.disabled=true;
+   img.onload=()=>{approve.disabled=shared};
+   if(shared){const warning=document.createElement('p');warning.style.color='#a13220';warning.textContent='تحذير: الصورة نفسها مستخدمة في أصناف أخرى ('+candidate.sharedImageWithIds.join(', ')+') — تحتاج مصدرًا بديلًا.';card.append(warning)}
    card.append(img,title,source,a,approve);$('choices').append(card);
  }
 }
 function advance(){if(position<queue.length-1)position++;render()}
 function loadData(data){
- if(!Array.isArray(data?.items)||data.totalCatalogItems!==4218)throw new Error('ملف صور أركان غير صالح');
- if(data.format==='arkan-image-approval-worklist'){
+ if(data?.totalCatalogItems!==4218 || !(Array.isArray(data.items)||Array.isArray(data.reviewQueue)))throw new Error('ملف صور أركان غير صالح');
+ if(data.format==='arkan-photo-review-priority'){
+   all=data.reviewQueue.map(x=>({id:x.id,name:x.arabicName,englishName:x.englishName,candidates:x.candidates}));
+   queue=all;
+ }else if(data.format==='arkan-image-approval-worklist'){
    all=data.items.map(x=>({...x,candidates:x.reviewCandidates||[]}));
    queue=all.filter(x=>x.status==='metadata_pass_needs_visual_review'&&x.candidates.length);
  }else if(data.format==='arkan-image-candidate-review'){
@@ -73,7 +80,7 @@ function loadData(data){
  position=0;approvals.clear();say('تم تحميل '+queue.length+' صنف بعد فحص بيانات الاسم والتركيز والشكل الدوائي. الاعتماد النهائي يحتاج فحص العبوة المرئية.');render();
 }
 $('file').addEventListener('change',async e=>{try{loadData(JSON.parse(await e.target.files[0].text()))}catch(err){say('تعذّر التحميل: '+err.message)}});
-$('load').addEventListener('click',async()=>{try{const r=await fetch('./arkan-image-approval-worklist.json',{cache:'no-store'});if(!r.ok)throw new Error('HTTP '+r.status);loadData(await r.json())}catch(err){say('افتح الملف يدويًا من الزر الأول: '+err.message)}});
+$('load').addEventListener('click',async()=>{try{const r=await fetch('./arkan-photo-review-priority.json',{cache:'no-store'});if(!r.ok)throw new Error('HTTP '+r.status);loadData(await r.json())}catch(err){say('افتح الملف يدويًا من الزر الأول: '+err.message)}});
 $('prev').onclick=()=>{position=Math.max(0,position-1);render()};
 $('next').onclick=()=>{advance()};
 $('skip').onclick=()=>advance();
