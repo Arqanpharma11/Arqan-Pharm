@@ -1,7 +1,8 @@
-const CACHE_NAME = 'arkan-pharma-cloud-v32';
-const ASSETS_TO_CACHE = ['./','./index.html','./manifest.json','./arkan-logo.svg','./icons/arkan-192.png','./icons/arkan-512.png'];
+// Arqan PWA: keep HTML fresh while retaining an offline fallback.
+const CACHE_NAME = 'arkan-pharma-cloud-v33';
+const APP_SHELL = ['./index.html', './manifest.json', './arkan-logo.svg', './icons/arkan-192.png', './icons/arkan-512.png'];
 self.addEventListener('install', event => {
-  event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(ASSETS_TO_CACHE)));
+  event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(APP_SHELL)));
   self.skipWaiting();
 });
 self.addEventListener('activate', event => {
@@ -12,12 +13,22 @@ self.addEventListener('activate', event => {
   })());
 });
 self.addEventListener('fetch', event => {
-  if (event.request.method !== 'GET') return;
-  event.respondWith(fetch(event.request).then(response => {
-    if (response && response.status === 200 && new URL(event.request.url).origin === self.location.origin) {
-      const clone = response.clone();
-      caches.open(CACHE_NAME).then(cache => cache.put(event.request, clone)).catch(() => {});
-    }
+  const request = event.request;
+  if (request.method !== 'GET') return;
+  const url = new URL(request.url);
+  if (url.origin !== self.location.origin) return;
+  const isDocument = request.mode === 'navigate' || url.pathname.endsWith('/index.html') || url.pathname.endsWith('/');
+  if (isDocument) {
+    // Never serve a stale HTML document while online.
+    event.respondWith(fetch(new Request(request, { cache: 'no-store' })).then(response => {
+      if (response.ok) caches.open(CACHE_NAME).then(cache => cache.put(request, response.clone())).catch(() => {});
+      return response;
+    }).catch(async () => (await caches.match(request)) || (await caches.match('./index.html')) || Response.error()));
+    return;
+  }
+  // Product photos are versioned/local and should remain available offline after first load.
+  event.respondWith(fetch(request).then(response => {
+    if (response.ok) caches.open(CACHE_NAME).then(cache => cache.put(request, response.clone())).catch(() => {});
     return response;
-  }).catch(() => caches.match(event.request)));
+  }).catch(async () => (await caches.match(request)) || Response.error()));
 });
