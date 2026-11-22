@@ -1,5 +1,5 @@
 {
-  "cursor": 285,
+  "cursor": 290,
   "searchCursor": 0,
   "checks": {
     "28": {
@@ -1426,6 +1426,31 @@
       "failures": 0,
       "lastStatus": "ok",
       "checkedAt": "2026-11-22T16:20:14.261Z"
+    },
+    "1557": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-22T16:23:49.511Z"
+    },
+    "1558": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-22T16:23:49.549Z"
+    },
+    "1579": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-22T16:23:49.574Z"
+    },
+    "1586": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-22T16:23:49.596Z"
+    },
+    "1591": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-22T16:23:49.616Z"
     }
   },
   "searched": {
@@ -1730,7 +1755,7 @@
       "hits": 0
     }
   },
-  "lastRun": "2026-11-22T16:20:14.668Z",
+  "lastRun": "2026-11-22T16:23:50.021Z",
   "lastCatalogSize": 4218,
   "searchPipeline": {
     "remainingMissing": 2660,

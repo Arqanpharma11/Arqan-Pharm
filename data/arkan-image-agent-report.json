@@ -1,5 +1,5 @@
 {
-  "runAt": "2026-11-22T16:20:14.668Z",
+  "runAt": "2026-11-22T16:23:50.021Z",
   "masterItems": 4218,
   "cloudItems": 0,
   "catalogItems": 4218,
@@ -11,8 +11,8 @@
   "searchErrors": 1,
   "rejectionReasons": {},
   "missingWithoutCandidate": 3241,
-  "checked": 30,
-  "healthy": 30,
+  "checked": 5,
+  "healthy": 5,
   "gone": 0,
   "queuedThisRun": 0,
   "pendingReview": 50,
