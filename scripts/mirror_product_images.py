@@ -37,10 +37,19 @@ previous = json.loads(REPORT.read_text(encoding="utf-8")) if REPORT.exists() els
 failed_urls = {str(row.get("id")): row.get("url") for row in previous.get("failures", [])
                if "unsupported or non-image response: image/avif" not in str(row.get("error",""))}
 already_failed = lambda pid,url: failed_urls.get(pid) == url
-selected = [(pid, url, line) for pid, url, line in candidates + entries
-            if url.startswith("https://") and not already_failed(pid,url)
-            and not any((DEST / (pid + ext)).exists() for ext in (".jpg", ".png", ".webp"))]
-selected = list({pid: (pid, url, line) for pid, url, line in reversed(selected)}.values())[:limit]
+# Candidate replacements take priority, then ordinary seeds. Never let a stale
+# original URL overwrite a reviewed candidate during de-duplication.
+selected = []
+queued_ids = set()
+for pid, url, line in candidates + entries:
+    if pid in queued_ids or not url.startswith("https://") or already_failed(pid, url):
+        continue
+    if any((DEST / (pid + ext)).exists() for ext in (".jpg", ".png", ".webp")):
+        continue
+    selected.append((pid, url, line))
+    queued_ids.add(pid)
+    if len(selected) >= limit:
+        break
 def download(item):
     pid, url, line = item
     try:
