@@ -7712,20 +7712,6 @@
                         '409': { src: 'https://anwar.store/cdn/shop/files/New_Template-Photoroom_10.jpg?v=1733244480', source: 'Anwar Store — Alejon Eye Contour Serum, 30 ml; exact product and volume verified' },
                         '410': { src: 'https://bemart.app/cdn/shop/files/alejon_1_1200x1200.jpg?v=1746639163', source: 'BeMart — Alejon Sunscreen Gel SPF 50, 75 ml; exact product and SPF verified' },
                         '413': { src: 'https://ladyy.com/cdn/shop/files/20649_ALEJONWHITENINGCREAM50ML.png?crop=center&height=1200&v=1761444448&width=1200', source: 'LadyY — Alejon Whitening Cream, 50 ml; exact product and volume verified' },
-                     };
-                    // Apply the entire verified seed set in memory first. The previous per-item
-                    // setProductImage() loop serialized and persisted three full maps for every
-                    // product and launched hundreds of independent Firestore writes, freezing startup.
-                    const imageSeedBatches = (typeof firestoreDB !== 'undefined' && firestoreDB) ? [] : null;
-                    let imageSeedBatch = imageSeedBatches ? firestoreDB.batch() : null;
-                    let imageSeedBatchCount = 0;
-                    const queueImageSeedWrite = () => {
-                        imageSeedBatchCount++;
-                        if (imageSeedBatchCount >= 400) {
-                            imageSeedBatches.push(imageSeedBatch.commit());
-                            imageSeedBatch = firestoreDB.batch();
-                            imageSeedBatchCount = 0;
-                        }
                         '414': { src: 'https://maipharmacy.co/cdn/shop/files/1_7cbc745d-fe64-4fe2-b464-d2d3b739a36d.webp?v=1780150174&width=720', source: 'Mai Pharmacy — Alejon Hair Lotion 150 ml; exact brand, product and volume visually verified' },
                         '417': { src: 'https://mohieldeenpharmacy.com/web/image/product.template/1856/image_1920?unique=5e024e9', source: 'Mohieldeen Pharmacy — Alertam 180 mg, 10 coated tablets; exact strength and pack verified' },
                         '419': { src: 'https://taypharmacies.com/wp-content/uploads/2023/08/ALERGOLIBER-10MG-1.jpg', source: 'Tay Pharmacies — Alergoliber 10 mg, 20 film-coated tablets; exact brand, ingredient strength and pack verified' },
@@ -7792,6 +7778,18 @@
                         '207': { src: 'https://www.lotusonline.com/cdn/shop/files/3008792_processed.jpg?v=1767615013', source: 'Lotus Pharmacies — Asmazon climbazole soothing/moisturizing cream, 30 gm; exact brand, ingredient and volume verified' },
                         '213': { src: 'https://alba-egypt.com/cdn/shop/files/azha-body-lotionazha-body-lotionmy-store101az0201azhabodylotion100m-8157372.png?v=1782206780&width=1946', source: 'Alba Pharma manufacturer — Azha whitening body lotion, 100 ml; official exact product and volume verified' },
                         '215': { src: 'https://dwaprices.com/upload/1777407350.png', source: 'DwaPrices — Azithromash azithromycin 500 mg, 3 film-coated tablets; exact Mash Premiere brand and pack verified' },
+                    };
+                    // Apply the verified image seed set once, then batch cloud writes.
+                    const imageSeedBatches = (typeof firestoreDB !== 'undefined' && firestoreDB) ? [] : null;
+                    let imageSeedBatch = imageSeedBatches ? firestoreDB.batch() : null;
+                    let imageSeedBatchCount = 0;
+                    const queueImageSeedWrite = () => {
+                        imageSeedBatchCount++;
+                        if (imageSeedBatchCount >= 400) {
+                            imageSeedBatches.push(imageSeedBatch.commit());
+                            imageSeedBatch = firestoreDB.batch();
+                            imageSeedBatchCount = 0;
+                        }
                     };
                     Object.entries(verifiedImageSeeds).forEach(([id, seed]) => {
                         if (seed.src && (PROD_IMG_VERIFIED[id] !== true || PROD_IMG_SRC[id] === seed.source)) {
