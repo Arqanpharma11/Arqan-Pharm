@@ -1,13 +1,12 @@
 #!/usr/bin/env python3
-"""Migrate known old package image sources without overwriting pharmacy admin changes."""
-import hashlib
+"""Keep precisely one locally verified image migration map in the pharmacy portal."""
 import json
 import pathlib
 import re
 
 root = pathlib.Path(__file__).resolve().parents[1]
 index = root / "index.html"
-html = index.read_text(encoding="utf-8")
+original = index.read_text(encoding="utf-8")
 legacy = {
     "3": "Lotus Pharmacies — Ibandrocare 150 mg, 2 film-coated tablets; exact brand and strength verified",
     "36": "PharmaciaTy — Epifasi 5000 IU, 1 ampoule plus solvent; exact brand and strength verified",
@@ -17,6 +16,19 @@ legacy = {
     "86": "Al-Dawaa Pharmacy — Atrovent 250 mcg/2 ml, 20 unit-dose inhalation vials; exact strength and pack verified",
 }
 anchor = "Object.entries(verifiedImageSeeds).forEach(([id, seed]) => {"
+if original.count(anchor) != 1:
+    raise SystemExit("Unsafe: expected exactly one image seed merge")
+start = original.index("const verifiedImageSeeds = {")
+end = original.index("const imageSeedBatches", start)
+prefix = original[:start]
+block = original[start:end]
+suffix = original[end:]
+# Remove EVERY historical migration declaration, including duplicates that can stop JS startup.
+block = re.sub(r"(?m)^[ \\t]*const imageLegacySeedSources = \\{[^\\n;]*\\};[ \\t]*\\n?", "", block)
+block = re.sub(r"(?m)^[ \\t]*// imageSeedMigrationHash: [0-9a-f]{12}[ \\t]*\\n?", "", block)
+block = re.sub(r"(?m)^[ \\t]*// imageLegacySeedMigrationV1: source-specific upgrade[ \\t]*\\n?", "", block)
+line = "const imageLegacySeedSources = " + json.dumps(legacy, ensure_ascii=False) + ";"
+block = block.replace(anchor, "                    " + line + "\n                    " + anchor, 1)
 predicate_old = "PROD_IMG_SRC[id] === seed.source ||"
 predicate_new = (
     "PROD_IMG_SRC[id] === seed.source || "
@@ -24,37 +36,17 @@ predicate_new = (
     "Object.prototype.hasOwnProperty.call(imageLegacySeedSources, String(id)) && "
     "imageLegacySeedSources[String(id)] === PROD_IMG_SRC[id]) ||"
 )
-line = "const imageLegacySeedSources = " + json.dumps(legacy, ensure_ascii=False) + ";"
-# One declared map, even when this script is run many times.
-existing = re.search(r"const imageLegacySeedSources = \{[^;]*\};", html)
-changed = False
-if existing:
-    if existing.group(0) != line:
-        html = html[:existing.start()] + line + html[existing.end():]
-        changed = True
-else:
-    if html.count(anchor) != 1:
-        raise SystemExit("Cannot safely locate verified seed merge")
-    html = html.replace(anchor, line + "\n                    " + anchor, 1)
-    changed = True
-if predicate_new not in html:
-    if html.count(predicate_old) != 1:
-        raise SystemExit("Cannot safely locate seed source predicate")
-    html = html.replace(predicate_old, predicate_new, 1)
-    changed = True
-# A hash in the source is only updated when the migration set really changes.
-fingerprint = hashlib.sha256(line.encode("utf-8")).hexdigest()[:12]
-marker = "// imageSeedMigrationHash: "
-marker_pattern = re.compile(r"// imageSeedMigrationHash: [0-9a-f]{12}")
-found = marker_pattern.search(html)
-if not found or found.group(0) != marker + fingerprint:
-    html = marker_pattern.sub("", html, count=1)
-    html = html.replace(line, marker + fingerprint + "\n                    " + line, 1)
-    changed = True
-if changed:
-    version = re.search(r"arkan_verified_image_seed_v(\d+)", html)
+if predicate_new not in block:
+    if block.count(predicate_old) != 1:
+        raise SystemExit("Unsafe: verified seed merge condition not found")
+    block = block.replace(predicate_old, predicate_new, 1)
+if block.count("const imageLegacySeedSources = ") != 1:
+    raise SystemExit("Unsafe: multiple image legacy maps remain")
+updated = prefix + block + suffix
+if updated != original:
+    version = re.search(r"arkan_verified_image_seed_v(\\d+)", updated)
     if not version:
-        raise SystemExit("Image seed version is missing")
-    html = html.replace(version.group(0), "arkan_verified_image_seed_v" + str(int(version.group(1)) + 1), 1)
-    index.write_text(html, encoding="utf-8")
-print("Migration source map updated" if changed else "Migration source map already current")
+        raise SystemExit("Seed version marker missing")
+    updated = updated.replace(version.group(0), "arkan_verified_image_seed_v" + str(int(version.group(1)) + 1), 1)
+    index.write_text(updated, encoding="utf-8")
+print("Image migration map normalized to exactly one declaration")
