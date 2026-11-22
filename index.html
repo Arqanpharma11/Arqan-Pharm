@@ -7175,7 +7175,7 @@
 
                 // Verified package-photo seed: Apple-Lite 30 tablets (catalog item #10).
                 // Source page shows the exact Apple-Lite pack; do not use lookalike images.
-                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v61';;;;;
+                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v62';;;;;
                 if (localStorage.getItem(IMAGE_SEED_VERSION) !== '1') {
                     // Individually checked package photos: brand, strength/stage and form match.
                     const verifiedImageSeeds = {
@@ -7835,6 +7835,8 @@
                     const correctedPharmacyPhotoIds = new Set(['16','427','429','496','506','507','519','521','522','533','545','546','608']);
                     // imageLegacySeedMigrationV1: source-specific upgrade
                     const imageLegacySeedSources = {"3": "Lotus Pharmacies — Ibandrocare 150 mg, 2 film-coated tablets; exact brand and strength verified", "36": "PharmaciaTy — Epifasi 5000 IU, 1 ampoule plus solvent; exact brand and strength verified", "75": "Lotus Pharmacies — Atacand 4 mg, 14 tablets; exact brand and strength verified", "101": "Lotus Pharmacies — Atorstat 80 mg, 10 scored tablets; exact brand, strength and pack verified"};
+                    // imageSeedMigrationHash: 2ffc719c6d2d
+                    const imageLegacySeedSources = {"3": "Lotus Pharmacies — Ibandrocare 150 mg, 2 film-coated tablets; exact brand and strength verified", "36": "PharmaciaTy — Epifasi 5000 IU, 1 ampoule plus solvent; exact brand and strength verified", "75": "Lotus Pharmacies — Atacand 4 mg, 14 tablets; exact brand and strength verified", "101": "Lotus Pharmacies — Atorstat 80 mg, 10 scored tablets; exact brand, strength and pack verified", "85": "Al-Dawaa Pharmacy — Atrovent 500 mcg/2 ml, 20 unit-dose inhalation vials; exact strength and pack verified", "86": "Al-Dawaa Pharmacy — Atrovent 250 mcg/2 ml, 20 unit-dose inhalation vials; exact strength and pack verified"};
                     const imageLegacySeedSources = {"3": "Lotus Pharmacies — Ibandrocare 150 mg, 2 film-coated tablets; exact brand and strength verified", "36": "PharmaciaTy — Epifasi 5000 IU, 1 ampoule plus solvent; exact brand and strength verified", "75": "Lotus Pharmacies — Atacand 4 mg, 14 tablets; exact brand and strength verified", "101": "Lotus Pharmacies — Atorstat 80 mg, 10 scored tablets; exact brand, strength and pack verified", "85": "Al-Dawaa Pharmacy — Atrovent 500 mcg/2 ml, 20 unit-dose inhalation vials; exact strength and pack verified", "86": "Al-Dawaa Pharmacy — Atrovent 250 mcg/2 ml, 20 unit-dose inhalation vials; exact strength and pack verified"};
                     Object.entries(verifiedImageSeeds).forEach(([id, seed]) => {
                         if (seed.src && (PROD_IMG_VERIFIED[id] !== true || PROD_IMG_SRC[id] === seed.source || (seed.src.startsWith('assets/product-images/') && Object.prototype.hasOwnProperty.call(imageLegacySeedSources, String(id)) && imageLegacySeedSources[String(id)] === PROD_IMG_SRC[id]) || (correctedPharmacyPhotoIds.has(String(id)) && (/^(Abdin Pharmacies|Rosheta)\s*—/.test(PROD_IMG_SRC[id] || ''))))) {
