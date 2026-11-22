@@ -7175,7 +7175,7 @@
 
                 // Verified package-photo seed: Apple-Lite 30 tablets (catalog item #10).
                 // Source page shows the exact Apple-Lite pack; do not use lookalike images.
-                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v40';;;;;
+                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v41';;;;;
                 if (localStorage.getItem(IMAGE_SEED_VERSION) !== '1') {
                     // Individually checked package photos: brand, strength/stage and form match.
                     const verifiedImageSeeds = {
@@ -7778,6 +7778,10 @@
                         '207': { src: 'https://www.lotusonline.com/cdn/shop/files/3008792_processed.jpg?v=1767615013', source: 'Lotus Pharmacies — Asmazon climbazole soothing/moisturizing cream, 30 gm; exact brand, ingredient and volume verified' },
                         '213': { src: 'https://alba-egypt.com/cdn/shop/files/azha-body-lotionazha-body-lotionmy-store101az0201azhabodylotion100m-8157372.png?v=1782206780&width=1946', source: 'Alba Pharma manufacturer — Azha whitening body lotion, 100 ml; official exact product and volume verified' },
                         '215': { src: 'https://dwaprices.com/upload/1777407350.png', source: 'DwaPrices — Azithromash azithromycin 500 mg, 3 film-coated tablets; exact Mash Premiere brand and pack verified' },
+                        '427': { src: 'https://abdinpharmacies.com/web/image/product.template/74063/image_1920?unique=d3ad788', source: 'Abdin Pharmacies — Alexolyte oral rehydration solution, orange flavor, 360 ml; exact flavor and bottle volume verified' },
+                        '428': { src: 'https://abdinpharmacies.com/web/image/product.template/74064/image_1920?unique=712a0a9', source: 'Abdin Pharmacies — Alexolyte oral rehydration solution, pineapple flavor, 360 ml; exact flavor and bottle volume verified' },
+                        '429': { src: 'https://abdinpharmacies.com/web/image/product.template/74065/image_1920?unique=712a0a9', source: 'Abdin Pharmacies — Alexolyte oral rehydration solution, strawberry flavor, 360 ml; exact flavor and bottle volume verified' },
+                        '430': { src: 'https://abdinpharmacies.com/web/image/product.template/74062/image_1920?unique=712a0a9', source: 'Abdin Pharmacies — Alexolyte oral rehydration solution, banana flavor, 360 ml; exact flavor and bottle volume verified' },
                     };
                     // Apply the verified image seed set once, then batch cloud writes.
                     const imageSeedBatches = (typeof firestoreDB !== 'undefined' && firestoreDB) ? [] : null;
