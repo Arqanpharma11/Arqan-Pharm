@@ -1,34 +1,46 @@
-// Arqan PWA: keep HTML fresh while retaining an offline fallback.
-const CACHE_NAME = 'arkan-pharma-cloud-v33';
-const APP_SHELL = ['./index.html', './manifest.json', './arkan-logo.svg', './icons/arkan-192.png', './icons/arkan-512.png'];
-self.addEventListener('install', event => {
-  event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(APP_SHELL)));
+// Arqan PWA v34: network-first HTML, lightweight static shell, no bulk photo CacheStorage writes.
+const CACHE_NAME = 'arkan-pharma-cloud-v34';
+const SHELL = ['./index.html', './manifest.json', './arkan-logo.svg', './icons/arkan-192.png', './icons/arkan-512.png'];
+self.addEventListener('install', (event) => {
+  event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(SHELL)));
   self.skipWaiting();
 });
-self.addEventListener('activate', event => {
+self.addEventListener('activate', (event) => {
   event.waitUntil((async () => {
-    const keys = await caches.keys();
-    await Promise.all(keys.filter(key => key.startsWith('arkan-pharma-cloud-') && key !== CACHE_NAME).map(key => caches.delete(key)));
+    const names = await caches.keys();
+    await Promise.all(names.filter(name => name.startsWith('arkan-pharma-cloud-') && name !== CACHE_NAME)
+      .map(name => caches.delete(name)));
     await self.clients.claim();
   })());
 });
-self.addEventListener('fetch', event => {
+self.addEventListener('fetch', (event) => {
   const request = event.request;
   if (request.method !== 'GET') return;
   const url = new URL(request.url);
   if (url.origin !== self.location.origin) return;
-  const isDocument = request.mode === 'navigate' || url.pathname.endsWith('/index.html') || url.pathname.endsWith('/');
-  if (isDocument) {
-    // Never serve a stale HTML document while online.
-    event.respondWith(fetch(new Request(request, { cache: 'no-store' })).then(response => {
-      if (response.ok) { const copy = response.clone(); caches.open(CACHE_NAME).then(cache => cache.put(request, copy)).catch(() => {}); }
-      return response;
-    }).catch(async () => (await caches.match(request)) || (await caches.match('./index.html')) || Response.error()));
+  const isHtml = request.mode === 'navigate' || /\/index\.html$/.test(url.pathname);
+  if (isHtml) {
+    event.respondWith((async () => {
+      try {
+        const response = await fetch(new Request(request, { cache: 'no-store' }));
+        if (response.ok) {
+          const copy = response.clone();
+          event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.put(request, copy)).catch(() => {}));
+        }
+        return response;
+      } catch (_) {
+        return await caches.match(request) || await caches.match('./index.html') || Response.error();
+      }
+    })());
     return;
   }
-  // Product photos are versioned/local and should remain available offline after first load.
-  event.respondWith(fetch(request).then(response => {
-    if (response.ok) caches.open(CACHE_NAME).then(cache => cache.put(request, response.clone())).catch(() => {});
-    return response;
-  }).catch(async () => (await caches.match(request)) || Response.error()));
+  // Let the browser's native HTTP cache handle product photos. Caching every
+  // full-resolution pharmacy image into the service-worker cache caused
+  // excessive writes and memory pressure when browsing large lists.
+  if (url.pathname.includes('/assets/product-images/')) return;
+  // Static icons and manifest remain available offline without caching catalog media.
+  const staticNames = ['/manifest.json', '/arkan-logo.svg', '/icons/arkan-192.png', '/icons/arkan-512.png'];
+  if (staticNames.some(name => url.pathname.endsWith(name))) {
+    event.respondWith(caches.match(request).then(cached => cached || fetch(request)));
+  }
 });
