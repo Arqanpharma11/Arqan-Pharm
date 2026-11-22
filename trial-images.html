@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>أركان | صور تجريبية غير معتمدة</title>
+<style>
+:root{font-family:system-ui,Tahoma,sans-serif;color:#16352a;background:#f5faf7}*{box-sizing:border-box}
+body{margin:0}header{padding:22px 5%;background:#126b49;color:white}h1{font-size:1.35rem;margin:0 0 6px}
+header p{margin:0;color:#e6f4eb}.wrap{max-width:1200px;margin:auto;padding:20px}
+.warning{padding:14px 18px;background:#fff7e7;border:1px solid #e8c782;border-radius:12px;margin-bottom:16px;font-weight:650}
+.controls{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}input{padding:12px;border:1px solid #c8dcd0;border-radius:10px;flex:1;min-width:200px;font:inherit}
+#count{align-self:center;color:#416c56}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:14px}
+.card{background:white;border:1px solid #d8e7dd;border-radius:14px;padding:12px;min-width:0}
+.thumb{position:relative;aspect-ratio:1;background:#edf4f0;border-radius:10px;display:flex;justify-content:center;align-items:center;overflow:hidden}
+.thumb img{max-height:100%;max-width:100%;object-fit:contain}.flag{position:absolute;top:8px;right:8px;background:#7e4b0f;color:white;font-size:.7rem;padding:5px 8px;border-radius:20px}
+h2{font-size:1rem;line-height:1.4;min-height:2.7em;margin:10px 0 5px}small{color:#546f60;display:block;word-break:break-word}
+a{color:#126b49;font-size:.83rem;display:inline-block;margin-top:8px}button{border:0;background:#126b49;color:white;border-radius:9px;padding:10px 18px;font:inherit;cursor:pointer}
+button:disabled{opacity:.5;cursor:default}.pager{display:flex;justify-content:center;gap:10px;align-items:center;margin:24px}#pages{font-size:.9rem}
+</style></head><body>
+<header><h1>أركان — معاينة صور الأصناف التجريبية</h1><p>صور من مصادر خارجية، لم يتم اعتماد مطابقتها لعبوات الأصناف</p></header>
+<main class="wrap"><div class="warning">تنبيه: الصور في هذه الصفحة تجريبية وغير معتمدة. لا تستخدمها لتحديد أو صرف دواء. الكتالوج والصور المعتمدة في البرنامج الأساسي لم تتغير.</div>
+<div class="controls"><input id="search" type="search" placeholder="ابحث باسم الصنف..." aria-label="البحث عن صنف"><span id="count">تحميل الصور...</span></div>
+<section id="grid" class="grid" aria-live="polite"></section>
+<div class="pager"><button id="prev" type="button">السابق</button><span id="pages"></span><button id="next" type="button">التالي</button></div>
+</main><script>
+'use strict';
+let all=[],shown=[],page=0;const pageSize=48;
+const $=id=>document.getElementById(id);
+const canUrl=u=>{try{const p=new URL(u);return p.protocol==='https:'}catch{return false}};
+function render(){
+const start=page*pageSize,segment=shown.slice(start,start+pageSize),grid=$('grid');grid.replaceChildren();
+for(const item of segment){
+const card=document.createElement('article');card.className='card';
+const thumb=document.createElement('div');thumb.className='thumb';
+const img=document.createElement('img');img.loading='lazy';img.alt='صورة تجريبية غير معتمدة: '+item.name;img.referrerPolicy='no-referrer';
+if(canUrl(item.imageUrl))img.src=item.imageUrl;
+img.onerror=()=>{img.remove();const s=document.createElement('small');s.textContent='الصورة غير متاحة';thumb.append(s)};
+const flag=document.createElement('strong');flag.className='flag';flag.textContent='Trial / غير معتمدة';thumb.append(img,flag);
+const h=document.createElement('h2');h.textContent=item.name;
+const sub=document.createElement('small');sub.textContent=item.category+' • '+(item.source||'مصدر خارجي');
+card.append(thumb,h,sub);
+if(canUrl(item.sourcePage)){const a=document.createElement('a');a.href=item.sourcePage;a.target='_blank';a.rel='noopener noreferrer';a.textContent='المصدر الأصلي';card.append(a)}
+grid.append(card);
+}
+$('count').textContent='نتيجة البحث: '+shown.length+' صنف';
+$('pages').textContent=shown.length?(page+1)+' / '+Math.ceil(shown.length/pageSize):'لا توجد صور تجريبية';
+$('prev').disabled=page===0;$('next').disabled=(page+1)*pageSize>=shown.length;
+}
+$('search').addEventListener('input',()=>{const q=$('search').value.trim().toLowerCase();shown=all.filter(x=>x.name.toLowerCase().includes(q));page=0;render()});
+$('prev').addEventListener('click',()=>{if(page){page--;render()}});
+$('next').addEventListener('click',()=>{if((page+1)*pageSize<shown.length){page++;render()}});
+fetch('./data/arkan-trial-photo-feed.json',{cache:'no-cache'}).then(r=>{if(!r.ok)throw Error('feed missing');return r.json()}).then(data=>{all=Array.isArray(data.items)?data.items:[];shown=all;render()}).catch(()=>{$('count').textContent='ملف الصور التجريبية لم يُنشَر بعد'});
+</script></body></html>
