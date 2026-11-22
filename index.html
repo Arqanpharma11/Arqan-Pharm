@@ -19795,6 +19795,18 @@ ${window.location.href}
                     throw new Error('صيغة الملف غير صحيحة. استخدم كشف الصور الصادر من البرنامج.');
                 }
                 const byId = new Map(products.map(p => [String(p.id), p]));
+                // A source URL can appear against multiple items; record collisions
+                // so the importer cannot mistake raw links for unique verified photos.
+                const reusedUrls = new Map();
+                for (const [candidateId, row] of Object.entries(data.byId)) {
+                    if (!Array.isArray(row) || typeof row[0] !== 'string') continue;
+                    const bucket = reusedUrls.get(row[0]) || [];
+                    bucket.push(candidateId);
+                    reusedUrls.set(row[0], bucket);
+                }
+                const sharedUrls = [...reusedUrls.values()].filter(ids => ids.length > 1);
+                ARKAN_IMAGE_AUDIT.sharedUrlGroups = sharedUrls.length;
+                ARKAN_IMAGE_AUDIT.sharedUrlEntries = sharedUrls.reduce((n, ids) => n + ids.length, 0);
                 const seen = new Set();
                 const approved = [];
                 let rejected = 0;
@@ -20171,12 +20183,14 @@ ${window.location.href}
             if (ARKAN_QUICK_PACKS[String(item.id)]) return 'صورة مرشحة غير معتمدة — اضغط لمراجعتها';
             return 'لا توجد صورة حقيقية — اضغط للبحث';
         }
-        const ARKAN_IMAGE_AUDIT = {total:0, accepted:0, rejected:0, entries:[]};
+        const ARKAN_IMAGE_AUDIT = {total:0, accepted:0, rejected:0, sharedUrlGroups:0, sharedUrlEntries:0, entries:[]};
         function exportArkanImageCandidateAudit() {
             const payload = {
                 catalogItems: products.length, candidateLinks: ARKAN_IMAGE_AUDIT.total,
                 textMatchedPreviews: ARKAN_IMAGE_AUDIT.accepted,
                 rejectedCandidates: ARKAN_IMAGE_AUDIT.rejected,
+                sharedUrlGroups: ARKAN_IMAGE_AUDIT.sharedUrlGroups,
+                sharedUrlEntries: ARKAN_IMAGE_AUDIT.sharedUrlEntries,
                 note: 'Text matching only; images are not verified and links may fail.',
                 entries: ARKAN_IMAGE_AUDIT.entries
             };
@@ -20217,6 +20231,7 @@ ${window.location.href}
                         source: Array.isArray(candidate) ? candidate[2] || '' : '',
                         imageUrl: Array.isArray(candidate) ? candidate[0] || '' : '',
                         sourcePage: Array.isArray(candidate) ? candidate[3] || '' : '',
+                        sharesImageWith: Array.isArray(candidate) ? (reusedUrls.get(candidate[0]) || []).filter(x => x !== id) : [],
                         status: accepted ? 'text_match_unverified' : 'rejected_text_mismatch'
                     });
                 }
