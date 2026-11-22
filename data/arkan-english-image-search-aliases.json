@@ -1,0 +1,2234 @@
+{
+ "19": {
+  "brand": "Epigonal",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "20": {
+  "brand": "Apidra",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "21": {
+  "brand": "Apidra",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "22": {
+  "brand": "Apidra",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "36": {
+  "brand": "Epifasi",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "56": {
+  "brand": "Epiquantel",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "63": {
+  "brand": "Epicomb",
+  "matchedRecords": 2,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "64": {
+  "brand": "Epilat",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "70": {
+  "brand": "Abimol",
+  "matchedRecords": 4,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "79": {
+  "brand": "Itracon",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "129": {
+  "brand": "Adol",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "130": {
+  "brand": "Adol",
+  "matchedRecords": 2,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "139": {
+  "brand": "Adwiflam",
+  "matchedRecords": 5,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "160": {
+  "brand": "Irbedrin-Diu",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "183": {
+  "brand": "Aromega",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "195": {
+  "brand": "Ezastatin",
+  "matchedRecords": 3,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "196": {
+  "brand": "Ezastatin",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "200": {
+  "brand": "Azgoflox",
+  "matchedRecords": 2,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "203": {
+  "brand": "Azrolid",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "216": {
+  "brand": "Azelast",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "222": {
+  "brand": "Aspricarlo",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "226": {
+  "brand": "Aspocid",
+  "matchedRecords": 3,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "227": {
+  "brand": "Estramark",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "248": {
+  "brand": "Avazir",
+  "matchedRecords": 2,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "249": {
+  "brand": "Avazir",
+  "matchedRecords": 2,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "270": {
+  "brand": "Actos",
+  "matchedRecords": 2,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "271": {
+  "brand": "Ectomethrin",
+  "matchedRecords": 8,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "281": {
+  "brand": "Acdisteron",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "292": {
+  "brand": "Extra",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "315": {
+  "brand": "Acnelofix",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "334": {
+  "brand": "Albothyl",
+  "matchedRecords": 2,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "339": {
+  "brand": "Albustix",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "364": {
+  "brand": "Alfabrimo",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "369": {
+  "brand": "Alphavim",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "370": {
+  "brand": "Alphavim",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "371": {
+  "brand": "Alphafen",
+  "matchedRecords": 2,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "373": {
+  "brand": "Alfacalcidol",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "378": {
+  "brand": "Alphanova",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "379": {
+  "brand": "Alphanova",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "396": {
+  "brand": "Allerban",
+  "matchedRecords": 2,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "416": {
+  "brand": "Alertam",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "417": {
+  "brand": "Alertam",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "432": {
+  "brand": "Eliquis",
+  "matchedRecords": 2,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "433": {
+  "brand": "Elimbosis",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "434": {
+  "brand": "Elimbosis",
+  "matchedRecords": 2,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "443": {
+  "brand": "Amaryl",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "447": {
+  "brand": "Empagliform",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "448": {
+  "brand": "Empagliform",
+  "matchedRecords": 2,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "453": {
+  "brand": "Ambropro",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "478": {
+  "brand": "Imigran",
+  "matchedRecords": 4,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "481": {
+  "brand": "Amikacin",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "503": {
+  "brand": "Antopral",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "504": {
+  "brand": "Antopral",
+  "matchedRecords": 2,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "512": {
+  "brand": "Antikramp",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "513": {
+  "brand": "Antinal",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "515": {
+  "brand": "Angioblock",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "532": {
+  "brand": "Andouristat",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "561": {
+  "brand": "Influprop",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "562": {
+  "brand": "Invega",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "570": {
+  "brand": "Inhalex",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "587": {
+  "brand": "Optacado",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "595": {
+  "brand": "Optiflox",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "597": {
+  "brand": "Optilubric",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "600": {
+  "brand": "Oponov",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "603": {
+  "brand": "Otrivin",
+  "matchedRecords": 3,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "607": {
+  "brand": "Augram",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "608": {
+  "brand": "Augram",
+  "matchedRecords": 2,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "663": {
+  "brand": "Orient-N",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "668": {
+  "brand": "Osteorelax",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "673": {
+  "brand": "Oframax",
+  "matchedRecords": 5,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "674": {
+  "brand": "Oflam",
+  "matchedRecords": 2,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "678": {
+  "brand": "Octo-G",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "703": {
+  "brand": "Olfen",
+  "matchedRecords": 2,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "709": {
+  "brand": "Omacor",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "713": {
+  "brand": "Omnevora",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "734": {
+  "brand": "Ondalenz",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "735": {
+  "brand": "Ondalenz",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "893": {
+  "brand": "Paracetamol",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "901": {
+  "brand": "Baritava",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "910": {
+  "brand": "Pan-D",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "917": {
+  "brand": "Panadol",
+  "matchedRecords": 2,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "932": {
+  "brand": "Panthenol",
+  "matchedRecords": 9,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "933": {
+  "brand": "Panthenol",
+  "matchedRecords": 2,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "935": {
+  "brand": "Panthenol",
+  "matchedRecords": 2,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "936": {
+  "brand": "Panthenol",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "937": {
+  "brand": "Panthenol",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "938": {
+  "brand": "Panthenol",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "939": {
+  "brand": "Panthenol",
+  "matchedRecords": 2,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "963": {
+  "brand": "Pravotin",
+  "matchedRecords": 2,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "976": {
+  "brand": "Probric",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "987": {
+  "brand": "Protoloc",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1004": {
+  "brand": "Profer",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1011": {
+  "brand": "Prucasoft",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1014": {
+  "brand": "Proximol",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1018": {
+  "brand": "Prolia",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1020": {
+  "brand": "Bromed-D",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1047": {
+  "brand": "Pregnastep",
+  "matchedRecords": 3,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1050": {
+  "brand": "Predapox",
+  "matchedRecords": 2,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1052": {
+  "brand": "Predsol",
+  "matchedRecords": 2,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1077": {
+  "brand": "Brimonocond",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1092": {
+  "brand": "Blanka",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1103": {
+  "brand": "Blokium",
+  "matchedRecords": 3,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1108": {
+  "brand": "Blincorest",
+  "matchedRecords": 2,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1110": {
+  "brand": "Blincorest",
+  "matchedRecords": 2,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1134": {
+  "brand": "Buscopan",
+  "matchedRecords": 2,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1135": {
+  "brand": "Boxebo",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1136": {
+  "brand": "Poly-B-Bion",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1137": {
+  "brand": "Poly-B-Bion",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1138": {
+  "brand": "Poly-B-Bion",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1139": {
+  "brand": "Poly-B-Bion",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1140": {
+  "brand": "Poly-B-Bion",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1170": {
+  "brand": "Pepzol",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1182": {
+  "brand": "Beta",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1183": {
+  "brand": "Betaderm",
+  "matchedRecords": 3,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1234": {
+  "brand": "Pyridovit",
+  "matchedRecords": 2,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1240": {
+  "brand": "Bistol",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1252": {
+  "brand": "Pectol",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1253": {
+  "brand": "Pectol",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1258": {
+  "brand": "Picolax",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1269": {
+  "brand": "Benox",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1277": {
+  "brand": "Bioticaflox",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1278": {
+  "brand": "Bioticaflox",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1284": {
+  "brand": "Biorazo",
+  "matchedRecords": 2,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1293": {
+  "brand": "Biovit",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1296": {
+  "brand": "Tada",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1314": {
+  "brand": "Tariflox",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1324": {
+  "brand": "Tamsufenacin",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1326": {
+  "brand": "Tamsulin",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1337": {
+  "brand": "Travatan",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1339": {
+  "brand": "Travonorm",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1364": {
+  "brand": "Triacor",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1391": {
+  "brand": "Trexozola",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1411": {
+  "brand": "Top",
+  "matchedRecords": 2,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1414": {
+  "brand": "Top",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1425": {
+  "brand": "Tobrin",
+  "matchedRecords": 2,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1434": {
+  "brand": "Total",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1454": {
+  "brand": "Tonadogest",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1468": {
+  "brand": "Tiratam",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1469": {
+  "brand": "Tiratam",
+  "matchedRecords": 3,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1470": {
+  "brand": "Tiratam",
+  "matchedRecords": 3,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1471": {
+  "brand": "Tiratam",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1472": {
+  "brand": "Tiratam",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1473": {
+  "brand": "Tiratam",
+  "matchedRecords": 5,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1474": {
+  "brand": "Tiratam",
+  "matchedRecords": 5,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1503": {
+  "brand": "Three",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1504": {
+  "brand": "Three",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1506": {
+  "brand": "Three",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1511": {
+  "brand": "Thiotacid",
+  "matchedRecords": 2,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1512": {
+  "brand": "Thiotacid",
+  "matchedRecords": 2,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1522": {
+  "brand": "Gatyxel",
+  "matchedRecords": 2,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1538": {
+  "brand": "Gasmovac",
+  "matchedRecords": 2,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1539": {
+  "brand": "Gasiflatyl",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1557": {
+  "brand": "Granitryl",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1572": {
+  "brand": "Glaptivia",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1581": {
+  "brand": "Globaprop",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1644": {
+  "brand": "Golinosab",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1646": {
+  "brand": "Joy",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1670": {
+  "brand": "Gestranil",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1683": {
+  "brand": "Gynozol",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1684": {
+  "brand": "Gynozol",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1685": {
+  "brand": "Gynozol",
+  "matchedRecords": 3,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1686": {
+  "brand": "Gynocept",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1692": {
+  "brand": "Gynoconazol",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1713": {
+  "brand": "Dapaveldactin",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1715": {
+  "brand": "Dapaveldactin",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1723": {
+  "brand": "Davalindi",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1725": {
+  "brand": "Davalindi",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1729": {
+  "brand": "Daflon",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1730": {
+  "brand": "Daflon",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1734": {
+  "brand": "Danasetron",
+  "matchedRecords": 2,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1736": {
+  "brand": "Dantrelax",
+  "matchedRecords": 2,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1764": {
+  "brand": "Drospifem",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1803": {
+  "brand": "Duphaston",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1806": {
+  "brand": "Doxirazol",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1807": {
+  "brand": "Doxirazol",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1809": {
+  "brand": "Doxycost",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1810": {
+  "brand": "Doxycost",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1811": {
+  "brand": "Doxium",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1855": {
+  "brand": "Diastop",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1869": {
+  "brand": "Diamonrecta",
+  "matchedRecords": 3,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1878": {
+  "brand": "Depram",
+  "matchedRecords": 2,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1879": {
+  "brand": "Depram",
+  "matchedRecords": 2,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1882": {
+  "brand": "Diprosalic",
+  "matchedRecords": 3,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1883": {
+  "brand": "Diprosalic",
+  "matchedRecords": 3,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1884": {
+  "brand": "Depreban",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1893": {
+  "brand": "Digicomag",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1911": {
+  "brand": "Diflustero",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1919": {
+  "brand": "Dekadel",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1937": {
+  "brand": "Diclasium",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1938": {
+  "brand": "Diclac",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1939": {
+  "brand": "Diclac",
+  "matchedRecords": 4,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1940": {
+  "brand": "Diclac",
+  "matchedRecords": 6,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1942": {
+  "brand": "Diclopro",
+  "matchedRecords": 3,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1943": {
+  "brand": "Declophen",
+  "matchedRecords": 9,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1945": {
+  "brand": "Declophen",
+  "matchedRecords": 10,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1955": {
+  "brand": "Demas",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1962": {
+  "brand": "Dienodiva",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1982": {
+  "brand": "Rafada",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "1998": {
+  "brand": "Rame-Zithro",
+  "matchedRecords": 6,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "2006": {
+  "brand": "Rancif",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "2064": {
+  "brand": "Ryzodeg",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "2078": {
+  "brand": "Revan",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "2093": {
+  "brand": "Remowax",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "2152": {
+  "brand": "Zoladex",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "2205": {
+  "brand": "Saj",
+  "matchedRecords": 2,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "2233": {
+  "brand": "Sanolevox",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "2250": {
+  "brand": "Spascolon",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "2251": {
+  "brand": "Spascolon",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "2263": {
+  "brand": "Spirex",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "2282": {
+  "brand": "Strakopina",
+  "matchedRecords": 2,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "2293": {
+  "brand": "Strong",
+  "matchedRecords": 2,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "2299": {
+  "brand": "Stopadol",
+  "matchedRecords": 2,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "2300": {
+  "brand": "Stopadol",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "2301": {
+  "brand": "Stopadol",
+  "matchedRecords": 2,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "2302": {
+  "brand": "Stopadol",
+  "matchedRecords": 2,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "2303": {
+  "brand": "Stopadol",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "2304": {
+  "brand": "Stopadol",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "2305": {
+  "brand": "Stomopral",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "2392": {
+  "brand": "Solpadol",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "2399": {
+  "brand": "Solo",
+  "matchedRecords": 4,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "2402": {
+  "brand": "Solofresh",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "2405": {
+  "brand": "Somatropin",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "2426": {
+  "brand": "Cyanaro",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "2433": {
+  "brand": "Cipalafil",
+  "matchedRecords": 2,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "2434": {
+  "brand": "Cipalafil",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "2440": {
+  "brand": "Cipro",
+  "matchedRecords": 2,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "2448": {
+  "brand": "Ciprofloxacin-Organo",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "2449": {
+  "brand": "Ciprofloxacin-Organo",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "2455": {
+  "brand": "Sitagliform",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "2456": {
+  "brand": "Sitagliform",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "2458": {
+  "brand": "Cetal",
+  "matchedRecords": 6,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "2460": {
+  "brand": "Cetal",
+  "matchedRecords": 5,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "2499": {
+  "brand": "Serlift",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "2534": {
+  "brand": "Cevamol",
+  "matchedRecords": 2,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "2540": {
+  "brand": "Cefotax",
+  "matchedRecords": 2,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "2542": {
+  "brand": "Cefozon",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "2582": {
+  "brand": "Silden",
+  "matchedRecords": 5,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "2606": {
+  "brand": "Cempion",
+  "matchedRecords": 2,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "2613": {
+  "brand": "Cinacalcet",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "2629": {
+  "brand": "Sinopril",
+  "matchedRecords": 5,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "2630": {
+  "brand": "Sinopril",
+  "matchedRecords": 2,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "2631": {
+  "brand": "Sinopril",
+  "matchedRecords": 2,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "2633": {
+  "brand": "Sinomarin",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "2634": {
+  "brand": "Sinomarin",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "2635": {
+  "brand": "Sinomarin",
+  "matchedRecords": 2,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "2694": {
+  "brand": "Vardena",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "2700": {
+  "brand": "Farcolin",
+  "matchedRecords": 2,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "2708": {
+  "brand": "Pharofen",
+  "matchedRecords": 2,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "2712": {
+  "brand": "Fast",
+  "matchedRecords": 3,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "2713": {
+  "brand": "Fast",
+  "matchedRecords": 3,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "2721": {
+  "brand": "Vastaflam",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "2742": {
+  "brand": "Valgestril",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "2776": {
+  "brand": "Free",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "2780": {
+  "brand": "Flabu",
+  "matchedRecords": 2,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "2781": {
+  "brand": "Flatocarbon",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "2782": {
+  "brand": "Flatocarbon",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "2784": {
+  "brand": "Flaticon",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "2804": {
+  "brand": "Flubronk",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "2805": {
+  "brand": "Flugenil",
+  "matchedRecords": 2,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "2806": {
+  "brand": "Florax",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "2811": {
+  "brand": "Floxepci",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "2858": {
+  "brand": "Fostimon",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "2865": {
+  "brand": "Voltaren",
+  "matchedRecords": 2,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "2869": {
+  "brand": "Voltaren",
+  "matchedRecords": 3,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "2871": {
+  "brand": "Voltaren",
+  "matchedRecords": 2,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "2887": {
+  "brand": "Vonafut",
+  "matchedRecords": 2,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "2897": {
+  "brand": "Viatrazo",
+  "matchedRecords": 2,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "2919": {
+  "brand": "Vetocetamol",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "2923": {
+  "brand": "Vigamox",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "2927": {
+  "brand": "Vidrop",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "2932": {
+  "brand": "Verdenodeb",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "2936": {
+  "brand": "Verm",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "2951": {
+  "brand": "Virustat",
+  "matchedRecords": 2,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "2952": {
+  "brand": "Virustat",
+  "matchedRecords": 2,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "2984": {
+  "brand": "Velosef",
+  "matchedRecords": 2,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "2993": {
+  "brand": "Venaxan",
+  "matchedRecords": 2,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "3027": {
+  "brand": "Viocyst",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "3067": {
+  "brand": "Cartizad",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "3070": {
+  "brand": "Cardura",
+  "matchedRecords": 2,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "3091": {
+  "brand": "Kava",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "3104": {
+  "brand": "Calamyl",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "3116": {
+  "brand": "Calcitonium",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "3129": {
+  "brand": "Calminal",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "3133": {
+  "brand": "Kalemapex",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "3134": {
+  "brand": "Kalemapex",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "3146": {
+  "brand": "Candistan",
+  "matchedRecords": 9,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "3198": {
+  "brand": "Clavimox",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "3199": {
+  "brand": "Clavimox",
+  "matchedRecords": 2,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "3206": {
+  "brand": "Clopacirc",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "3217": {
+  "brand": "Clindasol",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "3230": {
+  "brand": "Copad",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "3244": {
+  "brand": "Codilar",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "3257": {
+  "brand": "Cornefresh",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "3260": {
+  "brand": "Cosimprel",
+  "matchedRecords": 2,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "3267": {
+  "brand": "Coveram",
+  "matchedRecords": 2,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "3268": {
+  "brand": "Coveram",
+  "matchedRecords": 3,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "3269": {
+  "brand": "Coveram",
+  "matchedRecords": 2,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "3312": {
+  "brand": "Coloverin",
+  "matchedRecords": 3,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "3313": {
+  "brand": "Coloverin",
+  "matchedRecords": 3,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "3348": {
+  "brand": "Concor",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "3350": {
+  "brand": "Concor",
+  "matchedRecords": 2,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "3351": {
+  "brand": "Concor",
+  "matchedRecords": 3,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "3354": {
+  "brand": "Conistova",
+  "matchedRecords": 2,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "3376": {
+  "brand": "Kepradil",
+  "matchedRecords": 2,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "3388": {
+  "brand": "Ketolgin",
+  "matchedRecords": 6,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "3408": {
+  "brand": "Kelatop",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "3426": {
+  "brand": "Ladenes",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "3470": {
+  "brand": "Lantus",
+  "matchedRecords": 2,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "3471": {
+  "brand": "Lantus",
+  "matchedRecords": 2,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "3493": {
+  "brand": "Loteranol",
+  "matchedRecords": 3,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "3494": {
+  "brand": "Loteranol",
+  "matchedRecords": 3,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "3495": {
+  "brand": "Loteranol",
+  "matchedRecords": 3,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "3496": {
+  "brand": "Loraz",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "3497": {
+  "brand": "Loraz",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "3508": {
+  "brand": "Locasten",
+  "matchedRecords": 5,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "3514": {
+  "brand": "Lohydran",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "3527": {
+  "brand": "Lipona",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "3551": {
+  "brand": "Lezberg",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "3552": {
+  "brand": "Lezberg",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "3555": {
+  "brand": "Lezberg-Amlo",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "3556": {
+  "brand": "Lezberg-Amlo",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "3560": {
+  "brand": "Licid",
+  "matchedRecords": 4,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "3563": {
+  "brand": "Levanox",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "3617": {
+  "brand": "Linagliflozin",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "3618": {
+  "brand": "Linagliflozin",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "3635": {
+  "brand": "Matrix",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "3665": {
+  "brand": "Mafo",
+  "matchedRecords": 3,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "3671": {
+  "brand": "Macro",
+  "matchedRecords": 2,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "3704": {
+  "brand": "Mdicorval",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "3719": {
+  "brand": "Mobinorm",
+  "matchedRecords": 3,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "3721": {
+  "brand": "Motinorm",
+  "matchedRecords": 3,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "3734": {
+  "brand": "Movxir",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "3746": {
+  "brand": "Moxyseyaro",
+  "matchedRecords": 2,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "3747": {
+  "brand": "Moxyseyaro",
+  "matchedRecords": 2,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "3754": {
+  "brand": "Momenta",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "3755": {
+  "brand": "Monarde",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "3760": {
+  "brand": "Mounjaro",
+  "matchedRecords": 2,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "3761": {
+  "brand": "Mounjaro",
+  "matchedRecords": 2,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "3762": {
+  "brand": "Mounjaro",
+  "matchedRecords": 12,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "3774": {
+  "brand": "Moist",
+  "matchedRecords": 6,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "3776": {
+  "brand": "Moist",
+  "matchedRecords": 6,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "3787": {
+  "brand": "Mebo",
+  "matchedRecords": 4,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "3789": {
+  "brand": "Metapsin",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "3790": {
+  "brand": "Metapsin",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "3798": {
+  "brand": "Methorelax",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "3807": {
+  "brand": "Megamox",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "3808": {
+  "brand": "Megamox",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "3810": {
+  "brand": "Megamox",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "3829": {
+  "brand": "Meronem",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "3830": {
+  "brand": "Meriofert",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "3833": {
+  "brand": "Mestinon",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "3847": {
+  "brand": "Melacryst",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "3851": {
+  "brand": "Melanofree",
+  "matchedRecords": 2,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "3882": {
+  "brand": "Myogrel",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "3920": {
+  "brand": "Nanazoxid",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "3946": {
+  "brand": "Nody",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "3950": {
+  "brand": "Norgesic",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "3964": {
+  "brand": "Novorapid",
+  "matchedRecords": 2,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "3965": {
+  "brand": "Novorapid",
+  "matchedRecords": 2,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "3966": {
+  "brand": "Novorapid",
+  "matchedRecords": 2,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "3991": {
+  "brand": "Nerhasilda",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "3995": {
+  "brand": "Nephromed",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "4003": {
+  "brand": "Nevilob",
+  "matchedRecords": 5,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "4004": {
+  "brand": "Nevilob",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "4011": {
+  "brand": "Nexirozova",
+  "matchedRecords": 2,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "4028": {
+  "brand": "New",
+  "matchedRecords": 2,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "4076": {
+  "brand": "Hyalo",
+  "matchedRecords": 2,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "4077": {
+  "brand": "Hyalo",
+  "matchedRecords": 2,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "4078": {
+  "brand": "Hyalo",
+  "matchedRecords": 1,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "4079": {
+  "brand": "Hyalo",
+  "matchedRecords": 6,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "4085": {
+  "brand": "Heparin",
+  "matchedRecords": 6,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ },
+ "4169": {
+  "brand": "Hemoclar",
+  "matchedRecords": 2,
+  "reference": "karem505/egyptian-drug-database CC0",
+  "status": "search_alias_only_not_image_approval"
+ }
+}
