@@ -19,6 +19,7 @@ anchor = "Object.entries(verifiedImageSeeds).forEach(([id, seed]) => {"
 predicate_old = "PROD_IMG_SRC[id] === seed.source ||"
 predicate_new = ("PROD_IMG_SRC[id] === seed.source || "
                  "(seed.src.startsWith('assets/product-images/') && "
+                 "Object.prototype.hasOwnProperty.call(imageLegacySeedSources, String(id)) && "
                  "imageLegacySeedSources[String(id)] === PROD_IMG_SRC[id]) ||")
 if mapping_line not in html:
     if html.count(anchor) != 1:
@@ -28,15 +29,16 @@ if predicate_new not in html:
     if html.count(predicate_old) != 1:
         raise SystemExit("Expected exactly one seed predicate; refusing unsafe edit")
     html = html.replace(predicate_old, predicate_new, 1)
-# Guarantee migration runs even if a previous version was already marked as seeded.
-if "imageLegacySeedMigrationV1" not in html:
-    location = "if (localStorage.getItem(IMAGE_SEED_VERSION) !== '1') {"
-    if html.count(location) != 1:
-        raise SystemExit("Expected a single seed guard; refusing unsafe edit")
-    html = html.replace(location,
-        "if (localStorage.getItem(IMAGE_SEED_VERSION) !== '1' || "
-        "localStorage.getItem('imageLegacySeedMigrationV1') !== '1') {", 1)
-    # Marking the migration complete is intentionally not inserted into the existing code:
-    # the added OR condition is idempotent, and avoids permanent old-source overrides.
+# Version the existing one-shot seed merge; do not reseed on every page load.
+version = re.search(r"arkan_verified_image_seed_v(\\d+)", html)
+if not version:
+    raise SystemExit("Seed version marker not found")
+if predicate_new in html:
+    # The marker is introduced only once into the script's own anchor,
+    # and prevents repeated version bumps on subsequent runs.
+    marker = "// imageLegacySeedMigrationV1: source-specific upgrade"
+    if marker not in html:
+        html = html.replace(mapping_line, marker + "\\n                    " + mapping_line, 1)
+        html = html.replace(version.group(0), "arkan_verified_image_seed_v" + str(int(version.group(1))+1), 1)
 HTML.write_text(html, encoding="utf-8")
 print("Applied scoped image source migration for ids: " + ", ".join(legacy))
