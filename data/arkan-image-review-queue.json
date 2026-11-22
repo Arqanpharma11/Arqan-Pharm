@@ -678,6 +678,103 @@
       "results": [],
       "reason": "no_match_found",
       "searchedAt": "2026-11-22T17:01:17.365Z"
+    },
+    "325": {
+      "name": "الافليك20كبسوله",
+      "en": "Alaflic 20",
+      "results": [],
+      "reason": "no_match_found",
+      "searchedAt": "2026-11-22T17:45:15.766Z"
+    },
+    "327": {
+      "name": "البافيت شراب كالسيوم",
+      "en": "",
+      "results": [],
+      "reason": "no_match_found",
+      "searchedAt": "2026-11-22T17:45:17.545Z"
+    },
+    "332": {
+      "name": "البندازول شراب",
+      "en": "Albendazole",
+      "results": [
+        {
+          "imageUrl": "https://images.openfoodfacts.org/images/products/890/604/127/0339/front_en.3.400.jpg",
+          "sourcePage": "https://world.openfoodfacts.org/product/8906041270339",
+          "title": "Maxtar Bio-Genics Albendazole & Ivermectin Tablets 1 tablet (0.1g)",
+          "provider": "world.openfoodfacts.org",
+          "license": "Open Facts contributors — CC BY-SA 3.0 product photo; database ODbL; attribution/share-alike apply",
+          "foundAt": "2026-11-22T17:45:20.001Z",
+          "status": "pending_manual_packaging_and_license_review"
+        },
+        {
+          "imageUrl": "https://images.openfoodfacts.org/images/products/885/067/823/9934/front_en.3.400.jpg",
+          "sourcePage": "https://world.openfoodfacts.org/product/8850678239934",
+          "title": "Albendazole. 200 mg.",
+          "provider": "world.openfoodfacts.org",
+          "license": "Open Facts contributors — CC BY-SA 3.0 product photo; database ODbL; attribution/share-alike apply",
+          "foundAt": "2026-11-22T17:45:20.001Z",
+          "status": "pending_manual_packaging_and_license_review"
+        },
+        {
+          "imageUrl": "https://images.openfoodfacts.org/images/products/884/800/400/2017/front_en.3.400.jpg",
+          "sourcePage": "https://world.openfoodfacts.org/product/8848004002017",
+          "title": "Albendazole",
+          "provider": "world.openfoodfacts.org",
+          "license": "Open Facts contributors — CC BY-SA 3.0 product photo; database ODbL; attribution/share-alike apply",
+          "foundAt": "2026-11-22T17:45:20.001Z",
+          "status": "pending_manual_packaging_and_license_review"
+        }
+      ],
+      "reason": "needs_review"
+    },
+    "336": {
+      "name": "البوستيكس32مجم اقراص",
+      "en": "Albustix 32",
+      "results": [],
+      "reason": "no_match_found",
+      "searchedAt": "2026-11-22T17:45:21.774Z"
+    },
+    "341": {
+      "name": "التراسولف كبسول",
+      "en": "Ultrasolv",
+      "results": [],
+      "reason": "no_match_found",
+      "searchedAt": "2026-11-22T17:45:23.418Z"
+    },
+    "342": {
+      "name": "التراسيبرو1جم ك",
+      "en": "",
+      "results": [],
+      "reason": "no_match_found",
+      "searchedAt": "2026-11-22T17:45:25.352Z"
+    },
+    "343": {
+      "name": "الترافيت كريم50 جم",
+      "en": "Ultra Feet 50",
+      "results": [],
+      "reason": "no_match_found",
+      "searchedAt": "2026-11-22T17:45:26.846Z"
+    },
+    "345": {
+      "name": "الترانيل20ك",
+      "en": "Ultranyl 20",
+      "results": [],
+      "reason": "no_match_found",
+      "searchedAt": "2026-11-22T17:45:28.391Z"
+    },
+    "346": {
+      "name": "التراهيوميدين كريم بديل ميبو",
+      "en": "",
+      "results": [],
+      "reason": "no_match_found",
+      "searchedAt": "2026-11-22T17:45:30.412Z"
+    },
+    "347": {
+      "name": "التيازيم اقراص",
+      "en": "Altiazem",
+      "results": [],
+      "reason": "no_match_found",
+      "searchedAt": "2026-11-22T17:45:32.126Z"
     }
   }
 }

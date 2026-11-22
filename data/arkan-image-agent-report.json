@@ -1,5 +1,5 @@
 {
-  "runAt": "2026-11-22T17:01:18.526Z",
+  "runAt": "2026-11-22T17:45:33.267Z",
   "masterItems": 4218,
   "cloudItems": 0,
   "catalogItems": 4218,
@@ -7,20 +7,18 @@
   "unapprovedCatalogItems": 3610,
   "autoPublishedCount": 0,
   "publishedThisRun": 0,
-  "searchAttempted": 20,
-  "searchHits": 10,
+  "searchAttempted": 11,
+  "searchHits": 3,
   "searchErrors": 1,
   "rejectionReasons": {
-    "no_size_or_stage": 2,
-    "insufficient_name_detail": 4,
-    "source_not_eligible": 4
+    "medicine_requires_visual_validation": 3
   },
   "missingWithoutCandidate": 2696,
   "checked": 30,
   "healthy": 30,
   "gone": 0,
-  "queuedThisRun": 3,
-  "pendingReview": 79,
+  "queuedThisRun": 1,
+  "pendingReview": 89,
   "searchEnabled": true,
   "searchProviders": [
     "Wikimedia Commons",
@@ -35,20 +33,20 @@
   "providerHealth": {
     "commons.wikimedia.org": {
       "failures": 1,
-      "retryAt": "2026-11-22T17:21:18.125Z",
-      "lastSuccess": "2026-11-22T17:01:16.963Z",
+      "retryAt": "2026-11-22T18:05:32.866Z",
+      "lastSuccess": "2026-11-22T17:45:31.726Z",
       "lastError": "429"
     },
     "world.openfoodfacts.org": {
       "failures": 1,
-      "retryAt": "2026-11-22T17:20:53.356Z",
-      "lastSuccess": "2026-11-22T17:00:51.345Z",
+      "retryAt": "2026-11-22T18:05:21.774Z",
+      "lastSuccess": "2026-11-22T17:45:20.001Z",
       "lastError": "503"
     },
     "eg-drugs-api.mahmoudfalous.workers.dev": {
       "failures": 0,
       "retryAt": null,
-      "lastSuccess": "2026-11-22T17:01:09.530Z"
+      "lastSuccess": "2026-11-22T17:45:32.861Z"
     },
     "world.openbeautyfacts.org": {
       "failures": 0,

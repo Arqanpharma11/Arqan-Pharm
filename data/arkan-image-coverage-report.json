@@ -3,8 +3,8 @@
   "candidateUnverified": 977,
   "candidateBroken": 0,
   "autoPublishedNotVerified": 0,
-  "reviewQueueOnly": 79,
-  "missingExternalPhoto": 3162,
+  "reviewQueueOnly": 89,
+  "missingExternalPhoto": 3152,
   "independentlyVerifiedPhotos": "Not measured: admin/Firestore and image assets are outside this manifest",
-  "updatedAt": "2026-11-22T17:01:18.996Z"
+  "updatedAt": "2026-11-22T17:45:33.622Z"
 }
