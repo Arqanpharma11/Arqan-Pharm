@@ -44,6 +44,8 @@ queued_ids = set()
 for pid, url, line in candidates + entries:
     if pid in queued_ids or not url.startswith("https://") or already_failed(pid, url):
         continue
+    if pid in replacements and url != replacements[pid]["url"]:
+        continue  # Never fall back to the known broken old link for a replacement candidate
     if any((DEST / (pid + ext)).exists() for ext in (".jpg", ".png", ".webp")):
         continue
     selected.append((pid, url, line))
