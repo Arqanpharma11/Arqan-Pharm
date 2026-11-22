@@ -19,6 +19,9 @@ check("ابتاميل2 لبن", "Aptamil", "Aptamil Advance 2 Milk Formula 400g"
 check("ابتاميل2 لبن", "Aptamil", "Aptamil Advance 3 Milk Formula 400g", False)
 check("اتورستات40مجم اقراص", "Atorstat", "Atorstat 40mg tablets", True)
 check("اتورستات40مجم اقراص", "Atorstat", "Atorstat 80mg tablets", False)
+check("ادفانس صابون", "Advance", "Genuphil Advance 30 Sachets", False)
+check("افازير قطرة", "Avazir", "Co Avazir Eye Drops 10 ml", False)
+check("اتراكون100مجم 14قرص", "Itracon", "Itracon 100mg 14 Capsules", False)
 assert image_link({"images":[{"src":"https://example.org/real-pack.jpg"}]}) == "https://example.org/real-pack.jpg"
 assert image_link({"images":[{"src":"http://example.org/not-https.jpg"}]}) == ""
 print("PASS: trade-brand, strength, stage and dosage-form rejection tests")
