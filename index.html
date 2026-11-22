@@ -20068,8 +20068,15 @@ ${window.location.href}
                     sourceLink.target = '_blank';
                     sourceLink.rel = 'noopener noreferrer';
                     sourceLink.className = 'inline-block underline ms-2';
-                    sourceLink.textContent = 'مصدر الصورة وترخيصها';
+                    sourceLink.textContent = 'الصورة: مساهمو Open Facts — المصدر';
                     st.appendChild(sourceLink);
+                    const licenseLink = document.createElement('a');
+                    licenseLink.href = 'https://creativecommons.org/licenses/by-sa/3.0/';
+                    licenseLink.target = '_blank';
+                    licenseLink.rel = 'noopener noreferrer';
+                    licenseLink.className = 'inline-block underline ms-2';
+                    licenseLink.textContent = 'ترخيص CC BY-SA 3.0';
+                    st.appendChild(licenseLink);
                 }
             } else {
                 box.innerHTML = '<div class="text-center text-arkan-bronze p-6"><div class="text-5xl mb-2">📦</div><div class="text-xs font-bold">لا توجد صورة عبوة معتمدة لهذا الصنف حتى الآن</div></div>';
