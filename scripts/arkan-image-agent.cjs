@@ -20,6 +20,32 @@ const published = read(publishedFile,{version:1,byId:{}});
 const master = html.match(/const EXACT_MASTER_ITEMS\s*=\s*\[([\s\S]*?)\n\s*\];/);
 if(!master) throw Error('Master catalog extraction failed: refusing to mutate image data');
 const items = [...master[1].matchAll(/\{\s*name:\s*"([^"]+)"\s*,\s*cat:\s*"([^"]+)"/g)].map((m,i)=>({id:String(i+1),name:m[1],cat:m[2]}));
+// Existing English trade-name reference in the portal is a useful independent
+// search alias. Extract its JSON data; never execute the portal's JavaScript.
+const referenceMarker='const ENGLISH_BRAND_REFERENCE = ';
+const referenceStart=html.indexOf(referenceMarker);
+let englishBrands={};
+if(referenceStart>=0){
+  const jsonStart=html.indexOf('{',referenceStart+referenceMarker.length);
+  const jsonEnd=html.indexOf('\n};',jsonStart);
+  if(jsonStart>=0&&jsonEnd>=0){
+    try{englishBrands=JSON.parse(html.slice(jsonStart,jsonEnd+2))}
+    catch(e){console.warn('English brand reference unavailable:',e.message)}
+  }
+}
+const itemDigits=s=>String(s||'').match(/\d+(?:[./]\d+)*/g)||[];
+function productSearchAlias(item){
+  if(item.en) return item;
+  const ref=englishBrands[item.name];
+  const brand=typeof ref?.brand==='string'?ref.brand.trim():'';
+  if(!brand||!/[a-z]/i.test(brand))return item;
+  // Retain strengths/stages from Arabic catalog text instead of relying on a
+  // bare brand query that could match another dosage or package.
+  const suffix=itemDigits(item.name).join(' ');
+  return {...item,en:[brand,suffix].filter(Boolean).join(' ').trim(),
+    englishAliasSource:'catalog_brand_reference'};
+}
+
 if(!items.length) throw Error('Master catalog empty: refusing to mutate image data');
 async function getCloudItems() {
   const raw=process.env.FIREBASE_SERVICE_ACCOUNT_JSON;
@@ -117,7 +143,8 @@ function candidate(item,title,imageUrl,sourcePage,provider,license){
           status:'pending_manual_packaging_and_license_review'};
 }
 async function searchCommons(item){
-  const q=(item.en||item.name)+' medicine packaging';
+  const category=String(item.cat||'');
+  const q=(item.en||item.name)+( /أدوية|دواء/.test(category)?' medicine packaging':' product packaging front');
   const args=new URLSearchParams({action:'query',generator:'search',gsrsearch:q,gsrnamespace:'6',gsrlimit:'8',prop:'imageinfo',iiprop:'url|extmetadata',format:'json'});
   const response=await fetchJson('https://commons.wikimedia.org/w/api.php?'+args);
   return Object.values(response.query?.pages||{}).map(p=>{
@@ -232,7 +259,7 @@ async function main(){
     for(let i=0;i<searchBudget;i++){
       const item=outstanding[i];
       try{
-        const searchedItem=await resolveEgyptDrugName(item);
+        const searchedItem=await resolveEgyptDrugName(productSearchAlias(item));
         const found=await imageSearch(searchedItem);
         state.searched[item.id]={at:new Date().toISOString(),hits:found.length};
         if(!found.length){
@@ -257,14 +284,14 @@ async function main(){
             queued++;
           }
         }
-      }catch(e){console.error('Search error',item.id,e.message);break}
+      }catch(e){console.error('Search error',item.id,e.message);state.searched[item.id]={at:new Date().toISOString(),hits:0,error:String(e.message).slice(0,160)};continue}
       await pause(700);
     }
     state.searchCursor=0; // no index in a moving eligible list
   }
   state.lastRun=new Date().toISOString();
   state.lastCatalogSize=all.length;
-  const report={runAt:state.lastRun,masterItems:items.length,cloudItems:cloud.length,catalogItems:all.length,candidateLinks:linked.length,autoPublishedCount:Object.keys(published.byId).length,publishedThisRun:publishedNow,missingWithoutCandidate:missing,checked,healthy,gone,queuedThisRun:queued,pendingReview:Object.keys(queue.byId).length,searchEnabled:true,searchProviders:['Wikimedia Commons','Open Food Facts','Open Beauty Facts'],egyptianNamesResolved:Object.keys(state.egyptDrugNames||{}).length,cloudSyncEnabled:!!process.env.FIREBASE_SERVICE_ACCOUNT_JSON,disclaimer:'Automated candidate discovery is not photo verification. Existing approved photos are never overwritten. Automatically published images remain marked as external, not verified packaging.'};
+  const report={runAt:state.lastRun,masterItems:items.length,cloudItems:cloud.length,catalogItems:all.length,candidateLinks:linked.length,autoPublishedCount:Object.keys(published.byId).length,publishedThisRun:publishedNow,missingWithoutCandidate:missing,checked,healthy,gone,queuedThisRun:queued,pendingReview:Object.keys(queue.byId).length,searchEnabled:true,searchProviders:['Wikimedia Commons','Open Food Facts','Open Beauty Facts'],egyptianNamesResolved:Object.keys(state.egyptDrugNames||{}).length,englishBrandAliases:Object.keys(englishBrands).length,cloudSyncEnabled:!!process.env.FIREBASE_SERVICE_ACCOUNT_JSON,disclaimer:'Automated candidate discovery is not photo verification. Existing approved photos are never overwritten. Automatically published images remain marked as external, not verified packaging.'};
   write(stateFile,state);write(queueFile,queue);write(publishedFile,published);write(reportFile,report);
   console.log(JSON.stringify(report));
 }
