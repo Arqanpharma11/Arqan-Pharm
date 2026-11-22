@@ -7175,7 +7175,7 @@
 
                 // Verified package-photo seed: Apple-Lite 30 tablets (catalog item #10).
                 // Source page shows the exact Apple-Lite pack; do not use lookalike images.
-                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v43';;;;;
+                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v44';;;;;
                 if (localStorage.getItem(IMAGE_SEED_VERSION) !== '1') {
                     // Individually checked package photos: brand, strength/stage and form match.
                     const verifiedImageSeeds = {
@@ -7790,6 +7790,16 @@
                         '449': { src: 'https://www.mouradpharmacy.com/web/image/product.product/282072/image_1920?unique=3a4105f', source: 'Mourad Pharmacy — Empacyrl 25/5 mg, 30 film-coated tablets; exact brand, strength and pack verified' },
                         '450': { src: 'https://www.mouradpharmacy.com/web/image/product.template/483593/image_1024?unique=43fd190', source: 'Mourad Pharmacy — Empacyrl Trio 12.5/2.5/1000 mg, 30 extended-release tablets; exact three ingredients, strength and pack verified' },
                         '452': { src: 'https://www.mouradpharmacy.com/web/image/product.product/282071/image_1920?unique=3a4105f', source: 'Mourad Pharmacy — Empacyrl 10/5 mg, 30 film-coated tablets; exact brand, strength and pack verified' },
+                        '456': { src: 'https://egyptdwa.com/dwa/ampofer-20mg-ml-5-amp-for-i-v-inj-inf-14060.jpg', source: 'EgyptDwa — Ampofer 20 mg/ml, 5 IV ampoules; exact product name and 275 EGP listing verified' },
+                        '459': { src: 'https://delmar-test.linkedgates.com/images/items/119041-v1.JPEG', source: 'Delmar & Attalla — Ambezim-G, 30 enteric-coated tablets; product and 102 EGP catalog price match verified' },
+                        '464': { src: 'https://api.c0umyt3cda-pharmaove1-p1-public.model-t.cc.commerce.ondemand.com/medias/000000000000008778.jpg?context=bWFzdGVyfGltYWdlc3w1NTUyNjh8aW1hZ2UvanBlZ3xhR0k0TDJneE9DOHhNRGc1TmpZMk5qZzFNelF3Tmk4d01EQXdNREF3TURBd01EQXdNRGczTnpndWFuQm58MGM2NDY1YWU0OTE3N2I0MTFjM2FiZjg0MzJkNjhiNDZhZmVjZTlkODQ4Mjk2MTBhOWQ5MjUyMTdiN2ViYmNmMg', source: 'Pharma eMarket — Amriya Amlodipine 10 mg, 20 tablets; exact generic strength and pack verified' },
+                        '465': { src: 'https://www.lotusonline.com/cdn/shop/files/3003757_processed_9710489c-661d-44f9-a0bb-c2a8e6e5b121.jpg?v=1767615025', source: 'Lotus Pharmacies — Amriya Amlodipine 5 mg, 30 tablets; exact generic strength and pack verified' },
+                        '470': { src: 'https://dkud4u09qff41.cloudfront.net/Products/148db08a-837a-4cbd-876f-3838de873865.jpeg', source: 'Vezeeta Pharmacy — Amocerebral Plus, 30 tablets; exact brand and dosage form verified' },
+                        '478': { src: 'https://egyptdwa.com/dwa/amigraine-adco-30-tablets-13909.jpg', source: 'EgyptDwa — Amigraine ADCO, 30 film-coated tablets; exact ADCO brand verified' },
+                        '482': { src: 'https://www.bloompharmacy.com/cdn/shop/files/amilo-5-mg-30-tablets-498218_1024x.jpg?v=1729197098', source: 'Bloom Pharmacy — Amilo 5 mg, 30 tablets; exact brand, strength and pack verified' },
+                        '485': { src: 'https://delmar-test.linkedgates.com/images/items/140445-v1.JPEG', source: 'Delmar & Attalla — Imutrexate 10 mg, 10 tablets; exact methotrexate strength and pack verified' },
+                        '486': { src: 'https://mohieldeenpharmacy.com/web/image/product.template/34026/image_1920?unique=712779a', source: 'Mohieldeen Pharmacy — Imutrexate 5 mg, 10 tablets; exact methotrexate strength and pack verified' },
+                        '487': { src: 'https://www.lotusonline.com/cdn/shop/files/3008474_processed.jpg?v=1773306098', source: 'Lotus Pharmacies — Imutrexate 2.5 mg, 10 tablets; exact methotrexate strength and pack verified' },
                     };
                     // Apply the verified image seed set once, then batch cloud writes.
                     const imageSeedBatches = (typeof firestoreDB !== 'undefined' && firestoreDB) ? [] : null;
