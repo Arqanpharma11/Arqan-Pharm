@@ -1,0 +1,32 @@
+name: Verify recovered Arqan portal
+on:
+  push:
+    paths:
+      - 'index.html'
+      - '.github/workflows/verify-portal-recovery.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify no duplicate image constants
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          page=Path('index.html').read_text(encoding='utf-8')
+          count=page.count('const imageLegacySeedSources = ')
+          assert count==1, f'Fatal duplicate JavaScript declarations: {count}'
+          assert page.count('Object.entries(verifiedImageSeeds).forEach')==1
+          print('PASS: image migration declarations unique')
+          PY
+      - name: Parse all inline app scripts and service worker
+        run: |
+          python scripts/check_portal_javascript.py
+          node --check sw.js
