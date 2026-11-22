@@ -9,6 +9,9 @@ output = root / "data/arkan-quick-image-candidates.json"
 data = json.loads(source.read_text(encoding="utf-8"))
 if data.get("totalCatalogItems") != 4218 or len(data.get("items", [])) != 4218:
     raise SystemExit("STOP: expected a 4218-item catalog review file")
+state_path = root / "data/arkan-image-agent-state.json"
+state = json.loads(state_path.read_text(encoding="utf-8")) if state_path.exists() else {}
+checks = state.get("checks", {})
 by_id = {}
 for item in data["items"]:
     id = str(item["id"])
@@ -17,6 +20,11 @@ for item in data["items"]:
                   if isinstance(r.get("imageUrl"), str)
                   and r["imageUrl"].startswith("https://")
                   and isinstance(r.get("title"), str)]
+    # A repeatedly broken URL is not a valid browse-time image.
+    health = checks.get(id, {})
+    if health.get("failures", 0) >= 3 and health.get("lastStatus") == "gone":
+        candidates = [r for r in candidates if r.get("imageUrl") !=
+                      (item.get("candidates", [{}])[0].get("imageUrl"))]
     if not candidates:
         continue
     chosen = max(candidates, key=lambda r: float(r.get("score") or 0))
