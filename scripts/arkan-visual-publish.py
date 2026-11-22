@@ -7,6 +7,14 @@ import io, json, os, re, subprocess, tempfile, urllib.request, time
 from pathlib import Path
 from PIL import Image, ImageOps
 
+# Never follow untrusted CDN redirects during automated package retrieval.
+class NoRedirect(urllib.request.HTTPRedirectHandler):
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        return None
+
+safe_opener = urllib.request.build_opener(NoRedirect)
+Image.MAX_IMAGE_PIXELS = 18_000_000
+
 root=Path(__file__).resolve().parents[1]
 html_path=root/'index.html'
 manifest=json.loads((root/'data/arkan-auto-published-images.json').read_text(encoding='utf-8'))
@@ -46,6 +54,7 @@ for pid,record in sorted(manifest.get('byId',{}).items(),key=lambda p:int(p[0]))
     if 'CC BY-SA 3.0' not in record.get('license',''):continue
     url=record.get('url','')
     if not re.match(r'^https://(?:images|static)\.open(?:food|beauty)facts\.org/',url):continue
+    if not re.match(r'^https://world\.open(?:food|beauty)facts\.org/product/\d+',record.get('sourcePage','')):continue
     # Retry previously rejected candidates after seven days, not on every run.
     if now-float(attempts.get(pid,0))<7*86400:continue
     attempts[pid]=now
@@ -59,13 +68,14 @@ for pid,record in sorted(manifest.get('byId',{}).items(),key=lambda p:int(p[0]))
         continue
     try:
         req=urllib.request.Request(url,headers={'User-Agent':'ArkanPharm-PackCheck/1.0','Accept':'image/*'})
-        with urllib.request.urlopen(req,timeout=12) as response:
+        with safe_opener.open(req,timeout=12) as response:
             if not response.headers.get('Content-Type','').startswith('image/'):raise ValueError('not_image')
             data=response.read(5000001)
         if not 700<=len(data)<=5000000:raise ValueError('invalid_size')
         with Image.open(io.BytesIO(data)) as im:
+            # Check image size BEFORE decompressing the file to bound memory.
+            if min(im.size)<240 or im.width*im.height>18_000_000:raise ValueError('invalid_dimensions')
             im.load()
-            if min(im.size)<240 or im.width*im.height>18000000:raise ValueError('invalid_dimensions')
             picture=ImageOps.exif_transpose(im).convert('RGB')
         with tempfile.TemporaryDirectory() as tmp:
             path=Path(tmp)/'product.png'
