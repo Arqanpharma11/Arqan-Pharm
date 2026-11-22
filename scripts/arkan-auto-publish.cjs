@@ -31,8 +31,8 @@ function qualify(item, hit) {
   if(fa>=0&&fa!==fb) return {pass:false,reason:'form_missing_or_mismatch'};
   // A matching number without a matching unit is not a verified pack size.
   // Reject 400 ml vs 400 g, and reject added XR/Plus/Extra variants.
-  const units=s=>(norm(s).match(/\\d+(?:[./]\\d+)?\\s*(?:mg|mcg|ml|kg|gm|g|مجم|مل|جم)/g)||[])
-    .map(x=>x.replace(/\\s+/g,''));
+  const units=s=>(norm(s).match(/\d+(?:[./]\d+)?\s*(?:mcg|mg|ml|kg|gm|g|مجم|مل|جم)/g)||[])
+    .map(x=>x.replace(/\s+/g,''));
   const au=units(name),bu=units(title);
   if(au.some(u=>!bu.includes(u)))return {pass:false,reason:'unit_mismatch'};
   const variants=['plus','extra','forte','xr','sr','retard','junior'];
