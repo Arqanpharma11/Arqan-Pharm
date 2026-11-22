@@ -4,9 +4,9 @@
   "approvedForProduction": false,
   "version": 2,
   "ambiguousLinksSkipped": 0,
-  "generatedAt": "2026-11-22T17:15:35.421Z",
+  "generatedAt": "2026-11-22T17:58:06.157Z",
   "catalogTotal": 4218,
-  "trialImages": 940,
+  "trialImages": 941,
   "notice": "UNVERIFIED IMAGES. Not for dispensing or identifying medicine. Never imported into approved pharmacy photo seeds.",
   "items": [
     {
@@ -521,6 +521,18 @@
       "source": "Azzam Pharmacy",
       "sourcePage": "https://azzampharmacy.com/products/elbaluran-60-mg-30-tab-24140",
       "title": "Elbaluran  60 Mg  30 Tab",
+      "status": "trial_unverified",
+      "catalogMatch": "not_visually_verified",
+      "rights": "source_rights_unconfirmed"
+    },
+    {
+      "id": "332",
+      "name": "البندازول شراب",
+      "category": "أدوية",
+      "imageUrl": "https://images.openfoodfacts.org/images/products/890/604/127/0339/front_en.3.400.jpg",
+      "source": "world.openfoodfacts.org",
+      "sourcePage": "https://world.openfoodfacts.org/product/8906041270339",
+      "title": "Maxtar Bio-Genics Albendazole & Ivermectin Tablets 1 tablet (0.1g)",
       "status": "trial_unverified",
       "catalogMatch": "not_visually_verified",
       "rights": "source_rights_unconfirmed"
