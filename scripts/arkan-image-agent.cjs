@@ -4,7 +4,7 @@
 */
 const fs = require('node:fs');
 const crypto = require('node:crypto');
-const {publish} = require('./arkan-auto-publish.cjs');
+const {publish,qualify} = require('./arkan-auto-publish.cjs');
 const html = fs.readFileSync('index.html','utf8');
 const target = 'data/arkan-quick-image-candidates.json';
 const stateFile = 'data/arkan-image-agent-state.json';
@@ -197,7 +197,8 @@ async function main(){
   const all=[...byId.values()];
   const linked=Object.entries(candidates.byId).filter(([id,c])=>Array.isArray(c)&&c[0]?.startsWith('https://'));
   const budget=Number(process.env.IMAGE_CHECK_BUDGET||20);
-  let checked=0,missing=0,healthy=0,gone=0,queued=0,publishedNow=0;
+  let checked=0,missing=0,healthy=0,gone=0,queued=0,publishedNow=0,searchAttempted=0,searchHits=0,searchErrors=0;
+  const rejectionReasons={};
   for(let n=0;n<Math.min(budget,linked.length);n++){
     const [id,c]=linked[(state.cursor+n)%linked.length];
     const status=await imageAlive(c[0]);
@@ -259,8 +260,10 @@ async function main(){
     for(let i=0;i<searchBudget;i++){
       const item=outstanding[i];
       try{
+        searchAttempted++;
         const searchedItem=await resolveEgyptDrugName(productSearchAlias(item));
         const found=await imageSearch(searchedItem);
+        searchHits+=found.length;
         state.searched[item.id]={at:new Date().toISOString(),hits:found.length};
         if(!found.length){
           queue.byId[item.id]={name:item.name,en:searchedItem.en||'',results:[],reason:'no_match_found',searchedAt:new Date().toISOString()};
@@ -268,6 +271,8 @@ async function main(){
         if(found.length) {
           const eligible=[];
           for(const hit of found){
+            const qualification=qualify(searchedItem,hit);
+            if(!qualification.pass){rejectionReasons[qualification.reason]=(rejectionReasons[qualification.reason]||0)+1;continue;}
             const output=publish(searchedItem,hit);
             if(!output)continue;
             if(await imageAlive(output.url)==='ok')eligible.push(output);
@@ -284,14 +289,14 @@ async function main(){
             queued++;
           }
         }
-      }catch(e){console.error('Search error',item.id,e.message);state.searched[item.id]={at:new Date().toISOString(),hits:0,error:String(e.message).slice(0,160)};continue}
+      }catch(e){searchErrors++;console.error('Search error',item.id,e.message);state.searched[item.id]={at:new Date().toISOString(),hits:0,error:String(e.message).slice(0,160)};continue}
       await pause(700);
     }
     state.searchCursor=0; // no index in a moving eligible list
   }
   state.lastRun=new Date().toISOString();
   state.lastCatalogSize=all.length;
-  const report={runAt:state.lastRun,masterItems:items.length,cloudItems:cloud.length,catalogItems:all.length,candidateLinks:linked.length,autoPublishedCount:Object.keys(published.byId).length,publishedThisRun:publishedNow,missingWithoutCandidate:missing,checked,healthy,gone,queuedThisRun:queued,pendingReview:Object.keys(queue.byId).length,searchEnabled:true,searchProviders:['Wikimedia Commons','Open Food Facts','Open Beauty Facts'],egyptianNamesResolved:Object.keys(state.egyptDrugNames||{}).length,englishBrandAliases:Object.keys(englishBrands).length,cloudSyncEnabled:!!process.env.FIREBASE_SERVICE_ACCOUNT_JSON,disclaimer:'Automated candidate discovery is not photo verification. Existing approved photos are never overwritten. Automatically published images remain marked as external, not verified packaging.'};
+  const report={runAt:state.lastRun,masterItems:items.length,cloudItems:cloud.length,catalogItems:all.length,candidateLinks:linked.length,autoPublishedCount:Object.keys(published.byId).length,publishedThisRun:publishedNow,searchAttempted,searchHits,searchErrors,rejectionReasons,missingWithoutCandidate:missing,checked,healthy,gone,queuedThisRun:queued,pendingReview:Object.keys(queue.byId).length,searchEnabled:true,searchProviders:['Wikimedia Commons','Open Food Facts','Open Beauty Facts'],egyptianNamesResolved:Object.keys(state.egyptDrugNames||{}).length,englishBrandAliases:Object.keys(englishBrands).length,cloudSyncEnabled:!!process.env.FIREBASE_SERVICE_ACCOUNT_JSON,disclaimer:'Automated candidate discovery is not photo verification. Existing approved photos are never overwritten. Automatically published images remain marked as external, not verified packaging.'};
   write(stateFile,state);write(queueFile,queue);write(publishedFile,published);write(reportFile,report);
   console.log(JSON.stringify(report));
 }
