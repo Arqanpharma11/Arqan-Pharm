@@ -1,6 +1,6 @@
 /* Arkan unattended image discovery and link audit.
    No image is labelled verified merely because a search engine returned it.
-   Optional secrets: BRAVE_IMAGE_API_KEY, FIREBASE_SERVICE_ACCOUNT_JSON.
+   Optional secret: FIREBASE_SERVICE_ACCOUNT_JSON (only for detecting cloud-only new items).
 */
 const fs = require('node:fs');
 const crypto = require('node:crypto');
@@ -16,7 +16,7 @@ const state = read(stateFile,{cursor:0,searchCursor:0,checks:{},searched:{}});
 const queue = read(queueFile,{byId:{}});
 const master = html.match(/const EXACT_MASTER_ITEMS\s*=\s*\[([\s\S]*?)\n\s*\];/);
 if(!master) throw Error('Master catalog extraction failed: refusing to mutate image data');
-const items = [...master[1].matchAll(/\{\s*name:\s*"([^"]+)"/g)].map((m,i)=>({id:String(i+1),name:m[1]}));
+const items = [...master[1].matchAll(/\{\s*name:\s*"([^"]+)"\s*,\s*cat:\s*"([^"]+)"/g)].map((m,i)=>({id:String(i+1),name:m[1],cat:m[2]}));
 if(items.length!==4218) throw Error('Master catalog count changed: update parser before proceeding');
 async function getCloudItems() {
   const raw=process.env.FIREBASE_SERVICE_ACCOUNT_JSON;
@@ -62,20 +62,60 @@ function exactEnough(item,title){
   const type=text=>forms.findIndex(f=>f.some(w=>text.includes(w)));
   return type(a)<0||type(b)<0||type(a)===type(b);
 }
+// Free, unauthenticated discovery: Wikimedia Commons and Open Food/Beauty Facts.
+// Both require polite request rates. Candidate metadata goes to review queue ONLY.
+const userAgent = 'ArkanPharmImageIndexer/1.0 (github.com/Arqanpharma11/Arqan-Pharm; public catalogue matching)';
+const stripHtml = s => String(s||'').replace(/<[^>]*>/g,' ').replace(/&[^;]+;/g,' ').trim();
+async function fetchJson(url) {
+  const r=await fetch(url,{headers:{'User-Agent':userAgent,Accept:'application/json'},signal:AbortSignal.timeout(12000)});
+  if(!r.ok) throw Error('Public database '+r.status);
+  return r.json();
+}
+function candidate(item,title,imageUrl,sourcePage,provider,license){
+  if(!/^https:\/\//.test(imageUrl||'') || !exactEnough(item,title)) return null;
+  return {imageUrl,sourcePage,title,provider,license:license||'Review image-specific terms',foundAt:new Date().toISOString(),
+          status:'pending_manual_packaging_and_license_review'};
+}
+async function searchCommons(item){
+  const q=(item.en||item.name)+' medicine packaging';
+  const args=new URLSearchParams({action:'query',generator:'search',gsrsearch:q,gsrnamespace:'6',gsrlimit:'8',prop:'imageinfo',iiprop:'url|extmetadata',format:'json'});
+  const response=await fetchJson('https://commons.wikimedia.org/w/api.php?'+args);
+  return Object.values(response.query?.pages||{}).map(p=>{
+    const info=p.imageinfo?.[0]||{};
+    const meta=info.extmetadata||{};
+    return candidate(item,p.title?.replace(/^File:/,'')||'',info.url,
+      info.descriptionurl||'', 'Wikimedia Commons',
+      stripHtml(meta.LicenseShortName?.value||'Unknown Commons license'));
+  }).filter(Boolean);
+}
+async function searchOpenFacts(item,host){
+  const query=(item.en||item.name);
+  // Public product searches are explicitly rate-limited, so keep <= 5 searches per run.
+  const args=new URLSearchParams({search_terms:query,search_simple:'1',action:'process',json:'1',page_size:'8',
+    fields:'code,product_name,product_name_en,brands,quantity,image_front_url,image_url,url'});
+  const response=await fetchJson('https://'+host+'/cgi/search.pl?'+args);
+  return (response.products||[]).map(p=>{
+    const title=[p.brands,p.product_name_en||p.product_name,p.quantity].filter(Boolean).join(' ');
+    return candidate(item,title,p.image_front_url||p.image_url,p.url||('https://'+host+'/product/'+p.code),
+      host, 'Open Facts data and image licenses: review attribution and reuse requirements');
+  }).filter(Boolean);
+}
 async function imageSearch(item){
-  const key=process.env.BRAVE_IMAGE_API_KEY;
-  if(!key) return [];
-  const params=new URLSearchParams({q:(item.en||item.name)+' مصر دواء عبوة',count:'10',safesearch:'strict'});
-  const r=await fetch('https://api.search.brave.com/res/v1/images/search?'+params,{headers:{'X-Subscription-Token':key,Accept:'application/json'},signal:AbortSignal.timeout(12000)});
-  if(!r.ok) throw Error('Brave image API '+r.status);
-  const data=await r.json();
-  return (data.results||[]).filter(x=>exactEnough(item,x.title||'')).slice(0,4).map(x=>({
-    imageUrl:x.properties?.url||x.thumbnail?.src||'',
-    sourcePage:x.url||'',
-    title:x.title||'',
-    foundAt:new Date().toISOString(),
-    status:'pending_human_or_licensed_source_review'
-  })).filter(x=>x.imageUrl.startsWith('https://'));
+  const sources=[];
+  const category=String(item.cat||'');
+  const hosts=/تجميل|عناية|بشرة|شعر/.test(category)?['world.openbeautyfacts.org']:
+    /ألبان|غذاء|مكمل|تغذية/.test(category)?['world.openfoodfacts.org']:
+    ['world.openfoodfacts.org','world.openbeautyfacts.org'];
+  // Always inspect openly licensed Wikimedia files. No third-party API key needed.
+  try{sources.push(...await searchCommons(item));}
+  catch(e){console.warn('Commons unavailable:',e.message);}
+  await pause(400);
+  for(const host of hosts.slice(0,1)){
+    try{sources.push(...await searchOpenFacts(item,host));}
+    catch(e){console.warn(host+' unavailable:',e.message);}
+  }
+  const seen=new Set();
+  return sources.filter(x=>{if(seen.has(x.imageUrl))return false;seen.add(x.imageUrl);return true}).slice(0,4);
 }
 async function main(){
   let cloud=[];
@@ -98,9 +138,10 @@ async function main(){
     // Record repeated 404/410 for review instead.
   }
   if(linked.length)state.cursor=(state.cursor+checked)%linked.length;
-  const outstanding=all.filter(x=>!candidates.byId[x.id] && !queue.byId[x.id]);
+  const outstanding=all.filter(x=>!candidates.byId[x.id] && !queue.byId[x.id] &&
+    (!state.searched[x.id] || Date.now()-Date.parse(state.searched[x.id].at||0)>30*24*60*60*1000));
   missing=all.filter(x=>!candidates.byId[x.id]).length;
-  if(process.env.BRAVE_IMAGE_API_KEY && outstanding.length){
+  if(outstanding.length){
     const searchBudget=Math.min(Number(process.env.IMAGE_SEARCH_BUDGET||5),outstanding.length);
     for(let i=0;i<searchBudget;i++){
       const item=outstanding[(state.searchCursor+i)%outstanding.length];
@@ -115,7 +156,7 @@ async function main(){
   }
   state.lastRun=new Date().toISOString();
   state.lastCatalogSize=all.length;
-  const report={runAt:state.lastRun,masterItems:items.length,cloudItems:cloud.length,catalogItems:all.length,candidateLinks:linked.length,missingWithoutCandidate:missing,checked,healthy,gone,queuedThisRun:queued,pendingReview:Object.keys(queue.byId).length,searchEnabled:!!process.env.BRAVE_IMAGE_API_KEY,cloudSyncEnabled:!!process.env.FIREBASE_SERVICE_ACCOUNT_JSON,disclaimer:'Automated candidate discovery is not photo verification. Existing approved photos are never overwritten.'};
+  const report={runAt:state.lastRun,masterItems:items.length,cloudItems:cloud.length,catalogItems:all.length,candidateLinks:linked.length,missingWithoutCandidate:missing,checked,healthy,gone,queuedThisRun:queued,pendingReview:Object.keys(queue.byId).length,searchEnabled:true,searchProviders:['Wikimedia Commons','Open Food Facts','Open Beauty Facts'],cloudSyncEnabled:!!process.env.FIREBASE_SERVICE_ACCOUNT_JSON,disclaimer:'Automated candidate discovery is not photo verification. Existing approved photos are never overwritten.'};
   write(stateFile,state);write(queueFile,queue);write(reportFile,report);
   console.log(JSON.stringify(report));
 }
