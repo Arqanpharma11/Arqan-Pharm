@@ -72,6 +72,21 @@ async function getCloudItems() {
   return array.map(v=>{const a=v.mapValue?.fields||{}; return {id:String(val(a.id)||''),name:String(val(a.name)||''),en:String(val(a.en)||'')};}).filter(x=>x.id&&x.name);
 }
 const pause=ms=>new Promise(r=>setTimeout(r,ms));
+// Image URLs originate in external catalog metadata. Do not let a product
+// link make the GitHub runner request internal hosts or follow redirects there.
+function safePublicImageUrl(raw){
+  try{
+    if(typeof raw!=='string'||raw.length>4096)return false;
+    const u=new URL(raw);
+    if(u.protocol!=='https:'||u.username||u.password||u.port)return false;
+    const host=u.hostname.replace(/\.$/,'').toLowerCase();
+    if(!host.includes('.')||host==='localhost')return false;
+    if(/\.(?:local|localhost|internal|test|invalid)$/.test(host))return false;
+    // No literal IP addresses (including RFC1918, loopback or metadata).
+    if(/^\[.*\]$/.test(host)||/^\d{1,3}(?:\.\d{1,3}){3}$/.test(host))return false;
+    return true;
+  }catch{return false}
+}
 // Egyptian drug index is metadata only: it provides English names, not package photos.
 // Keep a strict exact Arabic-name match and refuse conflicting strengths.
 const compactArabic=x=>String(x||'').normalize('NFKC').toLowerCase()
@@ -101,9 +116,9 @@ async function resolveEgyptDrugName(item){
 }
 
 async function imageAlive(url){
-  if(!/^https:\/\//.test(url)) return 'invalid';
+  if(!safePublicImageUrl(url)) return 'invalid';
   try{
-    const response=await fetch(url,{method:'GET',headers:{Range:'bytes=0-2047','User-Agent':'Arkan-Image-Healthcheck/1.0'},signal:AbortSignal.timeout(9000)});
+    const response=await fetch(url,{method:'GET',headers:{Range:'bytes=0-2047','User-Agent':'Arkan-Image-Healthcheck/1.0'},redirect:'manual',signal:AbortSignal.timeout(9000)});
     if([404,410].includes(response.status)){response.body?.cancel();return 'gone'}
     if(!response.ok){response.body?.cancel();return 'unknown'}
     const contentType=(response.headers.get('content-type')||'').toLowerCase();
@@ -174,7 +189,7 @@ async function fetchJson(url) {
   }
 }
 function candidate(item,title,imageUrl,sourcePage,provider,license){
-  if(!/^https:\/\//.test(imageUrl||'') || !exactEnough(item,title)) return null;
+  if(!safePublicImageUrl(imageUrl) || !exactEnough(item,title)) return null;
   return {imageUrl,sourcePage,title,provider,license:license||'Review image-specific terms',foundAt:new Date().toISOString(),
           status:'pending_manual_packaging_and_license_review'};
 }
