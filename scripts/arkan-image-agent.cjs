@@ -99,7 +99,7 @@ async function searchOpenFacts(item,host){
   const response=await fetchJson('https://'+host+'/cgi/search.pl?'+args);
   return (response.products||[]).map(p=>{
     const title=[p.brands,p.product_name_en||p.product_name,p.quantity].filter(Boolean).join(' ');
-    return candidate(item,title,p.image_front_url||p.image_url,p.url||('https://'+host+'/product/'+p.code),
+    return candidate(item,title,p.image_front_url||p.image_url,'https://'+host+'/product/'+p.code,
       host, 'Open Facts data and image licenses: review attribution and reuse requirements');
   }).filter(Boolean);
 }
@@ -141,6 +141,22 @@ async function main(){
     // Record repeated 404/410 for review instead.
   }
   if(linked.length)state.cursor=(state.cursor+checked)%linked.length;
+  // Recheck automatically published images; retire only after repeated explicit 404/410.
+  const publishedEntries=Object.entries(published.byId);
+  const publishBudget=Math.min(8,publishedEntries.length);
+  for(let i=0;i<publishBudget;i++){
+    const [id,record]=publishedEntries[(Number(state.publishedCursor||0)+i)%publishedEntries.length];
+    const current=await imageAlive(record.url);
+    const previous=state.publishedChecks?.[id]||{failures:0};
+    if(current==='ok') previous.failures=0;
+    else if(current==='gone') previous.failures++;
+    previous.lastStatus=current;previous.checkedAt=new Date().toISOString();
+    if(!state.publishedChecks)state.publishedChecks={};
+    state.publishedChecks[id]=previous;
+    if(previous.failures>=3){delete published.byId[id];delete state.searched[id];}
+  }
+  if(publishedEntries.length)state.publishedCursor=(Number(state.publishedCursor||0)+publishBudget)%publishedEntries.length;
+
   const outstanding=all.filter(x=>!candidates.byId[x.id] && !published.byId[x.id] && !queue.byId[x.id] &&
     (!state.searched[x.id] || Date.now()-Date.parse(state.searched[x.id].at||0)>30*24*60*60*1000));
   missing=all.filter(x=>!candidates.byId[x.id] && !published.byId[x.id]).length;
