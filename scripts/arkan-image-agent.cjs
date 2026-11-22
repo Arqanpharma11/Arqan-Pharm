@@ -185,9 +185,21 @@ async function main(){
   }
   if(publishedEntries.length)state.publishedCursor=(Number(state.publishedCursor||0)+publishBudget)%publishedEntries.length;
 
-  const outstanding=all.filter(x=>!candidates.byId[x.id] && !published.byId[x.id] && !queue.byId[x.id] &&
-    (!state.searched[x.id] || Date.now()-Date.parse(state.searched[x.id].at||0)>30*24*60*60*1000));
+  // A candidate is not a verified package. Retry missing and suspect items,
+  // and revisit old searches periodically instead of permanently skipping a hit.
+  const eligibleForSearch=x=>{
+    if(published.byId[x.id]) return false;
+    const last=state.searched[x.id]?.at;
+    if(last && Date.now()-Date.parse(last)<7*24*60*60*1000) return false;
+    return true;
+  };
+  const missingPriority=all.filter(x=>!candidates.byId[x.id] && eligibleForSearch(x));
+  const questionable=all.filter(x=>candidates.byId[x.id] && eligibleForSearch(x) &&
+    (state.checks[x.id]?.failures>=2 || !queue.byId[x.id]));
+  const outstanding=[...missingPriority,...questionable];
   missing=all.filter(x=>!candidates.byId[x.id] && !published.byId[x.id]).length;
+  state.searchPipeline={remainingMissing:missingPriority.length,remainingSuspect:questionable.length,
+    eligibleThisRun:outstanding.length};
   if(outstanding.length){
     const searchBudget=Math.min(Number(process.env.IMAGE_SEARCH_BUDGET||5),outstanding.length);
     for(let i=0;i<searchBudget;i++){
