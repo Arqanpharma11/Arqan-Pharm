@@ -20,6 +20,11 @@ const published = read(publishedFile,{version:1,byId:{}});
 const master = html.match(/const EXACT_MASTER_ITEMS\s*=\s*\[([\s\S]*?)\n\s*\];/);
 if(!master) throw Error('Master catalog extraction failed: refusing to mutate image data');
 const items = [...master[1].matchAll(/\{\s*name:\s*"([^"]+)"\s*,\s*cat:\s*"([^"]+)"/g)].map((m,i)=>({id:String(i+1),name:m[1],cat:m[2]}));
+// Do not search for products that already have individually approved photos.
+const seedStart=html.indexOf('const verifiedImageSeeds = {');
+const seedEnd=html.indexOf('const imageSeedBatches',seedStart);
+const approvedIds=new Set(seedStart>=0&&seedEnd>seedStart
+  ? [...html.slice(seedStart,seedEnd).matchAll(/^\s*'(\d+)':\s*\{\s*src:\s*'[^']+'/gm)].map(x=>x[1]) : []);
 // Existing English trade-name reference in the portal is a useful independent
 // search alias. Extract its JSON data; never execute the portal's JavaScript.
 const referenceMarker='const ENGLISH_BRAND_REFERENCE = ';
@@ -185,8 +190,8 @@ async function imageSearch(item){
   return sources.filter(x=>{if(seen.has(x.imageUrl))return false;seen.add(x.imageUrl);return true}).slice(0,4);
 }
 async function main(){
-  let cloud=[];
-  try{cloud=await getCloudItems()}catch(e){console.error('Cloud catalog unavailable:',e.message);if(process.env.FIREBASE_SERVICE_ACCOUNT_JSON)process.exitCode=1;}
+  let cloud=[],cloudError=null;
+  try{cloud=await getCloudItems()}catch(e){cloudError=String(e.message||e);console.warn('Optional cloud sync unavailable:',cloudError);}
   const byId=new Map(items.map(x=>[x.id,x]));
   // Preserve master categories; never treat a medicine as an unknown consumer good.
   for(const item of cloud){
@@ -237,7 +242,7 @@ async function main(){
   // A candidate is not a verified package. Retry missing and suspect items,
   // and revisit old searches periodically instead of permanently skipping a hit.
   const eligibleForSearch=x=>{
-    if(published.byId[x.id]) return false;
+    if(published.byId[x.id] || approvedIds.has(x.id)) return false;
     const last=state.searched[x.id]?.at;
     // Missing/uncertain results are retried after one day; do not keep
     // hammering the same API on every scheduled run.
@@ -296,7 +301,7 @@ async function main(){
   }
   state.lastRun=new Date().toISOString();
   state.lastCatalogSize=all.length;
-  const report={runAt:state.lastRun,masterItems:items.length,cloudItems:cloud.length,catalogItems:all.length,candidateLinks:linked.length,autoPublishedCount:Object.keys(published.byId).length,publishedThisRun:publishedNow,searchAttempted,searchHits,searchErrors,rejectionReasons,missingWithoutCandidate:missing,checked,healthy,gone,queuedThisRun:queued,pendingReview:Object.keys(queue.byId).length,searchEnabled:true,searchProviders:['Wikimedia Commons','Open Food Facts','Open Beauty Facts'],egyptianNamesResolved:Object.keys(state.egyptDrugNames||{}).length,englishBrandAliases:Object.keys(englishBrands).length,cloudSyncEnabled:!!process.env.FIREBASE_SERVICE_ACCOUNT_JSON,disclaimer:'Automated candidate discovery is not photo verification. Existing approved photos are never overwritten. Automatically published images remain marked as external, not verified packaging.'};
+  const report={runAt:state.lastRun,masterItems:items.length,cloudItems:cloud.length,catalogItems:all.length,candidateLinks:linked.length,autoPublishedCount:Object.keys(published.byId).length,publishedThisRun:publishedNow,searchAttempted,searchHits,searchErrors,rejectionReasons,missingWithoutCandidate:missing,checked,healthy,gone,queuedThisRun:queued,pendingReview:Object.keys(queue.byId).length,searchEnabled:true,searchProviders:['Wikimedia Commons','Open Food Facts','Open Beauty Facts'],egyptianNamesResolved:Object.keys(state.egyptDrugNames||{}).length,englishBrandAliases:Object.keys(englishBrands).length,approvedPhotoIds:approvedIds.size,cloudSyncEnabled:!!process.env.FIREBASE_SERVICE_ACCOUNT_JSON,cloudSyncError:cloudError,providerHealth:state.providerHealth||{},disclaimer:'Automated candidate discovery is not photo verification. Existing approved photos are never overwritten. Automatically published images remain marked as external, not verified packaging.'};
   write(stateFile,state);write(queueFile,queue);write(publishedFile,published);write(reportFile,report);
   console.log(JSON.stringify(report));
 }
