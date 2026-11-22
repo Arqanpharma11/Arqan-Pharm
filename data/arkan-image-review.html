@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>مراجعة صور أركان — 4218 صنف</title>
+<style>
+:root{font-family:system-ui,Tahoma,sans-serif;color:#183d27;background:#f4f8f4}
+body{margin:0 auto;max-width:1100px;padding:16px}h1{font-size:24px;margin:0 0 8px}
+.panel{background:white;border:1px solid #d3e5d5;border-radius:16px;padding:16px;margin:12px 0}
+button,.file{border:0;border-radius:9px;background:#187943;color:#fff;padding:10px 15px;font-weight:700;cursor:pointer}
+button:disabled{opacity:.4;cursor:not-allowed}button.secondary{background:#e5f0e7;color:#205a35}
+.row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}.grow{flex:1}
+small,.sub{color:#496555}.candidates{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}
+.option{border:2px solid #d2e4d8;border-radius:12px;padding:10px;min-height:250px}
+.option.selected{border-color:#15803d;background:#effaf1}
+.option img{width:100%;height:190px;object-fit:contain}
+.option strong{font-size:13px;display:block;min-height:38px;overflow-wrap:anywhere}
+.option a{display:block;font-size:12px;overflow-wrap:anywhere;color:#0963a7}
+.option button{width:100%;margin-top:8px}
+#counter{font-weight:700}#status{color:#375e42}
+</style></head>
+<body>
+<div class="panel"><h1>مراجعة صور أركان — كتالوج 4218 صنف</h1>
+<p class="sub">اعتمد الصورة فقط بعد فحص اسم المستحضر والتركيز والشكل الدوائي وعدد الوحدات على العبوة. الاختيار لا يغيّر البوابة حتى تصدّر الملف وترفعه من بوابة الأدمن.</p>
+<div class="row">
+<label class="file">فتح ملف الصور المرشحة <input id="file" type="file" accept=".json,application/json" hidden></label>
+<button class="secondary" id="load">تحميل آخر نتائج بحث</button>
+<button id="export" disabled>تصدير ملف الاستيراد الموحد</button>
+</div><p id="status" aria-live="polite">افتح ملف arkan-image-candidate-review.json أو حمّله من مجلد data.</p></div>
+<div class="panel"><div class="row"><button class="secondary" id="prev" disabled>السابق</button>
+<strong id="counter" class="grow">—</strong><button class="secondary" id="next" disabled>التالي</button></div>
+<h2 id="productName">لم يتم تحميل القائمة</h2><p id="englishName" class="sub"></p>
+<div id="choices" class="candidates"></div>
+<div class="row" style="margin-top:16px"><button id="skip" class="secondary" disabled>تخطي بدون اعتماد</button>
+<button id="clear" class="secondary" disabled>إلغاء اعتماد الصنف</button>
+<span id="approvedCount" class="sub"></span></div></div>
+<script>
+'use strict';
+const $=id=>document.getElementById(id);
+let all=[],queue=[],position=0;const approvals=new Map();
+function say(s){$('status').textContent=s}
+function button(label,click,cls){const b=document.createElement('button');b.textContent=label;if(cls)b.className=cls;b.addEventListener('click',click);return b}
+function render(){
+ const total=queue.length;
+ $('prev').disabled=position<=0;$('next').disabled=position>=total-1;
+ $('skip').disabled=$('clear').disabled=!total;$('export').disabled=!all.length;
+ $('approvedCount').textContent='صور معتمدة في الجلسة: '+approvals.size;
+ $('counter').textContent=total?(position+1)+' / '+total:'لا توجد صور مرشحة';
+ $('choices').replaceChildren();$('productName').textContent=total?queue[position].name:'لا توجد عناصر';
+ $('englishName').textContent=total?(queue[position].englishName||'')+' — رقم '+queue[position].id:'';
+ if(!total)return;
+ const item=queue[position];
+ for(const candidate of item.candidates){
+   const card=document.createElement('article');card.className='option'+(approvals.get(item.id)?.imageUrl===candidate.imageUrl?' selected':'');
+   const img=document.createElement('img');img.loading='lazy';img.decoding='async';img.referrerPolicy='no-referrer';
+   img.alt='صورة مرشحة للمراجعة فقط';img.src=candidate.imageUrl;
+   img.onerror=()=>{img.style.display='none';const msg=document.createElement('p');msg.textContent='تعذّر عرض الصورة — لا تعتمدها';card.prepend(msg)};
+   const title=document.createElement('strong');title.textContent=candidate.title||'بدون عنوان';
+   const source=document.createElement('p');source.textContent=(candidate.sourceName||'')+' • درجة ترشيح '+(candidate.score??'—');
+   const a=document.createElement('a');a.href=candidate.productPage||'#';a.textContent='صفحة المنتج الأصلية';a.target='_blank';a.rel='noopener noreferrer';
+   const approve=button('أكّدت المطابقة — اعتمد',()=>{approvals.set(item.id,candidate);advance()},'');
+   card.append(img,title,source,a,approve);$('choices').append(card);
+ }
+}
+function advance(){if(position<queue.length-1)position++;render()}
+function loadData(data){
+ if(data?.format!=='arkan-image-candidate-review'||!Array.isArray(data.items)||data.totalCatalogItems!==4218)throw new Error('ملف صور أركان غير صالح');
+ all=data.items;queue=all.filter(x=>!x.currentLocalImage&&Array.isArray(x.candidates)&&x.candidates.length);
+ position=0;approvals.clear();say('تم تحميل 4218 صنف؛ صور مرشحة لـ '+queue.length+' صنف. لم يتم اعتماد أي صورة تلقائيًا.');render();
+}
+$('file').addEventListener('change',async e=>{try{loadData(JSON.parse(await e.target.files[0].text()))}catch(err){say('تعذّر التحميل: '+err.message)}});
+$('load').addEventListener('click',async()=>{try{const r=await fetch('./arkan-image-candidate-review.json',{cache:'no-store'});if(!r.ok)throw new Error('HTTP '+r.status);loadData(await r.json())}catch(err){say('افتح الملف يدويًا من الزر الأول: '+err.message)}});
+$('prev').onclick=()=>{position=Math.max(0,position-1);render()};
+$('next').onclick=()=>{advance()};
+$('skip').onclick=()=>advance();
+$('clear').onclick=()=>{approvals.delete(queue[position]?.id);render()};
+$('export').onclick=()=>{
+ const rows=all.map(item=>{
+  const approved=approvals.get(item.id);
+  return{id:item.id,name:item.name,englishName:item.englishName||'',category:'',
+  imageUrl:approved?.imageUrl||'',sourceName:approved?.sourceName||'',
+  exactMatchConfirmed:!!approved};
+ });
+ const payload={format:'arkan-product-image-manifest',version:1,total:rows.length,
+ instruction:'Only human-reviewed exact-pack photos are marked confirmed.',items:rows};
+ const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'});
+ const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;
+ a.download='arkan-4218-approved-images.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),500);
+ say('تم تصدير ملف واحد بـ4218 صنف، منها '+approvals.size+' صورة معتمدة.');
+};
+document.addEventListener('keydown',e=>{if(e.target.closest('input,textarea'))return;if(e.key==='ArrowLeft')$('next').click();if(e.key==='ArrowRight')$('prev').click()});
+</script></body></html>
