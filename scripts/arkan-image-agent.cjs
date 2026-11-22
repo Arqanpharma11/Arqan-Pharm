@@ -211,7 +211,10 @@ async function main(){
   const eligibleForSearch=x=>{
     if(published.byId[x.id]) return false;
     const last=state.searched[x.id]?.at;
-    if(last && Date.now()-Date.parse(last)<7*24*60*60*1000) return false;
+    // Missing/uncertain results are retried after one day; do not keep
+    // hammering the same API on every scheduled run.
+    const retryHours=Number(state.searched[x.id]?.hits||0)>0?72:24;
+    if(last && Date.now()-Date.parse(last)<retryHours*60*60*1000) return false;
     return true;
   };
   const missingPriority=all.filter(x=>!candidates.byId[x.id] && eligibleForSearch(x));
@@ -225,7 +228,7 @@ async function main(){
   state.searchPipeline={remainingMissing:missingPriority.length,remainingSuspect:questionable.length,
     eligibleThisRun:outstanding.length};
   if(outstanding.length){
-    const searchBudget=Math.min(Math.max(0,Number(process.env.IMAGE_SEARCH_BUDGET||5)),outstanding.length);
+    const searchBudget=Math.min(25,Math.max(0,Number(process.env.IMAGE_SEARCH_BUDGET||5)),outstanding.length);
     for(let i=0;i<searchBudget;i++){
       const item=outstanding[i];
       try{
@@ -238,7 +241,7 @@ async function main(){
         if(found.length) {
           const eligible=[];
           for(const hit of found){
-            const output=publish(item,hit);
+            const output=publish(searchedItem,hit);
             if(!output)continue;
             if(await imageAlive(output.url)==='ok')eligible.push(output);
           }
