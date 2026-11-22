@@ -54,7 +54,7 @@ for pid,record in sorted(manifest.get('byId',{}).items(),key=lambda p:int(p[0]))
     if 'CC BY-SA 3.0' not in record.get('license',''):continue
     url=record.get('url','')
     if not re.match(r'^https://(?:images|static)\.open(?:food|beauty)facts\.org/',url):continue
-    if not re.match(r'^https://world\.open(?:food|beauty)facts\.org/product/\d+',record.get('sourcePage','')):continue
+    if not re.fullmatch(r'https://world\.open(?:food|beauty)facts\.org/product/\d+',record.get('sourcePage','')):continue
     # Retry previously rejected candidates after seven days, not on every run.
     if now-float(attempts.get(pid,0))<7*86400:continue
     attempts[pid]=now
@@ -99,7 +99,7 @@ for pid,record in sorted(manifest.get('byId',{}).items(),key=lambda p:int(p[0]))
         if out.exists():raise ValueError('local_photo_exists')
         picture.thumbnail((1000,1000))
         picture.save(out,'JPEG',quality=84,optimize=True)
-        lines.append("  '"+pid+"': { src: 'assets/product-images/"+pid+".jpg', source: 'Open Facts OCR checked pack CC BY-SA 3.0' },\n")
+        lines.append("  '"+pid+"': { src: 'assets/product-images/"+pid+".jpg', source: 'Open Facts contributors (CC BY-SA 3.0); source: "+record['sourcePage']+"; OCR pack check' },\n")
         report['published_ids'].append(pid)
     except Exception as exc:
         report['review'].append({'id':pid,'reason':str(exc)[:110]})
