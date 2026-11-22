@@ -20194,7 +20194,7 @@ ${window.location.href}
         }
         function arkanImageStatus(item) {
             if (PROD_IMG_VERIFIED[item.id] === true && PROD_IMAGES[item.id]) return 'صورة عبوة مسجلة';
-            if (ARKAN_AUTO_PUBLISHED_PACKS[String(item.id)]) return 'صورة منشورة آليًا من سجل منتج مفتوح';
+            if (ARKAN_AUTO_PUBLISHED_PACKS[String(item.id)]) return 'صورة مرشحة آليًا غير معتمدة — تحتاج تحققًا بصريًا';
             if (ARKAN_QUICK_PACKS[String(item.id)]) return 'صورة مرشحة غير معتمدة — اضغط لمراجعتها';
             return 'لا توجد صورة حقيقية — اضغط للبحث';
         }
@@ -20367,7 +20367,7 @@ ${window.location.href}
                         <td class="py-3 px-4">
                             <div class="flex items-start gap-2.5">
                                 <button type="button" onclick="openProductImage(${item.id})"
-                                    class="shrink-0 w-14 h-14 rounded-xl border border-arkan-sand bg-white overflow-hidden flex items-center justify-center hover:border-emerald-600 hover:shadow-sm transition"
+                                    class="relative shrink-0 w-14 h-14 rounded-xl border border-arkan-sand bg-white overflow-hidden flex items-center justify-center hover:border-emerald-600 hover:shadow-sm transition"
                                     title="اضغط لعرض صورة العبوة التجارية أو البحث عنها"
                                     aria-label="عرض صورة عبوة ${item.name}">
                                     <img src="${String(getArkanCatalogImage(item)).replace(/&/g, '&amp;').replace(/"/g, '&quot;')}"
@@ -20375,6 +20375,10 @@ ${window.location.href}
                                         loading="lazy" decoding="async"
                                         class="w-full h-full object-contain p-0.5"
                                         onerror="arkanHandlePackError(this,${item.id})">
+                                    ${(PROD_IMG_VERIFIED[item.id] !== true || !PROD_IMAGES[item.id]) &&
+                                       (ARKAN_QUICK_PACKS[String(item.id)] || ARKAN_AUTO_PUBLISHED_PACKS[String(item.id)])
+                                      ? '<span class="absolute inset-x-0 bottom-0 text-[8px] leading-tight font-bold text-emerald-950 bg-emerald-100/95">غير معتمدة</span>'
+                                      : ''}
                                 </button>
                                 <div class="min-w-0 flex-1">
                                     <a href="${getGoogleProductImageUrl(item.id)}" target="_blank" rel="noopener noreferrer"
