@@ -17,9 +17,11 @@ for pid, src in matches:
     seen.add(pid)
     if src.startswith("assets/product-images/") and not (root / src).is_file():
         problems.append("Missing local image for product " + pid + ": " + src)
-map_count = block.count("const imageLegacySeedSources = ")
+# The legacy migration map is declared after imageSeedBatches, not within
+# verifiedImageSeeds. Validate its actual scope and require exactly one map.
+map_count = html.count("const imageLegacySeedSources = ")
 if map_count != 1:
-    problems.append("Expected one legacy migration map, found " + str(map_count))
+    problems.append("Expected one legacy migration map in portal, found " + str(map_count))
 if not matches:
     problems.append("No verified image seeds parsed")
 if problems:
