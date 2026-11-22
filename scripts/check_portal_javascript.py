@@ -14,6 +14,15 @@ tags = list(re.finditer(r"<script\b([^>]*)>([\s\S]*?)</script\s*>", html, re.I))
 if not tags:
     raise SystemExit("ERROR: No script tags in pharmacy portal; cannot smoke-check JS")
 
+# Regression: candidate-image loader must build the reused-URL index in
+# its own function scope, not reference a variable from the import workflow.
+loader = html.split("async function loadArkanQuickImageCandidates() {", 1)
+if len(loader) != 2:
+    raise SystemExit("ERROR: missing Arkan candidate image loader")
+loader_body = loader[1].split("function renderPharmacistCatalog()", 1)[0]
+if "const reusedUrls = new Map();" not in loader_body:
+    raise SystemExit("ERROR: reusedUrls must be defined inside candidate image loader")
+
 checked = 0
 failures = []
 for number, match in enumerate(tags, start=1):
