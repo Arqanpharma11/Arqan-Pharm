@@ -8,6 +8,7 @@ on:
       - 'scripts/mirror_product_images.py'
       - 'scripts/verified_image_replacements.json'
       - 'scripts/fix_image_seed_migration.py'
+      - 'scripts/check_pharmacy_image_integrity.py'
       - '.github/workflows/mirror-product-images.yml'
 permissions:
   contents: write
@@ -28,11 +29,13 @@ jobs:
       - name: Install image decoders
         run: python -m pip install 'Pillow>=11.2' pillow-avif-plugin
       - name: Check script syntax
-        run: python -m py_compile scripts/mirror_product_images.py scripts/fix_image_seed_migration.py
+        run: python -m py_compile scripts/mirror_product_images.py scripts/fix_image_seed_migration.py scripts/check_pharmacy_image_integrity.py
       - name: Mirror up to 150 previously reviewed image URLs
         run: python scripts/mirror_product_images.py
       - name: Upgrade old cached image references in pharmacy portal
         run: python scripts/fix_image_seed_migration.py
+      - name: Check verified image URLs and JavaScript seed declarations
+        run: python scripts/check_pharmacy_image_integrity.py
       - name: Commit successfully downloaded product images
         run: |
           git config user.name "github-actions[bot]"
