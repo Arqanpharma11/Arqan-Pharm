@@ -7,8 +7,11 @@ assert.equal(data.catalogTotal,4218);
 assert.ok(Array.isArray(data.items));
 assert.equal(data.items.length,data.trialImages);
 const seen=new Set();
+const usedImageUrls=new Set();
 for(const x of data.items){
   assert.ok(!seen.has(x.id),'duplicate product id');seen.add(x.id);
+  assert.ok(!usedImageUrls.has(x.imageUrl),'ambiguous image URL reused for another catalog item');
+  usedImageUrls.add(x.imageUrl);
   assert.equal(x.status,'trial_unverified');
   assert.equal(x.catalogMatch,'not_visually_verified');
   assert.equal(x.rights,'source_rights_unconfirmed');
