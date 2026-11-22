@@ -38,7 +38,7 @@ if predicate_new in html:
     # and prevents repeated version bumps on subsequent runs.
     marker = "// imageLegacySeedMigrationV1: source-specific upgrade"
     if marker not in html:
-        html = html.replace(mapping_line, marker + "\\n                    " + mapping_line, 1)
+        html = html.replace(mapping_line, marker + "\n                    " + mapping_line, 1)
         html = html.replace(version.group(0), "arkan_verified_image_seed_v" + str(int(version.group(1))+1), 1)
 HTML.write_text(html, encoding="utf-8")
 print("Applied scoped image source migration for ids: " + ", ".join(legacy))
