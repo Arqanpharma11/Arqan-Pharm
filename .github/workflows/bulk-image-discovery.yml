@@ -29,7 +29,7 @@ jobs:
       - name: Expand missing search names from Egyptian CC0 medicine dataset
         run: python scripts/enrich_image_search_aliases.py
       - name: Collect public pharmacy product photo metadata in batches
-        run: python scripts/bulk_pharmacy_image_discovery.py --max-pages 16 --delay 0.7
+        run: python scripts/bulk_pharmacy_image_discovery.py --max-pages 60 --delay 0.8
       - name: Save 4218-item image candidate review file to the repository
         run: |
           git config user.name "github-actions[bot]"
