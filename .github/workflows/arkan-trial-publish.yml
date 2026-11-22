@@ -30,14 +30,25 @@ jobs:
           node --check scripts/arkan-trial-photo-feed.cjs
           node scripts/arkan-trial-photo-feed.cjs
           node scripts/arkan-trial-photo-feed.test.cjs
-      - name: Commit preview feed
+      - name: Publish with safe regeneration on concurrent repository changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/arkan-trial-photo-feed.json
-          if ! git diff --cached --quiet; then
-            git commit -m "chore: publish updated trial image thumbnails"
+          for attempt in 1 2 3; do
+            # Recalculate from the newest repository state on every attempt:
+            # never resolve a conflicting JSON photo feed by overwriting another run.
             git fetch origin main
-            git rebase origin/main
-            git push origin HEAD:main
-          fi
+            git reset --hard origin/main
+            node scripts/arkan-trial-photo-feed.cjs
+            node scripts/arkan-trial-photo-feed.test.cjs
+            git add data/arkan-trial-photo-feed.json
+            if git diff --cached --quiet; then
+              echo "Trial preview already up to date"
+              exit 0
+            fi
+            git commit -m "chore: publish updated trial image thumbnails"
+            if git push origin HEAD:main; then exit 0; fi
+            echo "::warning::Remote changed during trial publish; rebuilding from latest source (attempt $attempt)"
+          done
+          echo "::error::Unable to publish trial preview after three fresh rebuilds"
+          exit 1
