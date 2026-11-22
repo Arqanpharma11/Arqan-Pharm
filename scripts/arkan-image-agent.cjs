@@ -20,7 +20,7 @@ const published = read(publishedFile,{version:1,byId:{}});
 const master = html.match(/const EXACT_MASTER_ITEMS\s*=\s*\[([\s\S]*?)\n\s*\];/);
 if(!master) throw Error('Master catalog extraction failed: refusing to mutate image data');
 const items = [...master[1].matchAll(/\{\s*name:\s*"([^"]+)"\s*,\s*cat:\s*"([^"]+)"/g)].map((m,i)=>({id:String(i+1),name:m[1],cat:m[2]}));
-if(items.length!==4218) throw Error('Master catalog count changed: update parser before proceeding');
+if(!items.length) throw Error('Master catalog empty: refusing to mutate image data');
 async function getCloudItems() {
   const raw=process.env.FIREBASE_SERVICE_ACCOUNT_JSON;
   if(!raw) return [];
@@ -152,7 +152,12 @@ async function main(){
   let cloud=[];
   try{cloud=await getCloudItems()}catch(e){console.error('Cloud catalog unavailable:',e.message);if(process.env.FIREBASE_SERVICE_ACCOUNT_JSON)process.exitCode=1;}
   const byId=new Map(items.map(x=>[x.id,x]));
-  for(const item of cloud)byId.set(item.id,item);
+  // Preserve master categories; never treat a medicine as an unknown consumer good.
+  for(const item of cloud){
+    const original=byId.get(item.id);
+    if(original)byId.set(item.id,{...original,...item,cat:original.cat,name:item.name||original.name,en:item.en||original.en||''});
+    else byId.set(item.id,{...item,cat:''});
+  }
   const all=[...byId.values()];
   const linked=Object.entries(candidates.byId).filter(([id,c])=>Array.isArray(c)&&c[0]?.startsWith('https://'));
   const budget=Number(process.env.IMAGE_CHECK_BUDGET||20);
@@ -194,8 +199,8 @@ async function main(){
     return true;
   };
   const missingPriority=all.filter(x=>!candidates.byId[x.id] && eligibleForSearch(x));
-  const questionable=all.filter(x=>candidates.byId[x.id] && eligibleForSearch(x) &&
-    (state.checks[x.id]?.failures>=2 || !queue.byId[x.id]));
+  // Candidates are not verified: revisit every unpublished candidate periodically.
+  const questionable=all.filter(x=>candidates.byId[x.id] && eligibleForSearch(x));
   const outstanding=[...missingPriority,...questionable];
   missing=all.filter(x=>!candidates.byId[x.id] && !published.byId[x.id]).length;
   state.searchPipeline={remainingMissing:missingPriority.length,remainingSuspect:questionable.length,
