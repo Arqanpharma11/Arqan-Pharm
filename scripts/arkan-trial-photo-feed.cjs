@@ -29,22 +29,37 @@ function safeUrl(url) {
       !['localhost','127.0.0.1','0.0.0.0'].includes(p.hostname)&&!p.hostname.endsWith('.local');}
   catch{return false}
 }
+// Build a cross-catalog owner index before accepting any preview photo.
+// A URL proposed for two different SKUs is ambiguous regardless of title.
+const candidateLists=new Map();
+const urlOwners=new Map();
+for(const item of items) {
+  const id=item.id, list=[];
+  const old=candidates.byId?.[id];
+  if(Array.isArray(old)&&old.length>=2)list.push({imageUrl:old[0],title:old[1],source:old[2]||'',page:old[3]||''});
+  for(const hit of queue.byId?.[id]?.results||[])
+    list.push({imageUrl:hit.imageUrl,title:hit.title,source:hit.provider,page:hit.sourcePage||''});
+  candidateLists.set(id,list);
+  for(const c of list){
+    if(!safeUrl(c.imageUrl))continue;
+    if(!urlOwners.has(c.imageUrl))urlOwners.set(c.imageUrl,new Set());
+    urlOwners.get(c.imageUrl).add(id);
+  }
+}
 const results=[];
+let ambiguousLinksSkipped=0;
 for(const item of items) {
   if(!config.TRIAL_ALL_PRODUCTS)continue;
   if(!config.AUTO_PUBLISH_MEDICINES && /أدوية|دواء/.test(item.category))continue;
   const id=item.id;
-  const list=[];
+  const list=candidateLists.get(id)||[];
   const old=candidates.byId?.[id];
-  if(Array.isArray(old)&&old.length>=2)list.push({imageUrl:old[0],title:old[1],source:old[2]||'',page:old[3]||''});
-  for(const hit of queue.byId?.[id]?.results||[]) {
-    list.push({imageUrl:hit.imageUrl,title:hit.title,source:hit.provider,page:hit.sourcePage||''});
-  }
   const broken=state.checks?.[id];
   const unique=new Set();
   for(const c of list) {
     if(!safeUrl(c.imageUrl)||unique.has(c.imageUrl))continue;
     unique.add(c.imageUrl);
+    if((urlOwners.get(c.imageUrl)?.size||0)>1){ambiguousLinksSkipped++;continue;}
     if(broken?.failures>=3&&broken?.lastStatus==='gone'&&old?.[0]===c.imageUrl)continue;
     // Never claim brand/strength was verified by a URL or page title.
     // Only reject an explicit numerical contradiction in comparable scripts.
@@ -56,7 +71,7 @@ for(const item of items) {
     break;
   }
 }
-const result={mode:'trial',minimumVerifiedConfidence:config.MIN_CONFIDENCE_SCORE,approvedForProduction:false,version:1,generatedAt:new Date().toISOString(),catalogTotal:items.length,
+const result={mode:'trial',minimumVerifiedConfidence:config.MIN_CONFIDENCE_SCORE,approvedForProduction:false,version:2,ambiguousLinksSkipped,generatedAt:new Date().toISOString(),catalogTotal:items.length,
   trialImages:results.length,notice:'UNVERIFIED IMAGES. Not for dispensing or identifying medicine. Never imported into approved pharmacy photo seeds.',items:results};
 fs.mkdirSync('data',{recursive:true});
 fs.writeFileSync('data/arkan-trial-photo-feed.json',JSON.stringify(result,null,2)+'\n');
