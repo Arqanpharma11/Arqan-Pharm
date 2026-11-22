@@ -9,6 +9,8 @@ on:
       - 'scripts/arkan-auto-publish.cjs'
       - 'scripts/arkan-auto-publish.test.cjs'
       - 'scripts/arkan-visual-publish.py'
+      - 'scripts/check_pharmacy_image_integrity.py'
+      - 'scripts/check_portal_javascript.py'
       - 'scripts/arkan-trial-photo-feed.cjs'
       - 'scripts/arkan-trial-photo-feed.test.cjs'
       - 'data/arkan-trial-image-config.json'
@@ -30,6 +32,10 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - name: Verify image seed consistency and portal syntax first
+        run: |
+          python scripts/check_pharmacy_image_integrity.py
+          python scripts/check_portal_javascript.py
       - name: Test safe photo publication rules
         run: |
           node --check scripts/arkan-image-agent.cjs
@@ -62,21 +68,26 @@ jobs:
         run: |
           python scripts/check_pharmacy_image_integrity.py
           python scripts/check_portal_javascript.py
-      - name: Regenerate separate all-category TRIAL image preview (unverified)
-        run: |
-          node --check scripts/arkan-trial-photo-feed.cjs
-          node scripts/arkan-trial-photo-feed.cjs
-          node scripts/arkan-trial-photo-feed.test.cjs
       - name: Build complete image coverage and missing-product inventory
         run: node scripts/arkan-image-coverage.cjs
       - name: Save review status (never publish unverified photos)
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add trial-images.html data/arkan-trial-photo-feed.json index.html assets/product-images/ data/arkan-visual-publish-report.json data/arkan-visual-publish-state.json data/arkan-image-agent-state.json data/arkan-image-review-queue.json data/arkan-image-agent-report.json data/arkan-auto-published-images.json data/arkan-image-coverage.csv data/arkan-image-coverage-report.json
+          git add index.html assets/product-images/ data/arkan-visual-publish-report.json data/arkan-visual-publish-state.json data/arkan-image-agent-state.json data/arkan-image-review-queue.json data/arkan-image-agent-report.json data/arkan-auto-published-images.json data/arkan-image-coverage.csv data/arkan-image-coverage-report.json
           if ! git diff --cached --quiet; then
             git commit -m "chore: update unattended image health and discovery queue"
             git fetch origin main
             git rebase origin/main
             git push origin HEAD:main
           fi
+      - name: Upload diagnostics even when publishing is blocked
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: arkan-image-agent-diagnostics
+          if-no-files-found: ignore
+          path: |
+            data/arkan-image-agent-report.json
+            data/arkan-image-review-queue.json
+            data/arkan-visual-publish-report.json
