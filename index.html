@@ -7175,7 +7175,7 @@
 
                 // Verified package-photo seed: Apple-Lite 30 tablets (catalog item #10).
                 // Source page shows the exact Apple-Lite pack; do not use lookalike images.
-                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v44';;;;;
+                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v45';;;;;
                 if (localStorage.getItem(IMAGE_SEED_VERSION) !== '1') {
                     // Individually checked package photos: brand, strength/stage and form match.
                     const verifiedImageSeeds = {
@@ -7800,6 +7800,9 @@
                         '485': { src: 'https://delmar-test.linkedgates.com/images/items/140445-v1.JPEG', source: 'Delmar & Attalla — Imutrexate 10 mg, 10 tablets; exact methotrexate strength and pack verified' },
                         '486': { src: 'https://mohieldeenpharmacy.com/web/image/product.template/34026/image_1920?unique=712779a', source: 'Mohieldeen Pharmacy — Imutrexate 5 mg, 10 tablets; exact methotrexate strength and pack verified' },
                         '487': { src: 'https://www.lotusonline.com/cdn/shop/files/3008474_processed.jpg?v=1773306098', source: 'Lotus Pharmacies — Imutrexate 2.5 mg, 10 tablets; exact methotrexate strength and pack verified' },
+                        '492': { src: 'https://doctormpharmacy.com/cdn/shop/files/86108.jpg?v=1755341963', source: 'Doctor M Pharmacy — Immulant 120 ml syrup; exact brand and syrup packaging verified' },
+                        '498': { src: 'https://dkud4u09qff41.cloudfront.net/Products/68e5bd43-606c-4ab9-a49d-d81a435bc1f0.jpeg', source: 'Vezeeta Pharmacy — Anallerge chlorpheniramine 2 mg/5 ml, 100 ml syrup; exact brand, form and strength verified' },
+                        '500': { src: 'https://mohieldeenpharmacy.com/web/image/product.template/12222/image_1920?unique=9c7a03b', source: 'Mohieldeen Pharmacy — Enterogermina 2 billion/5 ml oral suspension, 10 mini bottles; exact pack verified' },
                     };
                     // Apply the verified image seed set once, then batch cloud writes.
                     const imageSeedBatches = (typeof firestoreDB !== 'undefined' && firestoreDB) ? [] : null;
