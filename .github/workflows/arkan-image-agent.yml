@@ -1,0 +1,37 @@
+name: Arkan Auto Image Agent
+on:
+  schedule:
+    - cron: '7,22,37,52 * * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: arkan-image-agent
+  cancel-in-progress: false
+jobs:
+  audit-and-discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Audit images and search permitted providers
+        env:
+          BRAVE_IMAGE_API_KEY: ${{ secrets.BRAVE_IMAGE_API_KEY }}
+          FIREBASE_SERVICE_ACCOUNT_JSON: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_JSON }}
+          IMAGE_CHECK_BUDGET: '20'
+          IMAGE_SEARCH_BUDGET: '5'
+        run: node scripts/arkan-image-agent.cjs
+      - name: Save review status (never publish unverified photos)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/arkan-image-agent-state.json data/arkan-image-review-queue.json data/arkan-image-agent-report.json
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: update unattended image health and discovery queue"
+            git push
+          fi
