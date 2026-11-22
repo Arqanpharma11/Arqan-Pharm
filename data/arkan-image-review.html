@@ -25,7 +25,7 @@ small,.sub{color:#496555}.candidates{display:grid;grid-template-columns:repeat(a
 <label class="file">فتح ملف الصور المرشحة <input id="file" type="file" accept=".json,application/json" hidden></label>
 <button class="secondary" id="load">تحميل آخر نتائج بحث</button>
 <button id="export" disabled>تصدير ملف الاستيراد الموحد</button>
-</div><p id="status" aria-live="polite">افتح ملف arkan-image-candidate-review.json أو حمّله من مجلد data.</p></div>
+</div><p id="status" aria-live="polite">افتح ملف arkan-image-approval-worklist.json أو حمّله من مجلد data.</p></div>
 <div class="panel"><div class="row"><button class="secondary" id="prev" disabled>السابق</button>
 <strong id="counter" class="grow">—</strong><button class="secondary" id="next" disabled>التالي</button></div>
 <h2 id="productName">لم يتم تحميل القائمة</h2><p id="englishName" class="sub"></p>
@@ -63,12 +63,17 @@ function render(){
 }
 function advance(){if(position<queue.length-1)position++;render()}
 function loadData(data){
- if(data?.format!=='arkan-image-candidate-review'||!Array.isArray(data.items)||data.totalCatalogItems!==4218)throw new Error('ملف صور أركان غير صالح');
- all=data.items;queue=all.filter(x=>!x.currentLocalImage&&Array.isArray(x.candidates)&&x.candidates.length);
- position=0;approvals.clear();say('تم تحميل 4218 صنف؛ صور مرشحة لـ '+queue.length+' صنف. لم يتم اعتماد أي صورة تلقائيًا.');render();
+ if(!Array.isArray(data?.items)||data.totalCatalogItems!==4218)throw new Error('ملف صور أركان غير صالح');
+ if(data.format==='arkan-image-approval-worklist'){
+   all=data.items.map(x=>({...x,candidates:x.reviewCandidates||[]}));
+   queue=all.filter(x=>x.status==='metadata_pass_needs_visual_review'&&x.candidates.length);
+ }else if(data.format==='arkan-image-candidate-review'){
+   all=data.items;queue=all.filter(x=>!x.currentLocalImage&&Array.isArray(x.candidates)&&x.candidates.length);
+ }else throw new Error('صيغة ملف الصور غير مدعومة');
+ position=0;approvals.clear();say('تم تحميل '+queue.length+' صنف بعد فحص بيانات الاسم والتركيز والشكل الدوائي. الاعتماد النهائي يحتاج فحص العبوة المرئية.');render();
 }
 $('file').addEventListener('change',async e=>{try{loadData(JSON.parse(await e.target.files[0].text()))}catch(err){say('تعذّر التحميل: '+err.message)}});
-$('load').addEventListener('click',async()=>{try{const r=await fetch('./arkan-image-candidate-review.json',{cache:'no-store'});if(!r.ok)throw new Error('HTTP '+r.status);loadData(await r.json())}catch(err){say('افتح الملف يدويًا من الزر الأول: '+err.message)}});
+$('load').addEventListener('click',async()=>{try{const r=await fetch('./arkan-image-approval-worklist.json',{cache:'no-store'});if(!r.ok)throw new Error('HTTP '+r.status);loadData(await r.json())}catch(err){say('افتح الملف يدويًا من الزر الأول: '+err.message)}});
 $('prev').onclick=()=>{position=Math.max(0,position-1);render()};
 $('next').onclick=()=>{advance()};
 $('skip').onclick=()=>advance();
