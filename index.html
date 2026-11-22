@@ -19888,7 +19888,8 @@ ${window.location.href}
             box.innerHTML = '<img id="pimg-el" alt="" class="max-h-full max-w-full object-contain">';
             const el = document.getElementById('pimg-el');
             el.onerror = () => {
-                if (fb && el.src !== fb) { el.src = fb; if (_liveCurrent) _liveCurrent.shown = fb; return; }
+                if (_liveCurrent) _liveCurrent.shown = null;
+                if (fb && el.src !== fb) { el.src = fb; return; }
                 const pid = _liveCurrent && _liveCurrent.id;
                 const product = pid != null ? products.find(p => String(p.id) === String(pid)) : null;
                 const safeName = product ? String(product.name || '').replace(/[<>&"]/g, '') : '';
