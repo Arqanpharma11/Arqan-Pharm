@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
 """Mirror already-reviewed product photos locally, without changing product identities."""
 import concurrent.futures
+import csv
 import json
 import pathlib
 import re
 import urllib.request
+from urllib.parse import urlparse
 from io import BytesIO
 from PIL import Image, ImageOps, UnidentifiedImageError
 import pillow_avif  # enable AVIF decoding for CDN responses
@@ -20,7 +22,7 @@ block = html[begin:end]
 pattern = re.compile(r"(?m)^(\s*'(\d+)': \{ src: ')([^']+)(', source: '[^']+' \},?)")
 entries = [(m.group(2), m.group(3), m.group(0)) for m in pattern.finditer(block)]
 # Do not overwrite an already saved image, or replace unverified URLs with unrelated packs.
-limit = 100
+limit = 150
 # Keep previous failures in a persistent report so later batches advance rather than
 # spending their entire budget on the same dead/blocked links.
 REPORT = ROOT / "image-mirror-report.json"
@@ -88,8 +90,21 @@ for row in new_failures:
 for pid, url, line, new, error in results:
     if new:
         failures.pop(str(pid), None)
+local_ids = {p.stem for p in DEST.iterdir() if p.is_file() and p.suffix.lower() in (".jpg", ".png", ".webp")}
+local_references = set(re.findall(r"assets/product-images/([0-9]+)\\.(?:jpg|png|webp)", block))
+seed_sources = {pid: source for pid, url, source in re.findall(
+    r"'([0-9]+)': \\{ src: '([^']+)', source: '([^']+)'", block
+)}
+with (ROOT / "image-replacement-queue.csv").open("w", newline="", encoding="utf-8-sig") as output:
+    writer = csv.DictWriter(output, fieldnames=["id", "source", "domain", "failure", "url"])
+    writer.writeheader()
+    for item in sorted(failures.values(), key=lambda row: int(row["id"])):
+        writer.writerow({"id": item["id"], "source": seed_sources.get(str(item["id"]), ""),
+                         "domain": urlparse(item["url"]).hostname or "", "failure": item.get("error", ""),
+                         "url": item["url"]})
 report = {"attempted":len(results), "mirrored":success,
-          "failed":len(new_failures), "total_mirrored_in_previous_runs":previous.get("total_mirrored_in_previous_runs",0)+success,
+          "failed":len(new_failures), "locally_stored_unique_product_ids":len(local_ids),
+          "locally_referenced_seed_ids":len(local_references), "verified_seed_ids":len({pid for pid, _, _ in entries}),
           "unresolved_failed_urls":len(failures), "failures":list(failures.values()),
           "note":"URLs that could not be fetched are NOT represented as valid photos. Visual pack matching requires separate review."}
 (ROOT/"image-mirror-report.json").write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding="utf-8")
