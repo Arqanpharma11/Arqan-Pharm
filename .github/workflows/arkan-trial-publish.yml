@@ -6,6 +6,7 @@ on:
       - 'scripts/arkan-trial-photo-feed.cjs'
       - 'scripts/arkan-trial-photo-feed.test.cjs'
       - 'data/arkan-trial-image-config.json'
+      - 'scripts/check_arkan_image_data.py'
       - '.github/workflows/arkan-trial-publish.yml'
   schedule:
     - cron: '4,14,24,34,44,54 * * * *'
@@ -30,6 +31,7 @@ jobs:
           node --check scripts/arkan-trial-photo-feed.cjs
           node scripts/arkan-trial-photo-feed.cjs
           node scripts/arkan-trial-photo-feed.test.cjs
+          python scripts/check_arkan_image_data.py
       - name: Publish with safe regeneration on concurrent repository changes
         run: |
           git config user.name "github-actions[bot]"
