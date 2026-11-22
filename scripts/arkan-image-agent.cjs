@@ -41,6 +41,34 @@ async function getCloudItems() {
   return array.map(v=>{const a=v.mapValue?.fields||{}; return {id:String(val(a.id)||''),name:String(val(a.name)||''),en:String(val(a.en)||'')};}).filter(x=>x.id&&x.name);
 }
 const pause=ms=>new Promise(r=>setTimeout(r,ms));
+// Egyptian drug index is metadata only: it provides English names, not package photos.
+// Keep a strict exact Arabic-name match and refuse conflicting strengths.
+const compactArabic=x=>String(x||'').normalize('NFKC').toLowerCase()
+  .replace(/[\u064b-\u065f\u0670\u0640]/g,'').replace(/[إأآ]/g,'ا')
+  .replace(/ى/g,'ي').replace(/ة/g,'ه').replace(/[^\u0621-\u064a0-9]/g,'');
+const digits=x=>(String(x||'').match(/\d+(?:[./]\d+)*/g)||[]).sort();
+async function resolveEgyptDrugName(item){
+  if(item.en || !/أدوية|دواء/.test(item.cat||''))return item;
+  const cached=state.egyptDrugNames?.[item.id];
+  if(cached && cached.arabic===item.name)return {...item,en:cached.english,barcode:cached.barcode||''};
+  const q=String(item.name||'').trim().replace(/%/g,'').slice(0,65);
+  if(q.length<5)return item;
+  try {
+    const args=new URLSearchParams({q,limit:'20'});
+    const response=await fetchJson('https://eg-drugs-api.mahmoudfalous.workers.dev/v1/search?'+args);
+    const matches=(response.results||[]).filter(x=>
+      compactArabic(x.arabic)===compactArabic(item.name) &&
+      JSON.stringify(digits(x.arabic))===JSON.stringify(digits(item.name)) &&
+      typeof x.name==='string' && x.name.length>3);
+    if(matches.length!==1)return item;
+    const found=matches[0];
+    if(!state.egyptDrugNames)state.egyptDrugNames={};
+    state.egyptDrugNames[item.id]={arabic:item.name,english:found.name,barcode:found.barcode||'',
+       source:'Egyptian Drug Database by Mahmoud Mohamed (CC BY 4.0)'};
+    return {...item,en:found.name,barcode:found.barcode||''};
+  }catch(e){console.warn('Egypt drug metadata unavailable:',e.message);return item;}
+}
+
 async function imageAlive(url){
   if(!/^https:\/\//.test(url)) return 'invalid';
   try{
@@ -165,7 +193,8 @@ async function main(){
     for(let i=0;i<searchBudget;i++){
       const item=outstanding[(state.searchCursor+i)%outstanding.length];
       try{
-        const found=await imageSearch(item);
+        const searchedItem=await resolveEgyptDrugName(item);
+        const found=await imageSearch(searchedItem);
         state.searched[item.id]={at:new Date().toISOString(),hits:found.length};
         if(found.length) {
           const eligible=[];
@@ -178,7 +207,7 @@ async function main(){
             published.byId[item.id]=eligible[0];
             publishedNow++;
           }else {
-            queue.byId[item.id]={name:item.name,en:item.en||'',results:found,
+            queue.byId[item.id]={name:item.name,en:searchedItem.en||'',results:found,
               reason:eligible.length>1?'ambiguous_multiple_valid_packages':'needs_review'};
             queued++;
           }
@@ -190,7 +219,7 @@ async function main(){
   }
   state.lastRun=new Date().toISOString();
   state.lastCatalogSize=all.length;
-  const report={runAt:state.lastRun,masterItems:items.length,cloudItems:cloud.length,catalogItems:all.length,candidateLinks:linked.length,autoPublishedCount:Object.keys(published.byId).length,publishedThisRun:publishedNow,missingWithoutCandidate:missing,checked,healthy,gone,queuedThisRun:queued,pendingReview:Object.keys(queue.byId).length,searchEnabled:true,searchProviders:['Wikimedia Commons','Open Food Facts','Open Beauty Facts'],cloudSyncEnabled:!!process.env.FIREBASE_SERVICE_ACCOUNT_JSON,disclaimer:'Automated candidate discovery is not photo verification. Existing approved photos are never overwritten. Automatically published images remain marked as external, not verified packaging.'};
+  const report={runAt:state.lastRun,masterItems:items.length,cloudItems:cloud.length,catalogItems:all.length,candidateLinks:linked.length,autoPublishedCount:Object.keys(published.byId).length,publishedThisRun:publishedNow,missingWithoutCandidate:missing,checked,healthy,gone,queuedThisRun:queued,pendingReview:Object.keys(queue.byId).length,searchEnabled:true,searchProviders:['Wikimedia Commons','Open Food Facts','Open Beauty Facts'],egyptianNamesResolved:Object.keys(state.egyptDrugNames||{}).length,cloudSyncEnabled:!!process.env.FIREBASE_SERVICE_ACCOUNT_JSON,disclaimer:'Automated candidate discovery is not photo verification. Existing approved photos are never overwritten. Automatically published images remain marked as external, not verified packaging.'};
   write(stateFile,state);write(queueFile,queue);write(publishedFile,published);write(reportFile,report);
   console.log(JSON.stringify(report));
 }
