@@ -9,6 +9,9 @@ on:
       - 'scripts/verified_image_replacements.json'
       - 'scripts/fix_image_seed_migration.py'
       - 'scripts/check_pharmacy_image_integrity.py'
+      - 'scripts/check_portal_javascript.py'
+      - 'scripts/smoke_portal_browser.mjs'
+      - 'sw.js'
       - '.github/workflows/mirror-product-images.yml'
 permissions:
   contents: write
@@ -45,11 +48,20 @@ jobs:
               break
             fi
           done
+      - name: Install Chromium for portal responsiveness test
+        if: github.event_name != 'schedule'
+        run: |
+          npm install --no-save playwright
+          npx playwright install --with-deps chromium
+      - name: Check desktop and mobile UI responsiveness
+        if: github.event_name != 'schedule'
+        run: node scripts/smoke_portal_browser.mjs
       - name: Commit successfully downloaded product images
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add index.html assets/product-images/ image-mirror-report.json image-replacement-queue.csv scripts/image_legacy_source_map.json
+          if test -f portal-smoke-report.json; then git add portal-smoke-report.json; fi
           if ! git diff --cached --quiet; then
             git commit -m "Host validated product image bytes locally to prevent broken hotlinks"
             git push
@@ -62,3 +74,6 @@ jobs:
           path: |
             image-mirror-report.json
             image-replacement-queue.csv
+            portal-smoke-report.json
+            portal-smoke-desktop.png
+            portal-smoke-mobile.png
