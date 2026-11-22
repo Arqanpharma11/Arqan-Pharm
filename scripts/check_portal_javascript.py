@@ -10,7 +10,7 @@ import tempfile
 
 root = pathlib.Path(__file__).resolve().parents[1]
 html = (root / "index.html").read_text(encoding="utf-8")
-tags = list(re.finditer(r"<script\\b([^>]*)>([\\s\\S]*?)</script\\s*>", html, re.I))
+tags = list(re.finditer(r"<script\b([^>]*)>([\s\S]*?)</script\s*>", html, re.I))
 if not tags:
     raise SystemExit("ERROR: No script tags in pharmacy portal; cannot smoke-check JS")
 
@@ -19,9 +19,9 @@ failures = []
 for number, match in enumerate(tags, start=1):
     attributes = match.group(1)
     js = match.group(2)
-    if re.search(r"\\bsrc\\s*=", attributes, re.I) or not js.strip():
+    if re.search(r"\bsrc\s*=", attributes, re.I) or not js.strip():
         continue
-    kind = re.search(r"\\btype\\s*=\\s*['\\\"]?([^\\s'\\\">]+)", attributes, re.I)
+    kind = re.search(r"\btype\s*=\s*['\\"]?([^\s'\\">]+)", attributes, re.I)
     script_type = kind.group(1).lower() if kind else "text/javascript"
     if script_type not in ("module", "text/javascript", "application/javascript"):
         continue
@@ -36,5 +36,5 @@ for number, match in enumerate(tags, start=1):
 if checked == 0:
     raise SystemExit("ERROR: No inline executable JavaScript was checked")
 if failures:
-    raise SystemExit("Portal JavaScript syntax ERROR:\\n" + "\\n".join(failures))
+    raise SystemExit("Portal JavaScript syntax ERROR:\n" + "\n".join(failures))
 print("PASS: checked", checked, "inline JavaScript blocks for syntax errors")
