@@ -7,6 +7,7 @@ import re
 import urllib.request
 from io import BytesIO
 from PIL import Image, ImageOps, UnidentifiedImageError
+import pillow_avif  # enable AVIF decoding for CDN responses
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 INDEX = ROOT / "index.html"
