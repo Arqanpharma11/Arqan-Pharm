@@ -25,7 +25,8 @@ limit = 100
 # spending their entire budget on the same dead/blocked links.
 REPORT = ROOT / "image-mirror-report.json"
 previous = json.loads(REPORT.read_text(encoding="utf-8")) if REPORT.exists() else {}
-failed_urls = {str(row.get("id")): row.get("url") for row in previous.get("failures", [])}
+failed_urls = {str(row.get("id")): row.get("url") for row in previous.get("failures", [])
+               if "unsupported or non-image response: image/avif" not in str(row.get("error",""))}
 already_failed = lambda pid,url: failed_urls.get(pid) == url
 selected = [(pid, url, line) for pid, url, line in entries
             if url.startswith("https://") and not already_failed(pid,url)
@@ -84,6 +85,9 @@ new_failures = [{"id":pid,"url":url,"error":error} for pid,url,_,new,error in re
 failures = {str(row["id"]): row for row in previous.get("failures", [])}
 for row in new_failures:
     failures[str(row["id"])] = row
+for pid, url, line, new, error in results:
+    if new:
+        failures.pop(str(pid), None)
 report = {"attempted":len(results), "mirrored":success,
           "failed":len(new_failures), "total_mirrored_in_previous_runs":previous.get("total_mirrored_in_previous_runs",0)+success,
           "unresolved_failed_urls":len(failures), "failures":list(failures.values()),
