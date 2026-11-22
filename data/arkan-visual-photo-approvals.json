@@ -1,0 +1,51 @@
+{
+  "format": "arkan-visually-approved-package-photos",
+  "version": 1,
+  "approvalRule": "Real pack visually inspected: exact trade name, strength, dosage form, and unit count. Download and local-hosting still require separate pipeline success.",
+  "approved": [
+    {
+      "id": 47,
+      "product": "Apixatrack",
+      "strength": "5 mg",
+      "form": "film-coated tablets",
+      "count": 30,
+      "source": "Vezeeta Pharmacy",
+      "url": "https://cdn-med-images.vezeeta.com/Products/1f9ff6f3-8af0-4446-ba69-42006d0dfc57.jpeg",
+      "evidence": "Visible labeled purple EVA Pharma carton: APIXATRACK, Apixaban 5 mg, 30 film coated tablets",
+      "downloadStatus": "queued_not_yet_confirmed"
+    },
+    {
+      "id": 82,
+      "product": "Atrozemb",
+      "strength": "20/10 mg",
+      "form": "film-coated tablets",
+      "count": 30,
+      "source": "Delmar & Attalla",
+      "url": "https://delmar-test.linkedgates.com/images/items/134077-v1.JPEG",
+      "evidence": "Visible Atrozemb Liptis carton with atorvastatin 20 mg and ezetimibe 10 mg; product listing specifies 30 tablets",
+      "downloadStatus": "queued_not_yet_confirmed"
+    },
+    {
+      "id": 100,
+      "product": "Atorstat",
+      "strength": "40 mg",
+      "form": "film-coated tablets",
+      "count": 14,
+      "source": "Delmar & Attalla",
+      "url": "https://delmar-test.linkedgates.com/images/items/101116-v1.JPEG",
+      "evidence": "Visible Delta Pharma ATORSTAT 40 mg box, 14 film-coated tablets",
+      "downloadStatus": "queued_not_yet_confirmed"
+    },
+    {
+      "id": 185,
+      "product": "Aricept",
+      "strength": "10 mg",
+      "form": "tablets",
+      "count": 14,
+      "source": "Bloom Pharmacy",
+      "url": "https://www.bloompharmacy.com/cdn/shop/products/aricept-10-mg-14-tablets-636552.jpg?v=1687635055",
+      "evidence": "Visible Pfizer ARICEPT donepezil 10 mg carton, 14 tablets",
+      "downloadStatus": "queued_not_yet_confirmed"
+    }
+  ]
+}
