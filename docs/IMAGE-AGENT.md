@@ -1,24 +1,28 @@
-# Arkan unattended image agent
+# Arkan Auto Image Agent — free version
 
-Runs from GitHub Actions every 15 minutes (UTC schedule, best-effort), independently of a browser session.
+## Cost and runtime
+The agent runs in GitHub Actions every 15 minutes, independently from visitors and browsers. Public GitHub repositories are eligible for free GitHub-hosted runner minutes subject to GitHub's current conditions. The schedule is **best effort**, not a guaranteed exact timer.
 
-## Current functionality
-- Reads the 4,218 master items from `index.html`.
-- Inspects 20 existing *candidate* image URLs per run, remembers 404/410 and records link health.
-- With an optional **Brave Image Search API** key, searches 5 missing items per run and writes possible matches to `data/arkan-image-review-queue.json`.
-- Does **not** publish unverified results as approved medical product images.
-- With optional Firestore service account, reads `settings/catalog` so newly added items can be added to the review/search queue.
-- Exports status to `data/arkan-image-agent-report.json`. Existing approved images in Firestore are not overwritten or deleted.
+It checks existing candidate image URLs, and searches free public APIs:
+- Wikimedia Commons: media search plus image-specific attribution and license metadata
+- Open Food Facts: food, milk and some nutritional products
+- Open Beauty Facts: cosmetics and beauty products
 
-## Setup
-1. In GitHub, open **Settings → Secrets and variables → Actions**.
-2. Create a repository secret `BRAVE_IMAGE_API_KEY` with your paid/authorized Brave Image Search API token. Without this, the agent performs image link health checks, **not new image searches**.
-3. To include products newly added in the app, create an *access-limited* Google Cloud service account permitted to read only the necessary Firestore document, and put its JSON in the secret `FIREBASE_SERVICE_ACCOUNT_JSON`. Do **not** commit this JSON or an admin login to the repository.
-4. In **Actions → Arkan Auto Image Agent**, enable Actions for the repository if disabled and use **Run workflow** once. Confirm a successful run and inspect the report.
+There is **no paid image-search API key** required for these searches. Follow each provider's API limits, licenses, and attribution rules.
 
-## Safety and limits
-- The schedule can be delayed, and GitHub can disable it after 60 days of inactivity on public repositories.
-- A search engine image result is not proof of correct drug, dosage form, pack, or copyright permission. The review queue must be validated against the actual package before approval.
-- A health check cannot detect a *visually incorrect* image. Images are never automatically replaced solely on a search result, especially pharmaceuticals.
-- Use image providers only under their terms and with permission to reproduce the images.
-- The current architecture does not search every second or guarantee 4,218 verified photos; it provides a stable unattended processing and review pipeline.
+## What it does
+- Reads 4,218 master items from `index.html`
+- Checks up to 20 existing candidate URLs each run, logging health results
+- Searches up to five missing items per run, saving possible matches in `data/arkan-image-review-queue.json`
+- Generates `data/arkan-image-agent-report.json`
+- Never treats search matches as verified product packaging and never overwrites approved images
+- Does not guarantee photos for all Egyptian medicines
+
+## Start and observe
+Open GitHub → Actions → **Arkan Auto Image Agent**, ensure Actions are enabled, click **Run workflow**, then inspect the report in `data/arkan-image-agent-report.json`. New queue results require human review of strength, dosage form, package and licensing.
+
+## New products stored in Firestore
+To discover products added from the admin UI when the browser is closed, the agent optionally reads `settings/catalog` using a scoped service-account credential named `FIREBASE_SERVICE_ACCOUNT_JSON` in GitHub Actions secrets. **Never commit credentials.** Without this setup, the agent continues processing the original 4,218 master items but cannot discover Firestore-only additions.
+
+## Limits
+The project cannot safely guarantee a new correct image every second or 100% image coverage. Wikimedia, food and cosmetics databases have incomplete Egyptian pharma catalog coverage. A successful URL fetch is not visual verification. Use authoritative licensed product images or a permissioned industry feed to scale pharmaceutical coverage.
