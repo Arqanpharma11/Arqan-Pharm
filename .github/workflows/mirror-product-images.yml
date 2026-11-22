@@ -66,8 +66,11 @@ jobs:
         if: github.event_name != 'schedule'
         run: node scripts/smoke_portal_browser.mjs
       - name: Publish browser smoke test report
-        if: github.event_name != 'schedule' && success()
+        if: always() && github.event_name != 'schedule'
         run: |
+          if ! test -f portal-smoke-report.json; then exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add portal-smoke-report.json
           if ! git diff --cached --quiet; then
             git commit -m "Record pharmacy portal desktop and mobile responsiveness smoke results"
