@@ -1,0 +1,29 @@
+name: Product image URL audit
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "index.html"
+      - "scripts/audit_product_images.py"
+      - ".github/workflows/product-image-audit.yml"
+permissions:
+  contents: read
+jobs:
+  check-images:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check pharmacy image responses
+        run: python scripts/audit_product_images.py
+      - name: Save the audit report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pharmacy-image-audit
+          path: |
+            image-audit-report.csv
+            image-audit-summary.json
