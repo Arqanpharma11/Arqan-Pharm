@@ -23,7 +23,11 @@ function qualify(item, hit) {
   if(!/ألبان|غذاء|مكمل|تغذية|تجميل|عناية|بشرة|شعر|food|beauty|cosmetic|milk/i.test(item.cat||''))
     return {pass:false,reason:'unclassified_product_requires_review'};
   const title=hit.title||'', name=item.en||item.name||'', a=words(name), b=words(title);
-  if(a.length<2 || b.length<2) return {pass:false,reason:'insufficient_name_detail'};
+  // A one-word registered trade brand is acceptable only if at least two
+  // independent catalog numbers (e.g. stage and pack weight) are also present.
+  // A bare brand + strength must never auto-publish an ambiguous package.
+  if(a.length<1 || b.length<1 || (a.length===1 && nums(name).length<2))
+    return {pass:false,reason:'insufficient_name_detail'};
   if(a.some(w=>!b.includes(w))) return {pass:false,reason:'brand_or_variant_mismatch'};
   const an=nums(name),bn=nums(title);
   if(an.length!==bn.length || an.some(n=>!bn.includes(n))) return {pass:false,reason:'number_or_pack_mismatch'};
