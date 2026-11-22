@@ -160,6 +160,14 @@ def main():
     args = ap.parse_args()
     data = json.loads(INVENTORY.read_text(encoding="utf-8"))
     items = data["items"]
+    alias_path = ROOT / "data/arkan-english-image-search-aliases.json"
+    aliases = json.loads(alias_path.read_text(encoding="utf-8")) if alias_path.exists() else {}
+    added_aliases = 0
+    for item in items:
+        if not item.get("englishName") and str(item["id"]) in aliases:
+            item["englishName"] = aliases[str(item["id"])]["brand"]
+            added_aliases += 1
+    print("Search-only English aliases added:", added_aliases)
     if len(items) != 4218 or len({x["id"] for x in items}) != 4218:
         raise SystemExit("Catalog changed; regenerate source inventory first")
     todo = [x for x in items if not x.get("localImagePath")]
