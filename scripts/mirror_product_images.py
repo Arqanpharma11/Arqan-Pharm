@@ -87,16 +87,23 @@ def download(item):
         return pid, url, line, None, str(exc)[:150]
 with concurrent.futures.ThreadPoolExecutor(max_workers=8) as pool:
     results = list(pool.map(download, selected))
+LEGACY_SOURCES_FILE = ROOT / "scripts" / "image_legacy_source_map.json"
+legacy_sources = json.loads(LEGACY_SOURCES_FILE.read_text(encoding="utf-8")) if LEGACY_SOURCES_FILE.exists() else {}
 for pid,url,line,new,error in results:
     if new:
         old = line
         new_line = re.sub(r"src: '[^']+'", "src: '"+new+"'", old, count=1)
         if pid in replacements and replacements[pid]["url"] == url:
+            old_source_match = re.search(r"source: '([^']+)'", old)
+            if old_source_match:
+                legacy_sources[pid] = old_source_match.group(1)
             new_line = re.sub(r"source: '[^']+'", "source: '"+replacements[pid]["source"]+"'", new_line, count=1)
         if old not in block:
             raise RuntimeError("Seed changed while mirroring image id " + pid)
         block = block.replace(old, new_line, 1)
 html = html[:begin] + block + html[end:]
+if legacy_sources:
+    LEGACY_SOURCES_FILE.write_text(json.dumps(legacy_sources, ensure_ascii=False, indent=2) + "\\n", encoding="utf-8")
 success = sum(bool(x[3]) for x in results)
 if success:
     # Existing users have a saved localStorage seed flag. Force seed refresh on the next load.
