@@ -1,28 +1,25 @@
-# Arkan Auto Image Agent — free version
+# Arkan Auto Image Agent — free, unattended
 
-## Cost and runtime
-The agent runs in GitHub Actions every 15 minutes, independently from visitors and browsers. Public GitHub repositories are eligible for free GitHub-hosted runner minutes subject to GitHub's current conditions. The schedule is **best effort**, not a guaranteed exact timer.
+## Operation
+GitHub Actions schedules a run every 15 minutes, even with browsers and computers shut down. Schedules are best-effort, not exact.
 
-It checks existing candidate image URLs, and searches free public APIs:
-- Wikimedia Commons: media search plus image-specific attribution and license metadata
-- Open Food Facts: food, milk and some nutritional products
-- Open Beauty Facts: cosmetics and beauty products
+1. Read the master catalog of 4,218 products, and optionally read new products from Firestore with the `FIREBASE_SERVICE_ACCOUNT_JSON` repository secret.
+2. Check existing image URLs for availability.
+3. Query Wikimedia Commons and Open Food Facts / Open Beauty Facts via free public APIs.
+4. Match product identity and concentration/pack size, recording ambiguous results for review.
+5. For only **non-pharmaceutical products** with qualifying Open Facts product-front images, exact brand/size/form metadata, suitable source and licensing metadata, and a working image, automatically publish metadata in `data/arkan-auto-published-images.json`.
+6. The browser automatically loads that manifest and shows published images with source attribution. Explicitly verified administrator images always take priority.
+7. Retire a previously auto-published image after three separate definite 404/410 checks; never delete a verified admin image.
 
-There is **no paid image-search API key** required for these searches. Follow each provider's API limits, licenses, and attribution rules.
+## What is *not* automated
+Drug packaging and medically important products are **not** auto-approved from image-search titles: one wrong medicine, form or concentration is unacceptable. They remain review candidates. A search result, external image availability, or descriptive title is not sufficient visual validation. The agent does not promise full coverage of 4,218 products, and free databases may have little coverage of Egyptian drugs.
 
-## What it does
-- Reads 4,218 master items from `index.html`
-- Checks up to 20 existing candidate URLs each run, logging health results
-- Searches up to five missing items per run, saving possible matches in `data/arkan-image-review-queue.json`
-- Generates `data/arkan-image-agent-report.json`
-- Never treats search matches as verified product packaging and never overwrites approved images
-- Does not guarantee photos for all Egyptian medicines
+## Setup
+On GitHub, open Actions → Arkan Auto Image Agent → Run workflow. A successful run creates a report (`data/arkan-image-agent-report.json`), review queue and auto-publication manifest. Run the UI and inspect real examples.
 
-## Start and observe
-Open GitHub → Actions → **Arkan Auto Image Agent**, ensure Actions are enabled, click **Run workflow**, then inspect the report in `data/arkan-image-agent-report.json`. New queue results require human review of strength, dosage form, package and licensing.
+No paid search API is required. New items added solely in Firestore are not visible to the runner until `FIREBASE_SERVICE_ACCOUNT_JSON` is securely configured as a repository Actions secret with minimum necessary permissions. **Never commit credentials or share them in chat.**
 
-## New products stored in Firestore
-To discover products added from the admin UI when the browser is closed, the agent optionally reads `settings/catalog` using a scoped service-account credential named `FIREBASE_SERVICE_ACCOUNT_JSON` in GitHub Actions secrets. **Never commit credentials.** Without this setup, the agent continues processing the original 4,218 master items but cannot discover Firestore-only additions.
+## Provenance and rights
+Automatically published images remain explicitly identified as automated and not visually verified. Image source links are visible in the product modal. Comply with image-specific attribution and licensing conditions; if the source does not allow display/reuse, do not publish it.
 
-## Limits
-The project cannot safely guarantee a new correct image every second or 100% image coverage. Wikimedia, food and cosmetics databases have incomplete Egyptian pharma catalog coverage. A successful URL fetch is not visual verification. Use authoritative licensed product images or a permissioned industry feed to scale pharmaceutical coverage.
+Run regression tests with `node --test scripts/arkan-auto-publish.test.cjs`.
