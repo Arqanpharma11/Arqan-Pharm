@@ -5,6 +5,8 @@ import json
 import pathlib
 import re
 import urllib.request
+from io import BytesIO
+from PIL import Image, ImageOps, UnidentifiedImageError
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 INDEX = ROOT / "index.html"
@@ -30,20 +32,33 @@ selected = [(pid, url, line) for pid, url, line in entries
 def download(item):
     pid, url, line = item
     try:
-        req = urllib.request.Request(url, headers={"User-Agent":"Mozilla/5.0", "Accept":"image/avif,image/webp,image/png,image/jpeg,image/*"})
+        req = urllib.request.Request(url, headers={"User-Agent":"Mozilla/5.0", "Accept":"image/jpeg,image/png,image/webp,image/*;q=0.8"})
         with urllib.request.urlopen(req, timeout=15) as response:
             raw = response.read(5_000_001)
             mime = response.headers.get("Content-Type","").split(";")[0].lower()
-        if len(raw) > 5_000_000 or len(raw) < 1000:
-            raise ValueError("invalid size")
-        if raw.startswith(b"\xff\xd8\xff"):
-            ext = ".jpg"
-        elif raw.startswith(b"\x89PNG\r\n\x1a\n"):
-            ext = ".png"
-        elif raw[:4] == b"RIFF" and raw[8:12] == b"WEBP":
-            ext = ".webp"
-        else:
-            raise ValueError("unsupported or non-image response: " + mime)
+        if len(raw) > 5_000_000 or len(raw) < 500:
+            raise ValueError("invalid image size")
+        # Decode every format instead of trusting a .jpg suffix or response MIME.
+        # Browsers/sites often negotiate AVIF even when the URL ends in .jpg.
+        try:
+            with Image.open(BytesIO(raw)) as image:
+                image.load()
+                width, height = image.size
+                if width < 100 or height < 100 or width * height > 20_000_000:
+                    raise ValueError("implausible photo dimensions")
+                canonical = ImageOps.exif_transpose(image)
+                if canonical.mode not in ("RGB", "RGBA"):
+                    canonical = canonical.convert("RGBA" if "A" in canonical.getbands() else "RGB")
+                out = BytesIO()
+                if canonical.mode == "RGBA":
+                    ext = ".png"
+                    canonical.save(out, format="PNG", optimize=True)
+                else:
+                    ext = ".jpg"
+                    canonical.save(out, format="JPEG", quality=88, optimize=True)
+                raw = out.getvalue()
+        except (UnidentifiedImageError, OSError) as exc:
+            raise ValueError("image decode failed") from exc
         target = DEST / (pid + ext)
         target.write_bytes(raw)
         return pid, url, line, "assets/product-images/" + target.name, ""
