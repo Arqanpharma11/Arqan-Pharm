@@ -25,13 +25,15 @@ jobs:
           python-version: '3.12'
       - name: Install image decoders
         run: python -m pip install 'Pillow>=11.2' pillow-avif-plugin
-      - name: Mirror up to 100 previously reviewed image URLs
+      - name: Check script syntax
+        run: python -m py_compile scripts/mirror_product_images.py
+      - name: Mirror up to 150 previously reviewed image URLs
         run: python scripts/mirror_product_images.py
       - name: Commit successfully downloaded product images
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add index.html assets/product-images/ image-mirror-report.json
+          git add index.html assets/product-images/ image-mirror-report.json image-replacement-queue.csv
           if ! git diff --cached --quiet; then
             git commit -m "Host validated product image bytes locally to prevent broken hotlinks"
             git push
@@ -41,4 +43,6 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: product-image-mirror-report
-          path: image-mirror-report.json
+          path: |
+            image-mirror-report.json
+            image-replacement-queue.csv
