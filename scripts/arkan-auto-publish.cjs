@@ -24,11 +24,20 @@ function qualify(item, hit) {
     return {pass:false,reason:'unclassified_product_requires_review'};
   const title=hit.title||'', name=item.en||item.name||'', a=words(name), b=words(title);
   if(a.length<2 || b.length<2) return {pass:false,reason:'insufficient_name_detail'};
-  if(!b.includes(a[0])||!b.includes(a[1])) return {pass:false,reason:'brand_mismatch'};
+  if(a.some(w=>!b.includes(w))) return {pass:false,reason:'brand_or_variant_mismatch'};
   const an=nums(name),bn=nums(title);
   if(an.length!==bn.length || an.some(n=>!bn.includes(n))) return {pass:false,reason:'number_or_pack_mismatch'};
   const fa=form(name),fb=form(title);
-  if(fa>=0&&fb>=0&&fa!==fb) return {pass:false,reason:'form_mismatch'};
+  if(fa>=0&&fa!==fb) return {pass:false,reason:'form_missing_or_mismatch'};
+  // A matching number without a matching unit is not a verified pack size.
+  // Reject 400 ml vs 400 g, and reject added XR/Plus/Extra variants.
+  const units=s=>(norm(s).match(/\\d+(?:[./]\\d+)?\\s*(?:mg|mcg|ml|kg|gm|g|مجم|مل|جم)/g)||[])
+    .map(x=>x.replace(/\\s+/g,''));
+  const au=units(name),bu=units(title);
+  if(au.some(u=>!bu.includes(u)))return {pass:false,reason:'unit_mismatch'};
+  const variants=['plus','extra','forte','xr','sr','retard','junior'];
+  const has=(s,t)=>new RegExp('(^|\\\\s)'+t+'(?=\\\\s|$)','i').test(norm(s));
+  if(variants.some(v=>has(title,v)&&!has(name,v)))return {pass:false,reason:'unexpected_variant'};
   // Require an unambiguous size/stage/pack number; brand alone is unsafe.
   if(!an.length) return {pass:false,reason:'no_size_or_stage'};
   if(!/^https:\/\/(?:images\.openfoodfacts\.org|images\.openbeautyfacts\.org|static\.openfoodfacts\.org|static\.openbeautyfacts\.org)\//.test(hit.imageUrl||''))
