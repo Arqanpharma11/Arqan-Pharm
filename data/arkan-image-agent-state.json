@@ -1,5 +1,5 @@
 {
-  "cursor": 190,
+  "cursor": 220,
   "searchCursor": 0,
   "checks": {
     "28": {
@@ -951,6 +951,156 @@
       "failures": 0,
       "lastStatus": "ok",
       "checkedAt": "2026-11-22T16:16:20.777Z"
+    },
+    "1238": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-22T16:17:09.173Z"
+    },
+    "1239": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-22T16:17:09.368Z"
+    },
+    "1240": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-22T16:17:09.607Z"
+    },
+    "1242": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-22T16:17:09.801Z"
+    },
+    "1245": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-22T16:17:10.012Z"
+    },
+    "1246": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-22T16:17:10.211Z"
+    },
+    "1258": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-22T16:17:10.454Z"
+    },
+    "1259": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-22T16:17:10.608Z"
+    },
+    "1261": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-22T16:17:10.790Z"
+    },
+    "1265": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-22T16:17:10.953Z"
+    },
+    "1269": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-22T16:17:11.149Z"
+    },
+    "1275": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-22T16:17:11.335Z"
+    },
+    "1285": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-22T16:17:11.548Z"
+    },
+    "1300": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-22T16:17:11.819Z"
+    },
+    "1304": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-22T16:17:11.993Z"
+    },
+    "1305": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-22T16:17:12.205Z"
+    },
+    "1306": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-22T16:17:12.438Z"
+    },
+    "1307": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-22T16:17:12.654Z"
+    },
+    "1308": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-22T16:17:12.832Z"
+    },
+    "1312": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-22T16:17:13.124Z"
+    },
+    "1315": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-22T16:17:13.345Z"
+    },
+    "1316": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-22T16:17:13.544Z"
+    },
+    "1317": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-22T16:17:13.733Z"
+    },
+    "1319": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-22T16:17:13.954Z"
+    },
+    "1320": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-22T16:17:14.243Z"
+    },
+    "1321": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-22T16:17:14.479Z"
+    },
+    "1325": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-22T16:17:14.690Z"
+    },
+    "1328": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-22T16:17:14.903Z"
+    },
+    "1334": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-22T16:17:15.073Z"
+    },
+    "1336": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-22T16:17:15.275Z"
     }
   },
   "searched": {
@@ -1255,11 +1405,11 @@
       "hits": 0
     }
   },
-  "lastRun": "2026-11-22T16:16:21.297Z",
+  "lastRun": "2026-11-22T16:17:15.683Z",
   "lastCatalogSize": 4218,
   "searchPipeline": {
-    "remainingMissing": 2324,
-    "remainingSuspect": 1250,
+    "remainingMissing": 2660,
+    "remainingSuspect": 914,
     "eligibleThisRun": 3574
   },
   "providerHealth": {
