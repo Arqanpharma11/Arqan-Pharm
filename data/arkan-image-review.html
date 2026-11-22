@@ -79,9 +79,10 @@ $('next').onclick=()=>{advance()};
 $('skip').onclick=()=>advance();
 $('clear').onclick=()=>{approvals.delete(queue[position]?.id);render()};
 $('export').onclick=()=>{
- const rows=all.map(item=>{
-  const approved=approvals.get(item.id);
-  return{id:item.id,name:item.name,englishName:item.englishName||'',category:'',
+ const names=new Map(all.map(item=>[Number(item.id),item]));
+ const rows=Array.from({length:4218},(_,idx)=>{
+  const id=idx+1,item=names.get(id)||{},approved=approvals.get(id);
+  return{id,name:item.name||'',englishName:item.englishName||'',category:'',
   imageUrl:approved?.imageUrl||'',sourceName:approved?.sourceName||'',
   exactMatchConfirmed:!!approved};
  });
