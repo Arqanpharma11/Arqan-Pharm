@@ -30,6 +30,9 @@ SOURCES = {
 }
 FORM_TAGS = {
     "اقراص": ("tablet", "tablets", "tab", "tabs"),
+    "قرص": ("tablet", "tablets", "tab", "tabs"),
+    "نقط": ("drop", "drops"),
+    "غسول": ("cleanser", "wash"),
     "كبسول": ("capsule", "capsules", "caps"),
     "شراب": ("syrup", "suspension"),
     "كريم": ("cream",),
@@ -79,10 +82,9 @@ def match_score(item, product):
     if brand_words:
         # Strong boundary on the trade brand; substring lookalikes are rejected.
         brand_len = len(brand_words)
-        if title_words[:brand_len] != brand_words and not any(
-            title_words[i:i + brand_len] == brand_words
-            for i in range(1, min(len(title_words) - brand_len + 1, 4))
-        ):
+        # Require the full brand at the START of the shelf label.
+        # "Genuphil Advance" is not the brand "Advance"; "Co Avazir" is not "Avazir".
+        if title_words[:brand_len] != brand_words:
             return None
     elif ar:
         # Arabic titles only: use a whole-token brand, not fuzzy transliteration.
