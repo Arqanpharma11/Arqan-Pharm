@@ -1,0 +1,40 @@
+name: Mirror verified product images locally
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/mirror_product_images.py'
+      - '.github/workflows/mirror-product-images.yml'
+permissions:
+  contents: write
+concurrency:
+  group: pharmacy-image-mirror
+  cancel-in-progress: false
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Mirror up to 100 previously reviewed image URLs
+        run: python scripts/mirror_product_images.py
+      - name: Commit successfully downloaded product images
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html assets/product-images/ image-mirror-report.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Host validated product image bytes locally to prevent broken hotlinks"
+            git push
+          fi
+      - name: Upload review report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: product-image-mirror-report
+          path: image-mirror-report.json
