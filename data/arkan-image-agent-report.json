@@ -1,0 +1,21 @@
+{
+  "runAt": "2026-11-22T14:34:49.076Z",
+  "masterItems": 4218,
+  "cloudItems": 0,
+  "catalogItems": 4218,
+  "candidateLinks": 1335,
+  "missingWithoutCandidate": 2883,
+  "checked": 20,
+  "healthy": 20,
+  "gone": 0,
+  "queuedThisRun": 0,
+  "pendingReview": 0,
+  "searchEnabled": true,
+  "searchProviders": [
+    "Wikimedia Commons",
+    "Open Food Facts",
+    "Open Beauty Facts"
+  ],
+  "cloudSyncEnabled": false,
+  "disclaimer": "Automated candidate discovery is not photo verification. Existing approved photos are never overwritten."
+}

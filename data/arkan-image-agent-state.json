@@ -1,0 +1,130 @@
+{
+  "cursor": 20,
+  "searchCursor": 5,
+  "checks": {
+    "28": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-22T14:34:35.361Z"
+    },
+    "41": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-22T14:34:35.548Z"
+    },
+    "42": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-22T14:34:35.672Z"
+    },
+    "43": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-22T14:34:35.684Z"
+    },
+    "45": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-22T14:34:36.218Z"
+    },
+    "46": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-22T14:34:36.339Z"
+    },
+    "47": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-22T14:34:36.569Z"
+    },
+    "50": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-22T14:34:36.771Z"
+    },
+    "51": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-22T14:34:36.982Z"
+    },
+    "52": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-22T14:34:37.356Z"
+    },
+    "53": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-22T14:34:37.556Z"
+    },
+    "55": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-22T14:34:37.914Z"
+    },
+    "60": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-22T14:34:38.098Z"
+    },
+    "64": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-22T14:34:38.229Z"
+    },
+    "69": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-22T14:34:38.451Z"
+    },
+    "70": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-22T14:34:38.564Z"
+    },
+    "82": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-22T14:34:38.676Z"
+    },
+    "83": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-22T14:34:39.001Z"
+    },
+    "100": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-22T14:34:39.145Z"
+    },
+    "102": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-22T14:34:39.339Z"
+    }
+  },
+  "searched": {
+    "1": {
+      "at": "2026-11-22T14:34:41.022Z",
+      "hits": 0
+    },
+    "2": {
+      "at": "2026-11-22T14:34:42.817Z",
+      "hits": 0
+    },
+    "3": {
+      "at": "2026-11-22T14:34:44.946Z",
+      "hits": 0
+    },
+    "4": {
+      "at": "2026-11-22T14:34:46.670Z",
+      "hits": 0
+    },
+    "5": {
+      "at": "2026-11-22T14:34:48.377Z",
+      "hits": 0
+    }
+  },
+  "lastRun": "2026-11-22T14:34:49.076Z",
+  "lastCatalogSize": 4218
+}
