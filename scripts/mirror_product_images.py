@@ -91,9 +91,9 @@ for pid, url, line, new, error in results:
     if new:
         failures.pop(str(pid), None)
 local_ids = {p.stem for p in DEST.iterdir() if p.is_file() and p.suffix.lower() in (".jpg", ".png", ".webp")}
-local_references = set(re.findall(r"assets/product-images/([0-9]+)\\.(?:jpg|png|webp)", block))
+local_references = set(re.findall(r"assets/product-images/([0-9]+)\.(?:jpg|png|webp)", block))
 seed_sources = {pid: source for pid, url, source in re.findall(
-    r"'([0-9]+)': \\{ src: '([^']+)', source: '([^']+)'", block
+    r"'([0-9]+)': \{ src: '([^']+)', source: '([^']+)'", block
 )}
 with (ROOT / "image-replacement-queue.csv").open("w", newline="", encoding="utf-8-sig") as output:
     writer = csv.DictWriter(output, fieldnames=["id", "source", "domain", "failure", "url"])
