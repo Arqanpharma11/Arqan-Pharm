@@ -15,6 +15,7 @@ import tempfile
 import urllib.request
 from collections import Counter
 from PIL import Image, ImageOps, UnidentifiedImageError
+import pillow_avif  # register AVIF for pharmacy CDN image responses
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 IN = ROOT / "data/arkan-image-approval-worklist.json"
