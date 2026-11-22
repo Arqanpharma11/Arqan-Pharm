@@ -10,6 +10,7 @@ on:
       - 'scripts/arkan-auto-publish.test.cjs'
       - 'scripts/arkan-visual-publish.py'
       - 'scripts/check_pharmacy_image_integrity.py'
+      - 'scripts/check_arkan_image_data.py'
       - 'scripts/check_portal_javascript.py'
       - 'scripts/arkan-trial-photo-feed.cjs'
       - 'scripts/arkan-trial-photo-feed.test.cjs'
@@ -36,6 +37,7 @@ jobs:
         run: |
           python scripts/check_pharmacy_image_integrity.py
           python scripts/check_portal_javascript.py
+          python scripts/check_arkan_image_data.py
       - name: Test safe photo publication rules
         run: |
           node --check scripts/arkan-image-agent.cjs
@@ -68,6 +70,8 @@ jobs:
         run: |
           python scripts/check_pharmacy_image_integrity.py
           python scripts/check_portal_javascript.py
+      - name: Validate final external-image catalog
+        run: python scripts/check_arkan_image_data.py
       - name: Build complete image coverage and missing-product inventory
         run: node scripts/arkan-image-coverage.cjs
       - name: Publish with bounded safe retry on concurrent Git changes
