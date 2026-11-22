@@ -98,6 +98,20 @@
       "reason": "no_match_found",
       "searchedAt": "2026-11-22T15:16:33.114Z"
     },
+    "42": {
+      "name": "ابيفيناك75 اس ار",
+      "en": "Epifenac 75",
+      "results": [],
+      "reason": "no_match_found",
+      "searchedAt": "2026-11-22T16:35:05.381Z"
+    },
+    "43": {
+      "name": "ابيفيناك امبول",
+      "en": "Epifenac",
+      "results": [],
+      "reason": "no_match_found",
+      "searchedAt": "2026-11-22T16:35:06.796Z"
+    },
     "44": {
       "name": "ابيفيناك نقط",
       "en": "",
@@ -160,6 +174,13 @@
       "results": [],
       "reason": "no_match_found",
       "searchedAt": "2026-11-22T16:11:09.424Z"
+    },
+    "69": {
+      "name": "ابيمول اقراص س ج",
+      "en": "Abimol",
+      "results": [],
+      "reason": "no_match_found",
+      "searchedAt": "2026-11-22T16:35:08.255Z"
     },
     "76": {
       "name": "اترابكس15ك س ج",
@@ -385,6 +406,55 @@
       "results": [],
       "reason": "no_match_found",
       "searchedAt": "2026-11-22T16:14:54.337Z"
+    },
+    "200": {
+      "name": "ازجوفلوكس400 مل لاغى",
+      "en": "",
+      "results": [],
+      "reason": "no_match_found",
+      "searchedAt": "2026-11-22T16:35:10.295Z"
+    },
+    "201": {
+      "name": "ازروليد200 مجم شراب 15 ملى",
+      "en": "",
+      "results": [],
+      "reason": "no_match_found",
+      "searchedAt": "2026-11-22T16:35:11.741Z"
+    },
+    "209": {
+      "name": "ازمالير10 ملم",
+      "en": "",
+      "results": [],
+      "reason": "no_match_found",
+      "searchedAt": "2026-11-22T16:35:13.177Z"
+    },
+    "210": {
+      "name": "ازموراب10مجم اكياس",
+      "en": "Esmorap 10",
+      "results": [],
+      "reason": "no_match_found",
+      "searchedAt": "2026-11-22T16:35:14.642Z"
+    },
+    "227": {
+      "name": "استرامارك بديل ياسمين ق",
+      "en": "",
+      "results": [],
+      "reason": "no_match_found",
+      "searchedAt": "2026-11-22T16:35:16.183Z"
+    },
+    "229": {
+      "name": "استيروماب10مجم",
+      "en": "Estero Map 10",
+      "results": [],
+      "reason": "no_match_found",
+      "searchedAt": "2026-11-22T16:35:18.588Z"
+    },
+    "236": {
+      "name": "اسكو زنتال بديل ال سيفامول",
+      "en": "",
+      "results": [],
+      "reason": "no_match_found",
+      "searchedAt": "2026-11-22T16:35:20.096Z"
     }
   }
 }
