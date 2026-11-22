@@ -31,7 +31,7 @@ function qualify(item, hit) {
     return {pass:false,reason:'untrusted_image_host'};
   if(!/^https:\/\/world\.open(?:food|beauty)facts\.org\/product\/\d+/.test(hit.sourcePage||''))
     return {pass:false,reason:'unverified_product_page'};
-  if(!hit.license || !/open facts/i.test(hit.license)) return {pass:false,reason:'license_unconfirmed'};
+  if(!hit.license || !/CC BY-SA 3\.0/i.test(hit.license)) return {pass:false,reason:'license_unconfirmed'};
   return {pass:true,reason:'matched_open_product_record'};
 }
 function publish(item,hit) {
