@@ -12,29 +12,49 @@ if data.get("totalCatalogItems") != 4218 or len(data.get("items", [])) != 4218:
 state_path = root / "data/arkan-image-agent-state.json"
 state = json.loads(state_path.read_text(encoding="utf-8")) if state_path.exists() else {}
 checks = state.get("checks", {})
-by_id = {}
+# A shared image URL across different products is ambiguous even if the
+# metadata score is high. Prefer unique alternatives instead of showing an
+# identical carton for two different strengths or dosage forms.
+candidate_rows = {}
+url_product_ids = {}
 for item in data["items"]:
-    id = str(item["id"])
-    # Display candidates only. No candidate here is promoted to a verified pack.
-    candidates = [r for r in item.get("candidates", [])
-                  if isinstance(r.get("imageUrl"), str)
-                  and r["imageUrl"].startswith("https://")
-                  and isinstance(r.get("title"), str)]
-    # The previous feed selected the top-ranked candidate. If its repeated
-    # 404/410 failures were confirmed, fall back to another candidate or none.
-    chosen = max(candidates, key=lambda r: float(r.get("score") or 0)) if candidates else None
-    health = checks.get(id, {})
-    if chosen and health.get("failures", 0) >= 3 and health.get("lastStatus") == "gone":
-        candidates = [r for r in candidates if r.get("imageUrl") != chosen["imageUrl"]]
-        chosen = max(candidates, key=lambda r: float(r.get("score") or 0)) if candidates else None
+    pid = str(item["id"])
+    rows = [r for r in item.get("candidates", [])
+            if isinstance(r, dict)
+            and isinstance(r.get("imageUrl"), str)
+            and r["imageUrl"].startswith("https://")
+            and isinstance(r.get("title"), str)]
+    candidate_rows[pid] = sorted(rows, key=lambda r: float(r.get("score") or 0), reverse=True)
+    for row in rows:
+        url_product_ids.setdefault(row["imageUrl"], set()).add(pid)
+
+previous = json.loads(output.read_text(encoding="utf-8")) if output.exists() else {}
+previous_urls = {str(pid): row[0] for pid, row in previous.get("byId", {}).items()
+                 if isinstance(row, list) and row}
+by_id = {}
+ambiguous_urls = sum(len(ids) > 1 for ids in url_product_ids.values())
+for item in data["items"]:
+    pid = str(item["id"])
+    health = checks.get(pid, {})
+    chosen = None
+    for row in candidate_rows[pid]:
+        url = row["imageUrl"]
+        if len(url_product_ids[url]) > 1:
+            continue
+        if (health.get("failures", 0) >= 3 and health.get("lastStatus") == "gone"
+                and previous_urls.get(pid) == url):
+            continue
+        chosen = row
+        break
     if not chosen:
         continue
-    by_id[id] = [chosen["imageUrl"], chosen["title"],
-                 str(chosen.get("sourceName", "")),
-                 str(chosen.get("productPage", ""))]
+    by_id[pid] = [chosen["imageUrl"], chosen["title"],
+                  str(chosen.get("sourceName", "")),
+                  str(chosen.get("productPage", ""))]
 result = {
-    "version": 1, "total": 4218, "count": len(by_id),
-    "notice": "UNVERIFIED candidate images. All remaining catalog rows receive labeled illustration and web image search.",
+    "version": 2, "total": 4218, "count": len(by_id),
+    "excludedSharedUrlGroups": ambiguous_urls,
+    "notice": "UNVERIFIED unique-url candidate images. Shared product photos are withheld; remaining catalog rows receive labeled illustration and web image search.",
     "byId": by_id
 }
 output.write_text(json.dumps(result, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
