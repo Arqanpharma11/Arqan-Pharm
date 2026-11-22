@@ -1,0 +1,38 @@
+name: Emergency - recover frozen pharmacy portal
+on:
+  push:
+    paths:
+      - 'scripts/emergency_unfreeze.py'
+      - '.github/workflows/emergency-unfreeze.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: arqan-emergency-recovery
+  cancel-in-progress: true
+jobs:
+  repair:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Remove duplicate JavaScript declarations
+        run: python scripts/emergency_unfreeze.py
+      - name: Validate portal JavaScript syntax
+        run: |
+          python scripts/check_portal_javascript.py
+          node --check sw.js
+      - name: Commit repaired portal
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          if ! git diff --cached --quiet; then
+            git commit -m "Emergency repair frozen portal by removing duplicate image migration declarations"
+            git push
+          fi
