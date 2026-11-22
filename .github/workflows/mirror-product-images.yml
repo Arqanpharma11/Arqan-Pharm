@@ -48,6 +48,15 @@ jobs:
               break
             fi
           done
+      - name: Commit successfully downloaded product images
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html assets/product-images/ image-mirror-report.json image-replacement-queue.csv scripts/image_legacy_source_map.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Host validated product image bytes locally to prevent broken hotlinks"
+            git push
+          fi
       - name: Install Chromium for portal responsiveness test
         if: github.event_name != 'schedule'
         run: |
@@ -56,14 +65,12 @@ jobs:
       - name: Check desktop and mobile UI responsiveness
         if: github.event_name != 'schedule'
         run: node scripts/smoke_portal_browser.mjs
-      - name: Commit successfully downloaded product images
+      - name: Publish browser smoke test report
+        if: github.event_name != 'schedule' && success()
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add index.html assets/product-images/ image-mirror-report.json image-replacement-queue.csv scripts/image_legacy_source_map.json
-          if test -f portal-smoke-report.json; then git add portal-smoke-report.json; fi
+          git add portal-smoke-report.json
           if ! git diff --cached --quiet; then
-            git commit -m "Host validated product image bytes locally to prevent broken hotlinks"
+            git commit -m "Record pharmacy portal desktop and mobile responsiveness smoke results"
             git push
           fi
       - name: Upload review report
