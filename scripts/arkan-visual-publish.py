@@ -73,7 +73,8 @@ for pid,record in sorted(manifest.get('byId',{}).items(),key=lambda p:int(p[0]))
     except Exception as exc:
         report['review'].append({'id':pid,'reason':str(exc)[:110]})
 if lines:
-    marker=block.rfind('};')
+    # Insert into verifiedImageSeeds, not the later legacy-source map.
+    marker=block.find('};',block.index('const verifiedImageSeeds = {'))
     if marker<0:raise RuntimeError('cannot update image seed map')
     block=block[:marker]+''.join(lines)+block[marker:]
     html=html[:begin]+block+html[end:]
