@@ -20261,7 +20261,10 @@ ${window.location.href}
                     const product = byId.get(id);
                     const validLink = /^[0-9]{1,5}$/.test(id) && Array.isArray(candidate) &&
                         typeof candidate[0] === 'string' && candidate[0].startsWith('https://');
-                    const accepted = validLink && arkanCandidateCompatible(product, candidate);
+                    // Never assign one unverified image URL to different catalog items.
+                    // Shared URLs often hide wrong strength or dosage form.
+                    const uniquelyAssigned = validLink && (reusedUrls.get(candidate[0]) || []).length === 1;
+                    const accepted = uniquelyAssigned && arkanCandidateCompatible(product, candidate);
                     ARKAN_IMAGE_AUDIT.total++;
                     if (accepted) {
                         ARKAN_QUICK_PACKS[id] = candidate;
