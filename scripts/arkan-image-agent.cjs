@@ -4,16 +4,19 @@
 */
 const fs = require('node:fs');
 const crypto = require('node:crypto');
+const {publish} = require('./arkan-auto-publish.cjs');
 const html = fs.readFileSync('index.html','utf8');
 const target = 'data/arkan-quick-image-candidates.json';
 const stateFile = 'data/arkan-image-agent-state.json';
 const queueFile = 'data/arkan-image-review-queue.json';
 const reportFile = 'data/arkan-image-agent-report.json';
+const publishedFile = 'data/arkan-auto-published-images.json';
 const read = (p, fallback) => fs.existsSync(p) ? JSON.parse(fs.readFileSync(p,'utf8')) : fallback;
 const write = (p,data) => fs.writeFileSync(p, JSON.stringify(data,null,2)+'\n');
 const candidates = read(target,{total:4218,byId:{}});
 const state = read(stateFile,{cursor:0,searchCursor:0,checks:{},searched:{}});
 const queue = read(queueFile,{byId:{}});
+const published = read(publishedFile,{version:1,byId:{}});
 const master = html.match(/const EXACT_MASTER_ITEMS\s*=\s*\[([\s\S]*?)\n\s*\];/);
 if(!master) throw Error('Master catalog extraction failed: refusing to mutate image data');
 const items = [...master[1].matchAll(/\{\s*name:\s*"([^"]+)"\s*,\s*cat:\s*"([^"]+)"/g)].map((m,i)=>({id:String(i+1),name:m[1],cat:m[2]}));
@@ -125,7 +128,7 @@ async function main(){
   const all=[...byId.values()];
   const linked=Object.entries(candidates.byId).filter(([id,c])=>Array.isArray(c)&&c[0]?.startsWith('https://'));
   const budget=Number(process.env.IMAGE_CHECK_BUDGET||20);
-  let checked=0,missing=0,healthy=0,gone=0,queued=0;
+  let checked=0,missing=0,healthy=0,gone=0,queued=0,publishedNow=0;
   for(let n=0;n<Math.min(budget,linked.length);n++){
     const [id,c]=linked[(state.cursor+n)%linked.length];
     const status=await imageAlive(c[0]);
@@ -138,9 +141,9 @@ async function main(){
     // Record repeated 404/410 for review instead.
   }
   if(linked.length)state.cursor=(state.cursor+checked)%linked.length;
-  const outstanding=all.filter(x=>!candidates.byId[x.id] && !queue.byId[x.id] &&
+  const outstanding=all.filter(x=>!candidates.byId[x.id] && !published.byId[x.id] && !queue.byId[x.id] &&
     (!state.searched[x.id] || Date.now()-Date.parse(state.searched[x.id].at||0)>30*24*60*60*1000));
-  missing=all.filter(x=>!candidates.byId[x.id]).length;
+  missing=all.filter(x=>!candidates.byId[x.id] && !published.byId[x.id]).length;
   if(outstanding.length){
     const searchBudget=Math.min(Number(process.env.IMAGE_SEARCH_BUDGET||5),outstanding.length);
     for(let i=0;i<searchBudget;i++){
@@ -148,7 +151,22 @@ async function main(){
       try{
         const found=await imageSearch(item);
         state.searched[item.id]={at:new Date().toISOString(),hits:found.length};
-        if(found.length){queue.byId[item.id]={name:item.name,en:item.en||'',results:found};queued++}
+        if(found.length) {
+          const eligible=[];
+          for(const hit of found){
+            const output=publish(item,hit);
+            if(!output)continue;
+            if(await imageAlive(output.url)==='ok')eligible.push(output);
+          }
+          if(eligible.length===1 && !candidates.byId[item.id] && !published.byId[item.id]){
+            published.byId[item.id]=eligible[0];
+            publishedNow++;
+          }else {
+            queue.byId[item.id]={name:item.name,en:item.en||'',results:found,
+              reason:eligible.length>1?'ambiguous_multiple_valid_packages':'needs_review'};
+            queued++;
+          }
+        }
       }catch(e){console.error('Search error',item.id,e.message);break}
       await pause(700);
     }
@@ -156,8 +174,8 @@ async function main(){
   }
   state.lastRun=new Date().toISOString();
   state.lastCatalogSize=all.length;
-  const report={runAt:state.lastRun,masterItems:items.length,cloudItems:cloud.length,catalogItems:all.length,candidateLinks:linked.length,missingWithoutCandidate:missing,checked,healthy,gone,queuedThisRun:queued,pendingReview:Object.keys(queue.byId).length,searchEnabled:true,searchProviders:['Wikimedia Commons','Open Food Facts','Open Beauty Facts'],cloudSyncEnabled:!!process.env.FIREBASE_SERVICE_ACCOUNT_JSON,disclaimer:'Automated candidate discovery is not photo verification. Existing approved photos are never overwritten.'};
-  write(stateFile,state);write(queueFile,queue);write(reportFile,report);
+  const report={runAt:state.lastRun,masterItems:items.length,cloudItems:cloud.length,catalogItems:all.length,candidateLinks:linked.length,autoPublishedCount:Object.keys(published.byId).length,publishedThisRun:publishedNow,missingWithoutCandidate:missing,checked,healthy,gone,queuedThisRun:queued,pendingReview:Object.keys(queue.byId).length,searchEnabled:true,searchProviders:['Wikimedia Commons','Open Food Facts','Open Beauty Facts'],cloudSyncEnabled:!!process.env.FIREBASE_SERVICE_ACCOUNT_JSON,disclaimer:'Automated candidate discovery is not photo verification. Existing approved photos are never overwritten. Automatically published images remain marked as external, not verified packaging.'};
+  write(stateFile,state);write(queueFile,queue);write(publishedFile,published);write(reportFile,report);
   console.log(JSON.stringify(report));
 }
 main().catch(e=>{console.error(e);process.exitCode=1;});
