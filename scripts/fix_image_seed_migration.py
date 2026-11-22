@@ -12,6 +12,8 @@ legacy = {
     "36": "PharmaciaTy — Epifasi 5000 IU, 1 ampoule plus solvent; exact brand and strength verified",
     "75": "Lotus Pharmacies — Atacand 4 mg, 14 tablets; exact brand and strength verified",
     "101": "Lotus Pharmacies — Atorstat 80 mg, 10 scored tablets; exact brand, strength and pack verified",
+    "85": "Al-Dawaa Pharmacy — Atrovent 500 mcg/2 ml, 20 unit-dose inhalation vials; exact strength and pack verified",
+    "86": "Al-Dawaa Pharmacy — Atrovent 250 mcg/2 ml, 20 unit-dose inhalation vials; exact strength and pack verified",
 }
 # Scoped to the known historic source label ONLY. This protects manual admin changes.
 mapping_line = "const imageLegacySeedSources = " + json.dumps(legacy, ensure_ascii=False) + ";"
