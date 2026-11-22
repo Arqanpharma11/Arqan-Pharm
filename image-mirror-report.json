@@ -1,9 +1,11 @@
 {
-  "attempted": 100,
-  "mirrored": 60,
-  "failed": 40,
-  "total_mirrored_in_previous_runs": 133,
-  "unresolved_failed_urls": 107,
+  "attempted": 150,
+  "mirrored": 103,
+  "failed": 47,
+  "locally_stored_unique_product_ids": 360,
+  "locally_referenced_seed_ids": 360,
+  "verified_seed_ids": 608,
+  "unresolved_failed_urls": 154,
   "failures": [
     {
       "id": "2",
@@ -539,6 +541,241 @@
       "id": "862",
       "url": "https://www.mouradpharmacy.com/web/image/product.product/282065/image_1920?unique=c5aa1d5",
       "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "866",
+      "url": "https://taypharmacies.com/wp-content/uploads/2024/02/2024-02-08T152131.603.png",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "873",
+      "url": "https://www.lotusonline.com/cdn/shop/files/3000650_processed.jpg?v=1767614482",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "877",
+      "url": "https://www.lotusonline.com/cdn/shop/files/3008000_1.jpg?v=1767616681",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "878",
+      "url": "https://www.mouradpharmacy.com/web/image/product.product/282059/image_1920?unique=20d13fc",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "880",
+      "url": "https://taypharmacies.com/wp-content/uploads/2024/09/2024-09-07T134809.873.png",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "882",
+      "url": "https://www.mouradpharmacy.com/web/image/product.product/285049/image_1920?unique=88db6a1",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "867",
+      "url": "https://taypharmacies.com/wp-content/uploads/2025/07/2025-07-26T164905.544.png",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "891",
+      "url": "https://www.lotusonline.com/cdn/shop/files/3002823_1.jpg?v=1767615533",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "895",
+      "url": "https://www.lotusonline.com/cdn/shop/files/3008214_processed.jpg?v=1773307699",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "943",
+      "url": "https://taypharmacies.com/wp-content/uploads/2024/11/2024-11-16T103926.673.png",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "911",
+      "url": "https://alfouadpharmacies.com/cdn/shop/files/PANADOLADVANCE48TAB.webp?v=1765880919&width=500",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "913",
+      "url": "https://cdn11.bigcommerce.com/s-4fff2/images/stencil/1280x1280/products/88042/881436/PanadolExtraTabs48s__68290.1693894041.jpg?c=2&imbypass=on",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "919",
+      "url": "https://www.lotusonline.com/cdn/shop/files/3006174_1.jpg?v=1767615162",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "933",
+      "url": "https://www.lotusonline.com/cdn/shop/files/3008962_processed.jpg?v=1773305403",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "934",
+      "url": "https://www.lotusonline.com/cdn/shop/files/3008203_processed.jpg?v=1767613865",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "947",
+      "url": "https://www.mouradpharmacy.com/web/image/product.product/290452/image_1920?unique=80a2e2b",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "958",
+      "url": "https://www.lotusonline.com/cdn/shop/files/3003645_1.jpg?v=1767615879",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "959",
+      "url": "https://delmar-test.linkedgates.com/images/items/111847.JPEG",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "961",
+      "url": "https://www.lotusonline.com/cdn/shop/files/3003623_1.jpg?v=1767615770",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "1023",
+      "url": "https://re3ayapharmacy.com/cdn/shop/files/prontogest-200-mg-30-vaginal-suppositories-910337.jpg?v=1735257176",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "1032",
+      "url": "https://image-cdn.ubuy.com/1-broncho-vaxom-increases-the/400_400_100/697d99f8a77477127a0d6e0d.jpg",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "1040",
+      "url": "https://taypharmacies.com/wp-content/uploads/2023/03/ex.jpg",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "987",
+      "url": "https://www.lotusonline.com/cdn/shop/files/3006964_processed.jpg?v=1767613691&width=750",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "1000",
+      "url": "https://d36hbw14aib5lz.cloudfront.net/310419663029549456/Zmu2R5pmNK2ZPGRJrPfjq8/prostasolveplus_c9aee885.webp?Expires=1787409581&Key-Pair-Id=K1MP89RTKNH4J&Signature=EAvC0fnMtIS7dqLTvnWpgIp0XRlqUpC3TxIBG3XOPheRpfYh8~QDN4zriU~xCLGotfWO-tQhSn55LXufTRTdq0rkDvWKYbSlFqWgMP4P5lwQ5VNfkRK2HQ6EdLx3kSM6fANKzk~GUveWdAJv6mNUumqu6wAmKysiNWS~tgqmZ5z4oW3CENnCczNB2lOEP0YbyKWtg93lOclZ-1UuQX-BP0AiRMCEtrNJZRx0KsUfPvvholfwAw7nDAOMjFZJwpOyjLLhLk6YRHAZxa4JZj3DTZUv5e-cRl-wWZJg8FT6jFLN8bQm7OStY3-5ubEJ3SKP4-mHp6crGvILgvk5mjlxIA__",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "189",
+      "url": "https://mtalaatpharmacy.com/storage/products/1760887390.png",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "196",
+      "url": "https://www.lotusonline.com/cdn/shop/files/3007257_1.jpg?v=1767615813&width=1500",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "1038",
+      "url": "https://www.lotusonline.com/cdn/shop/files/3008752_processed.jpg?v=1773307056",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "221",
+      "url": "https://www.lotusonline.com/cdn/shop/files/3007128_1.jpg?v=1767615947",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "239",
+      "url": "https://www.lotusonline.com/cdn/shop/files/3007183_2.jpg?v=1768405048&width=1500",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "249",
+      "url": "https://orchidiapharma.com/images/pages/Picture13.png",
+      "error": "image decode failed"
+    },
+    {
+      "id": "255",
+      "url": "https://www.mouradpharmacy.com/web/image/product.product/277886/image_1920?unique=3853efa",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "1080",
+      "url": "https://multicare-eg.com/storage/photos/66f91b89d4fae.png",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "1088",
+      "url": "https://www.lotusonline.com/cdn/shop/files/3004684_1.jpg?v=1767615987&width=1500",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "1095",
+      "url": "https://www.wellcareonline.com/cdn/shop/files/blopress-8mg-plus-tablets-28s_3fa9b585-7873-48d7-8f55-88c444c42378.jpg?v=1762857626&width=533",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "1097",
+      "url": "https://stgprevapi.al-dawaa.com/medias/%D8%A8%D9%84%D9%88%D8%A8%D8%B1%D9%8A%D8%B3-16-%D9%85%D8%AC%D9%85-%D9%84%D8%AD%D8%A7%D9%84%D8%A7%D8%AA-%D8%B6%D8%BA%D8%B7-%D8%A7%D9%84%D8%AF%D9%85-%D8%A7%D9%84%D9%85%D8%B1%D8%AA%D9%81%D8%B9-28-%D9%82%D8%B1%D8%B5_0_515.webp?context=bWFzdGVyfGltYWdlc3w3NzYxMnxpbWFnZS93ZWJwfGFHVXpMMmd4Tnk4NU16WTVPVFUwTWpJeU1URXdMekV3TURNek5GOHdYMkZ5WHpVeE5WZDROVEUxU0Y5WFJVSlFMbmRsWW5BfDczZjk1MDYxMmFiYWIwMTAyZDZmODVlMWM4ZjQ5N2NkOTFkY2Q5NTQxMTU4MjNhY2Q2ZTk5Yzg1Yjk4MzJmZGQ",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "1100",
+      "url": "https://www.mouradpharmacy.com/web/image/product.product/278293/image_1920?unique=b18e765",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "259",
+      "url": "https://www.lotusonline.com/cdn/shop/files/3008108_processed.jpg?v=1767614997&width=750",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "261",
+      "url": "https://www.lotusonline.com/cdn/shop/files/3006029_2.jpg?v=1768406142&width=1500",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "281",
+      "url": "https://taypharmacies.com/wp-content/uploads/2024/05/2024-06-01T133008.347.png",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "284",
+      "url": "https://www.lotusonline.com/cdn/shop/files/3005125_1.jpg?v=1767615876&width=1500",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "300",
+      "url": "https://www.lotusonline.com/cdn/shop/files/3001723_1.jpg?v=1767615797&width=1500",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "302",
+      "url": "https://www.lotusonline.com/cdn/shop/files/3001725_1.jpg?v=1767616011",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "304",
+      "url": "https://www.lotusonline.com/cdn/shop/files/3009346_processed.jpg?v=1773307059",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "321",
+      "url": "https://www.lotusonline.com/cdn/shop/files/3010083_processed.jpg?v=1773701375&width=750",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "409",
+      "url": "https://anwar.store/cdn/shop/files/New_Template-Photoroom_10.jpg?v=1733244480",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "419",
+      "url": "https://taypharmacies.com/wp-content/uploads/2023/08/ALERGOLIBER-10MG-1.jpg",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "423",
+      "url": "https://www.lotusonline.com/cdn/shop/files/3008244_processed_1.jpg?v=1779529604",
+      "error": "HTTP Error 404: Not Found"
     }
   ],
   "note": "URLs that could not be fetched are NOT represented as valid photos. Visual pack matching requires separate review."
