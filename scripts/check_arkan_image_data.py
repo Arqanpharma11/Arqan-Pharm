@@ -6,6 +6,7 @@ promotion of unverified trial photos. Does not change or reclassify product imag
 """
 import json
 from pathlib import Path
+from ipaddress import ip_address
 from urllib.parse import urlparse
 
 root = Path(__file__).resolve().parents[1]
@@ -22,7 +23,16 @@ def valid_url(value):
         return False
     try:
         u = urlparse(value)
-        return u.scheme == 'https' and bool(u.hostname) and not u.username and not u.password and u.hostname not in ('localhost','127.0.0.1')
+        host = (u.hostname or '').lower().rstrip('.')
+        if u.scheme != 'https' or not host or u.username or u.password or u.port:
+            return False
+        if host == 'localhost' or host.endswith(('.localhost', '.local', '.internal', '.test', '.invalid')):
+            return False
+        try:
+            ip_address(host)  # Literal IP/metadata/internal targets are not acceptable.
+            return False
+        except ValueError:
+            return '.' in host
     except ValueError:
         return False
 
