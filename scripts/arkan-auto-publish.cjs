@@ -1,0 +1,45 @@
+'use strict';
+// Strict automatic publishing: only authoritative, openly reusable product-front records.
+// Unknown rights, ambiguous matches, and pharmaceutical products remain in review.
+const PUBLISHABLE = new Set(['world.openfoodfacts.org','world.openbeautyfacts.org']);
+const norm = s=>String(s||'').toLowerCase().normalize('NFKC')
+  .replace(/[\u064b-\u065f]/g,'').replace(/[\u200e\u200f]/g,'')
+  .replace(/[^a-z0-9\u0621-\u064a./%]+/g,' ').replace(/\s+/g,' ').trim();
+const nums = s=>norm(s).match(/\d+(?:[./]\d+)*/g)||[];
+const words = s=>norm(s).split(' ').filter(x=>x.length>=3);
+const formGroups = [
+  ['tablet','tablets','tab','اقراص','قرص'], ['capsule','capsules','caps','كبسولات','كبسول'],
+  ['suppository','suppositories','supp','لبوس'], ['syrup','شراب'],
+  ['ampoule','amp','injection','حقن','امبول'],['cream','كريم'],['drops','قطره','قطرة'],
+  ['gel','جيل'],['powder','بودر'],['milk','لبن'],['spray','بخاخ']
+];
+const form = s=>formGroups.findIndex(group=>group.some(x=>new RegExp('(^|\\s)'+x+'(?=\\s|$)').test(norm(s))));
+function qualify(item, hit) {
+  if(!item||!hit) return {pass:false,reason:'missing_data'};
+  if(!PUBLISHABLE.has(hit.provider)) return {pass:false,reason:'source_not_eligible'};
+  if(/أدوية|دواء|pharma|medicine/i.test(item.cat||'')) return {pass:false,reason:'medicine_requires_visual_validation'};
+  const title=hit.title||'', name=item.en||item.name||'', a=words(name), b=words(title);
+  if(a.length<2 || b.length<2) return {pass:false,reason:'insufficient_name_detail'};
+  if(!b.includes(a[0])||!b.includes(a[1])) return {pass:false,reason:'brand_mismatch'};
+  const an=nums(name),bn=nums(title);
+  if(an.length!==bn.length || an.some(n=>!bn.includes(n))) return {pass:false,reason:'number_or_pack_mismatch'};
+  const fa=form(name),fb=form(title);
+  if(fa>=0&&fb>=0&&fa!==fb) return {pass:false,reason:'form_mismatch'};
+  // Require an unambiguous size/stage/pack number; brand alone is unsafe.
+  if(!an.length) return {pass:false,reason:'no_size_or_stage'};
+  if(!/^https:\/\/(?:images\.openfoodfacts\.org|images\.openbeautyfacts\.org|static\.openfoodfacts\.org|static\.openbeautyfacts\.org)\//.test(hit.imageUrl||''))
+    return {pass:false,reason:'untrusted_image_host'};
+  if(!/^https:\/\/world\.open(?:food|beauty)facts\.org\/product\/\d+/.test(hit.sourcePage||''))
+    return {pass:false,reason:'unverified_product_page'};
+  if(!hit.license || !/open facts/i.test(hit.license)) return {pass:false,reason:'license_unconfirmed'};
+  return {pass:true,reason:'matched_open_product_record'};
+}
+function publish(item,hit) {
+  const test=qualify(item,hit);
+  if(!test.pass) return null;
+  return {url:hit.imageUrl,title:hit.title,source:hit.provider,sourcePage:hit.sourcePage,
+    license:hit.license,status:'auto_published_strict_unverified_pack',publishedAt:new Date().toISOString(),
+    catalogName:item.name,englishName:item.en||'',matchRule:'exact_brand_words_numbers_and_form',
+    attributionRequired:true};
+}
+module.exports={qualify,publish};
