@@ -31,3 +31,13 @@ test('accept correct exact pack metadata for allowed source',()=>assert.equal(
  qualify(milk,base).pass,true));
 test('reject required dosage form omitted from product title',()=>assert.equal(
  qualify({name:'Aptamil Stage 2 400g milk',cat:'ألبان أطفال'}, {...base,title:'Aptamil Stage 2 400g'}).pass,false));
+
+test('one-word brand plus two matching pack numbers is eligible',()=>assert.equal(
+ qualify({name:'Aptamil 2 400g',cat:'ألبان أطفال'},
+   {...base,title:'Aptamil 2 400g'}).pass,true));
+test('one-word brand with stage alone remains ambiguous',()=>assert.equal(
+ qualify({name:'Aptamil 2',cat:'ألبان أطفال'},
+   {...base,title:'Aptamil 2'}).pass,false));
+test('one-word brand size match cannot cross units',()=>assert.equal(
+ qualify({name:'Aptamil 2 400g',cat:'ألبان أطفال'},
+   {...base,title:'Aptamil 2 400ml'}).pass,false));
