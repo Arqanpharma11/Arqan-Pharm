@@ -23,6 +23,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Install image decoders
+        run: python -m pip install 'Pillow>=11.2' pillow-avif-plugin
       - name: Mirror up to 100 previously reviewed image URLs
         run: python scripts/mirror_product_images.py
       - name: Commit successfully downloaded product images
