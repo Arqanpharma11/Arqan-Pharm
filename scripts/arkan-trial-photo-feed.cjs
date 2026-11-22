@@ -6,6 +6,14 @@ const m=html.match(/const EXACT_MASTER_ITEMS\s*=\s*\[([\s\S]*?)\n\s*\];/);
 if(!m) throw Error('Cannot extract Arqan catalog');
 const items=[...m[1].matchAll(/\{\s*name:\s*"([^"]+)"\s*,\s*cat:\s*"([^"]+)"/g)].map((x,i)=>({id:String(i+1),name:x[1],category:x[2]}));
 const load=(path,fallback)=>fs.existsSync(path)?JSON.parse(fs.readFileSync(path,'utf8')):fallback;
+const config=load('data/arkan-trial-image-config.json',{});
+if(config.PUBLISH_DESTINATION!=='isolated_trial_preview_only' ||
+   config.ALLOW_UNVERIFIED_IN_PHARMACIST_PORTAL!==false ||
+   config.SHOW_UNVERIFIED_BADGE!==true ||
+   config.OVERWRITE_ADMIN_APPROVED_IMAGES!==false ||
+   Number(config.MIN_CONFIDENCE_SCORE)<95) {
+  throw Error('Unsafe trial configuration: refusing to generate image feed');
+}
 const candidates=load('data/arkan-quick-image-candidates.json',{byId:{}});
 const queue=load('data/arkan-image-review-queue.json',{byId:{}});
 const state=load('data/arkan-image-agent-state.json',{checks:{}});
@@ -23,6 +31,8 @@ function safeUrl(url) {
 }
 const results=[];
 for(const item of items) {
+  if(!config.TRIAL_ALL_PRODUCTS)continue;
+  if(!config.AUTO_PUBLISH_MEDICINES && /أدوية|دواء/.test(item.category))continue;
   const id=item.id;
   const list=[];
   const old=candidates.byId?.[id];
@@ -46,7 +56,7 @@ for(const item of items) {
     break;
   }
 }
-const result={mode:'trial',version:1,generatedAt:new Date().toISOString(),catalogTotal:items.length,
+const result={mode:'trial',minimumVerifiedConfidence:config.MIN_CONFIDENCE_SCORE,approvedForProduction:false,version:1,generatedAt:new Date().toISOString(),catalogTotal:items.length,
   trialImages:results.length,notice:'UNVERIFIED IMAGES. Not for dispensing or identifying medicine. Never imported into approved pharmacy photo seeds.',items:results};
 fs.mkdirSync('data',{recursive:true});
 fs.writeFileSync('data/arkan-trial-photo-feed.json',JSON.stringify(result,null,2)+'\n');
