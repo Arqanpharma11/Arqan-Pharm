@@ -18,6 +18,10 @@ function qualify(item, hit) {
   if(!item||!hit) return {pass:false,reason:'missing_data'};
   if(!PUBLISHABLE.has(hit.provider)) return {pass:false,reason:'source_not_eligible'};
   if(/أدوية|دواء|pharma|medicine/i.test(item.cat||'')) return {pass:false,reason:'medicine_requires_visual_validation'};
+  // Only explicitly classified consumer goods may auto-publish; unknown/new
+  // products from Firestore cannot bypass medicine safety checks.
+  if(!/ألبان|غذاء|مكمل|تغذية|تجميل|عناية|بشرة|شعر|food|beauty|cosmetic|milk/i.test(item.cat||''))
+    return {pass:false,reason:'unclassified_product_requires_review'};
   const title=hit.title||'', name=item.en||item.name||'', a=words(name), b=words(title);
   if(a.length<2 || b.length<2) return {pass:false,reason:'insufficient_name_detail'};
   if(!b.includes(a[0])||!b.includes(a[1])) return {pass:false,reason:'brand_mismatch'};
