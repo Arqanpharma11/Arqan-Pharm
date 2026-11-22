@@ -13,7 +13,7 @@
   "previous_verified_listing_form_mismatch": 4,
   "dosage_form_mismatch": 12,
   "commercial_brand_mismatch": 116,
-  "english_trade_name_missing": 67,
+  "english_trade_name_missing": 66,
   "unconfirmed_trade_variant": 31
  },
  "instructions": "Open and inspect each surviving actual pack. Confirm trade name, strength, form, and pack count. Only then approve; the candidate title alone is not sufficient.",
@@ -13418,11 +13418,6 @@
    "excluded": [
     {
      "title": "سوبر مارين كولاجين بودر 200 جرام - نيوسيل",
-     "source": "AlFouad Pharmacies",
-     "reason": "english_trade_name_missing"
-    },
-    {
-     "title": "سوبر كولاجين 90 قرص - نيوسيل",
      "source": "AlFouad Pharmacies",
      "reason": "english_trade_name_missing"
     },
