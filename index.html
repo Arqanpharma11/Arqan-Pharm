@@ -20025,7 +20025,8 @@ ${window.location.href}
             const p = products.find(x => x.id === id);
             if (!p) return;
             const official = PROD_IMG_VERIFIED[id] === true && !!PROD_IMAGES[id];
-            const src = official ? PROD_IMAGES[id] : null;
+            const candidate = !official ? ARKAN_QUICK_PACKS[String(id)] : null;
+            const src = official ? PROD_IMAGES[id] : (candidate ? candidate[0] : null);
             _liveCurrent = { id, shown: official ? src : null };
             document.getElementById('pimg-name-ar').textContent = p.name;
             document.getElementById('pimg-name-en').textContent = getEn(p);
@@ -20043,7 +20044,9 @@ ${window.location.href}
             document.getElementById('product-image-modal').classList.remove('hidden');
             if (src) {
                 showMainImage(src, null);
-                st.textContent = 'صورة عبوة مسجلة' + (PROD_IMG_SRC[id] ? ' — ' + PROD_IMG_SRC[id] : '');
+                st.textContent = official
+                    ? 'صورة عبوة مسجلة' + (PROD_IMG_SRC[id] ? ' — ' + PROD_IMG_SRC[id] : '')
+                    : 'صورة مرشحة غير معتمدة من ' + (candidate?.[2] || 'مصدر خارجي') + ' — راجع الاسم والتركيز والعبوة';
             } else {
                 box.innerHTML = '<div class="text-center text-arkan-bronze p-6"><div class="text-5xl mb-2">📦</div><div class="text-xs font-bold">لا توجد صورة عبوة معتمدة لهذا الصنف حتى الآن</div></div>';
                 st.textContent = (currentSession && currentSession.role === 'admin')
@@ -20116,8 +20119,46 @@ ${window.location.href}
             '<text x="80" y="127" font-family="Arial,Tahoma,sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#6b7280" direction="rtl">لا توجد صورة</text>' +
             '</svg>');
         function getArkanPackPlaceholder(id) { return ARKAN_MISSING_PHOTO; }
+        // Preview external candidate photos only after conservative text matching.
+        // They remain unverified, are never persisted as approved product images,
+        // and fall back to a neutral "no photo" indicator on network failure.
+        function arkanCandidateCompatible(item, candidate) {
+            if (!item || !Array.isArray(candidate) || !candidate[0] || !candidate[1]) return false;
+            const norm = x => String(x || '').toLowerCase()
+                .normalize('NFKD').replace(/[\u0300-\u036f]/g, '')
+                .replace(/[^a-z0-9./% ]/g, ' ').replace(/\s+/g, ' ').trim();
+            const en = norm(getEn(item));
+            const label = norm(candidate[1]);
+            // No reliable Latin drug brand? Do not try to infer it from Arabic.
+            const brand = en.match(/^[a-z][a-z0-9-]*/)?.[0];
+            const other = label.match(/^[a-z][a-z0-9-]*/)?.[0];
+            if (!brand || brand.length < 5 || !other || brand !== other) return false;
+            const numbers = x => (x.match(/\d+(?:[./]\d+)*/g) || [])
+                .filter(v => Number(v) > 0);
+            const a = numbers(en), b = numbers(label);
+            // If a strength is specified in our catalog, it must occur in the source.
+            if (a.length && !a.every(n => b.includes(n))) return false;
+            const families = [
+                /\b(?:amp|amps|ampoule|ampoules|injection|inj|vial|vials)\b/,
+                /\b(?:tablet|tablets|tabs|tab|capsule|capsules|caps)\b/,
+                /\b(?:supp|suppository|suppositories)\b/,
+                /\b(?:cream|gel|ointment|lotion)\b/,
+                /\b(?:drops|eye drops|nasal drops)\b/,
+                /\b(?:syrup|suspension|susp|solution|soln)\b/,
+                /\b(?:sachet|sachets|powder|powd)\b/
+            ];
+            const type = x => families.findIndex(re => re.test(x));
+            const typeA=type(en), typeB=type(label);
+            if (typeA >= 0 && typeB >= 0 && typeA !== typeB) return false;
+            const qualifiers = ['extra','forte','plus','sr','xr','retard','infant','junior'];
+            for (const q of qualifiers) {
+                if (new RegExp('\\b'+q+'\\b').test(en) !== new RegExp('\\b'+q+'\\b').test(label)) return false;
+            }
+            return true;
+        }
         function getArkanCatalogImage(item) {
-            return (PROD_IMG_VERIFIED[item.id] === true && PROD_IMAGES[item.id]) || ARKAN_MISSING_PHOTO;
+            if (PROD_IMG_VERIFIED[item.id] === true && PROD_IMAGES[item.id]) return PROD_IMAGES[item.id];
+            return ARKAN_QUICK_PACKS[String(item.id)]?.[0] || ARKAN_MISSING_PHOTO;
         }
         function arkanHandlePackError(img, id) {
             img.onerror = null;
@@ -20125,8 +20166,9 @@ ${window.location.href}
             img.alt = 'صورة العبوة غير متاحة';
         }
         function arkanImageStatus(item) {
-            return (PROD_IMG_VERIFIED[item.id] === true && PROD_IMAGES[item.id])
-                ? 'صورة عبوة مسجلة' : 'لا توجد صورة حقيقية — اضغط للبحث';
+            if (PROD_IMG_VERIFIED[item.id] === true && PROD_IMAGES[item.id]) return 'صورة عبوة مسجلة';
+            if (ARKAN_QUICK_PACKS[String(item.id)]) return 'صورة مرشحة غير معتمدة — اضغط لمراجعتها';
+            return 'لا توجد صورة حقيقية — اضغط للبحث';
         }
         async function loadArkanQuickImageCandidates() {
             try {
@@ -20137,7 +20179,8 @@ ${window.location.href}
                 for (const [id, candidate] of Object.entries(data.byId)) {
                     if (/^\d{1,5}$/.test(id) && Array.isArray(candidate) &&
                         typeof candidate[0] === 'string' && /^https:\/\//.test(candidate[0])) {
-                        ARKAN_QUICK_PACKS[id] = candidate;
+                        const product = products.find(p => String(p.id) === id);
+                        if (arkanCandidateCompatible(product, candidate)) ARKAN_QUICK_PACKS[id] = candidate;
                     }
                 }
                 // Re-render only the current 50-item page; do not create 4218 image elements.
