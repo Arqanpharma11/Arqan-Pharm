@@ -4,7 +4,7 @@ const {test}=require('node:test');
 const {qualify,publish}=require('./arkan-auto-publish.cjs');
 const base={imageUrl:'https://images.openfoodfacts.org/images/products/123/1.jpg',
 sourcePage:'https://world.openfoodfacts.org/product/123',provider:'world.openfoodfacts.org',
-license:'Open Facts data and image licenses: review attribution and reuse requirements',
+license:'Open Facts contributors — CC BY-SA 3.0 product photo; database ODbL; attribution/share-alike apply',
 title:'Aptamil Stage 2 400g'};
 const milk={name:'Aptamil Stage 2 400g',cat:'ألبان أطفال'};
 test('publish exactly matched open food package, retain provenance',()=>{
