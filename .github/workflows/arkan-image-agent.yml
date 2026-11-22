@@ -10,6 +10,7 @@ on:
       - 'scripts/arkan-auto-publish.test.cjs'
       - 'scripts/arkan-visual-publish.py'
       - 'scripts/test_arkan_visual_publish.py'
+      - 'scripts/arkan-publish-status.py'
       - 'scripts/check_pharmacy_image_integrity.py'
       - 'scripts/check_arkan_image_data.py'
       - 'scripts/check_portal_javascript.py'
@@ -70,6 +71,8 @@ jobs:
             python scripts/check_pharmacy_image_integrity.py
             python scripts/check_portal_javascript.py
           fi
+      - name: Distinguish bot success from actual new photo publication
+        run: python scripts/arkan-publish-status.py
       - name: Always validate published image seeds and portal syntax
         run: |
           python scripts/check_pharmacy_image_integrity.py
