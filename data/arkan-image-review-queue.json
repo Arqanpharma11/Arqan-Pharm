@@ -139,6 +139,182 @@
       "results": [],
       "reason": "no_match_found",
       "searchedAt": "2026-11-22T15:16:43.229Z"
+    },
+    "61": {
+      "name": "ابيكوجيل شراب ك20",
+      "en": "Epicogel 20",
+      "results": [],
+      "reason": "no_match_found",
+      "searchedAt": "2026-11-22T16:11:05.620Z"
+    },
+    "62": {
+      "name": "ابيكوسيللين12-500ك",
+      "en": "Epicocillin 12 500",
+      "results": [],
+      "reason": "no_match_found",
+      "searchedAt": "2026-11-22T16:11:07.553Z"
+    },
+    "63": {
+      "name": "ابيكومب كريم - بديل كيناكومب",
+      "en": "",
+      "results": [],
+      "reason": "no_match_found",
+      "searchedAt": "2026-11-22T16:11:09.424Z"
+    },
+    "76": {
+      "name": "اترابكس15ك س ج",
+      "en": "Itrapex 15",
+      "results": [],
+      "reason": "no_match_found",
+      "searchedAt": "2026-11-22T16:11:11.306Z"
+    },
+    "77": {
+      "name": "اترافنجيكس15 كبسوله",
+      "en": "",
+      "results": [],
+      "reason": "no_match_found",
+      "searchedAt": "2026-11-22T16:11:12.887Z"
+    },
+    "78": {
+      "name": "اتراكتا امبول",
+      "en": "",
+      "results": [],
+      "reason": "no_match_found",
+      "searchedAt": "2026-11-22T16:11:14.615Z"
+    },
+    "80": {
+      "name": "اترانوكس5 كبسولة",
+      "en": "Itranox 5",
+      "results": [],
+      "reason": "no_match_found",
+      "searchedAt": "2026-11-22T16:11:16.387Z"
+    },
+    "81": {
+      "name": "اتروبين100 امبول",
+      "en": "Atropine 100",
+      "results": [],
+      "reason": "no_match_found",
+      "searchedAt": "2026-11-22T16:11:18.292Z"
+    },
+    "84": {
+      "name": "اتروزيمب10/80 مل ق",
+      "en": "Atrozemb 10/80",
+      "results": [],
+      "reason": "no_match_found",
+      "searchedAt": "2026-11-22T16:11:19.948Z"
+    },
+    "91": {
+      "name": "اتﻼ دى كى نقط بالفم15مل",
+      "en": "",
+      "results": [],
+      "reason": "no_match_found",
+      "searchedAt": "2026-11-22T16:11:21.743Z"
+    },
+    "94": {
+      "name": "اتﻼثيون اقراص",
+      "en": "",
+      "results": [],
+      "reason": "no_match_found",
+      "searchedAt": "2026-11-22T16:11:23.011Z"
+    },
+    "95": {
+      "name": "اتﻼكيدز نقط15 مل",
+      "en": "",
+      "results": [],
+      "reason": "no_match_found",
+      "searchedAt": "2026-11-22T16:11:24.277Z"
+    },
+    "106": {
+      "name": "اتومافيوتكس شراب",
+      "en": "Atomafutix",
+      "results": [],
+      "reason": "no_match_found",
+      "searchedAt": "2026-11-22T16:11:25.681Z"
+    },
+    "107": {
+      "name": "اتوموريﻼكس شراب",
+      "en": "Atomorelax",
+      "results": [],
+      "reason": "no_match_found",
+      "searchedAt": "2026-11-22T16:11:26.948Z"
+    },
+    "113": {
+      "name": "اتوميتافلوزين500/12.5",
+      "en": "Atometaflozine 500/12.5",
+      "results": [],
+      "reason": "no_match_found",
+      "searchedAt": "2026-11-22T16:11:28.210Z"
+    },
+    "115": {
+      "name": "اتينو50/25 سى",
+      "en": "",
+      "results": [],
+      "reason": "no_match_found",
+      "searchedAt": "2026-11-22T16:11:29.798Z"
+    },
+    "117": {
+      "name": "اجارستين نقط",
+      "en": "",
+      "results": [],
+      "reason": "no_match_found",
+      "searchedAt": "2026-11-22T16:11:31.095Z"
+    },
+    "127": {
+      "name": "ادفانس صابون",
+      "en": "Advance",
+      "results": [
+        {
+          "imageUrl": "https://images.openbeautyfacts.org/images/products/600/108/735/7081/front_en.3.400.jpg",
+          "sourcePage": "https://world.openbeautyfacts.org/product/6001087357081",
+          "title": "Vaseline Vaseline advance repair 400ml",
+          "provider": "world.openbeautyfacts.org",
+          "license": "Open Facts contributors — CC BY-SA 3.0 product photo; database ODbL; attribution/share-alike apply",
+          "foundAt": "2026-11-22T16:11:32.820Z",
+          "status": "pending_manual_packaging_and_license_review"
+        },
+        {
+          "imageUrl": "https://images.openbeautyfacts.org/images/products/357/466/140/3472/front_de.3.400.jpg",
+          "sourcePage": "https://world.openbeautyfacts.org/product/3574661403472",
+          "title": "Listerine Advance White",
+          "provider": "world.openbeautyfacts.org",
+          "license": "Open Facts contributors — CC BY-SA 3.0 product photo; database ODbL; attribution/share-alike apply",
+          "foundAt": "2026-11-22T16:11:32.821Z",
+          "status": "pending_manual_packaging_and_license_review"
+        },
+        {
+          "imageUrl": "https://images.openbeautyfacts.org/images/products/890/600/527/1693/front_en.3.400.jpg",
+          "sourcePage": "https://world.openbeautyfacts.org/product/8906005271693",
+          "title": "cetaphil cetaphil daily advance ultra hydrating lotion 30g",
+          "provider": "world.openbeautyfacts.org",
+          "license": "Open Facts contributors — CC BY-SA 3.0 product photo; database ODbL; attribution/share-alike apply",
+          "foundAt": "2026-11-22T16:11:32.821Z",
+          "status": "pending_manual_packaging_and_license_review"
+        },
+        {
+          "imageUrl": "https://images.openbeautyfacts.org/images/products/841/082/542/0013/front_en.3.400.jpg",
+          "sourcePage": "https://world.openbeautyfacts.org/product/8410825420013",
+          "title": "Llongueras Color Advance negro nº1",
+          "provider": "world.openbeautyfacts.org",
+          "license": "Open Facts contributors — CC BY-SA 3.0 product photo; database ODbL; attribution/share-alike apply",
+          "foundAt": "2026-11-22T16:11:32.821Z",
+          "status": "pending_manual_packaging_and_license_review"
+        }
+      ],
+      "reason": "needs_review"
+    },
+    "128": {
+      "name": "ادفانكريب كبسول",
+      "en": "Advancrib",
+      "results": [],
+      "reason": "no_match_found",
+      "searchedAt": "2026-11-22T16:11:34.085Z"
+    },
+    "140": {
+      "name": "ادويفلسار كو12.5/160م30ق",
+      "en": "",
+      "results": [],
+      "reason": "no_match_found",
+      "searchedAt": "2026-11-22T16:11:35.398Z"
     }
   }
 }

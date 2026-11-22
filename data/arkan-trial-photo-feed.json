@@ -3,9 +3,9 @@
   "minimumVerifiedConfidence": 95,
   "approvedForProduction": false,
   "version": 1,
-  "generatedAt": "2026-11-22T15:52:47.814Z",
+  "generatedAt": "2026-11-22T16:11:36.392Z",
   "catalogTotal": 4218,
-  "trialImages": 1265,
+  "trialImages": 1266,
   "notice": "UNVERIFIED IMAGES. Not for dispensing or identifying medicine. Never imported into approved pharmacy photo seeds.",
   "items": [
     {
@@ -184,6 +184,18 @@
       "source": "Azzam Pharmacy",
       "sourcePage": "https://azzampharmacy.com/products/agnucaston-20-mg-30-tab-3212",
       "title": "Agnucaston  20 Mg  30 Tab",
+      "status": "trial_unverified",
+      "catalogMatch": "not_visually_verified",
+      "rights": "source_rights_unconfirmed"
+    },
+    {
+      "id": "127",
+      "name": "ادفانس صابون",
+      "category": "مستحضرات تجميل",
+      "imageUrl": "https://images.openbeautyfacts.org/images/products/600/108/735/7081/front_en.3.400.jpg",
+      "source": "world.openbeautyfacts.org",
+      "sourcePage": "https://world.openbeautyfacts.org/product/6001087357081",
+      "title": "Vaseline Vaseline advance repair 400ml",
       "status": "trial_unverified",
       "catalogMatch": "not_visually_verified",
       "rights": "source_rights_unconfirmed"

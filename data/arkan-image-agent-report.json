@@ -1,17 +1,23 @@
 {
-  "runAt": "2026-11-22T15:16:43.929Z",
+  "runAt": "2026-11-22T16:11:36.099Z",
   "masterItems": 4218,
   "cloudItems": 0,
   "catalogItems": 4218,
   "candidateLinks": 1331,
   "autoPublishedCount": 0,
   "publishedThisRun": 0,
+  "searchAttempted": 20,
+  "searchHits": 4,
+  "searchErrors": 0,
+  "rejectionReasons": {
+    "insufficient_name_detail": 4
+  },
   "missingWithoutCandidate": 2887,
-  "checked": 20,
-  "healthy": 20,
+  "checked": 30,
+  "healthy": 30,
   "gone": 0,
-  "queuedThisRun": 0,
-  "pendingReview": 20,
+  "queuedThisRun": 1,
+  "pendingReview": 40,
   "searchEnabled": true,
   "searchProviders": [
     "Wikimedia Commons",
@@ -19,6 +25,10 @@
     "Open Beauty Facts"
   ],
   "egyptianNamesResolved": 0,
+  "englishBrandAliases": 2463,
+  "approvedPhotoIds": 608,
   "cloudSyncEnabled": false,
+  "cloudSyncError": null,
+  "providerHealth": {},
   "disclaimer": "Automated candidate discovery is not photo verification. Existing approved photos are never overwritten. Automatically published images remain marked as external, not verified packaging."
 }
