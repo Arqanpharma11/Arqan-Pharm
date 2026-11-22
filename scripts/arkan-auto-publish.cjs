@@ -36,7 +36,7 @@ function qualify(item, hit) {
   const au=units(name),bu=units(title);
   if(au.some(u=>!bu.includes(u)))return {pass:false,reason:'unit_mismatch'};
   const variants=['plus','extra','forte','xr','sr','retard','junior'];
-  const has=(s,t)=>new RegExp('(^|\\\\s)'+t+'(?=\\\\s|$)','i').test(norm(s));
+  const has=(s,t)=>norm(s).split(' ').includes(t);
   if(variants.some(v=>has(title,v)&&!has(name,v)))return {pass:false,reason:'unexpected_variant'};
   // Require an unambiguous size/stage/pack number; brand alone is unsafe.
   if(!an.length) return {pass:false,reason:'no_size_or_stage'};
