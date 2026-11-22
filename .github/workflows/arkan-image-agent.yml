@@ -10,6 +10,8 @@ on:
       - 'scripts/arkan-auto-publish.test.cjs'
       - 'scripts/arkan-visual-publish.py'
       - 'scripts/arkan-trial-photo-feed.cjs'
+      - 'scripts/arkan-trial-photo-feed.test.cjs'
+      - 'data/arkan-trial-image-config.json'
       - 'trial-images.html'
       - '.github/workflows/arkan-image-agent.yml'
 permissions:
