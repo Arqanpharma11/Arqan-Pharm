@@ -28,7 +28,7 @@ block = original[start:end]
 suffix = original[end:]
 # Avoid bumping the image seed version on every scheduled run.
 wanted_line = "const imageLegacySeedSources = " + json.dumps(legacy, ensure_ascii=False) + ";"
-existing_maps = re.findall(r"const imageLegacySeedSources = \\{[^;]*\\};", block)
+existing_maps = re.findall(r"const imageLegacySeedSources = \{[^;]*\};", block)
 already_current = (
     existing_maps == [wanted_line]
     and "Object.prototype.hasOwnProperty.call(imageLegacySeedSources, String(id))" in block
