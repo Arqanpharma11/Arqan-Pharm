@@ -73,6 +73,20 @@ for(const item of items) {
 }
 const result={mode:'trial',minimumVerifiedConfidence:config.MIN_CONFIDENCE_SCORE,approvedForProduction:false,version:2,ambiguousLinksSkipped,generatedAt:new Date().toISOString(),catalogTotal:items.length,
   trialImages:results.length,notice:'UNVERIFIED IMAGES. Not for dispensing or identifying medicine. Never imported into approved pharmacy photo seeds.',items:results};
-fs.mkdirSync('data',{recursive:true});
-fs.writeFileSync('data/arkan-trial-photo-feed.json',JSON.stringify(result,null,2)+'\n');
-console.log(JSON.stringify({catalogTotal:items.length,trialImages:results.length,approvedNotChanged:Object.keys(approved.byId||{}).length}));
+const feedPath='data/arkan-trial-photo-feed.json';
+const previous=load(feedPath,null);
+// Do not publish a new Git commit every ten minutes if no photo changed.
+// Constant timestamp-only commits previously triggered unnecessary Pages builds
+// and collided with other scheduled runs.
+if(previous && previous.version===result.version &&
+   previous.ambiguousLinksSkipped===result.ambiguousLinksSkipped &&
+   JSON.stringify(previous.items)===JSON.stringify(result.items))
+  result.generatedAt=previous.generatedAt;
+const serialized=JSON.stringify(result,null,2)+'\n';
+if(!fs.existsSync(feedPath) || fs.readFileSync(feedPath,'utf8')!==serialized){
+  fs.mkdirSync('data',{recursive:true});
+  fs.writeFileSync(feedPath,serialized);
+}
+console.log(JSON.stringify({catalogTotal:items.length,trialImages:results.length,
+  unchanged:previous?.generatedAt===result.generatedAt,
+  approvedNotChanged:Object.keys(approved.byId||{}).length}));
