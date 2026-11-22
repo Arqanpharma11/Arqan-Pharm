@@ -248,7 +248,7 @@ async function main(){
     else byId.set(item.id,{...item,cat:''});
   }
   const all=[...byId.values()];
-  const linked=Object.entries(candidates.byId).filter(([id,c])=>Array.isArray(c)&&c[0]?.startsWith('https://'));
+  const linked=Object.entries(candidates.byId).filter(([id,c])=>!approvedIds.has(id)&&Array.isArray(c)&&c[0]?.startsWith('https://'));
   const budget=Number(process.env.IMAGE_CHECK_BUDGET||20);
   let checked=0,missing=0,healthy=0,gone=0,queued=0,publishedNow=0,searchAttempted=0,searchHits=0,searchErrors=0;
   const rejectionReasons={};
@@ -305,7 +305,7 @@ async function main(){
   // eligible set shrinks between scheduled executions.
   const oldestFirst=(a,b)=>Date.parse(state.searched[a.id]?.at||'1970-01-01')-Date.parse(state.searched[b.id]?.at||'1970-01-01');
   const outstanding=[...missingPriority.sort(oldestFirst),...questionable.sort(oldestFirst)];
-  missing=all.filter(x=>!candidates.byId[x.id] && !published.byId[x.id]).length;
+  missing=all.filter(x=>!approvedIds.has(x.id)&&!candidates.byId[x.id] && !published.byId[x.id]).length;
   state.searchPipeline={remainingMissing:missingPriority.length,remainingSuspect:questionable.length,
     eligibleThisRun:outstanding.length};
   if(outstanding.length){
@@ -354,7 +354,7 @@ async function main(){
   }
   state.lastRun=new Date().toISOString();
   state.lastCatalogSize=all.length;
-  const report={runAt:state.lastRun,masterItems:items.length,cloudItems:cloud.length,catalogItems:all.length,candidateLinks:linked.length,autoPublishedCount:Object.keys(published.byId).length,publishedThisRun:publishedNow,searchAttempted,searchHits,searchErrors,rejectionReasons,missingWithoutCandidate:missing,checked,healthy,gone,queuedThisRun:queued,pendingReview:Object.keys(queue.byId).length,searchEnabled:true,searchProviders:['Wikimedia Commons','Open Food Facts','Open Beauty Facts'],egyptianNamesResolved:Object.keys(state.egyptDrugNames||{}).length,englishBrandAliases:Object.keys(englishBrands).length,approvedPhotoIds:approvedIds.size,cloudSyncEnabled:!!process.env.FIREBASE_SERVICE_ACCOUNT_JSON,cloudSyncError:cloudError,providerHealth:state.providerHealth||{},disclaimer:'Automated candidate discovery is not photo verification. Existing approved photos are never overwritten. Automatically published images remain marked as external, not verified packaging.'};
+  const report={runAt:state.lastRun,masterItems:items.length,cloudItems:cloud.length,catalogItems:all.length,candidateLinks:linked.length,unapprovedCatalogItems:all.filter(x=>!approvedIds.has(x.id)).length,autoPublishedCount:Object.keys(published.byId).length,publishedThisRun:publishedNow,searchAttempted,searchHits,searchErrors,rejectionReasons,missingWithoutCandidate:missing,checked,healthy,gone,queuedThisRun:queued,pendingReview:Object.keys(queue.byId).length,searchEnabled:true,searchProviders:['Wikimedia Commons','Open Food Facts','Open Beauty Facts'],egyptianNamesResolved:Object.keys(state.egyptDrugNames||{}).length,englishBrandAliases:Object.keys(englishBrands).length,approvedPhotoIds:approvedIds.size,cloudSyncEnabled:!!process.env.FIREBASE_SERVICE_ACCOUNT_JSON,cloudSyncError:cloudError,providerHealth:state.providerHealth||{},disclaimer:'Automated candidate discovery is not photo verification. Existing approved photos are never overwritten. Automatically published images remain marked as external, not verified packaging.'};
   write(stateFile,state);write(queueFile,queue);write(publishedFile,published);write(reportFile,report);
   console.log(JSON.stringify(report));
 }
