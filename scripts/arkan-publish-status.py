@@ -58,7 +58,7 @@ if path:
         f"| Images entering OCR | {eligible} |\n"
         f"| Images scanned by OCR | {scanned} |\n"
         f"| **New product images published** | **{published}** |\n\n"
-        f"Status: \`{state}\`\n\n{message}\n"
+        f"Status: `{state}`\n\n{message}\n"
     )
     with open(path, "a", encoding="utf-8") as fh:
         fh.write(summary)
