@@ -25,6 +25,10 @@ report={'scanned':0,'published':0,'existing_skipped':0,'review':[],'published_id
 lines=[]
 def tokens(x):return re.findall(r'[a-z]{3,}',str(x or '').lower())
 def numbers(x):return re.findall(r'(?<!\d)\d+(?:[.,/]\d+)?(?!\d)',str(x or ''))
+def latin_brand(record):
+    # A merchant image alone cannot prove which Arabic catalog item it belongs to.
+    value=str(record.get('englishName') or '').strip()
+    return tokens(value)[0] if tokens(value) else None
 for pid,record in sorted(manifest.get('byId',{}).items(),key=lambda p:int(p[0])):
     if report['scanned']>=budget:break
     if pid in known:
@@ -34,6 +38,13 @@ for pid,record in sorted(manifest.get('byId',{}).items(),key=lambda p:int(p[0]))
         report['review'].append({'id':pid,'reason':'needs_catalog_sync'})
         continue
     name,cat=items[int(pid)-1]
+    if str(record.get('catalogName','')) != name:
+        report['review'].append({'id':pid,'reason':'catalog_identity_changed'})
+        continue
+    expected_brand=latin_brand(record)
+    if not expected_brand:
+        report['review'].append({'id':pid,'reason':'independent_english_trade_name_missing'})
+        continue
     if 'أدوية' in cat or not any(x in cat for x in ('ألبان','غذاء','مكمل','تجميل','عناية')):continue
     if record.get('source') not in ('world.openfoodfacts.org','world.openbeautyfacts.org'):continue
     if 'CC BY-SA 3.0' not in record.get('license',''):continue
@@ -60,9 +71,13 @@ for pid,record in sorted(manifest.get('byId',{}).items(),key=lambda p:int(p[0]))
         name_words=tokens(title)
         observed=set(tokens(result.stdout))
         strengths=numbers(title)
-        if len(name_words)<2 or name_words[0] not in observed or len(observed.intersection(name_words))<2:
+        if len(name_words)<2 or expected_brand not in observed or expected_brand not in name_words or len(observed.intersection(name_words))<2:
             raise ValueError('pack_name_not_confirmed')
-        if not strengths or not all(n in numbers(result.stdout) for n in strengths):
+        ocr_numbers=numbers(result.stdout)
+        catalog_numbers=numbers(name)
+        if not catalog_numbers or not all(n in ocr_numbers for n in catalog_numbers):
+            raise ValueError('catalog_numbers_not_confirmed')
+        if not strengths or not all(n in ocr_numbers for n in strengths):
             raise ValueError('pack_numbers_not_confirmed')
         out=dest/(pid+'.jpg')
         if out.exists():raise ValueError('local_photo_exists')
