@@ -6,6 +6,7 @@ on:
   push:
     paths:
       - 'scripts/mirror_product_images.py'
+      - 'scripts/verified_image_replacements.json'
       - '.github/workflows/mirror-product-images.yml'
 permissions:
   contents: write
