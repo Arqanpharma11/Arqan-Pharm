@@ -20,14 +20,15 @@ for item in data["items"]:
                   if isinstance(r.get("imageUrl"), str)
                   and r["imageUrl"].startswith("https://")
                   and isinstance(r.get("title"), str)]
-    # A repeatedly broken URL is not a valid browse-time image.
+    # The previous feed selected the top-ranked candidate. If its repeated
+    # 404/410 failures were confirmed, fall back to another candidate or none.
+    chosen = max(candidates, key=lambda r: float(r.get("score") or 0)) if candidates else None
     health = checks.get(id, {})
-    if health.get("failures", 0) >= 3 and health.get("lastStatus") == "gone":
-        candidates = [r for r in candidates if r.get("imageUrl") !=
-                      (item.get("candidates", [{}])[0].get("imageUrl"))]
-    if not candidates:
+    if chosen and health.get("failures", 0) >= 3 and health.get("lastStatus") == "gone":
+        candidates = [r for r in candidates if r.get("imageUrl") != chosen["imageUrl"]]
+        chosen = max(candidates, key=lambda r: float(r.get("score") or 0)) if candidates else None
+    if not chosen:
         continue
-    chosen = max(candidates, key=lambda r: float(r.get("score") or 0))
     by_id[id] = [chosen["imageUrl"], chosen["title"],
                  str(chosen.get("sourceName", "")),
                  str(chosen.get("productPage", ""))]
