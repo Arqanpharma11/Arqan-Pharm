@@ -20062,6 +20062,15 @@ ${window.location.href}
                     ? 'صورة عبوة مسجلة' + (PROD_IMG_SRC[id] ? ' — ' + PROD_IMG_SRC[id] : '')
                     : auto ? 'صورة منشورة آليًا من ' + auto.source + ' — تطابق بيانات آلي، وليس توثيقًا بصريًا للعبوة'
                     : 'صورة مرشحة غير معتمدة من ' + (candidate?.[2] || 'مصدر خارجي') + ' — راجع الاسم والتركيز والعبوة';
+                if (auto && /^https:\/\//.test(auto.sourcePage || '')) {
+                    const sourceLink = document.createElement('a');
+                    sourceLink.href = auto.sourcePage;
+                    sourceLink.target = '_blank';
+                    sourceLink.rel = 'noopener noreferrer';
+                    sourceLink.className = 'inline-block underline ms-2';
+                    sourceLink.textContent = 'مصدر الصورة وترخيصها';
+                    st.appendChild(sourceLink);
+                }
             } else {
                 box.innerHTML = '<div class="text-center text-arkan-bronze p-6"><div class="text-5xl mb-2">📦</div><div class="text-xs font-bold">لا توجد صورة عبوة معتمدة لهذا الصنف حتى الآن</div></div>';
                 st.textContent = (currentSession && currentSession.role === 'admin')
