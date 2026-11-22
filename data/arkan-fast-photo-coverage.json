@@ -1,0 +1,13 @@
+{
+  "format": "arkan-fast-thumbnail-coverage",
+  "totalCatalogItems": 4218,
+  "localReferences": 420,
+  "extraCandidateIds": 1331,
+  "uniqueItemsWithAtLeastOneRealImageUrl": 1751,
+  "itemsWithClearlyLabeledIllustrationOnly": 2467,
+  "existingHostedImageFiles": 427,
+  "photoLinksMayFailOrBeDifferentPacks": true,
+  "allItemsHaveThumbnailOrIllustration": true,
+  "allItemsHaveOneClickGoogleImageSearch": true,
+  "notes": "No claim of 4218 genuine product photos; unverified links and explicitly labeled per-product SVG illustrations are separate."
+}
