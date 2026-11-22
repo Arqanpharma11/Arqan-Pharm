@@ -1,12 +1,12 @@
 {
-  "runAt": "2026-11-22T16:14:55.473Z",
+  "runAt": "2026-11-22T16:16:21.297Z",
   "masterItems": 4218,
   "cloudItems": 0,
   "catalogItems": 4218,
   "candidateLinks": 1331,
   "autoPublishedCount": 0,
   "publishedThisRun": 0,
-  "searchAttempted": 11,
+  "searchAttempted": 1,
   "searchHits": 0,
   "searchErrors": 1,
   "rejectionReasons": {},
@@ -42,7 +42,7 @@
     "eg-drugs-api.mahmoudfalous.workers.dev": {
       "failures": 0,
       "retryAt": null,
-      "lastSuccess": "2026-11-22T16:14:55.067Z"
+      "lastSuccess": "2026-11-22T16:16:20.896Z"
     }
   },
   "disclaimer": "Automated candidate discovery is not photo verification. Existing approved photos are never overwritten. Automatically published images remain marked as external, not verified packaging."

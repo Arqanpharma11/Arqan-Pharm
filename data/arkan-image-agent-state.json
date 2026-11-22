@@ -1,5 +1,5 @@
 {
-  "cursor": 160,
+  "cursor": 190,
   "searchCursor": 0,
   "checks": {
     "28": {
@@ -801,6 +801,156 @@
       "failures": 0,
       "lastStatus": "ok",
       "checkedAt": "2026-11-22T16:14:38.852Z"
+    },
+    "893": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-22T16:16:16.285Z"
+    },
+    "895": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-22T16:16:16.456Z"
+    },
+    "896": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-22T16:16:16.657Z"
+    },
+    "897": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-22T16:16:16.847Z"
+    },
+    "898": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-22T16:16:17.012Z"
+    },
+    "899": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-22T16:16:17.239Z"
+    },
+    "904": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-22T16:16:17.406Z"
+    },
+    "908": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-22T16:16:17.606Z"
+    },
+    "909": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-22T16:16:17.780Z"
+    },
+    "919": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-22T16:16:18.015Z"
+    },
+    "921": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-22T16:16:18.212Z"
+    },
+    "922": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-22T16:16:18.395Z"
+    },
+    "923": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-22T16:16:18.583Z"
+    },
+    "932": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-22T16:16:18.723Z"
+    },
+    "933": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-22T16:16:18.730Z"
+    },
+    "935": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-22T16:16:18.746Z"
+    },
+    "940": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-22T16:16:18.925Z"
+    },
+    "953": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-22T16:16:19.128Z"
+    },
+    "954": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-22T16:16:19.322Z"
+    },
+    "958": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-22T16:16:19.510Z"
+    },
+    "959": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-22T16:16:19.517Z"
+    },
+    "961": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-22T16:16:19.813Z"
+    },
+    "962": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-22T16:16:19.986Z"
+    },
+    "963": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-22T16:16:19.994Z"
+    },
+    "965": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-22T16:16:20.152Z"
+    },
+    "975": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-22T16:16:20.345Z"
+    },
+    "976": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-22T16:16:20.352Z"
+    },
+    "979": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-22T16:16:20.582Z"
+    },
+    "980": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-22T16:16:20.591Z"
+    },
+    "983": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-22T16:16:20.777Z"
     }
   },
   "searched": {
@@ -1105,12 +1255,12 @@
       "hits": 0
     }
   },
-  "lastRun": "2026-11-22T16:14:55.473Z",
+  "lastRun": "2026-11-22T16:16:21.297Z",
   "lastCatalogSize": 4218,
   "searchPipeline": {
-    "remainingMissing": 2334,
+    "remainingMissing": 2324,
     "remainingSuspect": 1250,
-    "eligibleThisRun": 3584
+    "eligibleThisRun": 3574
   },
   "providerHealth": {
     "commons.wikimedia.org": {
@@ -1127,7 +1277,7 @@
     "eg-drugs-api.mahmoudfalous.workers.dev": {
       "failures": 0,
       "retryAt": null,
-      "lastSuccess": "2026-11-22T16:14:55.067Z"
+      "lastSuccess": "2026-11-22T16:16:20.896Z"
     }
   }
 }
