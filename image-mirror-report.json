@@ -1,0 +1,168 @@
+{
+  "attempted": 100,
+  "mirrored": 68,
+  "failed": 32,
+  "failures": [
+    {
+      "id": "2",
+      "url": "https://taypharmacies.com/wp-content/uploads/2025/01/2025-01-05T113747.508.png",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "3",
+      "url": "https://www.lotusonline.com/cdn/shop/files/3005093_2.jpg?v=1768408351&width=1500",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "5",
+      "url": "https://alfouadpharmacies.com/cdn/shop/files/rn-image_picker_lib_temp_e032c83d-078c-446c-bc0a-5e7fe2d6d2d6.jpg?v=1771526633",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "6",
+      "url": "https://cdnprod.mafretailproxy.com/sys-master-root/he5/h6f/48488005533726/480Wx480H_557896_main.jpg",
+      "error": "invalid size"
+    },
+    {
+      "id": "28",
+      "url": "https://www.lotusonline.com/cdn/shop/files/3005182_1.jpg?v=1767615836",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "36",
+      "url": "https://pharmaciaty.com/media/catalog/product/cache/060579c5d0e77942dc3e3b187d95947b/e/p/epifas-1-1.jpg",
+      "error": "<urlopen error [Errno -5] No address associated with hostname>"
+    },
+    {
+      "id": "41",
+      "url": "https://api.c0umyt3cda-pharmaove1-p1-public.model-t.cc.commerce.ondemand.com/medias/000000000000006001.jpg?context=bWFzdGVyfGltYWdlc3wxNTc1NzB8aW1hZ2UvanBlZ3xhR0UwTDJneFlpOHhNRGc1TmpReU5UYzNPVEl6TUM4d01EQXdNREF3TURBd01EQXdNRFl3TURFdWFuQm58MDhiZGNjODBhMzZhZTY2ZjM4NWY5NGE2ZmI0NjI2YjllYjY1YTM4YzkyMjkzYzE4NWVlNmM0Zjc1MGRkYQ",
+      "error": "HTTP Error 403: "
+    },
+    {
+      "id": "51",
+      "url": "https://tdawi.com/media/catalog/product/cache/72f8467a5043ecc9af047df47b9246a4/a/p/apexidone_1_mg_2__hfbwxha2nvafommw.jpg",
+      "error": "invalid size"
+    },
+    {
+      "id": "75",
+      "url": "https://www.lotusonline.com/cdn/shop/files/3000152_2_43dd08bc-29ff-4fae-bded-42cf104a4056.jpg?v=1768406584&width=1500",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "85",
+      "url": "https://stgprevapi.al-dawaa.com/medias/Atrovent-500-Mcg2Ml-For-Asthma-Symptoms-20-Vials_0_1200.webp?context=bWFzdGVyfGltYWdlc3wyNzc0MzR8aW1hZ2Uvd2VicHxhREUwTDJnME1TODVNelk1T0RjNE5Ua3pOVFkyTHpFd01ESXlOMTh3WDJWdVh6RXlNREJYZURFeU1EQklYMWRGUWxBdWQyVmljQXw0ODIxOTNjZjFkMTUxZTBmNjk1MTk3NWRiMjQ5YWFjNjdiM2U4MmJjOWE1ZWZhN2JmNDQxMWEzMDhjMDg3MTU4",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "86",
+      "url": "https://stgprevapi.al-dawaa.com/medias/Atrovent-250-Mcg-2Ml-For-Asthma-Symptoms-20-Vials_0_515.webp?context=bWFzdGVyfGltYWdlc3w3MDQ5OHxpbWFnZS93ZWJwfGFETXlMMmd5Tmk4NU16WTVPRGMzTmpFd05USTJMekV3TURJeU5sOHdYMlZ1WHpVeE5WZDROVEUxU0Y5WFJVSlFMbmRsWW5BfGYwNzk5YzUzMWYwZjc1Mzc5ZGE5OTJhOWVlZGEyNjc1ZDcwMjE3N2I1ODQ3MzRhNGRiMmExZGU2MWI4MmYzNzU",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "103",
+      "url": "https://www.mouradpharmacy.com/web/image/product.product/277192/image_1920?unique=5cc9b35",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "134",
+      "url": "https://www.lotusonline.com/cdn/shop/files/3005369_1.jpg?v=1767615530&width=1500",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "135",
+      "url": "https://www.lotusonline.com/cdn/shop/files/3000031_1.jpg?v=1767615532",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "136",
+      "url": "https://adwia.com/upfiles/thumbs/000/0005388_2.png",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "137",
+      "url": "https://www.lotusonline.com/cdn/shop/files/3000034_1.jpg?v=1767615532",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "100",
+      "url": "https://www.lotusonline.com/cdn/shop/files/3000161_1.jpg?v=1767615853",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "101",
+      "url": "https://www.lotusonline.com/cdn/shop/files/3004548_1.jpg?v=1767615867&width=1500",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "102",
+      "url": "https://www.lotusonline.com/cdn/shop/files/3003745_1.jpg?v=1767615945&width=1500",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "111",
+      "url": "https://www.lotusonline.com/cdn/shop/files/3004702_processed.jpg?v=1773305705&width=750",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "119",
+      "url": "https://www.lotusonline.com/cdn/shop/files/3000042_processed.jpg?v=1767615071",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "138",
+      "url": "https://www.lotusonline.com/cdn/shop/files/3004782_1.jpg?v=1767615529&width=1500",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "174",
+      "url": "https://taypharmacies.com/wp-content/uploads/2023/06/ARGENTO-CLEAR-FACIAL-CLEANSER-200ML.png",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "177",
+      "url": "https://www.allam-pharmacy-shop.com/cdn/shop/files/arginine-citrulline-1000mg.jpg_1.webp?v=1749618765",
+      "error": "<urlopen error [SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] ssl/tls alert handshake failure (_ssl.c:1011)>"
+    },
+    {
+      "id": "181",
+      "url": "https://taypharmacies.com/wp-content/uploads/2023/09/Untitled-design-11.png",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "185",
+      "url": "https://www.lotusonline.com/cdn/shop/files/3004740_processed.jpg?v=1773305716",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "191",
+      "url": "https://www.lotusonline.com/cdn/shop/files/3008447_processed.jpg?v=1767614971&width=750",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "199",
+      "url": "https://www.lotusonline.com/cdn/shop/files/3007331_1.jpg?v=1767616511",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "208",
+      "url": "https://lotusonline.com/wp-content/uploads/2023/12/3003597_1.jpg",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "211",
+      "url": "https://www.lotusonline.com/cdn/shop/files/3006053_1.jpg?v=1767615091&width=1500",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "214",
+      "url": "https://www.lotusonline.com/cdn/shop/files/3008657_processed.jpg?v=1767614967&width=750",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "224",
+      "url": "https://tdawi.com/media/catalog/product/cache/72f8467a5043ecc9af047df47b9246a4/a/s/asprin_protect_100_2__h1lra4xqyhp7b744.jpg",
+      "error": "invalid size"
+    }
+  ],
+  "note": "URLs that could not be fetched are NOT represented as valid photos. Visual pack matching requires separate review."
+}
