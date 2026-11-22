@@ -7175,7 +7175,7 @@
 
                 // Verified package-photo seed: Apple-Lite 30 tablets (catalog item #10).
                 // Source page shows the exact Apple-Lite pack; do not use lookalike images.
-                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v52';;;;;
+                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v53';;;;;
                 if (localStorage.getItem(IMAGE_SEED_VERSION) !== '1') {
                     // Individually checked package photos: brand, strength/stage and form match.
                     const verifiedImageSeeds = {
@@ -7190,7 +7190,7 @@
                         '10': { src: 'https://dose-images.doseshq.com/b4e5ffd1-c47b-4401-85a4-31918d37096e.jpg', source: 'Dose Drugs — Apple-lite 30 tablets; exact package image verified against product title' },
                         '11': { src: 'https://cdn-med-images.vezeeta.com/Products/1e3fbc0b-2874-4b84-b4b6-8d37c2b2c6f0.jpeg', source: 'Vezeeta Pharmacy — Api-Grow powder, 10 sachets x 15 g; exact brand and pack verified' },
                         '14': { src: 'https://dkud4u09qff41.cloudfront.net/Products/aa32f8e5-263e-4509-b6a2-a7c74341e4c6.jpeg', source: 'Vezeeta Pharmacy — Ibiamox 400 mg oral suspension; exact brand and strength verified' },
-                        '16': { src: 'https://www.rosheta.com/upload/fdc2c37a591b90b7e3a8a166f595ce810e69ef0a7f99768e56a30980c3fbf40a7.webp', source: 'Rosheta — Apetoid 20 mg tablets; exact brand and strength verified' },
+                        '16': { src: 'https://elshatoury.com/files/89841_832afe6ef.png', source: 'Elshatoury Pharmacy — Apetoid 20 mg 30 tablets; exact printed 20mg package, linked from product 89841' },
                         '18': { src: 'https://egyptdwa.com/dwa/epigent-80mg-2ml-i-m-i-v-3-amps-18417.jpg', source: 'EgyptDwa — Epigent 80 mg/2 ml, 3 ampoules; exact strength, form and pack count verified' },
                         '19': { src: 'https://cdn.salla.sa/qVbqW/e04b431d-920c-4b28-8619-ea16700b4a90-1000x1000-TizQoB1iHJ6dybu1mOGCRgPPY6xYLLeD0z855WZ0.jpg', source: 'Taif AlMasia Pharmacy — Epigonal 75 injection; exact brand and strength verified' },
                         '21': { src: 'https://dwaprices.com/upload/1777486450.png', source: 'DwaPrices — Apidra 100 IU/ml, 5 cartridges; exact insulin brand, concentration and cartridge pack verified' },
@@ -7832,9 +7832,9 @@
                         }
                     };
                     // Apply repaired links only over known old pharmacy placeholder seeds; do not overwrite admin changes.
-                    const correctedPharmacyPhotoIds = new Set(['427','429','496','506','507','519','521','522','533','545','546','608']);
+                    const correctedPharmacyPhotoIds = new Set(['16','427','429','496','506','507','519','521','522','533','545','546','608']);
                     Object.entries(verifiedImageSeeds).forEach(([id, seed]) => {
-                        if (seed.src && (PROD_IMG_VERIFIED[id] !== true || PROD_IMG_SRC[id] === seed.source || (correctedPharmacyPhotoIds.has(String(id)) && (PROD_IMG_SRC[id] || '').startsWith('Abdin Pharmacies')))) {
+                        if (seed.src && (PROD_IMG_VERIFIED[id] !== true || PROD_IMG_SRC[id] === seed.source || (correctedPharmacyPhotoIds.has(String(id)) && (/^(Abdin Pharmacies|Rosheta)\s*—/.test(PROD_IMG_SRC[id] || ''))))) {
                             PROD_IMAGES[id] = seed.src;
                             PROD_IMG_SRC[id] = seed.source;
                             PROD_IMG_VERIFIED[id] = true;
@@ -19888,7 +19888,24 @@ ${window.location.href}
             const el = document.getElementById('pimg-el');
             el.onerror = () => {
                 if (fb && el.src !== fb) { el.src = fb; if (_liveCurrent) _liveCurrent.shown = fb; return; }
-                box.innerHTML = '<div class="text-center text-arkan-bronze p-6 text-xs font-bold">تعذر تحميل هذه الصورة</div>';
+                const pid = _liveCurrent && _liveCurrent.id;
+                const product = pid != null ? products.find(p => String(p.id) === String(pid)) : null;
+                const safeName = product ? String(product.name || '').replace(/[<>&"]/g, '') : '';
+                const searchUrl = pid != null ? getGoogleProductImageUrl(pid) : 'https://www.google.com/imghp';
+                box.replaceChildren();
+                const wrap = document.createElement('div');
+                wrap.className = 'text-center text-arkan-bronze p-6 text-xs font-bold';
+                const message = document.createElement('div');
+                message.textContent = 'رابط صورة العبوة غير متاح حاليًا' + (safeName ? ' — ' + safeName : '');
+                const link = document.createElement('a');
+                link.href = searchUrl;
+                link.target = '_blank';
+                link.rel = 'noopener noreferrer';
+                link.className = 'mt-3 inline-block rounded-lg border border-emerald-500 px-3 py-2 text-emerald-800';
+                link.textContent = 'البحث عن صورة العبوة';
+                wrap.append(message, link);
+                box.append(wrap);
+                console.warn('Product package image failed', { productId: pid, imageUrl: src });
             };
             el.src = src;
             if (_liveCurrent) _liveCurrent.shown = src;
