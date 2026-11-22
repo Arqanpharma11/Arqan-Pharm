@@ -3,13 +3,16 @@
 
 Missing or ambiguous images are quarantined; existing admin seeds are never overwritten.
 """
-import io, json, os, re, subprocess, tempfile, urllib.request
+import io, json, os, re, subprocess, tempfile, urllib.request, time
 from pathlib import Path
 from PIL import Image, ImageOps
 
 root=Path(__file__).resolve().parents[1]
 html_path=root/'index.html'
 manifest=json.loads((root/'data/arkan-auto-published-images.json').read_text(encoding='utf-8'))
+attempts_path=root/'data/arkan-visual-publish-state.json'
+attempts=json.loads(attempts_path.read_text(encoding='utf-8')) if attempts_path.exists() else {}
+now=time.time()
 html=html_path.read_text(encoding='utf-8')
 begin=html.index('const verifiedImageSeeds = {')
 end=html.index('const imageSeedBatches',begin)
@@ -38,6 +41,15 @@ for pid,record in sorted(manifest.get('byId',{}).items(),key=lambda p:int(p[0]))
         report['review'].append({'id':pid,'reason':'needs_catalog_sync'})
         continue
     name,cat=items[int(pid)-1]
+    if 'أدوية' in cat or not any(x in cat for x in ('ألبان','غذاء','مكمل','تجميل','عناية')):continue
+    if record.get('source') not in ('world.openfoodfacts.org','world.openbeautyfacts.org'):continue
+    if 'CC BY-SA 3.0' not in record.get('license',''):continue
+    url=record.get('url','')
+    if not re.match(r'^https://(?:images|static)\.open(?:food|beauty)facts\.org/',url):continue
+    # Retry previously rejected candidates after seven days, not on every run.
+    if now-float(attempts.get(pid,0))<7*86400:continue
+    attempts[pid]=now
+    report['scanned']+=1
     if str(record.get('catalogName','')) != name:
         report['review'].append({'id':pid,'reason':'catalog_identity_changed'})
         continue
@@ -45,12 +57,6 @@ for pid,record in sorted(manifest.get('byId',{}).items(),key=lambda p:int(p[0]))
     if not expected_brand:
         report['review'].append({'id':pid,'reason':'independent_english_trade_name_missing'})
         continue
-    if 'أدوية' in cat or not any(x in cat for x in ('ألبان','غذاء','مكمل','تجميل','عناية')):continue
-    if record.get('source') not in ('world.openfoodfacts.org','world.openbeautyfacts.org'):continue
-    if 'CC BY-SA 3.0' not in record.get('license',''):continue
-    url=record.get('url','')
-    if not re.match(r'^https://(?:images|static)\.open(?:food|beauty)facts\.org/',url):continue
-    report['scanned']+=1
     try:
         req=urllib.request.Request(url,headers={'User-Agent':'ArkanPharm-PackCheck/1.0','Accept':'image/*'})
         with urllib.request.urlopen(req,timeout=12) as response:
@@ -98,5 +104,6 @@ if lines:
     if count!=1:raise RuntimeError('seed version missing')
     html_path.write_text(html,encoding='utf-8')
 report['published']=len(lines)
+attempts_path.write_text(json.dumps(attempts,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
 (root/'data/arkan-visual-publish-report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
 print(json.dumps({k:v for k,v in report.items() if k!='review'},ensure_ascii=False))
