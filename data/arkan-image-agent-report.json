@@ -1,5 +1,5 @@
 {
-  "runAt": "2026-11-22T15:00:17.559Z",
+  "runAt": "2026-11-22T15:02:45.271Z",
   "masterItems": 4218,
   "cloudItems": 0,
   "catalogItems": 4218,
@@ -11,7 +11,7 @@
   "healthy": 20,
   "gone": 0,
   "queuedThisRun": 0,
-  "pendingReview": 0,
+  "pendingReview": 10,
   "searchEnabled": true,
   "searchProviders": [
     "Wikimedia Commons",
