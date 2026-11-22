@@ -15,6 +15,9 @@ legacy = {
     "85": "Al-Dawaa Pharmacy — Atrovent 500 mcg/2 ml, 20 unit-dose inhalation vials; exact strength and pack verified",
     "86": "Al-Dawaa Pharmacy — Atrovent 250 mcg/2 ml, 20 unit-dose inhalation vials; exact strength and pack verified",
 }
+history_path = root / "scripts" / "image_legacy_source_map.json"
+if history_path.exists():
+    legacy.update(json.loads(history_path.read_text(encoding="utf-8")))
 anchor = "Object.entries(verifiedImageSeeds).forEach(([id, seed]) => {"
 if original.count(anchor) != 1:
     raise SystemExit("Unsafe: expected exactly one image seed merge")
