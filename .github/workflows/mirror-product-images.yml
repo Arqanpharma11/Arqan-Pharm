@@ -18,7 +18,7 @@ concurrency:
 jobs:
   mirror:
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
         with:
@@ -30,12 +30,19 @@ jobs:
         run: python -m pip install 'Pillow>=11.2' pillow-avif-plugin
       - name: Check script syntax
         run: python -m py_compile scripts/mirror_product_images.py scripts/fix_image_seed_migration.py scripts/check_pharmacy_image_integrity.py
-      - name: Mirror up to 150 previously reviewed image URLs
-        run: python scripts/mirror_product_images.py
-      - name: Upgrade old cached image references in pharmacy portal
-        run: python scripts/fix_image_seed_migration.py
-      - name: Check verified image URLs and JavaScript seed declarations
-        run: python scripts/check_pharmacy_image_integrity.py
+      - name: Process all currently sourced product photos in successive batches
+        run: |
+          set -e
+          for batch in $(seq 1 8); do
+            echo "Processing verified-source photo batch $batch / 8"
+            python scripts/mirror_product_images.py
+            python scripts/fix_image_seed_migration.py
+            python scripts/check_pharmacy_image_integrity.py
+            if python -c 'import json; r=json.load(open("image-mirror-report.json")); exit(0 if r.get("attempted", 0)==0 else 1)'; then
+              echo "No further eligible verified-source images; stopping"
+              break
+            fi
+          done
       - name: Commit successfully downloaded product images
         run: |
           git config user.name "github-actions[bot]"
