@@ -20134,6 +20134,16 @@ ${window.location.href}
                 (ARKAN_QUICK_PACKS[String(item.id)] && ARKAN_QUICK_PACKS[String(item.id)][0]) ||
                 getArkanPackPlaceholder(item.id);
         }
+        function arkanHandlePackError(img, id) {
+            const next = ARKAN_QUICK_PACKS[String(id)]?.[0];
+            if (!img.dataset.triedCandidate && next && !img.src.includes(next)) {
+                img.dataset.triedCandidate = '1';
+                img.src = next;
+                return;
+            }
+            img.onerror = null;
+            img.src = getArkanPackPlaceholder(id);
+        }
         function arkanImageStatus(item) {
             if (PROD_IMG_VERIFIED[item.id] === true && PROD_IMAGES[item.id]) return 'صورة موثقة';
             if (ARKAN_QUICK_PACKS[String(item.id)]) return 'صورة مرشحة — اضغط للبحث';
@@ -20238,7 +20248,7 @@ ${window.location.href}
                                         alt="${_escapeDrugCatalogText(arkanImageStatus(item))}: ${_escapeDrugCatalogText(item.name)}"
                                         loading="lazy" decoding="async"
                                         class="w-full h-full object-contain p-0.5"
-                                        onerror="this.onerror=null;this.src=getArkanPackPlaceholder(${item.id})">
+                                        onerror="arkanHandlePackError(this,${item.id})">
                                 </button>
                                 <div class="min-w-0 flex-1">
                                     <a href="${getGoogleProductImageUrl(item.id)}" target="_blank" rel="noopener noreferrer"
