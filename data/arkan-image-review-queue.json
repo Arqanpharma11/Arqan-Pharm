@@ -845,6 +845,85 @@
       "results": [],
       "reason": "no_match_found",
       "searchedAt": "2026-11-22T18:26:28.578Z"
+    },
+    "368": {
+      "name": "الفاسبيكت750مجم قرص",
+      "en": "Alfaspect 750",
+      "results": [],
+      "reason": "no_match_found",
+      "searchedAt": "2026-11-22T19:26:20.166Z"
+    },
+    "369": {
+      "name": "الفافيم300مجم اقراص",
+      "en": "",
+      "results": [],
+      "reason": "no_match_found",
+      "searchedAt": "2026-11-22T19:26:22.549Z"
+    },
+    "370": {
+      "name": "الفافيم600 مجم اقراص",
+      "en": "",
+      "results": [],
+      "reason": "no_match_found",
+      "searchedAt": "2026-11-22T19:26:24.055Z"
+    },
+    "372": {
+      "name": "الفاكارينو نقط",
+      "en": "",
+      "results": [],
+      "reason": "no_match_found",
+      "searchedAt": "2026-11-22T19:26:25.490Z"
+    },
+    "374": {
+      "name": "الفاكليندامايسين300مج امبول س ج",
+      "en": "",
+      "results": [],
+      "reason": "no_match_found",
+      "searchedAt": "2026-11-22T19:26:26.926Z"
+    },
+    "375": {
+      "name": "الفاكليندامايسين600مج امبول",
+      "en": "",
+      "results": [],
+      "reason": "no_match_found",
+      "searchedAt": "2026-11-22T19:26:28.366Z"
+    },
+    "376": {
+      "name": "الفاكيموتريبسين امبول",
+      "en": "",
+      "results": [],
+      "reason": "no_match_found",
+      "searchedAt": "2026-11-22T19:26:29.832Z"
+    },
+    "377": {
+      "name": "الفامور اكياس",
+      "en": "Alpha More",
+      "results": [
+        {
+          "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/8/80/1915_spring_and_fall_1915_-_catalogue_and_price_list_of_the_Alpha_Nursery_%28IA_CAT31295754%29.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:1915_spring_and_fall_1915_-_catalogue_and_price_list_of_the_Alpha_Nursery_(IA_CAT31295754).pdf",
+          "title": "1915 spring and fall 1915 - catalogue and price list of the Alpha Nursery (IA CAT31295754).pdf",
+          "provider": "Wikimedia Commons",
+          "license": "Public domain",
+          "foundAt": "2026-11-22T19:26:31.158Z",
+          "status": "pending_manual_packaging_and_license_review"
+        }
+      ],
+      "reason": "needs_review"
+    },
+    "380": {
+      "name": "الفيرنسبازم اقراص",
+      "en": "",
+      "results": [],
+      "reason": "no_match_found",
+      "searchedAt": "2026-11-22T19:26:33.003Z"
+    },
+    "382": {
+      "name": "الفيولين ب شراب",
+      "en": "",
+      "results": [],
+      "reason": "no_match_found",
+      "searchedAt": "2026-11-22T19:26:34.471Z"
     }
   }
 }
