@@ -8,7 +8,7 @@ html = (root / "index.html").read_text(encoding="utf-8")
 start = html.index("const verifiedImageSeeds = {")
 end = html.index("const imageSeedBatches", start)
 block = html[start:end]
-matches = re.findall(r"(?m)^\\s*'([0-9]+)': \\{ src: '([^']+)', source: '[^']+' \\},?", block)
+matches = re.findall(r"(?m)^\s*'([0-9]+)': \{ src: '([^']+)', source: '[^']+' \},?", block)
 seen = set()
 problems = []
 for pid, src in matches:
@@ -23,5 +23,5 @@ if map_count != 1:
 if not matches:
     problems.append("No verified image seeds parsed")
 if problems:
-    raise SystemExit("\\n".join(problems[:30]))
+    raise SystemExit("\n".join(problems[:30]))
 print("PASS:", len(matches), "verified image seed entries,", map_count, "legacy migration map, local references exist")
