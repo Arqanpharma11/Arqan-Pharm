@@ -24,9 +24,14 @@ predicate_new = ("PROD_IMG_SRC[id] === seed.source || "
                  "Object.prototype.hasOwnProperty.call(imageLegacySeedSources, String(id)) && "
                  "imageLegacySeedSources[String(id)] === PROD_IMG_SRC[id]) ||")
 if mapping_line not in html:
-    if html.count(anchor) != 1:
-        raise SystemExit("Expected exactly one verified seed merge point; refusing unsafe edit")
-    html = html.replace(anchor, mapping_line + "\n                    " + anchor, 1)
+    # Update a previous migration mapping in place instead of declaring the same const twice.
+    existing = re.search(r"const imageLegacySeedSources = \\{[^;]*\\};", html)
+    if existing:
+        html = html[:existing.start()] + mapping_line + html[existing.end():]
+    else:
+        if html.count(anchor) != 1:
+            raise SystemExit("Expected exactly one verified seed merge point; refusing unsafe edit")
+        html = html.replace(anchor, mapping_line + "\n                    " + anchor, 1)
 if predicate_new not in html:
     if html.count(predicate_old) != 1:
         raise SystemExit("Expected exactly one seed predicate; refusing unsafe edit")
