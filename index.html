@@ -7175,7 +7175,7 @@
 
                 // Verified package-photo seed: Apple-Lite 30 tablets (catalog item #10).
                 // Source page shows the exact Apple-Lite pack; do not use lookalike images.
-                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v46';;;;;
+                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v47';;;;;
                 if (localStorage.getItem(IMAGE_SEED_VERSION) !== '1') {
                     // Individually checked package photos: brand, strength/stage and form match.
                     const verifiedImageSeeds = {
@@ -7808,6 +7808,10 @@
                         '503': { src: 'https://dkud4u09qff41.cloudfront.net/Products/cc6d21a0-af33-474a-aa84-e4923ccc7e2e.jpeg', source: 'Vezeeta Pharmacy — Antopral 20 mg, 14 gastro-resistant tablets; exact strength and form' },
                         '504': { src: 'https://doctormpharmacy.com/cdn/shop/files/104459.png?v=1755292168&width=533', source: 'Doctor M Pharmacy — Antopral 40 mg, 14 gastro-resistant tablets; exact strength and form' },
                         '505': { src: 'https://dkud4u09qff41.cloudfront.net/Products/05494948-c91c-4d2d-9899-508bf9975629.jpeg', source: 'Vezeeta Pharmacy — Antodine 40 mg, 30 tablets; exact strength and form' },
+                        '506': { src: 'https://abdinpharmacies.com/web/image/product.template/29879/image_1920?unique=b6a97ff', source: 'Abdin Pharmacies — Antox 30 tablets; exact product and dosage form' },
+                        '507': { src: 'https://abdinpharmacies.com/web/image/product.template/26762/image_1920?unique=cd0a0ed', source: 'Abdin Pharmacies — Anti-Cox II 7.5 mg, 20 capsules; exact strength and form' },
+                        '511': { src: 'https://abdinpharmacies.com/web/image/product.template/28015/image_1920?unique=dd54b75', source: 'Abdin Pharmacies — Antiver 100 mg, 120 tablets; exact tablet product' },
+                        '522': { src: 'https://abdinpharmacies.com/web/image/product.template/25074/image_1920?unique=8f5ca38', source: 'Abdin Pharmacies — Angiosartan Plus 20/12.5 mg, 28 tablets; exact strength and form' },
                     };
                     // Apply the verified image seed set once, then batch cloud writes.
                     const imageSeedBatches = (typeof firestoreDB !== 'undefined' && firestoreDB) ? [] : null;
