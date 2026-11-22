@@ -7175,7 +7175,7 @@
 
                 // Verified package-photo seed: Apple-Lite 30 tablets (catalog item #10).
                 // Source page shows the exact Apple-Lite pack; do not use lookalike images.
-                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v45';;;;;
+                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v46';;;;;
                 if (localStorage.getItem(IMAGE_SEED_VERSION) !== '1') {
                     // Individually checked package photos: brand, strength/stage and form match.
                     const verifiedImageSeeds = {
@@ -7803,6 +7803,11 @@
                         '492': { src: 'https://doctormpharmacy.com/cdn/shop/files/86108.jpg?v=1755341963', source: 'Doctor M Pharmacy — Immulant 120 ml syrup; exact brand and syrup packaging verified' },
                         '498': { src: 'https://dkud4u09qff41.cloudfront.net/Products/68e5bd43-606c-4ab9-a49d-d81a435bc1f0.jpeg', source: 'Vezeeta Pharmacy — Anallerge chlorpheniramine 2 mg/5 ml, 100 ml syrup; exact brand, form and strength verified' },
                         '500': { src: 'https://mohieldeenpharmacy.com/web/image/product.template/12222/image_1920?unique=9c7a03b', source: 'Mohieldeen Pharmacy — Enterogermina 2 billion/5 ml oral suspension, 10 mini bottles; exact pack verified' },
+                        '501': { src: 'https://mohieldeenpharmacy.com/web/image/product.template/12225/image_1920?unique=1e35a9a', source: 'Mohieldeen Pharmacy — Entresto 100 mg, 28 film-coated tablets; exact strength and form' },
+                        '502': { src: 'https://mohieldeenpharmacy.com/web/image/product.template/12226/image_1920?unique=158a88d', source: 'Mohieldeen Pharmacy — Entresto 50 mg, 28 film-coated tablets; exact strength and form' },
+                        '503': { src: 'https://dkud4u09qff41.cloudfront.net/Products/cc6d21a0-af33-474a-aa84-e4923ccc7e2e.jpeg', source: 'Vezeeta Pharmacy — Antopral 20 mg, 14 gastro-resistant tablets; exact strength and form' },
+                        '504': { src: 'https://doctormpharmacy.com/cdn/shop/files/104459.png?v=1755292168&width=533', source: 'Doctor M Pharmacy — Antopral 40 mg, 14 gastro-resistant tablets; exact strength and form' },
+                        '505': { src: 'https://dkud4u09qff41.cloudfront.net/Products/05494948-c91c-4d2d-9899-508bf9975629.jpeg', source: 'Vezeeta Pharmacy — Antodine 40 mg, 30 tablets; exact strength and form' },
                     };
                     // Apply the verified image seed set once, then batch cloud writes.
                     const imageSeedBatches = (typeof firestoreDB !== 'undefined' && firestoreDB) ? [] : null;
