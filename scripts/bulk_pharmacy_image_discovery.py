@@ -27,6 +27,8 @@ SOURCES = {
     "Re3aya Pharmacy": "https://re3ayapharmacy.com",
     "AlFouad Pharmacies": "https://alfouadpharmacies.com",
     "Kidz Market Egypt": "https://kidzmarket-eg.com",
+    "Doctor M Pharmacy": "https://doctormpharmacy.com",
+    "Azzam Pharmacy": "https://azzampharmacy.com",
 }
 FORM_TAGS = {
     "اقراص": ("tablet", "tablets", "tab", "tabs"),
