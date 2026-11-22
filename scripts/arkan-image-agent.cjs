@@ -100,7 +100,7 @@ async function searchOpenFacts(item,host){
   return (response.products||[]).map(p=>{
     const title=[p.brands,p.product_name_en||p.product_name,p.quantity].filter(Boolean).join(' ');
     return candidate(item,title,p.image_front_url||p.image_url,'https://'+host+'/product/'+p.code,
-      host, 'Open Facts data and image licenses: review attribution and reuse requirements');
+      host, 'Open Facts contributors — CC BY-SA 3.0 product photo; database ODbL; attribution/share-alike apply');
   }).filter(Boolean);
 }
 async function imageSearch(item){
