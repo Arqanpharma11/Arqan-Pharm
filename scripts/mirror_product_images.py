@@ -1,12 +1,10 @@
 #!/usr/bin/env python3
 """Mirror already-reviewed product photos locally, without changing product identities."""
 import concurrent.futures
-import hashlib
 import json
 import pathlib
 import re
 import urllib.request
-from collections import Counter
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 INDEX = ROOT / "index.html"
@@ -20,7 +18,15 @@ pattern = re.compile(r"(?m)^(\s*'(\d+)': \{ src: ')([^']+)(', source: '[^']+' \}
 entries = [(m.group(2), m.group(3), m.group(0)) for m in pattern.finditer(block)]
 # Do not overwrite an already saved image, or replace unverified URLs with unrelated packs.
 limit = 100
-selected = [(pid, url, line) for pid, url, line in entries if url.startswith("https://") and not (DEST / (pid + ".jpg")).exists() and not (DEST / (pid + ".png")).exists() and not (DEST / (pid + ".webp")).exists()][:limit]
+# Keep previous failures in a persistent report so later batches advance rather than
+# spending their entire budget on the same dead/blocked links.
+REPORT = ROOT / "image-mirror-report.json"
+previous = json.loads(REPORT.read_text(encoding="utf-8")) if REPORT.exists() else {}
+failed_urls = {str(row.get("id")): row.get("url") for row in previous.get("failures", [])}
+already_failed = lambda pid,url: failed_urls.get(pid) == url
+selected = [(pid, url, line) for pid, url, line in entries
+            if url.startswith("https://") and not already_failed(pid,url)
+            and not any((DEST / (pid + ext)).exists() for ext in (".jpg", ".png", ".webp"))][:limit]
 def download(item):
     pid, url, line = item
     try:
@@ -57,8 +63,14 @@ if success:
     html, n = re.subn(r"arkan_verified_image_seed_v(\d+)", lambda m:"arkan_verified_image_seed_v"+str(int(m.group(1))+1), html, count=1)
     if n != 1: raise RuntimeError("Image seed version not found")
     INDEX.write_text(html, encoding="utf-8")
-report = {"attempted":len(results), "mirrored":success, "failed":len(results)-success,
-          "failures":[{"id":pid,"url":url,"error":error} for pid,url,_,new,error in results if not new],
+new_failures = [{"id":pid,"url":url,"error":error} for pid,url,_,new,error in results if not new]
+# Retain only the current failure for a URL; retry is possible after its source is corrected.
+failures = {str(row["id"]): row for row in previous.get("failures", [])}
+for row in new_failures:
+    failures[str(row["id"])] = row
+report = {"attempted":len(results), "mirrored":success,
+          "failed":len(new_failures), "total_mirrored_in_previous_runs":previous.get("total_mirrored_in_previous_runs",0)+success,
+          "unresolved_failed_urls":len(failures), "failures":list(failures.values()),
           "note":"URLs that could not be fetched are NOT represented as valid photos. Visual pack matching requires separate review."}
 (ROOT/"image-mirror-report.json").write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding="utf-8")
 print(json.dumps({k:v for k,v in report.items() if k!="failures"},ensure_ascii=False))
