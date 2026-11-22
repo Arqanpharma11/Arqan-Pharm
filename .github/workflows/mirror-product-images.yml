@@ -1,6 +1,8 @@
 name: Mirror verified product images locally
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '17 */6 * * *'
   push:
     paths:
       - 'scripts/mirror_product_images.py'
