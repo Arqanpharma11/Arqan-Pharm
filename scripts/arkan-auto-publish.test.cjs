@@ -21,3 +21,4 @@ test('reject untrusted image host',()=>assert.equal(qualify(milk,{...base,imageU
 test('reject unknown license',()=>assert.equal(qualify(milk,{...base,license:''}).pass,false));
 test('reject ambiguous product without pack size',()=>assert.equal(qualify({name:'Aptamil Milk',cat:'ألبان أطفال'},
  {...base,title:'Aptamil Milk'}).pass,false));
+test('reject unknown category from newly added Firestore product',()=>assert.equal(qualify({name:'Aptamil Stage 2 400g',cat:''},base).pass,false));
