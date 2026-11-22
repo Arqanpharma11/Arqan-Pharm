@@ -7175,7 +7175,7 @@
 
                 // Verified package-photo seed: Apple-Lite 30 tablets (catalog item #10).
                 // Source page shows the exact Apple-Lite pack; do not use lookalike images.
-                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v41';;;;;
+                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v42';;;;;
                 if (localStorage.getItem(IMAGE_SEED_VERSION) !== '1') {
                     // Individually checked package photos: brand, strength/stage and form match.
                     const verifiedImageSeeds = {
@@ -7782,6 +7782,13 @@
                         '428': { src: 'https://abdinpharmacies.com/web/image/product.template/74064/image_1920?unique=712a0a9', source: 'Abdin Pharmacies — Alexolyte oral rehydration solution, pineapple flavor, 360 ml; exact flavor and bottle volume verified' },
                         '429': { src: 'https://abdinpharmacies.com/web/image/product.template/74065/image_1920?unique=712a0a9', source: 'Abdin Pharmacies — Alexolyte oral rehydration solution, strawberry flavor, 360 ml; exact flavor and bottle volume verified' },
                         '430': { src: 'https://abdinpharmacies.com/web/image/product.template/74062/image_1920?unique=712a0a9', source: 'Abdin Pharmacies — Alexolyte oral rehydration solution, banana flavor, 360 ml; exact flavor and bottle volume verified' },
+                        '444': { src: 'https://www.lotusonline.com/cdn/shop/files/3007816_1.jpg?v=1767616436', source: 'Lotus Pharmacies — Empagliform XR 10/1000 mg, 30 extended-release film-coated tablets; exact strength and XR pack verified' },
+                        '445': { src: 'https://www.lotusonline.com/cdn/shop/files/3006909_1.jpg?v=1767616389', source: 'Lotus Pharmacies — Empagliform 5/500 mg, 30 film-coated tablets; exact strength and pack verified' },
+                        '446': { src: 'https://www.lotusonline.com/cdn/shop/files/3007187_1.jpg?v=1767616420&width=1500', source: 'Lotus Pharmacies — Empagliform 12.5/500 mg, 30 film-coated tablets; exact strength and pack verified' },
+                        '447': { src: 'https://www.lotusonline.com/cdn/shop/files/3007505_1.jpg?v=1767616408', source: 'Lotus Pharmacies — Empagliform 12.5/1000 mg, 30 film-coated tablets; exact strength and pack verified' },
+                        '448': { src: 'https://mohieldeenpharmacy.com/web/image/product.template/12163/image_1920?unique=1e35a9a', source: 'Mohieldeen Pharmacy — Empagliform 5/1000 mg, 30 film-coated tablets; exact strength and pack verified' },
+                        '450': { src: 'https://www.mouradpharmacy.com/web/image/product.template/483593/image_1024?unique=43fd190', source: 'Mourad Pharmacy — Empacyrl Trio 12.5/2.5/1000 mg, 30 extended-release tablets; exact three ingredients, strength and pack verified' },
+                        '452': { src: 'https://www.mouradpharmacy.com/web/image/product.product/282071/image_1920?unique=3a4105f', source: 'Mourad Pharmacy — Empacyrl 10/5 mg, 30 film-coated tablets; exact brand, strength and pack verified' },
                     };
                     // Apply the verified image seed set once, then batch cloud writes.
                     const imageSeedBatches = (typeof firestoreDB !== 'undefined' && firestoreDB) ? [] : null;
