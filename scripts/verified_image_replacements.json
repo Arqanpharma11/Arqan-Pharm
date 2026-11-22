@@ -1,4 +1,8 @@
 {
+  "2": {
+    "url": "https://www.lotusonline.com/cdn/shop/files/2013262_processed.jpg?v=1773701267",
+    "source": "Lotus Pharmacies — Update Whitening Cream 50 g; exact labeled product packaging matched"
+  },
   "3": {
     "url": "https://re3ayapharmacy.com/cdn/shop/files/ibandrocare-150-mg-2-tablets-846346.jpg?v=1735258026",
     "source": "Re3aya Pharmacy — Ibandrocare 150 mg, 2 film-coated tablets; package photo cross-checked"
@@ -6,6 +10,10 @@
   "36": {
     "url": "https://cdn.salla.sa/VqEPxq/8839755f-2371-43a7-abc2-6f89aff0ece9-1000x1000-RdVRaOznhnRc6ihrq9e7x5DXITTts4snNfob8paz.jpg",
     "source": "Macom Pharmacy — Epifasi 5000 IU lyophilized ampoule plus solvent; package photo cross-checked"
+  },
+  "51": {
+    "url": "https://www.mohieldeenpharmacy.com/web/image/product.template/2130/image_1920",
+    "source": "Mohieldeen Pharmacy — Apexidone 1 mg 20 tablets; exact product page matched"
   },
   "75": {
     "url": "https://www.bloompharmacy.com/cdn/shop/products/atacand-4-mg-14-tablets-358024.jpg?v=1687635055",
@@ -22,5 +30,13 @@
   "101": {
     "url": "https://delmar-test.linkedgates.com/images/items/93597-v1.JPEG",
     "source": "Delmar & Attalla — Atorstat 80 mg, 10 film-coated tablets; package photo cross-checked"
+  },
+  "134": {
+    "url": "https://abdinpharmacies.com/web/image/product.template/25069/image_1920",
+    "source": "Abdin Pharmacies — Adwiflam 12.5 mg 5 suppositories; exact product page matched"
+  },
+  "135": {
+    "url": "https://abdinpharmacies.com/web/image/product.template/25070/image_1920",
+    "source": "Abdin Pharmacies — Adwiflam 25 mg 5 suppositories; exact product page matched"
   }
 }
