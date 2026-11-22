@@ -1,7 +1,7 @@
 {
   "attempted": 100,
-  "mirrored": 68,
-  "failed": 32,
+  "mirrored": 56,
+  "failed": 44,
   "failures": [
     {
       "id": "2",
@@ -32,11 +32,6 @@
       "id": "36",
       "url": "https://pharmaciaty.com/media/catalog/product/cache/060579c5d0e77942dc3e3b187d95947b/e/p/epifas-1-1.jpg",
       "error": "<urlopen error [Errno -5] No address associated with hostname>"
-    },
-    {
-      "id": "41",
-      "url": "https://api.c0umyt3cda-pharmaove1-p1-public.model-t.cc.commerce.ondemand.com/medias/000000000000006001.jpg?context=bWFzdGVyfGltYWdlc3wxNTc1NzB8aW1hZ2UvanBlZ3xhR0UwTDJneFlpOHhNRGc1TmpReU5UYzNPVEl6TUM4d01EQXdNREF3TURBd01EQXdNRFl3TURFdWFuQm58MDhiZGNjODBhMzZhZTY2ZjM4NWY5NGE2ZmI0NjI2YjllYjY1YTM4YzkyMjkzYzE4NWVlNmM0Zjc1MGRkYQ",
-      "error": "HTTP Error 403: "
     },
     {
       "id": "51",
@@ -162,6 +157,71 @@
       "id": "224",
       "url": "https://tdawi.com/media/catalog/product/cache/72f8467a5043ecc9af047df47b9246a4/a/s/asprin_protect_100_2__h1lra4xqyhp7b744.jpg",
       "error": "invalid size"
+    },
+    {
+      "id": "248",
+      "url": "https://www.lotusonline.com/cdn/shop/files/3003452_1.jpg?v=1767616125&width=1500",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "275",
+      "url": "https://drnutrition.com/storage/media/sq4VloXH6IRbbIsuLD2BaCANebKDTHIDrlgacdWC.jpg",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "309",
+      "url": "https://f.nooncdn.com/p/pzsku/ZB4D9A0A560272CBA58FBZ/45/_/1720879862/e944b3a4-1a4f-4fe0-93fe-58d246763778.jpg?width=480",
+      "error": "unsupported or non-image response: image/avif"
+    },
+    {
+      "id": "311",
+      "url": "https://lifemasr.com/wp-content/uploads/2024/03/6222001402735.jpg",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "344",
+      "url": "https://lifemasr.com/wp-content/uploads/2024/09/6221050130224.jpg",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "182",
+      "url": "https://www.lotusonline.com/cdn/shop/files/3006700_processed.jpg?v=1773305568",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "231",
+      "url": "https://doctorak.com/uploads/medicines/4cd776404be2b6cc0b89db00edf2e57c.png",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "234",
+      "url": "https://www.lotusonline.com/cdn/shop/files/3006294_1.jpg?v=1767616993&width=1500",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "290",
+      "url": "https://www.lotusonline.com/cdn/shop/files/3000692_1.jpg?v=1767615924&width=1500",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "352",
+      "url": "https://www.lotusonline.com/cdn/shop/files/3003504_processed.jpg?v=1773306137&width=750",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "394",
+      "url": "https://www.lotusonline.com/cdn/shop/files/3000062_1.jpg?v=1767616984&width=1500",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "415",
+      "url": "https://www.lotusonline.com/cdn/shop/files/3007737_1.jpg?v=1767616744",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "416",
+      "url": "https://www.lotusonline.com/cdn/shop/files/3004664_1.jpg?v=1767616978",
+      "error": "HTTP Error 404: Not Found"
     }
   ],
   "note": "URLs that could not be fetched are NOT represented as valid photos. Visual pack matching requires separate review."
