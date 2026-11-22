@@ -21,7 +21,7 @@ self.addEventListener('fetch', event => {
   if (isDocument) {
     // Never serve a stale HTML document while online.
     event.respondWith(fetch(new Request(request, { cache: 'no-store' })).then(response => {
-      if (response.ok) caches.open(CACHE_NAME).then(cache => cache.put(request, response.clone())).catch(() => {});
+      if (response.ok) { const copy = response.clone(); caches.open(CACHE_NAME).then(cache => cache.put(request, copy)).catch(() => {}); }
       return response;
     }).catch(async () => (await caches.match(request)) || (await caches.match('./index.html')) || Response.error()));
     return;
