@@ -24,9 +24,9 @@ prefix = original[:start]
 block = original[start:end]
 suffix = original[end:]
 # Remove EVERY historical migration declaration, including duplicates that can stop JS startup.
-block = re.sub(r"(?m)^[ \\t]*const imageLegacySeedSources = \\{[^\\n;]*\\};[ \\t]*\\n?", "", block)
-block = re.sub(r"(?m)^[ \\t]*// imageSeedMigrationHash: [0-9a-f]{12}[ \\t]*\\n?", "", block)
-block = re.sub(r"(?m)^[ \\t]*// imageLegacySeedMigrationV1: source-specific upgrade[ \\t]*\\n?", "", block)
+block = re.sub(r"(?m)^[ \t]*const imageLegacySeedSources = \{[^\n;]*\};[ \t]*\n?", "", block)
+block = re.sub(r"(?m)^[ \t]*// imageSeedMigrationHash: [0-9a-f]{12}[ \t]*\n?", "", block)
+block = re.sub(r"(?m)^[ \t]*// imageLegacySeedMigrationV1: source-specific upgrade[ \t]*\n?", "", block)
 line = "const imageLegacySeedSources = " + json.dumps(legacy, ensure_ascii=False) + ";"
 block = block.replace(anchor, "                    " + line + "\n                    " + anchor, 1)
 predicate_old = "PROD_IMG_SRC[id] === seed.source ||"
@@ -44,7 +44,7 @@ if block.count("const imageLegacySeedSources = ") != 1:
     raise SystemExit("Unsafe: multiple image legacy maps remain")
 updated = prefix + block + suffix
 if updated != original:
-    version = re.search(r"arkan_verified_image_seed_v(\\d+)", updated)
+    version = re.search(r"arkan_verified_image_seed_v(\d+)", updated)
     if not version:
         raise SystemExit("Seed version marker missing")
     updated = updated.replace(version.group(0), "arkan_verified_image_seed_v" + str(int(version.group(1)) + 1), 1)
