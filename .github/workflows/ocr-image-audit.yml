@@ -1,0 +1,48 @@
+name: OCR audit shortlisted Arqan package photos
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/ocr_image_candidates.py'
+      - 'data/arkan-image-approval-worklist.json'
+      - '.github/workflows/ocr-image-audit.yml'
+permissions:
+  contents: write
+concurrency:
+  group: arqan-pack-image-ocr
+  cancel-in-progress: true
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install image decoders and OCR engine
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y tesseract-ocr
+          python -m pip install 'Pillow>=11.2' pillow-avif-plugin
+      - name: Check OCR script syntax
+        run: python -m py_compile scripts/ocr_image_candidates.py
+      - name: Inspect all shortlisted product pack text and repeated images
+        run: python scripts/ocr_image_candidates.py
+      - name: Save review-only OCR findings
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/arkan-image-ocr-review.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Audit real package photos for visible trade name strength and duplicate images"
+            git fetch origin "${GITHUB_REF_NAME}"
+            git rebase "origin/${GITHUB_REF_NAME}"
+            git push origin "HEAD:${GITHUB_REF_NAME}"
+          fi
+      - name: Upload OCR review findings
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: arqan-package-photo-ocr-audit
+          path: data/arkan-image-ocr-review.json
