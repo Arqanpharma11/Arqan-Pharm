@@ -1,0 +1,10 @@
+{
+  "TRIAL_ALL_PRODUCTS": true,
+  "AUTO_PUBLISH_MEDICINES": true,
+  "PUBLISH_DESTINATION": "isolated_trial_preview_only",
+  "MIN_CONFIDENCE_SCORE": 95,
+  "SHOW_UNVERIFIED_BADGE": true,
+  "ALLOW_UNVERIFIED_IN_PHARMACIST_PORTAL": false,
+  "OVERWRITE_ADMIN_APPROVED_IMAGES": false,
+  "SCHEDULE": "every 10 minutes via .github/workflows/arkan-image-agent.yml"
+}
