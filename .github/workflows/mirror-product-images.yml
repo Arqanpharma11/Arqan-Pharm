@@ -1,18 +1,6 @@
 name: Mirror verified product images locally
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '17 */6 * * *'
-  push:
-    paths:
-      - 'scripts/mirror_product_images.py'
-      - 'scripts/verified_image_replacements.json'
-      - 'scripts/fix_image_seed_migration.py'
-      - 'scripts/check_pharmacy_image_integrity.py'
-      - 'scripts/check_portal_javascript.py'
-      - 'scripts/smoke_portal_browser.mjs'
-      - 'sw.js'
-      - '.github/workflows/mirror-product-images.yml'
 permissions:
   contents: write
 concurrency:
