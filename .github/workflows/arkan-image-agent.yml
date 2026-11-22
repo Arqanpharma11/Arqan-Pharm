@@ -21,7 +21,6 @@ jobs:
           node-version: '22'
       - name: Audit images and search permitted providers
         env:
-          BRAVE_IMAGE_API_KEY: ${{ secrets.BRAVE_IMAGE_API_KEY }}
           FIREBASE_SERVICE_ACCOUNT_JSON: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_JSON }}
           IMAGE_CHECK_BUDGET: '20'
           IMAGE_SEARCH_BUDGET: '5'
