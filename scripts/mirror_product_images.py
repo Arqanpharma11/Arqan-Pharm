@@ -21,6 +21,13 @@ end = html.index("const imageSeedBatches", begin)
 block = html[begin:end]
 pattern = re.compile(r"(?m)^(\s*'(\d+)': \{ src: ')([^']+)(', source: '[^']+' \},?)")
 entries = [(m.group(2), m.group(3), m.group(0)) for m in pattern.finditer(block)]
+REPLACEMENTS = ROOT / "scripts" / "verified_image_replacements.json"
+replacements = json.loads(REPLACEMENTS.read_text(encoding="utf-8")) if REPLACEMENTS.exists() else {}
+# Try independently reviewed replacement candidates before ordinary external URLs.
+# Keep original entry text so we can safely replace the exact existing seed only on success.
+candidates = [(pid, replacements[pid]["url"], line) for pid, old_url, line in entries
+              if pid in replacements and old_url != replacements[pid]["url"]]
+
 # Do not overwrite an already saved image, or replace unverified URLs with unrelated packs.
 limit = 150
 # Keep previous failures in a persistent report so later batches advance rather than
@@ -30,9 +37,10 @@ previous = json.loads(REPORT.read_text(encoding="utf-8")) if REPORT.exists() els
 failed_urls = {str(row.get("id")): row.get("url") for row in previous.get("failures", [])
                if "unsupported or non-image response: image/avif" not in str(row.get("error",""))}
 already_failed = lambda pid,url: failed_urls.get(pid) == url
-selected = [(pid, url, line) for pid, url, line in entries
+selected = [(pid, url, line) for pid, url, line in candidates + entries
             if url.startswith("https://") and not already_failed(pid,url)
-            and not any((DEST / (pid + ext)).exists() for ext in (".jpg", ".png", ".webp"))][:limit]
+            and not any((DEST / (pid + ext)).exists() for ext in (".jpg", ".png", ".webp"))]
+selected = list({pid: (pid, url, line) for pid, url, line in reversed(selected)}.values())[:limit]
 def download(item):
     pid, url, line = item
     try:
@@ -72,8 +80,12 @@ with concurrent.futures.ThreadPoolExecutor(max_workers=8) as pool:
     results = list(pool.map(download, selected))
 for pid,url,line,new,error in results:
     if new:
-        old = next(m.group(0) for m in pattern.finditer(block) if m.group(2)==pid and m.group(3)==url)
-        new_line = old.replace("src: '"+url+"'", "src: '"+new+"'")
+        old = line
+        new_line = re.sub(r"src: '[^']+'", "src: '"+new+"'", old, count=1)
+        if pid in replacements and replacements[pid]["url"] == url:
+            new_line = re.sub(r"source: '[^']+'", "source: '"+replacements[pid]["source"]+"'", new_line, count=1)
+        if old not in block:
+            raise RuntimeError("Seed changed while mirroring image id " + pid)
         block = block.replace(old, new_line, 1)
 html = html[:begin] + block + html[end:]
 success = sum(bool(x[3]) for x in results)
