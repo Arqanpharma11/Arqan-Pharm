@@ -20038,8 +20038,9 @@ ${window.location.href}
             const p = products.find(x => x.id === id);
             if (!p) return;
             const official = PROD_IMG_VERIFIED[id] === true && !!PROD_IMAGES[id];
-            const candidate = !official ? ARKAN_QUICK_PACKS[String(id)] : null;
-            const src = official ? PROD_IMAGES[id] : (candidate ? candidate[0] : null);
+            const auto = !official ? ARKAN_AUTO_PUBLISHED_PACKS[String(id)] : null;
+            const candidate = !official && !auto ? ARKAN_QUICK_PACKS[String(id)] : null;
+            const src = official ? PROD_IMAGES[id] : (auto ? auto.url : (candidate ? candidate[0] : null));
             _liveCurrent = { id, shown: official ? src : null };
             document.getElementById('pimg-name-ar').textContent = p.name;
             document.getElementById('pimg-name-en').textContent = getEn(p);
@@ -20059,6 +20060,7 @@ ${window.location.href}
                 showMainImage(src, null);
                 st.textContent = official
                     ? 'صورة عبوة مسجلة' + (PROD_IMG_SRC[id] ? ' — ' + PROD_IMG_SRC[id] : '')
+                    : auto ? 'صورة منشورة آليًا من ' + auto.source + ' — تطابق بيانات آلي، وليس توثيقًا بصريًا للعبوة'
                     : 'صورة مرشحة غير معتمدة من ' + (candidate?.[2] || 'مصدر خارجي') + ' — راجع الاسم والتركيز والعبوة';
             } else {
                 box.innerHTML = '<div class="text-center text-arkan-bronze p-6"><div class="text-5xl mb-2">📦</div><div class="text-xs font-bold">لا توجد صورة عبوة معتمدة لهذا الصنف حتى الآن</div></div>';
@@ -20119,6 +20121,7 @@ ${window.location.href}
         // Fast illustrative coverage for the entire 4218-product catalog.
         // Candidate images are labelled as unverified and NEVER written into official image state.
         const ARKAN_QUICK_PACKS = Object.create(null);
+        const ARKAN_AUTO_PUBLISHED_PACKS = Object.create(null);
         const ARKAN_PACK_PLACEHOLDERS = new Map();
         // Neutral missing-photo indicator, never a fabricated medicine package.
         // Do not substitute an unrelated candidate if a real image fails to load.
@@ -20171,7 +20174,8 @@ ${window.location.href}
         }
         function getArkanCatalogImage(item) {
             if (PROD_IMG_VERIFIED[item.id] === true && PROD_IMAGES[item.id]) return PROD_IMAGES[item.id];
-            return ARKAN_QUICK_PACKS[String(item.id)]?.[0] || ARKAN_MISSING_PHOTO;
+            return ARKAN_AUTO_PUBLISHED_PACKS[String(item.id)]?.url ||
+                ARKAN_QUICK_PACKS[String(item.id)]?.[0] || ARKAN_MISSING_PHOTO;
         }
         function arkanHandlePackError(img, id) {
             img.onerror = null;
@@ -20180,6 +20184,7 @@ ${window.location.href}
         }
         function arkanImageStatus(item) {
             if (PROD_IMG_VERIFIED[item.id] === true && PROD_IMAGES[item.id]) return 'صورة عبوة مسجلة';
+            if (ARKAN_AUTO_PUBLISHED_PACKS[String(item.id)]) return 'صورة منشورة آليًا من سجل منتج مفتوح';
             if (ARKAN_QUICK_PACKS[String(item.id)]) return 'صورة مرشحة غير معتمدة — اضغط لمراجعتها';
             return 'لا توجد صورة حقيقية — اضغط للبحث';
         }
@@ -20199,6 +20204,25 @@ ${window.location.href}
             const link = document.createElement('a');
             link.href = url; link.download = 'arkan-image-candidates-audit.json';
             document.body.appendChild(link); link.click(); link.remove(); URL.revokeObjectURL(url);
+        }
+        async function loadArkanAutoPublishedImages() {
+            try {
+                const response = await fetch('./data/arkan-auto-published-images.json?v=auto-v1', {cache:'no-cache'});
+                if (!response.ok) return;
+                const data = await response.json();
+                if (!data || !data.byId || typeof data.byId !== 'object') return;
+                const byId = new Map(products.map(p => [String(p.id), p]));
+                for (const [id, rec] of Object.entries(data.byId)) {
+                    const product = byId.get(id);
+                    if (!product || !rec || rec.status !== 'auto_published_strict_unverified_pack') continue;
+                    if (rec.catalogName !== product.name || !/^https:\/\//.test(rec.url || '')) continue;
+                    if (PROD_IMG_VERIFIED[id] === true && PROD_IMAGES[id]) continue;
+                    ARKAN_AUTO_PUBLISHED_PACKS[id] = rec;
+                }
+                if (currentSession?.role === 'pharmacist') {
+                    requestAnimationFrame(() => { try { renderPharmacistCatalog(); } catch(e) { console.error(e); } });
+                }
+            } catch (e) { console.warn('Arkan auto-published images unavailable',e); }
         }
         async function loadArkanQuickImageCandidates() {
             try {
@@ -21232,6 +21256,7 @@ ${url}`);
             initPlatform();
             initPWAAndShareFeatures();
             setTimeout(loadArkanQuickImageCandidates, 1500);
+            setTimeout(loadArkanAutoPublishedImages, 1900);
         });
     </script>
 
