@@ -21,7 +21,7 @@ for number, match in enumerate(tags, start=1):
     js = match.group(2)
     if re.search(r"\bsrc\s*=", attributes, re.I) or not js.strip():
         continue
-    kind = re.search(r"\btype\s*=\s*['\\"]?([^\s'\\">]+)", attributes, re.I)
+    kind = re.search(r"""\btype\s*=\s*["']?([^\s"'<>]+)""", attributes, re.I)
     script_type = kind.group(1).lower() if kind else "text/javascript"
     if script_type not in ("module", "text/javascript", "application/javascript"):
         continue
