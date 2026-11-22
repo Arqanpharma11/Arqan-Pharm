@@ -27,3 +27,11 @@ Run regression tests with `node --test scripts/arkan-auto-publish.test.cjs`.
 
 ## Full coverage limitation
 Last confirmed report counted 1,335 existing external candidate links, 2,883 products with no external candidate link, and zero automatically published images. Those are **not** counts of independently verified photos. A genuine 100% package-photo library requires licensed images for each exact SKU plus visual/package verification; the free metadata sources alone cannot supply that.
+
+## Full-coverage tracking (added November 2026)
+Every scheduled run exports `data/arkan-image-coverage.csv`, one row per master-catalog SKU, and summary `data/arkan-image-coverage-report.json`.
+Statuses distinguish candidates, missing images, broken candidate links, and automatically published images. **These are not equivalent to administrator-verified true pack photos.** The report intentionally does not count Firestore-admin-approved images since the hosted workflow cannot currently read that dataset without read-only credentials.
+
+The search worker now prioritizes missing-image SKUs and also revisits uncertain/failed candidate-image entries. Search results are reconsidered after seven days (polite source limits apply); this avoids abandoning a product permanently after one empty query.
+
+**To reach actual complete coverage**, obtain product pack assets from permitted manufacturers/distributors or another licensed package-image feed, with stable SKU identifiers and dosage form/strength and a review process. Free Commons/Open Facts data by itself is not comprehensive for Egypt's pharma market. Do not fabricate substitute package graphics or claim 100% from search-link count.
