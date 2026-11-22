@@ -20247,6 +20247,18 @@ ${window.location.href}
                 const data = await res.json();
                 if (data.total !== 4218 || !data.byId) return;
                 const byId = new Map(products.map(p => [String(p.id), p]));
+                // Keep per-URL reuse detection local to this loader. The previous
+                // reference resolved to an out-of-scope variable and aborted rendering.
+                const reusedUrls = new Map();
+                for (const [candidateId, row] of Object.entries(data.byId)) {
+                    if (!Array.isArray(row) || typeof row[0] !== 'string') continue;
+                    const ids = reusedUrls.get(row[0]) || [];
+                    ids.push(candidateId);
+                    reusedUrls.set(row[0], ids);
+                }
+                const sharedUrls = [...reusedUrls.values()].filter(ids => ids.length > 1);
+                ARKAN_IMAGE_AUDIT.sharedUrlGroups = sharedUrls.length;
+                ARKAN_IMAGE_AUDIT.sharedUrlEntries = sharedUrls.reduce((n, ids) => n + ids.length, 0);
                 ARKAN_IMAGE_AUDIT.total = 0;
                 ARKAN_IMAGE_AUDIT.accepted = 0;
                 ARKAN_IMAGE_AUDIT.rejected = 0;
