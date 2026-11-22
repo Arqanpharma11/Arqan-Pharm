@@ -1,7 +1,7 @@
 {
-  "attempted": 98,
-  "mirrored": 65,
-  "failed": 33,
+  "attempted": 0,
+  "mirrored": 0,
+  "failed": 0,
   "locally_stored_unique_product_ids": 425,
   "locally_referenced_seed_ids": 425,
   "verified_seed_ids": 608,
