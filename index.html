@@ -7175,7 +7175,7 @@
 
                 // Verified package-photo seed: Apple-Lite 30 tablets (catalog item #10).
                 // Source page shows the exact Apple-Lite pack; do not use lookalike images.
-                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v51';;;;;
+                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v52';;;;;
                 if (localStorage.getItem(IMAGE_SEED_VERSION) !== '1') {
                     // Individually checked package photos: brand, strength/stage and form match.
                     const verifiedImageSeeds = {
@@ -7778,10 +7778,8 @@
                         '207': { src: 'https://www.lotusonline.com/cdn/shop/files/3008792_processed.jpg?v=1767615013', source: 'Lotus Pharmacies — Asmazon climbazole soothing/moisturizing cream, 30 gm; exact brand, ingredient and volume verified' },
                         '213': { src: 'https://alba-egypt.com/cdn/shop/files/azha-body-lotionazha-body-lotionmy-store101az0201azhabodylotion100m-8157372.png?v=1782206780&width=1946', source: 'Alba Pharma manufacturer — Azha whitening body lotion, 100 ml; official exact product and volume verified' },
                         '215': { src: 'https://dwaprices.com/upload/1777407350.png', source: 'DwaPrices — Azithromash azithromycin 500 mg, 3 film-coated tablets; exact Mash Premiere brand and pack verified' },
-                        '427': { src: 'https://abdinpharmacies.com/web/image/product.template/74063/image_1920?unique=d3ad788', source: 'Abdin Pharmacies — Alexolyte oral rehydration solution, orange flavor, 360 ml; exact flavor and bottle volume verified' },
-                        '428': { src: 'https://abdinpharmacies.com/web/image/product.template/74064/image_1920?unique=712a0a9', source: 'Abdin Pharmacies — Alexolyte oral rehydration solution, pineapple flavor, 360 ml; exact flavor and bottle volume verified' },
-                        '429': { src: 'https://abdinpharmacies.com/web/image/product.template/74065/image_1920?unique=712a0a9', source: 'Abdin Pharmacies — Alexolyte oral rehydration solution, strawberry flavor, 360 ml; exact flavor and bottle volume verified' },
-                        '430': { src: 'https://abdinpharmacies.com/web/image/product.template/74062/image_1920?unique=712a0a9', source: 'Abdin Pharmacies — Alexolyte oral rehydration solution, banana flavor, 360 ml; exact flavor and bottle volume verified' },
+                        '427': { src: 'https://api.c0umyt3cda-pharmaove1-p1-public.model-t.cc.commerce.ondemand.com/medias/000000000000033489.webp?context=bWFzdGVyfGltYWdlc3wyMDA5OHxpbWFnZS9qcGVnfGFERTFMMmhtT0M4eE1UTTFOekEyTkRBek5qTTRNaTh3TURBd01EQXdNREF3TURBd016TTBPRGt1ZDJWaWNBfDA1MzE0NTQxMTBmOWU4YzIwNjVkYTNlMjA5NmU0ODRiNTVhMGM0MGM2ODE1MDZmMmYyNmFhZmI1YTQ2MGEzZjI', source: 'Pharma eMarket — Alexolyte 360 ml orange flavor; actual bottle145951
+                        '429': { src: 'https://www.lotusonline.com/cdn/shop/files/3008850_processed.jpg?v=1767615050', source: 'Lotus Pharmacies — Alexolyte 360 ml strawberry flavor; actual bottle146661
                         '444': { src: 'https://www.lotusonline.com/cdn/shop/files/3007816_1.jpg?v=1767616436', source: 'Lotus Pharmacies — Empagliform XR 10/1000 mg, 30 extended-release film-coated tablets; exact strength and XR pack verified' },
                         '445': { src: 'https://www.lotusonline.com/cdn/shop/files/3006909_1.jpg?v=1767616389', source: 'Lotus Pharmacies — Empagliform 5/500 mg, 30 film-coated tablets; exact strength and pack verified' },
                         '446': { src: 'https://www.lotusonline.com/cdn/shop/files/3007187_1.jpg?v=1767616420&width=1500', source: 'Lotus Pharmacies — Empagliform 12.5/500 mg, 30 film-coated tablets; exact strength and pack verified' },
@@ -7815,7 +7813,6 @@
                         '545': { src: 'https://doctormpharmacy.com/cdn/shop/files/104464.jpg?v=1755302022&width=1946', source: 'Doctor M Pharmacy — Enrich 100 ml iron syrup; actual retail bottle154353
                         '546': { src: 'https://re3ayapharmacy.com/cdn/shop/files/enrich-50-mg-1-ml-oral-drops-30-ml-942443.jpg?v=1735256967&width=1445', source: 'Re3aya Pharmacy — Enrich 50 mg/ml oral drops 30 ml; actual retail bottle154554
                         '608': { src: 'https://almasrypharmacy.com/media/catalog/product/i/s/isg000338.png', source: 'Almasry Pharmacy — Augram 1 g, 14 film-coated tablets; actual retail box154795
-                        '495': { src: 'https://abdinpharmacies.com/web/image/product.template/27986/image_1920?unique=6065d02', source: 'Abdin Pharmacies — Anafortn Hair Lotion Spray 120 ml; brand and spray form' },
                         '496': { src: 'https://www.3322000.app/us/120/pidwebp600/36530/f133866039439992395175-1.webp', source: '3322000 Pharmacy — Anafortien anti-dandruff shampoo 200 ml; exact dosage form155259
                         '533': { src: 'https://www.alandalous.org/storage/uploads/Product/tyUCvEZYi7_1702890295.jpg', source: 'Al Andalous manufacturer — Andorivaban 2.5 mg, 20 tablets; actual product box155414
                         '575': { src: 'https://abdinpharmacies.com/web/image/product.template/28005/image_1920?unique=dd54b75', source: 'Abdin Pharmacies — Anoxicam 20 mg, 10 suppositories; exact brand and dosage form' },
@@ -7834,8 +7831,10 @@
                             imageSeedBatchCount = 0;
                         }
                     };
+                    // Apply repaired links only over known old pharmacy placeholder seeds; do not overwrite admin changes.
+                    const correctedPharmacyPhotoIds = new Set(['427','429','496','506','507','519','521','522','533','545','546','608']);
                     Object.entries(verifiedImageSeeds).forEach(([id, seed]) => {
-                        if (seed.src && (PROD_IMG_VERIFIED[id] !== true || PROD_IMG_SRC[id] === seed.source)) {
+                        if (seed.src && (PROD_IMG_VERIFIED[id] !== true || PROD_IMG_SRC[id] === seed.source || (correctedPharmacyPhotoIds.has(String(id)) && (PROD_IMG_SRC[id] || '').startsWith('Abdin Pharmacies')))) {
                             PROD_IMAGES[id] = seed.src;
                             PROD_IMG_SRC[id] = seed.source;
                             PROD_IMG_VERIFIED[id] = true;
@@ -7845,6 +7844,13 @@
                                 });
                                 queueImageSeedWrite();
                             }
+                        }
+                    });
+                    // Quarantine placeholder links without a verified alternate product photo.
+                    ['428', '430', '495'].forEach(id => {
+                        if ((PROD_IMG_SRC[id] || '').startsWith('Abdin Pharmacies')) {
+                            delete PROD_IMAGES[id]; delete PROD_IMG_SRC[id]; delete PROD_IMG_VERIFIED[id];
+                            if (imageSeedBatch) { imageSeedBatch.delete(firestoreDB.collection('productImages').doc(id)); queueImageSeedWrite(); }
                         }
                     });
                     // Remove a formerly verified photo that was actually a pharmacy 'NO IMAGE' placeholder.
