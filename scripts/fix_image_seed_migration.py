@@ -30,7 +30,7 @@ if predicate_new not in html:
         raise SystemExit("Expected exactly one seed predicate; refusing unsafe edit")
     html = html.replace(predicate_old, predicate_new, 1)
 # Version the existing one-shot seed merge; do not reseed on every page load.
-version = re.search(r"arkan_verified_image_seed_v(\\d+)", html)
+version = re.search(r"arkan_verified_image_seed_v(\d+)", html)
 if not version:
     raise SystemExit("Seed version marker not found")
 if predicate_new in html:
