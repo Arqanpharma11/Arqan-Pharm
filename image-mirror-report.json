@@ -1,11 +1,11 @@
 {
-  "attempted": 0,
-  "mirrored": 0,
+  "attempted": 2,
+  "mirrored": 2,
   "failed": 0,
-  "locally_stored_unique_product_ids": 425,
-  "locally_referenced_seed_ids": 425,
+  "locally_stored_unique_product_ids": 427,
+  "locally_referenced_seed_ids": 427,
   "verified_seed_ids": 608,
-  "unresolved_failed_urls": 183,
+  "unresolved_failed_urls": 181,
   "failures": [
     {
       "id": "2",
@@ -31,16 +31,6 @@
       "id": "51",
       "url": "https://tdawi.com/media/catalog/product/cache/72f8467a5043ecc9af047df47b9246a4/a/p/apexidone_1_mg_2__hfbwxha2nvafommw.jpg",
       "error": "invalid size"
-    },
-    {
-      "id": "85",
-      "url": "https://stgprevapi.al-dawaa.com/medias/Atrovent-500-Mcg2Ml-For-Asthma-Symptoms-20-Vials_0_1200.webp?context=bWFzdGVyfGltYWdlc3wyNzc0MzR8aW1hZ2Uvd2VicHxhREUwTDJnME1TODVNelk1T0RjNE5Ua3pOVFkyTHpFd01ESXlOMTh3WDJWdVh6RXlNREJYZURFeU1EQklYMWRGUWxBdWQyVmljQXw0ODIxOTNjZjFkMTUxZTBmNjk1MTk3NWRiMjQ5YWFjNjdiM2U4MmJjOWE1ZWZhN2JmNDQxMWEzMDhjMDg3MTU4",
-      "error": "HTTP Error 404: Not Found"
-    },
-    {
-      "id": "86",
-      "url": "https://stgprevapi.al-dawaa.com/medias/Atrovent-250-Mcg-2Ml-For-Asthma-Symptoms-20-Vials_0_515.webp?context=bWFzdGVyfGltYWdlc3w3MDQ5OHxpbWFnZS93ZWJwfGFETXlMMmd5Tmk4NU16WTVPRGMzTmpFd05USTJMekV3TURJeU5sOHdYMlZ1WHpVeE5WZDROVEUxU0Y5WFJVSlFMbmRsWW5BfGYwNzk5YzUzMWYwZjc1Mzc5ZGE5OTJhOWVlZGEyNjc1ZDcwMjE3N2I1ODQ3MzRhNGRiMmExZGU2MWI4MmYzNzU",
-      "error": "HTTP Error 404: Not Found"
     },
     {
       "id": "103",
