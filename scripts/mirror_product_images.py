@@ -103,7 +103,7 @@ for pid,url,line,new,error in results:
         block = block.replace(old, new_line, 1)
 html = html[:begin] + block + html[end:]
 if legacy_sources:
-    LEGACY_SOURCES_FILE.write_text(json.dumps(legacy_sources, ensure_ascii=False, indent=2) + "\\n", encoding="utf-8")
+    LEGACY_SOURCES_FILE.write_text(json.dumps(legacy_sources, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 success = sum(bool(x[3]) for x in results)
 if success:
     # Existing users have a saved localStorage seed flag. Force seed refresh on the next load.
