@@ -1,0 +1,75 @@
+name: Arkan bilingual Python image discovery
+on:
+  schedule:
+    - cron: '32 */3 * * *'
+  workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/product_images_v2.py'
+      - 'scripts/test_product_images_v2.py'
+      - 'scripts/arkan-v2-bridge.cjs'
+      - '.github/workflows/arkan-python-image-v2.yml'
+permissions:
+  contents: write
+concurrency:
+  group: arkan-image-agent
+  cancel-in-progress: false
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install dependencies and OCR for Arabic and English
+        run: |
+          python -m pip install --quiet 'ddgs>=9,<12' 'requests>=2.31,<3' 'Pillow>=10,<13' 'pytesseract>=0.3.10,<1'
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq tesseract-ocr-eng tesseract-ocr-ara
+      - name: Test bilingual matching and syntax
+        run: |
+          python -m py_compile scripts/product_images_v2.py
+          python scripts/test_product_images_v2.py
+          node --check scripts/arkan-v2-bridge.cjs
+          python scripts/check_portal_javascript.py
+      - name: Prepare ID-matched Arabic and English image search
+        run: node scripts/arkan-v2-bridge.cjs
+      - name: Bounded background image search; no browser processing
+        run: |
+          python scripts/product_images_v2.py --csv data/arkan-v2-search-input.csv --en-col name_en --workers 2 --limit 12 --ocr --repo .
+      - name: Queue independently licensed candidates for the existing publisher
+        run: node scripts/arkan-v2-bridge.cjs --ingest
+      - name: Publish only independently OCR-verified packaging images
+        env:
+          VISUAL_PUBLISH_BUDGET: '8'
+        run: |
+          python scripts/arkan-visual-publish.py
+          python scripts/check_pharmacy_image_integrity.py
+          python scripts/check_portal_javascript.py
+      - name: Commit small verified photo batches and state
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html assets/product-images/ data/arkan-auto-published-images.json data/arkan-visual-publish-report.json data/arkan-visual-publish-state.json data/arkan-v2-cursor.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "chore: bilingual image bot OCR results"
+          git pull --rebase origin main
+          git push origin HEAD:main
+      - name: Keep rejected and uncertain results outside storefront
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: arkan-bilingual-image-review
+          retention-days: 7
+          if-no-files-found: ignore
+          path: |
+            results_v2.csv
+            review.html
+            review_images/
