@@ -60,7 +60,7 @@ jobs:
         run: node scripts/arkan-publish-matched-assets.cjs
       - name: Record fallback candidate links after asset publication
         env:
-          ARKAN_V2_BATCH_SIZE: '24'
+          ARKAN_V2_BATCH_SIZE: '10'
         run: node scripts/arkan-v2-bridge.cjs --ingest
       - name: Publish only independently OCR-verified packaging images
         env:
