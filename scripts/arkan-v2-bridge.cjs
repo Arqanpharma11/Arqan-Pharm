@@ -49,24 +49,40 @@ if(process.argv.includes('--ingest')){
   const records=JSON.parse(fs.readFileSync(outFile,'utf8'));records.byId||={};
   const approved=new Map(items.filter((x,i)=>!exclusions.has(i+1)).map(x=>[String(x.id),x]));
   let queued=0,blocked=0;
+  const safeExternalImage = value => {
+    try {
+      const u=new URL(value);
+      const h=u.hostname.toLowerCase();
+      return u.protocol==='https:' && !u.username && !u.password &&
+        u.port==='' && !h.endsWith('.local') && h!=='localhost' &&
+        !/^(?:127\.|10\.|192\.168\.|169\.254\.|172\.(?:1[6-9]|2[0-9]|3[01])\.)/.test(h) &&
+        !/^\d+(?:\.\d+){3}$/.test(h);
+    } catch { return false; }
+  };
   for(const line of lines){
     const values=splitCSV(line),r=Object.fromEntries(fields.map((k,i)=>[k,values[i]||'']));
     const product=approved.get(r.code);
-    if(!product||r.status!=='auto'||records.byId[r.code]||known.has(r.code))continue;
-    if(product.cat==='أدوية'){blocked++;continue;}
+    if(!product || records.byId[r.code] || known.has(r.code))continue;
+    // Keep weak or mismatched findings out; do not pretend preliminary images are verified.
+    const previewOK=r.status==='review' && ['conflicting_images','single_source'].includes(r.reason) &&
+      Number(r.score)>=0.85 && Number(r.support)>=1;
+    const autoOK=r.status==='auto' && Number(r.score)>=0.85;
+    if(!previewOK && !autoOK)continue;
     const page=r.source_page||'',url=r.source_url||'';
-    if(!/^https:\/\/world\.open(?:food|beauty)facts\.org\/product\/\d+\/?$/.test(page)||
-       !/^https:\/\/(?:images|static)\.open(?:food|beauty)facts\.org\//.test(url)||
-       !r.name_en||r.name!==product.name){blocked++;continue;}
+    if(!safeExternalImage(url) || !safeExternalImage(page) ||
+       r.name!==product.name || !r.name_en){blocked++;continue;}
     records.byId[r.code]={
-      url,source:new URL(page).hostname,sourcePage:page,license:'CC BY-SA 3.0',
-      catalogName:product.name,englishName:r.name_en,title:r.name_en+' '+r.name,
-      status:'pending_independent_ocr_verification'
+      url,source:new URL(page).hostname,sourcePage:page,license:'not_verified_for_redistribution',
+      catalogName:product.name,englishName:r.name_en,
+      title:r.name_en+' '+r.name,status:'candidate_preview',
+      matchScore:Number(r.score),matchReason:r.reason,
+      independentlyVerified:false,
+      shownAsProductThumbnail:true
     };
     queued++;
   }
   if(queued)fs.writeFileSync(outFile,JSON.stringify(records,null,2)+'\n');
   // Advance even if no image was found, preventing endlessly repeating batch one.
   if(lines.length&&active.length)fs.writeFileSync(cursorFile,JSON.stringify({offset:(offset+batch.length)%active.length},null,2)+'\n');
-  console.log(JSON.stringify({searched:lines.length,queuedForIndependentOCR:queued,rejectedForAutoPublication:blocked}));
+  console.log(JSON.stringify({searched:lines.length,publishedCandidateThumbnails:queued,rejectedForAutoPublication:blocked}));
 }
