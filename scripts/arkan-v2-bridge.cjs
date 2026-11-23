@@ -71,7 +71,10 @@ if(process.argv.includes('--ingest')){
     const page=r.source_page||'',url=r.source_url||'';
     if(!safeExternalImage(url) || !safeExternalImage(page) ||
        r.name!==product.name){blocked++;continue;}
-    // Arabic-only catalog rows can still use the image search engine's strict title, strength and form checks.\n    // English aliases improve matching but are not mandatory for every Egyptian product.\n    if(!r.name_en)arabicOnly++;\n    records.byId[r.code]={
+    // Arabic-only items can be considered when the upstream matching passes.
+    // Never label previews as independently verified packaging.
+    if(!r.name_en) arabicOnly++;
+    records.byId[r.code]={
       url,source:new URL(page).hostname,sourcePage:page,license:'not_verified_for_redistribution',
       catalogName:product.name,englishName:r.name_en,
       title:[r.name_en,r.name].filter(Boolean).join(' '),status:'candidate_preview',
