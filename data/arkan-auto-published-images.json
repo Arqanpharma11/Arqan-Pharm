@@ -1370,6 +1370,38 @@
       "license": "external retailer image; rights not independently verified",
       "note": "Real retailer product image URL; exact pixels and availability not independently verified"
     },
+    "2055": {
+      "catalogName": "ريبينيرف30 قرص",
+      "englishName": "Repainerve",
+      "title": "Wellvive Repainerve 30 Film Coated Tablets",
+      "url": "https://www.esraapharma.com/web/image/7501-713980e2/Repanerve-WEB-1200x630-px-landscape-72p-inch%20copy.png",
+      "sourcePage": "https://www.esraapharma.com/dietary-supplements",
+      "source": "www.esraapharma.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "source_pack_brand_strength_form_match",
+      "attribution": "www.esraapharma.com",
+      "license": "third-party product image, reuse rights unverified",
+      "note": "Manual candidate matching; live UI image rendering and licensing unverified."
+    },
+    "2084": {
+      "catalogName": "ريكوكسيبرايت120 مجم",
+      "englishName": "Recoxibright",
+      "title": "Recoxibright 120 mg 7 Film Coated Tablets",
+      "url": "https://www.bloompharmacy.com/cdn/shop/products/recoxibright-120-mg-7-tablets-801475.jpg?v=1687731538&width=1024",
+      "sourcePage": "https://www.bloompharmacy.com/ar/products/recoxibright-120-%D9%85%D9%84%D8%BA-7-%D8%A3%D9%82%D8%B1%D8%A7%D8%B5",
+      "source": "www.bloompharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "source_pack_brand_strength_form_match",
+      "attribution": "www.bloompharmacy.com",
+      "license": "third-party product image, reuse rights unverified",
+      "note": "Manual candidate matching; live UI image rendering and licensing unverified."
+    },
     "2086": {
       "url": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/recoxibright-90-mg-30-tablets-192370.jpg?v=1735257370",
       "source": "re3ayapharmacy.com",
@@ -1401,6 +1433,22 @@
       "attribution": "egyptdwa.com",
       "license": "source product image; reuse rights not independently verified",
       "note": "Retailer packaging matching known catalog brand and dosage; external link not independently tested in live PWA."
+    },
+    "2117": {
+      "catalogName": "زانثيبوكس80 مجم",
+      "englishName": "Xanthibux",
+      "title": "Xanthibux 80mg 20 Film Coated Tablets",
+      "url": "https://www.lotusonline.com/cdn/shop/files/3001701_processed.jpg?v=1767614073&width=750",
+      "sourcePage": "https://www.lotusonline.com/products/xanthibux-80-mg-20-tab",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "source_pack_brand_strength_form_match",
+      "attribution": "www.lotusonline.com",
+      "license": "third-party product image, reuse rights unverified",
+      "note": "Manual candidate matching; live UI image rendering and licensing unverified."
     },
     "2144": {
       "url": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/zurcal-40-mg-14-tablets-728177.jpg?v=1735257813",
@@ -1481,6 +1529,22 @@
       "attribution": "Re3aya Pharmacy",
       "license": "external retailer image; rights not independently verified",
       "note": "Real retailer product image URL; exact pixels and availability not independently verified"
+    },
+    "2178": {
+      "catalogName": "زيروفازيت10/40 س ج",
+      "englishName": "Zyrovazet",
+      "title": "Zyrovazet 10/40 mg 30 Film Coated Tablets",
+      "url": "https://almasrypharmacy.com/media/catalog/product/i/s/isg007893.jpeg",
+      "sourcePage": "https://almasrypharmacy.com/zyrovazet-10-40-mg-30-tablets.html",
+      "source": "almasrypharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "source_pack_brand_strength_form_match",
+      "attribution": "almasrypharmacy.com",
+      "license": "third-party product image, reuse rights unverified",
+      "note": "Manual candidate matching; live UI image rendering and licensing unverified."
     },
     "2192": {
       "url": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/zyloric-100-mg-30-tablets-539520.jpg?v=1735257166",
@@ -1952,14 +2016,12 @@
   },
   "lastManualBatch": {
     "date": "2026-11-24",
-    "count": 6,
+    "count": 4,
     "ids": [
-      "1590",
-      "2108",
-      "1912",
-      "2151",
-      "1970",
-      "1873"
+      "2084",
+      "2178",
+      "2117",
+      "2055"
     ],
     "mode": "manual_review_only_missing_images"
   },
