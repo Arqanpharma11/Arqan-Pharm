@@ -3,6 +3,8 @@ on:
   push:
     paths:
       - 'index.html'
+      - 'docs/pdf-master-4489-2026-11-23.csv'
+      - 'scripts/verify_pdf_master_catalog.cjs'
       - '.github/workflows/verify-portal-recovery.yml'
   workflow_dispatch:
 permissions:
@@ -26,6 +28,8 @@ jobs:
           assert page.count('Object.entries(verifiedImageSeeds).forEach')==1
           print('PASS: image migration declarations unique')
           PY
+      - name: Verify all 4489 PDF products and their prices and discounts
+        run: node scripts/verify_pdf_master_catalog.cjs
       - name: Parse all inline app scripts and service worker
         run: |
           python scripts/check_portal_javascript.py
