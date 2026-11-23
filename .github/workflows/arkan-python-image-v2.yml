@@ -53,14 +53,14 @@ jobs:
       - name: Bounded background image search; no browser processing
         run: |
           python scripts/product_images_v2.py --csv data/arkan-v2-search-input.csv --en-col name_en --workers 3 --limit 24 --ocr --repo .
-      - name: Queue independently licensed candidates for the existing publisher
-        env:
-          ARKAN_V2_BATCH_SIZE: '24'
-        run: node scripts/arkan-v2-bridge.cjs --ingest
       - name: Publish genuine matched WebP product thumbnails from discovery results
         env:
           ARKAN_ASSET_PUBLISH_BUDGET: '8'
         run: node scripts/arkan-publish-matched-assets.cjs
+      - name: Record fallback candidate links after asset publication
+        env:
+          ARKAN_V2_BATCH_SIZE: '24'
+        run: node scripts/arkan-v2-bridge.cjs --ingest
       - name: Publish only independently OCR-verified packaging images
         env:
           VISUAL_PUBLISH_BUDGET: '8'
