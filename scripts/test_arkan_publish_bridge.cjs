@@ -6,9 +6,13 @@ const path = require('node:path');
 const cp = require('node:child_process');
 const fixture = fs.mkdtempSync(path.join(os.tmpdir(), 'arkan-publish-test-'));
 const bridge = path.resolve(__dirname, 'arkan-v2-bridge.cjs');
-const run = (args=[], allowRemote=false) => JSON.parse(cp.execFileSync(process.execPath, [bridge, ...args], {
-  cwd: fixture, encoding: 'utf8', env: {...process.env, ARKAN_V2_BATCH_SIZE: '3', ARKAN_ALLOW_REMOTE_PREVIEWS: allowRemote?'1':'0'}
-}).trim());
+const run = (args=[], allowRemote=false) => {
+  const output = cp.execFileSync(process.execPath, [bridge, ...args], {
+    cwd: fixture, encoding: 'utf8',
+    env: {...process.env, ARKAN_V2_BATCH_SIZE: '3', ARKAN_ALLOW_REMOTE_PREVIEWS: allowRemote?'1':'0'}
+  }).trim();
+  return JSON.parse(output.split(/\r?\n/).filter(Boolean).at(-1));
+};
 try {
   fs.mkdirSync(path.join(fixture, 'data'));
   const names = ['دواء تجريبي 500 مجم', 'صنف تجريبي بلس 20 مجم', 'صنف تجريبي 10 قرص'];
