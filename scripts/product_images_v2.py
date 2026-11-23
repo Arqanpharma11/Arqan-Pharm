@@ -518,7 +518,18 @@ def ocr_check(img, names):
     words = [w for w in re.findall(r"[^\W\d_]+", norm(text)) if len(w) >= 3]
     if len(words) < 2:
         return None
-    return any(tok_match(an, w) for an in anchors for w in words)
+    if not any(tok_match(an, w) for an in anchors for w in words):
+        return False
+    # OCR brand-only hits must not approve a different SKU/color/strength.
+    catalog_name = names[-1]
+    expected_variants = variants_of(ordered_tokens(catalog_name))
+    if expected_variants and not expected_variants.issubset(variants_of(ordered_tokens(text))):
+        return None  # Uncertain OCR: never use OCR alone to auto-approve.
+    expected_numbers = numbers_of(catalog_name)
+    seen_numbers = numbers_of(text)
+    if expected_numbers and any(n not in seen_numbers for n in expected_numbers):
+        return None
+    return True
 
 
 # ---------------- معالجة صنف واحد ----------------
