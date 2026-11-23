@@ -4276,7 +4276,7 @@
             { name: "فلوموسيل600 س ج", cat: "أدوية", price: 135, disc: 21, shortage: false },
             { name: "فلوموسييل300 امبول", cat: "أدوية", price: 262, disc: 17, shortage: false },
             { name: "فلوموكس1 جم حقن", cat: "أدوية", price: 26, disc: 25, shortage: false },
-            { name: "فلوموكس1 جم اقراص س ق", cat: "أدوية", price: 92, disc: 22, shortage: false },
+            { name: "فلوموكس1 جم اقراص س ق", cat: "أدوية", price: 122, disc: 33, shortage: false },
             { name: "فلوموكس شراب", cat: "أدوية", price: 46, disc: 38, shortage: false },
             { name: "فلوموكس500 مجم كبسول", cat: "أدوية", price: 71, disc: 33, shortage: false },
             { name: "فليبوتون امبول", cat: "أدوية", price: 51, disc: 17, shortage: false },
@@ -6257,8 +6257,18 @@
 
         const MASTER_CATALOG = buildFullMasterCatalog();
 
-        const PDF_CATALOG_REVISION = '2026-11-23-catalog-audit-v8-master-price-guard';
+        const PDF_CATALOG_REVISION = '2026-11-23-pdf-4489-exact-v9';
         const pdfExcludedIds = new Set([13, 22, 34, 79, 80, 103, 120, 154, 179, 195, 198, 218, 219, 254, 255, 265, 275, 282, 296, 318, 346, 348, 357, 387, 457, 466, 512, 523, 524, 525, 530, 540, 542, 559, 573, 590, 599, 626, 674, 702, 712, 718, 723, 724, 738, 741, 743, 792, 793, 812, 826, 836, 844, 857, 861, 889, 890, 898, 904, 923, 927, 941, 957, 970, 984, 986, 989, 1029, 1044, 1046, 1052, 1089, 1102, 1111, 1112, 1113, 1121, 1132, 1145, 1146, 1151, 1163, 1184, 1186, 1234, 1242, 1243, 1257, 1262, 1265, 1272, 1280, 1291, 1305, 1326, 1352, 1390, 1403, 1410, 1423, 1436, 1460, 1461, 1464, 1473, 1497, 1523, 1533, 1535, 1538, 1540, 1554, 1580, 1596, 1597, 1609, 1631, 1640, 1654, 1665, 1675, 1679, 1683, 1690, 1710, 1720, 1732, 1743, 1757, 1762, 1800, 1807, 1808, 1818, 1833, 1837, 1858, 1895, 1901, 1925, 1937, 1979, 2017, 2067, 2152, 2166, 2167, 2191, 2198, 2219, 2224, 2241, 2262, 2282, 2285, 2301, 2302, 2316, 2317, 2318, 2321, 2323, 2325, 2331, 2345, 2348, 2400, 2424, 2428, 2433, 2443, 2446, 2465, 2466, 2469, 2487, 2505, 2507, 2511, 2519, 2537, 2548, 2555, 2561, 2583, 2603, 2607, 2608, 2620, 2635, 2652, 2665, 2666, 2676, 2690, 2693, 2694, 2699, 2726, 2748, 2749, 2761, 2763, 2782, 2800, 2816, 2842, 2849, 2854, 2858, 2870, 2883, 2890, 2902, 2905, 2936, 2940, 2967, 2969, 2991, 3004, 3016, 3017, 3018, 3023, 3043, 3046, 3056, 3069, 3085, 3115, 3116, 3141, 3197, 3200, 3217, 3224, 3258, 3264, 3307, 3340, 3344, 3358, 3361, 3385, 3386, 3396, 3419, 3421, 3422, 3423, 3431, 3444, 3449, 3467, 3475, 3481, 3490, 3492, 3494, 3523, 3524, 3534, 3535, 3536, 3556, 3559, 3588, 3597, 3607, 3608, 3610, 3611, 3612, 3614, 3618, 3636, 3661, 3662, 3715, 3730, 3732, 3739, 3742, 3755, 3795, 3816, 3819, 3876, 3886, 3900, 3902, 3909, 3925, 3933, 3944, 3946, 3949, 3959, 3966, 4018, 4024, 4025, 4084, 4111, 4125, 4127, 4151, 4172, 4183, 4184, 4192, 4197, 4202]);
+        // Complete, row-by-row match against the 4489 lines of the November PDF.
+        // These 294 legacy master positions are not in that price list.
+        // Keep the original MASTER_CATALOG for historical ID/alias lookup only.
+        const PDF_EXCLUDED_MASTER_POSITIONS = new Set([13,22,79,80,103,120,154,179,195,198,218,219,255,265,275,296,318,346,348,357,387,457,466,523,524,525,530,540,542,559,573,590,599,626,674,702,712,718,738,741,743,792,793,812,826,836,844,857,861,889,890,898,904,923,927,941,957,970,984,986,989,1029,1044,1046,1052,1089,1111,1112,1113,1121,1132,1151,1163,1184,1186,1234,1242,1243,1257,1262,1265,1272,1280,1291,1305,1326,1352,1390,1403,1410,1423,1436,1460,1461,1464,1473,1497,1523,1533,1535,1538,1554,1580,1596,1597,1609,1631,1640,1654,1665,1675,1679,1683,1690,1710,1720,1732,1743,1757,1762,1800,1807,1808,1818,1833,1837,1858,1895,1901,1925,1937,1979,2017,2067,2152,2166,2167,2191,2198,2219,2224,2241,2262,2282,2285,2301,2302,2316,2317,2318,2321,2323,2325,2331,2345,2348,2400,2424,2428,2433,2443,2446,2465,2466,2469,2487,2505,2507,2511,2519,2537,2548,2555,2561,2583,2603,2607,2608,2620,2635,2652,2665,2666,2676,2690,2693,2694,2699,2726,2748,2749,2761,2763,2782,2800,2842,2849,2854,2858,2870,2883,2890,2902,2905,2936,2940,2967,2969,2991,3004,3016,3017,3023,3043,3046,3056,3069,3085,3115,3116,3141,3197,3200,3217,3224,3258,3264,3307,3340,3344,3358,3361,3385,3396,3419,3421,3422,3423,3431,3444,3449,3467,3481,3490,3492,3494,3523,3524,3534,3535,3536,3556,3559,3588,3597,3607,3610,3612,3618,3636,3661,3662,3715,3730,3739,3742,3755,3795,3816,3819,3876,3886,3900,3902,3909,3925,3933,3944,3946,3949,3959,3966,4018,4024,4025,4084,4111,4125,4127,4151,4172,4192,4197,4202]);
+        const PDF_APPROVED_CATALOG = MASTER_CATALOG.filter((_, index) =>
+            !PDF_EXCLUDED_MASTER_POSITIONS.has(index + 1));
+        if (PDF_APPROVED_CATALOG.length !== 4489) {
+            throw new Error('PDF master catalog integrity check failed');
+        }
+
         const pdfCatalogKey = name => String(name).normalize('NFKC').toLowerCase()
             .replace(/[٠-٩]/g, d => String(d.charCodeAt(0) - 1632))
             .replace(/٫/g, '.').replace(/[\s@#$ـ]/g, '');
@@ -6289,36 +6299,41 @@
             });
         }
 
+        // Rebuild the sellable list from the PDF-approved 4489 records.
+        // Preserve optional imagery, use descriptions, availability and other
+        // metadata for matching products, without retaining extra sellable SKUs.
         function reconcileNovemberCatalog(saved) {
-            const byName = new Map(saved.map(p => [pdfCatalogKey(p.name), p]));
-            const used = new Set(saved.map(p => Number(p.id)));
-            let nextId = Math.max(MASTER_CATALOG[MASTER_CATALOG.length - 1].id, ...used) + 1;
-            const replacements = new Map();
-            const additions = [];
-            for (const [alias, id] of Object.entries(pdfNameAliases)) {
-                if (byName.has(alias)) byName.set(pdfCatalogKey(MASTER_CATALOG[id - 1].name), byName.get(alias));
-            }
-            for (const item of MASTER_CATALOG) {
-                if (pdfExcludedIds.has(item.id)) continue;
-                const existing = byName.get(pdfCatalogKey(item.name));
-                if (existing) {
-                    replacements.set(existing, {
-                        ...existing, name: item.name, cat: item.cat, price: item.price, disc: item.disc,
-                        ...(item.en ? { en: item.en } : {}),
-                        ...(item.act ? { act: item.act } : {}),
-                        ...(item.cls ? { cls: item.cls } : {}),
-                        ...(item.useText ? { useText: item.useText } : {}),
-                        ...(item.ingredientSource ? { ingredientSource: item.ingredientSource, ingredientVerified: !!item.ingredientVerified } : {})
-                    });
-                } else {
-                    const id = used.has(item.id) ? nextId++ : item.id;
-                    additions.push({ ...item, id });
-                    used.add(id);
+            const previous = Array.isArray(saved) ? saved : [];
+            const byName = new Map(previous.filter(p => p && p.name)
+                .map(p => [pdfCatalogKey(p.name), p]));
+            const byId = new Map(previous.filter(p => p && p.id != null)
+                .map(p => [Number(p.id), p]));
+            for (const [alias, oneBasedIndex] of Object.entries(pdfNameAliases)) {
+                const canonical = MASTER_CATALOG[Number(oneBasedIndex) - 1];
+                if (canonical && byName.has(alias)) {
+                    byName.set(pdfCatalogKey(canonical.name), byName.get(alias));
                 }
             }
-            return saved.map(p => replacements.get(p) || p).concat(additions);
+            const used = new Set();
+            return PDF_APPROVED_CATALOG.map(canonical => {
+                let old = byName.get(pdfCatalogKey(canonical.name));
+                if (old && used.has(old)) old = null;
+                if (!old) {
+                    old = byId.get(Number(canonical.id));
+                    if (old && used.has(old)) old = null;
+                }
+                if (old) used.add(old);
+                return {
+                    ...canonical,
+                    ...(old || {}),
+                    id: canonical.id,
+                    name: canonical.name,
+                    cat: canonical.cat,
+                    price: canonical.price,
+                    disc: canonical.disc
+                };
+            });
         }
-
 
 
         // =========================================================
@@ -7762,9 +7777,7 @@
             firestoreDB.collection('settings').doc('catalog').onSnapshot((docSnap) => {
                 const data = docSnap.exists ? docSnap.data() : null;
                 if (data && Array.isArray(data.items) && data.items.length > 0) {
-                    products = enrichProducts(enforcePdfMasterPricesAndDiscounts(
-                        data.priceListRevision === PDF_CATALOG_REVISION
-                            ? data.items : reconcileNovemberCatalog(data.items)));
+                    products = enrichProducts(reconcileNovemberCatalog(data.items));
                     persistState(KEYS.PRODUCTS, products);
                     if (currentSession?.role === 'admin') {
                         renderAdminProductsTable();
@@ -7820,7 +7833,7 @@
                 } else {
                     const previous = await loadPersistedState('arkan_cairo_products_master_v5');
                     products = enrichProducts(Array.isArray(previous) && previous.length
-                        ? enforcePdfMasterPricesAndDiscounts(reconcileNovemberCatalog(previous)) : MASTER_CATALOG.map(p => ({ ...p })));
+                        ? reconcileNovemberCatalog(previous) : PDF_APPROVED_CATALOG.map(p => ({ ...p })));
                     persistState(KEYS.PRODUCTS, products);
                 }
 
@@ -8572,7 +8585,7 @@
                     currentSession = savedSession;
                 }
             } catch (err) {
-                products = enrichProducts(MASTER_CATALOG.map(p => ({ ...p })));
+                products = enrichProducts(PDF_APPROVED_CATALOG.map(p => ({ ...p })));
             }
 
             // Remove the legacy plaintext admin password from this browser.
@@ -9092,7 +9105,7 @@ ${window.location.href}
         }
 
         function adminResetDefaultCatalog() {
-            products = enrichProducts(MASTER_CATALOG.map(p => ({ ...p })));
+            products = enrichProducts(PDF_APPROVED_CATALOG.map(p => ({ ...p })));
             persistState(KEYS.PRODUCTS, products);
             cloudSaveCatalogOverrides(products);
             admCurrentPage = 1;
