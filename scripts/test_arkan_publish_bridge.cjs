@@ -26,7 +26,9 @@ try {
     'code,name,name_en,status,reason,score,support,source_url,source_page\n'+
     '1,"دواء تجريبي 500 مجم",,auto,ocr,0.92,2,https://images.example.com/1.webp,https://shop.example.com/1\n'+
     '2,"صنف تجريبي بلس 20 مجم",,auto,ocr,0.92,2,http://localhost/2.webp,https://shop.example.com/2\n'+
-    '3,"صنف تجريبي 10 قرص",,review,ocr_mismatch,0.99,2,https://images.example.com/3.webp,https://shop.example.com/3\n');
+    '3,"صنف تجريبي 10 قرص",,review,ocr_mismatch,0.99,2,https://images.example.com/3.webp,https://shop.example.com/3\n'+
+    '4,"صنف 4",,auto,ocr,0.99,2,https://images.example.com/1.webp,https://shop.example.com/4\n'+
+    '5,"صنف 5",,review,conflicting_images,0.99,2,https://images.example.com/5.webp,https://shop.example.com/5\n');
   const result=run('--ingest');
   const saved=JSON.parse(fs.readFileSync(path.join(fixture,'data/arkan-auto-published-images.json'),'utf8'));
   assert.equal(result.publishedCandidateThumbnails,1);
@@ -35,6 +37,9 @@ try {
   assert.equal(saved.byId['1'].independentlyVerified,false);
   assert.equal(saved.byId['2'],undefined);
   assert.equal(saved.byId['3'],undefined);
+  assert.equal(saved.byId['4'],undefined);
+  assert.equal(saved.byId['5'],undefined);
+  assert.equal(result.duplicateImages,1);
   console.log('PASS: Arabic candidate preview, no false verification, unsafe/mismatched images blocked');
 } finally {
   fs.rmSync(fixture,{recursive:true,force:true});
