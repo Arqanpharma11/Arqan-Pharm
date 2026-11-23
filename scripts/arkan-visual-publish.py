@@ -45,10 +45,19 @@ for pid,record in sorted(manifest.get('byId',{}).items(),key=lambda p:int(p[0]))
     if pid in known:
         report['existing_skipped']+=1
         continue
-    if not pid.isdigit() or not 1<=int(pid)<=len(items):
+    # First 4218 IDs are sequential; later PDF additions use reserved IDs.
+    # Accept legacy array-index IDs too, for existing image agent compatibility.
+    index = None
+    if pid.isdigit():
+        numeric_id = int(pid)
+        if 1 <= numeric_id <= len(items):
+            index = numeric_id - 1
+        elif 230000 <= numeric_id < 230000 + max(0,len(items)-4218):
+            index = 4218 + numeric_id - 230000
+    if index is None:
         report['review'].append({'id':pid,'reason':'needs_catalog_sync'})
         continue
-    name,cat=items[int(pid)-1]
+    name,cat=items[index]
     if 'أدوية' in cat or not any(x in cat for x in ('ألبان','غذاء','مكمل','تجميل','عناية')):continue
     if record.get('source') not in ('world.openfoodfacts.org','world.openbeautyfacts.org'):continue
     if 'CC BY-SA 3.0' not in record.get('license',''):continue
