@@ -48,7 +48,8 @@ if(process.argv.includes('--ingest')){
   const fields=splitCSV(lines.shift()),outFile='data/arkan-auto-published-images.json';
   const records=JSON.parse(fs.readFileSync(outFile,'utf8'));records.byId||={};
   const approved=new Map(items.filter((x,i)=>!exclusions.has(i+1)).map(x=>[String(x.id),x]));
-  let queued=0,blocked=0,arabicOnly=0;
+  let queued=0,blocked=0,arabicOnly=0,duplicateImages=0;
+  const imageOwners=new Map(Object.entries(records.byId).filter(([,v])=>v&&v.url).map(([id,v])=>[v.url,id]));
   const safeExternalImage = value => {
     try {
       const u=new URL(value);
@@ -64,13 +65,15 @@ if(process.argv.includes('--ingest')){
     const product=approved.get(r.code);
     if(!product || records.byId[r.code] || known.has(r.code))continue;
     // Keep weak or mismatched findings out; do not pretend preliminary images are verified.
-    const previewOK=r.status==='review' && ['conflicting_images','single_source'].includes(r.reason) &&
-      Number(r.score)>=0.85 && Number(r.support)>=1;
-    const autoOK=r.status==='auto' && Number(r.score)>=0.85;
-    if(!previewOK && !autoOK)continue;
+    // Never publish a weak/single-source/conflicting image as a storefront thumbnail.
+    const autoOK=r.status==='auto' && Number(r.score)>=0.85 &&
+      (r.reason==='barcode' || r.reason==='ocr' || /^multi_source_[2-9]\d*$/.test(r.reason));
+    if(!autoOK)continue;
     const page=r.source_page||'',url=r.source_url||'';
     if(!safeExternalImage(url) || !safeExternalImage(page) ||
        r.name!==product.name){blocked++;continue;}
+    if(imageOwners.has(url)) { duplicateImages++; continue; }
+    imageOwners.set(url,r.code);
     // Arabic-only items can be considered when the upstream matching passes.
     // Never label previews as independently verified packaging.
     if(!r.name_en) arabicOnly++;
@@ -87,5 +90,5 @@ if(process.argv.includes('--ingest')){
   if(queued)fs.writeFileSync(outFile,JSON.stringify(records,null,2)+'\n');
   // Advance even if no image was found, preventing endlessly repeating batch one.
   if(lines.length&&active.length)fs.writeFileSync(cursorFile,JSON.stringify({offset:(offset+batch.length)%active.length},null,2)+'\n');
-  console.log(JSON.stringify({searched:lines.length,publishedCandidateThumbnails:queued,arabicOnlyCandidates:arabicOnly,rejectedForAutoPublication:blocked}));
+  console.log(JSON.stringify({searched:lines.length,publishedCandidateThumbnails:queued,arabicOnlyCandidates:arabicOnly,duplicateImages,rejectedForAutoPublication:blocked}));
 }
