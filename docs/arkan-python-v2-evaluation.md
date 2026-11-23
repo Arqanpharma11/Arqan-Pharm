@@ -37,3 +37,9 @@ This is **not** a prediction that 4,489 real, correctly verified photos will be 
 ## How to monitor
 GitHub Actions > **Arkan bilingual Python image discovery**. Each run exposes `arkan-bilingual-image-review` (CSV plus non-published review images), and publishing reports at `data/arkan-visual-publish-report.json`.
 The approval gate does not auto-publish ordinary medicines using search-engine results alone.
+
+## Latest operational checks
+- A subsequent 12-product run completed successfully with **12 image candidates sent to review**, no Python errors, and **zero automatic publications**. Ten conflicted across sources, one failed OCR, one was insufficiently confirmed.
+- The catalog export was corrected to follow the **294 excluded master positions** defined by `PDF_EXCLUDED_MASTER_POSITIONS`, not the older 314-ID set. This aligns the search target with the same **4,489 approved PDF items** used by the live catalog.
+- The strict publisher also recognizes the reserved IDs of products appended after index 4,218.
+- No completion probability can be credibly quantified from a sample with no approved publication; **47 days refers to one pass of search attempts only** at 96 attempts/day.
