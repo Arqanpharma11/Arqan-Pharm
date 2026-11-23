@@ -11,6 +11,7 @@ on:
       - 'scripts/test_arkan_publish_bridge.cjs'
       - 'scripts/arkan-visual-publish.py'
       - 'scripts/arkan-publish-matched-assets.cjs'
+      - 'scripts/test_arkan_publish_matched_assets.cjs'
       - '.github/workflows/arkan-python-image-v2.yml'
 permissions:
   contents: write
@@ -42,6 +43,7 @@ jobs:
           python scripts/test_product_images_v2.py
           node --check scripts/arkan-v2-bridge.cjs
           node --check scripts/arkan-publish-matched-assets.cjs
+          node scripts/test_arkan_publish_matched_assets.cjs
           node scripts/test_arkan_publish_bridge.cjs
           python scripts/check_portal_javascript.py
       - name: Prepare ID-matched Arabic and English image search
