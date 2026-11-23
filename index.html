@@ -20738,7 +20738,7 @@ ${window.location.href}
                 showMainImage(src, null);
                 st.textContent = official
                     ? 'صورة عبوة مسجلة' + (PROD_IMG_SRC[id] ? ' — ' + PROD_IMG_SRC[id] : '')
-                    : auto ? 'صورة منشورة آليًا من ' + auto.source + ' — تطابق بيانات آلي، وليس توثيقًا بصريًا للعبوة'
+                    : auto ? 'صورة مرشحة معروضة من ' + (auto.source || 'مصدر خارجي') + ' — مطابقة بيانات أولية، وليست توثيقًا بصريًا للعبوة'
                     : 'صورة مرشحة غير معتمدة من ' + (candidate?.[2] || 'مصدر خارجي') + ' — راجع الاسم والتركيز والعبوة';
                 if (auto && /^https:\/\//.test(auto.sourcePage || '')) {
                     const sourceLink = document.createElement('a');
@@ -20746,15 +20746,17 @@ ${window.location.href}
                     sourceLink.target = '_blank';
                     sourceLink.rel = 'noopener noreferrer';
                     sourceLink.className = 'inline-block underline ms-2';
-                    sourceLink.textContent = 'الصورة: مساهمو Open Facts — المصدر';
+                    sourceLink.textContent = 'مصدر الصورة: ' + (auto.source || 'صفحة المنتج');
                     st.appendChild(sourceLink);
-                    const licenseLink = document.createElement('a');
-                    licenseLink.href = 'https://creativecommons.org/licenses/by-sa/3.0/';
-                    licenseLink.target = '_blank';
-                    licenseLink.rel = 'noopener noreferrer';
-                    licenseLink.className = 'inline-block underline ms-2';
-                    licenseLink.textContent = 'ترخيص CC BY-SA 3.0';
-                    st.appendChild(licenseLink);
+                    if (String(auto.license || '').includes('CC BY-SA 3.0')) {
+                        const licenseLink = document.createElement('a');
+                        licenseLink.href = 'https://creativecommons.org/licenses/by-sa/3.0/';
+                        licenseLink.target = '_blank';
+                        licenseLink.rel = 'noopener noreferrer';
+                        licenseLink.className = 'inline-block underline ms-2';
+                        licenseLink.textContent = 'ترخيص CC BY-SA 3.0';
+                        st.appendChild(licenseLink);
+                    }
                 }
             } else {
                 box.innerHTML = '<div class="text-center text-arkan-bronze p-6"><div class="text-5xl mb-2">📦</div><div class="text-xs font-bold">لا توجد صورة عبوة معتمدة لهذا الصنف حتى الآن</div></div>';
@@ -20878,7 +20880,7 @@ ${window.location.href}
         }
         function arkanImageStatus(item) {
             if (PROD_IMG_VERIFIED[item.id] === true && PROD_IMAGES[item.id]) return 'صورة عبوة مسجلة';
-            if (ARKAN_AUTO_PUBLISHED_PACKS[String(item.id)]) return 'صورة مرشحة آليًا غير معتمدة — تحتاج تحققًا بصريًا';
+            if (ARKAN_AUTO_PUBLISHED_PACKS[String(item.id)]) return 'صورة مرشحة غير معتمدة — تحتاج تحققًا بصريًا';
             if (ARKAN_QUICK_PACKS[String(item.id)]) return 'صورة مرشحة غير معتمدة — اضغط لمراجعتها';
             return 'لا توجد صورة حقيقية — اضغط للبحث';
         }
