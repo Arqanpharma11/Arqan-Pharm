@@ -3,5 +3,8 @@
   "published": 0,
   "existing_skipped": 0,
   "review": [],
-  "published_ids": []
+  "published_ids": [],
+  "candidate_previews": 5,
+  "strict_source_eligible": 0,
+  "strict_source_ineligible": 5
 }
