@@ -7,7 +7,7 @@
     {
       "runDate": "2026-11-24",
       "kind": "ChatGPT_manual_web_and_image_inspection",
-      "newlyLinkedPhotos": 16,
+      "newlyLinkedPhotos": 19,
       "verifiedPortalRender": false,
       "verifiedRemoteImagePixelsManually": true,
       "filesSelfHosted": false,
@@ -16,7 +16,8 @@
         "bd2ba60010371c86964259920fa1ca2ae903c762",
         "185df09150424cab4d37d4ead1593ca1a64253d2",
         "955ca380158e1779b045008ae9e4a5457cd9d25b",
-        "2dc17c62a946f068f615742040adf558652196d0"
+        "2dc17c62a946f068f615742040adf558652196d0",
+        "e2cf10bb9704bc9fb872f24cf35318e2ec3f5881"
       ],
       "linked": [
         {
@@ -130,6 +131,27 @@
           "result": "added_as_unverified_real_pack_preview",
           "source": "https://egyptdwa.com/m/5179",
           "assetUrl": "https://egyptdwa.com/dwa/fucidin-2-15g-cream-5179.jpg"
+        },
+        {
+          "id": "1589",
+          "name": "جلوكوفاج اكس ار500مجم",
+          "result": "added_as_unverified_real_pack_preview",
+          "source": "https://mohieldeenpharmacy.com/shop/glucophage-xr-500-mg-30-prolonged-release-tablets-14928?category=220&page=2",
+          "assetUrl": "https://mohieldeenpharmacy.com/web/image/product.template/14928/image_1920?unique=18393e6"
+        },
+        {
+          "id": "2869",
+          "name": "فولتارين جل صغير25 جم",
+          "result": "added_as_unverified_real_pack_preview",
+          "source": "https://monibpharma.com/",
+          "assetUrl": "https://monibpharma.com/uploads/6966a9604259e.jpg"
+        },
+        {
+          "id": "3026",
+          "name": "فيوسيدين مرهم15جم",
+          "result": "added_as_unverified_real_pack_preview",
+          "source": "https://www.myaster.com/en/online-pharmacy/p/fucidin-ointment-15g/1004465",
+          "assetUrl": "https://media.myaster.com/images/products/1004465/fucidin-ointment-15g/1004465-2new.jpg"
         }
       ],
       "failed": [
@@ -138,15 +160,9 @@
           "name": "ابيزيثرو شراب",
           "reason": "Abdin source presented placeholder photo; AG product picture restricted from inspection",
           "retryIfDifferentSource": true
-        },
-        {
-          "id": "2869",
-          "name": "فولتارين جل صغير25 جم",
-          "reason": "Merchant listing found; image pixels not verified, not published",
-          "retryIfDifferentSource": true
         }
       ]
     }
   ],
-  "note": "Current run published 16 external retailer image links to previously unpictured products. Final live-page render not verified; third-party rights need checking."
+  "note": "Total 19 new third-party product image URLs added this immediate run. Images remain unverified previews until live rendering/licensing is validated."
 }
