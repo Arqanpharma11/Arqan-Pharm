@@ -52,3 +52,6 @@ The approval gate does not auto-publish ordinary medicines using search-engine r
 - This run searched 12 products: **3 review** (conflicting photographs), **9 not_found**, **0 newly published**.
 - Synthetic bilingual tests and portal JavaScript syntax checks passed.
 - A 3-hour/12-product cadence takes about **41 days for a single pass across 3,900 uncovered records**, without claiming all will yield valid reusable photos.
+
+## Accelerated search sweep target (user request: <= 41 hours)
+On 2026-11-23 the scheduled search cadence was increased to **24 products every 10 minutes**, at most 3 workers, entirely in GitHub Actions. At the theoretical maximum this is 144 catalog attempts per hour. A one-pass sweep of 3,900 catalog records would take **approximately 27.1 hours** if each action starts on schedule and succeeds; GitHub queue delays, competing workflow concurrency and search-engine limits may extend that time. The **41-hour limit is a target for search attempts only**, not a promise of 3,900 independently verified and published photos. Previously tested batches produced zero eligible automatic publications, so the publishing throughput has not yet been demonstrated.
