@@ -1,6 +1,22 @@
 {
   "version": 2,
   "byId": {
+    "42": {
+      "catalogName": "ابيفيناك75 اس ار",
+      "title": "Epifenac SR 75 mg - 10 Tablets",
+      "url": "https://dwaprices.com/upload/1777757365.png",
+      "sourcePage": "https://dwaprices.com/med.php?id=18413",
+      "source": "dwaprices.com",
+      "englishName": "Epifenac",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_retailer_source_match",
+      "attribution": "dwaprices.com",
+      "license": "retailer image; rights not independently verified",
+      "note": "Visual packaging matched to catalog SKU; external image link, live PWA rendering unverified."
+    },
     "69": {
       "id": "69",
       "catalogName": "ابيمول اقراص س ج",
@@ -17,6 +33,22 @@
       "attribution": "bloompharmacy.com",
       "license": "source retailer image; commercial reuse rights not independently verified",
       "note": "Manually inspected retailer image shows matching brand, strength and dosage form. External hotlink; portal visibility not independently tested."
+    },
+    "210": {
+      "catalogName": "ازموراب10مجم اكياس",
+      "title": "Esmorap 10 mg Esomeprazole Oral Suspension Granules",
+      "url": "https://www.lotusonline.com/cdn/shop/files/3008360_processed.jpg?v=1773307385",
+      "sourcePage": "https://www.lotusonline.com/products/esmorap-10mg-esomeprazole-oral-suspension-granules",
+      "source": "www.lotusonline.com",
+      "englishName": "Esmorap",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_retailer_source_match",
+      "attribution": "www.lotusonline.com",
+      "license": "retailer image; rights not independently verified",
+      "note": "Visual packaging matched to catalog SKU; external image link, live PWA rendering unverified."
     },
     "230": {
       "url": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/344362.webp?v=1786660322",
@@ -1515,6 +1547,54 @@
       "license": "source retailer image; commercial reuse rights not independently verified",
       "note": "Manual image check of packaging/name/strength/form. Retailer hotlink; availability not independently tested inside pharmacy PWA."
     },
+    "2871": {
+      "catalogName": "فولتارين جل وسط50 جم",
+      "title": "Voltaren 1% Emulgel 50 gm",
+      "url": "https://tdawi.com/media/catalog/product/cache/0daeb07bb1d294c1f281fab47369d56a/v/o/voltaren_1__2__y9jdwjtfy33vgfjv.jpg",
+      "sourcePage": "https://tdawi.com/en_eg/voltaren-1-emulgel-50-gm",
+      "source": "tdawi.com",
+      "englishName": "Voltaren",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_retailer_source_match",
+      "attribution": "tdawi.com",
+      "license": "retailer image; rights not independently verified",
+      "note": "Visual packaging matched to catalog SKU; external image link, live PWA rendering unverified."
+    },
+    "3024": {
+      "catalogName": "فيوسيدين كريم15جم",
+      "title": "Fucidin 2% Cream 15g",
+      "url": "https://egyptdwa.com/dwa/fucidin-2-15g-cream-5179.jpg",
+      "sourcePage": "https://egyptdwa.com/m/5179",
+      "source": "egyptdwa.com",
+      "englishName": "Fucidin",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_retailer_source_match",
+      "attribution": "egyptdwa.com",
+      "license": "retailer image; rights not independently verified",
+      "note": "Visual packaging matched to catalog SKU; external image link, live PWA rendering unverified."
+    },
+    "3533": {
+      "catalogName": "ليبيتور40 مجم 14 قرص",
+      "title": "Lipitor 40 mg - 14 Tablets",
+      "url": "https://www.bloompharmacy.com/cdn/shop/products/lipitor-40-mg-14-tablets-7821461.jpg?v=1755656398",
+      "sourcePage": "https://www.bloompharmacy.com/products/lipitor-40-mg-14-tablets",
+      "source": "www.bloompharmacy.com",
+      "englishName": "Lipitor",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_retailer_source_match",
+      "attribution": "www.bloompharmacy.com",
+      "license": "retailer image; rights not independently verified",
+      "note": "Visual packaging matched to catalog SKU; external image link, live PWA rendering unverified."
+    },
     "4020": {
       "url": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/nexium-20-mg-28-tablets-267128.jpg?v=1735257678",
       "source": "re3ayapharmacy.com",
@@ -1728,9 +1808,13 @@
   },
   "lastManualBatch": {
     "date": "2026-11-24",
-    "count": 1,
+    "count": 5,
     "ids": [
-      "4693"
+      "3533",
+      "2871",
+      "42",
+      "210",
+      "3024"
     ],
     "mode": "manual_review_only_missing_images"
   },
