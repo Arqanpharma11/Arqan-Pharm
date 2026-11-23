@@ -7,7 +7,7 @@
     {
       "runDate": "2026-11-24",
       "kind": "ChatGPT_manual_web_and_image_inspection",
-      "newlyLinkedPhotos": 19,
+      "newlyLinkedPhotos": 50,
       "verifiedPortalRender": false,
       "verifiedRemoteImagePixelsManually": true,
       "filesSelfHosted": false,
@@ -17,7 +17,14 @@
         "185df09150424cab4d37d4ead1593ca1a64253d2",
         "955ca380158e1779b045008ae9e4a5457cd9d25b",
         "2dc17c62a946f068f615742040adf558652196d0",
-        "e2cf10bb9704bc9fb872f24cf35318e2ec3f5881"
+        "e2cf10bb9704bc9fb872f24cf35318e2ec3f5881",
+        "193f8fbe223651fed346f77eec2049199b31052f",
+        "79cd93e5b0cc73edcba49f98fd58a8e924664178",
+        "27833011d611a32fd2d476a0e21b30d96cc76174",
+        "309e7ab427828812c3ef590afa34d73f90a4b275",
+        "f5eba44a396c2f23088f9171b3e74bbfe84fabf8",
+        "f2a54776ea40bf4cea4a6a2dc4981efd92843384",
+        "0be8aee005a447904b6846c230377afc9e004214"
       ],
       "linked": [
         {
@@ -152,6 +159,223 @@
           "result": "added_as_unverified_real_pack_preview",
           "source": "https://www.myaster.com/en/online-pharmacy/p/fucidin-ointment-15g/1004465",
           "assetUrl": "https://media.myaster.com/images/products/1004465/fucidin-ointment-15g/1004465-2new.jpg"
+        },
+        {
+          "id": "1590",
+          "name": "جلوكوفانس500/5 س ج",
+          "result": "added_as_unverified_real_pack_preview",
+          "source": "https://www.bloompharmacy.com/products/glucovance-500-mg-5-mg-30-tablets",
+          "assetUrl": "https://www.bloompharmacy.com/cdn/shop/files/transparent-Photoroom-Photoroom_1_1024x.jpg?v=1756995230"
+        },
+        {
+          "id": "2108",
+          "name": "زاترال اكس ال10مجم",
+          "result": "added_as_unverified_real_pack_preview",
+          "source": "https://egyptdwa.com/m/12669",
+          "assetUrl": "https://egyptdwa.com/dwa/xatral-xl-10mg-30tab-12669.jpg"
+        },
+        {
+          "id": "1912",
+          "name": "ديفلوكان150 مجم كبسول",
+          "result": "added_as_unverified_real_pack_preview",
+          "source": "https://egyptdwa.com/m/3663",
+          "assetUrl": "https://egyptdwa.com/dwa/diflucan-150mg-1-cap-3663.jpg"
+        },
+        {
+          "id": "2151",
+          "name": "زوكوزيت10/20مجم",
+          "result": "added_as_unverified_real_pack_preview",
+          "source": "https://www.bloompharmacy.com/products/zocozet-10-mg-20-mg-14-tablets",
+          "assetUrl": "https://www.bloompharmacy.com/cdn/shop/products/zocozet-10-mg-20-mg-14-tablets-970135.jpg?v=1687731890&width=1024"
+        },
+        {
+          "id": "1970",
+          "name": "ديوريسيف500 شراب",
+          "result": "added_as_unverified_real_pack_preview",
+          "source": "https://shop.pharmaemarket.com/pharma/ar/EGP/product/000000000000001199/",
+          "assetUrl": "https://api.c0umyt3cda-pharmaove1-p1-public.model-t.cc.commerce.ondemand.com/medias/000000000000001199.jpg?context=bWFzdGVyfGltYWdlc3wzNzA1OTh8aW1hZ2UvanBlZ3xhR1EyTDJoa1pTOHhNRGc1TlRrM016QTRPVE14TUM4d01EQXdNREF3TURBd01EQXdNREV4T1RrdWFuQm58N2IzMmQ0ODJhNTZhM2VkY2ZkYmJjYzZiZTJiZDk4NGMwMWFlMTgyMDQzZDNmYzNiY2QxYzdmMjdjMjljY2RjMw"
+        },
+        {
+          "id": "1873",
+          "name": "دياميكرون 60 مجم س ج",
+          "result": "added_as_unverified_real_pack_preview",
+          "source": "https://www.mohieldeenpharmacy.com/shop/diamicron-mr-60-mg-30-modified-release-tablets-11015?category=223&page=4",
+          "assetUrl": "https://mohieldeenpharmacy.com/web/image/product.template/11015/image_1920?unique=4ea31db"
+        },
+        {
+          "id": "2084",
+          "name": "ريكوكسيبرايت120 مجم",
+          "result": "added_as_unverified_real_pack_preview",
+          "source": "https://www.bloompharmacy.com/ar/products/recoxibright-120-%D9%85%D9%84%D8%BA-7-%D8%A3%D9%82%D8%B1%D8%A7%D8%B5",
+          "assetUrl": "https://www.bloompharmacy.com/cdn/shop/products/recoxibright-120-mg-7-tablets-801475.jpg?v=1687731538&width=1024"
+        },
+        {
+          "id": "2178",
+          "name": "زيروفازيت10/40 س ج",
+          "result": "added_as_unverified_real_pack_preview",
+          "source": "https://almasrypharmacy.com/zyrovazet-10-40-mg-30-tablets.html",
+          "assetUrl": "https://almasrypharmacy.com/media/catalog/product/i/s/isg007893.jpeg"
+        },
+        {
+          "id": "2117",
+          "name": "زانثيبوكس80 مجم",
+          "result": "added_as_unverified_real_pack_preview",
+          "source": "https://www.lotusonline.com/products/xanthibux-80-mg-20-tab",
+          "assetUrl": "https://www.lotusonline.com/cdn/shop/files/3001701_processed.jpg?v=1767614073&width=750"
+        },
+        {
+          "id": "2055",
+          "name": "ريبينيرف30 قرص",
+          "result": "added_as_unverified_real_pack_preview",
+          "source": "https://www.esraapharma.com/dietary-supplements",
+          "assetUrl": "https://www.esraapharma.com/web/image/7501-713980e2/Repanerve-WEB-1200x630-px-landscape-72p-inch%20copy.png"
+        },
+        {
+          "id": "2217",
+          "name": "ساليتروكسيب90مجم اقراص",
+          "result": "added_as_unverified_real_pack_preview",
+          "source": "https://www.lotusonline.com/products/salitroxib-90mg-etoricoxib",
+          "assetUrl": "https://www.lotusonline.com/cdn/shop/files/3009358_processed.jpg?v=1773308955"
+        },
+        {
+          "id": "1608",
+          "name": "جليفلوزينو5 مجم س.ج",
+          "result": "added_as_unverified_real_pack_preview",
+          "source": "https://www.lotusonline.com/products/gliflozino-5mg-dapagliflozin",
+          "assetUrl": "https://www.lotusonline.com/cdn/shop/files/3008182_processed.jpg?v=1773308223"
+        },
+        {
+          "id": "2207",
+          "name": "سافيبليد500 اقراص",
+          "result": "added_as_unverified_real_pack_preview",
+          "source": "https://marcyrl.com/productsFull.php?category=Blood+%26+Blood+Forming+Organs",
+          "assetUrl": "https://marcyrl.com/program_images/2253.jpg"
+        },
+        {
+          "id": "1616",
+          "name": "جليماديل4 مل 3 شريط س ج",
+          "result": "added_as_unverified_real_pack_preview",
+          "source": "https://dwaprices.com/med.php?id=5557",
+          "assetUrl": "https://dwaprices.com/upload/1781898309.png"
+        },
+        {
+          "id": "1614",
+          "name": "جليماديل2 مجم",
+          "result": "added_as_unverified_real_pack_preview",
+          "source": "https://www.lotusonline.com/products/glimadel-2mg-30-tablet",
+          "assetUrl": "https://www.lotusonline.com/cdn/shop/files/3007733_2.jpg?v=1768407409&width=1500"
+        },
+        {
+          "id": "1619",
+          "name": "جليمباكير25 مجم",
+          "result": "added_as_unverified_real_pack_preview",
+          "source": "https://www.multicare-eg.com/product/48/Diabetes",
+          "assetUrl": "https://multicare-eg.com/storage/photos/XZgCDfToPZ4b1qp87XcePVGvW1hxOMXF10gQmb5W.jpg"
+        },
+        {
+          "id": "2177",
+          "name": "زيروفازيت10/20مجم",
+          "result": "added_as_unverified_real_pack_preview",
+          "source": "https://www.lotusonline.com/products/zyrovazet-10-20mg-30-film-coated-tablet",
+          "assetUrl": "https://www.lotusonline.com/cdn/shop/files/3007004_1.jpg?v=1767615891"
+        },
+        {
+          "id": "2216",
+          "name": "ساليتروكسيب60مجم اقراص",
+          "result": "added_as_unverified_real_pack_preview",
+          "source": "https://www.rosheta.com/ar/12808/%D8%A7%D9%86%D8%B3%D9%8A%D9%84%D8%A7%D9%83%D9%88%D9%83%D8%B3",
+          "assetUrl": "https://www.rosheta.com/upload/6318b4a9f95908f461be700b1a0d0d473d4f988aa3ececcec9799631af27603a.webp"
+        },
+        {
+          "id": "2087",
+          "name": "ريكوكسيتروو90 مجم",
+          "result": "added_as_unverified_real_pack_preview",
+          "source": "https://www.lotusonline.com/products/recoxitro-90mg-30-f-c-tab",
+          "assetUrl": "https://www.lotusonline.com/cdn/shop/files/3008761_processed.jpg?v=1767613724&width=750"
+        },
+        {
+          "id": "1594",
+          "name": "جليبتس50 ع",
+          "result": "added_as_unverified_real_pack_preview",
+          "source": "https://www.bloompharmacy.com/products/gliptus-50-mg-30-tablets",
+          "assetUrl": "https://www.bloompharmacy.com/cdn/shop/products/gliptus-50-mg-30-tablets-492020.jpg?v=1687732717"
+        },
+        {
+          "id": "2158",
+          "name": "زيثروتراك500مجم اقراص",
+          "result": "added_as_unverified_real_pack_preview",
+          "source": "https://www.gyptopharma.com/product/zithotrac-500-mg-film-coated-tablets/",
+          "assetUrl": "https://www.gyptopharma.com/wp-content/uploads/2021/05/ZinAr.jpg"
+        },
+        {
+          "id": "1599",
+          "name": "جليبوفين5/500 مجم س ج",
+          "result": "added_as_unverified_real_pack_preview",
+          "source": "https://www.vezeeta.com/en-eg/pharmacy/glybformin-5-500-mg-30-tablet",
+          "assetUrl": "https://cdn-med-images.vezeeta.com/Products/81543e0b-e955-4578-9780-c218885032d1.png"
+        },
+        {
+          "id": "1615",
+          "name": "جليماديل3 مجم",
+          "result": "added_as_unverified_real_pack_preview",
+          "source": "https://www.delmar-attalla.com/products/glimadel-3-mg-30-tab/129321",
+          "assetUrl": "https://delmar-test.linkedgates.com/images/items/129321-v1.JPEG"
+        },
+        {
+          "id": "1820",
+          "name": "دولفين3% جل 60 جم",
+          "result": "added_as_unverified_real_pack_preview",
+          "source": "https://grandbazaregypt.biz/product/dolphin-topical-gel-3-60/",
+          "assetUrl": "https://grandbazaregypt.biz/wp-content/uploads/2025/10/dolph.jpg"
+        },
+        {
+          "id": "2036",
+          "name": "روماكسيماب90 مجم",
+          "result": "added_as_unverified_real_pack_preview",
+          "source": "https://www.lotusonline.com/products/rumaximap-90mg-30-film-coated-tablet",
+          "assetUrl": "https://www.lotusonline.com/cdn/shop/files/3007280_1.jpg?v=1767615479"
+        },
+        {
+          "id": "2076",
+          "name": "ريفاروسبير2.5 مجم",
+          "result": "added_as_unverified_real_pack_preview",
+          "source": "https://www.lotusonline.com/products/rivarospire-2-5mg-30-film-coated-tablet",
+          "assetUrl": "https://www.lotusonline.com/cdn/shop/files/3007342_1.jpg?v=1767615878&width=1500"
+        },
+        {
+          "id": "2074",
+          "name": "ريفاروسبير10 مجم",
+          "result": "added_as_unverified_real_pack_preview",
+          "source": "https://www.lotusonline.com/products/rivarospire-10mg-20-tablet",
+          "assetUrl": "https://www.lotusonline.com/cdn/shop/files/3003604_1.jpg?v=1767615941&width=1500"
+        },
+        {
+          "id": "1598",
+          "name": "جليبتوميت1000/50 مجم",
+          "result": "added_as_unverified_real_pack_preview",
+          "source": "https://www.delmar-attalla.com/products/gleptomet-50-mg-1000-mg-30-tab/140721",
+          "assetUrl": "https://delmar-test.linkedgates.com/images/items/140721-v1.JPEG"
+        },
+        {
+          "id": "1822",
+          "name": "دولفين50 مجم لبوس",
+          "result": "added_as_unverified_real_pack_preview",
+          "source": "https://www.aptekavhurgade.com/magazin/dolfin-50-mg-10-suppozitoriev/",
+          "assetUrl": "https://www.aptekavhurgade.com/upload/iblock/990/yjp7o16pqn40h041k20nyuezwzqa0nrl.JPG"
+        },
+        {
+          "id": "1600",
+          "name": "جليبوفين500/2.5",
+          "result": "added_as_unverified_real_pack_preview",
+          "source": "https://www.mouradpharmacy.com/shop/code-in-gad65936-code-in-mourad-glybofen-25500mg-30-tabs-%D8%AC%D9%84%D9%8A%D8%A8%D9%88%D9%81%D9%8A%D9%86-25500-%D9%85%D8%AC%D9%85-30-%D9%82%D8%B1%D8%B5-470885",
+          "assetUrl": "https://www.mouradpharmacy.com/web/image/product.product/284083/image_1920?unique=9a901c8"
+        },
+        {
+          "id": "1613",
+          "name": "جليماديل1مجم",
+          "result": "added_as_unverified_real_pack_preview",
+          "source": "https://www.vezeeta.com/en-eg/pharmacy/glimadel-1-mg-30-f-c-tablet",
+          "assetUrl": "https://dkud4u09qff41.cloudfront.net/Products/127fa2f4-6902-4f43-a3bb-5b779b4af008.jpeg"
         }
       ],
       "failed": [
@@ -161,8 +385,62 @@
           "reason": "Abdin source presented placeholder photo; AG product picture restricted from inspection",
           "retryIfDifferentSource": true
         }
+      ],
+      "status": "50_new_photographic_external_source_previews_committed_to_main",
+      "rights": "not_independently_verified",
+      "nextScheduledShouldExclude": [
+        "613",
+        "2863",
+        "725",
+        "69",
+        "1404",
+        "1588",
+        "1587",
+        "4728",
+        "4595",
+        "1406",
+        "4693",
+        "3533",
+        "2871",
+        "42",
+        "210",
+        "3024",
+        "1589",
+        "2869",
+        "3026",
+        "1590",
+        "2108",
+        "1912",
+        "2151",
+        "1970",
+        "1873",
+        "2084",
+        "2178",
+        "2117",
+        "2055",
+        "2217",
+        "1608",
+        "2207",
+        "1616",
+        "1614",
+        "1619",
+        "2177",
+        "2216",
+        "2087",
+        "1594",
+        "2158",
+        "1599",
+        "1615",
+        "1820",
+        "2036",
+        "2076",
+        "2074",
+        "1598",
+        "1822",
+        "1600",
+        "1613"
       ]
     }
   ],
-  "note": "Total 19 new third-party product image URLs added this immediate run. Images remain unverified previews until live rendering/licensing is validated."
+  "note": "This ChatGPT manual pass completed 50 new SKU-specific photographic link records in the public main branch, all unverified candidate previews. GitHub Pages deployment and pixel availability for each image are separate from successful manifest commits; image rights must be assessed."
 }
