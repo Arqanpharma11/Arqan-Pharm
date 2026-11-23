@@ -1,0 +1,103 @@
+{
+  "version": 1,
+  "notes": "Catalog IDs and source pages for manually reviewed product photos. Image bytes are externally hosted; live delivery and reuse rights have not been guaranteed. Entries represent pack-name / strength / form review, not guaranteed browser availability.",
+  "batches": [
+    {
+      "batch": "2026-11-23-01",
+      "catalog": "Arqan-Pharm EXACT_MASTER_ITEMS",
+      "commit": "de1f439b7301f0bba7999fd102b5a7a77161fc95",
+      "items": [
+        {
+          "id": "163",
+          "name": "ارتيسوى30قرص",
+          "reviewedPack": "Artisoy 30 tablets",
+          "sourcePage": "https://www.lotusonline.com/products/artisoy-500mg-glucosamine-joint-health-support-supplement-with-chondroitin-avocado-soybean-unsaponifiables-30-tablets",
+          "review": "source-page title and visible product packaging compared",
+          "imageStatus": "external-source",
+          "browserLoaded": "not_independently_confirmed"
+        },
+        {
+          "id": "268",
+          "name": "اكتوزنك كبسول",
+          "reviewedPack": "Octozinc zinc 25 mg 20 capsules",
+          "sourcePage": "https://www.avicenonline.com/products/octozinc-25mg-zinc-20-capsules",
+          "review": "source-page title and visible product packaging compared",
+          "imageStatus": "external-source",
+          "browserLoaded": "not_independently_confirmed"
+        },
+        {
+          "id": "326",
+          "name": "البافيت شراب حديد",
+          "reviewedPack": "Elbavit with iron syrup 60 ml",
+          "sourcePage": "https://algomhoriapharmacy.com/product/elbavit-iron-syrup-60ml/",
+          "review": "source-page title and visible product packaging compared",
+          "imageStatus": "external-source",
+          "browserLoaded": "not_independently_confirmed"
+        },
+        {
+          "id": "360",
+          "name": "السوريست100مجم 30قرص",
+          "reviewedPack": "Ulsorest 100 mg 30 tablets",
+          "sourcePage": "https://www.lotusonline.com/products/ulsorest-100mg-30-tablet",
+          "review": "source-page title and visible product packaging compared",
+          "imageStatus": "external-source",
+          "browserLoaded": "not_independently_confirmed"
+        },
+        {
+          "id": "407",
+          "name": "اليجا غسول وجه",
+          "reviewedPack": "Elega facial cleanser 150 ml",
+          "sourcePage": "https://www.cosmapay.com/en/products/elega-cleanser",
+          "review": "source-page title and visible product packaging compared",
+          "imageStatus": "external-source",
+          "browserLoaded": "not_independently_confirmed"
+        },
+        {
+          "id": "516",
+          "name": "انجيوسارتان10مجم اقراص",
+          "reviewedPack": "Angiosartan 10 mg 28 tablets",
+          "sourcePage": "https://www.delmar-attalla.com/products/angiosartan-10-mg-28-tab/128657",
+          "review": "source-page title and visible product packaging compared",
+          "imageStatus": "external-source",
+          "browserLoaded": "not_independently_confirmed"
+        },
+        {
+          "id": "667",
+          "name": "اوستيو زد كالسيوم شرب",
+          "reviewedPack": "Osteo Zad syrup 120 ml",
+          "sourcePage": "https://www.lotusonline.com/products/osteo-zad-300mg-calcium-bone-support-liquid-supplement-with-magnesium-zinc-vitamin-d",
+          "review": "source-page title and visible product packaging compared",
+          "imageStatus": "external-source",
+          "browserLoaded": "not_independently_confirmed"
+        },
+        {
+          "id": "750",
+          "name": "ايتوماش اقراص",
+          "reviewedPack": "Itomash 50 mg 30 tablets",
+          "sourcePage": "https://lifemasr.com/product/itomash-50-mg-30-tab/",
+          "review": "source-page title and visible product packaging compared",
+          "imageStatus": "external-source",
+          "browserLoaded": "not_independently_confirmed"
+        },
+        {
+          "id": "767",
+          "name": "ايرالونير50 مجم",
+          "reviewedPack": "Eraloner 50 mg 20 tablets",
+          "sourcePage": "https://www.vezeeta.com/en-eg/pharmacy/eraloner-50-mg-20-fc-tablet",
+          "review": "source-page title and visible product packaging compared",
+          "imageStatus": "external-source",
+          "browserLoaded": "not_independently_confirmed"
+        },
+        {
+          "id": "768",
+          "name": "ايرالونير25مجم س.ج",
+          "reviewedPack": "Eraloner 25 mg 20 tablets",
+          "sourcePage": "https://re3ayapharmacy.com/products/eraloner-25mg-20-tablets",
+          "review": "source-page title and visible product packaging compared",
+          "imageStatus": "external-source",
+          "browserLoaded": "not_independently_confirmed"
+        }
+      ]
+    }
+  ]
+}
