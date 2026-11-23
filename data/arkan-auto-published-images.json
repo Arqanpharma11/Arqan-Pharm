@@ -99,6 +99,40 @@
       "license": "external retailer image; rights not independently verified",
       "note": "Real retailer image URL; packaging pixels and remote availability not independently verified"
     },
+    "613": {
+      "id": "613",
+      "catalogName": "اوجمنتين600 شراب",
+      "title": "Augmentin ES 600 mg Suspension - 75 ml",
+      "url": "https://re3ayapharmacy.com/cdn/shop/files/augmentin-es-600-mg-suspension-75-ml-649742.jpg?v=1735257844&width=1946",
+      "sourcePage": "https://re3ayapharmacy.com/products/augmentin-es-600-mg-suspension-75-ml",
+      "englishName": "Augmentin ES",
+      "source": "re3ayapharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_retailer_source_match",
+      "attribution": "Re3aya Pharmacy",
+      "license": "source retailer image; commercial reuse rights not independently verified",
+      "note": "Manual image check of packaging/name/strength/form. Retailer hotlink; availability not independently tested inside pharmacy PWA."
+    },
+    "725": {
+      "id": "725",
+      "catalogName": "اوميجافيت1000 اكياس",
+      "title": "OMEGA FIT (fish oil) 1000 MG 14 SACHETS",
+      "url": "https://re3ayapharmacy.com/cdn/shop/files/omegafit_201000-400x400.png?v=1735268213&width=1946",
+      "sourcePage": "https://re3ayapharmacy.com/products/omega-fit-fish-oil-1000-mg-14-sachets",
+      "englishName": "OmegaFit",
+      "source": "re3ayapharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_retailer_source_match",
+      "attribution": "Re3aya Pharmacy",
+      "license": "source retailer image; commercial reuse rights not independently verified",
+      "note": "Manual image check of packaging/name/strength/form. Retailer hotlink; availability not independently tested inside pharmacy PWA."
+    },
     "726": {
       "url": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/277673.webp?v=1786660868",
       "source": "azzampharmacy.com",
@@ -1379,6 +1413,23 @@
       "license": "external retailer image; rights not independently verified",
       "note": "Real retailer product image URL; exact pixels and availability not independently verified"
     },
+    "2863": {
+      "id": "2863",
+      "catalogName": "فولتارين100 اس ار اقراص",
+      "title": "Voltaren SR 100 mg - 20 Tablets",
+      "url": "https://re3ayapharmacy.com/cdn/shop/files/voltaren-sr-100-mg-20-tablets-677364.jpg?v=1735257555&width=1946",
+      "sourcePage": "https://re3ayapharmacy.com/products/voltaren-sr-100-mg-20-tablets",
+      "englishName": "Voltaren SR",
+      "source": "re3ayapharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_retailer_source_match",
+      "attribution": "Re3aya Pharmacy",
+      "license": "source retailer image; commercial reuse rights not independently verified",
+      "note": "Manual image check of packaging/name/strength/form. Retailer hotlink; availability not independently tested inside pharmacy PWA."
+    },
     "4020": {
       "url": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/nexium-20-mg-28-tablets-267128.jpg?v=1735257678",
       "source": "re3ayapharmacy.com",
@@ -1542,11 +1593,13 @@
   },
   "lastManualBatch": {
     "date": "2026-11-24",
-    "count": 1,
+    "count": 3,
     "ids": [
-      "343"
+      "613",
+      "2863",
+      "725"
     ],
-    "focus": "only previously photo-less SKUs"
+    "mode": "manual_review_only_missing_images"
   },
   "manualPreviewTotal": 95
 }
