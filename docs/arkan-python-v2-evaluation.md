@@ -43,3 +43,12 @@ The approval gate does not auto-publish ordinary medicines using search-engine r
 - The catalog export was corrected to follow the **294 excluded master positions** defined by `PDF_EXCLUDED_MASTER_POSITIONS`, not the older 314-ID set. This aligns the search target with the same **4,489 approved PDF items** used by the live catalog.
 - The strict publisher also recognizes the reserved IDs of products appended after index 4,218.
 - No completion probability can be credibly quantified from a sample with no approved publication; **47 days refers to one pass of search attempts only** at 96 attempts/day.
+
+## Final verified run after exact 4,489-product export
+- Workflow: https://github.com/Arqanpharma11/Arqan-Pharm/actions/runs/45213620173
+- GitHub Actions result: **success**.
+- Catalog source: **4,783 master records**, minus **294 excluded PDF positions**, producing **4,489 approved records**.
+- Search queue remaining relative to **embedded approved photo seeds**: **3,900** (this does not include independent Firestore photos).
+- This run searched 12 products: **3 review** (conflicting photographs), **9 not_found**, **0 newly published**.
+- Synthetic bilingual tests and portal JavaScript syntax checks passed.
+- A 3-hour/12-product cadence takes about **41 days for a single pass across 3,900 uncovered records**, without claiming all will yield valid reusable photos.
