@@ -10,6 +10,7 @@ on:
       - 'scripts/arkan-v2-bridge.cjs'
       - 'scripts/test_arkan_publish_bridge.cjs'
       - 'scripts/arkan-visual-publish.py'
+      - 'scripts/arkan-publish-matched-assets.cjs'
       - '.github/workflows/arkan-python-image-v2.yml'
 permissions:
   contents: write
@@ -40,6 +41,7 @@ jobs:
           python -m py_compile scripts/product_images_v2.py scripts/arkan-visual-publish.py
           python scripts/test_product_images_v2.py
           node --check scripts/arkan-v2-bridge.cjs
+          node --check scripts/arkan-publish-matched-assets.cjs
           node scripts/test_arkan_publish_bridge.cjs
           python scripts/check_portal_javascript.py
       - name: Prepare ID-matched Arabic and English image search
@@ -53,6 +55,10 @@ jobs:
         env:
           ARKAN_V2_BATCH_SIZE: '24'
         run: node scripts/arkan-v2-bridge.cjs --ingest
+      - name: Publish genuine matched WebP product thumbnails from discovery results
+        env:
+          ARKAN_ASSET_PUBLISH_BUDGET: '8'
+        run: node scripts/arkan-publish-matched-assets.cjs
       - name: Publish only independently OCR-verified packaging images
         env:
           VISUAL_PUBLISH_BUDGET: '8'
@@ -64,7 +70,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add index.html assets/product-images/ data/arkan-auto-published-images.json data/arkan-visual-publish-report.json data/arkan-visual-publish-state.json data/arkan-v2-cursor.json
+          git add index.html assets/product-images/ data/arkan-auto-published-images.json data/arkan-asset-publication-report.json data/arkan-visual-publish-report.json data/arkan-visual-publish-state.json data/arkan-v2-cursor.json
           if git diff --cached --quiet; then exit 0; fi
           git commit -m "chore: bilingual image bot OCR results"
           git pull --rebase origin main
