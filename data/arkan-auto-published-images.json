@@ -1210,6 +1210,22 @@
       "license": "third-party photo; commercial reuse permissions not verified",
       "note": "Photo visually matched by product packaging; external URL untested in browser; image remains not independently certified."
     },
+    "1598": {
+      "catalogName": "جليبتوميت1000/50 مجم",
+      "englishName": "Gleptomet",
+      "title": "Gleptomet Sitagliptin 50mg/Metformin 1000mg 30 Film-coated tablets",
+      "url": "https://delmar-test.linkedgates.com/images/items/140721-v1.JPEG",
+      "sourcePage": "https://www.delmar-attalla.com/products/gleptomet-50-mg-1000-mg-30-tab/140721",
+      "source": "www.delmar-attalla.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_pack_visual_sku_strength_form_match",
+      "attribution": "www.delmar-attalla.com",
+      "license": "third-party photo: commercial reuse rights not confirmed",
+      "note": "Retailer photo matched by manual review. Hotlink and portal live render are not independently verified."
+    },
     "1599": {
       "catalogName": "جليبوفين5/500 مجم س ج",
       "englishName": "Glybofen",
@@ -1354,6 +1370,38 @@
       "license": "external retailer image; rights not independently verified",
       "note": "Real retailer product image URL; exact pixels and availability not independently verified"
     },
+    "1820": {
+      "catalogName": "دولفين3% جل 60 جم",
+      "englishName": "Dolphin",
+      "title": "Dolphin 3% topical gel diclofenac sodium 60 g",
+      "url": "https://grandbazaregypt.biz/wp-content/uploads/2025/10/dolph.jpg",
+      "sourcePage": "https://grandbazaregypt.biz/product/dolphin-topical-gel-3-60/",
+      "source": "grandbazaregypt.biz",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_pack_visual_sku_strength_form_match",
+      "attribution": "grandbazaregypt.biz",
+      "license": "third-party photo: commercial reuse rights not confirmed",
+      "note": "Retailer photo matched by manual review. Hotlink and portal live render are not independently verified."
+    },
+    "1822": {
+      "catalogName": "دولفين50 مجم لبوس",
+      "englishName": "Dolphin",
+      "title": "Dolphin Diclofenac 50mg 10 suppositories",
+      "url": "https://www.aptekavhurgade.com/upload/iblock/990/yjp7o16pqn40h041k20nyuezwzqa0nrl.JPG",
+      "sourcePage": "https://www.aptekavhurgade.com/magazin/dolfin-50-mg-10-suppozitoriev/",
+      "source": "www.aptekavhurgade.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_pack_visual_sku_strength_form_match",
+      "attribution": "www.aptekavhurgade.com",
+      "license": "third-party photo: commercial reuse rights not confirmed",
+      "note": "Retailer photo matched by manual review. Hotlink and portal live render are not independently verified."
+    },
     "1825": {
       "url": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/duloxeprin-30-mg-28-tablets-762795.jpg?v=1735257582",
       "source": "re3ayapharmacy.com",
@@ -1482,6 +1530,22 @@
       "license": "external retailer image; rights not independently verified",
       "note": "Real retailer product image URL; exact pixels and availability not independently verified"
     },
+    "2036": {
+      "catalogName": "روماكسيماب90 مجم",
+      "englishName": "Rumaximap",
+      "title": "Rumaximap Etoricoxib 90 mg 30 tablets",
+      "url": "https://www.lotusonline.com/cdn/shop/files/3007280_1.jpg?v=1767615479",
+      "sourcePage": "https://www.lotusonline.com/products/rumaximap-90mg-30-film-coated-tablet",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_pack_visual_sku_strength_form_match",
+      "attribution": "www.lotusonline.com",
+      "license": "third-party photo: commercial reuse rights not confirmed",
+      "note": "Retailer photo matched by manual review. Hotlink and portal live render are not independently verified."
+    },
     "2055": {
       "catalogName": "ريبينيرف30 قرص",
       "englishName": "Repainerve",
@@ -1497,6 +1561,38 @@
       "attribution": "www.esraapharma.com",
       "license": "third-party product image, reuse rights unverified",
       "note": "Manual candidate matching; live UI image rendering and licensing unverified."
+    },
+    "2074": {
+      "catalogName": "ريفاروسبير10 مجم",
+      "englishName": "Rivarospire",
+      "title": "Rivarospire 10 mg 20 film coated tablets",
+      "url": "https://www.lotusonline.com/cdn/shop/files/3003604_1.jpg?v=1767615941&width=1500",
+      "sourcePage": "https://www.lotusonline.com/products/rivarospire-10mg-20-tablet",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_pack_visual_sku_strength_form_match",
+      "attribution": "www.lotusonline.com",
+      "license": "third-party photo: commercial reuse rights not confirmed",
+      "note": "Retailer photo matched by manual review. Hotlink and portal live render are not independently verified."
+    },
+    "2076": {
+      "catalogName": "ريفاروسبير2.5 مجم",
+      "englishName": "Rivarospire",
+      "title": "Rivarospire Rivaroxaban 2.5 mg 30 film coated tablets",
+      "url": "https://www.lotusonline.com/cdn/shop/files/3007342_1.jpg?v=1767615878&width=1500",
+      "sourcePage": "https://www.lotusonline.com/products/rivarospire-2-5mg-30-film-coated-tablet",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_pack_visual_sku_strength_form_match",
+      "attribution": "www.lotusonline.com",
+      "license": "third-party photo: commercial reuse rights not confirmed",
+      "note": "Retailer photo matched by manual review. Hotlink and portal live render are not independently verified."
     },
     "2084": {
       "catalogName": "ريكوكسيبرايت120 مجم",
@@ -2224,13 +2320,14 @@
   },
   "lastManualBatch": {
     "date": "2026-11-24",
-    "count": 5,
+    "count": 6,
     "ids": [
-      "2087",
-      "1594",
-      "2158",
-      "1599",
-      "1615"
+      "1820",
+      "2036",
+      "2076",
+      "2074",
+      "1598",
+      "1822"
     ],
     "mode": "manual_review_only_missing_images"
   },
