@@ -26,7 +26,8 @@ active.sort((a,b)=>Number(a.cat==='أدوية')-Number(b.cat==='أدوية')||a.
 const cursorFile='data/arkan-v2-cursor.json';
 const cursor=fs.existsSync(cursorFile)?JSON.parse(fs.readFileSync(cursorFile,'utf8')):{offset:0};
 const offset=Number(cursor.offset||0)%Math.max(1,active.length);
-const batch=[...active.slice(offset),...active.slice(0,offset)].slice(0,12);
+const budget=Math.max(1,Math.min(30,Number(process.env.ARKAN_V2_BATCH_SIZE||24)));
+const batch=[...active.slice(offset),...active.slice(0,offset)].slice(0,budget);
 const dest='data/arkan-v2-search-input.csv';
 fs.writeFileSync(dest,'\uFEFFcode,name,name_en,category\n'+batch.map(x=>[x.id,x.name,english[x.name]?.brand||'',x.cat].map(csvValue).join(',')).join('\n')+'\n');
 console.log(JSON.stringify({catalogItems:items.length,uncovered:active.length,excluded:exclusions.size,offset,batch:batch.length}));
