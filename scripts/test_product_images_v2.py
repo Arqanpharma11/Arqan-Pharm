@@ -16,6 +16,8 @@ check("بانادول اكسترا 500مجم اقراص","Panadol 500mg tablets"
 check("فولتارين 50مجم اقراص","Voltaren 75mg tablets","reject")
 check("فولتارين 50مجم اقراص","Voltaren 50mg cream","reject")
 check("اوجمنتين 1جم اقراص","Augmentin 1g tablets XR","reject")
+check("بانادول 500مجم 20قرص","Panadol 500mg 10 tablets","reject")
+check("بانادول 500مجم 20قرص","Panadol 500mg tablets","review")
 assert m.norm("إِيبـانْتِين ٥٠")=="ايبانتين 50"
 assert not m.public_https_url("https://127.0.0.1/a.jpg")
 assert not m.public_https_url("http://localhost/x.png")
