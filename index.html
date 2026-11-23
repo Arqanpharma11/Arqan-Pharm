@@ -7829,7 +7829,7 @@
             try {
                 const savedProducts = await loadPersistedState(KEYS.PRODUCTS);
                 if (Array.isArray(savedProducts) && savedProducts.length > 0) {
-                    products = enrichProducts(savedProducts);
+                    products = enrichProducts(reconcileNovemberCatalog(savedProducts));
                 } else {
                     const previous = await loadPersistedState('arkan_cairo_products_master_v5');
                     products = enrichProducts(Array.isArray(previous) && previous.length
