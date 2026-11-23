@@ -32,7 +32,8 @@ items=re.findall(r'\{\s*name:\s*"([^"]+)"\s*,\s*cat:\s*"([^"]+)"',master.group(1
 dest=root/'assets/product-images'
 dest.mkdir(parents=True,exist_ok=True)
 budget=max(0,min(15,int(os.getenv('VISUAL_PUBLISH_BUDGET','5'))))
-report={'scanned':0,'published':0,'existing_skipped':0,'review':[],'published_ids':[]}
+report={'scanned':0,'published':0,'existing_skipped':0,'review':[],'published_ids':[],
+        'candidate_previews':0,'strict_source_eligible':0,'strict_source_ineligible':0}
 lines=[]
 def tokens(x):return re.findall(r'[a-z]{3,}',str(x or '').lower())
 def numbers(x):return re.findall(r'(?<!\d)\d+(?:[.,/]\d+)?(?!\d)',str(x or ''))
@@ -59,8 +60,12 @@ for pid,record in sorted(manifest.get('byId',{}).items(),key=lambda p:int(p[0]))
         continue
     name,cat=items[index]
     if 'أدوية' in cat or not any(x in cat for x in ('ألبان','غذاء','مكمل','تجميل','عناية')):continue
-    if record.get('source') not in ('world.openfoodfacts.org','world.openbeautyfacts.org'):continue
-    if 'CC BY-SA 3.0' not in record.get('license',''):continue
+    if record.get('status') == 'candidate_preview':
+        report['candidate_previews']+=1
+    if record.get('source') not in ('world.openfoodfacts.org','world.openbeautyfacts.org') or 'CC BY-SA 3.0' not in record.get('license',''):
+        report['strict_source_ineligible']+=1
+        continue
+    report['strict_source_eligible']+=1
     url=record.get('url','')
     if not re.match(r'^https://(?:images|static)\.open(?:food|beauty)facts\.org/',url):continue
     if not re.fullmatch(r'https://world\.open(?:food|beauty)facts\.org/product/\d+',record.get('sourcePage','')):continue
