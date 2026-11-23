@@ -19,6 +19,10 @@ check("اوجمنتين 1جم اقراص","Augmentin 1g tablets XR","reject")
 check("بانادول 500مجم 20قرص","Panadol 500mg 10 tablets","reject")
 check("بانادول 500مجم 20قرص","Panadol 500mg tablets","review")
 assert m.norm("إِيبـانْتِين ٥٠")=="ايبانتين 50"
+assert m.variants_of(m.ordered_tokens("بى فريش احمر")) == {"red"}
+assert m.variants_of(m.ordered_tokens("بى فريش اخضر")) == {"green"}
+assert m.variants_of(m.ordered_tokens("بيبيلاك 1 لبن")) == set()
+assert m.compare_numbers(m.numbers_of("فولتارين 50مجم"),m.numbers_of("Voltaren 75mg")) == "reject"
 assert not m.public_https_url("https://127.0.0.1/a.jpg")
 assert not m.public_https_url("http://localhost/x.png")
 assert not m.public_https_url("file:///etc/passwd")
