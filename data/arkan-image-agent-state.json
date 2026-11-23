@@ -1,5 +1,5 @@
 {
-  "cursor": 155,
+  "cursor": 160,
   "searchCursor": 0,
   "checks": {
     "28": {
@@ -1290,27 +1290,27 @@
     "1350": {
       "failures": 0,
       "lastStatus": "ok",
-      "checkedAt": "2026-11-22T16:19:48.639Z"
+      "checkedAt": "2026-11-23T16:03:40.487Z"
     },
     "1354": {
       "failures": 0,
       "lastStatus": "ok",
-      "checkedAt": "2026-11-22T16:19:48.825Z"
+      "checkedAt": "2026-11-23T16:03:40.607Z"
     },
     "1358": {
       "failures": 0,
       "lastStatus": "ok",
-      "checkedAt": "2026-11-22T16:19:49.037Z"
+      "checkedAt": "2026-11-23T16:03:40.684Z"
     },
     "1361": {
       "failures": 0,
       "lastStatus": "ok",
-      "checkedAt": "2026-11-22T16:19:49.216Z"
+      "checkedAt": "2026-11-23T16:03:40.738Z"
     },
     "1362": {
       "failures": 0,
       "lastStatus": "ok",
-      "checkedAt": "2026-11-22T16:19:49.432Z"
+      "checkedAt": "2026-11-23T16:03:40.936Z"
     },
     "1364": {
       "failures": 0,
@@ -6183,25 +6183,40 @@
     "976": {
       "at": "2026-11-23T15:13:20.613Z",
       "hits": 0
+    },
+    "977": {
+      "at": "2026-11-23T16:03:42.115Z",
+      "hits": 0
+    },
+    "978": {
+      "at": "2026-11-23T16:03:43.234Z",
+      "hits": 0
+    },
+    "979": {
+      "at": "2026-11-23T16:03:44.356Z",
+      "hits": 0
+    },
+    "980": {
+      "at": "2026-11-23T16:03:45.477Z",
+      "hits": 0
     }
   },
-  "lastRun": "2026-11-23T15:13:21.722Z",
+  "lastRun": "2026-11-23T16:03:46.177Z",
   "lastCatalogSize": 4783,
   "searchPipeline": {
-    "remainingMissing": 2950,
+    "remainingMissing": 2940,
     "remainingSuspect": 905,
-    "eligibleThisRun": 3855
+    "eligibleThisRun": 3845
   },
   "providerHealth": {
     "commons.wikimedia.org": {
-      "failures": 1,
-      "retryAt": "2026-11-23T15:33:21.320Z",
-      "lastSuccess": "2026-11-23T15:13:20.213Z",
-      "lastError": "429"
+      "failures": 0,
+      "retryAt": null,
+      "lastSuccess": "2026-11-23T16:03:45.076Z"
     },
     "world.openfoodfacts.org": {
-      "failures": 1,
-      "retryAt": "2026-11-23T15:33:07.444Z",
+      "failures": 2,
+      "retryAt": "2026-11-23T16:23:42.115Z",
       "lastSuccess": "2026-11-23T15:13:05.572Z",
       "lastError": "503"
     },

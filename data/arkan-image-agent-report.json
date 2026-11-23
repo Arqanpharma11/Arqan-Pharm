@@ -1,5 +1,5 @@
 {
-  "runAt": "2026-11-23T15:13:21.722Z",
+  "runAt": "2026-11-23T16:03:46.177Z",
   "masterItems": 4783,
   "cloudItems": 0,
   "catalogItems": 4783,
@@ -7,16 +7,16 @@
   "unapprovedCatalogItems": 4165,
   "autoPublishedCount": 0,
   "publishedThisRun": 0,
-  "searchAttempted": 12,
+  "searchAttempted": 4,
   "searchHits": 0,
-  "searchErrors": 1,
+  "searchErrors": 0,
   "rejectionReasons": {},
   "missingWithoutCandidate": 3260,
-  "checked": 30,
-  "healthy": 30,
+  "checked": 5,
+  "healthy": 5,
   "gone": 0,
   "queuedThisRun": 0,
-  "pendingReview": 340,
+  "pendingReview": 344,
   "searchEnabled": true,
   "searchProviders": [
     "Wikimedia Commons",
@@ -30,14 +30,13 @@
   "cloudSyncError": null,
   "providerHealth": {
     "commons.wikimedia.org": {
-      "failures": 1,
-      "retryAt": "2026-11-23T15:33:21.320Z",
-      "lastSuccess": "2026-11-23T15:13:20.213Z",
-      "lastError": "429"
+      "failures": 0,
+      "retryAt": null,
+      "lastSuccess": "2026-11-23T16:03:45.076Z"
     },
     "world.openfoodfacts.org": {
-      "failures": 1,
-      "retryAt": "2026-11-23T15:33:07.444Z",
+      "failures": 2,
+      "retryAt": "2026-11-23T16:23:42.115Z",
       "lastSuccess": "2026-11-23T15:13:05.572Z",
       "lastError": "503"
     },
