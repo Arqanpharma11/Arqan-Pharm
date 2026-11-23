@@ -8,7 +8,7 @@ try{
  fs.writeFileSync(path.join(tmp,'index.html'),'const EXACT_MASTER_ITEMS = [\n'+rows+'\n];\nconst PDF_EXCLUDED_MASTER_POSITIONS = new Set([4490]);\nconst verifiedImageSeeds = {\n};\nconst imageSeedBatches = [];\n');
  fs.writeFileSync(path.join(tmp,'data/arkan-auto-published-images.json'),'{"version":1,"byId":{}}\n');
  const img=path.join(tmp,'images/1.webp');
- cp.execFileSync('python',['-c','from PIL import Image\nImage.new("RGB",(400,400),(255,255,255)).save('+JSON.stringify(img)+',"WEBP",quality=90)'],{stdio:'pipe'});
+ cp.execFileSync('python',['-c','from PIL import Image\nImage.effect_noise((400,400),64).convert("RGB").save('+JSON.stringify(img)+',"WEBP",quality=90)'],{stdio:'pipe'});
  assert.ok(fs.statSync(img).size>=700,'fixture too small');
  fs.writeFileSync(path.join(tmp,'results_v2.csv'),'\uFEFFcode,name,name_en,status,reason,score,support,ver,image,source_url,source_page\n'+
    '1,"دواء تجريبي 500 مجم","Test Medicine 500mg",auto,multi_source_2,0.95,2,,images/1.webp,https://example.com/1.webp,https://example.com/p/1\n'+
