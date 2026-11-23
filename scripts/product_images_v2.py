@@ -112,7 +112,13 @@ _VAR_EN = {"forte", "plus", "junior", "extra", "retard", "xr", "sr", "cr", "er",
            "mini", "pediatric", "adult", "children", "dt", "odt", "lite", "ultra",
            "night", "day", "active", "sensitive", "intense", "complex", "mega",
            "light", "men", "women", "sugar", "free"}
-_VAR_AR = {"فورت": "forte", "فورتي": "forte", "بلس": "plus", "بلاس": "plus",
+_VAR_AR = {"احمر": "red", "أحمر": "red", "اخضر": "green", "أخضر": "green",
+           "ازرق": "blue", "أزرق": "blue", "اصفر": "yellow", "أصفر": "yellow",
+           "ابيض": "white", "أبيض": "white", "اسود": "black", "أسود": "black",
+           "وردي": "pink", "بمبي": "pink", "برتقالي": "orange",
+           "red": "red", "green": "green", "blue": "blue", "yellow": "yellow",
+           "white": "white", "black": "black", "pink": "pink", "orange": "orange",
+           "فورت": "forte", "فورتي": "forte", "بلس": "plus", "بلاس": "plus",
            "جونيور": "junior", "اكسترا": "extra", "كيدز": "kids", "اطفال": "kids",
            "للاطفال": "kids", "ماكس": "max", "كولد": "cold", "فلو": "flu",
            "ريتارد": "retard", "دوو": "duo", "اولترا": "ultra", "نايت": "night",
@@ -562,6 +568,19 @@ def _process_row(row, a, rl, use_ocr):
             seen.add(u)
             page = res.get("url", "") or ""
             s, verdict, bar = evaluate_any(names, res.get("title", ""), url_text(page), barcode)
+            # Never let a short English brand match override Arabic SKU variants,
+            # strength, pack count, or pharmaceutical form.
+            title = res.get("title", "")
+            title_tokens = ordered_tokens(title + " " + url_text(page))
+            required_variants = variants_of(ordered_tokens(name))
+            if required_variants and not required_variants.issubset(variants_of(title_tokens)):
+                continue
+            expected_strength = numbers_of(name)
+            if expected_strength and compare_numbers(expected_strength, numbers_of(title)) != "confirmed":
+                continue
+            expected_form = forms_of(name)
+            if expected_form and not (expected_form & forms_of(title)):
+                continue
             if verdict == "reject":
                 continue
             try:
