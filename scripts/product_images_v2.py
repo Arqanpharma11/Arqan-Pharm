@@ -564,7 +564,10 @@ def _process_row(row, a, rl, use_ocr):
             s, verdict, bar = evaluate_any(names, res.get("title", ""), url_text(page), barcode)
             if verdict == "reject":
                 continue
-            w, h = res.get("width") or 0, res.get("height") or 0
+            try:
+                w, h = int(res.get("width") or 0), int(res.get("height") or 0)
+            except (TypeError, ValueError):
+                w, h = 0, 0
             if w and h and min(w, h) < MIN_SIDE:
                 continue
             dom = domain_of(page) or domain_of(u)
@@ -828,6 +831,7 @@ def main():
             try:
                 res = fut.result()
             except Exception as e:
+                print(f"DIAGNOSTIC: {code} {type(e).__name__}: {str(e)[:160]}", file=sys.stderr)
                 res = mk(code, row.get(a.name_col, ""), "error", e.__class__.__name__)
             data = res.pop("data")
             if data and res["status"] in ("auto", "review"):
