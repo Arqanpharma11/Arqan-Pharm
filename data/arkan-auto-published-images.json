@@ -1242,6 +1242,22 @@
       "license": "third-party photo; commercial reuse permissions not verified",
       "note": "Photo visually matched by product packaging; external URL untested in browser; image remains not independently certified."
     },
+    "1600": {
+      "catalogName": "جليبوفين500/2.5",
+      "englishName": "Glybofen",
+      "title": "Glybofen 2.5/500 mg 30 film-coated tablets",
+      "url": "https://www.mouradpharmacy.com/web/image/product.product/284083/image_1920?unique=9a901c8",
+      "sourcePage": "https://www.mouradpharmacy.com/shop/code-in-gad65936-code-in-mourad-glybofen-25500mg-30-tabs-%D8%AC%D9%84%D9%8A%D8%A8%D9%88%D9%81%D9%8A%D9%86-25500-%D9%85%D8%AC%D9%85-30-%D9%82%D8%B1%D8%B5-470885",
+      "source": "www.mouradpharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "visible_pack_brand_strength_dosage_and_product_listing_match",
+      "attribution": "www.mouradpharmacy.com",
+      "license": "third-party source product photo, redistribution rights not independently verified",
+      "note": "External image link. Manually visually checked SKU packaging; link loading and image version on live site not independently verified."
+    },
     "1608": {
       "catalogName": "جليفلوزينو5 مجم س.ج",
       "englishName": "Gliflozino",
@@ -1257,6 +1273,22 @@
       "attribution": "www.lotusonline.com",
       "license": "third-party visual source; commercial reuse rights not independently verified",
       "note": "Real commercial product image link, packaging matched by review; live browser and rights verification pending."
+    },
+    "1613": {
+      "catalogName": "جليماديل1مجم",
+      "englishName": "Glimadel",
+      "title": "Glimadel 1 mg 30 film-coated tablets",
+      "url": "https://dkud4u09qff41.cloudfront.net/Products/127fa2f4-6902-4f43-a3bb-5b779b4af008.jpeg",
+      "sourcePage": "https://www.vezeeta.com/en-eg/pharmacy/glimadel-1-mg-30-f-c-tablet",
+      "source": "www.vezeeta.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "visible_pack_brand_strength_dosage_and_product_listing_match",
+      "attribution": "www.vezeeta.com",
+      "license": "third-party source product photo, redistribution rights not independently verified",
+      "note": "External image link. Manually visually checked SKU packaging; link loading and image version on live site not independently verified."
     },
     "1614": {
       "catalogName": "جليماديل2 مجم",
@@ -2320,14 +2352,10 @@
   },
   "lastManualBatch": {
     "date": "2026-11-24",
-    "count": 6,
+    "count": 2,
     "ids": [
-      "1820",
-      "2036",
-      "2076",
-      "2074",
-      "1598",
-      "1822"
+      "1600",
+      "1613"
     ],
     "mode": "manual_review_only_missing_images"
   },
