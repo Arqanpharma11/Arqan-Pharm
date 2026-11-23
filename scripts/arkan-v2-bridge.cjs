@@ -60,7 +60,9 @@ if(process.argv.includes('--ingest')){
         !/^\d+(?:\.\d+){3}$/.test(h);
     } catch { return false; }
   };
+  const remotePreviewEnabled=process.env.ARKAN_ALLOW_REMOTE_PREVIEWS==='1';
   for(const line of lines){
+    if(!remotePreviewEnabled)continue; // Asset publisher handles real files; do not hotlink unverified images.
     const values=splitCSV(line),r=Object.fromEntries(fields.map((k,i)=>[k,values[i]||'']));
     const product=approved.get(r.code);
     if(!product || records.byId[r.code] || known.has(r.code))continue;
@@ -90,5 +92,5 @@ if(process.argv.includes('--ingest')){
   if(queued)fs.writeFileSync(outFile,JSON.stringify(records,null,2)+'\n');
   // Advance even if no image was found, preventing endlessly repeating batch one.
   if(lines.length&&active.length)fs.writeFileSync(cursorFile,JSON.stringify({offset:(offset+batch.length)%active.length},null,2)+'\n');
-  console.log(JSON.stringify({searched:lines.length,publishedCandidateThumbnails:queued,arabicOnlyCandidates:arabicOnly,duplicateImages,rejectedForAutoPublication:blocked}));
+  console.log(JSON.stringify({searched:lines.length,publishedCandidateThumbnails:queued,arabicOnlyCandidates:arabicOnly,duplicateImages,remotePreviewEnabled,rejectedForAutoPublication:blocked}));
 }
