@@ -1162,6 +1162,22 @@
       "license": "source retailer image; commercial reuse rights not independently verified",
       "note": "Manually inspected retailer image shows matching brand, strength and dosage form. External hotlink; portal visibility not independently tested."
     },
+    "1589": {
+      "catalogName": "جلوكوفاج اكس ار500مجم",
+      "englishName": "Glucophage XR",
+      "title": "Glucophage XR 500 mg 30 Prolonged Release Tablets",
+      "url": "https://mohieldeenpharmacy.com/web/image/product.template/14928/image_1920?unique=18393e6",
+      "sourcePage": "https://mohieldeenpharmacy.com/shop/glucophage-xr-500-mg-30-prolonged-release-tablets-14928?category=220&page=2",
+      "source": "mohieldeenpharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_retailer_source_match",
+      "attribution": "mohieldeenpharmacy.com",
+      "license": "third-party source image; reuse rights unconfirmed",
+      "note": "Image inspected for product label/strength/form and size; source may be foreign-market packaging, remains unverified preview."
+    },
     "1731": {
       "url": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/dalacin-c-300-mg-10-capsules-840865.jpg?v=1735258044",
       "source": "re3ayapharmacy.com",
@@ -1547,6 +1563,22 @@
       "license": "source retailer image; commercial reuse rights not independently verified",
       "note": "Manual image check of packaging/name/strength/form. Retailer hotlink; availability not independently tested inside pharmacy PWA."
     },
+    "2869": {
+      "catalogName": "فولتارين جل صغير25 جم",
+      "englishName": "Voltaren",
+      "title": "Voltaren Emulgel 1% 25 g",
+      "url": "https://monibpharma.com/uploads/6966a9604259e.jpg",
+      "sourcePage": "https://monibpharma.com/",
+      "source": "monibpharma.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_retailer_source_match",
+      "attribution": "monibpharma.com",
+      "license": "third-party source image; reuse rights unconfirmed",
+      "note": "Image inspected for product label/strength/form and size; source may be foreign-market packaging, remains unverified preview."
+    },
     "2871": {
       "catalogName": "فولتارين جل وسط50 جم",
       "title": "Voltaren 1% Emulgel 50 gm",
@@ -1578,6 +1610,22 @@
       "attribution": "egyptdwa.com",
       "license": "retailer image; rights not independently verified",
       "note": "Visual packaging matched to catalog SKU; external image link, live PWA rendering unverified."
+    },
+    "3026": {
+      "catalogName": "فيوسيدين مرهم15جم",
+      "englishName": "Fucidin",
+      "title": "Fucidin Ointment 2% 15g",
+      "url": "https://media.myaster.com/images/products/1004465/fucidin-ointment-15g/1004465-2new.jpg",
+      "sourcePage": "https://www.myaster.com/en/online-pharmacy/p/fucidin-ointment-15g/1004465",
+      "source": "www.myaster.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_retailer_source_match",
+      "attribution": "www.myaster.com",
+      "license": "third-party source image; reuse rights unconfirmed",
+      "note": "Image inspected for product label/strength/form and size; source may be foreign-market packaging, remains unverified preview."
     },
     "3533": {
       "catalogName": "ليبيتور40 مجم 14 قرص",
@@ -1808,13 +1856,11 @@
   },
   "lastManualBatch": {
     "date": "2026-11-24",
-    "count": 5,
+    "count": 3,
     "ids": [
-      "3533",
-      "2871",
-      "42",
-      "210",
-      "3024"
+      "1589",
+      "2869",
+      "3026"
     ],
     "mode": "manual_review_only_missing_images"
   },
