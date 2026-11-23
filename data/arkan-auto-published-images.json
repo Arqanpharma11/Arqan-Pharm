@@ -1178,6 +1178,22 @@
       "license": "third-party source image; reuse rights unconfirmed",
       "note": "Image inspected for product label/strength/form and size; source may be foreign-market packaging, remains unverified preview."
     },
+    "1590": {
+      "catalogName": "جلوكوفانس500/5 س ج",
+      "englishName": "Glucovance",
+      "title": "Glucovance 500 mg/5 mg 30 film-coated tablets",
+      "url": "https://www.bloompharmacy.com/cdn/shop/files/transparent-Photoroom-Photoroom_1_1024x.jpg?v=1756995230",
+      "sourcePage": "https://www.bloompharmacy.com/products/glucovance-500-mg-5-mg-30-tablets",
+      "source": "www.bloompharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "retailer_pack_brand_strength_form_match",
+      "attribution": "www.bloompharmacy.com",
+      "license": "source product image; reuse rights not independently verified",
+      "note": "Retailer packaging matching known catalog brand and dosage; external link not independently tested in live PWA."
+    },
     "1731": {
       "url": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/dalacin-c-300-mg-10-capsules-840865.jpg?v=1735258044",
       "source": "re3ayapharmacy.com",
@@ -1258,6 +1274,38 @@
       "license": "external retailer image; rights not independently verified",
       "note": "Real retailer product image URL; exact pixels and availability not independently verified"
     },
+    "1873": {
+      "catalogName": "دياميكرون 60 مجم س ج",
+      "englishName": "Diamicron MR",
+      "title": "Diamicron MR 60 mg 30 modified release tablets",
+      "url": "https://mohieldeenpharmacy.com/web/image/product.template/11015/image_1920?unique=4ea31db",
+      "sourcePage": "https://www.mohieldeenpharmacy.com/shop/diamicron-mr-60-mg-30-modified-release-tablets-11015?category=223&page=4",
+      "source": "mohieldeenpharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "retailer_pack_brand_strength_form_match",
+      "attribution": "mohieldeenpharmacy.com",
+      "license": "source product image; reuse rights not independently verified",
+      "note": "Retailer packaging matching known catalog brand and dosage; external link not independently tested in live PWA."
+    },
+    "1912": {
+      "catalogName": "ديفلوكان150 مجم كبسول",
+      "englishName": "Diflucan",
+      "title": "Diflucan 150 mg 1 capsule Pfizer",
+      "url": "https://egyptdwa.com/dwa/diflucan-150mg-1-cap-3663.jpg",
+      "sourcePage": "https://egyptdwa.com/m/3663",
+      "source": "egyptdwa.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "retailer_pack_brand_strength_form_match",
+      "attribution": "egyptdwa.com",
+      "license": "source product image; reuse rights not independently verified",
+      "note": "Retailer packaging matching known catalog brand and dosage; external link not independently tested in live PWA."
+    },
     "1913": {
       "url": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/diflucan-50-mg-7-capsules-681137.jpg?v=1735256956",
       "source": "re3ayapharmacy.com",
@@ -1289,6 +1337,22 @@
       "attribution": "Re3aya Pharmacy",
       "license": "external retailer image; rights not independently verified",
       "note": "Real retailer product image URL; exact pixels and availability not independently verified"
+    },
+    "1970": {
+      "catalogName": "ديوريسيف500 شراب",
+      "englishName": "Duricef",
+      "title": "Duricef 500 mg/5ml oral suspension 60 ml",
+      "url": "https://api.c0umyt3cda-pharmaove1-p1-public.model-t.cc.commerce.ondemand.com/medias/000000000000001199.jpg?context=bWFzdGVyfGltYWdlc3wzNzA1OTh8aW1hZ2UvanBlZ3xhR1EyTDJoa1pTOHhNRGc1TlRrM016QTRPVE14TUM4d01EQXdNREF3TURBd01EQXdNREV4T1RrdWFuQm58N2IzMmQ0ODJhNTZhM2VkY2ZkYmJjYzZiZTJiZDk4NGMwMWFlMTgyMDQzZDNmYzNiY2QxY2RmMjdjMjljY2RjMw",
+      "sourcePage": "https://shop.pharmaemarket.com/pharma/ar/EGP/product/000000000000001199/",
+      "source": "shop.pharmaemarket.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "retailer_pack_brand_strength_form_match",
+      "attribution": "shop.pharmaemarket.com",
+      "license": "source product image; reuse rights not independently verified",
+      "note": "Retailer packaging matching known catalog brand and dosage; external link not independently tested in live PWA."
     },
     "2030": {
       "url": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/rositor-10-mg-14-tablets-307871.jpg?v=1735257558",
@@ -1322,6 +1386,22 @@
       "license": "external retailer image; rights not independently verified",
       "note": "Real retailer product image URL; exact pixels and availability not independently verified"
     },
+    "2108": {
+      "catalogName": "زاترال اكس ال10مجم",
+      "englishName": "Xatral XL",
+      "title": "Xatral XL 10 mg 30 prolonged-release tablets",
+      "url": "https://egyptdwa.com/dwa/xatral-xl-10mg-30tab-12669.jpg",
+      "sourcePage": "https://egyptdwa.com/m/12669",
+      "source": "egyptdwa.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "retailer_pack_brand_strength_form_match",
+      "attribution": "egyptdwa.com",
+      "license": "source product image; reuse rights not independently verified",
+      "note": "Retailer packaging matching known catalog brand and dosage; external link not independently tested in live PWA."
+    },
     "2144": {
       "url": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/zurcal-40-mg-14-tablets-728177.jpg?v=1735257813",
       "source": "re3ayapharmacy.com",
@@ -1353,6 +1433,22 @@
       "attribution": "Re3aya Pharmacy",
       "license": "external retailer image; rights not independently verified",
       "note": "Real retailer product image URL; exact pixels and availability not independently verified"
+    },
+    "2151": {
+      "catalogName": "زوكوزيت10/20مجم",
+      "englishName": "Zocozet",
+      "title": "Zocozet 10 mg/20 mg 14 Tablets",
+      "url": "https://www.bloompharmacy.com/cdn/shop/products/zocozet-10-mg-20-mg-14-tablets-970135.jpg?v=1687731890&width=1024",
+      "sourcePage": "https://www.bloompharmacy.com/products/zocozet-10-mg-20-mg-14-tablets",
+      "source": "www.bloompharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "retailer_pack_brand_strength_form_match",
+      "attribution": "www.bloompharmacy.com",
+      "license": "source product image; reuse rights not independently verified",
+      "note": "Retailer packaging matching known catalog brand and dosage; external link not independently tested in live PWA."
     },
     "2164": {
       "url": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/xithrone-500-mg-3-tablets-875232.jpg?v=1735257541",
@@ -1856,11 +1952,14 @@
   },
   "lastManualBatch": {
     "date": "2026-11-24",
-    "count": 3,
+    "count": 6,
     "ids": [
-      "1589",
-      "2869",
-      "3026"
+      "1590",
+      "2108",
+      "1912",
+      "2151",
+      "1970",
+      "1873"
     ],
     "mode": "manual_review_only_missing_images"
   },
