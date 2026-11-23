@@ -313,8 +313,7 @@ def compare_numbers(pn, tn):
 def evaluate(name, title, url_text="", barcode=""):
     """(درجة, حكم, باركود) - الحكم: reject / ok / review"""
     blob = f"{title} {url_text}"
-    if barcode and barcode in blob:
-        return 1.0, "ok", True
+    barcode_match = bool(barcode and len(barcode) >= 8 and re.search(r"(?<!\d)" + re.escape(barcode) + r"(?!\d)", blob))
     a = ordered_tokens(name)
     b = ordered_tokens(blob)
     if not a:
@@ -332,8 +331,15 @@ def evaluate(name, title, url_text="", barcode=""):
     cmp = compare_numbers(numbers_of(name), numbers_of(title))
     if cmp == "reject":
         return s, "reject", False
+    # Distinguish pack quantity (10 vs 20 tablets) from strength (500 mg).
+    pack_expected = sorted(float(n.replace(",", ".")) for n in re.findall(r"\d+(?:[.,]\d+)?", " ".join(COUNT_RE.findall(norm(name)))))
+    pack_observed = sorted(float(n.replace(",", ".")) for n in re.findall(r"\d+(?:[.,]\d+)?", " ".join(COUNT_RE.findall(norm(title)))))
+    if pack_expected and pack_observed and pack_expected != pack_observed:
+        return s, "reject", False
+    if pack_expected != pack_observed:
+        return s, "review", False
     confirmed = cmp == "confirmed" and (not pf or bool(tf))
-    return s, ("ok" if s >= 0.85 and confirmed else "review"), False
+    return s, ("ok" if s >= 0.85 and confirmed else "review"), barcode_match
 
 
 RANK = {"reject": 0, "review": 1, "ok": 2}
