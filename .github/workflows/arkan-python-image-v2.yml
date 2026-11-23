@@ -1,7 +1,7 @@
 name: Arkan bilingual Python image discovery
 on:
   schedule:
-    - cron: '32 */3 * * *'
+    - cron: '*/10 * * * *'
   workflow_dispatch:
   push:
     paths:
@@ -40,11 +40,15 @@ jobs:
           node --check scripts/arkan-v2-bridge.cjs
           python scripts/check_portal_javascript.py
       - name: Prepare ID-matched Arabic and English image search
+        env:
+          ARKAN_V2_BATCH_SIZE: '24'
         run: node scripts/arkan-v2-bridge.cjs
       - name: Bounded background image search; no browser processing
         run: |
-          python scripts/product_images_v2.py --csv data/arkan-v2-search-input.csv --en-col name_en --workers 2 --limit 12 --ocr --repo .
+          python scripts/product_images_v2.py --csv data/arkan-v2-search-input.csv --en-col name_en --workers 3 --limit 24 --ocr --repo .
       - name: Queue independently licensed candidates for the existing publisher
+        env:
+          ARKAN_V2_BATCH_SIZE: '24'
         run: node scripts/arkan-v2-bridge.cjs --ingest
       - name: Publish only independently OCR-verified packaging images
         env:
