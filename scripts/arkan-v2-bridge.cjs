@@ -6,9 +6,10 @@ const master=html.match(/const EXACT_MASTER_ITEMS\s*=\s*\[([\s\S]*?)\n\s*\];/);
 if(!master)throw Error('Master catalog missing');
 const items=[...master[1].matchAll(/\{\s*name:\s*"([^"]+)"\s*,\s*cat:\s*"([^"]+)"/g)]
   .map((m,i)=>({id:i<4218?i+1:230000+i-4218,name:m[1],cat:m[2]}));
-const excluded=(html.match(/const pdfExcludedIds\s*=\s*new Set\(\[([^\]]+)\]\)/)||[])[1];
+const excluded=(html.match(/const PDF_EXCLUDED_MASTER_POSITIONS\s*=\s*new Set\(\[([^\]]+)\]\)/)||[])[1];
 if(!excluded)throw Error('Missing PDF master exclusions');
 const exclusions=new Set(excluded.split(',').map(x=>+x.trim()));
+if(items.length-exclusions.size!==4489)throw Error('Approved PDF catalog cardinality mismatch');
 const start=html.indexOf('const ENGLISH_BRAND_REFERENCE = ');
 let english={};
 if(start>=0){
@@ -20,7 +21,7 @@ const imageEnd=html.indexOf('const imageSeedBatches',imageStart);
 if(imageStart<0||imageEnd<imageStart)throw Error('Image seed map missing');
 const known=new Set([...html.slice(imageStart,imageEnd).matchAll(/^\s*'(\d+)':\s*\{/gm)].map(x=>x[1]));
 const csvValue=x=>'"'+String(x||'').replace(/"/g,'""').replace(/[\r\n]/g,' ')+'"';
-const active=items.filter(x=>!exclusions.has(x.id)&&!known.has(String(x.id)));
+const active=items.filter((x,i)=>!exclusions.has(i+1)&&!known.has(String(x.id)));
 active.sort((a,b)=>Number(a.cat==='أدوية')-Number(b.cat==='أدوية')||a.id-b.id);
 const cursorFile='data/arkan-v2-cursor.json';
 const cursor=fs.existsSync(cursorFile)?JSON.parse(fs.readFileSync(cursorFile,'utf8')):{offset:0};
@@ -45,7 +46,7 @@ if(process.argv.includes('--ingest')){
   const lines=fs.readFileSync(file,'utf8').replace(/^\uFEFF/,'').trim().split(/\r?\n/);
   const fields=splitCSV(lines.shift()),outFile='data/arkan-auto-published-images.json';
   const records=JSON.parse(fs.readFileSync(outFile,'utf8'));records.byId||={};
-  const approved=new Map(items.filter(x=>!exclusions.has(x.id)).map(x=>[String(x.id),x]));
+  const approved=new Map(items.filter((x,i)=>!exclusions.has(i+1)).map(x=>[String(x.id),x]));
   let queued=0,blocked=0;
   for(const line of lines){
     const values=splitCSV(line),r=Object.fromEntries(fields.map((k,i)=>[k,values[i]||'']));
