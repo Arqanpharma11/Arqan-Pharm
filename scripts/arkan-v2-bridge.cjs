@@ -48,7 +48,7 @@ if(process.argv.includes('--ingest')){
   const fields=splitCSV(lines.shift()),outFile='data/arkan-auto-published-images.json';
   const records=JSON.parse(fs.readFileSync(outFile,'utf8'));records.byId||={};
   const approved=new Map(items.filter((x,i)=>!exclusions.has(i+1)).map(x=>[String(x.id),x]));
-  let queued=0,blocked=0;
+  let queued=0,blocked=0,arabicOnly=0;
   const safeExternalImage = value => {
     try {
       const u=new URL(value);
@@ -70,11 +70,11 @@ if(process.argv.includes('--ingest')){
     if(!previewOK && !autoOK)continue;
     const page=r.source_page||'',url=r.source_url||'';
     if(!safeExternalImage(url) || !safeExternalImage(page) ||
-       r.name!==product.name || !r.name_en){blocked++;continue;}
-    records.byId[r.code]={
+       r.name!==product.name){blocked++;continue;}
+    // Arabic-only catalog rows can still use the image search engine's strict title, strength and form checks.\n    // English aliases improve matching but are not mandatory for every Egyptian product.\n    if(!r.name_en)arabicOnly++;\n    records.byId[r.code]={
       url,source:new URL(page).hostname,sourcePage:page,license:'not_verified_for_redistribution',
       catalogName:product.name,englishName:r.name_en,
-      title:r.name_en+' '+r.name,status:'candidate_preview',
+      title:[r.name_en,r.name].filter(Boolean).join(' '),status:'candidate_preview',
       matchScore:Number(r.score),matchReason:r.reason,
       independentlyVerified:false,
       shownAsProductThumbnail:true
@@ -84,5 +84,5 @@ if(process.argv.includes('--ingest')){
   if(queued)fs.writeFileSync(outFile,JSON.stringify(records,null,2)+'\n');
   // Advance even if no image was found, preventing endlessly repeating batch one.
   if(lines.length&&active.length)fs.writeFileSync(cursorFile,JSON.stringify({offset:(offset+batch.length)%active.length},null,2)+'\n');
-  console.log(JSON.stringify({searched:lines.length,publishedCandidateThumbnails:queued,rejectedForAutoPublication:blocked}));
+  console.log(JSON.stringify({searched:lines.length,publishedCandidateThumbnails:queued,arabicOnlyCandidates:arabicOnly,rejectedForAutoPublication:blocked}));
 }
