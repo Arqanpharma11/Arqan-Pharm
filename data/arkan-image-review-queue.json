@@ -2852,6 +2852,119 @@
       "results": [],
       "reason": "no_match_found",
       "searchedAt": "2026-11-23T18:23:24.191Z"
+    },
+    "1036": {
+      "name": "بريبيوتك اكياس",
+      "en": "Prebiotic",
+      "results": [
+        {
+          "imageUrl": "https://images.openfoodfacts.org/images/products/506/085/364/0032/front_en.9.400.jpg",
+          "sourcePage": "https://world.openfoodfacts.org/product/5060853640032",
+          "title": "Bio & Me Original Gut-Loving Prebiotic* Yoghurt 350g",
+          "provider": "world.openfoodfacts.org",
+          "license": "Open Facts contributors — CC BY-SA 3.0 product photo; database ODbL; attribution/share-alike apply",
+          "foundAt": "2026-11-23T19:29:34.628Z",
+          "status": "pending_manual_packaging_and_license_review"
+        },
+        {
+          "imageUrl": "https://images.openfoodfacts.org/images/products/506/085/364/0025/front_en.3.400.jpg",
+          "sourcePage": "https://world.openfoodfacts.org/product/5060853640025",
+          "title": "bio me Mango prebiotic yoghurt 350g",
+          "provider": "world.openfoodfacts.org",
+          "license": "Open Facts contributors — CC BY-SA 3.0 product photo; database ODbL; attribution/share-alike apply",
+          "foundAt": "2026-11-23T19:29:34.628Z",
+          "status": "pending_manual_packaging_and_license_review"
+        },
+        {
+          "imageUrl": "https://images.openfoodfacts.org/images/products/070/958/651/4856/front_en.146.400.jpg",
+          "sourcePage": "https://world.openfoodfacts.org/product/0709586514856",
+          "title": "Poppi Strawberry Lemonade Prebiotic Soda 355 ml / 12oz",
+          "provider": "world.openfoodfacts.org",
+          "license": "Open Facts contributors — CC BY-SA 3.0 product photo; database ODbL; attribution/share-alike apply",
+          "foundAt": "2026-11-23T19:29:34.628Z",
+          "status": "pending_manual_packaging_and_license_review"
+        },
+        {
+          "imageUrl": "https://images.openfoodfacts.org/images/products/072/419/081/2877/front_en.121.400.jpg",
+          "sourcePage": "https://world.openfoodfacts.org/product/0724190812877",
+          "title": "Poppi Prebiotic Soda Drink 1 16 fl oz",
+          "provider": "world.openfoodfacts.org",
+          "license": "Open Facts contributors — CC BY-SA 3.0 product photo; database ODbL; attribution/share-alike apply",
+          "foundAt": "2026-11-23T19:29:34.628Z",
+          "status": "pending_manual_packaging_and_license_review"
+        }
+      ],
+      "reason": "needs_review"
+    },
+    "1037": {
+      "name": "بريت غسول",
+      "en": "",
+      "results": [],
+      "reason": "no_match_found",
+      "searchedAt": "2026-11-23T19:29:37.014Z"
+    },
+    "1043": {
+      "name": "بريتير رول اون",
+      "en": "Prettier",
+      "results": [],
+      "reason": "no_match_found",
+      "searchedAt": "2026-11-23T19:29:38.853Z"
+    },
+    "1046": {
+      "name": "بريتير فاشيال ووش فومينج",
+      "en": "Prettier",
+      "results": [],
+      "reason": "no_match_found",
+      "searchedAt": "2026-11-23T19:29:40.047Z"
+    },
+    "1047": {
+      "name": "بريجناستيب اقراص",
+      "en": "",
+      "results": [],
+      "reason": "no_match_found",
+      "searchedAt": "2026-11-23T19:29:42.734Z"
+    },
+    "1048": {
+      "name": "بريجنافيكس كبسول س ج",
+      "en": "Pregnavix",
+      "results": [],
+      "reason": "no_match_found",
+      "searchedAt": "2026-11-23T19:29:44.382Z"
+    },
+    "1049": {
+      "name": "بريجناكير بﻼس كبسول",
+      "en": "Pregnacare Plus",
+      "results": [],
+      "reason": "no_match_found",
+      "searchedAt": "2026-11-23T19:29:46.032Z"
+    },
+    "1053": {
+      "name": "بريدنيزولون20 مل بديل سولوبريد",
+      "en": "",
+      "results": [],
+      "reason": "no_match_found",
+      "searchedAt": "2026-11-23T19:29:48.003Z"
+    },
+    "1054": {
+      "name": "بريدوفينكس اقراص س ج",
+      "en": "",
+      "results": [],
+      "reason": "no_match_found",
+      "searchedAt": "2026-11-23T19:29:49.603Z"
+    },
+    "1055": {
+      "name": "بريدوكايين كريم صغير15 جم",
+      "en": "",
+      "results": [],
+      "reason": "no_match_found",
+      "searchedAt": "2026-11-23T19:29:51.165Z"
+    },
+    "1056": {
+      "name": "بريدوكايين كريم كبير30 جم",
+      "en": "",
+      "results": [],
+      "reason": "no_match_found",
+      "searchedAt": "2026-11-23T19:29:52.810Z"
     }
   }
 }
