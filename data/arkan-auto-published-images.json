@@ -1,6 +1,23 @@
 {
   "version": 2,
   "byId": {
+    "69": {
+      "id": "69",
+      "catalogName": "ابيمول اقراص س ج",
+      "title": "Abimol 500 mg - 20 Tablets",
+      "url": "https://www.bloompharmacy.com/cdn/shop/products/abimol-500-mg-20-tablets-7308198.jpg?v=1764283687&width=1200",
+      "source": "bloompharmacy.com",
+      "sourcePage": "https://www.bloompharmacy.com/ar/products/abimol-500-mg-20-%D9%82%D8%B1%D8%B5%D9%8B%D8%A7",
+      "englishName": "Abimol",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_retailer_source_match",
+      "attribution": "bloompharmacy.com",
+      "license": "source retailer image; commercial reuse rights not independently verified",
+      "note": "Manually inspected retailer image shows matching brand, strength and dosage form. External hotlink; portal visibility not independently tested."
+    },
     "230": {
       "url": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/344362.webp?v=1786660322",
       "source": "azzampharmacy.com",
@@ -933,6 +950,23 @@
       "license": "external retailer image; rights not independently verified",
       "note": "Real retailer image URL; packaging pixels and remote availability not independently verified"
     },
+    "1404": {
+      "id": "1404",
+      "catalogName": "تلفاست120 مج اقراص س ج",
+      "title": "Telfast 120 mg - 20 Tablets",
+      "url": "https://re3ayapharmacy.com/cdn/shop/files/telfast-120-mg-20-tablets-957584.jpg?v=1735257747&width=1946",
+      "source": "re3ayapharmacy.com",
+      "sourcePage": "https://re3ayapharmacy.com/products/telfast-120-mg-20-tablets",
+      "englishName": "Telfast",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_retailer_source_match",
+      "attribution": "re3ayapharmacy.com",
+      "license": "source retailer image; commercial reuse rights not independently verified",
+      "note": "Manually inspected retailer image shows matching brand, strength and dosage form. External hotlink; portal visibility not independently tested."
+    },
     "1405": {
       "url": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/telfast-180-mg-20-tablets-626874.jpg?v=1735258028",
       "source": "re3ayapharmacy.com",
@@ -1044,6 +1078,40 @@
       "attribution": "Re3aya Pharmacy",
       "license": "external retailer image; rights not independently verified",
       "note": "Real retailer product image URL; exact pixels and availability not independently verified"
+    },
+    "1587": {
+      "id": "1587",
+      "catalogName": "جلوكوفاج1000مجم كس ار",
+      "title": "Glucophage XR 1000 mg - 30 Tablets",
+      "url": "https://re3ayapharmacy.com/cdn/shop/files/glucophage-xr-1000-mg-30-tablets-587341.jpg?v=1735258156&width=1946",
+      "source": "re3ayapharmacy.com",
+      "sourcePage": "https://re3ayapharmacy.com/products/glucophage-xr-1000-mg-30-tablets",
+      "englishName": "Glucophage XR",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_retailer_source_match",
+      "attribution": "re3ayapharmacy.com",
+      "license": "source retailer image; commercial reuse rights not independently verified",
+      "note": "Manually inspected retailer image shows matching brand, strength and dosage form. External hotlink; portal visibility not independently tested."
+    },
+    "1588": {
+      "id": "1588",
+      "catalogName": "جلوكوفاج500 مجم س ج",
+      "title": "Glucophage 500 mg - 50 Tablets",
+      "url": "https://re3ayapharmacy.com/cdn/shop/files/glucophage-500-mg-50-tablets-277474.jpg?v=1735258074&width=1946",
+      "source": "re3ayapharmacy.com",
+      "sourcePage": "https://re3ayapharmacy.com/products/glucophage-500-mg-50-tablets",
+      "englishName": "Glucophage",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_retailer_source_match",
+      "attribution": "re3ayapharmacy.com",
+      "license": "source retailer image; commercial reuse rights not independently verified",
+      "note": "Manually inspected retailer image shows matching brand, strength and dosage form. External hotlink; portal visibility not independently tested."
     },
     "1731": {
       "url": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/dalacin-c-300-mg-10-capsules-840865.jpg?v=1735258044",
@@ -1593,11 +1661,12 @@
   },
   "lastManualBatch": {
     "date": "2026-11-24",
-    "count": 3,
+    "count": 4,
     "ids": [
-      "613",
-      "2863",
-      "725"
+      "69",
+      "1404",
+      "1588",
+      "1587"
     ],
     "mode": "manual_review_only_missing_images"
   },
