@@ -12,6 +12,7 @@ on:
       - 'scripts/arkan-visual-publish.py'
       - 'scripts/arkan-publish-matched-assets.cjs'
       - 'scripts/test_arkan_publish_matched_assets.cjs'
+      - 'scripts/check_arkan_asset_publication.cjs'
       - '.github/workflows/arkan-python-image-v2.yml'
 permissions:
   contents: write
@@ -68,6 +69,8 @@ jobs:
           python scripts/arkan-visual-publish.py
           python scripts/check_pharmacy_image_integrity.py
           python scripts/check_portal_javascript.py
+      - name: Verify image files and published manifest before commit
+        run: node scripts/check_arkan_asset_publication.cjs
       - name: Commit small verified photo batches and state
         run: |
           git config user.name "github-actions[bot]"
@@ -77,6 +80,9 @@ jobs:
           git commit -m "chore: bilingual image bot OCR results"
           git pull --rebase origin main
           git push origin HEAD:main
+          actual="$(git ls-remote origin refs/heads/main | cut -f1)"
+          expected="$(git rev-parse HEAD)"
+          test "$actual" = "$expected" || { echo "ERROR: GitHub remote head differs from published commit"; exit 1; }
       - name: Keep rejected and uncertain results outside storefront
         if: always()
         uses: actions/upload-artifact@v4
