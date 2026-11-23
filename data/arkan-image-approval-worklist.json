@@ -2,14 +2,14 @@
  "format": "arkan-image-approval-worklist",
  "version": 1,
  "totalCatalogItems": 4218,
- "candidateItemsReviewed": 1331,
- "metadataPassItemCount": 635,
+ "candidateItemsReviewed": 1332,
+ "metadataPassItemCount": 637,
  "status": "metadata_filtered_NOT_VISUALLY_APPROVED",
  "rejectionCounts": {
-  "metadata_pass_needs_visual_review": 635,
+  "metadata_pass_needs_visual_review": 637,
   "modified_release_not_confirmed": 1,
   "strength_or_stage_not_present_in_catalog": 967,
-  "strength_stage_or_pack_mismatch": 79,
+  "strength_stage_or_pack_mismatch": 80,
   "previous_verified_listing_form_mismatch": 4,
   "dosage_form_mismatch": 12,
   "commercial_brand_mismatch": 116,
@@ -2770,17 +2770,17 @@
    "reviewCandidates": [],
    "excluded": [
     {
-     "title": "Isis Pharma Teen Derm Senstive Purifying Cleansing gel - 250ml",
-     "source": "Bloom Pharmacy",
-     "reason": "strength_or_stage_not_present_in_catalog"
-    },
-    {
      "title": "Isis Pharma Teen Derm Gel - 150ml",
      "source": "Bloom Pharmacy",
      "reason": "strength_or_stage_not_present_in_catalog"
     },
     {
      "title": "Isis Pharma Teen Derm Hydra - 40ml",
+     "source": "Bloom Pharmacy",
+     "reason": "strength_or_stage_not_present_in_catalog"
+    },
+    {
+     "title": "Isis Pharma Glyco A Post Peeling Cream - 40ml",
      "source": "Bloom Pharmacy",
      "reason": "strength_or_stage_not_present_in_catalog"
     }
@@ -2829,17 +2829,17 @@
    "reviewCandidates": [],
    "excluded": [
     {
-     "title": "Isis Pharma Teen Derm Senstive Purifying Cleansing gel - 250ml",
-     "source": "Bloom Pharmacy",
-     "reason": "strength_or_stage_not_present_in_catalog"
-    },
-    {
      "title": "Isis Pharma Teen Derm Gel - 150ml",
      "source": "Bloom Pharmacy",
      "reason": "strength_or_stage_not_present_in_catalog"
     },
     {
      "title": "Isis Pharma Teen Derm Hydra - 40ml",
+     "source": "Bloom Pharmacy",
+     "reason": "strength_or_stage_not_present_in_catalog"
+    },
+    {
+     "title": "Isis Pharma Glyco A Post Peeling Cream - 40ml",
      "source": "Bloom Pharmacy",
      "reason": "strength_or_stage_not_present_in_catalog"
     }
@@ -2990,17 +2990,17 @@
    "reviewCandidates": [],
    "excluded": [
     {
-     "title": "Isis Pharma Teen Derm Senstive Purifying Cleansing gel - 250ml",
-     "source": "Bloom Pharmacy",
-     "reason": "strength_or_stage_not_present_in_catalog"
-    },
-    {
      "title": "Isis Pharma Teen Derm Gel - 150ml",
      "source": "Bloom Pharmacy",
      "reason": "strength_or_stage_not_present_in_catalog"
     },
     {
      "title": "Isis Pharma Teen Derm Hydra - 40ml",
+     "source": "Bloom Pharmacy",
+     "reason": "strength_or_stage_not_present_in_catalog"
+    },
+    {
+     "title": "Isis Pharma Glyco A Post Peeling Cream - 40ml",
      "source": "Bloom Pharmacy",
      "reason": "strength_or_stage_not_present_in_catalog"
     }
@@ -11821,6 +11821,11 @@
    "reviewCandidates": [],
    "excluded": [
     {
+     "title": "Sanso C Plus - 28 Tablets",
+     "source": "Bloom Pharmacy",
+     "reason": "strength_or_stage_not_present_in_catalog"
+    },
+    {
      "title": "SANSO C PLUS 900 MG ( VIT. A 450 MCG + VIT. C 900 MG + VIT. D3 1000 IU + VIT. E 15 MG + ZINC  11 MG ) 28 TABLETS",
      "source": "Re3aya Pharmacy",
      "reason": "strength_or_stage_not_present_in_catalog"
@@ -11841,17 +11846,17 @@
    "reviewCandidates": [],
    "excluded": [
     {
+     "title": "Sanso C Plus - 28 Tablets",
+     "source": "Bloom Pharmacy",
+     "reason": "strength_or_stage_not_present_in_catalog"
+    },
+    {
      "title": "Sanso Zinc 25 mg 30-Tablets",
      "source": "Re3aya Pharmacy",
      "reason": "strength_or_stage_not_present_in_catalog"
     },
     {
      "title": "Sanso D3 Plus 28-Tablets",
-     "source": "Re3aya Pharmacy",
-     "reason": "strength_or_stage_not_present_in_catalog"
-    },
-    {
-     "title": "SANSO CAL-D ( VIT. D 400 IU + CALCIUM 800 MG + MAGNESIUM 130 MG + ZINC 5 MG + COPPER 440 MCG + SELENIUM 30 MCG + BORON 7.38 MG ) 30 CHEWABLE TABLETS",
      "source": "Re3aya Pharmacy",
      "reason": "strength_or_stage_not_present_in_catalog"
     }
@@ -17593,21 +17598,6 @@
     {
      "title": "Ferrodep  Syrup  150 Ml",
      "source": "Azzam Pharmacy",
-     "reason": "strength_or_stage_not_present_in_catalog"
-    }
-   ]
-  },
-  {
-   "id": 2949,
-   "name": "فيروديب كبسول",
-   "englishName": "Ferrodep",
-   "status": "needs_corrected_candidate",
-   "exactMatchConfirmed": false,
-   "reviewCandidates": [],
-   "excluded": [
-    {
-     "title": "Ferrodep - 30 Capsules",
-     "source": "Bloom Pharmacy",
      "reason": "strength_or_stage_not_present_in_catalog"
     }
    ]
@@ -23448,14 +23438,6 @@
    "exactMatchConfirmed": false,
    "reviewCandidates": [
     {
-     "title": "Mounjaro Kwikpen 10 Mg / 0.6 Ml X 4 Doses",
-     "imageUrl": "https://cdn.shopify.com/s/files/1/0774/7151/4932/files/mounjaro-kwikpen-10-mg-06-ml-x-4-doses-1622980.jpg?v=1757591978",
-     "sourceName": "Bloom Pharmacy",
-     "productPage": "https://www.bloompharmacy.com/products/mounjaro-kwikpen-10-mg-0-6-ml-x-4-doses",
-     "score": 0.76,
-     "status": "needs_visual_pack_review"
-    },
-    {
      "title": "Mounjaro  10 Mg / 0.5 Ml  S.c.  4 Vial",
      "imageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/615205.webp?v=1786657707",
      "sourceName": "Azzam Pharmacy",
@@ -23481,14 +23463,6 @@
    "status": "metadata_pass_needs_visual_review",
    "exactMatchConfirmed": false,
    "reviewCandidates": [
-    {
-     "title": "Mounjaro Kwikpen 15 Mg / 0.6 Ml x 4 Doses",
-     "imageUrl": "https://cdn.shopify.com/s/files/1/0774/7151/4932/files/mounjaro-kwikpen-15-mg-06-ml-x-4-doses-1391073.jpg?v=1760600765",
-     "sourceName": "Bloom Pharmacy",
-     "productPage": "https://www.bloompharmacy.com/products/mounjaro-kwikpen-15-mg-0-6-ml-x-4-doses",
-     "score": 0.76,
-     "status": "needs_visual_pack_review"
-    },
     {
      "title": "Mounjaro  15 Mg / 0.6 Ml  S.c.  1 Kwik-Pen  2.4 Ml / 4 Doses",
      "imageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/616588.webp?v=1786656394",
@@ -23542,14 +23516,6 @@
    "exactMatchConfirmed": false,
    "reviewCandidates": [
     {
-     "title": "Mounjaro Kwikpen 5 Mg / 0.6 Ml x 4 Doses",
-     "imageUrl": "https://cdn.shopify.com/s/files/1/0774/7151/4932/files/mounjaro-5-mg-prefilled-pen-1-pen-4-doses-5227845.jpg?v=1755044894",
-     "sourceName": "Bloom Pharmacy",
-     "productPage": "https://www.bloompharmacy.com/products/mounjaro-5-mg-prefilled-pen-1-pen-4-doses",
-     "score": 0.76,
-     "status": "needs_visual_pack_review"
-    },
-    {
      "title": "MOUNJARO 5 MG 1 PEN Mounjaro",
      "imageUrl": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/rn-image_picker_lib_temp_5decfce4-e37e-4f8c-9469-d5810c2027a4.jpg?v=1784329613",
      "sourceName": "Re3aya Pharmacy",
@@ -23560,8 +23526,13 @@
    ],
    "excluded": [
     {
-     "title": "Mounjaro Kwikpen 7.5 Mg / 0.6 Ml x 4 Doses",
+     "title": "Mounjaro Kwikpen 12.5 Mg / 0.6 Ml x 4 Doses",
      "source": "Bloom Pharmacy",
+     "reason": "strength_stage_or_pack_mismatch"
+    },
+    {
+     "title": "MOUNJARO 2.5 MG 1 PEN Mounjaro",
+     "source": "Re3aya Pharmacy",
      "reason": "strength_stage_or_pack_mismatch"
     }
    ]
@@ -23573,14 +23544,6 @@
    "status": "metadata_pass_needs_visual_review",
    "exactMatchConfirmed": false,
    "reviewCandidates": [
-    {
-     "title": "Mounjaro Kwikpen 7.5 Mg / 0.6 Ml x 4 Doses",
-     "imageUrl": "https://cdn.shopify.com/s/files/1/0774/7151/4932/files/mounjaro-75-mg-prefilled-pen-1-pen-4-doses-7932409.jpg?v=1755044894",
-     "sourceName": "Bloom Pharmacy",
-     "productPage": "https://www.bloompharmacy.com/products/mounjaro-7-5-mg-prefilled-pen-1-pen-4-doses",
-     "score": 0.76,
-     "status": "needs_visual_pack_review"
-    },
     {
      "title": "Mounjaro  7.5 Mg / 0.5 Ml  S.c.  4 Vial",
      "imageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/615204.webp?v=1786657708",
@@ -24525,6 +24488,32 @@
    "excluded": []
   },
   {
+   "id": 3924,
+   "name": "ناو سيلينيوم200 مل",
+   "englishName": "NOW Foods",
+   "status": "metadata_pass_needs_visual_review",
+   "exactMatchConfirmed": false,
+   "reviewCandidates": [
+    {
+     "title": "Now Foods Psyllium Husk Caps 500mg Intestinal Health - 200 Veg Capsules",
+     "imageUrl": "https://cdn.shopify.com/s/files/1/0774/7151/4932/products/now-psyllium-husk-caps-500mg-intestinal-health-200-veg-capsules-115366.jpg?v=1697423194",
+     "sourceName": "Bloom Pharmacy",
+     "productPage": "https://www.bloompharmacy.com/products/now-psyllium-husk-caps-500mg-intestinal-health-200-veg-capsules",
+     "score": 0.82,
+     "status": "needs_visual_pack_review"
+    },
+    {
+     "title": "Now Foods Selenium 200 mcg - 90 Capsules",
+     "imageUrl": "https://cdn.shopify.com/s/files/1/0774/7151/4932/products/now-selenium-200-mcg-90-capsules-281626.jpg?v=1687733249",
+     "sourceName": "Bloom Pharmacy",
+     "productPage": "https://www.bloompharmacy.com/products/now-selenium-200-mcg-90-capsules",
+     "score": 0.82,
+     "status": "needs_visual_pack_review"
+    }
+   ],
+   "excluded": []
+  },
+  {
    "id": 3925,
    "name": "ناو فيتامين سى100 قرص",
    "englishName": "NOW Foods",
@@ -24537,6 +24526,32 @@
      "sourceName": "Bloom Pharmacy",
      "productPage": "https://www.bloompharmacy.com/products/now-vitamin-c-1000-mg-100-tablets",
      "score": 0.92,
+     "status": "needs_visual_pack_review"
+    }
+   ],
+   "excluded": []
+  },
+  {
+   "id": 3926,
+   "name": "ناو ميﻼتونين3 مل",
+   "englishName": "NOW Foods",
+   "status": "metadata_pass_needs_visual_review",
+   "exactMatchConfirmed": false,
+   "reviewCandidates": [
+    {
+     "title": "Now Foods Ultra Omega 3 Fish Oil - 90 Capsules",
+     "imageUrl": "https://cdn.shopify.com/s/files/1/0774/7151/4932/products/now-ultra-omega-3-fish-oil-90-capsules-196560.jpg?v=1687733250",
+     "sourceName": "Bloom Pharmacy",
+     "productPage": "https://www.bloompharmacy.com/products/now-ultra-omega-3-fish-oil-90-capsules",
+     "score": 0.82,
+     "status": "needs_visual_pack_review"
+    },
+    {
+     "title": "Now Foods Melatonin 3 mg Healthy Sleep Cycle - 60 Capsules",
+     "imageUrl": "https://cdn.shopify.com/s/files/1/0774/7151/4932/products/now-melatonin-3-mg-healthy-sleep-cycle-60-capsules-315594.jpg?v=1687733249",
+     "sourceName": "Bloom Pharmacy",
+     "productPage": "https://www.bloompharmacy.com/products/now-melatonin-3-mg-healthy-sleep-cycle-60-capsules",
+     "score": 0.82,
      "status": "needs_visual_pack_review"
     }
    ],
