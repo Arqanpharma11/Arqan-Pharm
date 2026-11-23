@@ -7177,7 +7177,7 @@
 
                 // Verified package-photo seed: Apple-Lite 30 tablets (catalog item #10).
                 // Source page shows the exact Apple-Lite pack; do not use lookalike images.
-                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v63';;;;;
+                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v64';;;;;
                 if (localStorage.getItem(IMAGE_SEED_VERSION) !== '1') {
                     // Individually checked package photos: brand, strength/stage and form match.
                     const verifiedImageSeeds = {
@@ -7813,6 +7813,17 @@
                         '575': { src: 'https://abdinpharmacies.com/web/image/product.template/28005/image_1920?unique=dd54b75', source: 'Abdin Pharmacies — Anoxicam 20 mg, 10 suppositories; exact brand and dosage form' },
                         '519': { src: 'https://www.lotusonline.com/cdn/shop/files/3003494_1.jpg?v=1767615927&width=1500', source: 'Lotus Pharmacies — Angiosartan 40 mg, 28 tablets; actual retail box' },
                         '521': { src: 'assets/product-images/521.jpg', source: 'Doctor M Pharmacy — Angiosartan Plus 40/25 mg, 28 tablets; actual retail box' },
+                        // Manual visual-source review batch, 2026-11-23: source/pack labels matched; keep UI changes minimal.
+                        '163': { src: 'https://www.lotusonline.com/cdn/shop/files/3009218_processed.jpg?v=1773701742', source: 'Lotus Pharmacies — Artisoy joint supplement 30 film-coated tablets; pack image and label manually matched' },
+                        '268': { src: 'https://www.avicenonline.com/cdn/shop/files/octozinc-25mg-zinc-20-capsules.png?v=1770602922', source: 'Avicen Online — Octozinc 25 mg zinc 20 capsules; actual box and blister visually matched' },
+                        '326': { src: 'https://i0.wp.com/algomhoriapharmacy.com/wp-content/uploads/2023/08/1.jpg?fit=482%2C482&ssl=1', source: 'AlGomhoria Pharmacy — Elbavit With Iron syrup 60 ml; actual bottle and carton visually matched' },
+                        '360': { src: 'https://www.lotusonline.com/cdn/shop/files/3006622_1.jpg?v=1767616175', source: 'Lotus Pharmacies — Ulsorest rebamipide 100 mg 30 tablets; actual box and strength visually matched' },
+                        '407': { src: 'https://www.cosmapay.com/storage/elega-cleanser-800x800.webp', source: 'Cosmapay — Elega Facial Cleanser 150 ml; bottle form and brand visibly matched' },
+                        '516': { src: 'https://delmar-test.linkedgates.com/images/items/128657-v1.JPEG', source: 'Delmar and Attalla — Angiosartan olmesartan 10 mg 28 film-coated tablets; exact visible strength' },
+                        '667': { src: 'https://www.lotusonline.com/cdn/shop/files/3009007_processed.jpg?v=1773308250', source: 'Lotus Pharmacies — Osteo Zad calcium syrup 120 ml; front carton and volume visually matched' },
+                        '750': { src: 'https://lifemasr.com/wp-content/uploads/2023/08/6222001400229.png', source: 'Life Pharmacy — Itomash itopride 50 mg 30 tablets; actual box and tablet form visually matched' },
+                        '767': { src: 'https://dkud4u09qff41.cloudfront.net/Products/59bdb74c-69e7-4515-963b-18cb1519399e.jpeg', source: 'Vezeeta Pharmacy — Eraloner eplerenone 50 mg 20 film-coated tablets; exact box visually matched' },
+                        '768': { src: 'https://re3ayapharmacy.com/cdn/shop/files/eraloner-25mg-20-tablets-514939.jpg?v=1735257563', source: 'Re3aya Pharmacy — Eraloner eplerenone 25 mg 20 film-coated tablets; exact box visually matched' },
                     };
                     // Apply the verified image seed set once, then batch cloud writes.
                     const imageSeedBatches = (typeof firestoreDB !== 'undefined' && firestoreDB) ? [] : null;
@@ -7831,10 +7842,11 @@
                     const imageLegacySeedSources = {"3": "Lotus Pharmacies — Ibandrocare 150 mg, 2 film-coated tablets; exact brand and strength verified", "36": "PharmaciaTy — Epifasi 5000 IU, 1 ampoule plus solvent; exact brand and strength verified", "75": "Lotus Pharmacies — Atacand 4 mg, 14 tablets; exact brand and strength verified", "101": "Lotus Pharmacies — Atorstat 80 mg, 10 scored tablets; exact brand, strength and pack verified", "85": "Al-Dawaa Pharmacy — Atrovent 500 mcg/2 ml, 20 unit-dose inhalation vials; exact strength and pack verified", "86": "Al-Dawaa Pharmacy — Atrovent 250 mcg/2 ml, 20 unit-dose inhalation vials; exact strength and pack verified"};
                     Object.entries(verifiedImageSeeds).forEach(([id, seed]) => {
                         if (seed.src && (PROD_IMG_VERIFIED[id] !== true || PROD_IMG_SRC[id] === seed.source || (seed.src.startsWith('assets/product-images/') && Object.prototype.hasOwnProperty.call(imageLegacySeedSources, String(id)) && imageLegacySeedSources[String(id)] === PROD_IMG_SRC[id]) || (correctedPharmacyPhotoIds.has(String(id)) && (/^(Abdin Pharmacies|Rosheta)\s*—/.test(PROD_IMG_SRC[id] || ''))))) {
+                            const alreadySynced = PROD_IMG_VERIFIED[id] === true && PROD_IMAGES[id] === seed.src && PROD_IMG_SRC[id] === seed.source;
                             PROD_IMAGES[id] = seed.src;
                             PROD_IMG_SRC[id] = seed.source;
                             PROD_IMG_VERIFIED[id] = true;
-                            if (imageSeedBatch) {
+                            if (imageSeedBatch && !alreadySynced) {
                                 imageSeedBatch.set(firestoreDB.collection('productImages').doc(String(id)), {
                                     src: seed.src, source: seed.source, verified: true
                                 });
