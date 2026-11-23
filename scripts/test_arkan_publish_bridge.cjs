@@ -6,8 +6,8 @@ const path = require('node:path');
 const cp = require('node:child_process');
 const fixture = fs.mkdtempSync(path.join(os.tmpdir(), 'arkan-publish-test-'));
 const bridge = path.resolve(__dirname, 'arkan-v2-bridge.cjs');
-const run = (...args) => JSON.parse(cp.execFileSync(process.execPath, [bridge, ...args], {
-  cwd: fixture, encoding: 'utf8', env: {...process.env, ARKAN_V2_BATCH_SIZE: '3'}
+const run = (args=[], allowRemote=false) => JSON.parse(cp.execFileSync(process.execPath, [bridge, ...args], {
+  cwd: fixture, encoding: 'utf8', env: {...process.env, ARKAN_V2_BATCH_SIZE: '3', ARKAN_ALLOW_REMOTE_PREVIEWS: allowRemote?'1':'0'}
 }).trim());
 try {
   fs.mkdirSync(path.join(fixture, 'data'));
@@ -29,7 +29,10 @@ try {
     '3,"صنف تجريبي 10 قرص",,review,ocr_mismatch,0.99,2,https://images.example.com/3.webp,https://shop.example.com/3\n'+
     '4,"صنف 4",,auto,ocr,0.99,2,https://images.example.com/1.webp,https://shop.example.com/4\n'+
     '5,"صنف 5",,review,conflicting_images,0.99,2,https://images.example.com/5.webp,https://shop.example.com/5\n');
-  const result=run('--ingest');
+  const blockedByDefault=run(['--ingest']);
+  assert.equal(blockedByDefault.publishedCandidateThumbnails,0);
+  assert.deepEqual(JSON.parse(fs.readFileSync(path.join(fixture,'data/arkan-auto-published-images.json'),'utf8')).byId,{});
+  const result=run(['--ingest'],true);
   const saved=JSON.parse(fs.readFileSync(path.join(fixture,'data/arkan-auto-published-images.json'),'utf8'));
   assert.equal(result.publishedCandidateThumbnails,1);
   assert.equal(result.arabicOnlyCandidates,1);
