@@ -10,7 +10,7 @@ permissions:
 jobs:
   verify:
     runs-on: ubuntu-latest
-    timeout-minutes: 8
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -30,3 +30,22 @@ jobs:
         run: |
           python scripts/check_portal_javascript.py
           node --check sw.js
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install browser for real desktop and mobile responsiveness checks
+        run: |
+          npm install --no-save playwright
+          npx playwright install --with-deps chromium
+      - name: Smoke-test portal on desktop and mobile, including login-entry button
+        run: node scripts/smoke_portal_browser.mjs
+      - name: Upload responsiveness diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: arkan-portal-responsiveness
+          if-no-files-found: ignore
+          path: |
+            portal-smoke-report.json
+            portal-smoke-desktop.png
+            portal-smoke-mobile.png
