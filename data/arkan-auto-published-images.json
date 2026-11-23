@@ -1692,6 +1692,22 @@
       "license": "source retailer image; commercial reuse rights not independently verified",
       "note": "Real packaging visually inspected against catalog. Externally linked, not independently verified in live PWA."
     },
+    "4693": {
+      "catalogName": "ليبيتور80مجم 14قرص",
+      "title": "Lipitor 80 mg - 14 Tablets",
+      "url": "https://re3ayapharmacy.com/cdn/shop/files/lipitor-80-mg-14-tablets-925185.jpg?v=1735257034&width=1946",
+      "sourcePage": "https://re3ayapharmacy.com/products/lipitor-80-mg-14-tablets",
+      "englishName": "Lipitor",
+      "source": "re3ayapharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_retailer_source_match",
+      "attribution": "Re3aya Pharmacy",
+      "license": "source retailer image; commercial reuse rights not independently verified",
+      "note": "Real packaging visually inspected against SKU. Retailer hotlink; displayed page not browser-smoke tested."
+    },
     "4728": {
       "id": "4728",
       "catalogName": "ميبو مرهم 30جم وسط س ج",
@@ -1712,11 +1728,9 @@
   },
   "lastManualBatch": {
     "date": "2026-11-24",
-    "count": 3,
+    "count": 1,
     "ids": [
-      "4728",
-      "4595",
-      "1406"
+      "4693"
     ],
     "mode": "manual_review_only_missing_images"
   },
