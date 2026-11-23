@@ -1,0 +1,134 @@
+{
+  "version": 1,
+  "scope": "only_catalog_products_without_any_preexisting_photo",
+  "schedule": "hourly",
+  "photosTargetPerRun": 50,
+  "runLog": [
+    {
+      "runDate": "2026-11-24",
+      "kind": "ChatGPT_manual_web_and_image_inspection",
+      "newlyLinkedPhotos": 11,
+      "verifiedPortalRender": false,
+      "verifiedRemoteImagePixelsManually": true,
+      "filesSelfHosted": false,
+      "gitCommits": [
+        "f1a00a9befe78ab01a511ed062f05973dbcf4b22",
+        "bd2ba60010371c86964259920fa1ca2ae903c762",
+        "185df09150424cab4d37d4ead1593ca1a64253d2",
+        "955ca380158e1779b045008ae9e4a5457cd9d25b"
+      ],
+      "linked": [
+        {
+          "id": "613",
+          "name": "اوجمنتين600 شراب",
+          "result": "added_as_unverified_real_pack_preview",
+          "source": "https://re3ayapharmacy.com/products/augmentin-es-600-mg-suspension-75-ml",
+          "assetUrl": "https://re3ayapharmacy.com/cdn/shop/files/augmentin-es-600-mg-suspension-75-ml-649742.jpg?v=1735257844&width=1946"
+        },
+        {
+          "id": "2863",
+          "name": "فولتارين100 اس ار اقراص",
+          "result": "added_as_unverified_real_pack_preview",
+          "source": "https://re3ayapharmacy.com/products/voltaren-sr-100-mg-20-tablets",
+          "assetUrl": "https://re3ayapharmacy.com/cdn/shop/files/voltaren-sr-100-mg-20-tablets-677364.jpg?v=1735257555&width=1946"
+        },
+        {
+          "id": "725",
+          "name": "اوميجافيت1000 اكياس",
+          "result": "added_as_unverified_real_pack_preview",
+          "source": "https://re3ayapharmacy.com/products/omega-fit-fish-oil-1000-mg-14-sachets",
+          "assetUrl": "https://re3ayapharmacy.com/cdn/shop/files/omegafit_201000-400x400.png?v=1735268213&width=1946"
+        },
+        {
+          "id": "69",
+          "name": "ابيمول اقراص س ج",
+          "result": "added_as_unverified_real_pack_preview",
+          "source": "https://www.bloompharmacy.com/ar/products/abimol-500-mg-20-%D9%82%D8%B1%D8%B5%D9%8B%D8%A7",
+          "assetUrl": "https://www.bloompharmacy.com/cdn/shop/products/abimol-500-mg-20-tablets-7308198.jpg?v=1764283687&width=1200"
+        },
+        {
+          "id": "1404",
+          "name": "تلفاست120 مج اقراص س ج",
+          "result": "added_as_unverified_real_pack_preview",
+          "source": "https://re3ayapharmacy.com/products/telfast-120-mg-20-tablets",
+          "assetUrl": "https://re3ayapharmacy.com/cdn/shop/files/telfast-120-mg-20-tablets-957584.jpg?v=1735257747&width=1946"
+        },
+        {
+          "id": "1588",
+          "name": "جلوكوفاج500 مجم س ج",
+          "result": "added_as_unverified_real_pack_preview",
+          "source": "https://re3ayapharmacy.com/products/glucophage-500-mg-50-tablets",
+          "assetUrl": "https://re3ayapharmacy.com/cdn/shop/files/glucophage-500-mg-50-tablets-277474.jpg?v=1735258074&width=1946"
+        },
+        {
+          "id": "1587",
+          "name": "جلوكوفاج1000مجم كس ار",
+          "result": "added_as_unverified_real_pack_preview",
+          "source": "https://re3ayapharmacy.com/products/glucophage-xr-1000-mg-30-tablets",
+          "assetUrl": "https://re3ayapharmacy.com/cdn/shop/files/glucophage-xr-1000-mg-30-tablets-587341.jpg?v=1735258156&width=1946"
+        },
+        {
+          "id": "4728",
+          "name": "ميبو مرهم 30جم وسط س ج",
+          "result": "added_as_unverified_real_pack_preview",
+          "source": "https://re3ayapharmacy.com/products/mebo-0-25-ointment-30-gm",
+          "assetUrl": "https://re3ayapharmacy.com/cdn/shop/files/mebo-025-ointment-30-gm-374656.jpg?v=1735258060&width=1946"
+        },
+        {
+          "id": "4595",
+          "name": "فلاجيل شراب سعر جديد",
+          "result": "added_as_unverified_real_pack_preview",
+          "source": "https://re3ayapharmacy.com/products/flagyl-125-mg-5-ml-suspension-100-ml",
+          "assetUrl": "https://re3ayapharmacy.com/cdn/shop/files/flagyl-125-mg-5-ml-suspension-100-ml-329253.jpg?v=1735257486&width=1946"
+        },
+        {
+          "id": "1406",
+          "name": "تلفاست شراب باكو25",
+          "result": "added_as_unverified_real_pack_preview",
+          "source": "https://re3ayapharmacy.com/products/telfast-6-mg-ml-suspension-100-ml",
+          "assetUrl": "https://re3ayapharmacy.com/cdn/shop/files/telfast-6-mg-ml-suspension-100-ml-570295.jpg?v=1735257807&width=1946"
+        },
+        {
+          "id": "4693",
+          "name": "ليبيتور80مجم 14قرص",
+          "result": "added_as_unverified_real_pack_preview",
+          "source": "https://re3ayapharmacy.com/products/lipitor-80-mg-14-tablets",
+          "assetUrl": "https://re3ayapharmacy.com/cdn/shop/files/lipitor-80-mg-14-tablets-925185.jpg?v=1735257034&width=1946"
+        }
+      ],
+      "failed": [
+        {
+          "id": "3024",
+          "name": "فيوسيدين كريم15جم",
+          "reason": "Bloom pharmacy product image linked to placeholder, not genuine package",
+          "retryIfDifferentSource": true
+        },
+        {
+          "id": "32",
+          "name": "ابيزيثرو شراب",
+          "reason": "Abdin source presented placeholder photo; AG product picture restricted from inspection",
+          "retryIfDifferentSource": true
+        },
+        {
+          "id": "210",
+          "name": "ازموراب10مجم اكياس",
+          "reason": "Source page existed but packaging pixels could not be verified",
+          "retryIfDifferentSource": true
+        },
+        {
+          "id": "2869",
+          "name": "فولتارين جل صغير25 جم",
+          "reason": "Merchant listing found; image pixels not verified, not published",
+          "retryIfDifferentSource": true
+        },
+        {
+          "id": "2871",
+          "name": "فولتارين جل وسط50 جم",
+          "reason": "Merchant listing found; image pixels not verified, not published",
+          "retryIfDifferentSource": true
+        }
+      ]
+    }
+  ],
+  "note": "This is a manual-work log; 11 new retailer image URLs, not 50. These are rendered as unverified product thumbnails and remain subject to live portal/browser, rights and hotlink verification."
+}
