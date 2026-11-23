@@ -983,6 +983,23 @@
       "license": "external retailer image; rights not independently verified",
       "note": "Real retailer product image URL; exact pixels and availability not independently verified"
     },
+    "1406": {
+      "id": "1406",
+      "catalogName": "تلفاست شراب باكو25",
+      "title": "Telfast 6 mg/ml Suspension - 100 ml",
+      "url": "https://re3ayapharmacy.com/cdn/shop/files/telfast-6-mg-ml-suspension-100-ml-570295.jpg?v=1735257807&width=1946",
+      "sourcePage": "https://re3ayapharmacy.com/products/telfast-6-mg-ml-suspension-100-ml",
+      "englishName": "Telfast",
+      "source": "re3ayapharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_retailer_source_match",
+      "attribution": "Re3aya Pharmacy",
+      "license": "source retailer image; commercial reuse rights not independently verified",
+      "note": "Real packaging visually inspected against catalog. Externally linked, not independently verified in live PWA."
+    },
     "1466": {
       "url": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/tebonina-forte-40-mg-20-tablets-182519.jpg?v=1735257129",
       "source": "re3ayapharmacy.com",
@@ -1657,16 +1674,49 @@
       "attribution": "Azzam Pharmacy",
       "license": "external retailer image; rights not independently verified",
       "note": "Real retailer image URL; packaging pixels and remote availability not independently verified"
+    },
+    "4595": {
+      "id": "4595",
+      "catalogName": "فلاجيل شراب سعر جديد",
+      "title": "Flagyl 125 mg/5 ml Suspension - 100 ml",
+      "url": "https://re3ayapharmacy.com/cdn/shop/files/flagyl-125-mg-5-ml-suspension-100-ml-329253.jpg?v=1735257486&width=1946",
+      "sourcePage": "https://re3ayapharmacy.com/products/flagyl-125-mg-5-ml-suspension-100-ml",
+      "englishName": "Flagyl",
+      "source": "re3ayapharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_retailer_source_match",
+      "attribution": "Re3aya Pharmacy",
+      "license": "source retailer image; commercial reuse rights not independently verified",
+      "note": "Real packaging visually inspected against catalog. Externally linked, not independently verified in live PWA."
+    },
+    "4728": {
+      "id": "4728",
+      "catalogName": "ميبو مرهم 30جم وسط س ج",
+      "title": "Mebo 0.25% Ointment - 30 gm",
+      "url": "https://re3ayapharmacy.com/cdn/shop/files/mebo-025-ointment-30-gm-374656.jpg?v=1735258060&width=1946",
+      "sourcePage": "https://re3ayapharmacy.com/products/mebo-0-25-ointment-30-gm",
+      "englishName": "Mebo",
+      "source": "re3ayapharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_retailer_source_match",
+      "attribution": "Re3aya Pharmacy",
+      "license": "source retailer image; commercial reuse rights not independently verified",
+      "note": "Real packaging visually inspected against catalog. Externally linked, not independently verified in live PWA."
     }
   },
   "lastManualBatch": {
     "date": "2026-11-24",
-    "count": 4,
+    "count": 3,
     "ids": [
-      "69",
-      "1404",
-      "1588",
-      "1587"
+      "4728",
+      "4595",
+      "1406"
     ],
     "mode": "manual_review_only_missing_images"
   },
