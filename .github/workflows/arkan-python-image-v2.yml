@@ -9,6 +9,7 @@ on:
       - 'scripts/test_product_images_v2.py'
       - 'scripts/arkan-v2-bridge.cjs'
       - 'scripts/test_arkan_publish_bridge.cjs'
+      - 'scripts/arkan-visual-publish.py'
       - '.github/workflows/arkan-python-image-v2.yml'
 permissions:
   contents: write
@@ -36,7 +37,7 @@ jobs:
           sudo apt-get install -y -qq tesseract-ocr-eng tesseract-ocr-ara
       - name: Test bilingual matching and syntax
         run: |
-          python -m py_compile scripts/product_images_v2.py
+          python -m py_compile scripts/product_images_v2.py scripts/arkan-visual-publish.py
           python scripts/test_product_images_v2.py
           node --check scripts/arkan-v2-bridge.cjs
           node scripts/test_arkan_publish_bridge.cjs
