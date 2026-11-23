@@ -1,7 +1,7 @@
 name: Arkan bilingual Python image discovery
 on:
   schedule:
-    - cron: '*/10 * * * *'
+    - cron: '2-59/5 * * * *'
   workflow_dispatch:
   push:
     paths:
@@ -49,14 +49,14 @@ jobs:
           python scripts/check_portal_javascript.py
       - name: Prepare ID-matched Arabic and English image search
         env:
-          ARKAN_V2_BATCH_SIZE: '24'
+          ARKAN_V2_BATCH_SIZE: '10'
         run: node scripts/arkan-v2-bridge.cjs
       - name: Bounded background image search; no browser processing
         run: |
-          python scripts/product_images_v2.py --csv data/arkan-v2-search-input.csv --en-col name_en --workers 3 --limit 24 --ocr --repo .
+          python scripts/product_images_v2.py --csv data/arkan-v2-search-input.csv --en-col name_en --workers 3 --limit 10 --ocr --repo .
       - name: Publish genuine matched WebP product thumbnails from discovery results
         env:
-          ARKAN_ASSET_PUBLISH_BUDGET: '8'
+          ARKAN_ASSET_PUBLISH_BUDGET: '10'
         run: node scripts/arkan-publish-matched-assets.cjs
       - name: Record fallback candidate links after asset publication
         env:
@@ -64,7 +64,7 @@ jobs:
         run: node scripts/arkan-v2-bridge.cjs --ingest
       - name: Publish only independently OCR-verified packaging images
         env:
-          VISUAL_PUBLISH_BUDGET: '8'
+          VISUAL_PUBLISH_BUDGET: '10'
         run: |
           python scripts/arkan-visual-publish.py
           python scripts/check_pharmacy_image_integrity.py
