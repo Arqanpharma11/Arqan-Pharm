@@ -1194,6 +1194,38 @@
       "license": "source product image; reuse rights not independently verified",
       "note": "Retailer packaging matching known catalog brand and dosage; external link not independently tested in live PWA."
     },
+    "1594": {
+      "catalogName": "جليبتس50 ع",
+      "englishName": "Gliptus",
+      "title": "Gliptus 50 mg Vildagliptin 30 tablets",
+      "url": "https://www.bloompharmacy.com/cdn/shop/products/gliptus-50-mg-30-tablets-492020.jpg?v=1687732717",
+      "sourcePage": "https://www.bloompharmacy.com/products/gliptus-50-mg-30-tablets",
+      "source": "www.bloompharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manually_inspected_commercial_pack_brand_strength_and_form",
+      "attribution": "www.bloompharmacy.com",
+      "license": "third-party photo; commercial reuse permissions not verified",
+      "note": "Photo visually matched by product packaging; external URL untested in browser; image remains not independently certified."
+    },
+    "1599": {
+      "catalogName": "جليبوفين5/500 مجم س ج",
+      "englishName": "Glybofen",
+      "title": "Glybofen 5 mg/500 mg 30 Tablets",
+      "url": "https://cdn-med-images.vezeeta.com/Products/81543e0b-e955-4578-9780-c218885032d1.png",
+      "sourcePage": "https://www.vezeeta.com/en-eg/pharmacy/glybformin-5-500-mg-30-tablet",
+      "source": "www.vezeeta.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manually_inspected_commercial_pack_brand_strength_and_form",
+      "attribution": "www.vezeeta.com",
+      "license": "third-party photo; commercial reuse permissions not verified",
+      "note": "Photo visually matched by product packaging; external URL untested in browser; image remains not independently certified."
+    },
     "1608": {
       "catalogName": "جليفلوزينو5 مجم س.ج",
       "englishName": "Gliflozino",
@@ -1225,6 +1257,22 @@
       "attribution": "www.lotusonline.com",
       "license": "third-party visual source; commercial reuse rights not independently verified",
       "note": "Real commercial product image link, packaging matched by review; live browser and rights verification pending."
+    },
+    "1615": {
+      "catalogName": "جليماديل3 مجم",
+      "englishName": "Glimadel",
+      "title": "Glimadel 3mg 30 tablets Delta Pharma",
+      "url": "https://delmar-test.linkedgates.com/images/items/129321-v1.JPEG",
+      "sourcePage": "https://www.delmar-attalla.com/products/glimadel-3-mg-30-tab/129321",
+      "source": "www.delmar-attalla.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manually_inspected_commercial_pack_brand_strength_and_form",
+      "attribution": "www.delmar-attalla.com",
+      "license": "third-party photo; commercial reuse permissions not verified",
+      "note": "Photo visually matched by product packaging; external URL untested in browser; image remains not independently certified."
     },
     "1616": {
       "catalogName": "جليماديل4 مل 3 شريط س ج",
@@ -1482,6 +1530,22 @@
       "license": "external retailer image; rights not independently verified",
       "note": "Real retailer product image URL; exact pixels and availability not independently verified"
     },
+    "2087": {
+      "catalogName": "ريكوكسيتروو90 مجم",
+      "englishName": "Recoxitro",
+      "title": "Recoxitro 90 mg 30 Film Coated Tablets",
+      "url": "https://www.lotusonline.com/cdn/shop/files/3008761_processed.jpg?v=1767613724&width=750",
+      "sourcePage": "https://www.lotusonline.com/products/recoxitro-90mg-30-f-c-tab",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manually_inspected_commercial_pack_brand_strength_and_form",
+      "attribution": "www.lotusonline.com",
+      "license": "third-party photo; commercial reuse permissions not verified",
+      "note": "Photo visually matched by product packaging; external URL untested in browser; image remains not independently certified."
+    },
     "2108": {
       "catalogName": "زاترال اكس ال10مجم",
       "englishName": "Xatral XL",
@@ -1561,6 +1625,22 @@
       "attribution": "www.bloompharmacy.com",
       "license": "source product image; reuse rights not independently verified",
       "note": "Retailer packaging matching known catalog brand and dosage; external link not independently tested in live PWA."
+    },
+    "2158": {
+      "catalogName": "زيثروتراك500مجم اقراص",
+      "englishName": "Zithotrac",
+      "title": "Zithotrac 500 mg Azithromycin 3 Film Coated Tablets",
+      "url": "https://www.gyptopharma.com/wp-content/uploads/2021/05/ZinAr.jpg",
+      "sourcePage": "https://www.gyptopharma.com/product/zithotrac-500-mg-film-coated-tablets/",
+      "source": "www.gyptopharma.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manually_inspected_commercial_pack_brand_strength_and_form",
+      "attribution": "www.gyptopharma.com",
+      "license": "third-party photo; commercial reuse permissions not verified",
+      "note": "Photo visually matched by product packaging; external URL untested in browser; image remains not independently certified."
     },
     "2164": {
       "url": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/xithrone-500-mg-3-tablets-875232.jpg?v=1735257541",
@@ -2144,16 +2224,13 @@
   },
   "lastManualBatch": {
     "date": "2026-11-24",
-    "count": 8,
+    "count": 5,
     "ids": [
-      "2217",
-      "1608",
-      "2207",
-      "1616",
-      "1614",
-      "1619",
-      "2177",
-      "2216"
+      "2087",
+      "1594",
+      "2158",
+      "1599",
+      "1615"
     ],
     "mode": "manual_review_only_missing_images"
   },
