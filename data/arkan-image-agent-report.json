@@ -1,5 +1,5 @@
 {
-  "runAt": "2026-11-23T16:03:46.177Z",
+  "runAt": "2026-11-23T16:25:54.356Z",
   "masterItems": 4783,
   "cloudItems": 0,
   "catalogItems": 4783,
@@ -16,7 +16,7 @@
   "healthy": 5,
   "gone": 0,
   "queuedThisRun": 0,
-  "pendingReview": 344,
+  "pendingReview": 348,
   "searchEnabled": true,
   "searchProviders": [
     "Wikimedia Commons",
@@ -32,12 +32,12 @@
     "commons.wikimedia.org": {
       "failures": 0,
       "retryAt": null,
-      "lastSuccess": "2026-11-23T16:03:45.076Z"
+      "lastSuccess": "2026-11-23T16:25:52.698Z"
     },
     "world.openfoodfacts.org": {
-      "failures": 2,
-      "retryAt": "2026-11-23T16:23:42.115Z",
-      "lastSuccess": "2026-11-23T15:13:05.572Z",
+      "failures": 1,
+      "retryAt": "2026-11-23T16:45:50.859Z",
+      "lastSuccess": "2026-11-23T16:25:49.516Z",
       "lastError": "503"
     },
     "eg-drugs-api.mahmoudfalous.workers.dev": {
@@ -48,7 +48,7 @@
     "world.openbeautyfacts.org": {
       "failures": 0,
       "retryAt": null,
-      "lastSuccess": "2026-11-23T15:13:13.218Z"
+      "lastSuccess": "2026-11-23T16:25:53.655Z"
     }
   },
   "disclaimer": "Automated candidate discovery is not photo verification. Existing approved photos are never overwritten. Automatically published images remain marked as external, not verified packaging."

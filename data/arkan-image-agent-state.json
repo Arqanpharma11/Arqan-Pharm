@@ -1,5 +1,5 @@
 {
-  "cursor": 160,
+  "cursor": 165,
   "searchCursor": 0,
   "checks": {
     "28": {
@@ -1315,27 +1315,27 @@
     "1364": {
       "failures": 0,
       "lastStatus": "ok",
-      "checkedAt": "2026-11-22T16:19:49.660Z"
+      "checkedAt": "2026-11-23T16:25:48.127Z"
     },
     "1374": {
       "failures": 0,
       "lastStatus": "ok",
-      "checkedAt": "2026-11-22T16:19:49.865Z"
+      "checkedAt": "2026-11-23T16:25:48.220Z"
     },
     "1384": {
       "failures": 0,
       "lastStatus": "ok",
-      "checkedAt": "2026-11-22T16:19:50.040Z"
+      "checkedAt": "2026-11-23T16:25:48.282Z"
     },
     "1386": {
       "failures": 0,
       "lastStatus": "ok",
-      "checkedAt": "2026-11-22T16:19:50.220Z"
+      "checkedAt": "2026-11-23T16:25:48.335Z"
     },
     "1387": {
       "failures": 0,
       "lastStatus": "ok",
-      "checkedAt": "2026-11-22T16:19:50.383Z"
+      "checkedAt": "2026-11-23T16:25:48.390Z"
     },
     "1388": {
       "failures": 0,
@@ -6199,25 +6199,41 @@
     "980": {
       "at": "2026-11-23T16:03:45.477Z",
       "hits": 0
+    },
+    "981": {
+      "at": "2026-11-23T16:25:49.516Z",
+      "hits": 0
+    },
+    "982": {
+      "at": "2026-11-23T16:25:50.859Z",
+      "hits": 0
+    },
+    "985": {
+      "at": "2026-11-23T16:25:51.979Z",
+      "hits": 0
+    },
+    "988": {
+      "at": "2026-11-23T16:25:53.655Z",
+      "hits": 0
     }
   },
-  "lastRun": "2026-11-23T16:03:46.177Z",
+  "lastRun": "2026-11-23T16:25:54.356Z",
   "lastCatalogSize": 4783,
   "searchPipeline": {
-    "remainingMissing": 2940,
+    "remainingMissing": 2965,
     "remainingSuspect": 905,
-    "eligibleThisRun": 3845
+    "eligibleThisRun": 3870
   },
   "providerHealth": {
     "commons.wikimedia.org": {
       "failures": 0,
       "retryAt": null,
-      "lastSuccess": "2026-11-23T16:03:45.076Z"
+      "lastSuccess": "2026-11-23T16:25:52.698Z"
     },
     "world.openfoodfacts.org": {
-      "failures": 2,
-      "retryAt": "2026-11-23T16:23:42.115Z",
-      "lastSuccess": "2026-11-23T15:13:05.572Z",
+      "failures": 1,
+      "retryAt": "2026-11-23T16:45:50.859Z",
+      "lastSuccess": "2026-11-23T16:25:49.516Z",
       "lastError": "503"
     },
     "eg-drugs-api.mahmoudfalous.workers.dev": {
@@ -6228,7 +6244,7 @@
     "world.openbeautyfacts.org": {
       "failures": 0,
       "retryAt": null,
-      "lastSuccess": "2026-11-23T15:13:13.218Z"
+      "lastSuccess": "2026-11-23T16:25:53.655Z"
     }
   }
 }
