@@ -20473,43 +20473,73 @@ ${window.location.href}
                     throw new Error('صيغة الملف غير صحيحة. استخدم كشف الصور الصادر من البرنامج.');
                 }
                 const byId = new Map(products.map(p => [String(p.id), p]));
-                // A source URL can appear against multiple items; record collisions
-                // so the importer cannot mistake raw links for unique verified photos.
-                const reusedUrls = new Map();
-                for (const [candidateId, row] of Object.entries(data.byId)) {
-                    if (!Array.isArray(row) || typeof row[0] !== 'string') continue;
-                    const bucket = reusedUrls.get(row[0]) || [];
-                    bucket.push(candidateId);
-                    reusedUrls.set(row[0], bucket);
+                const idCounts = new Map();
+                const urlCounts = new Map();
+                for (const row of data.items) {
+                    if (!row || row.exactMatchConfirmed !== true) continue;
+                    const id = String(row.id || '');
+                    const url = typeof row.imageUrl === 'string' ? row.imageUrl.trim() : '';
+                    idCounts.set(id, (idCounts.get(id) || 0) + 1);
+                    if (url) urlCounts.set(url, (urlCounts.get(url) || 0) + 1);
                 }
-                const sharedUrls = [...reusedUrls.values()].filter(ids => ids.length > 1);
-                ARKAN_IMAGE_AUDIT.sharedUrlGroups = sharedUrls.length;
-                ARKAN_IMAGE_AUDIT.sharedUrlEntries = sharedUrls.reduce((n, ids) => n + ids.length, 0);
-                const seen = new Set();
+                const existingUrls = new Set(Object.values(PROD_IMAGES).filter(Boolean));
                 const approved = [];
                 let rejected = 0;
                 for (const row of data.items) {
-                    const id = String(row && row.id || '');
-                    if (!id || seen.has(id)) { rejected++; continue; }
-                    seen.add(id);
+                    if (!row || !row.imageUrl) continue;
+                    const id = String(row.id || '');
                     const product = byId.get(id);
-                    if (!product || row.exactMatchConfirmed !== true || typeof row.imageUrl !== 'string' ||
-                        !/^https:\/\//i.test(row.imageUrl.trim()) || typeof row.sourceName !== 'string' || !row.sourceName.trim()) {
-                        if (row && row.imageUrl) rejected++;
+                    const src = typeof row.imageUrl === 'string' ? row.imageUrl.trim() : '';
+                    const source = typeof row.sourceName === 'string' ? row.sourceName.trim() : '';
+                    if (!product || row.name !== product.name || row.exactMatchConfirmed !== true ||
+                        idCounts.get(id) !== 1 || urlCounts.get(src) !== 1 || !source ||
+                        !/^https:\/\//i.test(src) || PROD_IMAGES[id] || existingUrls.has(src)) {
+                        rejected++;
                         continue;
                     }
-                    approved.push({ id: product.id, src: row.imageUrl.trim(), source: row.sourceName.trim() });
+                    approved.push({ id, src, source });
                 }
-                if (!approved.length) throw new Error('لم يتم العثور على صور مستوفية للشروط. يلزم رابط HTTPS ومصدر واضح وتأكيد المطابقة الدقيقة.');
-                if (!confirm('سيتم اعتماد ' + approved.length + ' صورة للصنف المطابق حسب رقم ID. الصور غير المؤكدة لن تُعتمد. هل تريد المتابعة؟')) return;
+                if (!approved.length) throw new Error('لم يتم العثور على صور جديدة مؤكدة تطابق رقم الصنف واسمه، برابط HTTPS ومصدر واضح.');
+                if (!confirm('سيتم اعتماد ' + approved.length + ' صورة جديدة مطابقة للأصناف. هل تريد المتابعة؟')) return;
+                if (typeof firestoreDB === 'undefined' || !firestoreDB) {
+                    throw new Error('الاتصال بقاعدة بيانات المنصة غير متاح.');
+                }
+                const imageCollection = firestoreDB.collection('productImages');
                 let done = 0;
-                for (const row of approved) {
-                    setProductImage(row.id, row.src, row.source);
-                    done++;
-                    if (done % 20 === 0) say('جارٍ اعتماد الصور: ' + done + ' / ' + approved.length);
-                    await new Promise(resolve => setTimeout(resolve, 35));
+                let alreadyPresent = 0;
+                const batchSize = 100;
+                for (let offset = 0; offset < approved.length; offset += batchSize) {
+                    const batch = approved.slice(offset, offset + batchSize);
+                    let added;
+                    try {
+                        added = await firestoreDB.runTransaction(async transaction => {
+                            const refs = batch.map(row => imageCollection.doc(row.id));
+                            const snapshots = await Promise.all(refs.map(ref => transaction.get(ref)));
+                            const saved = [];
+                            batch.forEach((row, index) => {
+                                const current = snapshots[index].data();
+                                if (current?.verified === true && current.src) return;
+                                transaction.set(refs[index], { src: row.src, source: row.source, verified: true });
+                                saved.push(row);
+                            });
+                            return saved;
+                        });
+                    } catch (error) {
+                        throw new Error('تم نشر ' + done + ' صورة قبل تعذر حفظ الدفعة التالية. يمكنك إعادة رفع الملف. ' + (error.message || ''));
+                    }
+                    for (const row of added) {
+                        PROD_IMAGES[row.id] = row.src;
+                        PROD_IMG_SRC[row.id] = row.source;
+                        PROD_IMG_VERIFIED[row.id] = true;
+                    }
+                    done += added.length;
+                    alreadyPresent += batch.length - added.length;
+                    persistState(KEY_IMAGES, PROD_IMAGES);
+                    persistState(KEY_IMG_SRC, PROD_IMG_SRC);
+                    persistState(KEY_IMG_VERIFIED, PROD_IMG_VERIFIED);
+                    say('تم نشر ' + done + ' صورة حتى الآن.');
                 }
-                say('تم اعتماد ' + done + ' صورة. تم تجاهل ' + rejected + ' صف غير مستوفٍ للشروط.');
+                say('تم نشر ' + done + ' صورة. تم تجاهل ' + (rejected + alreadyPresent) + ' صف.');
                 showToast('اكتمل استيراد ' + done + ' صورة مؤكدة.');
                 if (currentSession && currentSession.role === 'admin') renderAdminProductsTable();
             } catch (e) {

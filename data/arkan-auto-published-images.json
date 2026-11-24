@@ -1,6 +1,20 @@
 {
   "version": 2,
   "byId": {
+    "32": {
+      "catalogName": "ابيزيثرو شراب",
+      "title": "Epizithro 200 mg/5 ml powder for oral suspension, 30 ml",
+      "url": "https://taypharmacies.com/wp-content/uploads/2023/11/Untitled-design-2023-11-26T102326.636.jpg",
+      "sourcePage": "https://taypharmacies.com/product/903186/epizithro-200mg-5ml-susp-30ml-2",
+      "englishName": "Epizithro",
+      "source": "taypharmacies.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Tay Pharmacies"
+    },
     "42": {
       "catalogName": "ابيفيناك75 اس ار",
       "title": "Epifenac SR 75 mg - 10 Tablets",
@@ -16,6 +30,34 @@
       "attribution": "dwaprices.com",
       "license": "retailer image; rights not independently verified",
       "note": "Visual packaging matched to catalog SKU; external image link, live PWA rendering unverified."
+    },
+    "43": {
+      "catalogName": "ابيفيناك امبول",
+      "title": "Epifenac 75 mg/3 ml, 3 ampoules",
+      "url": "https://www.eipico.com.eg/DataImages/PRDS/Product_Image518.png",
+      "sourcePage": "https://www.eipico.com.eg/PRDSDetails.aspx?id=518",
+      "englishName": "Epifenac",
+      "source": "www.eipico.com.eg",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "EIPICO"
+    },
+    "44": {
+      "catalogName": "ابيفيناك نقط",
+      "title": "Epifenac 1 mg/ml eye drops, 5 ml",
+      "url": "https://www.eipico.com.eg/DataImages/PRDS/Product_Image464.png",
+      "sourcePage": "https://www.eipico.com.eg/PRDSDetails.aspx?id=464",
+      "englishName": "Epifenac",
+      "source": "www.eipico.com.eg",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "EIPICO"
     },
     "69": {
       "id": "69",
@@ -2331,8 +2373,8 @@
       "license": "external retailer image; rights not independently verified",
       "note": "Real retailer image URL; packaging pixels and remote availability not independently verified"
     },
-    "4595": {
-      "id": "4595",
+    "230376": {
+      "id": "230376",
       "catalogName": "فلاجيل شراب سعر جديد",
       "title": "Flagyl 125 mg/5 ml Suspension - 100 ml",
       "url": "https://re3ayapharmacy.com/cdn/shop/files/flagyl-125-mg-5-ml-suspension-100-ml-329253.jpg?v=1735257486&width=1946",
@@ -2348,7 +2390,7 @@
       "license": "source retailer image; commercial reuse rights not independently verified",
       "note": "Real packaging visually inspected against catalog. Externally linked, not independently verified in live PWA."
     },
-    "4693": {
+    "230474": {
       "catalogName": "ليبيتور80مجم 14قرص",
       "title": "Lipitor 80 mg - 14 Tablets",
       "url": "https://re3ayapharmacy.com/cdn/shop/files/lipitor-80-mg-14-tablets-925185.jpg?v=1735257034&width=1946",
@@ -2364,8 +2406,8 @@
       "license": "source retailer image; commercial reuse rights not independently verified",
       "note": "Real packaging visually inspected against SKU. Retailer hotlink; displayed page not browser-smoke tested."
     },
-    "4728": {
-      "id": "4728",
+    "230509": {
+      "id": "230509",
       "catalogName": "ميبو مرهم 30جم وسط س ج",
       "title": "Mebo 0.25% Ointment - 30 gm",
       "url": "https://re3ayapharmacy.com/cdn/shop/files/mebo-025-ointment-30-gm-374656.jpg?v=1735258060&width=1946",
