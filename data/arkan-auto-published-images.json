@@ -308,22 +308,6 @@
       "attribution": "Azzam Pharmacy",
       "note": "External candidate preview; image availability and visual package not independently verified."
     },
-    "210": {
-      "catalogName": "ازموراب10مجم اكياس",
-      "title": "Esmorap 10 mg Esomeprazole Oral Suspension Granules",
-      "url": "https://www.lotusonline.com/cdn/shop/files/3008360_processed.jpg?v=1773307385",
-      "sourcePage": "https://www.lotusonline.com/products/esmorap-10mg-esomeprazole-oral-suspension-granules",
-      "source": "www.lotusonline.com",
-      "englishName": "Esmorap",
-      "status": "candidate_preview",
-      "independentlyVerified": false,
-      "shownAsProductThumbnail": true,
-      "manualVisualInspected": true,
-      "matchReason": "manual_visible_pack_and_retailer_source_match",
-      "attribution": "www.lotusonline.com",
-      "license": "retailer image; rights not independently verified",
-      "note": "Visual packaging matched to catalog SKU; external image link, live PWA rendering unverified."
-    },
     "229": {
       "catalogName": "استيروماب10مجم",
       "title": "Estero-map 10mg Rosuvastatin",
