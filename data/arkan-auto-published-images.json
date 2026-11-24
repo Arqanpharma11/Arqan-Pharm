@@ -1354,6 +1354,22 @@
       "license": "third-party visual source; commercial reuse rights not independently verified",
       "note": "Real commercial product image link, packaging matched by review; live browser and rights verification pending."
     },
+    "1694": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/1694.webp",
+      "source": "cdn.dawaagate.com",
+      "sourcePage": "https://www.dawaagate.com/medicine/genica-moist-cream-100-gm",
+      "originalImageUrl": "https://cdn.dawaagate.com/images/medicines/genica-moist-cream-100-gm-11971-07e266.webp",
+      "catalogName": "جينيكا مويست كريم",
+      "englishName": "Genica Moist",
+      "title": "Genica Moist جينيكا مويست كريم",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "matchScore": 1,
+      "matchReason": "ocr",
+      "sha256": "c548e9683f2b940d2c83ff28c4f9fee77d8571987d5c0d0b169ffcc140f0192b",
+      "provenance": "Image downloaded and matched by image discovery bot; commercial reuse license unverified"
+    },
     "1731": {
       "url": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/dalacin-c-300-mg-10-capsules-840865.jpg?v=1735258044",
       "source": "re3ayapharmacy.com",
