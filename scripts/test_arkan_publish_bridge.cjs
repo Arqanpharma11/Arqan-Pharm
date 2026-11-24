@@ -47,6 +47,21 @@ try {
   assert.equal(saved.byId['4'],undefined);
   assert.equal(saved.byId['5'],undefined);
   assert.equal(result.duplicateImages,1);
+  const cursorFile=path.join(fixture,'data/arkan-v2-cursor.json');
+  assert.equal(JSON.parse(fs.readFileSync(cursorFile)).lastAttemptedId,'3');
+  // A published final result leaves the active queue before ingestion.
+  fs.writeFileSync(cursorFile,'{"lastAttemptedId":"1"}');
+  run();
+  fs.writeFileSync(path.join(fixture,'results_v2.csv'),
+    'code,name,name_en,status,reason,score,support,source_url,source_page\n'+
+    '4,"صنف 4",,not_found,no_title_match,,,,\n'+
+    '2,"صنف تجريبي بلس 20 مجم",,not_found,no_title_match,,,,\n');
+  saved.byId['2']={url:'https://images.example.com/published.webp'};
+  fs.writeFileSync(path.join(fixture,'data/arkan-auto-published-images.json'),JSON.stringify(saved));
+  run(['--ingest']);
+  assert.equal(JSON.parse(fs.readFileSync(cursorFile)).lastAttemptedId,'2');
+  run();
+  assert.match(fs.readFileSync(path.join(fixture,'data/arkan-v2-search-input.csv'),'utf8'),/\n"3",/);
   console.log('PASS: Arabic candidate preview, no false verification, unsafe/mismatched images blocked');
 } finally {
   fs.rmSync(fixture,{recursive:true,force:true});

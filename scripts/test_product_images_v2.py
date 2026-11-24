@@ -27,3 +27,33 @@ assert not m.public_https_url("https://127.0.0.1/a.jpg")
 assert not m.public_https_url("http://localhost/x.png")
 assert not m.public_https_url("file:///etc/passwd")
 print("PASS: bilingual names, form, strength, variants and unsafe URLs")
+
+# The existing storefront index skips web search only for an exact product
+# and independently readable packaging. Unsafe routes and mismatches never download.
+from unittest.mock import patch
+
+name = "بانادول 500مجم 20قرص"
+names = ["Panadol 500mg 20 tablets", name]
+candidate = {
+    "title": "Panadol 500mg 20 tablets",
+    "productPage": "https://www.lotusonline.com/products/panadol",
+    "imageUrl": "https://cdn.shopify.com/s/files/panadol.webp",
+}
+product = {"name": name, "candidates": [candidate]}
+with patch.object(m, "download", return_value=object()) as download, \
+     patch.object(m, "quality_ok", return_value=True), \
+     patch.object(m, "ocr_check", return_value=True) as ocr:
+    assert m.indexed_pack(product, name, names, "") is not None
+    assert ocr.call_args.kwargs == {"strict": True}
+    for overrides in (
+        {"title": "Panadol 500mg 10 tablets"},
+        {"title": "Panadol 250mg 20 tablets"},
+        {"imageUrl": "https://unrelated.example/products/panadol.webp"},
+        {"productPage": "https://www.lotusonline.com/admin/panadol"},
+    ):
+        assert m.indexed_pack({"name": name, "candidates": [dict(candidate, **overrides)]}, name, names, "") is None
+    assert download.call_count == 1
+    ocr.return_value = None
+    assert m.indexed_pack(product, name, names, "") is None
+
+print("PASS: public catalog index uses OCR and retains pack quantity, strength and URL checks")

@@ -86,6 +86,9 @@ SEARCH_INTERVAL = 0.7         # أقل فاصل بين طلبات البحث (ب
 PUSH_EVERY = 300
 
 # دومينات موثوقة (عدّلها بمعرفتك - مثال فقط، مش متحقق منها):
+INDEX_SHOP_HOSTS = {"www.lotusonline.com", "www.bloompharmacy.com", "re3ayapharmacy.com",
+                    "alfouadpharmacies.com", "kidzmarket-eg.com", "doctormpharmacy.com", "azzampharmacy.com"}
+INDEX_IMAGE_HOSTS = INDEX_SHOP_HOSTS | {"cdn.shopify.com"}
 TRUSTED_DOMAINS = []          # مثال: ["eda.mohp.gov.eg", "pfizer.com"]
 # ===========================================
 
@@ -316,6 +319,11 @@ def compare_numbers(pn, tn):
     return "confirmed" if set(tn) <= set(pn) else "unconfirmed"
 
 
+def pack_counts(text):
+    return sorted(float(n.replace(",", ".")) for n in re.findall(r"\d+(?:[.,]\d+)?",
+                  " ".join(COUNT_RE.findall(norm(text)))))
+
+
 def evaluate(name, title, url_text="", barcode=""):
     """(درجة, حكم, باركود) - الحكم: reject / ok / review"""
     blob = f"{title} {url_text}"
@@ -338,8 +346,8 @@ def evaluate(name, title, url_text="", barcode=""):
     if cmp == "reject":
         return s, "reject", False
     # Distinguish pack quantity (10 vs 20 tablets) from strength (500 mg).
-    pack_expected = sorted(float(n.replace(",", ".")) for n in re.findall(r"\d+(?:[.,]\d+)?", " ".join(COUNT_RE.findall(norm(name)))))
-    pack_observed = sorted(float(n.replace(",", ".")) for n in re.findall(r"\d+(?:[.,]\d+)?", " ".join(COUNT_RE.findall(norm(title)))))
+    pack_expected = pack_counts(name)
+    pack_observed = pack_counts(title)
     if pack_expected and pack_observed and pack_expected != pack_observed:
         return s, "reject", False
     if pack_expected != pack_observed:
@@ -499,7 +507,7 @@ def encode_webp(img):
     return data
 
 
-def ocr_check(img, names):
+def ocr_check(img, names, strict=False):
     """True = الاسم ظاهر على العلبة، False = في نص بس الاسم مش موجود، None = مش متأكد."""
     if pytesseract is None:
         return None
@@ -529,6 +537,12 @@ def ocr_check(img, names):
     seen_numbers = numbers_of(text)
     if expected_numbers and any(n not in seen_numbers for n in expected_numbers):
         return None
+    if strict:
+        if any(units and not units.intersection(seen_numbers[n]) for n, units in expected_numbers.items()):
+            return None
+        expected_counts = pack_counts(catalog_name)
+        if expected_counts and expected_counts != pack_counts(text):
+            return None
     return True
 
 
@@ -542,6 +556,36 @@ def mk(code, name, status, reason="", s=0.0, support=0, img=None, src="", page="
     return dict(code=code, name=name, status=status, reason=reason, score=round(s, 2),
                 support=support, ver=hashlib.md5(data).hexdigest()[:8] if data else "",
                 image="", source_url=src, source_page=page, data=data)
+
+
+def load_storefront_candidates(path):
+    with open(path, encoding="utf-8") as f:
+        index = json.load(f)
+    return {str(item["id"]): item for item in index["items"] if item.get("candidates")}
+
+
+def indexed_pack(item, name, names, barcode):
+    if item.get("name") != name:
+        return None
+    for candidate in item["candidates"][:3]:
+        page, url = candidate["productPage"], candidate["imageUrl"]
+        product, image = urlparse(page), urlparse(url)
+        if (product.scheme != "https" or product.netloc not in INDEX_SHOP_HOSTS
+                or not re.fullmatch(r"/products/[a-zA-Z0-9_-]+", product.path)
+                or image.scheme != "https" or image.netloc not in INDEX_IMAGE_HOSTS):
+            continue
+        title = candidate["title"]
+        score, verdict, _ = evaluate_any(names, title, url_text(page), barcode)
+        if (verdict != "ok" or score < 0.85 or evaluate(name, title, url_text(page), barcode)[1] == "reject"
+                or compare_numbers(numbers_of(name), numbers_of(title)) != "confirmed"
+                or (pack_counts(name) and pack_counts(name) != pack_counts(title))
+                or not forms_of(name).issubset(forms_of(title))
+                or variants_of(ordered_tokens(name)) != variants_of(ordered_tokens(title))):
+            continue
+        photo = download(url)
+        if photo is not None and quality_ok(photo) and ocr_check(photo, names, strict=True) is True:
+            return score, photo, url, page
+    return None
 
 
 def _process_row(row, a, rl, use_ocr):
@@ -562,14 +606,25 @@ def _process_row(row, a, rl, use_ocr):
                 return mk(code, name, "review", "trusted_url_ocr_mismatch", 1, 1, img, direct)
             return mk(code, name, "review", "direct_url_requires_independent_verification", 1, 1, img, direct)
 
+    indexed = getattr(a, "indexed_candidates", {}).get(code)
+    if indexed and use_ocr:
+        match = indexed_pack(indexed, name, names, barcode)
+        if match:
+            score, photo, url, page = match
+            return mk(code, name, "auto", "ocr", score, 1, photo, url, page)
+
+    focused_en = f"{en} {spec_en(name)}".strip() if en and not re.search(r"\d", en) else en
     queries = []
-    for q in [barcode, en, f"{en} box" if en else "", f"{name} {brand}".strip(), f"{name} علبة"]:
+    for q in [barcode, focused_en, en, f"{en} box" if en else "", f"{name} {brand}".strip(), f"{name} علبة"]:
         if q and q not in queries:
             queries.append(q)
     queries = queries[:4]
     for d in TRUSTED_DOMAINS[:2]:
         queries.append(f"{en or name} site:{d}")
 
+    required_variants = variants_of(ordered_tokens(name))
+    expected_strength = numbers_of(name)
+    expected_form = forms_of(name)
     cands, seen = [], set()
     for q in queries:
         for res in search(q, rl):
@@ -583,13 +638,10 @@ def _process_row(row, a, rl, use_ocr):
             # strength, pack count, or pharmaceutical form.
             title = res.get("title", "")
             title_tokens = ordered_tokens(title + " " + url_text(page))
-            required_variants = variants_of(ordered_tokens(name))
             if required_variants and not required_variants.issubset(variants_of(title_tokens)):
                 continue
-            expected_strength = numbers_of(name)
             if expected_strength and compare_numbers(expected_strength, numbers_of(title)) != "confirmed":
                 continue
-            expected_form = forms_of(name)
             if expected_form and not (expected_form & forms_of(title)):
                 continue
             if verdict == "reject":
@@ -769,6 +821,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--csv", required=True)
     ap.add_argument("--limit", type=int, default=0)
+    ap.add_argument("--storefront-index", help="Existing public storefront candidate JSON")
     ap.add_argument("--workers", type=int, default=2)
     ap.add_argument("--push", action="store_true")
     ap.add_argument("--repo", default=".")
@@ -785,6 +838,7 @@ def main():
     ap.add_argument("--dict-ar-key", default="")
     ap.add_argument("--dict-en-key", default="")
     a = ap.parse_args()
+    a.indexed_candidates = load_storefront_candidates(a.storefront_index) if a.storefront_index else {}
     a.dict_idx = load_dict(a.dict, a.dict_ar_key, a.dict_en_key) if a.dict else None
 
     repo = Path(a.repo)

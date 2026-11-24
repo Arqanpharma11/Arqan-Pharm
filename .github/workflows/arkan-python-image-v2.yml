@@ -1,8 +1,13 @@
 name: Arkan bilingual Python image discovery
 on:
   schedule:
-    - cron: '2-59/5 * * * *'
+    - cron: '11,26,41,56 * * * *'
   workflow_dispatch:
+    inputs:
+      batch_size:
+        description: Number of uncovered products to search
+        type: number
+        default: 100
   push:
     paths:
       - 'scripts/product_images_v2.py'
@@ -22,7 +27,11 @@ concurrency:
 jobs:
   discover:
     runs-on: ubuntu-latest
-    timeout-minutes: 35
+    timeout-minutes: 40
+    env:
+      ARKAN_V2_BATCH_SIZE: ${{ inputs.batch_size || 100 }}
+      ARKAN_ASSET_PUBLISH_BUDGET: ${{ inputs.batch_size || 100 }}
+      OMP_THREAD_LIMIT: '1'
     steps:
       - uses: actions/checkout@v4
         with:
@@ -48,19 +57,13 @@ jobs:
           node scripts/test_arkan_publish_bridge.cjs
           python scripts/check_portal_javascript.py
       - name: Prepare ID-matched Arabic and English image search
-        env:
-          ARKAN_V2_BATCH_SIZE: '10'
         run: node scripts/arkan-v2-bridge.cjs
       - name: Bounded background image search; no browser processing
         run: |
-          python scripts/product_images_v2.py --csv data/arkan-v2-search-input.csv --en-col name_en --workers 3 --limit 10 --ocr --repo .
+          python scripts/product_images_v2.py --csv data/arkan-v2-search-input.csv --en-col name_en --storefront-index data/arkan-image-candidate-review.json --workers 8 --ocr --repo .
       - name: Publish genuine matched WebP product thumbnails from discovery results
-        env:
-          ARKAN_ASSET_PUBLISH_BUDGET: '10'
         run: node scripts/arkan-publish-matched-assets.cjs
       - name: Record fallback candidate links after asset publication
-        env:
-          ARKAN_V2_BATCH_SIZE: '10'
         run: node scripts/arkan-v2-bridge.cjs --ingest
       - name: Publish only independently OCR-verified packaging images
         env:
@@ -76,13 +79,24 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add index.html assets/product-images/ data/arkan-auto-published-images.json data/arkan-asset-publication-report.json data/arkan-visual-publish-report.json data/arkan-visual-publish-state.json data/arkan-v2-cursor.json
-          if git diff --cached --quiet; then exit 0; fi
-          git commit -m "chore: bilingual image bot OCR results"
-          git pull --rebase origin main
-          git push origin HEAD:main
-          actual="$(git ls-remote origin refs/heads/main | cut -f1)"
-          expected="$(git rev-parse HEAD)"
-          test "$actual" = "$expected" || { echo "ERROR: GitHub remote head differs from published commit"; exit 1; }
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: bilingual image bot OCR results"
+            git pull --rebase origin main
+            node scripts/check_arkan_asset_publication.cjs
+            python scripts/check_arkan_image_data.py
+            git push origin HEAD:main
+          fi
+          node - <<'JS' >> "$GITHUB_STEP_SUMMARY"
+          const fs = require('node:fs');
+          const read = file => JSON.parse(fs.readFileSync(file, 'utf8'));
+          const assets = read('data/arkan-asset-publication-report.json');
+          const visual = read('data/arkan-visual-publish-report.json');
+          const ids = new Set([...assets.ids, ...(visual.published_ids || []).map(String)]);
+          console.log('### Arqan image bot');
+          console.log('- Products with search results: ' + assets.processed);
+          console.log('- New image records pushed to GitHub: ' + ids.size);
+          console.log('- Rejected asset results: ' + JSON.stringify(assets.rejected));
+          JS
       - name: Keep rejected and uncertain results outside storefront
         if: always()
         uses: actions/upload-artifact@v4

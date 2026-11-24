@@ -25,17 +25,17 @@ const publicationFile='data/arkan-auto-published-images.json';
 const published=fs.existsSync(publicationFile)?JSON.parse(fs.readFileSync(publicationFile,'utf8')).byId||{}:{};
 const uncovered=items.filter((x,i)=>!exclusions.has(i+1)&&!known.has(String(x.id)));
 // Prioritize absent links, but retain existing candidates for future verification.
-const active=uncovered.filter(x=>!published[String(x.id)]?.url);
-active.sort((a,b)=>Number(a.cat==='أدوية')-Number(b.cat==='أدوية')||a.id-b.id);
+const order=(a,b)=>Number(a.cat==='أدوية')-Number(b.cat==='أدوية')||a.id-b.id;
+const active=uncovered.filter(x=>!published[String(x.id)]?.url).sort(order);
 const cursorFile='data/arkan-v2-cursor.json';
 const cursor=fs.existsSync(cursorFile)?JSON.parse(fs.readFileSync(cursorFile,'utf8')):{offset:0};
-const priorId=String(cursor.lastAttemptedId||'');
-const priorIndex=active.findIndex(x=>String(x.id)===priorId);
-const offset=priorIndex>=0?(priorIndex+1)%Math.max(1,active.length):Number(cursor.offset||0)%Math.max(1,active.length);
-const budget=Math.max(1,Math.min(30,Number(process.env.ARKAN_V2_BATCH_SIZE||24)));
+const prior=items.find(x=>x.id===Number(cursor.lastAttemptedId));
+const next=prior?active.findIndex(x=>order(x,prior)>0):-1;
+const offset=prior?Math.max(0,next):Number(cursor.offset||0)%Math.max(1,active.length);
+const budget=Math.max(1,Math.min(250,Number.parseInt(process.env.ARKAN_V2_BATCH_SIZE,10)||24));
 const batch=[...active.slice(offset),...active.slice(0,offset)].slice(0,budget);
 const dest='data/arkan-v2-search-input.csv';
-fs.writeFileSync(dest,'\uFEFFcode,name,name_en,category\n'+batch.map(x=>[x.id,x.name,english[x.name]?.brand||'',x.cat].map(csvValue).join(',')).join('\n')+'\n');
+if(!process.argv.includes('--ingest'))fs.writeFileSync(dest,'\uFEFFcode,name,name_en,category\n'+batch.map(x=>[x.id,x.name,english[x.name]?.brand||'',x.cat].map(csvValue).join(',')).join('\n')+'\n');
 console.log(JSON.stringify({catalogItems:items.length,uncovered:active.length,excluded:exclusions.size,offset,batch:batch.length}));
 function splitCSV(line){
   let out=[],current='',quoted=false;
@@ -97,6 +97,17 @@ if(process.argv.includes('--ingest')){
   }
   if(queued)fs.writeFileSync(outFile,JSON.stringify(records,null,2)+'\n');
   // Advance even if no image was found, preventing endlessly repeating batch one.
-  if(lines.length&&active.length)fs.writeFileSync(cursorFile,JSON.stringify({offset:(offset+batch.length)%active.length,lastAttemptedId:String(splitCSV(lines.at(-1))[0]||'')},null,2)+'\n');
+  const codeColumn=fields.indexOf('code');
+  if(codeColumn<0)throw Error('Search results are missing the code column');
+  const attempted=new Set(lines.map(line=>splitCSV(line)[codeColumn]));
+  // Results arrive in worker completion order. Advance only over a contiguous
+  // prefix of the original input so an interrupted batch cannot skip products.
+  const input=fs.readFileSync(dest,'utf8').replace(/^\uFEFF/,'').trim().split(/\r?\n/).slice(1);
+  const orderedIds=input.map(line=>splitCSV(line)[0]);
+  const firstUnprocessed=orderedIds.findIndex(id=>!attempted.has(id));
+  const finished=firstUnprocessed<0?orderedIds.length:firstUnprocessed;
+  if(finished)fs.writeFileSync(cursorFile,JSON.stringify({
+    lastAttemptedId:orderedIds[finished-1]
+  },null,2)+'\n');
   console.log(JSON.stringify({searched:lines.length,publishedCandidateThumbnails:queued,arabicOnlyCandidates:arabicOnly,duplicateImages,remotePreviewEnabled,rejectedForAutoPublication:blocked}));
 }

@@ -46,7 +46,7 @@ const usedHashes=new Set(Object.values(manifest.byId).filter(x=>x&&x.sha256).map
 const outDir='assets/product-images';fs.mkdirSync(outDir,{recursive:true});
 const repo=process.env.GITHUB_REPOSITORY||'Arqanpharma11/Arqan-Pharm';
 if(!/^[\w.-]+\/[\w.-]+$/.test(repo))throw Error('Invalid GitHub repo');
-const branch='main',budget=Math.min(20,Math.max(1,Number(process.env.ARKAN_ASSET_PUBLISH_BUDGET)||8));
+const branch='main',budget=Math.min(250,Math.max(1,Number.parseInt(process.env.ARKAN_ASSET_PUBLISH_BUDGET,10)||8));
 const report={processed:0,published:0,skipped:0,rejected:{},ids:[]};
 const reject=reason=>{report.rejected[reason]=(report.rejected[reason]||0)+1};
 for(const values of rows){
