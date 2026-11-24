@@ -4,9 +4,9 @@
   "approvedForProduction": false,
   "version": 2,
   "ambiguousLinksSkipped": 12,
-  "generatedAt": "2026-11-23T04:53:36.553Z",
-  "catalogTotal": 4218,
-  "trialImages": 942,
+  "generatedAt": "2026-11-24T13:07:55.212Z",
+  "catalogTotal": 4783,
+  "trialImages": 944,
   "notice": "UNVERIFIED IMAGES. Not for dispensing or identifying medicine. Never imported into approved pharmacy photo seeds.",
   "items": [
     {
@@ -41,6 +41,18 @@
       "source": "Azzam Pharmacy",
       "sourcePage": "https://azzampharmacy.com/products/apixatrack-5-mg-30-tab-378644-18836",
       "title": "Apixatrack  5 Mg  30 Tab  (378644)",
+      "status": "trial_unverified",
+      "catalogMatch": "not_visually_verified",
+      "rights": "source_rights_unconfirmed"
+    },
+    {
+      "id": "50",
+      "name": "ابيكسيدون0.5 مجم",
+      "category": "أدوية",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/175816.webp?v=1786649400",
+      "source": "Azzam Pharmacy",
+      "sourcePage": "https://azzampharmacy.com/products/apexidone-0-5-mg-30-tab-6900",
+      "title": "Apexidone  0.5 Mg  30 Tab",
       "status": "trial_unverified",
       "catalogMatch": "not_visually_verified",
       "rights": "source_rights_unconfirmed"
@@ -1829,6 +1841,18 @@
       "source": "Azzam Pharmacy",
       "sourcePage": "https://azzampharmacy.com/products/bronchopro-7-5-mg-ml-oral-drops-30-ml-3536",
       "title": "Bronchopro  7.5 Mg / Ml  Oral Drops  30 Ml",
+      "status": "trial_unverified",
+      "catalogMatch": "not_visually_verified",
+      "rights": "source_rights_unconfirmed"
+    },
+    {
+      "id": "1036",
+      "name": "بريبيوتك اكياس",
+      "category": "مكملات وفيتامينات",
+      "imageUrl": "https://images.openfoodfacts.org/images/products/506/085/364/0032/front_en.9.400.jpg",
+      "source": "world.openfoodfacts.org",
+      "sourcePage": "https://world.openfoodfacts.org/product/5060853640032",
+      "title": "Bio & Me Original Gut-Loving Prebiotic* Yoghurt 350g",
       "status": "trial_unverified",
       "catalogMatch": "not_visually_verified",
       "rights": "source_rights_unconfirmed"
@@ -5807,7 +5831,7 @@
     },
     {
       "id": "2371",
-      "name": "سوبر كيدز شامبو حديث",
+      "name": "سوبر كيدز شامبو بيبى 200مل",
       "category": "مستحضرات تجميل",
       "imageUrl": "https://cdn.shopify.com/s/files/1/0935/9550/0847/files/733.webp?v=1780827756",
       "source": "AlFouad Pharmacies",
