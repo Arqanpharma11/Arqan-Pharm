@@ -206,6 +206,20 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Bloom Pharmacy"
     },
+    "327": {
+      "catalogName": "البافيت شراب كالسيوم",
+      "title": "Elbavit Multivitamin Supplement Syrup Pineapple Flavor with Calcium & Vitamin D3 for Immunity & Appetite Support",
+      "englishName": "Elbavit Syrup Calcium",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/8b/8bb6b55bf6b3b0d663c20c3580d9de85c2198a39db57bc63fce11f7950ac0d46.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/elbavit-calcium-syrup-60ml",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
+    },
     "330": {
       "url": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/607585.webp?v=1786658990",
       "source": "azzampharmacy.com",
@@ -262,6 +276,20 @@
       "englishName": "Ulcezole 60 mg",
       "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/a8/a8f9ee36b27921916fedfa6e48c54174d49d3d8c93f1166d230f2c669bb7b7af.jpg",
       "sourcePage": "https://www.lotusonline.com/products/ulcezole-60mg-20-cap",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
+    },
+    "384": {
+      "catalogName": "الكابرايد50 مجم",
+      "title": "Alkapride 50mg Itopride Hydrochloride",
+      "englishName": "Alkapride 50 mg",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/ac/ac5b89b5b25142b3c81cde603b4ad8bec24269ca1f32723d5b8bc8d3c04ffa25.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/alkapride-50mg-30-tablet",
       "source": "www.lotusonline.com",
       "status": "candidate_preview",
       "independentlyVerified": false,
@@ -550,6 +578,20 @@
       "license": "external retailer image; rights not independently verified",
       "note": "Real retailer product image URL; exact pixels and availability not independently verified"
     },
+    "785": {
+      "catalogName": "ايزاليزيبين800مجم",
+      "title": "Eslizepine 800mg Eslicarbazepine Acetate Tablets",
+      "englishName": "Eslizepine 800 mg",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/49/4948ce7bd21c6821ca177cecc06e9ac96fa72c51e4efab3df09fb12311028512.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/eslizepine-800mg-eslicarbazepine-acetate-tablets",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
+    },
     "804": {
       "url": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/53084.webp?v=1786653329",
       "source": "azzampharmacy.com",
@@ -624,6 +666,20 @@
       "license": "external retailer image; rights not independently verified",
       "note": "Real retailer product image URL; exact pixels and availability not independently verified"
     },
+    "846": {
+      "catalogName": "ايكسوسيرليك500 مجم",
+      "title": "Exosirylic 500mg Ursodeoxycholic Acid",
+      "englishName": "Exosirylic 500 mg",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/18/1806173bbdef1cf8ad762b8d27313443bc8c64b3e396fffb1e32b4619224951e.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/exosirylic-500mg-20-film-coated-tablet",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
+    },
     "896": {
       "url": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/paramol-500-mg-20-tablets-510219.jpg?v=1735257075",
       "source": "re3ayapharmacy.com",
@@ -685,6 +741,20 @@
       "attribution": "Azzam Pharmacy",
       "license": "external retailer image; rights not independently verified",
       "note": "Real retailer image URL; packaging pixels and remote availability not independently verified"
+    },
+    "953": {
+      "catalogName": "بايو جاينرز فانيليا",
+      "title": "Bio Gainers 510 Supplement Vanilla Flavor",
+      "englishName": "Bio-Gainers Vanilla",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/44/446608309a19c8d676ef152c937c7e44ffea429fe9db0a1b8fb702ed8d2359f5.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/bio-gainers-vanilla-nutritional-powder-510gm",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
     },
     "962": {
       "catalogName": "برافوتين30كيس س ج",
@@ -862,6 +932,34 @@
       "license": "external retailer image; rights not independently verified",
       "note": "Real retailer image URL; packaging pixels and remote availability not independently verified"
     },
+    "1061": {
+      "catalogName": "بريفاجليب2.5/1000مجم بﻼس",
+      "title": "Prevaglip Plus 1000mg Metformin Hydrochloride & 2.5mg Linagliptin",
+      "englishName": "Prevaglip 2.5/1000 mg Plus",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/3f/3fdbff0f434af86fc66f4cb7c8b9055c73b74861e590781c5d15238dc5230a49.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/prevaglip-plus-2-5-1000mg-30-f-c-tab",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
+    },
+    "1062": {
+      "catalogName": "بريفافيوتال100مجم",
+      "title": "Brivafutal 100mg Brivaracetam 30 tablets",
+      "englishName": "Brivafutal 100 mg",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/a5/a5e521081b235e66eebfe7f8804af2bab9e2eeef5be2b3db3bd8aed3b1d44679.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/brivafutal-100mg-brivaracetam-30-tablets",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
+    },
     "1076": {
       "catalogName": "بريموندين قطره",
       "title": "بريموندين قطرة",
@@ -1027,6 +1125,20 @@
       "attribution": "Azzam Pharmacy",
       "license": "external retailer image; rights not independently verified",
       "note": "Real retailer image URL; packaging pixels and remote availability not independently verified"
+    },
+    "1150": {
+      "catalogName": "بونجيل سبراي",
+      "title": "Pongeel Mouth Spray",
+      "englishName": "Pongeel Spray",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/23/2373c7f7ac188d56e46729e085babb7302ac658341807f143f83adfeee504685.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/pongeel-mouth-spray-60ml",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
     },
     "1160": {
       "catalogName": "بى فريش ازرق",
@@ -2126,6 +2238,20 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Lotus Pharmacies"
     },
+    "1478": {
+      "catalogName": "تيراليبسى750 اكس ار",
+      "title": "تيراليبسي إكس آر 750 ملغ ليفيتيراسيتام",
+      "englishName": "Tiralepsy Xr XR",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/93/93db549bcae747b8c530d122c33ab3e43017c96044c9737a8dc85fdde1e7a1de.jpg",
+      "sourcePage": "https://www.lotusonline.com/ar/products/tiralepsy-xr-750mg-20-f-c-tab",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
+    },
     "1481": {
       "url": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/terbin-250-mg-14-tablets-994009.jpg?v=1735257131",
       "source": "re3ayapharmacy.com",
@@ -2141,6 +2267,20 @@
       "attribution": "Re3aya Pharmacy",
       "license": "external retailer image; rights not independently verified",
       "note": "Real retailer product image URL; exact pixels and availability not independently verified"
+    },
+    "1489": {
+      "catalogName": "تيمبستاتين20/10 مجم",
+      "title": "Timbestatin 10mg Ezetimibe & 20mg Simvastatin",
+      "englishName": "Timbestatin 20/10 mg",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/d0/d0e0c53322d1682bf1b35b74944cd494598e539e4daaa477acf1e54a92ee0454.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/timbestatin-10-20mg-14-f-c-tab",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
     },
     "1494": {
       "url": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/tenormin-50-mg-28-tablets-102041.jpg?v=1735257268",
@@ -2698,6 +2838,20 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Azzam Pharmacy"
     },
+    "1692": {
+      "catalogName": "جينوكونازول80مجم لبوس",
+      "title": "Gynoconazol 80mg Terconazole Vaginal Suppositories",
+      "englishName": "Gynoconazol 80 mg Suppositories",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/61/61b0d6a2e6c996314a984397613dfc9083eb9ed13bda38597b468d993c9663d4.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/gynoconazol-80mg-3-vaginal-suppository",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
+    },
     "1694": {
       "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/1694.webp",
       "source": "cdn.dawaagate.com",
@@ -2992,6 +3146,20 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Azzam Pharmacy"
     },
+    "1861": {
+      "catalogName": "ديافليوزيمات1000/10مجم",
+      "title": "Diaflozimet 10mg Dapagliflozin & 1000mg Metformin Hydrochloride",
+      "englishName": "Diaflozimet 1000/10 mg",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/8a/8a4a5b2010695e26da1697ead34511aeb7c216d96ff10a988fcffdcf205abf21.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/diaflozimet-10-1000mg-30-extended-release-film-coated-tablet",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
+    },
     "1864": {
       "catalogName": "دياكوريماب10 مجم",
       "title": "Diacurimap 10mg Empagliflozin",
@@ -3182,6 +3350,20 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Re3aya Pharmacy"
     },
+    "1941": {
+      "catalogName": "ديكلوبرو75مجم اس ار",
+      "title": "Diclopro SR 75mg Diclofenac Sodium",
+      "englishName": "Diclopro 75 mg SR",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/f4/f43614ee818b7471969cc42da25e67dfbaf0cef3bc11efc84ac99fd81bbe13bc.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/diclopro-sr-75mg-diclofenac-sodium",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
+    },
     "1949": {
       "url": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/dilatrol-25-mg-30-tablets-317501.jpg?v=1735257581",
       "source": "re3ayapharmacy.com",
@@ -3283,6 +3465,20 @@
       "manualVisualInspected": true,
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Re3aya Pharmacy"
+    },
+    "2019": {
+      "catalogName": "روتاهيلكس سيستايين شراب",
+      "title": "Rotahelex Cysteine Bronchial Health Support Supplement Syrup Tutti Frutti Flavor",
+      "englishName": "Rotahelex Cysteine Syrup",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/06/060471a48e4e0c7a61d8a06865f0e54abc315eaa0410221b3958ca2f03fe9228.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/rotahelex-cysteine-bronchial-health-support-supplement-syrup-tutti-frutti-flavor",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
     },
     "2020": {
       "catalogName": "روتاهيلكس فورت شراب",
@@ -3540,6 +3736,20 @@
       "license": "third-party photo; commercial reuse permissions not verified",
       "note": "Photo visually matched by product packaging; external URL untested in browser; image remains not independently certified."
     },
+    "2090": {
+      "catalogName": "ريﻼكس كريم",
+      "title": "Relax Massage Cream",
+      "englishName": "Relax Cream",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/83/83fdad5a22c6b3ac35cd27ee38a3f2ed67e5628ad94c0a8adc1558abc8e31c55.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/relax-massage-cream-50gm",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
+    },
     "2093": {
       "catalogName": "ريموواكس نقط",
       "title": "ريموواكس نقط اذن",
@@ -3655,6 +3865,20 @@
       "manualVisualInspected": true,
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Azzam Pharmacy"
+    },
+    "2138": {
+      "catalogName": "زنكوديرم لوسيون ج",
+      "title": "Zincoderm Skin Lotion",
+      "englishName": "Zincoderm Lotion",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/3e/3e40596dd4fbf7cc6984bfb9e65d6a30afd9fea6e2e794309e32d1de584428f9.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/zincoderm-topical-lotion-120ml",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
     },
     "2142": {
       "catalogName": "زوركال20 ملى",
@@ -3951,6 +4175,20 @@
       "attribution": "Re3aya Pharmacy",
       "license": "external retailer image; rights not independently verified",
       "note": "Real retailer product image URL; exact pixels and availability not independently verified"
+    },
+    "2228": {
+      "catalogName": "سانسو ماغنيسيوم250 مجم",
+      "title": "Sanso 250mg Magnesium Supplement for Bone, Nerve & Muscle Health",
+      "englishName": "Sanso Magnesium 250 mg",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/2f/2f6d7b65ba50b32d82d4e428f1e785dec186dec869597dd1d374f4289bcf0103.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/sanso-magnesium-250mg-28-tab",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
     },
     "2231": {
       "url": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/SANSOVIT_20PLUS_20100-400x400.png?v=1735268145",
@@ -4356,6 +4594,20 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Azzam Pharmacy"
     },
+    "2622": {
+      "catalogName": "سينجاردى1000/12.5مجم",
+      "title": "Synjardy 12.5mg Empagliflozin & 1000mg Metformin Hydrochloride",
+      "englishName": "Synjardy 1000/12.5 mg",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/75/757447556a47fdd5d9650912315808700c4870e4ad28b126887c2646f5021a98.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/synjardy-12-5-1000mg-60-tablet",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
+    },
     "2638": {
       "catalogName": "شارتوريج80 مجم 28 قرص",
       "title": "Chartoreg  80 Mg  28 Tab",
@@ -4510,6 +4762,20 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Dr. Magdy El-Haddad Pharmacies"
     },
+    "2846": {
+      "catalogName": "فورتام1 جم",
+      "title": "Fortum 1g Ceftazidime with Water Ampoules for Intramuscular & Intravenous Injection",
+      "englishName": "Fortum 1 g",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/84/84c2a0fad07bd69c9e715ebce5e6e6b607f74c53faa5a07f15b65fa03f6ba9a2.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/fortum-1gm-1-vial",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
+    },
     "2863": {
       "id": "2863",
       "catalogName": "فولتارين100 اس ار اقراص",
@@ -4579,6 +4845,20 @@
       "englishName": "Vildagluse 50 mg",
       "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/f2/f2dd40a3fd40ac3ee49476fe92f360b040fa2139418491c8a617df0b0f88c324.jpg",
       "sourcePage": "https://www.lotusonline.com/products/vildagluse-50mg-30-tablet",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
+    },
+    "2997": {
+      "catalogName": "فينوسين كريم س ج",
+      "title": "فينوسين كريم للبواسير",
+      "englishName": "Vinosin Cream",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/0f/0f0de2f5a2b21c2c735e3bb3a53b17bd77df2a9c433630cb0ee4e420bf8c20f1.jpg",
+      "sourcePage": "https://www.lotusonline.com/ar/products/vinosin-hemorrhoid-cream",
       "source": "www.lotusonline.com",
       "status": "candidate_preview",
       "independentlyVerified": false,
@@ -4842,6 +5122,20 @@
       "manualVisualInspected": true,
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Bloom Pharmacy"
+    },
+    "3125": {
+      "catalogName": "كالم سكن كريم",
+      "title": "Calm Skin Soothing & Emollient Cream with Dimethicone, Zinc Oxide & Chamomile Extract",
+      "englishName": "Calm Skin Cream",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/e4/e4557c9359abc7b743c0a369e8c6b84a00e77ad0d6661a876734be7fd73cb700.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/calm-skin-cream-30gm",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
     },
     "3131": {
       "catalogName": "كالوبين نقط",
@@ -5193,6 +5487,20 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Re3aya Pharmacy"
     },
+    "3351": {
+      "catalogName": "كونكور أملو5/5 مجم",
+      "title": "Concor Amlo 5mg Bisoprolol Fumarate & 5mg Amlodipine",
+      "englishName": "Concor Amlo 5/5 mg",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/56/56d9fb1d3bcd84e9889823089119e6887f7b4674dd7b7e8cdbd7b7de68565cb0.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/concor-amlo-5-5mg-30-tablet",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
+    },
     "3353": {
       "catalogName": "كونيستبرايد2 مجم",
       "title": "Constipride 2mg Prucalopride",
@@ -5213,6 +5521,20 @@
       "englishName": "Keppra 500 mg",
       "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/af/af65814754570d837e42898f597c76a7e9b773b4c22110e35e2a3188445cdef5.jpg",
       "sourcePage": "https://www.lotusonline.com/products/keppra-500mg-levetiracetam",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
+    },
+    "3377": {
+      "catalogName": "كيبراديل750 اكس ار",
+      "title": "كيبراديل إكس آر 750 ملغ ليفيتيراسيتام",
+      "englishName": "Kepradil 750 XR",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/f2/f23c610934f400dad2e08d8d50fab650559e80a8345744ae94e5793c47aed416.jpg",
+      "sourcePage": "https://www.lotusonline.com/ar/products/kepradil-xr-750mg-levetiracetam",
       "source": "www.lotusonline.com",
       "status": "candidate_preview",
       "independentlyVerified": false,
@@ -5417,6 +5739,20 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Dr. Magdy El-Haddad Pharmacies"
     },
+    "3526": {
+      "catalogName": "ليبوكومب20/10 مجم س ج",
+      "title": "Lipocomb 20mg Rosuvastatin & 10mg Ezetimibe",
+      "englishName": "Lipocomb 20/10 mg",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/3f/3f5ad47551d333543a365ee9363171dc21dbef3efddacb30b1b2a64edea26eb4.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/lipocomb-20mg-rosuvastatin-10mg-ezetimibe",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
+    },
     "3528": {
       "catalogName": "ليبونا40 مجم س ج",
       "title": "Lipona 40mg Atorvastatin",
@@ -5502,6 +5838,20 @@
       "manualVisualInspected": true,
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Azzam Pharmacy"
+    },
+    "3657": {
+      "catalogName": "مارينيز اوميجا3 شراب",
+      "title": "Marnys Omega 3(Lemon) Syrup 125ml",
+      "englishName": "Marnys Omega 3 Syrup",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/32/3235f1c1b82ae79eb1d07e1dccee550b151bfe63d5cdd1b9778972452aecba31.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/marnys-omega-3lemon-syrup-125ml",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
     },
     "3664": {
       "catalogName": "مافو400 مجم 30 قرص",
@@ -5713,6 +6063,20 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Lotus Pharmacies"
     },
+    "3906": {
+      "catalogName": "ناركلين كبسول",
+      "title": "ناركلين دواء لتخفيف الغازات والانتفاخ 30 كبسولة هلامية",
+      "englishName": "Narkleen Capsules",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/44/442432d90eb22eb5d449eac09fdb650fd15a36552982d05b22b044eb0c4a4df9.jpg",
+      "sourcePage": "https://www.lotusonline.com/ar/products/narkleen-gas-bloating-relief-medication-30-softgels",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
+    },
     "3908": {
       "catalogName": "نازوستوب نقط كبار",
       "title": "نازوستوب نقط كبار ج",
@@ -5853,6 +6217,20 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Tay Pharmacies"
     },
+    "3956": {
+      "catalogName": "نورموكارد7.5 مجم 30 قرص",
+      "title": "نورموكارد 7.5 مجم بيسوبرولول فومارات 30 قرصًا",
+      "englishName": "Normocard 7.5 mg 30 Tablets",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/c4/c425d8fca9ab3a091c5eb924435247062df814f9de6b1d3499897b54b5f235b0.jpg",
+      "sourcePage": "https://www.lotusonline.com/ar/products/normocard-7-5mg-bisoprolol-fumarate-30-tablets",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
+    },
     "3968": {
       "catalogName": "نوفونورم30-1ق",
       "title": "Novonorm  1 Mg  30 Tab",
@@ -5992,6 +6370,20 @@
       "manualVisualInspected": true,
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Re3aya Pharmacy"
+    },
+    "4010": {
+      "catalogName": "نيكسيروزوفا10 مجم اقراص",
+      "title": "Nexirozova 10mg Rosuvastatin 28 tablets",
+      "englishName": "Nexirozova 10 mg Tablets",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/32/324110a534a14f62e2001b4b6d09d926813f91ce2f72e22864a6632de41a74b9.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/nexirozova-10mg-rosuvastatin-28-tablets",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
     },
     "4017": {
       "catalogName": "نيكسيكيور بلس14**40/1680كيس",
@@ -6299,6 +6691,20 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Re3aya Pharmacy"
     },
+    "4141": {
+      "catalogName": "هيرو بيبى اتش ايه لبن",
+      "title": "Hero Baby Ha Hydrolyzed Protein Infant Milk Formula with DHA, Prebiotics & Nucleotides (0+ Months)",
+      "englishName": "Hero Baby HA Formula Milk",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/59/59d4c76314d705edf0115a54d3bb447f29b06c90e3829448ef3c01b87da45180.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/hero-baby-ha-milk-powder-400gm",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
+    },
     "4143": {
       "catalogName": "هيرو بيبى ايه ار لبن",
       "title": "Hero Baby AR Formula Milk - 400g",
@@ -6573,6 +6979,20 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Lotus Pharmacies"
     },
+    "230017": {
+      "catalogName": "اتوريزا 40/ 10مجم س ج",
+      "title": "Atoreza 10mg Ezetimibe & 40mg Atorvastatin",
+      "englishName": "Atoreza 40 10 mg",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/10/101ed0ae7a97081976f3ae960c08f319931a2cb373a0f1248c7353c59a5eaf10.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/atoreza-10-40mg-28-film-coated-tablet",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
+    },
     "230018": {
       "catalogName": "اتوموكس ابيكس شراب",
       "title": "اتوموكسابكس شراب",
@@ -6607,6 +7027,34 @@
       "englishName": "Asmakast 10 mg",
       "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/e8/e8c831ccaf8c3a54bbfbbd67210811e1f08bc297e8f5fa9d1b696cbe4fd77f17.jpg",
       "sourcePage": "https://www.lotusonline.com/products/asmakast-10mg-30-film-coatedtablet",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
+    },
+    "230047": {
+      "catalogName": "البوستيكس دى 16/12.5مجم",
+      "title": "Albustix D 16mg Candesartan Cilexetil & 12.5mg Hydrochlorothiazide",
+      "englishName": "Albustix D 16/12.5 mg",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/20/202fb6ae07188c643d95d7a456213168327877c87f603704e9af94604fecf8df.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/albustix-d-16mg-candesartan-cilexetil-12-5mg-hydrochlorothiazide",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
+    },
+    "230053": {
+      "catalogName": "املوسازايد 20/5/12.5مجم",
+      "title": "Amlosazide 20mg Olmesartan Medoxomil, 12.5mg Hydrochlorothiazide & 5mg Amlodipine for Hypertension Treatment",
+      "englishName": "Amlosazide 20/5/12.5 mg",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/94/947d7a45fdd7ae6fe0af1026d096b4dcfa193646ab7a10f8c90dc1c84529dc58.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/amlosazide-5-12-5-20mg-30-film-coated-tablet",
       "source": "www.lotusonline.com",
       "status": "candidate_preview",
       "independentlyVerified": false,
@@ -6657,6 +7105,20 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Azzam Pharmacy"
     },
+    "230070": {
+      "catalogName": "انوفوليك كبسول",
+      "title": "Inofolic Combi HP 550mg Myo-Inositol & 13.8mg D-Chiro Inositol Pregnancy Preparation Support Supplement with Folic Acid & Alpha-Lactalbumin 30 capsules",
+      "englishName": "Inofolic Capsules",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/f2/f26cb3f5381adab8f3cabe3f9a8119afe48b0ac4897024446018d04516be5ceb.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/inofolic-combi-hp-550mg-myo-inositol-13-8mg-d-chiro-inositol-pregnancy-preparation-support-supplement-with-folic-acid-alpha-lactalbumin-30-capsules",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
+    },
     "230071": {
       "catalogName": "اوبتست قطرة",
       "title": "اوبتست قطرة ج",
@@ -6671,6 +7133,34 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Dr. Magdy El-Haddad Pharmacies"
     },
+    "230086": {
+      "catalogName": "ايبا اكت هير لوسيون",
+      "title": "Eba Act Back to Life Hair Lotion with Green Coffee & Protein",
+      "englishName": "Eba Act Hair Lotion",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/76/76637b22080e44f3facc4b6d18245a7658833e28a763f26d28a2efeadbce4185.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/eba-act-back-to-life-hair-lotion-with-green-coffee-protein",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
+    },
+    "230090": {
+      "catalogName": "ايراستابكس تريو 40/10/25",
+      "title": "Erastapex Trio with 40mg Olmesartan Medoxomil, 10mg Amlodipine & 25mg Hydrochlorothiazide",
+      "englishName": "Erastapex Trio 40/10/25",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/cd/cd70d04641e65c1e9103b6f02207fdd6447e7629fb417a0063eeeed803da4942.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/erastapex-trio-40-10-25mg-30-film-coated-tablet",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
+    },
     "230112": {
       "catalogName": "برونكوفين شراب",
       "title": "برونكوفين شراب",
@@ -6684,6 +7174,20 @@
       "manualVisualInspected": true,
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Dr. Magdy El-Haddad Pharmacies"
+    },
+    "230120": {
+      "catalogName": "بلوكاتنس 5/160مجم",
+      "title": "Blokatens 5mg Amlodipine & 160mg Valsartan",
+      "englishName": "Blokatens 5/160 mg",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/b7/b7742acb24065d5954f309d0e43c78c6a76659cc36a0f2b5d6cdd5b575b4d372.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/blokatens-5-160mg-28-tablet",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
     },
     "230125": {
       "catalogName": "بوباى ثيرمال واتر 120مل اسبري",
@@ -6754,6 +7258,20 @@
       "manualVisualInspected": true,
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Azzam Pharmacy"
+    },
+    "230162": {
+      "catalogName": "تريبليكسام 1.25-5مجم",
+      "title": "Triplixam 5mg Perindopril Arginine, 1.25mg Indapamide & 5mg Amlodipine",
+      "englishName": "Triplixam 1.25 5 mg",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/cb/cbc36218e5279af51f162d28cf31b1a4303b5758ba21fd49cbc27837de518c15.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/triplixam-5-1-25-5mg-15-film-coated-tablet",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
     },
     "230169": {
       "catalogName": "تورسيرتك 20مجم",
@@ -6922,6 +7440,20 @@
       "manualVisualInspected": true,
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Azzam Pharmacy"
+    },
+    "230208": {
+      "catalogName": "داونستيرولين 10/20مجم",
+      "title": "Downsterolin 10mg Ezetimibe & 20mg Simvastatin",
+      "englishName": "Downsterolin 10/20 mg",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/4d/4d702618cc7a43012f0c3fe200c2a2d0ef991e1ffa434ee3831fe66c480156df.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/downsterolin-10-20mg-28-film-coated-tablet",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
     },
     "230221": {
       "catalogName": "دولفين %3جل 30جم",
@@ -7315,6 +7847,20 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Dr. Magdy El-Haddad Pharmacies"
     },
+    "230360": {
+      "catalogName": "شارتوريج تريو 5/12.5/80مجم",
+      "title": "Chartoreg Trio 5mg Amlodipine, 12.5mg Hydrochlorothiazide & 80mg Telmisartan for Hypertension",
+      "englishName": "Chartoreg Trio 5/12.5/80 mg",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/17/1718ebedeb2b990c79fc5b5453b496535e7b29d5433dcbd41075b6b91cdcea7c.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/chartoreg-trio-5mg-amlodipine-12-5mg-hydrochlorothiazide-80mg-telmisartan-for-hypertension",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
+    },
     "230366": {
       "catalogName": "فاردينوريكت 20مجم",
       "title": "Vardenorect 20mg Vardenafil",
@@ -7530,6 +8076,20 @@
       "license": "source retailer image; commercial reuse rights not independently verified",
       "note": "Real packaging visually inspected against SKU. Retailer hotlink; displayed page not browser-smoke tested."
     },
+    "230482": {
+      "catalogName": "ليمتليس بيبى دى نقط",
+      "title": "Limitless Naturals Baby 1600 IU/ml Vitamin D3 Growth & Development Support Supplement Drops for Infants (0-4 Years) - GMO free, preservatives free, artificial colors free",
+      "englishName": "Limitless Baby D Drops",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/b4/b4d2002f92c35b2d176bd8f0217d9b39fbd36a7427591782bb877c1024cf0076.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/limitless-naturals-baby-1600-iu-ml-vitamin-d3-growth-development-support-supplement-drops-for-infants-0-4-years-gmo-free-preservatives-free-artificial-colors-free",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
+    },
     "230484": {
       "catalogName": "لينجالابس بلس 1000/5/25مجم 30 قرص",
       "title": "Lingalabs Plus  25 / 5 / 1000 Mg  30 Tab",
@@ -7616,6 +8176,20 @@
       "manualVisualInspected": true,
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Dr. Magdy El-Haddad Pharmacies"
+    },
+    "230552": {
+      "catalogName": "وينزوكسيب 60مجم",
+      "title": "Winzoxib 60mg Etoricoxib",
+      "englishName": "Winzoxib 60 mg",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/56/565a1832c3337d9ad634856fcbe0475111857010f4a630d5ad1587c0544d45f8.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/winzoxib-60mg-20-film-coated-tablet",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
     },
     "230562": {
       "catalogName": "هيرو بيبى نيوتراديفنس3 لبن 400جرام",
