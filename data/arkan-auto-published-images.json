@@ -14262,6 +14262,22 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "AlFouad Pharmacies"
     },
+    "3042": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/3042.webp",
+      "source": "m.media-amazon.com",
+      "sourcePage": "https://www.amazon.eg/-/en/Capixy-Hair-Fertlizer-Tonic-Spray/dp/B0B3DPRH8G",
+      "originalImageUrl": "https://m.media-amazon.com/images/I/41BgWQYxYgL.jpg",
+      "catalogName": "كابكسى تونيك لوسيون",
+      "englishName": "Capixy",
+      "title": "Capixy كابكسى تونيك لوسيون",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "matchScore": 1,
+      "matchReason": "multi_source_2",
+      "sha256": "042e6150c57082c27ca1bd7da178d603e8de095390c71e85a234e349a77d61ea",
+      "provenance": "Image downloaded and matched by image discovery bot; commercial reuse license unverified"
+    },
     "3045": {
       "catalogName": "كابكسى شامبو",
       "title": "Capixy Hair Fertilizer Shampoo - 250ml",

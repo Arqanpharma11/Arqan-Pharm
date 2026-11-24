@@ -1,10 +1,10 @@
 {
   "scanned": 0,
   "published": 0,
-  "existing_skipped": 0,
+  "existing_skipped": 10,
   "review": [],
   "published_ids": [],
-  "candidate_previews": 192,
+  "candidate_previews": 284,
   "strict_source_eligible": 0,
-  "strict_source_ineligible": 192
+  "strict_source_ineligible": 284
 }
