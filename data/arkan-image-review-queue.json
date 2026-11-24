@@ -3210,6 +3210,186 @@
       "results": [],
       "reason": "no_match_found",
       "searchedAt": "2026-11-24T13:08:54.016Z"
+    },
+    "1120": {
+      "name": "بنداكس شراب س ك20",
+      "en": "Bendax 20",
+      "results": [],
+      "reason": "no_match_found",
+      "searchedAt": "2026-11-24T14:24:46.372Z"
+    },
+    "1122": {
+      "name": "بنفورا اقراص",
+      "en": "Benphora",
+      "results": [],
+      "reason": "no_match_found",
+      "searchedAt": "2026-11-24T14:24:48.183Z"
+    },
+    "1123": {
+      "name": "بوباى جيل صن سكرين",
+      "en": "Bobai",
+      "results": [
+        {
+          "imageUrl": "https://images.openbeautyfacts.org/images/products/622/400/807/3635/front_en.15.400.jpg",
+          "sourcePage": "https://world.openbeautyfacts.org/product/6224008073635",
+          "title": "BOBAI",
+          "provider": "world.openbeautyfacts.org",
+          "license": "Open Facts contributors — CC BY-SA 3.0 product photo; database ODbL; attribution/share-alike apply",
+          "foundAt": "2026-11-24T14:24:50.834Z",
+          "status": "pending_manual_packaging_and_license_review"
+        },
+        {
+          "imageUrl": "https://images.openbeautyfacts.org/images/products/622/301/263/2647/front_en.3.400.jpg",
+          "sourcePage": "https://world.openbeautyfacts.org/product/6223012632647",
+          "title": "Bobai Sunscreen Cream SPF 50",
+          "provider": "world.openbeautyfacts.org",
+          "license": "Open Facts contributors — CC BY-SA 3.0 product photo; database ODbL; attribution/share-alike apply",
+          "foundAt": "2026-11-24T14:24:50.834Z",
+          "status": "pending_manual_packaging_and_license_review"
+        }
+      ],
+      "reason": "needs_review"
+    },
+    "1124": {
+      "name": "بوباى صن بلوك لوسيون",
+      "en": "Bobai",
+      "results": [
+        {
+          "imageUrl": "https://images.openbeautyfacts.org/images/products/622/400/807/3635/front_en.15.400.jpg",
+          "sourcePage": "https://world.openbeautyfacts.org/product/6224008073635",
+          "title": "BOBAI",
+          "provider": "world.openbeautyfacts.org",
+          "license": "Open Facts contributors — CC BY-SA 3.0 product photo; database ODbL; attribution/share-alike apply",
+          "foundAt": "2026-11-24T14:24:52.090Z",
+          "status": "pending_manual_packaging_and_license_review"
+        },
+        {
+          "imageUrl": "https://images.openbeautyfacts.org/images/products/622/301/263/2647/front_en.3.400.jpg",
+          "sourcePage": "https://world.openbeautyfacts.org/product/6223012632647",
+          "title": "Bobai Sunscreen Cream SPF 50",
+          "provider": "world.openbeautyfacts.org",
+          "license": "Open Facts contributors — CC BY-SA 3.0 product photo; database ODbL; attribution/share-alike apply",
+          "foundAt": "2026-11-24T14:24:52.090Z",
+          "status": "pending_manual_packaging_and_license_review"
+        }
+      ],
+      "reason": "needs_review"
+    },
+    "1127": {
+      "name": "بوباى كيدز صن بلوك",
+      "en": "Bobai",
+      "results": [
+        {
+          "imageUrl": "https://images.openbeautyfacts.org/images/products/622/400/807/3635/front_en.15.400.jpg",
+          "sourcePage": "https://world.openbeautyfacts.org/product/6224008073635",
+          "title": "BOBAI",
+          "provider": "world.openbeautyfacts.org",
+          "license": "Open Facts contributors — CC BY-SA 3.0 product photo; database ODbL; attribution/share-alike apply",
+          "foundAt": "2026-11-24T14:24:53.346Z",
+          "status": "pending_manual_packaging_and_license_review"
+        },
+        {
+          "imageUrl": "https://images.openbeautyfacts.org/images/products/622/301/263/2647/front_en.3.400.jpg",
+          "sourcePage": "https://world.openbeautyfacts.org/product/6223012632647",
+          "title": "Bobai Sunscreen Cream SPF 50",
+          "provider": "world.openbeautyfacts.org",
+          "license": "Open Facts contributors — CC BY-SA 3.0 product photo; database ODbL; attribution/share-alike apply",
+          "foundAt": "2026-11-24T14:24:53.346Z",
+          "status": "pending_manual_packaging_and_license_review"
+        }
+      ],
+      "reason": "needs_review"
+    },
+    "1128": {
+      "name": "بوتارينو شراب",
+      "en": "",
+      "results": [],
+      "reason": "no_match_found",
+      "searchedAt": "2026-11-24T14:24:56.328Z"
+    },
+    "1130": {
+      "name": "بورجازون بلس مرهم",
+      "en": "Borgasone Plus Oint",
+      "results": [],
+      "reason": "no_match_found",
+      "searchedAt": "2026-11-24T14:24:58.210Z"
+    },
+    "1133": {
+      "name": "بوسبار10م ق سعر 81ج",
+      "en": "",
+      "results": [],
+      "reason": "no_match_found",
+      "searchedAt": "2026-11-24T14:25:00.294Z"
+    },
+    "1135": {
+      "name": "بوكسيبو كريم بديل ميبو",
+      "en": "",
+      "results": [],
+      "reason": "no_match_found",
+      "searchedAt": "2026-11-24T14:25:01.845Z"
+    },
+    "1136": {
+      "name": "بولى فريش ادفانسيد قطرة",
+      "en": "",
+      "results": [],
+      "reason": "no_match_found",
+      "searchedAt": "2026-11-24T14:25:03.332Z"
+    },
+    "1137": {
+      "name": "بولى فريش اكسترا",
+      "en": "",
+      "results": [],
+      "reason": "no_match_found",
+      "searchedAt": "2026-11-24T14:25:04.770Z"
+    },
+    "1138": {
+      "name": "بولى فريش قطرة",
+      "en": "",
+      "results": [],
+      "reason": "no_match_found",
+      "searchedAt": "2026-11-24T14:25:06.282Z"
+    },
+    "1139": {
+      "name": "بولى فريش مرهم",
+      "en": "",
+      "results": [],
+      "reason": "no_match_found",
+      "searchedAt": "2026-11-24T14:25:07.793Z"
+    },
+    "1140": {
+      "name": "بولى فريش يوني دوز",
+      "en": "",
+      "results": [],
+      "reason": "no_match_found",
+      "searchedAt": "2026-11-24T14:25:09.597Z"
+    },
+    "1141": {
+      "name": "بوليمارت جيل25 مل",
+      "en": "",
+      "results": [],
+      "reason": "no_match_found",
+      "searchedAt": "2026-11-24T14:25:11.157Z"
+    },
+    "1144": {
+      "name": "بون كال اقراص",
+      "en": "Bone Cal",
+      "results": [],
+      "reason": "no_match_found",
+      "searchedAt": "2026-11-24T14:25:12.748Z"
+    },
+    "1145": {
+      "name": "بون كير25",
+      "en": "Broncare 25",
+      "results": [],
+      "reason": "no_match_found",
+      "searchedAt": "2026-11-24T14:25:14.198Z"
+    },
+    "1146": {
+      "name": "بون كير5 مج س ج",
+      "en": "",
+      "results": [],
+      "reason": "no_match_found",
+      "searchedAt": "2026-11-24T14:25:15.949Z"
     }
   }
 }
