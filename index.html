@@ -20,6 +20,14 @@
     <link rel="icon" type="image/png" sizes="512x512" href="./icons/arkan-512.png">
     <link rel="apple-touch-icon" href="./icons/arkan-192.png">
     <link rel="shortcut icon" type="image/svg+xml" href="./arkan-logo.svg?v=4">
+    <script>
+        // Capture the install event before loading external scripts or the catalog.
+        window.addEventListener("beforeinstallprompt", function (event) {
+            event.preventDefault();
+            window.arkanEarlyInstallPrompt = event;
+        });
+        window.addEventListener("appinstalled", function () { window.arkanEarlyInstallPrompt = null; });
+    </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -235,7 +243,7 @@
                         title="مشاركة رابط المنصة ورمز QR Code">
                         <span>📲 مشاركة / QR</span>
                     </button>
-                    <button type="button" onclick="scrollToInstallSection()"
+                    <button type="button" onclick="triggerPlatformInstall(/Android|iPhone|iPad|iPod/i.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1) ? 'mobile' : 'desktop')"
                         class="bg-arkan-primary hover:bg-arkan-dark text-white px-3 py-2 rounded-xl text-xs font-extrabold flex items-center gap-1.5 transition-all cursor-pointer shadow-sm"
                         title="تثبيت التطبيق على الموبايل أو الكمبيوتر">
                         <span>⬇️ تثبيت التطبيق</span>
@@ -21621,7 +21629,7 @@ ${window.location.href}
         // =========================================================
         // 10. PWA INSTALLATION (MOBILE & DESKTOP), SHARE & QR CODE
         // =========================================================
-        let deferredInstallPrompt = null;
+        let deferredInstallPrompt = window.arkanEarlyInstallPrompt || null;
         let swRegistrationSuccess = false;
 
         function getShareablePlatformUrl() {
@@ -21731,7 +21739,7 @@ ${window.location.href}
 
             if (isIOS) {
                 title = 'إضافة مخزن أركان إلى شاشة الآيفون';
-                steps = '<ol class="list-decimal pr-5 space-y-2"><li>افتح الرابط من متصفح <b>Safari</b> مباشرة، وليس من متصفح داخل واتساب أو فيسبوك.</li><li>اضغط زر المشاركة ⬆️ أسفل الشاشة أو أعلاها.</li><li>اختر <b>إضافة إلى الشاشة الرئيسية</b> ثم اضغط <b>إضافة</b>.</li></ol>';
+                steps = '<ol class="list-decimal pr-5 space-y-2"><li>من Safari اضغط زر المشاركة ⬆️ (قد تجده داخل قائمة الصفحة …).</li><li>اختر <b>إضافة إلى الشاشة الرئيسية / Add to Home Screen</b>؛ إذا لم يظهر، ابحث عنه ضمن تعديل الإجراءات.</li><li>فعّل <b>فتح كتطبيق ويب / Open as Web App</b> إن ظهر، ثم اضغط <b>إضافة</b>.</li></ol>';
             } else if (isAndroid) {
                 title = 'تثبيت مخزن أركان على هاتف Android';
                 const browserName = isSamsung ? 'Samsung Internet' : 'Chrome أو Edge';
@@ -21781,6 +21789,7 @@ ${window.location.href}
 
             if (deferredInstallPrompt) {
                 const installEvent = deferredInstallPrompt;
+                window.arkanEarlyInstallPrompt = null;
                 try {
                     // The browser install prompt is single-use. Invoke it synchronously
                     // within this click, then release the event whether accepted or dismissed.
@@ -21807,7 +21816,7 @@ ${window.location.href}
             const isChromium = /Chrome|Chromium|Edg|SamsungBrowser/i.test(navigator.userAgent);
             let reason;
             if (!isSecure) reason = 'التثبيت يتطلب رابط HTTPS آمن. افتح رابط المنصة الرسمي.';
-            else if (isIOS) reason = 'على iPhone لا يسمح Safari بفتح نافذة تثبيت تلقائية من صفحة الويب؛ استخدم مشاركة Safari ثم إضافة إلى الشاشة الرئيسية.';
+            else if (isIOS) reason = 'إذا فتحت الرابط داخل واتساب أو فيسبوك، انسخه وافتحه في Safari أولاً. نظام iOS يتطلب تأكيد الإضافة من قائمة المشاركة.';
             else if (isAndroid) reason = 'لم يرسل المتصفح نافذة التثبيت التلقائي. افتح قائمة المتصفح واختر تثبيت التطبيق أو إضافة إلى الشاشة الرئيسية.';
             else if (isChromium) reason = 'المتصفح لم يرسل حدث التثبيت التلقائي بعد. افتح قائمة المتصفح واختر تثبيت مخزن أركان أو Install app.';
             else reason = 'هذا المتصفح لا يدعم تثبيت تطبيقات PWA مباشرة. افتح الرابط في Chrome أو Edge أو Safari حسب جهازك.';
