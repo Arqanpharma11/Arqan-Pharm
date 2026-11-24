@@ -1,6 +1,21 @@
 {
   "version": 2,
   "byId": {
+    "12": {
+      "catalogName": "ابى رايز شراب",
+      "englishName": "Appe-raise syrup 120 ml",
+      "title": "Appe-raise syrup 120 ml",
+      "url": "https://dwaprices.com/upload/1778968653.png",
+      "source": "dwaprices.com",
+      "sourcePage": "https://dwaprices.com/med.php?id=14318",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "visual_pack_and_source_title_review",
+      "attribution": "dwaprices.com",
+      "note": "External image; reuse rights and live portal rendering not independently verified."
+    },
     "32": {
       "catalogName": "ابيزيثرو شراب",
       "title": "Epizithro 200 mg/5 ml powder for oral suspension, 30 ml",
@@ -73,6 +88,21 @@
       "matchReason": "manual_current_catalog_alternative_title_review",
       "attribution": "Azzam Pharmacy",
       "note": "External candidate preview; image availability and visual package not independently verified."
+    },
+    "62": {
+      "catalogName": "ابيكوسيللين12-500ك",
+      "englishName": "Epicocillin 500 mg 12 capsules",
+      "title": "Epicocillin 500 mg 12 capsules",
+      "url": "https://elshamypharmacies.com/show_file/675617952111186b00bf6ea9b83.jpg/products",
+      "source": "elshamypharmacies.com",
+      "sourcePage": "https://elshamypharmacies.com/product-details/%D8%A5%D8%A8%D9%8A%D9%83%D9%88%D8%B3%D9%8A%D9%84%D9%84%D9%8A%D9%86%20500%20%D9%85%D8%AC%D9%85%20%D9%83%D8%A8%D8%B3%D9%88%D9%84%D8%A7%D8%AA%20%D8%AC%D9%8A%D9%84%D8%A7%D8%AA%D9%8A%D9%86%D9%8A%D8%A9%20%D8%B5%D9%84%D8%A8%D8%A9%20-%2012%20%D9%83%D8%A8%D8%B3%D9%88%D9%84%D8%A9",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "visual_pack_and_source_title_review",
+      "attribution": "elshamypharmacies.com",
+      "note": "External image; reuse rights and live portal rendering not independently verified."
     },
     "63": {
       "catalogName": "ابيكومب كريم - بديل كيناكومب",
@@ -174,6 +204,21 @@
       "manualVisualInspected": true,
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Lotus Pharmacies"
+    },
+    "84": {
+      "catalogName": "اتروزيمب10/80 مل ق",
+      "englishName": "Atrozemb 80/10 mg 30 tablets",
+      "title": "Atrozemb 80/10 mg 30 tablets",
+      "url": "https://dwaprices.com/upload/1779232655.png",
+      "source": "dwaprices.com",
+      "sourcePage": "https://dwaprices.com/med.php?id=14601",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "visual_pack_and_source_title_review",
+      "attribution": "dwaprices.com",
+      "note": "External image; reuse rights and live portal rendering not independently verified."
     },
     "115": {
       "catalogName": "اتينو50/25 سى",
