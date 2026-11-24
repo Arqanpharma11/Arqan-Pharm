@@ -889,7 +889,8 @@ def main():
         checkpoint("Add product images (final)" if a.push else None)
 
     print("\nالنتيجة:", dict(stats))
-    print(f"auto = اتنشر | review = راجعها من review.html | not_found = مفيش صورة مؤكدة")
+    print("auto = صورة اجتازت مطابقة البحث وحُفظت محليًا | review = تحتاج مراجعة | not_found = لم تتوفر صورة مؤكدة")
+    print("تقرير النشر هو المرجع لعدد الصور التي وصلت إلى المنصة.")
 
 
 if __name__ == "__main__":
