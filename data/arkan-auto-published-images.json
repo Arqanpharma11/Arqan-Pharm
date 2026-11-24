@@ -59,6 +59,34 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "EIPICO"
     },
+    "63": {
+      "catalogName": "ابيكومب كريم - بديل كيناكومب",
+      "title": "Epicomb topical cream 15 g",
+      "englishName": "Epicomb",
+      "url": "https://www.eipico.com.eg/DataImages/PRDS/Product_Image510.png",
+      "sourcePage": "https://www.eipico.com.eg/PRDSDetails.aspx?id=510",
+      "source": "www.eipico.com.eg",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "EIPICO"
+    },
+    "64": {
+      "catalogName": "ابيﻼت كبسووول",
+      "title": "Epilat  10 Mg  30 Caps  (Soft)",
+      "englishName": "Epilat",
+      "url": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/2105.webp?v=1786656390",
+      "sourcePage": "https://azzampharmacy.com/products/epilat-10-mg-30-caps-soft-568",
+      "source": "azzampharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Azzam Pharmacy"
+    },
     "69": {
       "id": "69",
       "catalogName": "ابيمول اقراص س ج",
@@ -188,6 +216,20 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Azzam Pharmacy"
     },
+    "436": {
+      "catalogName": "ام اكس3 امبول",
+      "title": "Em - Ex  3 Mg / 3 Ml  1 Amp",
+      "englishName": "Em Ex",
+      "url": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/55458.webp?v=1786652999",
+      "sourcePage": "https://azzampharmacy.com/products/em-ex-3-mg-3-ml-1-amp-3148",
+      "source": "azzampharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Azzam Pharmacy"
+    },
     "476": {
       "url": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/601208.webp?v=1786650493",
       "source": "azzampharmacy.com",
@@ -220,6 +262,20 @@
       "attribution": "Re3aya Pharmacy",
       "license": "source retailer image; commercial reuse rights not independently verified",
       "note": "Manual image check of packaging/name/strength/form. Retailer hotlink; availability not independently tested inside pharmacy PWA."
+    },
+    "723": {
+      "catalogName": "اوميجابريس1.، مجم",
+      "title": "Omegapress  0.1 Mg  30 Tab",
+      "englishName": "Omegapress",
+      "url": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/383111.webp?v=1786649649",
+      "sourcePage": "https://azzampharmacy.com/products/omegapress-0-1-mg-30-tab-16514",
+      "source": "azzampharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Azzam Pharmacy"
     },
     "725": {
       "id": "725",
@@ -285,6 +341,20 @@
       "attribution": "Azzam Pharmacy",
       "license": "external retailer image; rights not independently verified",
       "note": "Real retailer image URL; packaging pixels and remote availability not independently verified"
+    },
+    "841": {
+      "catalogName": "ايفى زاد شراب",
+      "title": "Ivy Zad  Syrup  120 Ml",
+      "englishName": "Ivy Zad",
+      "url": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/601907.webp?v=1786657738",
+      "sourcePage": "https://azzampharmacy.com/products/ivy-zad-syrup-120-ml-21658",
+      "source": "azzampharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Azzam Pharmacy"
     },
     "843": {
       "url": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/ivypront-syrup-120-ml-368774.jpg?v=1735257015",
@@ -474,6 +544,20 @@
       "license": "external retailer image; rights not independently verified",
       "note": "Real retailer image URL; packaging pixels and remote availability not independently verified"
     },
+    "1092": {
+      "catalogName": "بﻼنكا كريم",
+      "title": "Blanka  50 Gm  Cream",
+      "englishName": "Blanka",
+      "url": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/144874.webp?v=1786661324",
+      "sourcePage": "https://azzampharmacy.com/products/blanka-50-gm-cream-5794",
+      "source": "azzampharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Azzam Pharmacy"
+    },
     "1101": {
       "url": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/382227.webp?v=1786647910",
       "source": "azzampharmacy.com",
@@ -522,6 +606,20 @@
       "license": "external retailer image; rights not independently verified",
       "note": "Real retailer product image URL; exact pixels and availability not independently verified"
     },
+    "1143": {
+      "catalogName": "بوم شاور جل",
+      "title": "Pom  Shower Gel  250 Ml",
+      "englishName": "Pom",
+      "url": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/368224.webp?v=1786652359",
+      "sourcePage": "https://azzampharmacy.com/products/pom-shower-gel-250-ml-14686",
+      "source": "azzampharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Azzam Pharmacy"
+    },
     "1148": {
       "url": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/69382.webp?v=1786649717",
       "source": "azzampharmacy.com",
@@ -553,6 +651,20 @@
       "attribution": "Azzam Pharmacy",
       "license": "external retailer image; rights not independently verified",
       "note": "Real retailer image URL; packaging pixels and remote availability not independently verified"
+    },
+    "1172": {
+      "catalogName": "بيبون بلس كبسول س ج",
+      "title": "Pepon Plus - 20 Capsules",
+      "englishName": "Pepon Plus",
+      "url": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/pepon-plus-20-capsules-915268.jpg?v=1735257800",
+      "sourcePage": "https://re3ayapharmacy.com/products/pepon-plus-20-capsules",
+      "source": "re3ayapharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Re3aya Pharmacy"
     },
     "1178": {
       "url": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/3784.webp?v=1786651555",
@@ -664,6 +776,20 @@
       "license": "external retailer image; rights not independently verified",
       "note": "Real retailer image URL; packaging pixels and remote availability not independently verified"
     },
+    "1221": {
+      "catalogName": "بيرفكتيل اوريجينال اقراص",
+      "title": "Perfectil - 30 Tablets",
+      "englishName": "Perfectil",
+      "url": "https://cdn.shopify.com/s/files/1/0774/7151/4932/products/perfectil-30-tablets-116928.jpg?v=1687731416",
+      "sourcePage": "https://www.bloompharmacy.com/products/perfectil-30-tablets",
+      "source": "www.bloompharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Bloom Pharmacy"
+    },
     "1236": {
       "url": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/bisocard-10-mg-30-tablets-422395.jpg?v=1735257608",
       "source": "re3ayapharmacy.com",
@@ -725,6 +851,20 @@
       "attribution": "Re3aya Pharmacy",
       "license": "external retailer image; rights not independently verified",
       "note": "Real retailer product image URL; exact pixels and availability not independently verified"
+    },
+    "1244": {
+      "catalogName": "بيستول5/6.25 بلس",
+      "title": "Bistol  Plus  5 / 6.25 Mg  20 Tab",
+      "englishName": "Bistol Plus",
+      "url": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/170123.webp?v=1786661231",
+      "sourcePage": "https://azzampharmacy.com/products/bistol-plus-5-6-25-mg-20-tab-6656",
+      "source": "azzampharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Azzam Pharmacy"
     },
     "1245": {
       "catalogName": "بيستول5مجم اقراص",
@@ -946,6 +1086,20 @@
       "license": "external retailer image; rights not independently verified",
       "note": "Real retailer image URL; packaging pixels and remote availability not independently verified"
     },
+    "1327": {
+      "catalogName": "تامسولين كبسول",
+      "title": "Tamsulin 0.4 mg - 28 Capsules",
+      "englishName": "Tamsulin",
+      "url": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/tamsulin-04-mg-28-capsules-215870.jpg?v=1735257638",
+      "sourcePage": "https://re3ayapharmacy.com/products/tamsulin-0-4-mg-28-capsules",
+      "source": "re3ayapharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Re3aya Pharmacy"
+    },
     "1334": {
       "url": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/tegretol-cr-400-mg-20-tablets-813728.jpg?v=1735258078",
       "source": "re3ayapharmacy.com",
@@ -1007,6 +1161,20 @@
       "attribution": "Azzam Pharmacy",
       "license": "external retailer image; rights not independently verified",
       "note": "Real retailer image URL; packaging pixels and remote availability not independently verified"
+    },
+    "1342": {
+      "catalogName": "تراى بى امبول",
+      "title": "Tri B IM 1 ml - 6 Ampoules",
+      "englishName": "Tri B",
+      "url": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/tri-b-im-1-ml-6-ampoules-415338_030aa27e-6a58-41af-b78b-d5396b5b82e9.jpg?v=1735258520",
+      "sourcePage": "https://re3ayapharmacy.com/products/tri-b-im-1-ml-6-ampoules",
+      "source": "re3ayapharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Re3aya Pharmacy"
     },
     "1347": {
       "url": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/tritone-100-mg-30-tablets-211413.jpg?v=1735257138",
@@ -1117,6 +1285,20 @@
       "attribution": "Re3aya Pharmacy",
       "license": "external retailer image; rights not independently verified",
       "note": "Real retailer product image URL; exact pixels and availability not independently verified"
+    },
+    "1381": {
+      "catalogName": "تريتو سيرم للشعر",
+      "title": "Treato  Hair Serum  120 Ml",
+      "englishName": "Treato",
+      "url": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/382637.webp?v=1786659956",
+      "sourcePage": "https://azzampharmacy.com/products/treato-hair-serum-120-ml-16358",
+      "source": "azzampharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Azzam Pharmacy"
     },
     "1384": {
       "url": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/tritospot-cream-30-gm-361567.jpg?v=1735258017",
@@ -1318,6 +1500,20 @@
       "license": "external retailer image; rights not independently verified",
       "note": "Real retailer product image URL; exact pixels and availability not independently verified"
     },
+    "1511": {
+      "catalogName": "ثيوتاسيد600 مركب",
+      "title": "Thiotacid Compound 600 mg ( Thioctic Acid = Alpha Lipoic Acid 600 mg + vitamin B1 80 mg + vitamin B12 500 mcg ) 20 caplets",
+      "englishName": "Thiotacid",
+      "url": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/thiotacid_20600_20comp-400x400.png?v=1735268194",
+      "sourcePage": "https://re3ayapharmacy.com/products/thiotacid-compound-600-mg-thioctic-acid-alpha-lipoic-acid-600-mg-vitamin-b1-80-mg-vitamin-b12-500-mcg-20-caplets",
+      "source": "re3ayapharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Re3aya Pharmacy"
+    },
     "1513": {
       "catalogName": "ثيوتاسيد600 اوريجينال س ج",
       "title": "THIOTACID 600 MG ORIGINAL ( THIOCTIC ACID = ALPHA LIPOIC ACID) ) 20 FILM-COATED TABLETS",
@@ -1363,6 +1559,34 @@
       "attribution": "Re3aya Pharmacy",
       "license": "external retailer image; rights not independently verified",
       "note": "Real retailer product image URL; exact pixels and availability not independently verified"
+    },
+    "1539": {
+      "catalogName": "جاسيفﻼتيل اقراص ديسفﻼتيل",
+      "title": "Gasiflatyl  40 Mg  30 Chew. Tab",
+      "englishName": "Gasiflatyl",
+      "url": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/613080.webp?v=1786649924",
+      "sourcePage": "https://azzampharmacy.com/products/gasiflatyl-40-mg-30-chew-tab-30692",
+      "source": "azzampharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Azzam Pharmacy"
+    },
+    "1542": {
+      "catalogName": "جاكودان- غسول",
+      "title": "Jackodan  Facial Wash  150 Ml",
+      "englishName": "Jackodan",
+      "url": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/609748-1760357469.webp?v=1786653162",
+      "sourcePage": "https://azzampharmacy.com/products/jackodan-facial-wash-150-ml-34552",
+      "source": "azzampharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Azzam Pharmacy"
     },
     "1547": {
       "url": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/ganaton-50-mg-30-tablets-399303.jpg?v=1735257490",
@@ -1728,6 +1952,20 @@
       "license": "third-party photo: commercial reuse rights not confirmed",
       "note": "Retailer photo matched by manual review. Hotlink and portal live render are not independently verified."
     },
+    "1821": {
+      "catalogName": "دولفين50 اقراص ج",
+      "title": "Dolphin - K  50 Mg  20 Tab",
+      "englishName": "Dolphin",
+      "url": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/159916.webp?v=1786652398",
+      "sourcePage": "https://azzampharmacy.com/products/dolphin-k-50-mg-20-tab-6190",
+      "source": "azzampharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Azzam Pharmacy"
+    },
     "1822": {
       "catalogName": "دولفين50 مجم لبوس",
       "englishName": "Dolphin",
@@ -1759,6 +1997,20 @@
       "attribution": "Re3aya Pharmacy",
       "license": "external retailer image; rights not independently verified",
       "note": "Real retailer product image URL; exact pixels and availability not independently verified"
+    },
+    "1859": {
+      "catalogName": "ديافانس5 مجم اقراص",
+      "title": "Diavance  5 / 500 Mg  30 Tab",
+      "englishName": "Diavance",
+      "url": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/86515.webp?v=1786649663",
+      "sourcePage": "https://azzampharmacy.com/products/diavance-5-500-mg-30-tab-4504",
+      "source": "azzampharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Azzam Pharmacy"
     },
     "1872": {
       "url": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/diamicron-mr-30-mg-30-tablets-492509.jpg?v=1735257474",
@@ -2041,6 +2293,20 @@
       "attribution": "www.lotusonline.com",
       "license": "third-party photo; commercial reuse permissions not verified",
       "note": "Photo visually matched by product packaging; external URL untested in browser; image remains not independently certified."
+    },
+    "2106": {
+      "catalogName": "رينيو محلول عدسات120م وسط",
+      "title": "Renu Contact Lens Solution - 120 ml",
+      "englishName": "Renu",
+      "url": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/41lrbFrarAL._AC.jpg?v=1779977953",
+      "sourcePage": "https://re3ayapharmacy.com/products/bausch-lomb-renu-contact-lens-solution-120-ml",
+      "source": "re3ayapharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Re3aya Pharmacy"
     },
     "2108": {
       "catalogName": "زاترال اكس ال10مجم",
@@ -2424,6 +2690,20 @@
       "license": "external retailer image; rights not independently verified",
       "note": "Real retailer product image URL; exact pixels and availability not independently verified"
     },
+    "2352": {
+      "catalogName": "سنترم ادلت اخضر100 قرص",
+      "title": "Centrum Multivitamins A to Zinc With Lutein 100 Tablets",
+      "englishName": "Centrum",
+      "url": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/Centrum-Multivitamins-A-to-Zinc-With-Lutein-100-Tablets-1.webp?v=1779488520",
+      "sourcePage": "https://re3ayapharmacy.com/products/centrum-multivitamins-a-to-zinc-with-lutein-100-tablets",
+      "source": "re3ayapharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Re3aya Pharmacy"
+    },
     "2356": {
       "catalogName": "سنترم رجال ازرق30 قرص",
       "title": "Centrum Men Multivitamins - 30 Tablets",
@@ -2438,12 +2718,40 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Bloom Pharmacy"
     },
+    "2357": {
+      "catalogName": "سنترم سيدات موف100 قرص",
+      "title": "Centrum Women 100 Tablets",
+      "englishName": "Centrum",
+      "url": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/centrum_women.webp?v=1779488589",
+      "sourcePage": "https://re3ayapharmacy.com/products/centrum-women-100tab",
+      "source": "re3ayapharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Re3aya Pharmacy"
+    },
     "2359": {
       "catalogName": "سنترم سيلفر100 قرص",
       "title": "Centrum 50+ Silver - 100 Tablets",
       "url": "https://cdn.shopify.com/s/files/1/0774/7151/4932/files/49132.jpg?v=1764589655",
       "sourcePage": "https://www.bloompharmacy.com/products/centrum-50-silver-100-tablets",
       "englishName": "Centrum",
+      "source": "www.bloompharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Bloom Pharmacy"
+    },
+    "2360": {
+      "catalogName": "سنترم سيلفر30 قرص",
+      "title": "Centrum 50+ Silver - 30 Tablets",
+      "englishName": "Centrum",
+      "url": "https://cdn.shopify.com/s/files/1/0774/7151/4932/files/centrum-50-silver-30-tablets-4116616.jpg?v=1752098981",
+      "sourcePage": "https://www.bloompharmacy.com/products/centrum-50-silver-30-tablets",
       "source": "www.bloompharmacy.com",
       "status": "candidate_preview",
       "independentlyVerified": false,
@@ -2645,6 +2953,34 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Re3aya Pharmacy"
     },
+    "3184": {
+      "catalogName": "كﻼرى شامبو300مل",
+      "title": "Clary Anti Dandruff Shampoo - 300ml",
+      "englishName": "Clary",
+      "url": "https://cdn.shopify.com/s/files/1/0774/7151/4932/files/clary-anti-dandruff-shampoo-300ml-616023.jpg?v=1751016148",
+      "sourcePage": "https://www.bloompharmacy.com/products/clary-anti-dandruff-shampoo-300ml",
+      "source": "www.bloompharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Bloom Pharmacy"
+    },
+    "3284": {
+      "catalogName": "كولاجرا رول اون كيدز صن سكرين1+1",
+      "title": "Kolagra sun screen roll on 1+1 kids",
+      "englishName": "Kolagra",
+      "url": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/dd84b0d0-8711-4398-bbfd-a773a3a885bd.jpg?v=1779754835",
+      "sourcePage": "https://re3ayapharmacy.com/products/كولاجرا-عرض-صن-سكرين-رول-اون-للاطفال1-1",
+      "source": "re3ayapharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Re3aya Pharmacy"
+    },
     "3350": {
       "catalogName": "كونكور5 مجم عادى",
       "title": "Concor 5 mg - 30 Tablets",
@@ -2689,6 +3025,20 @@
       "license": "retailer image; rights not independently verified",
       "note": "Visual packaging matched to catalog SKU; external image link, live PWA rendering unverified."
     },
+    "3538": {
+      "catalogName": "ليت اب صابونة100جم",
+      "title": "Lit Up Soap 100 g",
+      "englishName": "Lit Up",
+      "url": "https://cdn.shopify.com/s/files/1/0935/9550/0847/files/lit_up_soap_1615x1615_under100kb.webp?v=1791469820",
+      "sourcePage": "https://alfouadpharmacies.com/products/lit-up-soap-100-mg",
+      "source": "alfouadpharmacies.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "AlFouad Pharmacies"
+    },
     "3714": {
       "catalogName": "موبيتيل15 مجم اقراص",
       "title": "Mobitil 15 mg - 10 Tablets",
@@ -2716,6 +3066,20 @@
       "manualVisualInspected": true,
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Azzam Pharmacy"
+    },
+    "3926": {
+      "catalogName": "ناو ميﻼتونين3 مل",
+      "title": "Now Foods Melatonin 3 mg Healthy Sleep Cycle - 60 Capsules",
+      "englishName": "NOW Foods",
+      "url": "https://cdn.shopify.com/s/files/1/0774/7151/4932/products/now-melatonin-3-mg-healthy-sleep-cycle-60-capsules-315594.jpg?v=1687733249",
+      "sourcePage": "https://www.bloompharmacy.com/products/now-melatonin-3-mg-healthy-sleep-cycle-60-capsules",
+      "source": "www.bloompharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Bloom Pharmacy"
     },
     "3954": {
       "catalogName": "نورموكارد10 مجم 30 قرص",
@@ -2869,6 +3233,62 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Azzam Pharmacy"
     },
+    "4139": {
+      "catalogName": "هيرو بيبى1 لبن",
+      "title": "Hero Baby Infant Formula Milk 1, From Birth - 400 gm",
+      "englishName": "Hero Baby",
+      "url": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/61L0p9HylSL._AC_SL1500.jpg?v=1784061986",
+      "sourcePage": "https://re3ayapharmacy.com/products/hero-baby-infant-formula-milk-1-from-birth-400-gm",
+      "source": "re3ayapharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Re3aya Pharmacy"
+    },
+    "4140": {
+      "catalogName": "هيرو بيبى2 لبن",
+      "title": "Hero Baby Follow-on Formula Milk Stage2-400g",
+      "englishName": "Hero Baby",
+      "url": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/61kXCzfolEL._AC_SL1500.jpg?v=1784061997",
+      "sourcePage": "https://re3ayapharmacy.com/products/hero-baby-follow-on-formula-milk-stage2-400g",
+      "source": "re3ayapharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Re3aya Pharmacy"
+    },
+    "4149": {
+      "catalogName": "هيرو نيوترا سينس1",
+      "title": "Hero Baby Nutrasense 1 milk- 400 grams",
+      "englishName": "Hero Baby Nutrasense",
+      "url": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/61kpStW_CDL._AC_SL1500.jpg?v=1784062069",
+      "sourcePage": "https://re3ayapharmacy.com/products/hero-baby-nutrasense-1-milk-400-grams",
+      "source": "re3ayapharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Re3aya Pharmacy"
+    },
+    "4150": {
+      "catalogName": "هيرو نيوترا سينس2",
+      "title": "Hero baby Nutrasense 2 milk- 400g",
+      "englishName": "Hero Baby Nutrasense",
+      "url": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/61ggbuk5i2L._AC_SL1500.jpg?v=1784062082",
+      "sourcePage": "https://re3ayapharmacy.com/products/hero-baby-nutrasense-2-milk-400g",
+      "source": "re3ayapharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Re3aya Pharmacy"
+    },
     "4173": {
       "catalogName": "وان الفا1 مكجم",
       "title": "One Alpha 1 mcg - 30 Capsules",
@@ -2946,6 +3366,20 @@
       "attribution": "Azzam Pharmacy",
       "license": "external retailer image; rights not independently verified",
       "note": "Real retailer image URL; packaging pixels and remote availability not independently verified"
+    },
+    "4218": {
+      "catalogName": "يونيكتام750 حقن",
+      "title": "Unictam  750 Mg  I.m / I.v  1 Vial",
+      "englishName": "Unictam",
+      "url": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/43134.webp?v=1786656926",
+      "sourcePage": "https://azzampharmacy.com/products/unictam-750-mg-i-m-i-v-1-vial-2452",
+      "source": "azzampharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Azzam Pharmacy"
     },
     "230376": {
       "id": "230376",
