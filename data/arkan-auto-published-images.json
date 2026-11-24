@@ -1562,6 +1562,22 @@
       "license": "source product image; reuse rights not independently verified",
       "note": "Retailer packaging matching known catalog brand and dosage; external link not independently tested in live PWA."
     },
+    "2025": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/2025.webp",
+      "source": "img.dawaaegypt.com",
+      "sourcePage": "https://dawaaegypt.com/product/bluebell-roselia-routine-kit-for-hair-loss-treatment-and-filling-gaps-shampoo--lotion--serum-h0FML",
+      "originalImageUrl": "https://img.dawaaegypt.com/photos/41Nmod8RvjL._AC_SL1024_.jpg",
+      "catalogName": "روزاليا شامبو",
+      "englishName": "Rozalia",
+      "title": "Rozalia روزاليا شامبو",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "matchScore": 1,
+      "matchReason": "multi_source_2",
+      "sha256": "128431d100526f8af933589e32a2eb35e61fa7530776604b3294e49b4475fb7c",
+      "provenance": "Image downloaded and matched by image discovery bot; commercial reuse license unverified"
+    },
     "2030": {
       "url": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/rositor-10-mg-14-tablets-307871.jpg?v=1735257558",
       "source": "re3ayapharmacy.com",
