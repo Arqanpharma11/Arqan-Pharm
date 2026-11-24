@@ -434,6 +434,20 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Bloom Pharmacy"
     },
+    "974": {
+      "catalogName": "بروباميثون كريم",
+      "title": "بروباميثون كريم",
+      "englishName": "Propamethone Top Cream",
+      "url": "https://api.magdyelhaddad.com/uploads/9eb28c98-1b63-47d6-9052-bc936ce43495.webp",
+      "sourcePage": "https://magdyelhaddad.com/ar/products/%D8%A8%D8%B1%D9%88%D8%A8%D8%A7%D9%85%D9%8A%D8%AB%D9%88%D9%86-%D9%83%D8%B1%D9%8A%D9%85-60785",
+      "source": "magdyelhaddad.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Dr. Magdy El-Haddad Pharmacies"
+    },
     "976": {
       "catalogName": "بروبريك20 مج",
       "title": "Probric  20 Mg  10 Tab",
@@ -511,6 +525,20 @@
       "attribution": "Azzam Pharmacy",
       "license": "external retailer image; rights not independently verified",
       "note": "Real retailer image URL; packaging pixels and remote availability not independently verified"
+    },
+    "1076": {
+      "catalogName": "بريموندين قطره",
+      "title": "بريموندين قطرة",
+      "englishName": "Brimonidine Drops",
+      "url": "https://api.magdyelhaddad.com/uploads/7253d2b0-e07c-4d12-8544-56b2cea12285.webp",
+      "sourcePage": "https://magdyelhaddad.com/ar/products/%D8%A8%D8%B1%D9%8A%D9%85%D9%88%D9%86%D8%AF%D9%8A%D9%86-%D9%82%D8%B7%D8%B1%D8%A9-60140",
+      "source": "magdyelhaddad.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Dr. Magdy El-Haddad Pharmacies"
     },
     "1081": {
       "url": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/pectipro-syrup-100-ml-652250.jpg?v=1735257076",
@@ -910,6 +938,20 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Tay Pharmacies"
     },
+    "1290": {
+      "catalogName": "بيوفريز اسبراى",
+      "title": "بيوفريز اسبراي",
+      "englishName": "Biofreeze Spray",
+      "url": "https://api.magdyelhaddad.com/uploads/c08df116-8bf9-4afe-bb76-b41ea5b92c4f.webp",
+      "sourcePage": "https://magdyelhaddad.com/ar/products/%D8%A8%D9%8A%D9%88%D9%81%D8%B1%D9%8A%D8%B2-%D8%A7%D8%B3%D8%A8%D8%B1%D8%A7%D9%8A-55253",
+      "source": "magdyelhaddad.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Dr. Magdy El-Haddad Pharmacies"
+    },
     "1300": {
       "url": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/611725.webp?v=1786648971",
       "source": "azzampharmacy.com",
@@ -1099,6 +1141,20 @@
       "manualVisualInspected": true,
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Re3aya Pharmacy"
+    },
+    "1330": {
+      "catalogName": "تانودرم كريم",
+      "title": "تانودرم كريم",
+      "englishName": "Tannoderm Cream",
+      "url": "https://api.magdyelhaddad.com/uploads/f6d6e8b1-17bb-435f-ae5f-2b33fae11a8c-png.webp",
+      "sourcePage": "https://magdyelhaddad.com/ar/products/%D8%AA%D8%A7%D9%86%D9%88%D8%AF%D8%B1%D9%85-%D9%83%D8%B1%D9%8A%D9%85-48832",
+      "source": "magdyelhaddad.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Dr. Magdy El-Haddad Pharmacies"
     },
     "1334": {
       "url": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/tegretol-cr-400-mg-20-tablets-813728.jpg?v=1735258078",
@@ -1382,6 +1438,62 @@
       "license": "source retailer image; commercial reuse rights not independently verified",
       "note": "Real packaging visually inspected against catalog. Externally linked, not independently verified in live PWA."
     },
+    "1447": {
+      "catalogName": "توسى ستوب اقراص",
+      "title": "توسيستوب اقراص",
+      "englishName": "Tosy Stop Tablets",
+      "url": "https://api.magdyelhaddad.com/uploads/7acfde2a-76c6-4fc9-b71b-161d6a836eec.webp",
+      "sourcePage": "https://magdyelhaddad.com/ar/products/%D8%AA%D9%88%D8%B3%D9%8A%D8%B3%D8%AA%D9%88%D8%A8-%D8%A7%D9%82%D8%B1%D8%A7%D8%B5-58152",
+      "source": "magdyelhaddad.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Dr. Magdy El-Haddad Pharmacies"
+    },
+    "1448": {
+      "catalogName": "توسى ستوب شراب",
+      "title": "توسيستوب شراب ق",
+      "englishName": "Tosy Stop Syrup",
+      "url": "https://api.magdyelhaddad.com/uploads/8e0874d3-327e-49f8-b32f-f5a8a76d6657.webp",
+      "sourcePage": "https://magdyelhaddad.com/ar/products/%D8%AA%D9%88%D8%B3%D9%8A%D8%B3%D8%AA%D9%88%D8%A8-%D8%B4%D8%B1%D8%A7%D8%A8-62375",
+      "source": "magdyelhaddad.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Dr. Magdy El-Haddad Pharmacies"
+    },
+    "1458": {
+      "catalogName": "توينزول قطرة",
+      "title": "توينزول قطرة",
+      "englishName": "Twinzol Drops",
+      "url": "https://api.magdyelhaddad.com/uploads/a7eaee00-79c6-4ee4-bf91-4d71f936719d.webp",
+      "sourcePage": "https://magdyelhaddad.com/ar/products/%D8%AA%D9%88%D9%8A%D9%86%D8%B2%D9%88%D9%84-%D9%82%D8%B7%D8%B1%D8%A9-62623",
+      "source": "magdyelhaddad.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Dr. Magdy El-Haddad Pharmacies"
+    },
+    "1463": {
+      "catalogName": "تيبوستار مرهم30 جم",
+      "title": "تيبو ستار مرهم 30جم",
+      "englishName": "Tipo Star Ointment 30 g",
+      "url": "https://api.magdyelhaddad.com/uploads/0ec91553-84a4-4ff0-95d2-82535445e464.webp",
+      "sourcePage": "https://magdyelhaddad.com/ar/products/%D8%AA%D9%8A%D8%A8%D9%88-%D8%B3%D8%AA%D8%A7%D8%B1-%D9%85%D8%B1%D9%87%D9%85-30%D8%AC%D9%85-63980",
+      "source": "magdyelhaddad.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Dr. Magdy El-Haddad Pharmacies"
+    },
     "1466": {
       "url": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/tebonina-forte-40-mg-20-tablets-182519.jpg?v=1735257129",
       "source": "re3ayapharmacy.com",
@@ -1500,6 +1612,20 @@
       "license": "external retailer image; rights not independently verified",
       "note": "Real retailer product image URL; exact pixels and availability not independently verified"
     },
+    "1500": {
+      "catalogName": "ثرومبكس كريم",
+      "title": "ثرومبكس كريم",
+      "englishName": "Thrombx Cream",
+      "url": "https://api.magdyelhaddad.com/uploads/81558159-ff93-475d-8799-261b483b8d24-png.webp",
+      "sourcePage": "https://magdyelhaddad.com/ar/products/%D8%AB%D8%B1%D9%88%D9%85%D8%A8%D9%83%D8%B3-%D9%83%D8%B1%D9%8A%D9%85-59206",
+      "source": "magdyelhaddad.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Dr. Magdy El-Haddad Pharmacies"
+    },
     "1511": {
       "catalogName": "ثيوتاسيد600 مركب",
       "title": "Thiotacid Compound 600 mg ( Thioctic Acid = Alpha Lipoic Acid 600 mg + vitamin B1 80 mg + vitamin B12 500 mcg ) 20 caplets",
@@ -1603,6 +1729,20 @@
       "attribution": "Re3aya Pharmacy",
       "license": "external retailer image; rights not independently verified",
       "note": "Real retailer product image URL; exact pixels and availability not independently verified"
+    },
+    "1571": {
+      "catalogName": "جستيكول20مجم 28قرص",
+      "title": "جستيكول20مجم28قرص",
+      "englishName": "Justechol 20 mg 28 Tablets",
+      "url": "https://api.magdyelhaddad.com/uploads/3b36b874-fd05-45ec-b070-2b9ee2420d98-png.webp",
+      "sourcePage": "https://magdyelhaddad.com/ar/products/%D8%AC%D8%B3%D8%AA%D9%8A%D9%83%D9%88%D9%8420%D9%85%D8%AC%D9%8528%D9%82%D8%B1%D8%B5-54222",
+      "source": "magdyelhaddad.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Dr. Magdy El-Haddad Pharmacies"
     },
     "1587": {
       "id": "1587",
@@ -1936,6 +2076,20 @@
       "license": "external retailer image; rights not independently verified",
       "note": "Real retailer product image URL; exact pixels and availability not independently verified"
     },
+    "1764": {
+      "catalogName": "دروسبيفيم21قرص",
+      "title": "دروسبيفيم21قرص",
+      "englishName": "Drospifem 21 Tablets",
+      "url": "https://api.magdyelhaddad.com/uploads/c5f8b879-ca8d-44eb-bd8d-1da77ed745e9-png.webp",
+      "sourcePage": "https://magdyelhaddad.com/ar/products/%D8%AF%D8%B1%D9%88%D8%B3%D8%A8%D9%8A%D9%81%D9%8A%D9%8521%D9%82%D8%B1%D8%B5-59836",
+      "source": "magdyelhaddad.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Dr. Magdy El-Haddad Pharmacies"
+    },
     "1820": {
       "catalogName": "دولفين3% جل 60 جم",
       "englishName": "Dolphin",
@@ -2090,6 +2244,20 @@
       "license": "external retailer image; rights not independently verified",
       "note": "Real retailer product image URL; exact pixels and availability not independently verified"
     },
+    "1921": {
+      "catalogName": "ديكساترول مرهم",
+      "title": "ديكساترول مرهم",
+      "englishName": "Dexatrol Ointment",
+      "url": "https://api.magdyelhaddad.com/uploads/a09786fd-4f29-4487-a7d5-dbcc89b38802.webp",
+      "sourcePage": "https://magdyelhaddad.com/ar/products/%D8%AF%D9%8A%D9%83%D8%B3%D8%A7%D8%AA%D8%B1%D9%88%D9%84-%D9%85%D8%B1%D9%87%D9%85-60385",
+      "source": "magdyelhaddad.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Dr. Magdy El-Haddad Pharmacies"
+    },
     "1939": {
       "catalogName": "ديكﻼك75 مجم اقراص",
       "title": "Diclac 75 ID - 20 Tablets",
@@ -2119,6 +2287,20 @@
       "attribution": "Re3aya Pharmacy",
       "license": "external retailer image; rights not independently verified",
       "note": "Real retailer product image URL; exact pixels and availability not independently verified"
+    },
+    "1964": {
+      "catalogName": "ديوتراف قطره",
+      "title": "ديوتراف قطرة",
+      "englishName": "Diotraf Drops",
+      "url": "https://api.magdyelhaddad.com/uploads/dab783e6-fa4d-4a0b-a70f-0601fb38415f.webp",
+      "sourcePage": "https://magdyelhaddad.com/ar/products/%D8%AF%D9%8A%D9%88%D8%AA%D8%B1%D8%A7%D9%81-%D9%82%D8%B7%D8%B1%D8%A9-63213",
+      "source": "magdyelhaddad.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Dr. Magdy El-Haddad Pharmacies"
     },
     "1970": {
       "catalogName": "ديوريسيف500 شراب",
@@ -2262,6 +2444,20 @@
       "license": "third-party product image, reuse rights unverified",
       "note": "Manual candidate matching; live UI image rendering and licensing unverified."
     },
+    "2085": {
+      "catalogName": "ريكوكسيبرايت60 مجم 30 قرص",
+      "title": "ريكوكسيبرايت60مجم30قرص",
+      "englishName": "Recoxibright 60 mg 30 Tablets",
+      "url": "https://api.magdyelhaddad.com/uploads/95ac2b27-3fb6-4f7f-a7e5-397717913e65.webp",
+      "sourcePage": "https://magdyelhaddad.com/ar/products/%D8%B1%D9%8A%D9%83%D9%88%D9%83%D8%B3%D9%8A%D8%A8%D8%B1%D8%A7%D9%8A%D8%AA60%D9%85%D8%AC%D9%8530%D9%82%D8%B1%D8%B5-64113",
+      "source": "magdyelhaddad.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Dr. Magdy El-Haddad Pharmacies"
+    },
     "2086": {
       "url": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/recoxibright-90-mg-30-tablets-192370.jpg?v=1735257370",
       "source": "re3ayapharmacy.com",
@@ -2294,6 +2490,20 @@
       "license": "third-party photo; commercial reuse permissions not verified",
       "note": "Photo visually matched by product packaging; external URL untested in browser; image remains not independently certified."
     },
+    "2104": {
+      "catalogName": "رينومول شراب",
+      "title": "رينومول شراب",
+      "englishName": "Rinomol Syrup",
+      "url": "https://api.magdyelhaddad.com/uploads/df8d3a82-4f86-4ed3-9d38-8e873dadf02f.webp",
+      "sourcePage": "https://magdyelhaddad.com/ar/products/%D8%B1%D9%8A%D9%86%D9%88%D9%85%D9%88%D9%84-%D8%B4%D8%B1%D8%A7%D8%A8-63802",
+      "source": "magdyelhaddad.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Dr. Magdy El-Haddad Pharmacies"
+    },
     "2106": {
       "catalogName": "رينيو محلول عدسات120م وسط",
       "title": "Renu Contact Lens Solution - 120 ml",
@@ -2324,6 +2534,20 @@
       "license": "source product image; reuse rights not independently verified",
       "note": "Retailer packaging matching known catalog brand and dosage; external link not independently tested in live PWA."
     },
+    "2114": {
+      "catalogName": "زالتيك شراب",
+      "title": "زالتيك شراب",
+      "englishName": "Xaltec Syrup",
+      "url": "https://api.magdyelhaddad.com/uploads/9981a43b-9774-42dd-9e1d-de0fb5f77d24.webp",
+      "sourcePage": "https://magdyelhaddad.com/ar/products/%D8%B2%D8%A7%D9%84%D8%AA%D9%8A%D9%83-%D8%B4%D8%B1%D8%A7%D8%A8-59218",
+      "source": "magdyelhaddad.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Dr. Magdy El-Haddad Pharmacies"
+    },
     "2117": {
       "catalogName": "زانثيبوكس80 مجم",
       "englishName": "Xanthibux",
@@ -2339,6 +2563,20 @@
       "attribution": "www.lotusonline.com",
       "license": "third-party product image, reuse rights unverified",
       "note": "Manual candidate matching; live UI image rendering and licensing unverified."
+    },
+    "2143": {
+      "catalogName": "زوركال40 مجم 28 قرص",
+      "title": "زوركال40مجم28قرص",
+      "englishName": "Zurcal 40 mg 28 Tablets",
+      "url": "https://api.magdyelhaddad.com/uploads/6a637f35-c34f-472f-9856-bb7c35b5bdfa.webp",
+      "sourcePage": "https://magdyelhaddad.com/ar/products/%D8%B2%D9%88%D8%B1%D9%83%D8%A7%D9%8440%D9%85%D8%AC%D9%8528%D9%82%D8%B1%D8%B5-58836",
+      "source": "magdyelhaddad.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Dr. Magdy El-Haddad Pharmacies"
     },
     "2144": {
       "url": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/zurcal-40-mg-14-tablets-728177.jpg?v=1735257813",
@@ -2788,6 +3026,20 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Re3aya Pharmacy"
     },
+    "2527": {
+      "catalogName": "سيف توب شراب",
+      "title": "سيف توب شراب",
+      "englishName": "Safe Top Syrup",
+      "url": "https://api.magdyelhaddad.com/uploads/456cbe90-5d5e-4e0c-ada8-2219bf47a52b.webp",
+      "sourcePage": "https://magdyelhaddad.com/ar/products/%D8%B3%D9%8A%D9%81-%D8%AA%D9%88%D8%A8-%D8%B4%D8%B1%D8%A7%D8%A8-62816",
+      "source": "magdyelhaddad.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Dr. Magdy El-Haddad Pharmacies"
+    },
     "2580": {
       "catalogName": "سيلدين100مجم اقراص",
       "title": "Silden  100 Mg  4 Tab",
@@ -2815,6 +3067,20 @@
       "manualVisualInspected": true,
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Azzam Pharmacy"
+    },
+    "2840": {
+      "catalogName": "فنيستيل نقط",
+      "title": "فنيستيل نقط",
+      "englishName": "Fenistil Drops",
+      "url": "https://api.magdyelhaddad.com/uploads/3f4e1bcf-7e15-4942-a8a4-0919fc484b35-png.webp",
+      "sourcePage": "https://magdyelhaddad.com/ar/products/%D9%81%D9%86%D9%8A%D8%B3%D8%AA%D9%8A%D9%84-%D9%86%D9%82%D8%B7-62168",
+      "source": "magdyelhaddad.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Dr. Magdy El-Haddad Pharmacies"
     },
     "2863": {
       "id": "2863",
@@ -2911,6 +3177,34 @@
       "license": "third-party source image; reuse rights unconfirmed",
       "note": "Image inspected for product label/strength/form and size; source may be foreign-market packaging, remains unverified preview."
     },
+    "3033": {
+      "catalogName": "فيولا شامبو",
+      "title": "فيولا شامبو",
+      "englishName": "Viola Shampoo",
+      "url": "https://api.magdyelhaddad.com/uploads/0f56d335-33b3-415f-a02e-8b53be3804c4.webp",
+      "sourcePage": "https://magdyelhaddad.com/ar/products/%D9%81%D9%8A%D9%88%D9%84%D8%A7-%D8%B4%D8%A7%D9%85%D8%A8%D9%88-62947",
+      "source": "magdyelhaddad.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Dr. Magdy El-Haddad Pharmacies"
+    },
+    "3066": {
+      "catalogName": "كاربيمازول اقراص",
+      "title": "كاربيمازول اقراص",
+      "englishName": "Carbimazole B P Tablets",
+      "url": "https://api.magdyelhaddad.com/uploads/fa45d209-95b6-4b33-98f0-20919d6a416e.webp",
+      "sourcePage": "https://magdyelhaddad.com/ar/products/%D9%83%D8%A7%D8%B1%D8%A8%D9%8A%D9%85%D8%A7%D8%B2%D9%88%D9%84-%D8%A7%D9%82%D8%B1%D8%A7%D8%B5-59595",
+      "source": "magdyelhaddad.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Dr. Magdy El-Haddad Pharmacies"
+    },
     "3068": {
       "catalogName": "كاردورا1 مجم س ج",
       "title": "Cardura 1 mg - 21 Tablets",
@@ -2938,6 +3232,34 @@
       "manualVisualInspected": true,
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Bloom Pharmacy"
+    },
+    "3131": {
+      "catalogName": "كالوبين نقط",
+      "title": "كالوبين نقط ق",
+      "englishName": "Kalobin Drops",
+      "url": "https://api.magdyelhaddad.com/uploads/55886b8b-bc15-461e-9576-6563c32570ca.webp",
+      "sourcePage": "https://magdyelhaddad.com/ar/products/%D9%83%D8%A7%D9%84%D9%88%D8%A8%D9%8A%D9%86-%D9%86%D9%82%D8%B7-59097",
+      "source": "magdyelhaddad.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Dr. Magdy El-Haddad Pharmacies"
+    },
+    "3173": {
+      "catalogName": "كريستور5 مجم 28 قرص",
+      "title": "كريستور 5مجم28قرص",
+      "englishName": "Crestor 5 mg 28 Tablets",
+      "url": "https://api.magdyelhaddad.com/uploads/24e68227-3886-4d10-b7e9-5d77e39bdefb.webp",
+      "sourcePage": "https://magdyelhaddad.com/ar/products/%D9%83%D8%B1%D9%8A%D8%B3%D8%AA%D9%88%D8%B1-5%D9%85%D8%AC%D9%8528%D9%82%D8%B1%D8%B5-62190",
+      "source": "magdyelhaddad.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Dr. Magdy El-Haddad Pharmacies"
     },
     "3174": {
       "catalogName": "كريستوليب10 مجم",
@@ -2981,6 +3303,20 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Re3aya Pharmacy"
     },
+    "3343": {
+      "catalogName": "كونجيستال شراب",
+      "title": "كونجيستال  شراب",
+      "englishName": "Congestal Syrup",
+      "url": "https://api.magdyelhaddad.com/uploads/86fa3856-19c8-4301-baf5-e42bbeaaccce-png.webp",
+      "sourcePage": "https://magdyelhaddad.com/ar/products/%D9%83%D9%88%D9%86%D8%AC%D9%8A%D8%B3%D8%AA%D8%A7%D9%84-%D8%B4%D8%B1%D8%A7%D8%A8-17423",
+      "source": "magdyelhaddad.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Dr. Magdy El-Haddad Pharmacies"
+    },
     "3350": {
       "catalogName": "كونكور5 مجم عادى",
       "title": "Concor 5 mg - 30 Tablets",
@@ -3008,6 +3344,34 @@
       "manualVisualInspected": true,
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Azzam Pharmacy"
+    },
+    "3438": {
+      "catalogName": "لاكتو1 لبن",
+      "title": "لاكتو 1لبن",
+      "englishName": "Lacto 1 Milk",
+      "url": "https://api.magdyelhaddad.com/uploads/ad33abc0-96d9-42c9-8c80-fd1fa5b6ab59.webp",
+      "sourcePage": "https://magdyelhaddad.com/ar/products/%D9%84%D8%A7%D9%83%D8%AA%D9%88-1%D9%84%D8%A8%D9%86-63558",
+      "source": "magdyelhaddad.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Dr. Magdy El-Haddad Pharmacies"
+    },
+    "3476": {
+      "catalogName": "لايس نقط",
+      "title": "لايس نقط",
+      "englishName": "Lais Drops",
+      "url": "https://api.magdyelhaddad.com/uploads/7875aabe-9d82-4ba4-af02-143d3edf1abc.webp",
+      "sourcePage": "https://magdyelhaddad.com/ar/products/%D9%84%D8%A7%D9%8A%D8%B3-%D9%86%D9%82%D8%B7-59770",
+      "source": "magdyelhaddad.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Dr. Magdy El-Haddad Pharmacies"
     },
     "3533": {
       "catalogName": "ليبيتور40 مجم 14 قرص",
@@ -3080,6 +3444,34 @@
       "manualVisualInspected": true,
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Bloom Pharmacy"
+    },
+    "3932": {
+      "catalogName": "نتالوبالم30 كبسوله",
+      "title": "نتالوبالم 30 كبسولة",
+      "englishName": "Ntalobalm 30 Capsules",
+      "url": "https://api.magdyelhaddad.com/uploads/2d35b879-076b-4aae-9a2b-4e6642dd746c.webp",
+      "sourcePage": "https://magdyelhaddad.com/ar/products/%D9%86%D8%AA%D8%A7%D9%84%D9%88%D8%A8%D8%A7%D9%84%D9%85-30-%D9%83%D8%A8%D8%B3%D9%88%D9%84%D8%A9-64105",
+      "source": "magdyelhaddad.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Dr. Magdy El-Haddad Pharmacies"
+    },
+    "3953": {
+      "catalogName": "نورموتيرز قطرة",
+      "title": "نورموتيرز قطرة",
+      "englishName": "Normotirz Drops",
+      "url": "https://api.magdyelhaddad.com/uploads/a1cc079d-22c5-46e1-95b6-3d5455fc44df.webp",
+      "sourcePage": "https://magdyelhaddad.com/ar/products/%D9%86%D9%88%D8%B1%D9%85%D9%88%D8%AA%D9%8A%D8%B1%D8%B2-%D9%82%D8%B7%D8%B1%D8%A9-59164",
+      "source": "magdyelhaddad.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Dr. Magdy El-Haddad Pharmacies"
     },
     "3954": {
       "catalogName": "نورموكارد10 مجم 30 قرص",
@@ -3219,6 +3611,20 @@
       "license": "external retailer image; rights not independently verified",
       "note": "Real retailer image URL; packaging pixels and remote availability not independently verified"
     },
+    "4060": {
+      "catalogName": "هاى بيوتك ان600 شراب",
+      "title": "هاى بيوتك ان600  شراب",
+      "englishName": "Hibiotic N 600 Syrup",
+      "url": "https://api.magdyelhaddad.com/uploads/f9f08183-0074-40b0-baa0-ad86a3b7911b-png.webp",
+      "sourcePage": "https://magdyelhaddad.com/ar/products/%D9%87%D8%A7%D9%89-%D8%A8%D9%8A%D9%88%D8%AA%D9%83-%D8%A7%D9%86600-%D8%B4%D8%B1%D8%A7%D8%A8-49265",
+      "source": "magdyelhaddad.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Dr. Magdy El-Haddad Pharmacies"
+    },
     "4078": {
       "catalogName": "هيالو فور كونترول100 جم",
       "title": "Hyalo 4 Control  100 Gm  Cream  (322691)",
@@ -3232,6 +3638,20 @@
       "manualVisualInspected": true,
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Azzam Pharmacy"
+    },
+    "4138": {
+      "catalogName": "هيرو برو نقط",
+      "title": "هيرو برو نقط",
+      "englishName": "Hero Pro Drops",
+      "url": "https://api.magdyelhaddad.com/uploads/bf082dc1-4f7f-46dd-a189-579dec8ff9be.webp",
+      "sourcePage": "https://magdyelhaddad.com/ar/products/%D9%87%D9%8A%D8%B1%D9%88-%D8%A8%D8%B1%D9%88-%D9%86%D9%82%D8%B7-62545",
+      "source": "magdyelhaddad.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Dr. Magdy El-Haddad Pharmacies"
     },
     "4139": {
       "catalogName": "هيرو بيبى1 لبن",
@@ -3319,6 +3739,20 @@
       "license": "external retailer image; rights not independently verified",
       "note": "Real retailer image URL; packaging pixels and remote availability not independently verified"
     },
+    "4190": {
+      "catalogName": "وينيﻼك2 لبن",
+      "title": "وينيلاك2 لبن",
+      "englishName": "Winilac 2 Follow-On Milk",
+      "url": "https://api.magdyelhaddad.com/uploads/060b30ae-9276-470b-a53b-899e95a7b433.webp",
+      "sourcePage": "https://magdyelhaddad.com/ar/products/%D9%88%D9%8A%D9%86%D9%8A%D9%84%D8%A7%D9%832-%D9%84%D8%A8%D9%86-64232",
+      "source": "magdyelhaddad.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Dr. Magdy El-Haddad Pharmacies"
+    },
     "4199": {
       "url": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/48472.webp?v=1786649060",
       "source": "azzampharmacy.com",
@@ -3381,6 +3815,90 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Azzam Pharmacy"
     },
+    "230024": {
+      "catalogName": "ارجينافكت 10مجم",
+      "title": "ارجينافكت 10مجم",
+      "englishName": "Urginafect 10 mg",
+      "url": "https://api.magdyelhaddad.com/uploads/709d4d31-d3a9-46f0-95b2-70f833900c61-png.webp",
+      "sourcePage": "https://magdyelhaddad.com/ar/products/%D8%A7%D8%B1%D8%AC%D9%8A%D9%86%D8%A7%D9%81%D9%83%D8%AA-10%D9%85%D8%AC%D9%85-63313",
+      "source": "magdyelhaddad.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Dr. Magdy El-Haddad Pharmacies"
+    },
+    "230112": {
+      "catalogName": "برونكوفين شراب",
+      "title": "برونكوفين شراب",
+      "englishName": "Broncofin Syrup",
+      "url": "https://api.magdyelhaddad.com/uploads/20b6d19f-56c1-413d-bd81-e66d323299d0.webp",
+      "sourcePage": "https://magdyelhaddad.com/ar/products/%D8%A8%D8%B1%D9%88%D9%86%D9%83%D9%88%D9%81%D9%8A%D9%86-%D8%B4%D8%B1%D8%A7%D8%A8-59976",
+      "source": "magdyelhaddad.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Dr. Magdy El-Haddad Pharmacies"
+    },
+    "230239": {
+      "catalogName": "ديكاديل شراب",
+      "title": "ديكاديل شراب",
+      "englishName": "Dekadel Syrup",
+      "url": "https://api.magdyelhaddad.com/uploads/cb79debb-223e-437c-bd1d-e016dc16b009.webp",
+      "sourcePage": "https://magdyelhaddad.com/ar/products/%D8%AF%D9%8A%D9%83%D8%A7%D8%AF%D9%8A%D9%84-%D8%B4%D8%B1%D8%A7%D8%A8-63746",
+      "source": "magdyelhaddad.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Dr. Magdy El-Haddad Pharmacies"
+    },
+    "230261": {
+      "catalogName": "سالبوفنت شراب",
+      "title": "سالبوفنت شراب",
+      "englishName": "Salbovent Syrup",
+      "url": "https://api.magdyelhaddad.com/uploads/0727557f-eddc-4714-9d97-9f72a65f7127.webp",
+      "sourcePage": "https://magdyelhaddad.com/ar/products/%D8%B3%D8%A7%D9%84%D8%A8%D9%88%D9%81%D9%86%D8%AA-%D8%B4%D8%B1%D8%A7%D8%A8-36302",
+      "source": "magdyelhaddad.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Dr. Magdy El-Haddad Pharmacies"
+    },
+    "230293": {
+      "catalogName": "ستوبادول وومان 20قرص",
+      "title": "ستوبادول وومان 20 قرص",
+      "englishName": "Stopadol Woman 20 Tablets",
+      "url": "https://api.magdyelhaddad.com/uploads/a8beeeeb-d19d-4cfb-82fb-54f0ce0730cb.webp",
+      "sourcePage": "https://magdyelhaddad.com/ar/products/%D8%B3%D8%AA%D9%88%D8%A8%D8%A7%D8%AF%D9%88%D9%84-%D9%88%D9%88%D9%85%D8%A7%D9%86-20-%D9%82%D8%B1%D8%B5-63764",
+      "source": "magdyelhaddad.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Dr. Magdy El-Haddad Pharmacies"
+    },
+    "230325": {
+      "catalogName": "سويتال ستيفيا 50كيس",
+      "title": "سويتال ستيفيا50كيس",
+      "englishName": "Sweetal Stevia 50 Sachets",
+      "url": "https://api.magdyelhaddad.com/uploads/5ba89158-c5f9-4fe6-9f77-2ee7aa9b60d2.webp",
+      "sourcePage": "https://magdyelhaddad.com/ar/products/%D8%B3%D9%88%D9%8A%D8%AA%D8%A7%D9%84-%D8%B3%D8%AA%D9%8A%D9%81%D9%8A%D8%A750%D9%83%D9%8A%D8%B3-63155",
+      "source": "magdyelhaddad.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Dr. Magdy El-Haddad Pharmacies"
+    },
     "230376": {
       "id": "230376",
       "catalogName": "فلاجيل شراب سعر جديد",
@@ -3397,6 +3915,34 @@
       "attribution": "Re3aya Pharmacy",
       "license": "source retailer image; commercial reuse rights not independently verified",
       "note": "Real packaging visually inspected against catalog. Externally linked, not independently verified in live PWA."
+    },
+    "230393": {
+      "catalogName": "فورتيموكس قطرة",
+      "title": "فورتيموكس قطرة",
+      "englishName": "Fortymox Drops",
+      "url": "https://api.magdyelhaddad.com/uploads/76d5fd63-b31a-4ad0-ab4b-f49f4b911993.webp",
+      "sourcePage": "https://magdyelhaddad.com/ar/products/%D9%81%D9%88%D8%B1%D8%AA%D9%8A%D9%85%D9%88%D9%83%D8%B3-%D9%82%D8%B7%D8%B1%D8%A9-59339",
+      "source": "magdyelhaddad.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Dr. Magdy El-Haddad Pharmacies"
+    },
+    "230402": {
+      "catalogName": "فيتونكس شراب",
+      "title": "فيتونكس شراب",
+      "englishName": "Vitonex Syrup",
+      "url": "https://api.magdyelhaddad.com/uploads/9bbd5a0f-3c56-45a3-9728-ad434f746b74-png.webp",
+      "sourcePage": "https://magdyelhaddad.com/ar/products/%D9%81%D9%8A%D8%AA%D9%88%D9%86%D9%83%D8%B3-%D8%B4%D8%B1%D8%A7%D8%A8-63630",
+      "source": "magdyelhaddad.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Dr. Magdy El-Haddad Pharmacies"
     },
     "230474": {
       "catalogName": "ليبيتور80مجم 14قرص",
@@ -3430,6 +3976,20 @@
       "attribution": "Re3aya Pharmacy",
       "license": "source retailer image; commercial reuse rights not independently verified",
       "note": "Real packaging visually inspected against catalog. Externally linked, not independently verified in live PWA."
+    },
+    "230550": {
+      "catalogName": "ويلينتا اس ار 150مجم اقراص",
+      "title": "ويلينتا اس ار 150مجم اقراص",
+      "englishName": "Wilinta SR 150 mg Tablets",
+      "url": "https://api.magdyelhaddad.com/uploads/80a28b81-4980-4d02-9f77-cb41e7a2c536.webp",
+      "sourcePage": "https://magdyelhaddad.com/ar/products/%D9%88%D9%8A%D9%84%D9%8A%D9%86%D8%AA%D8%A7-%D8%A7%D8%B3-%D8%A7%D8%B1-150%D9%85%D8%AC%D9%85-%D8%A7%D9%82%D8%B1%D8%A7%D8%B5-58346",
+      "source": "magdyelhaddad.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Dr. Magdy El-Haddad Pharmacies"
     }
   },
   "lastManualBatch": {
