@@ -21,11 +21,17 @@ const imageEnd=html.indexOf('const imageSeedBatches',imageStart);
 if(imageStart<0||imageEnd<imageStart)throw Error('Image seed map missing');
 const known=new Set([...html.slice(imageStart,imageEnd).matchAll(/^\s*'(\d+)':\s*\{/gm)].map(x=>x[1]));
 const csvValue=x=>'"'+String(x||'').replace(/"/g,'""').replace(/[\r\n]/g,' ')+'"';
-const active=items.filter((x,i)=>!exclusions.has(i+1)&&!known.has(String(x.id)));
+const publicationFile='data/arkan-auto-published-images.json';
+const published=fs.existsSync(publicationFile)?JSON.parse(fs.readFileSync(publicationFile,'utf8')).byId||{}:{};
+const uncovered=items.filter((x,i)=>!exclusions.has(i+1)&&!known.has(String(x.id)));
+// Prioritize absent links, but retain existing candidates for future verification.
+const active=uncovered.filter(x=>!published[String(x.id)]?.url);
 active.sort((a,b)=>Number(a.cat==='أدوية')-Number(b.cat==='أدوية')||a.id-b.id);
 const cursorFile='data/arkan-v2-cursor.json';
 const cursor=fs.existsSync(cursorFile)?JSON.parse(fs.readFileSync(cursorFile,'utf8')):{offset:0};
-const offset=Number(cursor.offset||0)%Math.max(1,active.length);
+const priorId=String(cursor.lastAttemptedId||'');
+const priorIndex=active.findIndex(x=>String(x.id)===priorId);
+const offset=priorIndex>=0?(priorIndex+1)%Math.max(1,active.length):Number(cursor.offset||0)%Math.max(1,active.length);
 const budget=Math.max(1,Math.min(30,Number(process.env.ARKAN_V2_BATCH_SIZE||24)));
 const batch=[...active.slice(offset),...active.slice(0,offset)].slice(0,budget);
 const dest='data/arkan-v2-search-input.csv';
@@ -91,6 +97,6 @@ if(process.argv.includes('--ingest')){
   }
   if(queued)fs.writeFileSync(outFile,JSON.stringify(records,null,2)+'\n');
   // Advance even if no image was found, preventing endlessly repeating batch one.
-  if(lines.length&&active.length)fs.writeFileSync(cursorFile,JSON.stringify({offset:(offset+batch.length)%active.length},null,2)+'\n');
+  if(lines.length&&active.length)fs.writeFileSync(cursorFile,JSON.stringify({offset:(offset+batch.length)%active.length,lastAttemptedId:String(splitCSV(lines.at(-1))[0]||'')},null,2)+'\n');
   console.log(JSON.stringify({searched:lines.length,publishedCandidateThumbnails:queued,arabicOnlyCandidates:arabicOnly,duplicateImages,remotePreviewEnabled,rejectedForAutoPublication:blocked}));
 }
