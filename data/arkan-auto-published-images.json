@@ -15182,6 +15182,22 @@
       "manualVisualInspected": true,
       "matchReason": "product_pack_visually_checked_against_catalog_and_source_listing"
     },
+    "2098": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/2098.webp",
+      "source": "wikimisr.com",
+      "sourcePage": "https://wikimisr.com/دواعي-استخدام-أقراص-رينوبرو-rhinopro/",
+      "originalImageUrl": "https://wikimisr.com/wp-content/uploads/2021/03/رينوبرو.jpg",
+      "catalogName": "رينوبرو اقراص",
+      "englishName": "",
+      "title": "رينوبرو اقراص",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "matchScore": 1,
+      "matchReason": "ocr",
+      "sha256": "eed2dee7e1ed22653137bde6f03692223be044a66114eb508cbd321bc2e5fd71",
+      "provenance": "Image downloaded and matched by image discovery bot; commercial reuse license unverified"
+    },
     "2099": {
       "catalogName": "رينوبرو شراب",
       "englishName": "Rinobro Syrup",
@@ -16182,6 +16198,22 @@
       "attribution": "Re3aya Pharmacy",
       "note": "External candidate preview; image availability and visual package not independently verified."
     },
+    "2187": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/2187.webp",
+      "source": "ecombe.nahdionline.com",
+      "sourcePage": "https://www.nahdionline.com/ar-sa/zeffix-100-mg-tablet-28pcs/pdp/100021888",
+      "originalImageUrl": "https://ecombe.nahdionline.com/media/catalog/product/z/e/zeffix-100-mg-tablet-28pcs-1-_1.jpg",
+      "catalogName": "زيفكس28 قرص",
+      "englishName": "",
+      "title": "زيفكس28 قرص",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "matchScore": 1,
+      "matchReason": "ocr",
+      "sha256": "558629441171e3ca465d2cafb533323c1836eee9f1182a76a5e76f611f34542d",
+      "provenance": "Image downloaded and matched by image discovery bot; commercial reuse license unverified"
+    },
     "2188": {
       "catalogName": "زيكﻼف1 جم بديل هاى بيوتك",
       "englishName": "Ziclaf 1 g Alt. to High Biotk",
@@ -16403,6 +16435,22 @@
       "attribution": "Lotus Pharmacies",
       "sha256": "f243106f289c620661fe42786fde4e36319ac9fbff715e4453ff8dd146742100",
       "matchReason": "catalog_name_and_pack_details_checked_against_retailer_listing_and_image_ocr"
+    },
+    "2211": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/2211.webp",
+      "source": "www.syd24.com",
+      "sourcePage": "https://www.syd24.com/مرهم-ساليبت/",
+      "originalImageUrl": "https://www.syd24.com/wp-content/uploads/2022/06/مرهم-مراهم-جلدية-مرهم-ساليبت-لعلاج-الالتهابات-الجلدية-خلفية-لعبوة-مرهم-ساليبت.jpg",
+      "catalogName": "سالبيت مرهم",
+      "englishName": "",
+      "title": "سالبيت مرهم",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "matchScore": 1,
+      "matchReason": "multi_source_2",
+      "sha256": "41377326fafc4a3fafdd59fefdcb618f7a11f745b6829ff8e984dcbdd9b9067c",
+      "provenance": "Image downloaded and matched by image discovery bot; commercial reuse license unverified"
     },
     "2216": {
       "catalogName": "ساليتروكسيب60مجم اقراص",
