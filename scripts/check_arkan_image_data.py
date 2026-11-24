@@ -5,6 +5,7 @@ Reject malformed IDs, duplicated URLs between SKUs, unsafe schemes and accidenta
 promotion of unverified trial photos. Does not change or reclassify product images.
 """
 import json
+import re
 from pathlib import Path
 from ipaddress import ip_address
 from urllib.parse import urlparse
@@ -15,7 +16,16 @@ def load(name):
 quick = load('arkan-quick-image-candidates.json')
 trial = load('arkan-trial-photo-feed.json')
 auto = load('arkan-auto-published-images.json')
-total = 4218
+legacy_total = 4218
+html = (root / 'index.html').read_text(encoding='utf-8')
+master = re.search(r'const EXACT_MASTER_ITEMS\s*=\s*\[([\s\S]*?)\n\s*\];', html)
+if master is None:
+    raise SystemExit('Arkan image data validation FAILED: missing catalog')
+master_count = len(re.findall(r'\{\s*name:\s*"[^"]+"\s*,\s*cat:\s*"[^"]+"', master[1]))
+if master_count < legacy_total:
+    raise SystemExit('Arkan image data validation FAILED: incomplete catalog')
+reserved_start = 230000
+reserved_end = reserved_start + master_count - legacy_total
 errors = []
 
 def valid_url(value):
@@ -36,13 +46,20 @@ def valid_url(value):
     except ValueError:
         return False
 
-def check_id(raw_id):
-    return str(raw_id).isdigit() and 1 <= int(raw_id) <= total
+def check_id(raw_id, limit=legacy_total):
+    identifier = str(raw_id)
+    return identifier.isascii() and identifier.isdecimal() and 1 <= int(identifier) <= limit
 
-def inspect(rows, name):
+def production_id(raw_id):
+    if check_id(raw_id):
+        return True
+    identifier = str(raw_id)
+    return identifier.isascii() and identifier.isdecimal() and reserved_start <= int(identifier) < reserved_end
+
+def inspect(rows, name, limit=legacy_total):
     seen = {}
     for identifier, url, title in rows:
-        if not check_id(identifier):
+        if not check_id(identifier, limit):
             errors.append(f'{name}: invalid product ID {identifier}')
         if not valid_url(url):
             errors.append(f'{name}: invalid image URL for {identifier}')
@@ -52,7 +69,7 @@ def inspect(rows, name):
             errors.append(f'{name}: same image URL assigned to {seen[url]} and {identifier}')
         seen[url] = str(identifier)
 
-if quick.get('total') != total:
+if quick.get('total') != legacy_total:
     errors.append('quick: catalog total mismatch')
 rows = quick.get('byId', {})
 if not isinstance(rows, dict):
@@ -66,8 +83,10 @@ inspect(((id, row[0] if isinstance(row, list) and len(row)>0 else '',
 
 if trial.get('mode') != 'trial' or trial.get('approvedForProduction') is not False:
     errors.append('trial: unverified content must never be production-approved')
-if trial.get('catalogTotal') != total:
+trial_total = trial.get('catalogTotal')
+if trial_total not in (legacy_total, master_count):
     errors.append('trial: catalog total mismatch')
+    trial_total = legacy_total
 entries = trial.get('items', [])
 if not isinstance(entries, list):
     errors.append('trial: items must be a list')
@@ -82,15 +101,24 @@ for row in entries:
     seen_ids.add(pid)
     if row.get('status') != 'trial_unverified' or row.get('catalogMatch') != 'not_visually_verified':
         errors.append(f'trial: false verification status at {pid}')
-inspect(((row.get('id'), row.get('imageUrl'), row.get('title')) for row in entries), 'trial')
+inspect(((row.get('id'), row.get('imageUrl'), row.get('title')) for row in entries), 'trial', trial_total)
 if not isinstance(auto.get('byId', {}), dict):
     errors.append('auto: byId must be a dictionary')
 else:
+    seen_urls = {}
     for pid, row in auto.get('byId', {}).items():
-        if not check_id(pid) or row.get('status') != 'auto_published_strict_unverified_pack':
+        if (not production_id(pid) or not isinstance(row, dict) or
+                row.get('status') not in ('auto_published_strict_unverified_pack', 'candidate_preview') or
+                row.get('independentlyVerified') not in (None, False)):
             errors.append(f'auto: invalid publication record {pid}')
-        if not valid_url(row.get('url')):
+            continue
+        url = row.get('url')
+        if not valid_url(url):
             errors.append(f'auto: invalid image URL {pid}')
+            continue
+        if url in seen_urls:
+            errors.append(f'auto: same image URL assigned to {seen_urls[url]} and {pid}')
+        seen_urls[url] = pid
 
 if errors:
     raise SystemExit('Arkan image data validation FAILED:\n' + '\n'.join(errors[:30]))

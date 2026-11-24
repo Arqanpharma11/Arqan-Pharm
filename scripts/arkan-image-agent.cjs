@@ -19,7 +19,15 @@ const queue = read(queueFile,{byId:{}});
 const published = read(publishedFile,{version:1,byId:{}});
 const master = html.match(/const EXACT_MASTER_ITEMS\s*=\s*\[([\s\S]*?)\n\s*\];/);
 if(!master) throw Error('Master catalog extraction failed: refusing to mutate image data');
-const items = [...master[1].matchAll(/\{\s*name:\s*"([^"]+)"\s*,\s*cat:\s*"([^"]+)"/g)].map((m,i)=>({id:String(i+1),name:m[1],cat:m[2]}));
+const excluded = html.match(/const PDF_EXCLUDED_MASTER_POSITIONS\s*=\s*new Set\(\[([^\]]+)\]\)/);
+if (!excluded) throw Error('Catalog exclusions missing: refusing to mutate image data');
+const excludedPositions = new Set(excluded[1].split(',').map(value => Number(value.trim())));
+const items = [...master[1].matchAll(/\{\s*name:\s*"([^"]+)"\s*,\s*cat:\s*"([^"]+)"/g)]
+  .map((match, index) => ({
+    id: String(index < 4218 ? index + 1 : 230000 + index - 4218),
+    name: match[1], cat: match[2], position: index + 1
+  }))
+  .filter(item => !excludedPositions.has(item.position));
 // Do not search for products that already have individually approved photos.
 const seedStart=html.indexOf('const verifiedImageSeeds = {');
 const seedEnd=html.indexOf('const imageSeedBatches',seedStart);
@@ -248,7 +256,7 @@ async function main(){
     else byId.set(item.id,{...item,cat:''});
   }
   const all=[...byId.values()];
-  const linked=Object.entries(candidates.byId).filter(([id,c])=>!approvedIds.has(id)&&Array.isArray(c)&&c[0]?.startsWith('https://'));
+  const linked=Object.entries(candidates.byId).filter(([id,c])=>byId.has(id)&&!approvedIds.has(id)&&Array.isArray(c)&&c[0]?.startsWith('https://'));
   const budget=Number(process.env.IMAGE_CHECK_BUDGET||20);
   let checked=0,missing=0,healthy=0,gone=0,queued=0,publishedNow=0,searchAttempted=0,searchHits=0,searchErrors=0;
   const rejectionReasons={};
@@ -330,7 +338,9 @@ async function main(){
             if(!output)continue;
             if(await imageAlive(output.url)==='ok')eligible.push(output);
           }
-          if(eligible.length===1 && !published.byId[item.id]){
+          const existingOwner = eligible.length === 1 && Object.entries(published.byId)
+            .some(([id, record]) => id !== item.id && record.url === eligible[0].url);
+          if(eligible.length===1 && !published.byId[item.id] && !existingOwner){
             // This is an eligible external image record, not a visually
             // verified medicine pack; do not overwrite admin-approved media.
             published.byId[item.id]=eligible[0];
@@ -338,7 +348,7 @@ async function main(){
             delete queue.byId[item.id];
           }else {
             queue.byId[item.id]={name:item.name,en:searchedItem.en||'',results:found,
-              reason:eligible.length>1?'ambiguous_multiple_valid_packages':'needs_review'};
+              reason:eligible.length>1?'ambiguous_multiple_valid_packages':existingOwner?'image_used_by_another_product':'needs_review'};
             queued++;
           }
         }
