@@ -146,6 +146,20 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Dr. Magdy El-Haddad Pharmacies"
     },
+    "78": {
+      "catalogName": "اتراكتا امبول",
+      "title": "Atrakta Re-Force Anti-Hair Loss Ampoules",
+      "englishName": "Atrakta Ampoules",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/a0/a0ac746f41a6562999ca279f6260f3c558d1b5172209cf019d4ddae04031028b.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/atrakta-re-force-anti-hair-loss-ampoules",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
+    },
     "115": {
       "catalogName": "اتينو50/25 سى",
       "title": "أتينو سي 50 ملغ أتينولول و 25 ملغ كلورثاليدون",
@@ -159,6 +173,20 @@
       "manualVisualInspected": true,
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Lotus Pharmacies"
+    },
+    "186": {
+      "catalogName": "اريك اقراص س ج",
+      "title": "erec-100-mg-12tab",
+      "englishName": "Erec Tablets",
+      "url": "https://cdn.shopify.com/s/files/1/0935/9550/0847/files/EREC_1615x1615_WEBP.webp?v=1792656420",
+      "sourcePage": "https://alfouadpharmacies.com/products/erec-100-mg-12tab",
+      "source": "alfouadpharmacies.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "AlFouad Pharmacies"
     },
     "210": {
       "catalogName": "ازموراب10مجم اكياس",
@@ -205,6 +233,20 @@
       "attribution": "Azzam Pharmacy",
       "license": "external retailer image; rights not independently verified",
       "note": "Real retailer image URL; packaging pixels and remote availability not independently verified"
+    },
+    "263": {
+      "catalogName": "افيميو قطرة",
+      "title": "Efemyo Eye Drops - 10 ml",
+      "englishName": "Efemyo Drops",
+      "url": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/efemyo-eye-drops-10-ml-578066.jpg?v=1735257556",
+      "sourcePage": "https://re3ayapharmacy.com/products/efemyo-eye-drops-10-ml",
+      "source": "re3ayapharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Re3aya Pharmacy"
     },
     "277": {
       "catalogName": "اكتيف كريم شعر",
@@ -312,6 +354,20 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Lotus Pharmacies"
     },
+    "372": {
+      "catalogName": "الفاكارينو نقط",
+      "title": "Alfacareno 2mcg/ml Alfacalcidol Oral Drops",
+      "englishName": "Alfacareno Drops",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/9c/9c04524d3134f29ed982f501b05aa86ffcc82cfc242a76624bb3ebb25d74763e.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/alfacarino-2-ml-oral-drop-10ml",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
+    },
     "384": {
       "catalogName": "الكابرايد50 مجم",
       "title": "Alkapride 50mg Itopride Hydrochloride",
@@ -400,6 +456,20 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Re3aya Pharmacy"
     },
+    "494": {
+      "catalogName": "اناسيزياجو كريم",
+      "title": "Anaseziago 25mg/g Lidocaine & 25mg/g Prilocaine Topical Cream",
+      "englishName": "Anaseziago Cream",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/08/08fc403f6f7bb1ef82003f0a13795a5ac56e5c2bb583921e09baf4c1060297f1.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/anaseziago-25mg-g-lidocaine-25mg-g-prilocaine-topical-cream",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
+    },
     "532": {
       "catalogName": "اندوريستات120مجم",
       "title": "Andouristat 120mg Febuxostat",
@@ -458,6 +528,20 @@
       "attribution": "Re3aya Pharmacy",
       "license": "source retailer image; commercial reuse rights not independently verified",
       "note": "Manual image check of packaging/name/strength/form. Retailer hotlink; availability not independently tested inside pharmacy PWA."
+    },
+    "614": {
+      "catalogName": "اوجمنتين اكياس",
+      "title": "أوجمنتين 1 جم/125 مجم أموكسيسيلين وحمض الكلافولانيك مسحوق أكياس للبالغين",
+      "englishName": "Augmentin Sachets",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/58/580dbd73bdf045b2fef88fb3f44d4579c1cc00b208a0555033a7c2bdca32fb09.jpg",
+      "sourcePage": "https://www.lotusonline.com/ar/products/augmentin-1g-125mg-amoxicillin-clavulanic-acid-powder-sachets-for-adults",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
     },
     "684": {
       "catalogName": "اوكسى تروبيل1200 مجم",
@@ -533,6 +617,20 @@
       "manualVisualInspected": true,
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Dr. Magdy El-Haddad Pharmacies"
+    },
+    "729": {
+      "catalogName": "اوميدرنك شرب",
+      "title": "Omedrink Heart & Nervous System Health Supplement Syrup Orange Flavor",
+      "englishName": "Omedrink Syrup",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/e3/e33cac20b4feb57c4b26051f90351e1aa147f9202e42ab4cc7b402a68db0c317.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/omedrink-heart-nervous-system-health-supplement-syrup-orange-flavor",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
     },
     "740": {
       "catalogName": "ايبا اكت شامبو",
@@ -940,6 +1038,20 @@
       "license": "external retailer image; rights not independently verified",
       "note": "Real retailer product image URL; exact pixels and availability not independently verified"
     },
+    "1033": {
+      "catalogName": "برونكولين محلول",
+      "title": "برونكولين إس 5 ملغ/مل محلول سالبيوتامول للتبخير",
+      "englishName": "Broncolin Solution",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/38/38f7599bac11d8a0c80c000765a4cdc9e131e34dc7c1228299dfe76d61628489.jpg",
+      "sourcePage": "https://www.lotusonline.com/ar/products/broncholin-s-5mg-ml-salbutamol-respirator-solution",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
+    },
     "1051": {
       "url": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/604528.webp?v=1786653072",
       "source": "azzampharmacy.com",
@@ -1180,6 +1292,34 @@
       "license": "external retailer image; rights not independently verified",
       "note": "Real retailer product image URL; exact pixels and availability not independently verified"
     },
+    "1131": {
+      "catalogName": "بورجازون كريم تريو",
+      "title": "Borgasone Trio 0.1% Mometasone Furoate, 2% Miconazole Nitrate & 0.1% Gentamicin Topical Cream",
+      "englishName": "Borgasone Trio Trio",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/c7/c75c2e73a320fe49fa33b56907e1856a783ef2ddba3db01406037030e77bfb23.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/borgasone-trio-0-1-mometasone-furoate-2-miconazole-nitrate-0-1-gentamicin-topical-cream",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
+    },
+    "1142": {
+      "catalogName": "بوليمير3% هيبرتونيك كبار",
+      "title": "Polymer 3% Hypertonic Sea Water Colds & Rhinitis Relief Nasal Spray for Adults - preservatives free",
+      "englishName": "Polymer 3% Hypertonic Adults",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/8f/8f0a3ad050568ecf15ce38620d226d6fe2048b94b3e6d67b1cafd0dea1c182d8.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/polymer-3-hypertonic-sea-water-colds-rhinitis-relief-nasal-spray-for-adults-preservatives-free",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
+    },
     "1143": {
       "catalogName": "بوم شاور جل",
       "title": "Pom  Shower Gel  250 Ml",
@@ -1223,6 +1363,20 @@
       "manualVisualInspected": true,
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Lotus Pharmacies"
+    },
+    "1152": {
+      "catalogName": "بونو فورت كبسول",
+      "title": "Pono Forte  500 Mg  20 Cap",
+      "englishName": "Pono Forte Capsules",
+      "url": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/85423.webp?v=1786661477",
+      "sourcePage": "https://azzampharmacy.com/products/pono-forte-500-mg-20-cap-4448",
+      "source": "azzampharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Azzam Pharmacy"
     },
     "1160": {
       "catalogName": "بى فريش ازرق",
@@ -1430,6 +1584,20 @@
       "license": "external retailer image; rights not independently verified",
       "note": "Real retailer product image URL; exact pixels and availability not independently verified"
     },
+    "1199": {
+      "catalogName": "بيتولفكس امبول س ج",
+      "title": "betolvex-1-mg-1-ml-2-ampoules",
+      "englishName": "Betolvex Ampoules",
+      "url": "https://cdn.shopify.com/s/files/1/0774/7151/4932/products/betolvex-1-mg-1-ml-2-ampoules-586411.jpg?v=1687635071",
+      "sourcePage": "https://www.bloompharmacy.com/ar/products/betolvex-1-mg-1-ml-2-ampoules",
+      "source": "www.bloompharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Bloom Pharmacy"
+    },
     "1211": {
       "catalogName": "بيدياشور لبن فانيليا",
       "title": "Pediasure Complete Milk Powder Vanilla Flavor (1-10 Years) - gluten free",
@@ -1489,6 +1657,20 @@
       "manualVisualInspected": true,
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Bloom Pharmacy"
+    },
+    "1222": {
+      "catalogName": "بيرفكتيل هير اكسترا",
+      "title": "perfectil-extra-hair-skin-nails-60-tablets",
+      "englishName": "Perfectil Hair Extra",
+      "url": "https://cdn.shopify.com/s/files/1/0935/9550/0847/files/Perfectil_Hair_1615x1615_0fa165c3-b932-4806-b309-d038fb621cca.webp?v=1794139621",
+      "sourcePage": "https://alfouadpharmacies.com/products/perfectil-extra-hair-skin-nails-60-tablets",
+      "source": "alfouadpharmacies.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "AlFouad Pharmacies"
     },
     "1236": {
       "url": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/bisocard-10-mg-30-tablets-422395.jpg?v=1735257608",
@@ -1707,6 +1889,34 @@
       "manualVisualInspected": true,
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Dr. Magdy El-Haddad Pharmacies"
+    },
+    "1293": {
+      "catalogName": "بيوفيت امبول سعر جديد",
+      "title": "Biovit 12 Depot Ampoules with Vitamin B12, Vitamin B6 & Folic Acid for Intramuscular Injection",
+      "englishName": "Biovit Ampoules",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/9a/9abae03ac0a43cb8cc53998622b8faffbe7de1e65dc1b6e6cc9c5675e82963d3.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/biovit-12-depot-ampoules-with-vitamin-b12-vitamin-b6-folic-acid-for-intramuscular-injection",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
+    },
+    "1294": {
+      "catalogName": "بيوفيتا عرض1+ 1",
+      "title": "Biovita (Hair,Skin,Nails) 60 Vegetarian Gummy (1+1Free)",
+      "englishName": "Biovita 1+1",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/90/90d89129668cb3dbb4fe3f92bc89eb08c5c70ba0d2298c28c270a9ddde826c38.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/biovita-hair-skin-nails-60-vegetarian-gummy-1-1free",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
     },
     "1299": {
       "catalogName": "تادالونج20 مجم",
@@ -2180,6 +2390,20 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Lotus Pharmacies"
     },
+    "1370": {
+      "catalogName": "تريبتيزول25 مجم اقراص",
+      "title": "Tryptizol  25 Mg  30 Tab  (3St.) (New)",
+      "englishName": "Tryptizol 25 mg Tablets",
+      "url": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/400783.webp?v=1786645988",
+      "sourcePage": "https://azzampharmacy.com/products/tryptizol-25-mg-30-tab-3st-new-19804",
+      "source": "azzampharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Azzam Pharmacy"
+    },
     "1373": {
       "catalogName": "تريتاس2.5 مجم اقراص",
       "title": "Tritace 2.5 mg - 14 Tablets",
@@ -2389,6 +2613,20 @@
       "manualVisualInspected": true,
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Azzam Pharmacy"
+    },
+    "1432": {
+      "catalogName": "توتافيت شراب",
+      "title": "Totavit Multivitamin & Mineral Supplement Syrup for Children",
+      "englishName": "Totavit Syrup",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/54/548024e011c99540d33d685d33d7bab31232254cc67f6f8445bc4790bfd26ca7.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/totavit-syrup-100ml",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
     },
     "1437": {
       "catalogName": "توداسيدون40 مجم اقراص",
@@ -2892,6 +3130,20 @@
       "license": "external retailer image; rights not independently verified",
       "note": "Real retailer product image URL; exact pixels and availability not independently verified"
     },
+    "1548": {
+      "catalogName": "جاناجليب50/1000 بﻼس",
+      "title": "Janaglip Plus 50mg Sitagliptin & 1000mg Metformin Hydrochloride",
+      "englishName": "Janaglip Plus Plus",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/19/193a95769b065ec94c7fc70ac78d5323c9d71aa4ffa574e325821d9efd04557a.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/janaglip-plus-50mg-sitagliptin-1000mg-metformin-hydrochloride",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
+    },
     "1552": {
       "catalogName": "جاوتيفيد80 مجم",
       "title": "Goutifade 80mg Febuxostat",
@@ -3032,6 +3284,20 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Lotus Pharmacies"
     },
+    "1581": {
+      "catalogName": "جلوبابروب شرب س ج",
+      "title": "Globaprop 30mg/5ml Levodropropizine Cough Syrup",
+      "englishName": "Globaprop Syrup",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/b2/b224166a7bdfc116a68db7a3acf8c4618db7a04d01ef661335820e049666ed09.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/globaprop-30mg-5ml-syrup-120ml",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
+    },
     "1586": {
       "catalogName": "جلوكوفاج1000 مجم اقراص س ق",
       "title": "Glucophage 1000 mg - 30 Tablets",
@@ -3111,6 +3377,20 @@
       "attribution": "www.bloompharmacy.com",
       "license": "source product image; reuse rights not independently verified",
       "note": "Retailer packaging matching known catalog brand and dosage; external link not independently tested in live PWA."
+    },
+    "1593": {
+      "catalogName": "جليبتالينا2.5/500",
+      "title": "Gliptalina  2.5 Mg / 500 Mg  30 Tab",
+      "englishName": "Gliptalina 2.5/500",
+      "url": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/386358-1761053437.webp?v=1786650267",
+      "sourcePage": "https://azzampharmacy.com/products/gliptalina-2-5-mg-500-mg-30-tab-33956",
+      "source": "azzampharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Azzam Pharmacy"
     },
     "1594": {
       "catalogName": "جليبتس50 ع",
@@ -3313,6 +3593,34 @@
       "attribution": "www.multicare-eg.com",
       "license": "third-party visual source; commercial reuse rights not independently verified",
       "note": "Real commercial product image link, packaging matched by review; live browser and rights verification pending."
+    },
+    "1624": {
+      "catalogName": "جليمت فورت اقراص س ج",
+      "title": "Glimet  Forte  5 Mg / 800 Mg  30 Tab",
+      "englishName": "Glimet Forte Tablets",
+      "url": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/165448.webp?v=1786647144",
+      "sourcePage": "https://azzampharmacy.com/products/glimet-forte-5-mg-800-mg-30-tab-6388",
+      "source": "azzampharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Azzam Pharmacy"
+    },
+    "1641": {
+      "catalogName": "جولد غسوول",
+      "title": "Gold Feminine Intimate Wash - sulfate free, parabens free",
+      "englishName": "Gold Wash",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/97/97f00e8de59c01aee4285123463cd8416e99b0adf63eec1f6f172b57fb965e78.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/gold-fem-foam-vaginal-foam-150ml",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
     },
     "1649": {
       "catalogName": "جوينت جارد الترا",
@@ -3776,6 +4084,20 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Lotus Pharmacies"
     },
+    "1862": {
+      "catalogName": "دياكالديرم مرهم س ق",
+      "title": "Diacalderm 0.05mg Calcipotriol & 0.05mg Betamethasone Topical Ointment",
+      "englishName": "Diacalderm Ointment",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/68/68c0a07038c1f3db2c17f000bd85a651bfe09daf07bae61257ed0063ffd90877.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/diacalderm-ointment-20gm",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
+    },
     "1864": {
       "catalogName": "دياكوريماب10 مجم",
       "title": "Diacurimap 10mg Empagliflozin",
@@ -3892,6 +4214,20 @@
       "license": "source product image; reuse rights not independently verified",
       "note": "Retailer packaging matching known catalog brand and dosage; external link not independently tested in live PWA."
     },
+    "1876": {
+      "catalogName": "ديبافاليى50/1000بلس",
+      "title": "Dibavally Plus with Vildagliptin & Metformin Hydrochloride",
+      "englishName": "Dibavally Plus Plus",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/ca/cac63c495a834784aafd4fb6c5e4b7bd104e91da760390435bafa15da048534b.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/dibavally-plus-50-1000mg-28-film-coated-tablet",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
+    },
     "1879": {
       "catalogName": "ديبرام40 مجم",
       "title": "Depram  40 Mg  20 Tab (88706)",
@@ -3905,6 +4241,20 @@
       "manualVisualInspected": true,
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Azzam Pharmacy"
+    },
+    "1881": {
+      "catalogName": "ديبروزون مرهم",
+      "title": "Diprosone 0.5mg/1g Betamethasone Topical Ointment",
+      "englishName": "Diprosone Ointment",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/3a/3ad6338f5f872729c3e570f4cf31a4888ea15cf02ae4ff769cdb878d20398117.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/diprosone-0-5mg-1g-betamethasone-topical-ointment",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
     },
     "1883": {
       "catalogName": "ديبروساليك مرهم س ج",
@@ -3940,6 +4290,20 @@
       "englishName": "Diglifloz 5 mg",
       "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/cf/cfab4c4e4352c339a7a8a631c8dba6de80d7620f96a6272f3915e1633e27dbd4.jpg",
       "sourcePage": "https://www.lotusonline.com/products/diglifloz-5mg-dapagliflozin",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
+    },
+    "1892": {
+      "catalogName": "ديجليفوز850/5 بلس",
+      "title": "Diglifloz Plus 5mg Dapagliflozin & 850mg Metformin HCL",
+      "englishName": "Diglifloz Plus Plus",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/1a/1a923af9f0e5f50c5cfa55364b203412f02afb5cf7da0efc7c5a674f0a129970.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/diglifloz-plus-5mg-dapagliflozin-850mg-metformin-hcl",
       "source": "www.lotusonline.com",
       "status": "candidate_preview",
       "independentlyVerified": false,
@@ -4022,6 +4386,34 @@
       "license": "external retailer image; rights not independently verified",
       "note": "Real retailer product image URL; exact pixels and availability not independently verified"
     },
+    "1915": {
+      "catalogName": "ديفوزين كريم",
+      "title": "Divozine Cream for Relieving Inflammation, Itching & Irritated Skin",
+      "englishName": "Divozine Cream",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/c6/c696b3de3f88e86ec61b5598791a95bdbea0df34ff0ce01445935ebb89cfb2c8.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/divozine-cream-30gm",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
+    },
+    "1917": {
+      "catalogName": "ديفيتون دى فورت4000",
+      "title": "Diviton-D Forte 4000 IU Vitamin D3 Normal Bones & Immune System Function Maintaining Support Supplement Drops",
+      "englishName": "Diviton-D Forte 4000",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/b2/b2135d9aaa206d40ecef1ae677d27c0ab14d3e2822fb19283393bc92154619e5.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/diviton-d-forte-4000-iu-vitamin-d3-normal-bones-immune-system-function-maintaining-support-supplement-drops",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
+    },
     "1921": {
       "catalogName": "ديكساترول مرهم",
       "title": "ديكساترول مرهم",
@@ -4035,6 +4427,20 @@
       "manualVisualInspected": true,
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Dr. Magdy El-Haddad Pharmacies"
+    },
+    "1924": {
+      "catalogName": "ديكسافلوكس نقط",
+      "title": "Dexaflox Eye Drops - 5 ml",
+      "englishName": "Dexaflox Drops",
+      "url": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/dexaflox-eye-drops-5-ml-801687.jpg?v=1735256951",
+      "sourcePage": "https://re3ayapharmacy.com/products/dexaflox-eye-drops-5-ml",
+      "source": "re3ayapharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Re3aya Pharmacy"
     },
     "1934": {
       "catalogName": "ديكسيجلوفوزون5 مج",
@@ -4070,6 +4476,20 @@
       "englishName": "Diclopro 75 mg SR",
       "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/f4/f43614ee818b7471969cc42da25e67dfbaf0cef3bc11efc84ac99fd81bbe13bc.jpg",
       "sourcePage": "https://www.lotusonline.com/products/diclopro-sr-75mg-diclofenac-sodium",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
+    },
+    "1942": {
+      "catalogName": "ديكلوبرو جل",
+      "title": "Diclopro 1% Diclofenac Sodium Anti-Inflammatory Topical Gel",
+      "englishName": "Diclopro Gel",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/81/81b06a18de3885f62eb7ef9286efa564ca5462497ec8aa6de5ab7b0272ac78de.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/diclopro-1-diclofenac-sodium-anti-inflammatory-topical-gel",
       "source": "www.lotusonline.com",
       "status": "candidate_preview",
       "independentlyVerified": false,
@@ -4311,6 +4731,20 @@
       "attribution": "www.lotusonline.com",
       "license": "third-party photo: commercial reuse rights not confirmed",
       "note": "Retailer photo matched by manual review. Hotlink and portal live render are not independently verified."
+    },
+    "2049": {
+      "catalogName": "ريالكوكستار90مج س ق",
+      "title": "Realcoxstar  90 Mg  14 Tab",
+      "englishName": "Realcoxstar 90 mg",
+      "url": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/607569-1760363030.webp?v=1786657019",
+      "sourcePage": "https://azzampharmacy.com/products/realcoxstar-90-mg-14-tab-34358",
+      "source": "azzampharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Azzam Pharmacy"
     },
     "2050": {
       "catalogName": "ريبايون ان سبراى",
@@ -4924,6 +5358,20 @@
       "license": "third-party visual source; commercial reuse rights not independently verified",
       "note": "Real commercial product image link, packaging matched by review; live browser and rights verification pending."
     },
+    "2209": {
+      "catalogName": "سالبوفنت فووورت قرص",
+      "title": "Salbovent  Forte  4 Mg  20 Tab",
+      "englishName": "Salbovent Forte Tablets",
+      "url": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/119.webp?v=1786655512",
+      "sourcePage": "https://azzampharmacy.com/products/salbovent-forte-4-mg-20-tab-44",
+      "source": "azzampharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Azzam Pharmacy"
+    },
     "2216": {
       "catalogName": "ساليتروكسيب60مجم اقراص",
       "englishName": "Salitroxib",
@@ -5030,6 +5478,20 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Lotus Pharmacies"
     },
+    "2229": {
+      "catalogName": "سانسوبى12 اقراص",
+      "title": "Sanso - B12  1000 Mcg  28 Tab / Odt",
+      "englishName": "Sanso B12 12 Tablets",
+      "url": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/614920-1759930718.webp?v=1786646705",
+      "sourcePage": "https://azzampharmacy.com/products/sanso-b12-1000-mcg-28-tab-odt-35082",
+      "source": "azzampharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Azzam Pharmacy"
+    },
     "2231": {
       "url": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/SANSOVIT_20PLUS_20100-400x400.png?v=1735268145",
       "source": "re3ayapharmacy.com",
@@ -5080,6 +5542,20 @@
       "englishName": "Spectone 25 mg",
       "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/a8/a85b25b86963b61c9b1a9cb239f5a4d0e03628f8658d948b530dfaccb83dc260.jpg",
       "sourcePage": "https://www.lotusonline.com/products/spectone-25mg-20-tablet",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
+    },
+    "2266": {
+      "catalogName": "ستارفيل اى كونتور",
+      "title": "StarVille Hypoallergenic Anti-Wrinkle Eye Contour Gel with Vitamin E & C for Dark Circles & All Skin Types",
+      "englishName": "StarVille E Contour",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/f7/f765c4fda84b9bcd1e7e90b985cea7bb13afe927f31e7e191ae17534dcfecfd3.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/starville-eye-contour-gel-30gm",
       "source": "www.lotusonline.com",
       "status": "candidate_preview",
       "independentlyVerified": false,
@@ -5186,6 +5662,20 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Lotus Pharmacies"
     },
+    "2291": {
+      "catalogName": "سترونج فيل شامبو رجالى",
+      "title": "Strongville Shampoo and Conditioner For Men 220ml",
+      "englishName": "Strongville Shampoo Men",
+      "url": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/feel22packshots_43.jpg?v=1735266482",
+      "sourcePage": "https://re3ayapharmacy.com/products/strongville-shampoo-and-conditioner-for-men-220ml",
+      "source": "re3ayapharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Re3aya Pharmacy"
+    },
     "2296": {
       "catalogName": "سترونج فيل هير لوسيون رجالى",
       "title": "Strongville Hair Lotion Spray For Men 100ml",
@@ -5214,6 +5704,20 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Azzam Pharmacy"
     },
+    "2304": {
+      "catalogName": "ستوبادول نايت",
+      "title": "ستوبادول نايت 500 ملغ باراسيتامول و 25 ملغ ديفينهيدرامين هيدروكلوريد لتخفيف آلام العضلات والصداع",
+      "englishName": "Stopadol Night",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/cf/cfa60f70079542ec7f3fef85f1fcf200f751ce90d91fcc93cbd47368f382254f.jpg",
+      "sourcePage": "https://www.lotusonline.com/ar/products/stopadol-night-20-film-coated-tablet",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
+    },
     "2305": {
       "catalogName": "ستوموبرال40مجم 14كبسوله",
       "title": "Stomopral  40 Mg  14 Cap",
@@ -5241,6 +5745,20 @@
       "manualVisualInspected": true,
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Lotus Pharmacies"
+    },
+    "2313": {
+      "catalogName": "ستيم اكسفولياتنج جل",
+      "title": "Stem  Exfoliating Facial  120 Gm  Gel",
+      "englishName": "Stem Exfoliating Gel",
+      "url": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/608080-1760359119.webp?v=1786657963",
+      "sourcePage": "https://azzampharmacy.com/products/stem-exfoliating-facial-120-gm-gel-34454",
+      "source": "azzampharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Azzam Pharmacy"
     },
     "2320": {
       "url": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/stimulan-400-mg-30-capsules-766909.jpg?v=1735257806",
@@ -5350,6 +5868,20 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Re3aya Pharmacy"
     },
+    "2353": {
+      "catalogName": "سنترم انيرجى",
+      "title": "centrum-energy-30-tab",
+      "englishName": "Centrum Energy",
+      "url": "https://cdn.shopify.com/s/files/1/0935/9550/0847/files/CENTRUMENERGY30TAB.webp?v=1771762062",
+      "sourcePage": "https://alfouadpharmacies.com/products/centrum-energy-30-tab",
+      "source": "alfouadpharmacies.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "AlFouad Pharmacies"
+    },
     "2356": {
       "catalogName": "سنترم رجال ازرق30 قرص",
       "title": "Centrum Men Multivitamins - 30 Tablets",
@@ -5405,6 +5937,34 @@
       "manualVisualInspected": true,
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Bloom Pharmacy"
+    },
+    "2364": {
+      "catalogName": "سنسوديرم صابونه",
+      "title": "Sensoderm Softening Soap Bar for Sensitive Skin",
+      "englishName": "Sensoderm Soap",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/2b/2b5caff96c1db2bf03f2ef80da097a6d80fa5f08263d966b882cf5a634813ebd.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/sensoderm-sensitive-skin-soap-80gm",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
+    },
+    "2369": {
+      "catalogName": "سوبر سيز كبسول",
+      "title": "Super Seas (Cod Liver Oil)  30 Cap",
+      "englishName": "Super Seas Capsules",
+      "url": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/58565.webp?v=1786656914",
+      "sourcePage": "https://azzampharmacy.com/products/super-seas-cod-liver-oil-30-cap-3302",
+      "source": "azzampharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Azzam Pharmacy"
     },
     "2371": {
       "catalogName": "سوبر كيدز شامبو بيبى 200مل",
@@ -5518,6 +6078,20 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Lotus Pharmacies"
     },
+    "2444": {
+      "catalogName": "سيبروسين مرهم ج",
+      "title": "Ciprocin 0.3% Ciprofloxacin Broad Spectrum Fluoroquinolone Sterile Eye Ointment",
+      "englishName": "Ciprocin Ointment",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/ab/ab3dc8f24fe9c08e6e0abdba277116a06550f3b4b56c16915e176c8cbfbad708.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/ciprocin-eye-ointment-5gm",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
+    },
     "2458": {
       "catalogName": "سيتال اكسترا",
       "title": "Cetal Extra with 500mg Paracetamol DC & 65mg Caffeine Anhydrous for Pain Relief",
@@ -5559,6 +6133,20 @@
       "manualVisualInspected": true,
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Azzam Pharmacy"
+    },
+    "2508": {
+      "catalogName": "سيريتيد ديسكس250س ج",
+      "title": "Seretide Accuhaler Diskus 250mcg Fluticasone Propionate Powder for Inhalation",
+      "englishName": "Seretide Diskus 250",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/62/622d87bd9f4b1e4eb29556fb534aa987bd2775e24820d8040fb39dfd706fcf8f.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/seretide-50-250-diskus-28-dose",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
     },
     "2522": {
       "catalogName": "سيستان الترا قطرة",
@@ -5602,6 +6190,20 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Dr. Magdy El-Haddad Pharmacies"
     },
+    "2550": {
+      "catalogName": "سيكالاب جيل",
+      "title": "Cica Lab Soothing, Hydrating & Rejuvenating Gel for Dry & Irritated Skin - fragrance free, parabens free",
+      "englishName": "Cica Lab Gel",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/d9/d925be0394f9ebd9a576a442f8ae78c5aaa2cb80a45cc95a4c8173621b1345e8.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/cica-lab-soothing-hydrating-rejuvenating-gel-for-dry-irritated-skin-fragrance-free-parabens-free",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
+    },
     "2553": {
       "catalogName": "سيكتور شامبو للقشره",
       "title": "سيكتور شامبو قشرة",
@@ -5616,6 +6218,20 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Dr. Magdy El-Haddad Pharmacies"
     },
+    "2564": {
+      "catalogName": "سيكم ملينة10 كيس",
+      "title": "Sekem Laxative 2 G 10 Filter اعشاب  سيكم  الملينة  2 جم 10 كيس",
+      "englishName": "Sekem Laxative 10 Sachets",
+      "url": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/2715.webp?v=1786654620",
+      "sourcePage": "https://azzampharmacy.com/products/sekem-laxative-2-g-10-filter-%D8%A7%D8%B9%D8%B4%D8%A7%D8%A8-%D8%B3%D9%8A%D9%83%D9%85-%D8%A7%D9%84%D9%85%D9%84%D9%8A%D9%86%D8%A9-2-%D8%AC%D9%85-10-%D9%83%D9%8A%D8%B3-858",
+      "source": "azzampharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Azzam Pharmacy"
+    },
     "2580": {
       "catalogName": "سيلدين100مجم اقراص",
       "title": "Silden  100 Mg  4 Tab",
@@ -5629,6 +6245,20 @@
       "manualVisualInspected": true,
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Azzam Pharmacy"
+    },
+    "2589": {
+      "catalogName": "سيلونا فيتامين سى",
+      "title": "Selona 1000mg Vitamin C Supplement Sachets Orange Flavor with Vitamin A, E, Zinc, Selenium & Magnesium",
+      "englishName": "Selona Vitamin C",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/8c/8c0b6550b51ea5cfa7444128dd723c2e78d0de1b604ec4e379e9a1bad47ac374.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/selona-1000mg-20-sach",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
     },
     "2592": {
       "catalogName": "سيليبورج200مجم",
@@ -5714,6 +6344,20 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Lotus Pharmacies"
     },
+    "2634": {
+      "catalogName": "سينومارين بلس اللليرجى",
+      "title": "Sinomarin Plus Non-Drowsy Allergy Relief Natural Nasal Decongestant Spray with Sea Algae Extract & Dexpanthenol - steroid free",
+      "englishName": "Sinomarin Plus Allergy",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/86/86fbcfbc224910fa39c9401973a12390ba66080297d3321df952fd6ae2fbfbba.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/sinomarin-plus-non-drowsy-allergy-relief-natural-nasal-decongestant-spray-with-sea-algae-extract-dexpanthenol-steroid-free",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
+    },
     "2638": {
       "catalogName": "شارتوريج80 مجم 28 قرص",
       "title": "Chartoreg  80 Mg  28 Tab",
@@ -5742,12 +6386,40 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Lotus Pharmacies"
     },
+    "2640": {
+      "catalogName": "شارتوريج80/25 بلس",
+      "title": "Chartoreg Plus  80 / 25 Mg  28 Tab",
+      "englishName": "Chartoreg 80/25 Plus",
+      "url": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/609931-1760274700.webp?v=1786652870",
+      "sourcePage": "https://azzampharmacy.com/products/chartoreg-plus-80-25-mg-28-tab-34596",
+      "source": "azzampharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Azzam Pharmacy"
+    },
     "2641": {
       "catalogName": "شارتوريج بﻼس40/12.5 مجم",
       "title": "Chartoreg Plus 40mg Telmisartan & 12.5mg Hydrochlorothiazide for Hypertension",
       "englishName": "Chartoreg Plus 40/12.5 mg",
       "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/d5/d516c9d3e36887b8eb33bf476056231dcae5f909bc9f5acb14ccb1bed4f4fc13.jpg",
       "sourcePage": "https://www.lotusonline.com/products/chartoreg-plus-40mg-telmisartan-12-5mg-hydrochlorothiazide-for-hypertension-28-tablets",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
+    },
+    "2673": {
+      "catalogName": "صابون كبريت",
+      "title": "صابونة كبريت للتطهير ومضادة للبكتيريا من لونا 55 جم",
+      "englishName": "Soap Sulfur",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/7d/7da5bfae8d5c6390fe5bb5658b75bbf0876a309521aab4c952ee821ceb48201d.jpg",
+      "sourcePage": "https://www.lotusonline.com/ar/products/luna-antibacterial-cleansing-sulfur-soap-bar-55-gr",
       "source": "www.lotusonline.com",
       "status": "candidate_preview",
       "independentlyVerified": false,
@@ -5840,12 +6512,40 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Lotus Pharmacies"
     },
+    "2711": {
+      "catalogName": "فاست شراب",
+      "title": "Fast  Syrup  120 Ml",
+      "englishName": "Fast Syrup",
+      "url": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/60971.webp?v=1786646243",
+      "sourcePage": "https://azzampharmacy.com/products/fast-syrup-120-ml-3492",
+      "source": "azzampharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Azzam Pharmacy"
+    },
     "2720": {
       "catalogName": "فاستاسيرو20مجم",
       "title": "Vastasiero 20mg Rosuvastatin",
       "englishName": "Vastasiero 20 mg",
       "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/ff/ffe9b1a46a6588fbd82821b92271f71b972cfdd46f3babeac12fcc4b5445ccd9.jpg",
       "sourcePage": "https://www.lotusonline.com/products/vastasiero-20mg-20-film-coated-tablet",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
+    },
+    "2724": {
+      "catalogName": "فاستل180 سعر جديد",
+      "title": "فاستل 180 ملغ فيكسوفينادين هيدروكلوريد، مضاد للحساسية، لا يسبب النعاس، ومضاد للهستامين",
+      "englishName": "Fastal 180",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/6b/6baae60265d542b9d6fe43fa535fb3efedf8892cfa2192651d90cb1cde7535e3.jpg",
+      "sourcePage": "https://www.lotusonline.com/ar/products/fastel-180mg-fexofenadine-hcl-anti-allergic-non-sedating-antihistamine",
       "source": "www.lotusonline.com",
       "status": "candidate_preview",
       "independentlyVerified": false,
@@ -5938,6 +6638,20 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Azzam Pharmacy"
     },
+    "2759": {
+      "catalogName": "فانو كريم",
+      "title": "Vano Cream - 50 gm",
+      "englishName": "Vano Cream",
+      "url": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/vano-cream-50-gm-327106.jpg?v=1735257534",
+      "sourcePage": "https://re3ayapharmacy.com/products/vano-cream-50-gm",
+      "source": "re3ayapharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Re3aya Pharmacy"
+    },
     "2783": {
       "catalogName": "فﻼتيديل اقراص",
       "title": "Flatidyl 40mg Simethicone Chewable Tablets for Bloating & Gastritis",
@@ -5979,6 +6693,34 @@
       "manualVisualInspected": true,
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Azzam Pharmacy"
+    },
+    "2813": {
+      "catalogName": "فلوموسيل600 س ج",
+      "title": "Fluimucil 600mg Acetylcysteine Mucolytic Effervescent Tablets Lemon Flavor with Aspartame - sugar free",
+      "englishName": "Fluimucil 600",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/f2/f286db04ed83b0890cc489559bb89a73cf329af81895875fb4beb5e14f3cecd5.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/fluimucil-600mg-sugar-free-10-effervescent-tablet",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
+    },
+    "2819": {
+      "catalogName": "فليبوتون امبول",
+      "title": "Fleboton with Carbazochrome & Troxerutin Ampoules for Intramuscular Injection",
+      "englishName": "Fleboton Ampoules",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/f1/f18dd8e5d57cebf9d24b2593e5ebf9e7d5dde8e5bb9ce9db2bb64d926f23f1dd.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/fleboton-i-m-ampoule-3x3ml",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
     },
     "2840": {
       "catalogName": "فنيستيل نقط",
@@ -6053,6 +6795,20 @@
       "license": "source retailer image; commercial reuse rights not independently verified",
       "note": "Manual image check of packaging/name/strength/form. Retailer hotlink; availability not independently tested inside pharmacy PWA."
     },
+    "2868": {
+      "catalogName": "فولتارين6- امبول",
+      "title": "Voltaren  75 Mg / 3 Ml  6 Amp  (1402) #",
+      "englishName": "Voltaren 6 Ampoules",
+      "url": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/183123.webp?v=1786646384",
+      "sourcePage": "https://azzampharmacy.com/products/voltaren-75-mg-3-ml-6-amp-1402-7226",
+      "source": "azzampharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Azzam Pharmacy"
+    },
     "2869": {
       "catalogName": "فولتارين جل صغير25 جم",
       "englishName": "Voltaren",
@@ -6085,6 +6841,20 @@
       "license": "retailer image; rights not independently verified",
       "note": "Visual packaging matched to catalog SKU; external image link, live PWA rendering unverified."
     },
+    "2872": {
+      "catalogName": "فولدكس كريم",
+      "title": "Foldex  50 Gm  Cream",
+      "englishName": "Foldex Cream",
+      "url": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/103704.webp?v=1786652252",
+      "sourcePage": "https://azzampharmacy.com/products/foldex-50-gm-cream-5040",
+      "source": "azzampharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Azzam Pharmacy"
+    },
     "2885": {
       "catalogName": "فوناسيدان10 مل",
       "title": "Vonacidan  10 Mg  20 Tab",
@@ -6098,6 +6868,48 @@
       "manualVisualInspected": true,
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Azzam Pharmacy"
+    },
+    "2898": {
+      "catalogName": "فياترازو- كريم",
+      "title": "Viatrazo 8mg/gm Terconazole Vaginal Cream",
+      "englishName": "Viatrazo Cream",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/fd/fd379a65a814268ee01321a538db22833c1d5bfc9ec906b78f771e402bc368dc.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/viatrazo-vaginal-cream-30gm",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
+    },
+    "2909": {
+      "catalogName": "فيتالو شوك بلس اكياس",
+      "title": "Vitalochoc Plus  10 Sachets X 3 Gm",
+      "englishName": "Vitalochoc Plus Sachets",
+      "url": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/384927-1761053635.webp?v=1786647795",
+      "sourcePage": "https://azzampharmacy.com/products/vitalochoc-plus-10-sachets-x-3-gm-33946",
+      "source": "azzampharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Azzam Pharmacy"
+    },
+    "2923": {
+      "catalogName": "فيجاموكس قطرة",
+      "title": "Vigamox 5mg/ml Moxifloxacin Eye Drops Solution",
+      "englishName": "Vigamox Drops",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/e2/e28910323292b661d7d7bebe192c9f695d11c7f55cb8d1be703a2c658302be32.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/vigamox-eye-drop-5ml",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
     },
     "2931": {
       "catalogName": "فيردو كبسول س ج",
@@ -6126,6 +6938,20 @@
       "manualVisualInspected": true,
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Azzam Pharmacy"
+    },
+    "2965": {
+      "catalogName": "فيسيرالجين امبووول",
+      "title": "Visceralgine 5mg Tiemonium Methyl Sulfate Spasmolytic Ampoules for Intravenous & Intramuscular Injection",
+      "englishName": "Visceralgine Ampoules",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/7a/7a659e670355bac1cf4d96db7f80a60d09bfe7938480deb06cd76ad96f67c985.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/visceralgine-5mg-ampoule-6x2ml",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
     },
     "2966": {
       "catalogName": "فيسيرالجين شراب",
@@ -6271,6 +7097,20 @@
       "license": "third-party source image; reuse rights unconfirmed",
       "note": "Image inspected for product label/strength/form and size; source may be foreign-market packaging, remains unverified preview."
     },
+    "3032": {
+      "catalogName": "فيولا سيرم",
+      "title": "Viola Repairing Hair Serum with Biotin, Vitamin E & Natural Oils - fatty acids free, parabens free, silicone free",
+      "englishName": "Viola Serum",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/04/04cfcb93e320174eec47b31e982dbe8692c06a0deb42b98dfc16b6a0e1b654ba.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/viola-repairing-hair-serum-with-biotin-vitamin-e-natural-oils-fatty-acids-free-parabens-free-silicone-free",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
+    },
     "3033": {
       "catalogName": "فيولا شامبو",
       "title": "فيولا شامبو",
@@ -6291,6 +7131,20 @@
       "englishName": "Ktan Medical 100 g",
       "url": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/16069.webp?v=1786661800",
       "sourcePage": "https://azzampharmacy.com/products/%D9%82%D8%B7%D9%86-%D8%A7%D9%84%D9%85%D8%AD%D9%84%D8%A9-%D8%B7%D8%A8%D9%89-100-%D8%AC%D8%B1%D8%A7%D9%85-1576",
+      "source": "azzampharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Azzam Pharmacy"
+    },
+    "3036": {
+      "catalogName": "كابرون500 قرص س ج",
+      "title": "Kapron (Cyklokapron)  500 Mg  20 Tab#",
+      "englishName": "Kapron 500 Tablets",
+      "url": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/48595.webp?v=1786645826",
+      "sourcePage": "https://azzampharmacy.com/products/kapron-cyklokapron-500-mg-20-tab-2668",
       "source": "azzampharmacy.com",
       "status": "candidate_preview",
       "independentlyVerified": false,
@@ -6369,6 +7223,20 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Re3aya Pharmacy"
     },
+    "3070": {
+      "catalogName": "كاردورا اكس ال س ج",
+      "title": "كاردورا إكس إل 4 ملغ دوكسازوسين دواء خافض لضغط الدم",
+      "englishName": "Cardura XL",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/63/639b6ee4d1058cd3ee9c37d1cc558a0bc6df8cd3ed4c704a6a183aa58abdfd9b.jpg",
+      "sourcePage": "https://www.lotusonline.com/ar/products/cardura-xl-4mg-28-tablet",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
+    },
     "3075": {
       "catalogName": "كارديلول6.25 مجم",
       "title": "Cardilol 6.25mg Carvedilol",
@@ -6396,6 +7264,20 @@
       "manualVisualInspected": true,
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Azzam Pharmacy"
+    },
+    "3083": {
+      "catalogName": "كارنيتول بلس",
+      "title": "Carnitol Plus 1000mg L-Carnitine Tartrate & 50mg Zinc Gluconate Supplement",
+      "englishName": "Carnitol Plus",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/52/522cec29ca0501f763b42195d95d77ba9c228c6a7750e7f0ab31fe3819ad95e9.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/carnitol-plus-20-film-coated-tablet",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
     },
     "3087": {
       "catalogName": "كارنيفيتا فورت اقراص",
@@ -6439,6 +7321,20 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Bloom Pharmacy"
     },
+    "3098": {
+      "catalogName": "كال بريج سعر99ج",
+      "title": "Cal-Preg 640mg Calcium Supplement",
+      "englishName": "Cal Preg",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/5e/5eec8fa828cfc399a24fafcc2bf18a2e3f8580b4fdfb5c5e900577108de8ce3a.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/cal-preg-30-tablet",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
+    },
     "3103": {
       "catalogName": "كال ماج فورت شرااب",
       "title": "كال ماج فورت شراب",
@@ -6473,6 +7369,20 @@
       "englishName": "Calm Skin Cream",
       "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/e4/e4557c9359abc7b743c0a369e8c6b84a00e77ad0d6661a876734be7fd73cb700.jpg",
       "sourcePage": "https://www.lotusonline.com/products/calm-skin-cream-30gm",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
+    },
+    "3127": {
+      "catalogName": "كالمير بخاخ لﻼنف",
+      "title": "Calmare Moisturizing & Soothing Nasal Spray 130 ml",
+      "englishName": "Calmare Nasal Nasal",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/f8/f8a2f8c4a1304241d9c9678acccb249b5dde2ce97c1feb831acd11483c398a17.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/calmare-moisturizing-soothing-nasal-spray-130-ml",
       "source": "www.lotusonline.com",
       "status": "candidate_preview",
       "independentlyVerified": false,
@@ -6649,6 +7559,20 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Lotus Pharmacies"
     },
+    "3195": {
+      "catalogName": "كﻼسيد اكس ال س",
+      "title": "Klacid XL 500mg Clarithromycin Antibiotic",
+      "englishName": "Klacid Xl",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/0d/0d732594fbcdee38b60a0c3fbd333485f6b390bfab85774c859164e851cdcf07.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/klacid-xl-500mg-14-tablet",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
+    },
     "3208": {
       "catalogName": "كلوسول سبراى",
       "title": "Closol 10mg Clotrimazole Topical Solution Spray",
@@ -6683,6 +7607,34 @@
       "englishName": "Coaprovel 300/12.5",
       "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/5e/5e2f8c7d5dfacb6d5eb6bc351cffa9cbaee4c0a69e74a25ce4b3e9098a9b5426.jpg",
       "sourcePage": "https://www.lotusonline.com/products/coaprovel-300-12-5mg-14-tablet",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
+    },
+    "3228": {
+      "catalogName": "كوانزايم فورت",
+      "title": "Coenzyme Q10 Forte 100mg Supplement",
+      "englishName": "Coenzyme Forte",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/8c/8cf74066cc952177cffb76160a8b522f29ac2cfd950a464a4567a6012eda5be0.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/coenzyme-q10-forte-100mg-20-capsule",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
+    },
+    "3230": {
+      "catalogName": "كوباد4000",
+      "title": "Copad 4000 IU Vitamin D3 & 100mcg Vitamin K2 Bone & Immune System Support Supplement",
+      "englishName": "Copad 4000",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/37/3766b8a4d078c9f5a28c909a60cdb72ab34dbb9e6724eef7dfde0f2884382d56.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/copad-4000-iu-vitamin-d3-100mcg-vitamin-k2-bone-immune-system-support-supplement",
       "source": "www.lotusonline.com",
       "status": "candidate_preview",
       "independentlyVerified": false,
@@ -6732,6 +7684,20 @@
       "manualVisualInspected": true,
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Azzam Pharmacy"
+    },
+    "3243": {
+      "catalogName": "كودافين شراب",
+      "title": "Codaphen-N 5mg Dextromethorphan Hydrobromide & 1mg Chlorpheniramine Maleate Antitussive Syrup",
+      "englishName": "Codaphen N Syrup",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/8a/8a2f16d8023fdffef94bc70f0a9a0dc5ebb832fde0bb19f92cb5a8ba69fad3d9.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/codaphen-n-syrup-120ml",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
     },
     "3255": {
       "catalogName": "كوردو سبراى",
@@ -6859,6 +7825,20 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Azzam Pharmacy"
     },
+    "3302": {
+      "catalogName": "كولانوج غسول",
+      "title": "Kolanog Pure Wonder Soothing, Nourishing & Hydrating Body Wash for Dry Skin - parabens free",
+      "englishName": "Kolanog Wash",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/85/85bfd770430fe6b5e5dfe300d6d91138bade236094b1c384627ee7eefacfc6b8.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/kolanog-pure-wonder-soothing-nourishing-hydrating-body-wash-for-dry-skin-parabens-free",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
+    },
     "3305": {
       "catalogName": "كولد كونترول",
       "title": "Cold  Control  20 Tab",
@@ -6957,6 +7937,34 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Lotus Pharmacies"
     },
+    "3333": {
+      "catalogName": "كونافيوتال500",
+      "title": "Conafutal 500mg Ciprofloxacin & 600mg Tinidazole 20 tablets",
+      "englishName": "Conafutal 500",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/39/3926332898c51367176ab9c0156a35967885bbd9424699a45b76f0ebccff341a.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/conafutal-500mg-ciprofloxacin-600mg-tinidazole-20-tablets",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
+    },
+    "3336": {
+      "catalogName": "كونتراكتيوبكس جيل ج",
+      "title": "Contractubex with Extract Cepae Fluid, Allantoin & Heparin Sodium Topical Gel",
+      "englishName": "Contractubex Gel",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/d6/d6bdfaef8b04a4921d5f76299b1b47ec050a3434986ea3885264eb96e6ecce79.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/contractubex-gel-20gm",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
+    },
     "3343": {
       "catalogName": "كونجيستال شراب",
       "title": "كونجيستال  شراب",
@@ -6970,6 +7978,20 @@
       "manualVisualInspected": true,
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Dr. Magdy El-Haddad Pharmacies"
+    },
+    "3349": {
+      "catalogName": "كونكور5 بلس",
+      "title": "Concor 5 Plus - 30 Tablets",
+      "englishName": "Concor Plus Plus",
+      "url": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/concor-5-plus-30-tablets-292414.jpg?v=1735257976",
+      "sourcePage": "https://re3ayapharmacy.com/products/concor-5-plus-30-tablets",
+      "source": "re3ayapharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Re3aya Pharmacy"
     },
     "3350": {
       "catalogName": "كونكور5 مجم عادى",
@@ -7068,6 +8090,20 @@
       "manualVisualInspected": true,
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Lotus Pharmacies"
+    },
+    "3389": {
+      "catalogName": "كيدزونا اوميجا نقط",
+      "title": "Kidzona Omega  Oral Drops  30 Ml",
+      "englishName": "Kidzona Omega Drops",
+      "url": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/610101-1760273107.webp?v=1786657944",
+      "sourcePage": "https://azzampharmacy.com/products/kidzona-omega-oral-drops-30-ml-34654",
+      "source": "azzampharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Azzam Pharmacy"
     },
     "3390": {
       "catalogName": "كير باى كير بلس كريم",
@@ -7251,6 +8287,20 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Lotus Pharmacies"
     },
+    "3511": {
+      "catalogName": "لولا ويست اكياس",
+      "title": "Lolawest 3g L-Ornithine Oral Administration Sachets",
+      "englishName": "Lolawest Sachets",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/b0/b06f64b55080aeec232d7ddef53120fd4e903f66b32b66b886473ab33cb102d2.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/lolawest-6-sachet",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
+    },
     "3515": {
       "catalogName": "لى فلوكس5-250ق س ج",
       "title": "Lee - Flox  250 Mg  5 Tab",
@@ -7421,6 +8471,90 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Azzam Pharmacy"
     },
+    "3593": {
+      "catalogName": "ليمتليس اوسوفورتين2000 وحده",
+      "title": "Limitless Naturals Ossofortin 2000 IU Vitamin D3 Bones & Immune System Support Supplement - GMO free, artificial colors free, artificial flavors free",
+      "englishName": "Limitless Naturals Ossofortin 2000 IU",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/31/3141a089251438de7da544e819301aafea21261f1494a1f0266c827fa36807ee.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/limitless-naturals-ossofortin-2000-iu-vitamin-d3-bones-immune-system-support-supplement-gmo-free-artificial-colors-free-artificial-flavors-free",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
+    },
+    "3594": {
+      "catalogName": "ليمتليس اوسوفورتين5000",
+      "title": "Limitless Naturals Ossofortin 5000 IU Vitamin D3 Bone & Immune Health Support Supplement - GMO free, artificial colors free, artificial flavors free",
+      "englishName": "Limitless Naturals Ossofortin 5000",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/2f/2fef82e73d2e1657098356cf24db0c4ea0549eafae3e262f83f125e7a10d3719.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/limitless-ossofortin-d3-30-film-coated-tablet",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
+    },
+    "3608": {
+      "catalogName": "ليمتليس كيدز شراب",
+      "title": "Limitless Naturals Kids Supplement Syrup Raspberry Flavor with Lysine & Minerals for Growth & Development - GMO free, gluten free",
+      "englishName": "Limitless Naturals Kids Syrup",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/c9/c9a804fadd61279a94bb93c911db66cd39791da85acc563f29106ceaaf68d11f.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/limitless-naturals-kids-supplement-syrup-raspberry-flavor-with-lysine-minerals-for-growth-development-gmo-free-gluten-free",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
+    },
+    "3611": {
+      "catalogName": "ليمتليس مان ماكس",
+      "title": "Limitless Naturals Man Max Multivitamin & Mineral Energy Booster Supplement - GMO free, gluten free, preservatives free",
+      "englishName": "Limitless Naturals Man Max",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/57/572b58f9d952a4562f8c39726805480744ba0f9f15d32ed2e376f44ccb58d419.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/limitless-man-max-30-film-coated-tablet",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
+    },
+    "3613": {
+      "catalogName": "ليمتليس ميلجا ماكس",
+      "title": "Limitless Naturals Milga Max Cardiovascular & Energy Support Supplement with Magnesium, CoQ10 & Vitamins - GMO free, lactose free, preservatives free",
+      "englishName": "Limitless Naturals Milga Max",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/aa/aa12fab71ea366654c3e2a594a589cde06cb5f7e761bb5b08225d4e9b5dc6a65.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/limitless-naturals-milga-max-cardiovascular-energy-support-supplement-with-magnesium-coq10-vitamins-gmo-free-lactose-free-preservatives-free",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
+    },
+    "3622": {
+      "catalogName": "لينتوجيستون امبول س ق",
+      "title": "Lentojeston 250mg/1ml Hydroxyprogesterone Caproate Ampoule for Intramuscular Injection",
+      "englishName": "Lentojeston Ampoules",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/72/7230f876595c5b0a4268b0a72560c69a922ac1a5cfdeb80619136bb9ef4f4585.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/lentojeston-250mg-ampoule-1x1ml",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
+    },
     "3640": {
       "catalogName": "ماجناتوب اقراص سعر90ج",
       "title": "Magnatob  24 Tab",
@@ -7434,6 +8568,20 @@
       "manualVisualInspected": true,
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Azzam Pharmacy"
+    },
+    "3641": {
+      "catalogName": "ماجنيزول امبول",
+      "title": "Magnisol 10% Magnesium Sulfate Solution Ampoules 6 x 5 ml",
+      "englishName": "Magnisol Ampoules",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/a2/a29ae1a7f2258129459b4910f78393e4af38b3848119c6b1eef7f4b187d2bc98.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/magnisol-10-magnesium-sulfate-solution-ampoules-6-x-5-ml",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
     },
     "3657": {
       "catalogName": "مارينيز اوميجا3 شراب",
@@ -7575,6 +8723,20 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Re3aya Pharmacy"
     },
+    "3718": {
+      "catalogName": "موبيلكس اكياس",
+      "title": "Mobilex Osteum CPP Supplement Granule Sachets for Treating Osteoporosis",
+      "englishName": "Mobilex Sachets",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/80/809c98b897f63146d2dfdf4aed934f2f0d3fc096caf666cbbd57a2c28b5e2995.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/mobilex-10-sach",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
+    },
     "3764": {
       "catalogName": "موندو كريم",
       "title": "Mondo Topical Skin Care Cream",
@@ -7645,6 +8807,20 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Lotus Pharmacies"
     },
+    "3779": {
+      "catalogName": "ميبافاج850اكس ار",
+      "title": "Mepaphage XR 850mg Metformin Hydrochloride 30 tablets",
+      "englishName": "Mepaphage Xr XR",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/13/1336d8d2a5393de1953341cac90b7b13cefc764b59a2d4daf952f958fd6367ab.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/mepaphage-xr-850mg-metformin-hydrochloride-30-tablets",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
+    },
     "3780": {
       "catalogName": "ميبافاج اكس ار1000",
       "title": "ميبافاج إكس آر 1000 ملغ ميتفورمين هيدروكلوريد",
@@ -7673,6 +8849,20 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Lotus Pharmacies"
     },
+    "3792": {
+      "catalogName": "ميتاكارديا ام ار- اقراص",
+      "title": "Metacardia  Mr  35 Mg  30 Tab",
+      "englishName": "Metacardia Mr Tablets",
+      "url": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/262596.webp?v=1786646074",
+      "sourcePage": "https://azzampharmacy.com/products/metacardia-mr-35-mg-30-tab-8912",
+      "source": "azzampharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Azzam Pharmacy"
+    },
     "3814": {
       "catalogName": "ميدودرين نقط",
       "title": "Midodrine Drops 1% Orthostatic Hypotension Medication",
@@ -7693,6 +8883,20 @@
       "englishName": "Mirage 1 g Ampoules",
       "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/6b/6bdae0a5ef0b547a446f3906b322b2dccf90f44c18504abdefdcdd73ecd823e2.jpg",
       "sourcePage": "https://www.lotusonline.com/products/mirage-1gm-iv-1-vial",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
+    },
+    "3818": {
+      "catalogName": "ميرالجو كبسول",
+      "title": "Meralgo Quintuple Action Undenatured Collagen Type II Joint & Bone Support Supplement with Boswellia Extract, Hyaluronic Acid & MSM 20 capsules",
+      "englishName": "Meralgo Capsules",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/ac/accb1879c1c9815acf718b783e92679e2341d283e980f1ea327961b3d81586e5.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/meralgo-quintuple-action-undenatured-collagen-type-ii-joint-bone-support-supplement-with-boswellia-extract-hyaluronic-acid-msm-20-capsules",
       "source": "www.lotusonline.com",
       "status": "candidate_preview",
       "independentlyVerified": false,
@@ -8437,6 +9641,20 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Re3aya Pharmacy"
     },
+    "4053": {
+      "catalogName": "هانتر كريم",
+      "title": "Hunter Face Cream for Acne-Prone Skin 50 gr",
+      "englishName": "Hunter Cream",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/5a/5af9072e4e8ef3ebd5f6e02513332be0ae478d50472337a40bfa55e890139a39.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/hunter-face-cream-for-acne-prone-skin-50-gr",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
+    },
     "4056": {
       "url": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/hibiotic-1-gm-16-tablets-169315.jpg?v=1735257997",
       "source": "re3ayapharmacy.com",
@@ -8497,6 +9715,20 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Lotus Pharmacies"
     },
+    "4064": {
+      "catalogName": "هاى ديرم كريم",
+      "title": "Hiderm Moisturizing, Nourishing & Revitalizing Cream for All Skin Types",
+      "englishName": "Hiderm Cream",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/85/8581af6b49c06a63ae4c9433d64e32e586bfc0e8156e2ed4a35c39575dd35f05.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/hiderm-cream-50gm",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
+    },
     "4078": {
       "catalogName": "هيالو فور كونترول100 جم",
       "title": "Hyalo 4 Control  100 Gm  Cream  (322691)",
@@ -8511,12 +9743,40 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Azzam Pharmacy"
     },
+    "4088": {
+      "catalogName": "هيبانوكس كبسول س ج",
+      "title": "Hepanox  (Napha) 20 Cap",
+      "englishName": "Hepanox Capsules",
+      "url": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/85258.webp?v=1786661477",
+      "sourcePage": "https://azzampharmacy.com/products/hepanox-napha-20-cap-4442",
+      "source": "azzampharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Azzam Pharmacy"
+    },
     "4091": {
       "catalogName": "هيبتا بانثينول بلس كارباميد كريم",
       "title": "HEPTA PANTHENOL PLUS CARBAMIDE CREAM 50GM",
       "englishName": "Hepta Panthenol Plus Carbamide",
       "url": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/1_648a4634-2ad9-4bde-960d-67ef55cfa667.jpg?v=1779731637",
       "sourcePage": "https://re3ayapharmacy.com/products/panthenol-plus-carbamide-cream-50gm",
+      "source": "re3ayapharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Re3aya Pharmacy"
+    },
+    "4093": {
+      "catalogName": "هيبتا بانثينول بلسم",
+      "title": "HEPTA PANTHENOL HAIR CONDITIONER 300ml",
+      "englishName": "Hepta Panthenol Conditioner",
+      "url": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/FullSizeRender_574d68de-6074-4404-a1d8-76d593dd80ba.jpg?v=1779731586",
+      "sourcePage": "https://re3ayapharmacy.com/products/hepta-panthenol-hair-conditioner-300ml",
       "source": "re3ayapharmacy.com",
       "status": "candidate_preview",
       "independentlyVerified": false,
@@ -8553,6 +9813,20 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Re3aya Pharmacy"
     },
+    "4098": {
+      "catalogName": "هيبتا بانثينول ريتش لوشن",
+      "title": "Hepta Panthenol Body Lotion Rich - With Prebiotic - 100ml",
+      "englishName": "Hepta Panthenol Rich Lotion",
+      "url": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/1_6d81d35a-09b9-4316-8e58-7fc214f2a74f.jpg?v=1779731645",
+      "sourcePage": "https://re3ayapharmacy.com/products/hepta-panthenol-body-lotion-rich-with-prebiotic-100ml",
+      "source": "re3ayapharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Re3aya Pharmacy"
+    },
     "4101": {
       "catalogName": "هيبتا بانثينول سيروم للوجه",
       "title": "HEPTA PANTHENOL FACE SERUM 40ML",
@@ -8573,6 +9847,20 @@
       "englishName": "Hepta Panthenol Cream Hair Kids",
       "url": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/41eTwlqa_BL._AC.jpg?v=1779731603",
       "sourcePage": "https://re3ayapharmacy.com/products/hepta-panthenol-kids-hair-cream-100g",
+      "source": "re3ayapharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Re3aya Pharmacy"
+    },
+    "4106": {
+      "catalogName": "هيبتا بانثينول كريم للوجه",
+      "title": "Hepta panthenol cream for face & body 50g",
+      "englishName": "Hepta Panthenol for Face",
+      "url": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/518etYO0CaL._AC_SL1500.jpg?v=1779731654",
+      "sourcePage": "https://re3ayapharmacy.com/products/hepta-panthenol-cream-for-face-body-50g",
       "source": "re3ayapharmacy.com",
       "status": "candidate_preview",
       "independentlyVerified": false,
@@ -8650,6 +9938,20 @@
       "manualVisualInspected": true,
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Lotus Pharmacies"
+    },
+    "4130": {
+      "catalogName": "هيربانا كبسول",
+      "title": "Herbana  20 Cap (611489)",
+      "englishName": "Herbana Capsules",
+      "url": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/60556.webp?v=1786661601",
+      "sourcePage": "https://azzampharmacy.com/products/herbana-20-cap-611489-3446",
+      "source": "azzampharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Azzam Pharmacy"
     },
     "4131": {
       "catalogName": "هيربولين اكياس",
@@ -9219,6 +10521,20 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Azzam Pharmacy"
     },
+    "230056": {
+      "catalogName": "امينوليبان محلول س ج",
+      "title": "أمينوليبان 8% محلول أحماض أمينية للتسريب الوريدي",
+      "englishName": "Aminoliban Solution",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/ca/ca3d767a1e854896b5466c3ec61a5ae985c830b59364d7c6f07001fec7fc300b.jpg",
+      "sourcePage": "https://www.lotusonline.com/ar/products/aminoleban-8-amino-acid-solution-for-intravenous-infusion",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
+    },
     "230063": {
       "catalogName": "انتودين 20مجم اقراص",
       "title": "Antodine  20 Mg  30 Tab",
@@ -9499,6 +10815,20 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Lotus Pharmacies"
     },
+    "230182": {
+      "catalogName": "جاستروتيدين امبول",
+      "title": "جاستروتيدين 20 ملجم/2 مل أمبولات فاموتيدين للحقن الوريدي",
+      "englishName": "Gastarotidin Ampoules",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/e0/e0b2669faebe49158b9fdeaa83aef295fba636b7ae8f141543677af5bd92e131.jpg",
+      "sourcePage": "https://www.lotusonline.com/ar/products/gastrotidine-20mg-2ml-famotidine-ampoules-for-intravenous-injection",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
+    },
     "230184": {
       "catalogName": "جاناجليب 100مجم اقراص",
       "title": "Janaglip  100 Mg  28 Tab",
@@ -9736,6 +11066,34 @@
       "manualVisualInspected": true,
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Dr. Magdy El-Haddad Pharmacies"
+    },
+    "230229": {
+      "catalogName": "ديباكين شراب",
+      "title": "Depakine 5.764g/100ml Sodium Valproate Syrup",
+      "englishName": "Depakine Syrup",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/24/241cb335c57ef76792a7fb0063f20417a191bf81edded7a830a318440c5e46ba.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/depakine-5-764g-100ml-sodium-valproate-syrup",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
+    },
+    "230231": {
+      "catalogName": "ديبوفيت امبوول",
+      "title": "Depovit B12 1000mcg/ml Hydroxocobalamin Solution Ampoules for Intramuscular Injection - benzyl alcohol free",
+      "englishName": "Depovit Ampoules",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/bc/bc076cd564816ad37de621ffbb981bafb4829fe759663a9adced342a460a33f8.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/depovit-b12-1000mcg-ml-hydroxocobalamin-solution-ampoules-for-intramuscular-injection-benzyl-alcohol-free",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
     },
     "230232": {
       "catalogName": "ديجليفلوز 10/1000اكس ار بلس",
@@ -10045,6 +11403,20 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Dr. Magdy El-Haddad Pharmacies"
     },
+    "230297": {
+      "catalogName": "سنجولير 5مجم ج",
+      "title": "Singulair 5 mg - 14 Chewable Tablets",
+      "englishName": "Singulair 5 mg",
+      "url": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/singulair-5-mg-14-chewable-tablets-257295.jpg?v=1735257594",
+      "sourcePage": "https://re3ayapharmacy.com/products/singulair-5-mg-14-chewable-tablets",
+      "source": "re3ayapharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Re3aya Pharmacy"
+    },
     "230302": {
       "catalogName": "سوبر كيدز بادى لوسيون لبنى",
       "title": "SUPER KIDS BODY LOTION 300ML",
@@ -10058,6 +11430,20 @@
       "manualVisualInspected": true,
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Re3aya Pharmacy"
+    },
+    "230305": {
+      "catalogName": "سوبر كيدز رول اون بالاناناس اصفر",
+      "title": "Superkids Deo Roll On 30Ml Pineapple Scent روول اون",
+      "englishName": "Superkids Pineapple Roll-On 30 ml",
+      "url": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/608228.webp?v=1786648342",
+      "sourcePage": "https://azzampharmacy.com/products/superkids-deo-roll-on-30ml-pineapple-scent-%D8%B1%D9%88%D9%88%D9%84-%D8%A7%D9%88%D9%86-24590",
+      "source": "azzampharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Azzam Pharmacy"
     },
     "230306": {
       "catalogName": "سوبر كيدز رول اون بدون عطر 30مل موف",
@@ -10143,6 +11529,20 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Lotus Pharmacies"
     },
+    "230324": {
+      "catalogName": "سويتال برطمان",
+      "title": "Sweetal Jar - 250 gm",
+      "englishName": "Sweetal Jar",
+      "url": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/sweetal-jar-250-gm-418459.jpg?v=1735257122",
+      "sourcePage": "https://re3ayapharmacy.com/products/sweetal-jar-250-gm",
+      "source": "re3ayapharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Re3aya Pharmacy"
+    },
     "230325": {
       "catalogName": "سويتال ستيفيا 50كيس",
       "title": "سويتال ستيفيا50كيس",
@@ -10170,6 +11570,20 @@
       "manualVisualInspected": true,
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "AlFouad Pharmacies"
+    },
+    "230336": {
+      "catalogName": "سيتال نقط",
+      "title": "Cetal 100mg/ml Paracetamol Analgesic & Antipyretic Oral Drops for Children",
+      "englishName": "Cetal Drops",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/20/2037af1cd2eabc0a6e407480d39485f7326dc17a5161b9d0f1784f725490eaa1.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/cetal-100mg-ml-oral-drop-15ml",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
     },
     "230338": {
       "catalogName": "سيرباس 100مجم",
@@ -10241,6 +11655,20 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "AlFouad Pharmacies"
     },
+    "230347": {
+      "catalogName": "سيفوتاكس 2جم",
+      "title": "سيفوتاكس 2 جم سيفوتاكسين مضاد حيوي واسع المدى، فيال معقم ومحلول أمبولة للحقن العضلي والوريدي 1 عبوة",
+      "englishName": "Cefotax 2 g",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/d3/d3f98db0b64740efdb78b88f25a28564599f81d6835bab96efbe7c0188e17c10.jpg",
+      "sourcePage": "https://www.lotusonline.com/ar/products/cefotax-2g-cefotaxine-broad-spectrum-antibiotic-sterile-vial-solvent-ampoule-for-intramuscular-intravenous-injection-1-pack",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
+    },
     "230353": {
       "catalogName": "سيلينجينا شامبو 120مل",
       "title": "Selengena  Shampoo  120 Ml",
@@ -10268,6 +11696,20 @@
       "manualVisualInspected": true,
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Dr. Magdy El-Haddad Pharmacies"
+    },
+    "230358": {
+      "catalogName": "سينوبريت شراب",
+      "title": "Sinupret Paranasal Sinuses Syrup for Acute & Chronic Inflammation Relief (2+ Years)",
+      "englishName": "Sinupret Syrup",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/4c/4cd4bce85db48815eba69a3ba5f462f23e5bcd5998cb1c62074d2b44bdda9415.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/sinupret-100ml-syp",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
     },
     "230359": {
       "catalogName": "سينومارين بخاخ كبار",
@@ -10341,6 +11783,20 @@
       "manualVisualInspected": true,
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Lotus Pharmacies"
+    },
+    "230385": {
+      "catalogName": "فلوكسامو 1جم",
+      "title": "Floxamo  1 Gm (500+500 Mg)  16 Tab",
+      "englishName": "Floxamo 1 g",
+      "url": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/157903.webp?v=1786648198",
+      "sourcePage": "https://azzampharmacy.com/products/floxamo-1-gm-500-500-mg-16-tab-6126",
+      "source": "azzampharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Azzam Pharmacy"
     },
     "230393": {
       "catalogName": "فورتيموكس قطرة",
@@ -10524,6 +11980,20 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Dr. Magdy El-Haddad Pharmacies"
     },
+    "230432": {
+      "catalogName": "كليكسان 20مل",
+      "title": "Clexane 20 mg-0.2 ml - 2 Syringes",
+      "englishName": "Clexane 20 mg",
+      "url": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/clexane-20-mg-02-ml-2-syringes-924439.jpg?v=1735256923",
+      "sourcePage": "https://re3ayapharmacy.com/products/clexane-20-mg-0-2-ml-2-syringes",
+      "source": "re3ayapharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Re3aya Pharmacy"
+    },
     "230438": {
       "catalogName": "كوسيمبريل 5/10مج اقراص",
       "title": "Cosimprel 5mg Bisoprolol Fumarate & 10mg Perindopril Arginine 15 tablets",
@@ -10636,6 +12106,20 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Dr. Magdy El-Haddad Pharmacies"
     },
+    "230458": {
+      "catalogName": "كيتولاك امبول",
+      "title": "كيتولاك 30 ملغ/2 مل، كيتورولاك تروميثامين، أمبولات مسكن قوي للألم للحقن العضلي والوريدي",
+      "englishName": "Ketolac Ampoules",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/63/63145bdcaf9f39e2836069ec676b4f5b7d050b3729abf7aa612ff65d7c55f0a7.jpg",
+      "sourcePage": "https://www.lotusonline.com/ar/products/ketolac-30mg-2ml-ampoule-5x2ml",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
+    },
     "230459": {
       "catalogName": "كيتولجين اس ار 200",
       "title": "Ketolgin SR 200mg Ketoprofen Analgesic, Antipyretic & Antirheumatic",
@@ -10649,6 +12133,48 @@
       "manualVisualInspected": true,
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Lotus Pharmacies"
+    },
+    "230463": {
+      "catalogName": "لاموترين 50مجم س ج",
+      "title": "Lamotrine  50 Mg  30 Tab",
+      "englishName": "Lamotrine 50 mg",
+      "url": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/92500.webp?v=1786655494",
+      "sourcePage": "https://azzampharmacy.com/products/lamotrine-50-mg-30-tab-4736",
+      "source": "azzampharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Azzam Pharmacy"
+    },
+    "230466": {
+      "catalogName": "لاميكتال 100مجم",
+      "title": "Lamictal  100 Mg  30 Tab",
+      "englishName": "Lamictal 100 mg",
+      "url": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/20071.webp?v=1786655509",
+      "sourcePage": "https://azzampharmacy.com/products/lamictal-100-mg-30-tab-1690",
+      "source": "azzampharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Azzam Pharmacy"
+    },
+    "230473": {
+      "catalogName": "ليبيترين 10/10",
+      "title": "Lipitrin 10 mg-10 mg - 14 Tablets",
+      "englishName": "Lipitrin 10/10",
+      "url": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/lipitrin-10-mg-10-mg-14-tablets-871116.jpg?v=1735257588",
+      "sourcePage": "https://re3ayapharmacy.com/products/lipitrin-10-mg-10-mg-14-tablets",
+      "source": "re3ayapharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Re3aya Pharmacy"
     },
     "230474": {
       "catalogName": "ليبيتور80مجم 14قرص",
@@ -10722,6 +12248,20 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Lotus Pharmacies"
     },
+    "230498": {
+      "catalogName": "موزابرايد 2.5مجم",
+      "title": "Mosapride  2.5 Mg  10 Tab",
+      "englishName": "Mosapride 2.5 mg",
+      "url": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/160004.webp?v=1786645847",
+      "sourcePage": "https://azzampharmacy.com/products/mosapride-2-5-mg-10-tab-6198",
+      "source": "azzampharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Azzam Pharmacy"
+    },
     "230504": {
       "catalogName": "موكسين15مجم اقراص",
       "title": "Moxen  15 Mg  20 Tab",
@@ -10767,12 +12307,40 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Lotus Pharmacies"
     },
+    "230520": {
+      "catalogName": "ميموسيتو شرب س ج",
+      "title": "Memocito Brain Health Support Supplement Syrup Orange Flavor 120 ml",
+      "englishName": "Memocito Syrup",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/32/327da389080bd88f0cd97712eb990a95f2f090aa64bea8b91442fbc045d6c0ae.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/memocito-brain-health-support-supplement-syrup-orange-flavor-120-ml",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
+    },
     "230521": {
       "catalogName": "مينى جوافه نقط",
       "title": "Mini Guava N Oral Drops with Guava Leaves, Tilia Flower Powder & Black Seed Liquid Extract for Cough & Common Cold",
       "englishName": "Mini Guava Drops",
       "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/1d/1d177a7842a8ef4ac066c2dfac352289694f347a423527b958249850ac293500.jpg",
       "sourcePage": "https://www.lotusonline.com/products/mini-guava-n-15ml-oral-drop",
+      "source": "www.lotusonline.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Lotus Pharmacies"
+    },
+    "230530": {
+      "catalogName": "نيزورال شامبو",
+      "title": "Nizoral Anti-Dandruff Shampoo for Seborrheic Dermatitis",
+      "englishName": "Nizoral Shampoo",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/06/0662deace50c8c014d21e46e613745247378b26c91135e7ac3a783752bb3053f.jpg",
+      "sourcePage": "https://www.lotusonline.com/products/nizoral-shampoo-60ml",
       "source": "www.lotusonline.com",
       "status": "candidate_preview",
       "independentlyVerified": false,
