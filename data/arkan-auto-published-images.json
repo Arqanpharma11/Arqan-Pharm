@@ -174,6 +174,20 @@
       "license": "external retailer image; rights not independently verified",
       "note": "Real retailer image URL; packaging pixels and remote availability not independently verified"
     },
+    "433": {
+      "catalogName": "اليمبوسيس2.5مجم اقراص",
+      "title": "Elimbosis  2.5 Mg  30 Tab",
+      "url": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/384369.webp?v=1786649278",
+      "sourcePage": "https://azzampharmacy.com/products/elimbosis-2-5-mg-30-tab-16890",
+      "englishName": "Elimbosis",
+      "source": "azzampharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Azzam Pharmacy"
+    },
     "476": {
       "url": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/601208.webp?v=1786650493",
       "source": "azzampharmacy.com",
@@ -335,6 +349,34 @@
       "attribution": "Azzam Pharmacy",
       "license": "external retailer image; rights not independently verified",
       "note": "Real retailer image URL; packaging pixels and remote availability not independently verified"
+    },
+    "962": {
+      "catalogName": "برافوتين30كيس س ج",
+      "title": "Pravotin - 30 Sachets",
+      "url": "https://cdn.shopify.com/s/files/1/0774/7151/4932/products/pravotin-30-sachets-842653.jpg?v=1687731422",
+      "sourcePage": "https://www.bloompharmacy.com/products/pravotin-30-sachets",
+      "englishName": "Pravotin",
+      "source": "www.bloompharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Bloom Pharmacy"
+    },
+    "976": {
+      "catalogName": "بروبريك20 مج",
+      "title": "Probric  20 Mg  10 Tab",
+      "url": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/368986.webp?v=1786660130",
+      "sourcePage": "https://azzampharmacy.com/products/probric-20-mg-10-tab-14726",
+      "englishName": "Probric",
+      "source": "azzampharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Azzam Pharmacy"
     },
     "1012": {
       "url": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/prucasoft-2-mg-14-tablets-267775.jpg?v=1735257368",
@@ -544,6 +586,20 @@
       "license": "external retailer image; rights not independently verified",
       "note": "Real retailer image URL; packaging pixels and remote availability not independently verified"
     },
+    "1180": {
+      "catalogName": "بيبيﻼك3بيبى جونيور",
+      "title": "Bebelac  - 3 - (Bebejunior  1+)  400 G Milk",
+      "url": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/106653.webp?v=1786657613",
+      "sourcePage": "https://azzampharmacy.com/products/bebelac-3-bebejunior-1-400-g-milk-5094",
+      "englishName": "Bebelac",
+      "source": "azzampharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Azzam Pharmacy"
+    },
     "1192": {
       "url": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/betaserc-8-mg-100-tablets-490406.jpg?v=1735257645",
       "source": "re3ayapharmacy.com",
@@ -655,6 +711,20 @@
       "attribution": "Re3aya Pharmacy",
       "license": "external retailer image; rights not independently verified",
       "note": "Real retailer product image URL; exact pixels and availability not independently verified"
+    },
+    "1245": {
+      "catalogName": "بيستول5مجم اقراص",
+      "title": "Bistol  5 Mg  20 Tab",
+      "url": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/183177.webp?v=1786653307",
+      "sourcePage": "https://azzampharmacy.com/products/bistol-5-mg-20-tab-7228",
+      "englishName": "Bistol",
+      "source": "azzampharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Azzam Pharmacy"
     },
     "1259": {
       "url": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/397212.webp?v=1786648602",
@@ -864,6 +934,20 @@
       "license": "external retailer image; rights not independently verified",
       "note": "Real retailer product image URL; exact pixels and availability not independently verified"
     },
+    "1335": {
+      "catalogName": "تجريتول200 سى ار",
+      "title": "Tegretol CR 200 mg - 20 Tablets",
+      "url": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/tegretol-cr-200-mg-20-tablets-492716.jpg?v=1735257639",
+      "sourcePage": "https://re3ayapharmacy.com/products/tegretol-cr-200-mg-20-tablets",
+      "englishName": "Tegretol Cr",
+      "source": "re3ayapharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Re3aya Pharmacy"
+    },
     "1336": {
       "url": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/tegretol-200-mg-30-tablets-543622.jpg?v=1735257882",
       "source": "re3ayapharmacy.com",
@@ -975,6 +1059,20 @@
       "attribution": "Re3aya Pharmacy",
       "license": "external retailer image; rights not independently verified",
       "note": "Real retailer product image URL; exact pixels and availability not independently verified"
+    },
+    "1373": {
+      "catalogName": "تريتاس2.5 مجم اقراص",
+      "title": "Tritace 2.5 mg - 14 Tablets",
+      "url": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/tritace-25-mg-14-tablets-445399.jpg?v=1735257752",
+      "sourcePage": "https://re3ayapharmacy.com/products/tritace-2-5-mg-14-tablets",
+      "englishName": "Tritace",
+      "source": "re3ayapharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Re3aya Pharmacy"
     },
     "1374": {
       "url": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/tritace-5-mg-14-tablets-631142.jpg?v=1735257135",
@@ -1090,6 +1188,76 @@
       "license": "external retailer image; rights not independently verified",
       "note": "Real retailer product image URL; exact pixels and availability not independently verified"
     },
+    "1468": {
+      "catalogName": "تيراتام1000 مجم اقراص",
+      "title": "Tiratam  1000 Mg  20 Tab  (404063)",
+      "url": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/57386.webp?v=1786661626",
+      "sourcePage": "https://azzampharmacy.com/products/tiratam-1000-mg-20-tab-404063-3222",
+      "englishName": "Tiratam",
+      "source": "azzampharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Azzam Pharmacy"
+    },
+    "1469": {
+      "catalogName": "تيراتام500 اكس ار س ج",
+      "title": "Tiratam XR 500 mg - 20 Tablets",
+      "url": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/tiratam-xr-500-mg-20-tablets-675711.jpg?v=1735257132",
+      "sourcePage": "https://re3ayapharmacy.com/products/tiratam-xr-500-mg-20-tablets",
+      "englishName": "Tiratam",
+      "source": "re3ayapharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Re3aya Pharmacy"
+    },
+    "1470": {
+      "catalogName": "تيراتام500 مجم اقراص",
+      "title": "Tiratam  500 Mg  20 Tab  (431687)",
+      "url": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/179724.webp?v=1786661150",
+      "sourcePage": "https://azzampharmacy.com/products/tiratam-500-mg-20-tab-431687-7104",
+      "englishName": "Tiratam",
+      "source": "azzampharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Azzam Pharmacy"
+    },
+    "1471": {
+      "catalogName": "تيراتام750 اكس ار",
+      "title": "Tiratam  Xr  750 Mg  20 Tab",
+      "url": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/385565.webp?v=1786648605",
+      "sourcePage": "https://azzampharmacy.com/products/tiratam-xr-750-mg-20-tab-17196",
+      "englishName": "Tiratam",
+      "source": "azzampharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Azzam Pharmacy"
+    },
+    "1472": {
+      "catalogName": "تيراتام750 مجم اقراص عادى",
+      "title": "Tiratam  750 Mg  20 Tab",
+      "url": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/383020.webp?v=1786648392",
+      "sourcePage": "https://azzampharmacy.com/products/tiratam-750-mg-20-tab-16480",
+      "englishName": "Tiratam",
+      "source": "azzampharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Azzam Pharmacy"
+    },
     "1481": {
       "url": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/terbin-250-mg-14-tablets-994009.jpg?v=1735257131",
       "source": "re3ayapharmacy.com",
@@ -1121,6 +1289,20 @@
       "attribution": "Re3aya Pharmacy",
       "license": "external retailer image; rights not independently verified",
       "note": "Real retailer product image URL; exact pixels and availability not independently verified"
+    },
+    "1513": {
+      "catalogName": "ثيوتاسيد600 اوريجينال س ج",
+      "title": "THIOTACID 600 MG ORIGINAL ( THIOCTIC ACID = ALPHA LIPOIC ACID) ) 20 FILM-COATED TABLETS",
+      "url": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/Any_20Scanner_02_22_2023_203-400x400.jpg?v=1735268193",
+      "sourcePage": "https://re3ayapharmacy.com/products/thiotacid-600-mg-original-thioctic-acid-alpha-lipoic-acid-20-film-coated-tablets",
+      "englishName": "Thiotacid",
+      "source": "re3ayapharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Re3aya Pharmacy"
     },
     "1514": {
       "url": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/thiotex-400x400.png?v=1735268197",
@@ -1427,6 +1609,34 @@
       "attribution": "Re3aya Pharmacy",
       "license": "external retailer image; rights not independently verified",
       "note": "Real retailer product image URL; exact pixels and availability not independently verified"
+    },
+    "1735": {
+      "catalogName": "دانتريﻼكس25مجم كبسول",
+      "title": "Dantrelax 25 mg - 30 Capsules",
+      "url": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/dantrelax-25-mg-30-capsules-779265.jpg?v=1735257319",
+      "sourcePage": "https://re3ayapharmacy.com/products/dantrelax-25-mg-30-capsules",
+      "englishName": "Dantrelax",
+      "source": "re3ayapharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Re3aya Pharmacy"
+    },
+    "1749": {
+      "catalogName": "دايت سويت100 قرص",
+      "title": "Diet Sweet  100 Tab",
+      "url": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/2389.webp?v=1786652127",
+      "sourcePage": "https://azzampharmacy.com/products/diet-sweet-100-tab-718",
+      "englishName": "Diet Sweet",
+      "source": "azzampharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "Azzam Pharmacy"
     },
     "1750": {
       "url": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/2379.jpg?v=1735268319",
