@@ -26945,6 +26945,20 @@
       "attribution": "Azzam Pharmacy",
       "note": "External candidate preview; image availability and visual package not independently verified."
     },
+    "2957": {
+      "catalogName": "فيزومير بيبى سبراى ك12",
+      "englishName": "Physiomer Baby nasal spray 115 ml",
+      "title": "Physiomer Baby nasal spray 115 ml",
+      "url": "https://kidzmarket-eg.com/cdn/shop/files/Physiomer_Baby_Nasal_Spray_115ml.webp?v=1754211597&width=1920",
+      "source": "kidzmarket-eg.com",
+      "sourcePage": "https://kidzmarket-eg.com/ar/products/physiomer-nasal-spray-for-newborns-babies-115-ml",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "visual_pack_and_source_title_review",
+      "note": "Image directly opened and pack checked; catalog shorthand interpreted, external hosting and reuse rights not guaranteed."
+    },
     "2959": {
       "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/2959.webp",
       "source": "files.easy-orders.net",
@@ -40457,6 +40471,20 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Lotus Pharmacies"
     },
+    "4145": {
+      "catalogName": "هيرو بيبى فى دى ثري نقط برتقالى",
+      "englishName": "Hero vi D3 2800 IU/ml oral drops 15 ml",
+      "title": "Hero vi D3 2800 IU/ml oral drops 15 ml",
+      "url": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/33/339d17dc84a1f96e48ba5c885a2ab8c71c335e8929d6b3aebd0b00a6e8a9de57.jpg",
+      "source": "www.lotusonline.com",
+      "sourcePage": "https://www.lotusonline.com/ar/products/hero-2800-iu-ml-vitamin-d3-supplement-drops-for-healthy-bones-teeth-immunity-0-years",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "visual_pack_and_source_title_review",
+      "note": "Image directly opened and pack checked; catalog shorthand interpreted, external hosting and reuse rights not guaranteed."
+    },
     "4146": {
       "catalogName": "هيرو بيبى نيوتراديفنس1",
       "title": "Hero baby milk Nutradefense 1 Plus",
@@ -40910,6 +40938,20 @@
       "manualVisualInspected": true,
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Re3aya Pharmacy"
+    },
+    "4196": {
+      "catalogName": "يوثيروكس50مل اقراص",
+      "englishName": "Euthyrox 50 microgram 50 tablets",
+      "title": "Euthyrox 50 microgram 50 tablets",
+      "url": "https://re3ayapharmacy.com/cdn/shop/files/euthyrox-50-mcg-50-tablets-426650.jpg?v=1735258159&width=1946",
+      "source": "re3ayapharmacy.com",
+      "sourcePage": "https://re3ayapharmacy.com/products/euthyrox-50-mcg-50-tablets",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "visual_pack_and_source_title_review",
+      "note": "Image directly opened and pack checked; catalog shorthand interpreted, external hosting and reuse rights not guaranteed."
     },
     "4198": {
       "catalogName": "يوروسولفين ان",
