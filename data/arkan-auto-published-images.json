@@ -1375,6 +1375,21 @@
       "sha256": "3bfa345f56de7259dde64932b230d7f41da8e32668319fec0785b77d30601579",
       "matchReason": "catalog_name_and_pack_details_checked_against_retailer_listing_and_image_ocr"
     },
+    "412": {
+      "catalogName": "اليجون صن سكرين كريم75مجم",
+      "englishName": "Alejon Sunscreen Cream SPF50+ 75 ml",
+      "title": "Alejon Sunscreen Cream SPF50+ 75 ml",
+      "url": "https://alfouadpharmacies.com/cdn/shop/files/Alejon-Sunscreen-Cream-SPF50-75ml.webp?v=1754299314&width=720",
+      "source": "alfouadpharmacies.com",
+      "sourcePage": "https://alfouadpharmacies.com/products/alejon-sunscreen-cream-spf50-75ml?_fid=9c2c10f62&_pos=3155&_ss=c",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "visual_pack_and_source_title_review",
+      "attribution": "alfouadpharmacies.com",
+      "note": "Source image visually reviewed against available catalog name; external delivery, exact stock pack variant and reuse rights not independently confirmed. Not for dispensing identification."
+    },
     "418": {
       "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/418.webp",
       "source": "mtalaatpharmacy.com",
@@ -14497,6 +14512,21 @@
       "manualVisualInspected": true,
       "matchReason": "product_pack_visually_checked_against_catalog_and_source_listing"
     },
+    "1897": {
+      "catalogName": "ديرماسوفت بلس كريم60مل",
+      "englishName": "Derma Soft Plus Cream 60 ml",
+      "title": "Derma Soft Plus Cream 60 ml",
+      "url": "https://assets.kenzz.com/products/414148/001_cheffa-1739783334-82.jpeg",
+      "source": "kenzz.com",
+      "sourcePage": "https://kenzz.com/product/PXTVG7ZQVMCX/%D9%83%D8%B1%D9%8A%D9%85-%D8%AF%D9%8A%D8%B1%D9%85%D8%A7-%D8%B3%D9%88%D9%81%D8%AA-%D8%A8%D9%84%D8%B3-%D8%A7%D9%84%D9%85%D8%B1%D8%B7%D8%A8-%D9%85%D8%A7%D8%B4-%D8%A8%D8%B1%D9%8A%D9%85%D9%8A%D9%8A%D8%B1-60-%D9%85%D9%84",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "visual_pack_and_source_title_review",
+      "attribution": "kenzz.com",
+      "note": "Source image visually reviewed against available catalog name; external delivery, exact stock pack variant and reuse rights not independently confirmed. Not for dispensing identification."
+    },
     "1898": {
       "catalogName": "ديرماوايت غسول",
       "englishName": "Derma White Facial Wash",
@@ -18553,6 +18583,21 @@
       "license": "external retailer image; rights not independently verified",
       "note": "Real retailer product image URL; exact pixels and availability not independently verified"
     },
+    "2227": {
+      "catalogName": "سانسو فوليك",
+      "englishName": "Sanso Folic 800 mcg 28 tablets",
+      "title": "Sanso Folic 800 mcg 28 tablets",
+      "url": "https://4eshopping.com/assets/images/products/2818971709456334.webp",
+      "source": "4eshopping.com",
+      "sourcePage": "https://4eshopping.com/en/item/%D8%B3%D8%A7%D9%86%D8%B3%D9%88-%D9%81%D9%88%D9%84%D9%8A%D9%83-800-%D9%85%D9%8A%D9%83%D8%B1%D9%88%D8%AC%D8%B1%D8%A7%D9%85-86s612",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "visual_pack_and_source_title_review",
+      "attribution": "4eshopping.com",
+      "note": "Source image visually reviewed against available catalog name; external delivery, exact stock pack variant and reuse rights not independently confirmed. Not for dispensing identification."
+    },
     "2228": {
       "catalogName": "سانسو ماغنيسيوم250 مجم",
       "title": "Sanso 250mg Magnesium Supplement for Bone, Nerve & Muscle Health",
@@ -22047,6 +22092,21 @@
       "matchReason": "manual_review_alternative_retailer_title",
       "attribution": "Azzam Pharmacy",
       "note": "External candidate preview; image availability and visual package not independently verified."
+    },
+    "2542": {
+      "catalogName": "سيفوزون1 جم حقن ايبيكو",
+      "englishName": "Cefozon EIPICO 1 g powder for injection",
+      "title": "Cefozon EIPICO 1 g powder for injection",
+      "url": "https://www.eipico.com.eg/DataImages/PRDS/Product_Image454.png",
+      "source": "www.eipico.com.eg",
+      "sourcePage": "https://www.eipico.com.eg/PRDSDetails.aspx?id=454",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "visual_pack_and_source_title_review",
+      "attribution": "www.eipico.com.eg",
+      "note": "Source image visually reviewed against available catalog name; external delivery, exact stock pack variant and reuse rights not independently confirmed. Not for dispensing identification."
     },
     "2543": {
       "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/2543.webp",
@@ -26252,6 +26312,21 @@
       "sha256": "247d8639919a7f0e986eec43887438033f6adbc3188146499bd033d36cd2e383",
       "manualVisualInspected": true,
       "matchReason": "product_pack_visually_checked_against_catalog_and_source_listing"
+    },
+    "2915": {
+      "catalogName": "فيتامين هـ400 فاركو",
+      "englishName": "Pharco Vitamin E 400 mg 24 capsules",
+      "title": "Pharco Vitamin E 400 mg 24 capsules",
+      "url": "https://www.bloompharmacy.com/cdn/shop/products/vitamin-e-400-mg-24-capsules-971075.jpg?v=1694883200",
+      "source": "www.bloompharmacy.com",
+      "sourcePage": "https://www.bloompharmacy.com/products/vitamin-e-400-mg-24-capsules",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "visual_pack_and_source_title_review",
+      "attribution": "www.bloompharmacy.com",
+      "note": "Source image visually reviewed against available catalog name; external delivery, exact stock pack variant and reuse rights not independently confirmed. Not for dispensing identification."
     },
     "2916": {
       "catalogName": "فيتاهير اقراص",
@@ -30462,6 +30537,21 @@
       "manualVisualInspected": true,
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Azzam Pharmacy"
+    },
+    "3290": {
+      "catalogName": "كولاجرا صن سكرين لوشن120 مل",
+      "englishName": "Kolagra Sunscreen Lotion SPF50+ 120 ml",
+      "title": "Kolagra Sunscreen Lotion SPF50+ 120 ml",
+      "url": "https://cdn.mafrservices.com/sys-master-root/h0e/h87/46169158221854/601143_main.jpg?im=Resize%3D480",
+      "source": "www.carrefouregypt.com",
+      "sourcePage": "https://www.carrefouregypt.com/mafegy/en/sunblock-lotion/kolagra-sun-lotion-spf50-120ml/p/601143",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "visual_pack_and_source_title_review",
+      "attribution": "www.carrefouregypt.com",
+      "note": "Source image visually reviewed against available catalog name; external delivery, exact stock pack variant and reuse rights not independently confirmed. Not for dispensing identification."
     },
     "3292": {
       "catalogName": "كولاجرا عرض كونسيلر ميديم1+1",
