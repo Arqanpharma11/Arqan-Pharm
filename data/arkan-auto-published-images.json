@@ -379,6 +379,34 @@
       "attribution": "Azzam Pharmacy",
       "note": "External candidate preview; image availability and visual package not independently verified."
     },
+    "159": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/159.webp",
+      "source": "www.lotusonline.com",
+      "sourcePage": "https://www.lotusonline.com/products/irbedrin-diu-150mg-irbesartan-12-5mg-hydrochlorothiazide-anti-hypertensive",
+      "originalImageUrl": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/03/03ba07040165997024630c0aa539ede815435bad74eaa8d893b6e1b5bb09be99.jpg",
+      "catalogName": "اربيدرين ديو150مجم",
+      "title": "Irbedrin-Diu 150mg Irbesartan & 12.5mg Hydrochlorothiazide Anti-Hypertensive",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "5545e2382eeac4b91cc7ef9536a45f751f2b6b974dd0914a4c1deb0cc760a865"
+    },
+    "160": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/160.webp",
+      "source": "www.vezeeta.com",
+      "sourcePage": "https://www.vezeeta.com/ar-eg/pharmacy/%D8%A7%D8%B1%D8%A8%D9%8A%D8%AF%D8%B1%D9%8A%D9%86-%D8%AF%D9%8A%D9%88-300-12-5%D9%85%D8%AC%D9%85-10-%D9%82%D8%B1%D8%B5",
+      "originalImageUrl": "https://dkud4u09qff41.cloudfront.net/Products/f4ff7c7f-7d89-41bb-80e2-7346bc0e5f77.jpeg",
+      "catalogName": "/اربيدرين ديو300 12.5",
+      "title": "Irbedrin-Diu 300/12.5 mg, 10 tablets",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "8c09eddd6f147bf624d8f3dac36702eb20a898d21b0f6331c3c86bd5f26ed5e2"
+    },
     "162": {
       "catalogName": "ارتيجا30ك",
       "englishName": "Artega 30 Capsules",
@@ -540,6 +568,20 @@
       "sha256": "49679dfb5f233dbc1bd59a4564e9aa65e81f114a45a3f228acb9834c4ea9f72c",
       "matchReason": "catalog_name_and_pack_details_checked_against_retailer_listing_and_image_ocr"
     },
+    "240": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/240.webp",
+      "source": "www.lotusonline.com",
+      "sourcePage": "https://www.lotusonline.com/products/escitapram-20mg-escitalopram",
+      "originalImageUrl": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/a7/a7e5bde57ce97f3d183afb2ca023e9801824e90cbb654d57c203d3e48c5d1907.jpg",
+      "catalogName": "اسيتابرام20مل",
+      "title": "Escitapram 20mg Escitalopram",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "4f01fb15cb046533ec84cb8a0f0ca2e96e0edbb62ffc3ef96cbb5df01cd4cef6"
+    },
     "244": {
       "catalogName": "اسيكلوفير800مجم",
       "englishName": "Acyclovir",
@@ -554,6 +596,20 @@
       "matchReason": "manual_catalog_and_retailer_title_comparison",
       "attribution": "Azzam Pharmacy",
       "note": "External candidate preview; image availability and visual package not independently verified."
+    },
+    "250": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/250.webp",
+      "source": "www.lotusonline.com",
+      "sourcePage": "https://www.lotusonline.com/products/avosoya-300mg-30-capsule",
+      "originalImageUrl": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/a0/a0617c0f003b6e1f58389f4aff99efc56c0800023b681496f7f87f87f8f9d578.jpg",
+      "catalogName": "افاصويا كبسول س ج",
+      "title": "Avosoya 300mg with Avocado Oil & Soy Bean Oil",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "1297cb8911eaadd68ca273e4cc8022b47d301be634e273678b507e47e90459a8"
     },
     "251": {
       "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/251.webp",
@@ -2797,6 +2853,20 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Azzam Pharmacy"
     },
+    "771": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/771.webp",
+      "source": "azzampharmacy.com",
+      "sourcePage": "https://azzampharmacy.com/products/ironglor-max-30-tab-19056",
+      "originalImageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/397148.webp?v=1786659547",
+      "catalogName": "ايرنجلور ماكس س.ج",
+      "title": "Ironglor - Max  30 Tab",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "c59cbf88d7611c3b1abf0c1bfea4f1bc9d547e5d4dbeda5a257e1bbac88a6754"
+    },
     "773": {
       "catalogName": "ايروسبيكت شراب",
       "title": "ايروسبكت شراب",
@@ -2945,6 +3015,20 @@
       "attribution": "Dawaa Gate",
       "sha256": "9f9eac784ed51dc52fb28364712fd2d8555158504dc9b9996ce3eb4824c542c2",
       "matchReason": "catalog_name_and_pack_details_checked_against_retailer_listing_and_image_ocr"
+    },
+    "808": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/808.webp",
+      "source": "sekemonline.com",
+      "sourcePage": "https://sekemonline.com/products/isis-cinnamon?variant=40276490747977",
+      "originalImageUrl": "https://cdn.shopify.com/s/files/1/0574/0445/7033/files/Untitled-230.jpg?v=1756365464",
+      "catalogName": "ايزيس قرفة سادة20 فلتر",
+      "title": "Isis Natural Herbal Cinnamon, 20 bags",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "39568d8bbb6392f1e7afa1c89c74571902b35c8014029844d3e3b522e3266231"
     },
     "811": {
       "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/811.webp",
@@ -3209,6 +3293,20 @@
       "attribution": "Azzam Pharmacy",
       "note": "External candidate preview; image availability and visual package not independently verified."
     },
+    "854": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/854.webp",
+      "source": "azzampharmacy.com",
+      "sourcePage": "https://azzampharmacy.com/products/elarpic-20-mg-20-tab-21958",
+      "originalImageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/602399.webp?v=1786647866",
+      "catalogName": "ايﻼريبك20 مجم اقراص",
+      "title": "Elarpic  20 Mg  20 Tab",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "6f1a4af6ca6653c2a973acebd59776f46efd835ff01cae14bcaf0f40fa5cc165"
+    },
     "855": {
       "catalogName": "ايﻼى ايزو اسبراى",
       "englishName": "Elay Iso Spray",
@@ -3238,6 +3336,20 @@
       "sha256": "80f9b90cc210f190cec5c7fc1b75d5034cae6c59670fb34f008e99900d649754",
       "manualVisualInspected": true,
       "matchReason": "product_pack_visually_checked_against_catalog_and_source_listing"
+    },
+    "859": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/859.webp",
+      "source": "azzampharmacy.com",
+      "sourcePage": "https://azzampharmacy.com/products/elone-120-ml-hair-cream-34272",
+      "originalImageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/606649-1760869075.webp?v=1786657020",
+      "catalogName": "ايلون كريم شعر بالكرياتين",
+      "title": "Elone  120 Ml  Hair Cream",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "dc14e712a4bdf7174da3ccde31fc6fd79d8498184c909bfc7e9d8346ea7d7124"
     },
     "869": {
       "catalogName": "ايمتركس20ق",
@@ -3357,6 +3469,20 @@
       "matchReason": "manual_catalog_and_retailer_title_comparison",
       "attribution": "Azzam Pharmacy",
       "note": "External candidate preview; image availability and visual package not independently verified."
+    },
+    "900": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/900.webp",
+      "source": "www.lotusonline.com",
+      "sourcePage": "https://www.lotusonline.com/products/baritava-2mg-28-film-coated-tablet",
+      "originalImageUrl": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/5d/5d95d83573233848704d07b3a114915de692b2696384f4cb2ce1bb036189a85b.jpg",
+      "catalogName": "باريتافا2 مل",
+      "title": "Baritava 2mg Baricitinib",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "53360dd80580268a70fac9c49b64a2bc47036803e6a874e1ebd114dc74552b9a"
     },
     "901": {
       "catalogName": "باريتافا4 مج",
@@ -3744,6 +3870,20 @@
       "manualVisualInspected": true,
       "matchReason": "product_pack_visually_checked_against_catalog_and_source_listing"
     },
+    "955": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/955.webp",
+      "source": "www.lotusonline.com",
+      "sourcePage": "https://www.lotusonline.com/products/biomed-biolegam-50mg-sildenafil-30mg-dapoxetine",
+      "originalImageUrl": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/55/558979bdd270d111048b155f7bd5ca8435d53106204df4378f7d370f7585a19a.jpg",
+      "catalogName": "بايولجام30مجم اقراص",
+      "title": "Biomed BioLegam 50mg Sildenafil & 30mg Dapoxetine",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "e391441f9cfdbf2e988ca2b1d871a2b06dd471332dbe5e4ffd6f904df746b543"
+    },
     "962": {
       "catalogName": "برافوتين30كيس س ج",
       "title": "Pravotin - 30 Sachets",
@@ -3757,6 +3897,20 @@
       "manualVisualInspected": true,
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Bloom Pharmacy"
+    },
+    "964": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/964.webp",
+      "source": "azzampharmacy.com",
+      "sourcePage": "https://azzampharmacy.com/products/praxilene-200-mg-30-tab-10758",
+      "originalImageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/305429.webp?v=1786647002",
+      "catalogName": "براكسيﻼن200 مل",
+      "title": "Praxilene  200 Mg  30 Tab",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "5b689de2cc5350320ae5793a55055eddac5615c57d9dbc455c6832c9e19cb4e2"
     },
     "965": {
       "catalogName": "بران كبسول ميباكو",
@@ -3787,6 +3941,20 @@
       "sha256": "c3e8877385e21289b18866439526cc45eb27825078cce3ecb5fa6321f480bdea",
       "manualVisualInspected": true,
       "matchReason": "product_pack_visually_checked_against_catalog_and_source_listing"
+    },
+    "968": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/968.webp",
+      "source": "www.lotusonline.com",
+      "sourcePage": "https://www.lotusonline.com/products/primrose-plus-1000mg-30-capsule",
+      "originalImageUrl": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/53/533b0ff0499df4e85a1cd960fb1bb979a1d21a2c666d0731e96ea6903d87d353.jpg",
+      "catalogName": "برايم روز بلس",
+      "title": "Primrose Plus 1000mg Evening Primrose Oil Supplement",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "5a819a7dc0dd442c83379d9422b6534dc00fa98ca0178108a39766f95a5acde4"
     },
     "971": {
       "catalogName": "برناسورس مرهم30جم",
@@ -4095,6 +4263,20 @@
       "attribution": "Lotus Pharmacies",
       "sha256": "63bae6447aa4fa962cbd3ed83d2ddfed2d230c12e248e5d44c9f094cf19f07a6"
     },
+    "1002": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/1002.webp",
+      "source": "azzampharmacy.com",
+      "sourcePage": "https://azzampharmacy.com/products/prostride-5-mg-30-cap-2426",
+      "originalImageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/42492.webp?v=1786648526",
+      "catalogName": "بروستريد5 مجم س جديد",
+      "title": "Prostride  5 Mg  30 Cap",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "6e6861abd40868444349117d1ac954a547d552a23440d35af49d998fc827527a"
+    },
     "1003": {
       "catalogName": "بروفان14 كيس س.ج",
       "title": "Provan  14 Sachets",
@@ -4198,6 +4380,20 @@
       "matchReason": "manual_catalog_and_retailer_title_comparison",
       "attribution": "Azzam Pharmacy",
       "note": "External candidate preview; image availability and visual package not independently verified."
+    },
+    "1030": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/1030.webp",
+      "source": "www.lotusonline.com",
+      "sourcePage": "https://www.lotusonline.com/products/bronchopyonair-plus-110mcg-indacaterol-50mcg-glycopyrronium-inhalation-powder-with-inhaler-30-capsules",
+      "originalImageUrl": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/f6/f68982d24fdd4baf69a714bd590a3fa9d51b8600664f5548da97469e290a47fb.jpg",
+      "catalogName": "برونكوبيونير بلس كبسول استنشاق",
+      "title": "Bronchopyonair Plus 110mcg Indacaterol & 50mcg Glycopyrronium Inhalation Powder with Inhaler 30 capsules",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "efc5de5b954eaa70ab2a9c772d67b76302921eb534580f2f89534c59022655a1"
     },
     "1033": {
       "catalogName": "برونكولين محلول",
@@ -4823,6 +5019,20 @@
       "attribution": "Azzam Pharmacy",
       "note": "External candidate preview; image availability and visual package not independently verified."
     },
+    "1114": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/1114.webp",
+      "source": "www.lotusonline.com",
+      "sourcePage": "https://www.lotusonline.com/products/pentatrox-1gm-1-vial",
+      "originalImageUrl": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/bd/bd15357379de17b518a2ea65e64f9b25d46004073940abe640f5b48c50cd2f84.jpg",
+      "catalogName": "بنتاتروكسى1جم امبول",
+      "title": "Pentatrox 1g Cefotaxime Broad Spectrum Antibiotic Powder Solution Vial with Water Solvent for Intramuscular & Intravenous Injection",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "2bb5226a919cd9ca84d010a59c014be3698733d88795219b9f5c37446f4d7120"
+    },
     "1115": {
       "catalogName": "بنتافلو شراب",
       "englishName": "Pentaflu",
@@ -4867,6 +5077,20 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Lotus Pharmacies",
       "sha256": "6fb74056d2fe778dd20d1fb037bfa73b08fafdaa032fcfeaefa4c8f34a9d1dbe"
+    },
+    "1118": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/1118.webp",
+      "source": "azzampharmacy.com",
+      "sourcePage": "https://azzampharmacy.com/products/pentamix-syrup-120-ml-3098",
+      "originalImageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/54833.webp?v=1786645850",
+      "catalogName": "بنتاماكس شراب",
+      "title": "Pentamix  Syrup  120 Ml",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "fc5775241d062b8b0a3e2c448fa72aae2ae2a2a8df3a2afadeebfdeebf477e89"
     },
     "1122": {
       "catalogName": "بنفورا اقراص",
@@ -5542,6 +5766,20 @@
       "license": "external retailer image; rights not independently verified",
       "note": "Real retailer product image URL; exact pixels and availability not independently verified"
     },
+    "1193": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/1193.webp",
+      "source": "azzampharmacy.com",
+      "sourcePage": "https://azzampharmacy.com/products/betafucin-15-gm-cream-1006",
+      "originalImageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/3275.webp?v=1786661866",
+      "catalogName": "بيتافيوسين كريم",
+      "title": "Betafucin  15 Gm  Cream",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "8667a2b196abede94684da84d28089b16b6a86de95b146757ccd04e239412363"
+    },
     "1194": {
       "catalogName": "بيتاكاروتين كبسول",
       "englishName": "Beta-Carotene Capsules",
@@ -5570,6 +5808,20 @@
       "manualVisualInspected": true,
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Azzam Pharmacy"
+    },
+    "1196": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/1196.webp",
+      "source": "www.lotusonline.com",
+      "sourcePage": "https://www.lotusonline.com/products/betallerge-0-2mg-30-film-coated-tablet",
+      "originalImageUrl": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/67/6746b0fc171fe86185792d4c1d47f297adbe78baa06bf9d31452e87ede4380a0.jpg",
+      "catalogName": "بيتاليرج2مل 30قرص",
+      "title": "Betallerge 2mg Dexchlorpheniramine Maleate & 0.25mg Betamethasone Medication",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "9e518697fc4d0d1910483f21d284da39ec3711d156b48005740f512e600e40c6"
     },
     "1198": {
       "url": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/betmiga-50-mg-30-tablets-958735.jpg?v=1735257307",
@@ -5823,6 +6075,20 @@
       "sha256": "76c18e03dce3809a3258d477067a1926af794f9c5e49824bb2d1405002c8b5cf",
       "manualVisualInspected": true,
       "matchReason": "product_pack_visually_checked_against_catalog_and_source_listing"
+    },
+    "1219": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/1219.webp",
+      "source": "azzampharmacy.com",
+      "sourcePage": "https://azzampharmacy.com/products/perfectodil-5-sol-60-ml-7758",
+      "originalImageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/208147.webp?v=1786649186",
+      "catalogName": "بيرفكتوديل لوسيون",
+      "title": "Perfectodil  5%  Sol  60 Ml",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "293dc8977ca73a976b4209df7fc174f6e5791cdc664b75b26c73cb01298eb4e4"
     },
     "1221": {
       "catalogName": "بيرفكتيل اوريجينال اقراص",
@@ -6496,6 +6762,20 @@
       "matchReason": "manual_catalog_and_retailer_title_comparison",
       "attribution": "Azzam Pharmacy",
       "note": "External candidate preview; image availability and visual package not independently verified."
+    },
+    "1286": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/1286.webp",
+      "source": "www.lotusonline.com",
+      "sourcePage": "https://www.lotusonline.com/products/biorefamin-200mg-10-film-coated-tablet",
+      "originalImageUrl": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/f2/f2fbe7f4b6d80f80abde9fb3507ee6bf87428ed5b4c1e27327ebeac75dfd178c.jpg",
+      "catalogName": "بيوريفارمين200 مجم قرص",
+      "title": "Biorefamin 200mg Rifaximin",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "45822ff3ea9a1c42b1dd19d5eeaa2ef13afb5bd5c72a1ed1e1cf1044dedc145c"
     },
     "1287": {
       "catalogName": "بيوريفامين550 مجم قرص",
@@ -7430,6 +7710,20 @@
       "attribution": "Re3aya Pharmacy",
       "license": "external retailer image; rights not independently verified",
       "note": "Real retailer product image URL; exact pixels and availability not independently verified"
+    },
+    "1363": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/1363.webp",
+      "source": "www.lotusonline.com",
+      "sourcePage": "https://www.lotusonline.com/ar/products/trophic-silicone-gel",
+      "originalImageUrl": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/44/447fadda7f3c93ac094eea57a2fd38b688fdde2ad4fd105d972aaa83d8cb08cf.jpg",
+      "catalogName": "تروفك سيليكون جيل",
+      "title": "تروفيك سيليكون جل",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "e125c723191834221ae2fda65668faddf51828ebbdc70fe66d77c263881db04a"
     },
     "1364": {
       "catalogName": "ترياكور5/5مجم",
@@ -9034,6 +9328,20 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Dr. Magdy El-Haddad Pharmacies"
     },
+    "1501": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/1501.webp",
+      "source": "www.lotusonline.com",
+      "sourcePage": "https://www.lotusonline.com/products/thrombo-75mg-30-tab",
+      "originalImageUrl": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/48/48d6fdcb5932b9c3d95c7fa37b4b70c26d5500e9ade44e4a1d54e0ce4b96149c.jpg",
+      "catalogName": "ثرومبو75مل ق",
+      "title": "Thrombo 75mg Clopidogrel",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "7b3bfefb505a31a32902f7982cefc7d15c2b58312bb95e5f6a3a6c3fe5d014fd"
+    },
     "1504": {
       "catalogName": "ثرى دروب نقط400",
       "englishName": "Three Drob Drops 400",
@@ -10396,6 +10704,20 @@
       "license": "third-party visual source; commercial reuse rights not independently verified",
       "note": "Real commercial product image link, packaging matched by review; live browser and rights verification pending."
     },
+    "1617": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/1617.webp",
+      "source": "azzampharmacy.com",
+      "sourcePage": "https://azzampharmacy.com/products/glimpacare-10-mg-30-tab-27162",
+      "originalImageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/610405.webp?v=1786651715",
+      "catalogName": "جليمباكير10 مل",
+      "title": "Glimpacare  10 Mg  30 Tab",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "bcb4ca19bc0c808b0e6d47ca323ce698cbfc118d19c2fb9021e36602a1c2f2ee"
+    },
     "1618": {
       "catalogName": "جليمباكير بلس5/10 مجم",
       "englishName": "Glimpacare Plus 5/10 mg",
@@ -10554,6 +10876,20 @@
       "attribution": "Dr. Magdy El-Haddad Pharmacies",
       "sha256": "3e9782f39f9b8a7349a7c169a1b6e3585260b70361ea4f1b191ab7af55ae606f",
       "matchReason": "catalog_name_and_pack_details_checked_against_retailer_listing_and_image_ocr"
+    },
+    "1633": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/1633.webp",
+      "source": "www.lotusonline.com",
+      "sourcePage": "https://www.lotusonline.com/products/gincostazen-30-capsule",
+      "originalImageUrl": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/4c/4c66472410407685b68f80efaf2d133525d4b1fbc91bd7f09cf158087a0ca7ab.jpg",
+      "catalogName": "جنكوستازين كبسول ج",
+      "title": "Gincostazen 500mg Glucosamine Sulfate & 50mg Ginkgo Biloba Extract Osteoarthritis Pain Relief Capsules",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "8b11a38a7eb273851a8d65c4b5c4f7ff58a86850e42b96ade2eb9f8da7e39b36"
     },
     "1636": {
       "catalogName": "جوتال وايتنج لوشن",
@@ -10790,6 +11126,34 @@
       "sha256": "080dc54af3461c69edb9dcd753be6ee044b8299f1bed66e7ab2c7e6654f3c1ab",
       "manualVisualInspected": true,
       "matchReason": "product_pack_visually_checked_against_catalog_and_source_listing"
+    },
+    "1658": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/1658.webp",
+      "source": "azzampharmacy.com",
+      "sourcePage": "https://azzampharmacy.com/products/gypravastin-10-mg-28-tab-34744",
+      "originalImageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/614390-1760271459.webp?v=1786652425",
+      "catalogName": "جيبرافيستين10 مل",
+      "title": "Gypravastin  10 Mg  28 Tab",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "c7cfec6a485755f8c7ce612f7d421364985806ef05dd93b2d9395866a7791ae5"
+    },
+    "1659": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/1659.webp",
+      "source": "azzampharmacy.com",
+      "sourcePage": "https://azzampharmacy.com/products/gypravastin-20-mg-28-tab-34746",
+      "originalImageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/614391-1759928746.webp?v=1786649478",
+      "catalogName": "جيبرافيستين20 مل",
+      "title": "Gypravastin  20 Mg  28 Tab",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "be551910a14878a34cfa88411d0d191322eff0adfa5f684cc1edc9e86e8fc01d"
     },
     "1660": {
       "catalogName": "جيت كبسول",
@@ -13121,6 +13485,20 @@
       "sha256": "d16c2b8b45745ebfe6b3fec16c62021dca8506a74a90ca353b37883e0d021e3a",
       "matchReason": "catalog_name_and_pack_details_checked_against_retailer_listing_and_image_ocr"
     },
+    "1875": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/1875.webp",
+      "source": "azzampharmacy.com",
+      "sourcePage": "https://azzampharmacy.com/products/pharmakon-deepfreeze-massage-cold-spray-125-ml-17696",
+      "originalImageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/389310.webp?v=1786646545",
+      "catalogName": "ديب فريز سبراى فارماكون",
+      "title": "Pharmakon  Deepfreeze  Massage  Cold Spray  125 Ml",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "e8888bc59d914f632555b2e4ce9f595416b6e884d81b2f164fc12d3a5ee8e412"
+    },
     "1876": {
       "catalogName": "ديبافاليى50/1000بلس",
       "title": "Dibavally Plus with Vildagliptin & Metformin Hydrochloride",
@@ -14053,6 +14431,20 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Dr. Magdy El-Haddad Pharmacies"
     },
+    "1961": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/1961.webp",
+      "source": "azzampharmacy.com",
+      "sourcePage": "https://azzampharmacy.com/products/densitin-30-cap-3900",
+      "originalImageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/66488.webp?v=1786650608",
+      "catalogName": "دينستين كبسول",
+      "title": "Densitin  30 Cap",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "290b503ff1cd1899776fe7bfe050457f5a813550d24f58a1ae12a614824370cb"
+    },
     "1962": {
       "catalogName": "دينوديفا21 قرص",
       "englishName": "",
@@ -14096,6 +14488,20 @@
       "manualVisualInspected": true,
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Dr. Magdy El-Haddad Pharmacies"
+    },
+    "1967": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/1967.webp",
+      "source": "www.lotusonline.com",
+      "sourcePage": "https://www.lotusonline.com/products/dury-powder-supplement-sachets",
+      "originalImageUrl": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/77/770ced8312a55b9618d26d267a91395417c03dff0b05983df53657cf558524b5.jpg",
+      "catalogName": "ديورى اكياس",
+      "title": "Dury Powder Supplement Sachets",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "fcd089ef4de8f8462a9a22e0e61ca0c2c05dca3dfe7b7a6b8bac25e557fab560"
     },
     "1968": {
       "catalogName": "ديوريسيف1 جم اقراص",
@@ -14142,6 +14548,20 @@
       "attribution": "shop.pharmaemarket.com",
       "license": "source product image; reuse rights not independently verified",
       "note": "Retailer packaging matching known catalog brand and dosage; external link not independently tested in live PWA."
+    },
+    "1971": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/1971.webp",
+      "source": "azzampharmacy.com",
+      "sourcePage": "https://azzampharmacy.com/products/duricef-500-mg-12-cap-8174",
+      "originalImageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/222929.webp?v=1786654061",
+      "catalogName": "ديوريسيف500 كبسوول",
+      "title": "Duricef  500 Mg  12 Cap",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "2bab3f59166b6d090c44f575ce0c2d29577691c195df3f23e99eac2a93df9f0c"
     },
     "1972": {
       "catalogName": "ديوزمين بلس500",
@@ -14466,6 +14886,20 @@
       "manualVisualInspected": true,
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Azzam Pharmacy"
+    },
+    "2014": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/2014.webp",
+      "source": "azzampharmacy.com",
+      "sourcePage": "https://azzampharmacy.com/products/rootage-50-gm-skin-cream-3342",
+      "originalImageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/59123.webp?v=1786653672",
+      "catalogName": "روتاج كريم للجلد",
+      "title": "Rootage  50 Gm  Skin Cream",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "f89027e20175a8f2376714ecc7ed1b49265ae5ede1c2d30daaa5ad178f5af6e5"
     },
     "2015": {
       "catalogName": "روتاج لوسيون",
@@ -15793,6 +16227,48 @@
       "attribution": "Lotus Pharmacies",
       "sha256": "c7ae7117032b32312eb943dc9bc8f55b3ddf8be143a6f5ac797dcad5019713de"
     },
+    "2119": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/2119.webp",
+      "source": "azzampharmacy.com",
+      "sourcePage": "https://azzampharmacy.com/products/xanthistop-120-mg-30-tab-9776",
+      "originalImageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/286402.webp?v=1786649285",
+      "catalogName": "زانسيستوب120مجم س.ج",
+      "title": "Xanthistop  120 Mg  30 Tab",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "2abcfd043048af0cedea8a8b7ec9616c274eed872f0ccdc0fbc8b16d9b4834cd"
+    },
+    "2120": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/2120.webp",
+      "source": "azzampharmacy.com",
+      "sourcePage": "https://azzampharmacy.com/products/xanthistop-40-mg-30-tab-36416",
+      "originalImageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/617085-1759064799.webp?v=1786648828",
+      "catalogName": "زانسيستوب40مجم اقراص",
+      "title": "Xanthistop  40 Mg  30 Tab",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "2b4354a41719671a29833897a248f1167a7ff8a3e805537454226fdb8b80a91e"
+    },
+    "2121": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/2121.webp",
+      "source": "azzampharmacy.com",
+      "sourcePage": "https://azzampharmacy.com/products/xanthistop-80-mg-30-tab-9780",
+      "originalImageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/286406.webp?v=1786646016",
+      "catalogName": "زانسيستوب80 مجم",
+      "title": "Xanthistop  80 Mg  30 Tab",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "fe8a71c8d9bef6009e6f8111911ff469ce75f921736807a13c12b48ffc0e8055"
+    },
     "2122": {
       "catalogName": "زانوجليد2/30 مجم",
       "englishName": "Zanoglide 2/30 mg",
@@ -16240,6 +16716,20 @@
       "license": "third-party photo; commercial reuse permissions not verified",
       "note": "Photo visually matched by product packaging; external URL untested in browser; image remains not independently certified."
     },
+    "2159": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/2159.webp",
+      "source": "azzampharmacy.com",
+      "sourcePage": "https://azzampharmacy.com/products/zithrodose-100-mg-5-ml-susp-60-ml-6246",
+      "originalImageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/160695.webp?v=1786656875",
+      "catalogName": "زيثرودوز شراب60 مجم ج",
+      "title": "Zithrodose  100 Mg / 5 Ml  Susp  60 Ml",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "03fb9bd9a9c5717837a2e27031e716f00d3b8608c7135a658d935f4f882858f0"
+    },
     "2161": {
       "catalogName": "زيثروكان كبسول",
       "englishName": "Zithrokan",
@@ -16254,6 +16744,20 @@
       "matchReason": "manual_catalog_and_retailer_title_comparison",
       "attribution": "Re3aya Pharmacy",
       "note": "External candidate preview; image availability and visual package not independently verified."
+    },
+    "2162": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/2162.webp",
+      "source": "azzampharmacy.com",
+      "sourcePage": "https://azzampharmacy.com/products/zithrokan-200-mg-5-ml-susp-15-ml-3708",
+      "originalImageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/63363.webp?v=1786647365",
+      "catalogName": "زيثروكان200 مل شراب",
+      "title": "Zithrokan  200 Mg / 5 Ml  Susp  15 Ml",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "a7f19d1c2bdb68296b9bc1ea77ba40ce60fb501768309592497e9bf97695d94a"
     },
     "2164": {
       "url": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/xithrone-500-mg-3-tablets-875232.jpg?v=1735257541",
@@ -16498,6 +17002,20 @@
       "attribution": "Re3aya Pharmacy",
       "note": "External candidate preview; image availability and visual package not independently verified."
     },
+    "2184": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/2184.webp",
+      "source": "www.lotusonline.com",
+      "sourcePage": "https://www.lotusonline.com/products/yostiretic-5-50mg-30-tablet",
+      "originalImageUrl": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/8d/8d56ba2d72c91317e470e3eeb06f745c108197d4db3e2034f8aced1237558d71.jpg",
+      "catalogName": "زيستورتيك اقراص",
+      "title": "Yostiretic with Amiloride Hydrochloride & Hydrochlorothiazide Diuretic & Anti-Hypertensive",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "e445263d7c4fd8f74d701b726895902445f031a2bfd3f93af59766d164de88fc"
+    },
     "2185": {
       "catalogName": "زيسروسين شراب",
       "englishName": "Zisrocin Syrup",
@@ -16635,6 +17153,20 @@
       "matchReason": "manual_catalog_and_retailer_title_comparison",
       "attribution": "Azzam Pharmacy",
       "note": "External candidate preview; image availability and visual package not independently verified."
+    },
+    "2196": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/2196.webp",
+      "source": "azzampharmacy.com",
+      "sourcePage": "https://azzampharmacy.com/products/zymalge-50-gm-gel-21088",
+      "originalImageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/432383.webp?v=1786647455",
+      "catalogName": "زيمالج جل50 جم س ج",
+      "title": "Zymalge  50 Gm  Gel",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "6f39109ff512fe042fa8b2107952403ca4ef88a7127fe2b1fc378d591c5f3116"
     },
     "2199": {
       "catalogName": "زيموفاك اقراص",
@@ -17213,6 +17745,20 @@
       "manualVisualInspected": true,
       "matchReason": "product_pack_visually_checked_against_catalog_and_source_listing"
     },
+    "2257": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/2257.webp",
+      "source": "www.lotusonline.com",
+      "sourcePage": "https://www.lotusonline.com/products/spectracef-1gm-im-iv-1-vial",
+      "originalImageUrl": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/8f/8fc5fab6413ead6370d4c79ce77c9528eeac446850896ab2c70d3aa8d118e66c.jpg",
+      "catalogName": "سبكتراسيف1جم",
+      "title": "Spectracef 1g Cefepime Powder Vial Broad Spectrum Antibiotic with Solvent Ampoules for Intramuscular & Intravenous Solution",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "4b2acbc0118d0b3c85d2c93bf9ce6d98ea0d4b23d10be7d211aa4c4aedf2144f"
+    },
     "2258": {
       "catalogName": "سبكتون100 مجم",
       "title": "Spectone 100mg Spironolactone",
@@ -17778,6 +18324,20 @@
       "manualVisualInspected": true,
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Lotus Pharmacies"
+    },
+    "2311": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/2311.webp",
+      "source": "www.lotusonline.com",
+      "sourcePage": "https://www.lotusonline.com/products/stellasil-1mg-trifluoperazine",
+      "originalImageUrl": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/64/647fbd3949a720d1652650fb7e46831b9560d82a8c7a41d04dee7d40f544bf47.jpg",
+      "catalogName": "ستيﻼسيل1 - ق",
+      "title": "Stellasil 1mg Trifluoperazine",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "75b11c32c8968aad4ccf9d3cfe44a0ac933b3f12e3e60fa4572167ca122378be"
     },
     "2312": {
       "catalogName": "ستيﻼسيل5 مجم",
@@ -19753,6 +20313,20 @@
       "attribution": "Azzam Pharmacy",
       "note": "External candidate preview; image availability and visual package not independently verified."
     },
+    "2488": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/2488.webp",
+      "source": "azzampharmacy.com",
+      "sourcePage": "https://azzampharmacy.com/products/cerebronal-45-cap-28678",
+      "originalImageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/611655.webp?v=1786646603",
+      "catalogName": "سيربرونال كبسول",
+      "title": "Cerebronal  45 Cap",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "3091326734cdee4d3e33ea1d1cfe27d8c7391592ee88c7bdfcc8233dd851f7fb"
+    },
     "2489": {
       "catalogName": "سيردالود2 مجم اقراص",
       "englishName": "Sirdalud",
@@ -20021,6 +20595,20 @@
       "sha256": "edfd5d78b9ae773f986c6ad9a6a2296500c83037394ff7e96dbbbfe60c4d39b3",
       "manualVisualInspected": true,
       "matchReason": "product_pack_visually_checked_against_catalog_and_source_listing"
+    },
+    "2517": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/2517.webp",
+      "source": "azzampharmacy.com",
+      "sourcePage": "https://azzampharmacy.com/products/cerelac-125-gm-wheat-%D9%82%D9%85%D8%AD-%D8%B3%D8%A7%D8%AF%D8%A9-%D8%A8%D8%A7%D9%84%D8%AD%D8%AF%D9%8A%D8%AF-1920",
+      "originalImageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/30115.webp?v=1786651234",
+      "catalogName": "سيريﻼك قمح125 جم",
+      "title": "Cerelac  125 Gm Wheat قمح سادة - بالحديد",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "894cfc6ae79b550f1c26f5b369827e183bcd15eb88dc3b7356c21c52063f844d"
     },
     "2518": {
       "catalogName": "سيريﻼك قمح بلبن125جم",
@@ -21110,6 +21698,20 @@
       "attribution": "Azzam Pharmacy",
       "note": "External candidate preview; image availability and visual package not independently verified."
     },
+    "2616": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/2616.webp",
+      "source": "azzampharmacy.com",
+      "sourcePage": "https://azzampharmacy.com/products/senna-lax-30-tab-15056",
+      "originalImageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/372804.webp?v=1786649882",
+      "catalogName": "سينالاكس اقراص س ج",
+      "title": "Senna Lax  30 Tab",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "da362d21f888e60c5fcc3f6ca71d23fda83c0761ff713b7eea2f5e83fb906a1f"
+    },
     "2617": {
       "catalogName": "سينترافيتا اوميجا",
       "englishName": "Centravita Omega",
@@ -21474,6 +22076,20 @@
       "attribution": "Lotus Pharmacies",
       "sha256": "b99b48db0cc57d9450985d13eab84fbd6351ffb05194235a40ca9952060a5158"
     },
+    "2649": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/2649.webp",
+      "source": "www.lotusonline.com",
+      "sourcePage": "https://www.lotusonline.com/products/sharkilage-30-capsule",
+      "originalImageUrl": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/f6/f68504faf7fb81b9fa158715bfb786aee4be90fa5ebaaf66235fdee6c717d8c5.jpg",
+      "catalogName": "شاركيﻼج كبسول عادى",
+      "title": "Sharkilage Joint Support Supplement",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "38d07a7aed22217df715d7cb67e77ce44f8c99a7b8289fa5e819dd174fdbadec"
+    },
     "2651": {
       "catalogName": "جل_ شان60مل",
       "englishName": "Shaan Soothing",
@@ -21578,6 +22194,20 @@
       "sha256": "9d8607a9a4ffd5f8235a65ac64f87e65e9d9360fcfe6c75c237d55d58d9e2566",
       "manualVisualInspected": true,
       "matchReason": "product_pack_visually_checked_against_catalog_and_source_listing"
+    },
+    "2663": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/2663.webp",
+      "source": "azzampharmacy.com",
+      "sourcePage": "https://azzampharmacy.com/products/sugarlo-plus-50-mg-850-mg-30-tab-16074",
+      "originalImageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/381229.webp?v=1786646374",
+      "catalogName": "شوجارلو بلس50/850",
+      "title": "Sugarlo  Plus  50 Mg / 850 Mg  30 Tab",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "64b276c29f5e6905b04d167231d03c0bca869a71d2a4138dec889318074f0a83"
     },
     "2668": {
       "catalogName": "شوما كريم",
@@ -22454,6 +23084,20 @@
       "manualVisualInspected": true,
       "matchReason": "product_pack_visually_checked_against_catalog_and_source_listing"
     },
+    "2752": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/2752.webp",
+      "source": "www.lotusonline.com",
+      "sourcePage": "https://www.lotusonline.com/products/fangrare-antibacterial-antifungal-cleansing-shower-gel",
+      "originalImageUrl": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/48/48acfeb260b442845775436865a6b59c99d6d3af8c35582d29ce0b64ca4ac4ad.jpg",
+      "catalogName": "فانج رير شاور جل",
+      "title": "Fangrare Antibacterial & Antifungal Cleansing Shower Gel",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "a2786dca0dd7422faf4808aa95fd3814da81a862a1834d2e6a5b80c4b6b11133"
+    },
     "2753": {
       "catalogName": "فانفيلدا50/1000",
       "englishName": "Vanvilda",
@@ -23310,6 +23954,20 @@
       "attribution": "DwaPrices",
       "sha256": "08b2b67aac5b21609411d2f890c1f556b73a05e29a939dbb72159fbe1ea38d8a",
       "matchReason": "catalog_name_and_pack_details_checked_against_retailer_listing_and_image_ocr"
+    },
+    "2834": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/2834.webp",
+      "source": "azzampharmacy.com",
+      "sourcePage": "https://azzampharmacy.com/products/ventocough-without-sugar-syrup-125-ml-%D8%A8%D8%AF%D9%88%D9%86-%D8%B3%D9%83%D8%B1-11380",
+      "originalImageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/313683.webp?v=1786648518",
+      "catalogName": "فنتوكف شراب خالى السكر",
+      "title": "Ventocough  (Without Sugar)  Syrup  125 Ml بدون سكر",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "83b9d9bc5ecaab522f397e4b29cf5bcaf1a48e31dfbbdbbc23bbea1d84ea9365"
     },
     "2835": {
       "catalogName": "فنتولين بخاخ",
@@ -24567,6 +25225,20 @@
       "sha256": "df1c6fed5a33ff2de81fe923773bf15f7e437a9e7288131af179cba45ddf1e82",
       "provenance": "Image downloaded and matched by image discovery bot; commercial reuse license unverified"
     },
+    "2960": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/2960.webp",
+      "source": "www.lotusonline.com",
+      "sourcePage": "https://www.lotusonline.com/products/physiomer-sterile-hypertonic-decongestant-nasal-spray-for-adults-children-2-years-preservatives-free",
+      "originalImageUrl": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/7f/7f6df7c06c03bba4902ec79cdb751c6cd323e08658635541e8c499ceb8504cd6.jpg",
+      "catalogName": "فيزومير هايبر تونيك",
+      "title": "Physiomer Sterile Hypertonic Decongestant Nasal Spray for Adults & Children (2+ Years) - preservatives free",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "0735d40044d2098cdb1d37b5bc2d92096d91f65195eec5001cedee938815f658"
+    },
     "2963": {
       "catalogName": "فيسرا شراب",
       "englishName": "Viscera",
@@ -25153,6 +25825,20 @@
       "manualVisualInspected": true,
       "matchReason": "product_pack_visually_checked_against_catalog_and_source_listing"
     },
+    "3014": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/3014.webp",
+      "source": "azzampharmacy.com",
+      "sourcePage": "https://azzampharmacy.com/products/fusi-zon-15-gm-cream-2392",
+      "originalImageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/41949.webp?v=1786646844",
+      "catalogName": "فيوسى زون كريم15جم صغير",
+      "title": "Fusi - Zon  15 Gm  Cream",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "5f22c73078bbcf27914b2369fd132b44d3f8bf2f4406e1196e36e5e047e636fb"
+    },
     "3018": {
       "catalogName": "فيوسى مرهم",
       "englishName": "Fiosy Ointment",
@@ -25242,6 +25928,20 @@
       "license": "retailer image; rights not independently verified",
       "note": "Visual packaging matched to catalog SKU; external image link, live PWA rendering unverified."
     },
+    "3025": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/3025.webp",
+      "source": "azzampharmacy.com",
+      "sourcePage": "https://azzampharmacy.com/products/fucidin-2-20-gm-oint-181278-10418",
+      "originalImageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/300826.webp?v=1786660733",
+      "catalogName": "فيوسيدين مرهم وسط20مجم",
+      "title": "Fucidin  2%  20 Gm  Oint ( 181278 ) #",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "e113414d2485af37e752be5208d5f4a7a298f3dd7ec2ab0548c946211651fe98"
+    },
     "3026": {
       "catalogName": "فيوسيدين مرهم15جم",
       "englishName": "Fucidin",
@@ -25257,6 +25957,20 @@
       "attribution": "www.myaster.com",
       "license": "third-party source image; reuse rights unconfirmed",
       "note": "Image inspected for product label/strength/form and size; source may be foreign-market packaging, remains unverified preview."
+    },
+    "3027": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/3027.webp",
+      "source": "www.lotusonline.com",
+      "sourcePage": "https://www.lotusonline.com/products/viocyst-30-f-c-tab",
+      "originalImageUrl": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/bc/bc02a65c9b30d4519d2f6e976d50a0d8e8ff272aefc811884bf1cf53aca6183a.jpg",
+      "catalogName": "فيوسيست30 قرص",
+      "title": "Viocyst 550mg Myo-inositol & 13.8mg D-Chiro Inositol Supplement with Folic Acid for PCOS Treatment",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "8cf1f47345aab67b1e0df17e1745672112bb81d38a3c2a6f8f913c7d6eaf6c1b"
     },
     "3029": {
       "catalogName": "فيوسيكورت كريم15جم صغير",
@@ -25640,6 +26354,20 @@
       "sha256": "8aac959cf2e129ab6e06b8450ace3bb2cb4689218b7c1a6c89069a813be90f41",
       "matchReason": "catalog_name_and_pack_details_checked_against_retailer_listing_and_image_ocr"
     },
+    "3059": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/3059.webp",
+      "source": "www.lotusonline.com",
+      "sourcePage": "https://www.lotusonline.com/products/kativarox-50mg-brivaracetam",
+      "originalImageUrl": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/ef/efbd1789bb1ed9d4e49f47a1e5698c8cf98bfb9e5d74d6dc8b8b7a62205aa3f0.jpg",
+      "catalogName": "كاتيفاروكس50 مل اقراص",
+      "title": "Kativarox 50mg Brivaracetam",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "c490e2cb88946d8c14b93fde2c8a2ce522a0e955190e82d4d3953a8b719501cf"
+    },
     "3060": {
       "catalogName": "كاربابكس200سى ار",
       "englishName": "Carbapex",
@@ -25872,6 +26600,34 @@
       "manualVisualInspected": true,
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Lotus Pharmacies"
+    },
+    "3076": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/3076.webp",
+      "source": "azzampharmacy.com",
+      "sourcePage": "https://azzampharmacy.com/products/carfalone-25-mg-20-tab-13162",
+      "originalImageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/340996.webp?v=1786647530",
+      "catalogName": "كارفالون25مجم اقراص",
+      "title": "Carfalone  25 Mg  20 Tab",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "0be93494795d3a0d10133540e87d39c94dd3efa31994ad8323a416ba0f8ea62b"
+    },
+    "3077": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/3077.webp",
+      "source": "azzampharmacy.com",
+      "sourcePage": "https://azzampharmacy.com/products/carfalone-50-mg-20-tab-13300",
+      "originalImageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/343703.webp?v=1786649049",
+      "catalogName": "كارفالون50مجم",
+      "title": "Carfalone  50 Mg  20 Tab",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "e04433dd74d96491512509e43267936c7b848b96e626af27a4336f8921ef77ee"
     },
     "3078": {
       "catalogName": "كارفيد25 مجم",
@@ -26586,6 +27342,20 @@
       "attribution": "Azzam Pharmacy",
       "sha256": "a860353b4c13d32994b4774c0755977132f514379e3a1fc4474b3468d8346253"
     },
+    "3144": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/3144.webp",
+      "source": "azzampharmacy.com",
+      "sourcePage": "https://azzampharmacy.com/products/candicure-1-30-gm-cream-10340",
+      "originalImageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/300214.webp?v=1786656808",
+      "catalogName": "كاندى كيور كريم عادى",
+      "title": "Candicure  1%  30 Gm  Cream",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "83c7e3d20ea9b84161125bf0822a6b76d2df862ff13d5fe00f6d38f5502a67cf"
+    },
     "3146": {
       "catalogName": "كانديستان كريم جلد",
       "englishName": "Candistan",
@@ -26748,6 +27518,20 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Lotus Pharmacies",
       "sha256": "0847b5916f0cc93e32ce6fc7013f31d44466dc360dcd4216db90a491b3e5e96b"
+    },
+    "3162": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/3162.webp",
+      "source": "azzampharmacy.com",
+      "sourcePage": "https://azzampharmacy.com/products/cryoverd-50-gm-massage-emulgel-20752",
+      "originalImageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/430949.webp?v=1786646366",
+      "catalogName": "كرايوفيرد جيل50مل",
+      "title": "Cryoverd  50 Gm  Massage Emulgel",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "f663134de210f2bd2de4e67a16e029aec6607518255638ee1ee07bd7f671516a"
     },
     "3163": {
       "catalogName": "كروماجرين30 كبسوله س ج",
@@ -27788,6 +28572,20 @@
       "manualVisualInspected": true,
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Lotus Pharmacies"
+    },
+    "3272": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/3272.webp",
+      "source": "www.lotusonline.com",
+      "sourcePage": "https://www.lotusonline.com/products/coxritor-60mg-etoricoxib-analgesic-anti-inflammatory",
+      "originalImageUrl": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/20/201934911782ae04ba5af925b8a98760da2526d95c0b9c912d2ec65e315c3fc8.jpg",
+      "catalogName": "كوكسريتور60 مل",
+      "title": "Coxritor 60mg Etoricoxib Analgesic & Anti-Inflammatory",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "5e8de452186d0ec0e9bef44fdfc85caabc40c11424960ae5a33ea550f1b0d6d5"
     },
     "3273": {
       "catalogName": "كوكسوريزت90 مجم",
@@ -30190,6 +30988,20 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Dr. Magdy El-Haddad Pharmacies"
     },
+    "3489": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/3489.webp",
+      "source": "azzampharmacy.com",
+      "sourcePage": "https://azzampharmacy.com/products/loprecough-syrup-100-ml-13734",
+      "originalImageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/350251.webp?v=1786647425",
+      "catalogName": "لوبريكف شراب",
+      "title": "Loprecough  Syrup  100 Ml",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "2ab7cc19ec14cc48d4c03ce1863af2767c5a220e6452b482a45b2fb03e340c14"
+    },
     "3491": {
       "catalogName": "لوتوفولون امبول",
       "englishName": "Lotofolon Ampoules",
@@ -31424,6 +32236,20 @@
       "sha256": "0af96bc83d553317d1ebe9294070bfa3537b6ba7820920f1dc109f667b93853b",
       "provenance": "Image downloaded and matched by image discovery bot; commercial reuse license unverified"
     },
+    "3598": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/3598.webp",
+      "source": "alfouadpharmacies.com",
+      "sourcePage": "https://alfouadpharmacies.com/products/limitless-turmeric-500-mg-60-cap",
+      "originalImageUrl": "https://cdn.shopify.com/s/files/1/0935/9550/0847/files/Limitless-Turmeric-500-mg-60-Cap.webp?v=1754298031",
+      "catalogName": "ليمتليس تورميرك500 مل",
+      "title": "limitless turmeric 500 mg 60 cap",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "ed5146aa73b8fc5378c6ae7725b1456cb800eae11248cb0306ba2fb055c6dd9a"
+    },
     "3599": {
       "catalogName": "ليمتليس جوينت افويلس30 قرص",
       "englishName": "Limitless Naturals Joint Afoils 30 Tablets",
@@ -31806,6 +32632,20 @@
       "attribution": "Azzam Pharmacy",
       "note": "External candidate preview; image availability and visual package not independently verified."
     },
+    "3633": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/3633.webp",
+      "source": "azzampharmacy.com",
+      "sourcePage": "https://azzampharmacy.com/products/nono-water-syrup-120-ml-3096",
+      "originalImageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/54832.webp?v=1786650928",
+      "catalogName": "ماء نونو شراب",
+      "title": "Nono  Water  Syrup  120 Ml",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "b9f6ac16e00bb884eba4f8a0241fc7f040b595d9067bed48437f4a69abac092c"
+    },
     "3638": {
       "catalogName": "ماج وايتس30 قرص",
       "englishName": "Mag Whites 30 Tablets",
@@ -32025,6 +32865,20 @@
       "sha256": "3bb85fe253240b19bfad3178dda1bbcd40cc68dbf110dd5b7252d50c9368c2ac",
       "manualVisualInspected": true,
       "matchReason": "product_pack_visually_checked_against_catalog_and_source_listing"
+    },
+    "3659": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/3659.webp",
+      "source": "azzampharmacy.com",
+      "sourcePage": "https://azzampharmacy.com/products/nebulizer-mask-%D9%85%D8%A7%D8%B3%D9%83-%D9%86%D9%8A%D8%A8%D9%88%D9%84%D9%8A%D8%B2%D8%B1-%D9%83%D8%A8%D8%A7%D8%B1-7924",
+      "originalImageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/215917.webp?v=1786647362",
+      "catalogName": "ماسك نيبولايزر كبار",
+      "title": "Nebulizer Mask  ماسك نيبوليزر كبار",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "e6e83af6ff10e3893cebbb019b9535b657751aaa3bf2534196d761a848206018"
     },
     "3663": {
       "catalogName": "ماغنيسيوم بلس اقراص",
@@ -32494,6 +33348,20 @@
       "manualVisualInspected": true,
       "matchReason": "product_pack_visually_checked_against_catalog_and_source_listing"
     },
+    "3704": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/3704.webp",
+      "source": "azzampharmacy.com",
+      "sourcePage": "https://azzampharmacy.com/products/mdicorval-100-6-mcg-dose-inhaler-120-doses-22562",
+      "originalImageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/604632.webp?v=1786655350",
+      "catalogName": "مديكورفال100مجم بخاخه",
+      "title": "Mdicorval  100 / 6 Mcg / Dose  Inhaler  120 Doses",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "a81f43d48451095abc6c5d878fabd8f602ca93b26fcc5627b4bade2257fabc7b"
+    },
     "3706": {
       "catalogName": "مكستارد100 س ج",
       "englishName": "Mixtard 100",
@@ -32787,6 +33655,34 @@
       "matchReason": "manual_catalog_and_retailer_title_comparison",
       "attribution": "Azzam Pharmacy",
       "note": "External candidate preview; image availability and visual package not independently verified."
+    },
+    "3736": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/3736.webp",
+      "source": "azzampharmacy.com",
+      "sourcePage": "https://azzampharmacy.com/products/movelex-advance-30-cap-26742",
+      "originalImageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/609958.webp?v=1786649293",
+      "catalogName": "موفليكس ادفانس كبسول",
+      "title": "Movelex  Advance  30 Cap",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "caec656d8204448286ee988d17f4b05f9e361bcf9146f10a4ac4be142bb9de93"
+    },
+    "3737": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/3737.webp",
+      "source": "azzampharmacy.com",
+      "sourcePage": "https://azzampharmacy.com/products/movelex-ultra-30-cap-32232",
+      "originalImageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/614685.webp?v=1786649843",
+      "catalogName": "موفليكس الترا كبسول",
+      "title": "Movelex  Ultra  30 Cap",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "e026c582a95c619f4a69954776bcdf64589eeab6bd0a89c62e628aee4cd5a9fe"
     },
     "3740": {
       "catalogName": "موفليكس سبراى",
@@ -35383,6 +36279,20 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "AlFouad Pharmacies"
     },
+    "3986": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/3986.webp",
+      "source": "sekemonline.com",
+      "sourcePage": "https://sekemonline.com/ar/products/nervapatex",
+      "originalImageUrl": "https://cdn.shopify.com/s/files/1/0574/0445/7033/files/WhatsAppImage2026-09-30at11.57.01AM.jpg?v=1790758654",
+      "catalogName": "نيرفاباتكس اقراص",
+      "title": "nervapatex",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "948509dd3124806e7434239191de4658b4a6ef13bbcefbb6c0a160bf3eceb3cd"
+    },
     "3987": {
       "catalogName": "نيرفاكتوري 30 كبسول",
       "englishName": "Nerfactory 30 Capsules",
@@ -35839,6 +36749,20 @@
       "attribution": "Re3aya Pharmacy",
       "license": "external retailer image; rights not independently verified",
       "note": "Real retailer image URL; packaging pixels and remote availability not independently verified"
+    },
+    "4022": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/4022.webp",
+      "source": "azzampharmacy.com",
+      "sourcePage": "https://azzampharmacy.com/products/nail-15-lotion-15-ml-8936",
+      "originalImageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/263832.webp?v=1786645308",
+      "catalogName": "نيل لوشن15مجم",
+      "title": "Nail-15  Lotion  15 Ml",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "dc54e1134411a1f21be5edb102c2efc17f975ef77460a20339a427593a334bd5"
     },
     "4030": {
       "url": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/607184-1760869709.webp?v=1786647681",
@@ -36322,6 +37246,20 @@
       "sha256": "c13c8e8f4f19b73c05c26d0a2ff31d9ccd8e5827854a205df0ea244792ef6828",
       "matchReason": "catalog_name_and_pack_details_checked_against_retailer_listing_and_image_ocr"
     },
+    "4083": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/4083.webp",
+      "source": "azzampharmacy.com",
+      "sourcePage": "https://azzampharmacy.com/products/hebitaxime-1-gm-1-vial-9494",
+      "originalImageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/279949.webp?v=1786652967",
+      "catalogName": "هيباتاكسيم1 جم امبول س ج",
+      "title": "Hebitaxime  1 Gm  1 Vial",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "cfe98736314c57ca9ccaa92b2390a4d4c20c065540f2a5f17cbda767eebf801c"
+    },
     "4085": {
       "catalogName": "هيبارين5000امبول",
       "englishName": "",
@@ -36729,6 +37667,20 @@
       "attribution": "Azzam Pharmacy",
       "note": "External candidate preview; image availability and visual package not independently verified."
     },
+    "4120": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/4120.webp",
+      "source": "www.lotusonline.com",
+      "sourcePage": "https://www.lotusonline.com/products/hydrocort-0-1-hydrocortisone-butyrate-topical-cream-20-gr",
+      "originalImageUrl": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/51/51d176cfdc5e8d770fce5101cbf9420e112f0b3013d9580c1e9833c76914a605.jpg",
+      "catalogName": "هيدروكورت20مجم كريم",
+      "title": "Hydrocort 0.1% Hydrocortisone Butyrate Topical Cream 20 gr",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "90f94bd2e3a1eaa2182a64fcf61243c62f9e227d2c69b0d7aa955676a4e78350"
+    },
     "4122": {
       "catalogName": "هيدروكورتيزون1%مرهم",
       "title": "هيدروكورتيزون 1 جم/100 جم مرهم BP 2014",
@@ -36786,6 +37738,20 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Lotus Pharmacies",
       "sha256": "27c7f8a4d22adc656432982475b3f66d3084430650859da2296623961936f13e"
+    },
+    "4129": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/4129.webp",
+      "source": "azzampharmacy.com",
+      "sourcePage": "https://azzampharmacy.com/products/herbamix-anti-dandruff-shampoo-200-ml-14216",
+      "originalImageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/361238.webp?v=1786660189",
+      "catalogName": "هيرباميكس شامبو200مجم",
+      "title": "Herbamix  Anti-Dandruff Shampoo  200 Ml",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "3475005ad5ccfc01ce82488d0017f01a8baf93470fe1f712cdd7245b33c7f3cc"
     },
     "4130": {
       "catalogName": "هيربانا كبسول",
@@ -37595,6 +38561,20 @@
       "attribution": "Azzam Pharmacy",
       "note": "External candidate preview; image availability and visual package not independently verified."
     },
+    "4215": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/4215.webp",
+      "source": "www.lotusonline.com",
+      "sourcePage": "https://www.lotusonline.com/ar/products/unifungi-150mg-2-capsule",
+      "originalImageUrl": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/8f/8f1c35cadc445502ba03b3ed5f5f58e741e22666e34ce3d0098e43ef0045ebf3.jpg",
+      "catalogName": "يونيفنجاي150 مج 2 كبسولة",
+      "title": "Unifungi 150mg فلوكونازول دواء مضاد للفطريات",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "f37aa437548d77662512a793308170e840f1a15b3ff995ab38c4c9371d532812"
+    },
     "4216": {
       "catalogName": "يونيك ان سبراى للتاخير",
       "englishName": "Ionik N Spray Delay",
@@ -37973,6 +38953,20 @@
       "attribution": "Re3aya Pharmacy",
       "sha256": "9db2a993bb090b041ee0ea72f04b185a9b06e698e0f73e6813c66db07defddbe"
     },
+    "230028": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/230028.webp",
+      "source": "azzampharmacy.com",
+      "sourcePage": "https://azzampharmacy.com/products/azathioprine-mylan-50-mg-100-tab-12384",
+      "originalImageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/322103.webp?v=1786660454",
+      "catalogName": "ازاثيوبرين 50مل ميلان",
+      "title": "Azathioprine  Mylan  50 Mg  100 Tab",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "925b8691579e2212c9f3c4fae80c4542852e17b5fb116f35833b633c752e3d46"
+    },
     "230030": {
       "catalogName": "ازادرم كريم",
       "englishName": "Azadram Cream",
@@ -38119,6 +39113,20 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Lotus Pharmacies",
       "sha256": "c7bf737e8a7667b54ac503caf6dfaa306e9268757d530f36ff86ee50f854d84f"
+    },
+    "230045": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/230045.webp",
+      "source": "www.lotusonline.com",
+      "sourcePage": "https://www.lotusonline.com/products/acnescave-gel-30gm",
+      "originalImageUrl": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/fe/fe262035b07d0f4e1a0410db0a953a72c286d031f05e36ec09137dbef31f9ef4.jpg",
+      "catalogName": "اكنيسكاف جل",
+      "title": "Acnescave 0.1% Adapalene Topical Treatment Gel",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "bfb9d0ff427f04578c9d5589988b26cbf36e05f7c2f2956ef9dc6c4620ac5668"
     },
     "230046": {
       "catalogName": "الابوم 20قرص",
@@ -38276,6 +39284,34 @@
       "attribution": "Dawaa Gate",
       "sha256": "3213d5a58547f4aca9961d9f94b7a1bc7b5afbde65a3d7d09dbac4d4cb4775a3",
       "matchReason": "catalog_name_and_pack_details_checked_against_retailer_listing_and_image_ocr"
+    },
+    "230061": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/230061.webp",
+      "source": "www.lotusonline.com",
+      "sourcePage": "https://www.lotusonline.com/products/enterogermina-4-billion-5ml-bacillus-clausii-oral-suspension-vials",
+      "originalImageUrl": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/30/30dbe5e420f6b557feec00bc7e9e36f998449a2c00301a221858c654e563ecda.jpg",
+      "catalogName": "انتروجرمينا 4بليون 10امبول",
+      "title": "Enterogermina 4 Billion/5ml Bacillus Clausii Oral Suspension Vials",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "afdbe66916a9752fa5c367088f193ab3591badbe5887f246a6123c65f85aa4f3"
+    },
+    "230062": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/230062.webp",
+      "source": "azzampharmacy.com",
+      "sourcePage": "https://azzampharmacy.com/products/entresto-200-mg-56-tab-13816",
+      "originalImageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/355015.webp?v=1786649883",
+      "catalogName": "انتريسو 200مجم س ج",
+      "title": "Entresto  200 Mg  56 Tab",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "0bd08922ca766245f7700fa3bb1e1805b1e6ce0c1b2a3754abbe28d9ce83a731"
     },
     "230063": {
       "catalogName": "انتودين 20مجم اقراص",
@@ -38526,6 +39562,20 @@
       "manualVisualInspected": true,
       "matchReason": "product_pack_visually_checked_against_catalog_and_source_listing"
     },
+    "230088": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/230088.webp",
+      "source": "www.lotusonline.com",
+      "sourcePage": "https://www.lotusonline.com/products/egy-dronate-2-tablet",
+      "originalImageUrl": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/b3/b356ea2eefe8036f84be2799472c653259e0e26de3e70e2ea16f4d01c3eb5207.jpg",
+      "catalogName": "ايجيدرونيت اقراص",
+      "title": "Egy Dronate with Alendronate Sodium & Vitamin D3",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "6508062f9ef5bf3bbf345b21c041a3de4588110fe8169d1c096e0f82df5f978f"
+    },
     "230089": {
       "catalogName": "ايراستابكس بلس 20 /12.5",
       "title": "Erastapex Plus 20mg Olmesartan Medoxomil & 12.5mg Hydrochlorothiazide",
@@ -38729,6 +39779,20 @@
       "manualVisualInspected": true,
       "matchReason": "product_pack_visually_checked_against_catalog_and_source_listing"
     },
+    "230116": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/230116.webp",
+      "source": "azzampharmacy.com",
+      "sourcePage": "https://azzampharmacy.com/products/brintellix-10-mg-14-tab-13004",
+      "originalImageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/336992.webp?v=1786660360",
+      "catalogName": "برينتليكس 10مجم",
+      "title": "Brintellix  10 Mg  14 Tab",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "142d357c0a3ef95f1ad4a393bf46747e022e3dce741c850313db208c6f73d282"
+    },
     "230118": {
       "catalogName": "بلميكورت 0.25مجم بالعلبة س ج",
       "title": "Pulmicort Sterile 0.25mg/ml Budesonide Nebulizing Suspension",
@@ -38858,6 +39922,20 @@
       "manualVisualInspected": true,
       "matchReason": "product_pack_visually_checked_against_catalog_and_source_listing"
     },
+    "230134": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/230134.webp",
+      "source": "www.lotusonline.com",
+      "sourcePage": "https://www.lotusonline.com/products/polytar-shampoo-125ml",
+      "originalImageUrl": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/6e/6ecccdd609b7e271889da99ea8bef5b088a4a7005f445df1e6faa8faa4601aef.jpg",
+      "catalogName": "بولى تار شامبو",
+      "title": "Polytar Anti-Dandruff Hair Shampoo",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "cae35bf9727e994a46bb0fbc2a7eb59d0d4b0ff25a7d8b9efca5f0abeefe4485"
+    },
     "230135": {
       "catalogName": "بوليمارت جل 50جم",
       "title": "Polymart  50 Gm  Gel",
@@ -38886,6 +39964,20 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Re3aya Pharmacy",
       "sha256": "fd91c2dc27cb63f1a70ad6e01bbe264a2bce014b23c7a4211c3ec674981f1d29"
+    },
+    "230140": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/230140.webp",
+      "source": "azzampharmacy.com",
+      "sourcePage": "https://azzampharmacy.com/products/bepanthen-5-30-gm-cream-bayer-4746",
+      "originalImageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/92802.webp?v=1786645642",
+      "catalogName": "بيبانتين كريم",
+      "title": "Bepanthen  5%  30 Gm  Cream (Bayer)",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "17c11a675a5ca2d6b3dd623c2352eae557517ab3f53aef7a485066d257e3af5f"
     },
     "230141": {
       "catalogName": "بيبتون خالى السكر شراب باكو10",
@@ -39124,6 +40216,20 @@
       "attribution": "Lotus Pharmacies",
       "sha256": "07089f8622906332fb62d4a6c168f5c08a156c9f41fce4328e604a94f92568a6"
     },
+    "230168": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/230168.webp",
+      "source": "azzampharmacy.com",
+      "sourcePage": "https://azzampharmacy.com/products/torsamolex-10-mg-20-tab-8638",
+      "originalImageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/251091.webp?v=1786649286",
+      "catalogName": "تورسا مو لكس 10مجم",
+      "title": "Torsamolex  10 Mg  20 Tab",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "b54f165204485a88c3a22a13b12097c0bbd54c9d04dd4afedf5240462fbec5f7"
+    },
     "230169": {
       "catalogName": "تورسيرتك 20مجم",
       "title": "Torseretic 20mg Torsemide",
@@ -39167,6 +40273,20 @@
       "matchReason": "ocr",
       "sha256": "ae469d9309d56d6e79507225c311f2205d5b5d56ce7b84275b6cbb3914b9eb22",
       "provenance": "Image downloaded and matched by image discovery bot; commercial reuse license unverified"
+    },
+    "230173": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/230173.webp",
+      "source": "www.lotusonline.com",
+      "sourcePage": "https://www.lotusonline.com/products/terminal-densifying-anti-hair-loss-lotion-spray-110-ml",
+      "originalImageUrl": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/54/54a910f110f421a96260da0bad2e601d9f5ea50a11bc03ad79cad020644c0ffd.jpg",
+      "catalogName": "تيرمينال اسبراى لتساقط الشعر",
+      "title": "Terminal Densifying & Anti-Hair Loss Lotion Spray 110 ml",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "18461bea67ca5c2067940330ce8c63e1f3999a3d002a73fc15449cedf8d0624a"
     },
     "230176": {
       "catalogName": "ثيوتاسيد 300مركب",
@@ -39269,6 +40389,20 @@
       "manualVisualInspected": true,
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Azzam Pharmacy"
+    },
+    "230185": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/230185.webp",
+      "source": "www.lotusonline.com",
+      "sourcePage": "https://www.lotusonline.com/products/goutyless-30-tablet",
+      "originalImageUrl": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/43/43163c77a2d68e7b86f12dfc986f111bda1bc273ea546cddc558076b9a7b9f4b.jpg",
+      "catalogName": "جاوتليس قرص",
+      "title": "Goutyless 500mg Probenecid & 0.5mg Colchicine Anti-Gout Agent",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "43a1f23ae96dae8079c3fa0b3372af3cc627137a4f4703d99efceba6d014859b"
     },
     "230187": {
       "catalogName": "جلاسبيلونج 60مج اقراص",
@@ -40032,6 +41166,20 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Dr. Magdy El-Haddad Pharmacies"
     },
+    "230262": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/230262.webp",
+      "source": "azzampharmacy.com",
+      "sourcePage": "https://azzampharmacy.com/products/sanso-omega-syrup-200-ml-39455",
+      "originalImageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/616739.webp?v=1786647859",
+      "catalogName": "سانسواوميجا شراب",
+      "title": "Sanso Omega  Syrup  200 Ml",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "195f02c20318318507f6cae04c558a915df502a09fbd37e310c9a4e8ed423891"
+    },
     "230263": {
       "catalogName": "سبازموبيرالجين اقراص 30ق",
       "englishName": "Sbazmobiralgin Tablets 30 Tablets",
@@ -40377,6 +41525,20 @@
       "manualVisualInspected": true,
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "AlFouad Pharmacies"
+    },
+    "230292": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/230292.webp",
+      "source": "www.lotusonline.com",
+      "sourcePage": "https://www.lotusonline.com/products/stopspasm-20-tablet",
+      "originalImageUrl": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/95/95bfe7543f3ac15b1264559c01690f048eb28a95aab09a07326bd0508b3bb795.jpg",
+      "catalogName": "ستوب سبازم اقراص",
+      "title": "Stopspasm Phloroglucinol & Trimethyl Phloroglucinol Antispasmodic Medication",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "d0c96e9b9e7eee4c9c34e0ba9511d9d502f34814738839e73dd36e18f2c3d357"
     },
     "230293": {
       "catalogName": "ستوبادول وومان 20قرص",
@@ -41015,6 +42177,34 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Lotus Pharmacies"
     },
+    "230349": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/230349.webp",
+      "source": "azzampharmacy.com",
+      "sourcePage": "https://azzampharmacy.com/products/cefepime-500-mg-1-vial-7100",
+      "originalImageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/179658.webp?v=1786661151",
+      "catalogName": "سيفيبيم500مجم امبول",
+      "title": "Cefepime  500 Mg  1 Vial",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "e23307fb66a8db2aefb53050e43cff5c91e9812b69cae7253a43a71c0dbd44ac"
+    },
+    "230352": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/230352.webp",
+      "source": "azzampharmacy.com",
+      "sourcePage": "https://azzampharmacy.com/products/cellcept-500-mg-50-tab-1442",
+      "originalImageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/10221.webp?v=1786661819",
+      "catalogName": "سيليسبت 500مجم س ج",
+      "title": "Cellcept  500 Mg  50 Tab",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "eefaf1594dfaa4de151b703cf6687b51ff3274f924288be7241867f033cf54cc"
+    },
     "230353": {
       "catalogName": "سيلينجينا شامبو 120مل",
       "title": "Selengena  Shampoo  120 Ml",
@@ -41043,6 +42233,20 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Lotus Pharmacies",
       "sha256": "2bf5412d2462f1c986ff4bd756cf8cc0b5bb1703f0a2d227c54497804c8c6c0a"
+    },
+    "230355": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/230355.webp",
+      "source": "azzampharmacy.com",
+      "sourcePage": "https://azzampharmacy.com/products/cymbatex-60-mg-30-cap-9678",
+      "originalImageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/284774.webp?v=1786645954",
+      "catalogName": "سيمباتيكس 60مجم",
+      "title": "Cymbatex  60 Mg  30 Cap",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "1f8e3ed4f057ae931bb5ec6b4f9e450ff77d7bb1896a474dbe68481f6cc17821"
     },
     "230356": {
       "catalogName": "سينترافيتا زيماترول 20قرص",
@@ -41202,6 +42406,34 @@
       "sha256": "91c0bf0a4a2650c9c12b39fd5b1a7d4e6739cd66b6480968672dd95c0edb8057",
       "manualVisualInspected": true,
       "matchReason": "product_pack_visually_checked_against_catalog_and_source_listing"
+    },
+    "230371": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/230371.webp",
+      "source": "www.lotusonline.com",
+      "sourcePage": "https://www.lotusonline.com/ar/products/valpoeast-sr-500mg-sodium-valporate",
+      "originalImageUrl": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/44/449c19d8700e38335ef81d320ac7258b9b27ccf258c3201c159246aced9fadfd.jpg",
+      "catalogName": "فالبويست اس ار",
+      "title": "Valpoeast SR 500mg فالبورات الصوديوم",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "15d3dcd4132de40b9ccbab07c7e37fb362c552ecef0b90d6d2b1ff8053f86826"
+    },
+    "230372": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/230372.webp",
+      "source": "www.lotusonline.com",
+      "sourcePage": "https://www.lotusonline.com/products/valsatens-plus-160-12-5mg-30-film-coated-tablet",
+      "originalImageUrl": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/d8/d871bbca591113aaab2f0c158db3eab646b110504a56fed5e903bda7e7b9d69b.jpg",
+      "catalogName": "فالساتينس بلس 160/12.5",
+      "title": "Valsatens Plus 160mg Valsartan & 12.5mg Hydrochlorothiazide Anti-Hypertensive Medication",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "ac905d773ade761ad5f454e1ee7045163d642b1c6a93c923c9fcca0041adb485"
     },
     "230375": {
       "catalogName": "فلابو 600مجم اقراص",
@@ -41441,6 +42673,20 @@
       "manualVisualInspected": true,
       "matchReason": "product_pack_visually_checked_against_catalog_and_source_listing"
     },
+    "230398": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/230398.webp",
+      "source": "azzampharmacy.com",
+      "sourcePage": "https://azzampharmacy.com/products/fondaclav-1-gm-12-tab-29834",
+      "originalImageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/612529.webp?v=1786646946",
+      "catalogName": "فونداكلاف 1جم",
+      "title": "Fondaclav  1 Gm  12 Tab",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "692faeb56f06101f49c59f49a4cae63143bad86be1d1c4b634fc50e133142990"
+    },
     "230399": {
       "catalogName": "فونوجاستريك 20مج اقراص",
       "englishName": "Fonogastarik 20 mg Tablets",
@@ -41455,6 +42701,20 @@
       "sha256": "87fc806f98e137570c9019f19d8d3cce583459125edb081f91a601f5e9bfdf1e",
       "manualVisualInspected": true,
       "matchReason": "product_pack_visually_checked_against_catalog_and_source_listing"
+    },
+    "230400": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/230400.webp",
+      "source": "azzampharmacy.com",
+      "sourcePage": "https://azzampharmacy.com/products/vibramycin-100-mg-10-cap-312",
+      "originalImageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/1313.webp?v=1786645596",
+      "catalogName": "فيبراميسين كبسول س ج",
+      "title": "Vibramycin  100 Mg  10 Cap",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "bd8b02c16ec6c1206b535883b2dd410447725bc4e45f55dd7918e4aba89ab17f"
     },
     "230401": {
       "catalogName": "فيتاترون كبسول",
@@ -41932,6 +43192,20 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Lotus Pharmacies"
     },
+    "230449": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/230449.webp",
+      "source": "azzampharmacy.com",
+      "sourcePage": "https://azzampharmacy.com/products/controlepsy-100-mg-30-tab-2182",
+      "originalImageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/36631.webp?v=1786653002",
+      "catalogName": "كونتروليبسى 100مل",
+      "title": "Controlepsy  100 Mg  30 Tab",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "60f90bf30c76dc5e6a62bf44dfbabe3d73c7e0a502b02d37ba8ecbc15522c4bf"
+    },
     "230450": {
       "catalogName": "كونفيبان 25مجم",
       "title": "Conviban 25mg Topiramate",
@@ -41974,6 +43248,20 @@
       "sha256": "22b4a90abb2606c2610f518a0a5c41378b31688bc2af8788317adec9122f12e1",
       "manualVisualInspected": true,
       "matchReason": "product_pack_visually_checked_against_catalog_and_source_listing"
+    },
+    "230455": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/230455.webp",
+      "source": "azzampharmacy.com",
+      "sourcePage": "https://azzampharmacy.com/products/quetiazic-xr-400-mg-30-tab-10194",
+      "originalImageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/298260.webp?v=1786655775",
+      "catalogName": "كويتيازيك 400مل اكس ار",
+      "title": "Quetiazic Xr  400 Mg  30 Tab",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "56a7ebc7e1f35674d8460fab8bf51fdd5747b770baa083165641a9c25a88fec1"
     },
     "230456": {
       "catalogName": "كيباكو بلس كريم سعر جديد",
@@ -42604,6 +43892,20 @@
       "manualVisualInspected": true,
       "matchReason": "product_pack_visually_checked_against_catalog_and_source_listing"
     },
+    "230525": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/230525.webp",
+      "source": "azzampharmacy.com",
+      "sourcePage": "https://azzampharmacy.com/products/novactam-1500-mg-1000-500-mg-i-m-i-v-1-vial-12372",
+      "originalImageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/322069.webp?v=1786648324",
+      "catalogName": "نوفاكتااام 1500مجم امبول",
+      "title": "Novactam  1500 Mg (1000 / 500 Mg)  I.m / I.v  1 Vial",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "242ed8ef62b114e9729461ea1c0084e5628d40f925410aa6aebbdf6e1a4e200a"
+    },
     "230529": {
       "catalogName": "نيرفيكسال اقراص",
       "englishName": "Nirfixal Tablets",
@@ -42647,6 +43949,20 @@
       "sha256": "651eb5ea2c883b9296bb8087cdd21355a0904128522fa8513fe3c2fc9937aef8",
       "manualVisualInspected": true,
       "matchReason": "product_pack_visually_checked_against_catalog_and_source_listing"
+    },
+    "230533": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/230533.webp",
+      "source": "www.lotusonline.com",
+      "sourcePage": "https://www.lotusonline.com/products/nutriville-500mg-garcinia-cambogia-slimming-weight-loss-support-supplement-with-green-coffee-raspberry-ketones-chromium",
+      "originalImageUrl": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/a1/a1f331d9a55c7eaafeab6c4378dc26aa711cfa3b7df170258dea82d4fe7b779e.jpg",
+      "catalogName": "نيوترى فيل سليمينج =30قرص",
+      "title": "Nutriville 500mg Garcinia Cambogia Slimming & Weight Loss Support Supplement with Green Coffee, Raspberry Ketones & Chromium",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "1a7bd34ab1646c30f6e126c5f7b0d1d4c895c1223fa989ad025c0f7902a3a488"
     },
     "230534": {
       "catalogName": "نيوترى فيل فيتامين سي 1000مجم 30 قرص",
@@ -42736,6 +44052,20 @@
       "sha256": "faf1538315097a0f7140c563a4b7b9c7837cb4a067ac1c8da2fb65dbdacfbe32",
       "manualVisualInspected": true,
       "matchReason": "product_pack_visually_checked_against_catalog_and_source_listing"
+    },
+    "230543": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/230543.webp",
+      "source": "azzampharmacy.com",
+      "sourcePage": "https://azzampharmacy.com/products/hibiotic-625-mg-16-tab-8132",
+      "originalImageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/222042.webp?v=1786647208",
+      "catalogName": "هاى بيوتك 625مجم",
+      "title": "Hibiotic  625 Mg  16 Tab",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "15ac2cf838dbca6afb1fb293ab22200101acb0b335a2424175a362d729e68823"
     },
     "230545": {
       "catalogName": "هيالو فور سكين كريم 25جم",
@@ -42956,6 +44286,20 @@
       "sha256": "c405331be2e50bb80871dac5c07b306a44fa28c7cb4f9a7000c1345df169bd73",
       "manualVisualInspected": true,
       "matchReason": "product_pack_visually_checked_against_catalog_and_source_listing"
+    },
+    "230564": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/230564.webp",
+      "source": "www.lotusonline.com",
+      "sourcePage": "https://www.lotusonline.com/products/lungocort-0-5mg-2ml-20-inh-amp",
+      "originalImageUrl": "https://lotus-catalog-media-production.fra1.cdn.digitaloceanspaces.com/catalog/bb/bbe0f993fec22c3a9fa49b2e87b03f63ad7146d783630886cf7dc8f3c8765deb.jpg",
+      "catalogName": "لنجوكورت0.5 مجم /2مل 20 امبول",
+      "title": "Lungocort 0.5mg/2ml Budesonide Nebulizer Suspension Ampoules for Inhalation",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "5a571605e01227c35956bae0cef2d7f8a6928d11f0bcd228a37eb29f961ce818"
     }
   },
   "lastManualBatch": {
