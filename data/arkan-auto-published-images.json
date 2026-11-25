@@ -19585,6 +19585,22 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Lotus Pharmacies"
     },
+    "2509": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/2509.webp",
+      "source": "media.zid.store",
+      "sourcePage": "https://khobraamed.sa/products/سيريتايد-500-مكجم-ديسكس-بخاخ-الربو",
+      "originalImageUrl": "https://media.zid.store/8a5f4b81-ebc0-44bd-9005-126976b57582/929fc761-c180-4201-b7b1-d56dd4980c92.jpg",
+      "catalogName": "سيريتيد ديسكس500مجم بخاخ س ج",
+      "englishName": "",
+      "title": "سيريتيد ديسكس500مجم بخاخ س ج",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "matchScore": 1,
+      "matchReason": "ocr",
+      "sha256": "0776ac5369605c6dbe262293683aeeca6b6d575a099162b73df61e97ecabd59b",
+      "provenance": "Image downloaded and matched by image discovery bot; commercial reuse license unverified"
+    },
     "2510": {
       "catalogName": "سيريﻼك أرز ساده125جم ك 40",
       "englishName": "CERELAC Rice Cereal Without Milk 125 g",
@@ -19969,6 +19985,22 @@
       "manualVisualInspected": true,
       "matchReason": "product_pack_visually_checked_against_catalog_and_source_listing"
     },
+    "2549": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/2549.webp",
+      "source": "beseha.com",
+      "sourcePage": "https://beseha.com/product/cica-lab-radiance-cream-50g/",
+      "originalImageUrl": "https://beseha.com/wp-content/uploads/2025/10/سيكا-لاب-كريم-النضارة-Cica-Lab-Radiance-Cream.jpg",
+      "catalogName": "سيكالاب50جم كريم",
+      "englishName": "Cica Lab",
+      "title": "Cica Lab سيكالاب50جم كريم",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "matchScore": 1,
+      "matchReason": "ocr",
+      "sha256": "4b37975eeb1e58d027a331670234ce679b2a44778971fa0050fbf747219ba37f",
+      "provenance": "Image downloaded and matched by image discovery bot; commercial reuse license unverified"
+    },
     "2550": {
       "catalogName": "سيكالاب جيل",
       "title": "Cica Lab Soothing, Hydrating & Rejuvenating Gel for Dry & Irritated Skin - fragrance free, parabens free",
@@ -20185,6 +20217,22 @@
       "sha256": "bf18049f477160709a80bd244508cb34a067f75f997f0c0a8859e6862b6c797b",
       "manualVisualInspected": true,
       "matchReason": "product_pack_visually_checked_against_catalog_and_source_listing"
+    },
+    "2569": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/2569.webp",
+      "source": "www.rosheta.com",
+      "sourcePage": "https://www.rosheta.com/ar/4282/بسيكودال",
+      "originalImageUrl": "https://www.rosheta.com/upload/64d11bf5a01d9464fe6a509e1e8dcaa964acfc22b37e7197b621cd237a7c36ca.jpg",
+      "catalogName": "سيكودال2 مجم",
+      "englishName": "",
+      "title": "سيكودال2 مجم",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "matchScore": 1,
+      "matchReason": "ocr",
+      "sha256": "6e62d07b55d5545679d313c3eaf7f679de8629067119db102985b254230447c6",
+      "provenance": "Image downloaded and matched by image discovery bot; commercial reuse license unverified"
     },
     "2571": {
       "catalogName": "سيكودال4 مجم",
@@ -24156,6 +24204,22 @@
       "matchReason": "manual_catalog_and_retailer_title_comparison",
       "attribution": "Azzam Pharmacy",
       "note": "External candidate preview; image availability and visual package not independently verified."
+    },
+    "2959": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/2959.webp",
+      "source": "files.easy-orders.net",
+      "sourcePage": "https://www.shakshakpharmacy.com/products/physiomer-strong-jet-nasal-spray",
+      "originalImageUrl": "https://files.easy-orders.net/1770731233499914576.webp",
+      "catalogName": "فيزومير سترونج جيت سبراى",
+      "englishName": "",
+      "title": "فيزومير سترونج جيت سبراى",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "matchScore": 1,
+      "matchReason": "ocr",
+      "sha256": "df1c6fed5a33ff2de81fe923773bf15f7e437a9e7288131af179cba45ddf1e82",
+      "provenance": "Image downloaded and matched by image discovery bot; commercial reuse license unverified"
     },
     "2963": {
       "catalogName": "فيسرا شراب",
