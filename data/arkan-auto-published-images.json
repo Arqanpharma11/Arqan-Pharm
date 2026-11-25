@@ -47124,6 +47124,21 @@
       "manualVisualInspected": true,
       "matchReason": "product_pack_visually_checked_against_catalog_and_source_listing"
     },
+    "230462": {
+      "catalogName": "لاكوزاميت 100مجم",
+      "englishName": "Lacosamet 100 mg",
+      "title": "Lacosamet 100 mg 30 film-coated tablets",
+      "url": "https://www.mouradpharmacy.com/web/image/product.product/286149/image_1920?unique=8246fce",
+      "sourcePage": "https://www.mouradpharmacy.com/shop/code-in-gad66323-code-in-mourad67961-lacosamet-100mg-30-tabs-%D9%84%D8%A7%D9%83%D9%88%D8%B2%D8%A7%D9%85%D9%8A%D8%AA-100-%D9%85%D8%AC%D9%85-30-%D9%82%D8%B1%D8%B5-472978",
+      "source": "mouradpharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "mouradpharmacy.com",
+      "note": "External image; reuse rights and live portal rendering not independently verified."
+    },
     "230463": {
       "catalogName": "لاموترين 50مجم س ج",
       "title": "Lamotrine  50 Mg  30 Tab",
@@ -47836,6 +47851,21 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "sha256": "7004231bee6038acedf64122982fe6e247789342d2ee9bf7ddd6f2002c026ab3"
     },
+    "230527": {
+      "catalogName": "نوليفير 30كبسولة",
+      "englishName": "Nolaver 30 capsules",
+      "title": "Nolaver 30 hard gelatin capsules",
+      "url": "https://eparkville.com/cdn/shop/files/Untitled_design_4_3e024fb3-c634-4287-a4b8-b1c8dd68ebe2.png?v=1732453958&width=1080",
+      "sourcePage": "https://eparkville.com/products/nolaver-capsules-30-capsules",
+      "source": "eparkville.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "attribution": "eparkville.com",
+      "note": "External image; reuse rights and live portal rendering not independently verified."
+    },
     "230528": {
       "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/230528.webp",
       "source": "ebrampharmacies.com",
@@ -48264,10 +48294,10 @@
     "date": "2026-11-26",
     "added": 2,
     "ids": [
-      "325",
-      "493"
+      "230462",
+      "230527"
     ],
     "method": "manual visual review of source image and product page"
   },
-  "manualPreviewTotal": 2068
+  "manualPreviewTotal": 2070
 }
