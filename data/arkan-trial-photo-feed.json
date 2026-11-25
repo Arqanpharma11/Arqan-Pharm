@@ -4,9 +4,9 @@
   "approvedForProduction": false,
   "version": 2,
   "ambiguousLinksSkipped": 20,
-  "generatedAt": "2026-11-24T15:51:12.256Z",
+  "generatedAt": "2026-11-25T02:29:53.475Z",
   "catalogTotal": 4783,
-  "trialImages": 945,
+  "trialImages": 946,
   "notice": "UNVERIFIED IMAGES. Not for dispensing or identifying medicine. Never imported into approved pharmacy photo seeds.",
   "items": [
     {
@@ -3401,6 +3401,18 @@
       "source": "Azzam Pharmacy",
       "sourcePage": "https://azzampharmacy.com/products/granitryl-1-mg-1-ml-i-v-6-amp-6166",
       "title": "Granitryl  1 Mg / 1 Ml  I.v.  6 Amp",
+      "status": "trial_unverified",
+      "catalogMatch": "not_visually_verified",
+      "rights": "source_rights_unconfirmed"
+    },
+    {
+      "id": "1561",
+      "name": "جروث فورميﻼ حوامل فانيليا",
+      "category": "مكملات وفيتامينات",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/13/What_fifty_years_have_wrought%3B_a_presentation_in_type_and_picture_of_fifty_years%27_growth_of_the_Sherwin-Williams_company_%28IA_whatfiftyyearsha00sher%29.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "source": "Wikimedia Commons",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:What_fifty_years_have_wrought;_a_presentation_in_type_and_picture_of_fifty_years%27_growth_of_the_Sherwin-Williams_company_(IA_whatfiftyyearsha00sher).pdf",
+      "title": "What fifty years have wrought; a presentation in type and picture of fifty years' growth of the Sherwin-Williams company (IA whatfiftyyearsha00sher).pdf",
       "status": "trial_unverified",
       "catalogMatch": "not_visually_verified",
       "rights": "source_rights_unconfirmed"
