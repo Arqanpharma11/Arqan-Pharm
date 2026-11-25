@@ -1,0 +1,24 @@
+{
+  "targeted": 667,
+  "searched": 667,
+  "search_status": {
+    "review": 258,
+    "not_found": 398,
+    "auto": 11
+  },
+  "new_photo_count": 11,
+  "new_photo_ids": [
+    "117",
+    "370",
+    "752",
+    "3567",
+    "3708",
+    "3934",
+    "4171",
+    "230057",
+    "230167",
+    "230434",
+    "230453"
+  ],
+  "note": "Only accepted photos; not a claim of visual verification or live deployment."
+}

@@ -351,6 +351,22 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Lotus Pharmacies"
     },
+    "117": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/117.webp",
+      "source": "egyptdwa.com",
+      "sourcePage": "https://egyptdwa.com/m/24223",
+      "originalImageUrl": "https://egyptdwa.com/dwa/orastatin-100-000-i-u-ml-oral-susp-30-ml-24223.jpg",
+      "catalogName": "اجارستين نقط",
+      "englishName": "Agarstin Drops",
+      "title": "Agarstin Drops اجارستين نقط",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "matchScore": 1,
+      "matchReason": "ocr",
+      "sha256": "e999fce163d88e3df26de786def61d9a008320326d22880877eb8182f82cbf4f",
+      "provenance": "Image downloaded and matched by image discovery bot; commercial reuse license unverified"
+    },
     "127": {
       "catalogName": "ادفانس صابون",
       "englishName": "Advance Soap",
@@ -1242,6 +1258,22 @@
       "attribution": "Dawaa Gate",
       "sha256": "53a64de6ee1aceaef890ed76e20a21f9b4c23993eaa42699560a0669d15c69a8",
       "matchReason": "catalog_name_and_pack_details_checked_against_retailer_listing_and_image_ocr"
+    },
+    "370": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/370.webp",
+      "source": "i.ytimg.com",
+      "sourcePage": "https://www.youtube.com/watch?v=LnHMqJdpPU4",
+      "originalImageUrl": "https://i.ytimg.com/vi/LnHMqJdpPU4/hqdefault.jpg?sqp=-oaymwEmCOADEOgC8quKqQMa8AEB-AHUBoAC4AOKAgwIABABGFIgPyh_MA8=&rs=AOn4CLDu1RiwDTYvEzkuiTr2p11MhqCNSg",
+      "catalogName": "الفافيم600 مجم اقراص",
+      "englishName": "Alphavim 600 mg Tablets",
+      "title": "Alphavim 600 mg Tablets الفافيم600 مجم اقراص",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "matchScore": 1,
+      "matchReason": "ocr",
+      "sha256": "dea3ca29baac3caf396ac1b55dcf72672568fed86abfe4a0148c0b460229acdf",
+      "provenance": "Image downloaded and matched by image discovery bot; commercial reuse license unverified"
     },
     "371": {
       "catalogName": "الفافين600مجم اقراص",
@@ -3014,6 +3046,22 @@
       "matchReason": "manual_catalog_and_retailer_title_comparison",
       "attribution": "Azzam Pharmacy",
       "note": "External candidate preview; image availability and visual package not independently verified."
+    },
+    "752": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/752.webp",
+      "source": "pharmapedia.pw",
+      "sourcePage": "https://pharmapedia.pw/egytron-ايجي-ترون-اكياس/",
+      "originalImageUrl": "https://pharmapedia.pw/wp-content/uploads/Egytron-Sachets-ايجي-ترون-اكياس.jpg",
+      "catalogName": "ايجى ترون كيس",
+      "englishName": "Egy Tron Sachets",
+      "title": "Egy Tron Sachets ايجى ترون كيس",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "matchScore": 1,
+      "matchReason": "ocr",
+      "sha256": "5f2c29d8fc4e409dd0af89768a9e1487be48b41add457e08900eba6bebfd66da",
+      "provenance": "Image downloaded and matched by image discovery bot; commercial reuse license unverified"
     },
     "756": {
       "catalogName": "ايجيكوسات شراب",
@@ -34126,6 +34174,22 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Dr. Magdy El-Haddad Pharmacies"
     },
+    "3567": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/3567.webp",
+      "source": "thearcticpure.com",
+      "sourcePage": "https://thearcticpure.com/en-us/products/liverin-milk-thistle",
+      "originalImageUrl": "https://thearcticpure.com/cdn/shop/files/LiverinMaarianohdake60tabl_2d6ee6cd-72fe-42f8-8e7b-90b8811a7bf7.jpg?v=1771418627",
+      "catalogName": "ليفرين اقراص س ج",
+      "englishName": "Liverin Tablets",
+      "title": "Liverin Tablets ليفرين اقراص س ج",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "matchScore": 1,
+      "matchReason": "multi_source_2",
+      "sha256": "705c73c56d543a5a597501a2dd69af8984db5f63f8f3875c9cec41eef5d94f45",
+      "provenance": "Image downloaded and matched by image discovery bot; commercial reuse license unverified"
+    },
     "3568": {
       "catalogName": "ليفسيت اقراص",
       "englishName": "Levcet",
@@ -35736,6 +35800,22 @@
       "attribution": "Lotus Pharmacies",
       "sha256": "12c8cf58590cc0a7bbd8faa5aa275662a4e2b56e41a534b446fe8feada823c04",
       "matchReason": "catalog_name_and_pack_details_checked_against_retailer_listing_and_image_ocr"
+    },
+    "3708": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/3708.webp",
+      "source": "cosmolifekw.com",
+      "sourcePage": "https://cosmolifekw.com/products/ment-fresh-spray-25ml",
+      "originalImageUrl": "https://cosmolifekw.com/cdn/shop/files/105935_Ment_Fresh_Spray_25ML_8_11zon.webp?v=1777397334&width=1946",
+      "catalogName": "منت فريش سبراى",
+      "englishName": "Mnat Fresh Spray",
+      "title": "Mnat Fresh Spray منت فريش سبراى",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "matchScore": 1,
+      "matchReason": "multi_source_3",
+      "sha256": "f4270fee891dc1a795b8b9ce07081d0be6684bbb9d8c923d8afa5c9ae9953213",
+      "provenance": "Image downloaded and matched by image discovery bot; commercial reuse license unverified"
     },
     "3709": {
       "catalogName": "منر اوميجا20 كبسوله",
@@ -38273,6 +38353,22 @@
       "manualVisualInspected": true,
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Dr. Magdy El-Haddad Pharmacies"
+    },
+    "3934": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/3934.webp",
+      "source": "dinapharmacy.com",
+      "sourcePage": "https://dinapharmacy.com/product/nerkardou-5mg-30film/",
+      "originalImageUrl": "https://dinapharmacy.com/wp-content/uploads/2026/04/Nerkardou-5-mg-30-Film.png",
+      "catalogName": "نركادو5 مجم30 فيلم",
+      "englishName": "Nracado 5 mg 30 Film-Coated Tablets",
+      "title": "Nracado 5 mg 30 Film-Coated Tablets نركادو5 مجم30 فيلم",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "matchScore": 1,
+      "matchReason": "multi_source_2",
+      "sha256": "a3f18a2f1f6b3e240c2390be81061f6e5ecc321c20993a5e2b23f28da9b436b7",
+      "provenance": "Image downloaded and matched by image discovery bot; commercial reuse license unverified"
     },
     "3935": {
       "catalogName": "نركاردو2.5مجم اقراص",
@@ -40829,6 +40925,22 @@
       "attribution": "Bloom Pharmacy",
       "note": "External candidate preview; image availability and visual package not independently verified."
     },
+    "4171": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/4171.webp",
+      "source": "www.rosheta.com",
+      "sourcePage": "https://www.rosheta.com/en/16185/one-alpha-uae",
+      "originalImageUrl": "https://www.rosheta.com/upload/165e00cdbb285fbc46771a813811fe9fbfdb945024b7dc96f034af5b8d88d021.webp",
+      "catalogName": "وان الفا0.25مجم",
+      "englishName": "One Alpha 0.25 mg",
+      "title": "One Alpha 0.25 mg وان الفا0.25مجم",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "matchScore": 1,
+      "matchReason": "ocr",
+      "sha256": "6f6d0f527d6b19ad1e7bd92e6b1263e4e3b5c37a3b4e19d176ed639091d9f518",
+      "provenance": "Image downloaded and matched by image discovery bot; commercial reuse license unverified"
+    },
     "4173": {
       "catalogName": "وان الفا1 مكجم",
       "title": "One Alpha 1 mcg - 30 Capsules",
@@ -42068,6 +42180,22 @@
       "manualVisualInspected": true,
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Lotus Pharmacies"
+    },
+    "230057": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/230057.webp",
+      "source": "glowroom-eg.com",
+      "sourcePage": "https://glowroom-eg.com/ar/products/اميونوماش-فيتامين-سي-زنك-30-قرص",
+      "originalImageUrl": "https://glowroom-eg.com/cdn/shop/files/IMMUNO-MASH.webp?v=1776306536&width=1946",
+      "catalogName": "امينوماش زنك 3شريط",
+      "englishName": "Immuno-Mash Vitamin C + Zinc 30 Tablets",
+      "title": "Immuno-Mash Vitamin C + Zinc 30 Tablets امينوماش زنك 3شريط",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "matchScore": 1,
+      "matchReason": "multi_source_2",
+      "sha256": "5354c45bdb2da1102324e42d90969374a51955be257ca1f05e2375391e0ab0aa",
+      "provenance": "Image downloaded and matched by image discovery bot; commercial reuse license unverified"
     },
     "230060": {
       "catalogName": "انافورتين شامبو للقشره",
@@ -43349,6 +43477,22 @@
       "manualVisualInspected": true,
       "matchReason": "manual_visible_pack_and_product_source_match",
       "sha256": "f569a1b5e94b6040d5819fd21487c6a3a479d48fdfb01a46e34544ace9286ed3"
+    },
+    "230167": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/230167.webp",
+      "source": "5.imimg.com",
+      "sourcePage": "https://www.indiamart.com/proddetail/terbinator-250-tablet-2854250394797.html",
+      "originalImageUrl": "https://5.imimg.com/data5/SELLER/Default/2024/6/426309539/IX/WN/EO/161901707/sxjlduxmulzn6e6uvbfi-1000x1000.jpg",
+      "catalogName": "توربينير 250شراب س ج",
+      "englishName": "Torbinir 250 Syrup",
+      "title": "Torbinir 250 Syrup توربينير 250شراب س ج",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "matchScore": 1,
+      "matchReason": "ocr",
+      "sha256": "18283e88b1aa13e7dbc80ef4debb613eec7054272a2f1566ad170222c83c9ec5",
+      "provenance": "Image downloaded and matched by image discovery bot; commercial reuse license unverified"
     },
     "230168": {
       "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/230168.webp",
@@ -46604,6 +46748,22 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "sha256": "83e9717782f5cc164adfec8b67b3bde3ba09686ea15f77bac2cfb7597b4ff95c"
     },
+    "230434": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/230434.webp",
+      "source": "3lagat.com",
+      "sourcePage": "https://3lagat.com/medicines/coenzyme-q10/",
+      "originalImageUrl": "https://3lagat.com/wp-content/uploads/2021/12/كوإنزيم-كيو-10-Coenzyme-Q10-مضاد-للأكسدة.jpg",
+      "catalogName": "كوانزيم كيو ك",
+      "englishName": "Coanzim Q K",
+      "title": "Coanzim Q K كوانزيم كيو ك",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "matchScore": 1,
+      "matchReason": "ocr",
+      "sha256": "a059fdc0ee818aca2abebdf2f85aefc0b48ed495804a104b8480a149fb70e448",
+      "provenance": "Image downloaded and matched by image discovery bot; commercial reuse license unverified"
+    },
     "230435": {
       "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/230435.webp",
       "source": "www.shakshakpharmacy.com",
@@ -46847,6 +47007,22 @@
       "manualVisualInspected": true,
       "matchReason": "manual_visible_pack_and_product_source_match",
       "sha256": "ab646192517d71b1c56cdebc4187c599c4d3d36b71a247ea58d6e91b3fbe7de0"
+    },
+    "230453": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/230453.webp",
+      "source": "5.imimg.com",
+      "sourcePage": "https://www.indiamart.com/proddetail/quetiapine-sustained-release-tablets-300-mg-2854367484933.html",
+      "originalImageUrl": "https://5.imimg.com/data5/SELLER/Default/2024/7/431328694/NC/JU/YH/1581337/whatsapp-image-2024-07-01-at-12-24-14-500x500.jpeg",
+      "catalogName": "كويتابين 300مجم",
+      "englishName": "Coitabin 300 mg",
+      "title": "Coitabin 300 mg كويتابين 300مجم",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "matchScore": 1,
+      "matchReason": "ocr",
+      "sha256": "924b0cf3ea333b603ccec30c7aa954b897a436e039d8fd189944f1304dcd4ce2",
+      "provenance": "Image downloaded and matched by image discovery bot; commercial reuse license unverified"
     },
     "230454": {
       "catalogName": "كويتازيك اكس ار 300مجم",
