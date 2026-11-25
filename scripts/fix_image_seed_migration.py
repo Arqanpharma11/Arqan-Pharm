@@ -28,7 +28,7 @@ block = original[start:end]
 suffix = original[end:]
 # Avoid bumping the image seed version on every scheduled run.
 wanted_line = "const imageLegacySeedSources = " + json.dumps(legacy, ensure_ascii=False) + ";"
-existing_maps = re.findall(r"const imageLegacySeedSources = \{[^;]*\};", block)
+existing_maps = re.findall(r"(?m)^\s*(const imageLegacySeedSources = \{[^\n]*\};)[ \t]*$", block)
 already_current = (
     existing_maps == [wanted_line]
     and "Object.prototype.hasOwnProperty.call(imageLegacySeedSources, String(id))" in block
@@ -38,7 +38,7 @@ if already_current:
     print("Migration map already current; no cache version change")
     raise SystemExit(0)
 # Remove EVERY historical migration declaration, including duplicates that can stop JS startup.
-block = re.sub(r"(?m)^[ \t]*const imageLegacySeedSources = \{[^\n;]*\};[ \t]*\n?", "", block)
+block = re.sub(r"(?m)^[ \t]*const imageLegacySeedSources = \{[^\n]*\};[ \t]*\n?", "", block)
 block = re.sub(r"(?m)^[ \t]*// imageSeedMigrationHash: [0-9a-f]{12}[ \t]*\n?", "", block)
 block = re.sub(r"(?m)^[ \t]*// imageLegacySeedMigrationV1: source-specific upgrade[ \t]*\n?", "", block)
 line = "const imageLegacySeedSources = " + json.dumps(legacy, ensure_ascii=False) + ";"

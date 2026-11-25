@@ -37,7 +37,7 @@ previous = json.loads(REPORT.read_text(encoding="utf-8")) if REPORT.exists() els
 failed_urls = {str(row.get("id")): row.get("url") for row in previous.get("failures", [])
                if "unsupported or non-image response: image/avif" not in str(row.get("error",""))}
 already_failed = lambda pid,url: failed_urls.get(pid) == url
-# Candidate replacements take priority, then ordinary seeds. Never let a stale
+# Candidate replacements take priority, with Aptamil 2 first. Never let a stale
 # original URL overwrite a reviewed candidate during de-duplication.
 selected = []
 queued_ids = set()
