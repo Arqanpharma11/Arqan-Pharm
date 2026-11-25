@@ -220,6 +220,21 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Lotus Pharmacies"
     },
+    "80": {
+      "catalogName": "اترانوكس5 كبسولة",
+      "title": "Itranox 100 mg 5 capsules",
+      "englishName": "Itranox 100 mg 5 capsules",
+      "url": "https://dwaprices.com/upload/1784310065.png",
+      "sourcePage": "https://dwaprices.com/med.php?id=6676",
+      "source": "dwaprices.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_source_title_match",
+      "attribution": "DwaPrices",
+      "note": "External image; reuse rights and live portal rendering not independently verified."
+    },
     "81": {
       "catalogName": "اتروبين100 امبول",
       "englishName": "Atropine 100 Ampoules",
@@ -1052,6 +1067,21 @@
       "matchReason": "manual_catalog_and_retailer_title_comparison",
       "attribution": "Azzam Pharmacy",
       "note": "External candidate preview; image availability and visual package not independently verified."
+    },
+    "357": {
+      "catalogName": "الزيبيزيل5مجم",
+      "title": "Alzepizil 5 mg 14 film-coated tablets",
+      "englishName": "Alzepizil 5 mg 14 film-coated tablets",
+      "url": "https://dwaprices.com/upload/1736681738.jpg",
+      "sourcePage": "https://dwaprices.com/med.php?id=472",
+      "source": "dwaprices.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_source_title_match",
+      "attribution": "DwaPrices",
+      "note": "External image; reuse rights and live portal rendering not independently verified."
     },
     "358": {
       "url": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/296286.webp?v=1786654581",
