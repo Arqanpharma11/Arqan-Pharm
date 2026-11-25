@@ -2946,6 +2946,20 @@
       "sha256": "9f9eac784ed51dc52fb28364712fd2d8555158504dc9b9996ce3eb4824c542c2",
       "matchReason": "catalog_name_and_pack_details_checked_against_retailer_listing_and_image_ocr"
     },
+    "811": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/811.webp",
+      "source": "sekemonline.com",
+      "sourcePage": "https://sekemonline.com/products/isis-green-coffee",
+      "originalImageUrl": "https://sekemonline.com/cdn/shop/files/6223000472545_3.jpg?v=1745051852&width=1946",
+      "catalogName": "ايزيس قهوه خضرا",
+      "title": "Isis Green Coffee",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "f1becbc499b28ef87ea529b11ce8d544d85cfaf6e7788ed87c98abbe2f3870e6"
+    },
     "813": {
       "catalogName": "ايزيس كراويه باكو12",
       "englishName": "ISIS Caraway Pack 12",
@@ -2975,6 +2989,20 @@
       "sha256": "40782b943246f6319d3a10ae90a9dd0d030e242a2c1c9df42d32d752220a230e",
       "manualVisualInspected": true,
       "matchReason": "product_pack_visually_checked_against_catalog_and_source_listing"
+    },
+    "818": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/818.webp",
+      "source": "sekemonline.com",
+      "sourcePage": "https://sekemonline.com/ar/products/%D9%84%D9%8A%D9%85%D9%88%D9%86-%D8%AC%D9%86%D8%B2%D8%A8%D9%8A%D9%84",
+      "originalImageUrl": "https://sekemonline.com/cdn/shop/files/6223000477038_868e0bf3-2221-4021-b9b5-787081c97f44.jpg?v=1756367047&width=1946",
+      "catalogName": "ايزيس ليمون بالجنزبيل12 فتله",
+      "title": "Isis Lemon Ginger Herbal Tea, 12 bags",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "7ef7031bf6e480dc981f3b876cac291384c0ec400565d6e2abb7cdaf4967e4db"
     },
     "820": {
       "catalogName": "ايزيس نعناع باكو 12",
@@ -3536,6 +3564,20 @@
       "sha256": "4b59152d854e547337e09d4f682380797eaa0d2b19f6fdb792a2f5900194541b",
       "manualVisualInspected": true,
       "matchReason": "product_pack_visually_checked_against_catalog_and_source_listing"
+    },
+    "932": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/932.webp",
+      "source": "kenzz.com",
+      "sourcePage": "https://kenzz.com/product/JF5SXD744LGD/%D8%B1%D9%88%D8%AA%D8%A7-%D9%83%D8%B1%D9%8A%D9%85-%D9%85%D8%B1%D8%B7%D8%A8-%D8%A8%D8%A7%D9%84%D8%A8%D8%A7%D9%86%D8%AB%D9%8A%D9%86%D9%88%D9%84-30-%D8%AC%D9%85",
+      "originalImageUrl": "https://assets.kenzz.com/processed/760833d5aa90c3c2e24f0b15eef6c06b661ba88e2b77e959d18238f3ad0dfaaf_1200.webp",
+      "catalogName": "بانثينول كريم روتكس",
+      "title": "Rota Panthenol Moisturizing Cream, 30 g, Rotex Pharma",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "fa69ef26eeb3a42896d0cf0034c2c339b6bcd4a73614f03fbdd1e480acba2bef"
     },
     "935": {
       "catalogName": "بانثينول بلس30جم كريم نوفيكس",
@@ -4452,6 +4494,20 @@
       "manualVisualInspected": true,
       "matchReason": "product_pack_visually_checked_against_catalog_and_source_listing"
     },
+    "1071": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/1071.webp",
+      "source": "taypharmacies.com",
+      "sourcePage": "https://taypharmacies.com/en/product/914386/prima-growth-8-sachet-adult-vanillia",
+      "originalImageUrl": "https://taypharmacies.com/wp-content/uploads/2024/04/2024-05-30T103525.997.png",
+      "catalogName": "بريما جروث كبار فانيليا",
+      "title": "Prima Growth Adult Vanilla, 8 sachets",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "17b4cbfb76b29c32055f9aa46949c5f474ebe19743a62977cec4887b4125c3cf"
+    },
     "1075": {
       "catalogName": "بريموكسيزار400 مجم 10 قرص",
       "englishName": "Primoxizar 400 mg 10 Tablets",
@@ -5266,6 +5322,20 @@
       "manualVisualInspected": true,
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Azzam Pharmacy"
+    },
+    "1174": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/1174.webp",
+      "source": "myfitnessbag.com",
+      "sourcePage": "https://myfitnessbag.com/product/baby-check-super-sensitive-one-step-pregnancy-test-1-pcs/",
+      "originalImageUrl": "https://myfitnessbag.com/wp-content/uploads/2025/05/Untitled-design-22.png",
+      "catalogName": "بيبى تشك",
+      "title": "BabyCheck One Step Pregnancy Test, one test",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "3a9c42b199c4c8f90a86b140fc10bfdb81a425a5bd325dab1393df8c3d6838a7"
     },
     "1175": {
       "catalogName": "بيبى رليف12.5 لبوس",
