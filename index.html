@@ -7819,7 +7819,7 @@
             try { firestoreDB.collection('productImages').onSnapshot((snap) => {
                 snap.docChanges().forEach(ch => {
                     if (ch.type === 'removed') { delete PROD_IMAGES[ch.doc.id]; delete PROD_IMG_VERIFIED[ch.doc.id]; delete PROD_IMG_SRC[ch.doc.id]; }
-                    else if (ch.doc.data().src && ch.doc.data().verified === true) { PROD_IMAGES[ch.doc.id] = ch.doc.data().src; PROD_IMG_VERIFIED[ch.doc.id] = true; if (ch.doc.data().source) PROD_IMG_SRC[ch.doc.id] = ch.doc.data().source; }
+                    else if (ch.doc.data().src && ch.doc.data().verified === true) { const photo = ch.doc.data(); const staleAptamil = ch.doc.id === '5' && photo.src === 'https://alfouadpharmacies.com/cdn/shop/files/rn-image_picker_lib_temp_e032c83d-078c-446c-bc0a-5e7fe2d6d2d6.jpg?v=1771526633'; PROD_IMAGES[ch.doc.id] = staleAptamil ? 'https://kidzmarket-eg.com/cdn/shop/files/Aptamil_Advance_2_Follow-On_Formula_6_12M_400g.webp?v=1752456614' : photo.src; PROD_IMG_VERIFIED[ch.doc.id] = true; if (staleAptamil) PROD_IMG_SRC[ch.doc.id] = 'Kidz Market Egypt — Aptamil Advance Stage 2, 400 g; visible pack and stage checked, external delivery and reuse rights not guaranteed'; else if (photo.source) PROD_IMG_SRC[ch.doc.id] = photo.source; }
                     else { delete PROD_IMAGES[ch.doc.id]; delete PROD_IMG_VERIFIED[ch.doc.id]; }
                 });
                 persistState(KEY_IMAGES, PROD_IMAGES);
@@ -7855,7 +7855,7 @@
 
                 // Verified package-photo seed: Apple-Lite 30 tablets (catalog item #10).
                 // Source page shows the exact Apple-Lite pack; do not use lookalike images.
-                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v64';;;;;
+                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v65';;;;;
                 if (localStorage.getItem(IMAGE_SEED_VERSION) !== '1') {
                     // Individually checked package photos: brand, strength/stage and form match.
                     const verifiedImageSeeds = {
@@ -8519,7 +8519,7 @@
                     const correctedPharmacyPhotoIds = new Set(['16','427','429','496','506','507','519','521','522','533','545','546','608']);
                     const imageLegacySeedSources = {"3": "Lotus Pharmacies — Ibandrocare 150 mg, 2 film-coated tablets; exact brand and strength verified", "36": "PharmaciaTy — Epifasi 5000 IU, 1 ampoule plus solvent; exact brand and strength verified", "75": "Lotus Pharmacies — Atacand 4 mg, 14 tablets; exact brand and strength verified", "101": "Lotus Pharmacies — Atorstat 80 mg, 10 scored tablets; exact brand, strength and pack verified", "85": "Al-Dawaa Pharmacy — Atrovent 500 mcg/2 ml, 20 unit-dose inhalation vials; exact strength and pack verified", "86": "Al-Dawaa Pharmacy — Atrovent 250 mcg/2 ml, 20 unit-dose inhalation vials; exact strength and pack verified"};
                     Object.entries(verifiedImageSeeds).forEach(([id, seed]) => {
-                        if (seed.src && (PROD_IMG_VERIFIED[id] !== true || PROD_IMG_SRC[id] === seed.source || (seed.src.startsWith('assets/product-images/') && Object.prototype.hasOwnProperty.call(imageLegacySeedSources, String(id)) && imageLegacySeedSources[String(id)] === PROD_IMG_SRC[id]) || (correctedPharmacyPhotoIds.has(String(id)) && (/^(Abdin Pharmacies|Rosheta)\s*—/.test(PROD_IMG_SRC[id] || ''))))) {
+                        if (seed.src && (PROD_IMG_VERIFIED[id] !== true || PROD_IMG_SRC[id] === seed.source || (String(id) === '5' && (PROD_IMAGES[id] === 'https://alfouadpharmacies.com/cdn/shop/files/rn-image_picker_lib_temp_e032c83d-078c-446c-bc0a-5e7fe2d6d2d6.jpg?v=1771526633' || PROD_IMG_SRC[id] === 'AlFouad Pharmacies — Aptamil Milk Stage 2, 400 g; exact stage and brand verified')) || (seed.src.startsWith('assets/product-images/') && Object.prototype.hasOwnProperty.call(imageLegacySeedSources, String(id)) && imageLegacySeedSources[String(id)] === PROD_IMG_SRC[id]) || (correctedPharmacyPhotoIds.has(String(id)) && (/^(Abdin Pharmacies|Rosheta)\s*—/.test(PROD_IMG_SRC[id] || ''))))) {
                             const alreadySynced = PROD_IMG_VERIFIED[id] === true && PROD_IMAGES[id] === seed.src && PROD_IMG_SRC[id] === seed.source;
                             PROD_IMAGES[id] = seed.src;
                             PROD_IMG_SRC[id] = seed.source;
