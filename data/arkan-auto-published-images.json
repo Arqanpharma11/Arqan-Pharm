@@ -279,6 +279,21 @@
       "manualVisualInspected": true,
       "matchReason": "product_pack_visually_checked_against_catalog_and_source_listing"
     },
+    "92": {
+      "catalogName": "اتﻼباسيليسس نقط للفم",
+      "title": "Atlabacillus oral drops 15 ml",
+      "englishName": "Atlabacillus oral drops 15 ml",
+      "url": "https://www.mouradpharmacy.com/web/image/product.template/464187/image_1024?unique=b945631",
+      "sourcePage": "https://www.mouradpharmacy.com/shop/atlabacillus-oral-drops-15-ml-%D8%A7%D8%AA%D9%84%D8%A7%D8%A8%D8%A7%D8%B3%D9%8A%D9%84%D8%B3-%D9%86%D9%82%D8%B7-%D8%A8%D8%A7%D9%84%D9%81%D9%85-15-%D9%85%D9%84-464187",
+      "source": "www.mouradpharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_source_title_match",
+      "attribution": "www.mouradpharmacy.com",
+      "note": "External image; reuse rights and live portal rendering not independently verified."
+    },
     "106": {
       "catalogName": "اتومافيوتكس شراب",
       "englishName": "Atomafutix Syrup",
@@ -18774,6 +18789,21 @@
       "attribution": "Re3aya Pharmacy",
       "note": "External candidate preview; image availability and visual package not independently verified."
     },
+    "2241": {
+      "catalogName": "سبازمورست10 مجم",
+      "title": "Spasmorest 10 mg 20 tablets",
+      "englishName": "Spasmorest 10 mg 20 tablets",
+      "url": "https://doctormpharmacy.com/cdn/shop/files/841.png?v=1755298052&width=1946",
+      "sourcePage": "https://doctormpharmacy.com/ar/products/spasmorest-10-mg-20-tab",
+      "source": "doctormpharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_source_title_match",
+      "attribution": "doctormpharmacy.com",
+      "note": "External image; reuse rights and live portal rendering not independently verified."
+    },
     "2242": {
       "catalogName": "سبازمورست20مجم اقراص",
       "englishName": "Spasmorest",
@@ -21370,6 +21400,21 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Lotus Pharmacies",
       "sha256": "c8e139c8b560c0e219e0eb9419d372471695ec8af6756f1340f42ebdf70bc9a4"
+    },
+    "2469": {
+      "catalogName": "سيترونوميت8 مجم 4 قرص",
+      "title": "Setronomet 8 mg 4 oral disintegrating tablets",
+      "englishName": "Setronomet 8 mg 4 oral disintegrating tablets",
+      "url": "https://dwaprices.com/upload/1777749433.png",
+      "sourcePage": "https://dwaprices.com/med.php?id=32150",
+      "source": "dwaprices.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_source_title_match",
+      "attribution": "dwaprices.com",
+      "note": "External image; reuse rights and live portal rendering not independently verified."
     },
     "2471": {
       "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/2471.webp",
@@ -24472,6 +24517,21 @@
       "matchReason": "manual_catalog_and_retailer_title_comparison",
       "attribution": "Azzam Pharmacy",
       "note": "External candidate preview; image availability and visual package not independently verified."
+    },
+    "2748": {
+      "catalogName": "فاموتين40 مجم اقراص",
+      "title": "Famotin 40 mg 20 tablets",
+      "englishName": "Famotin 40 mg 20 tablets",
+      "url": "https://dwaprices.com/upload/1781281589.png",
+      "sourcePage": "https://dwaprices.com/med.php?id=4636",
+      "source": "dwaprices.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_source_title_match",
+      "attribution": "dwaprices.com",
+      "note": "External image; reuse rights and live portal rendering not independently verified."
     },
     "2749": {
       "catalogName": "فاموتين20-20قرص",
