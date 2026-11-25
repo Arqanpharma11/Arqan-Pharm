@@ -2173,6 +2173,22 @@
       "attribution": "Re3aya Pharmacy",
       "note": "External candidate preview; image availability and visual package not independently verified."
     },
+    "697": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/697.webp",
+      "source": "mashpremiere.net",
+      "sourcePage": "https://mashpremiere.net/product/olazorix-5/",
+      "originalImageUrl": "https://mashpremiere.net/wp-content/uploads/2023/03/Olazorix-5.jpg",
+      "catalogName": "اولازوريكس5مجم 21قرص",
+      "englishName": "Olazorix",
+      "title": "Olazorix اولازوريكس5مجم 21قرص",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "matchScore": 1,
+      "matchReason": "ocr",
+      "sha256": "0f45e7ca436865f2883854432517f6c31126e7789fd71099d00b51472f312454",
+      "provenance": "Image downloaded and matched by image discovery bot; commercial reuse license unverified"
+    },
     "699": {
       "catalogName": "اولانفيكسا5 مجم اقراص",
       "englishName": "Olanvexa 5 mg Tablets",
