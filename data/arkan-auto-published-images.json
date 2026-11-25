@@ -37958,6 +37958,20 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Azzam Pharmacy"
     },
+    "3916": {
+      "catalogName": "نان2 ك 12",
+      "englishName": "Nestle NAN OPTIPRO 2 400 g",
+      "title": "Nestle NAN OPTIPRO 2 400 g",
+      "url": "https://cdn.mafrservices.com/pim-content/EGY/media/product/439985/1744534804/439985_main.jpg?im=Resize%3D480",
+      "source": "Carrefour Egypt",
+      "sourcePage": "https://www.carrefouregypt.com/mafegy/en/baby-formula-6-12-months-/nan-2-optipro-baby-milk-6-12m-400g/p/439985",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "visual_pack_and_source_title_review",
+      "note": "Stage 2 and 400 g visible; catalog price matches Egyptian 400 g listing. Single retail pack shown, carton quantity not depicted. External delivery and reuse rights unconfirmed."
+    },
     "3917": {
       "catalogName": "نان3 لبن ك12",
       "englishName": "Nan 3 Milk K 12",
