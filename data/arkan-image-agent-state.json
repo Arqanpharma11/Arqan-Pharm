@@ -1,5 +1,5 @@
 {
-  "cursor": 325,
+  "cursor": 355,
   "searchCursor": 0,
   "checks": {
     "28": {
@@ -2335,102 +2335,102 @@
     "2070": {
       "failures": 0,
       "lastStatus": "ok",
-      "checkedAt": "2026-11-22T16:33:37.547Z"
+      "checkedAt": "2026-11-25T19:34:49.597Z"
     },
     "2071": {
       "failures": 0,
       "lastStatus": "ok",
-      "checkedAt": "2026-11-22T16:33:37.781Z"
+      "checkedAt": "2026-11-25T19:34:49.848Z"
     },
     "2075": {
       "failures": 0,
       "lastStatus": "ok",
-      "checkedAt": "2026-11-22T16:33:37.974Z"
+      "checkedAt": "2026-11-25T19:34:50.045Z"
     },
     "2079": {
       "failures": 0,
       "lastStatus": "ok",
-      "checkedAt": "2026-11-22T16:33:38.227Z"
+      "checkedAt": "2026-11-25T19:34:50.244Z"
     },
     "2082": {
       "failures": 0,
       "lastStatus": "ok",
-      "checkedAt": "2026-11-22T16:33:38.466Z"
+      "checkedAt": "2026-11-25T19:34:50.468Z"
     },
     "2086": {
       "failures": 0,
       "lastStatus": "ok",
-      "checkedAt": "2026-11-22T16:33:38.675Z"
+      "checkedAt": "2026-11-25T19:34:50.698Z"
     },
     "2089": {
       "failures": 0,
       "lastStatus": "ok",
-      "checkedAt": "2026-11-22T16:33:38.885Z"
+      "checkedAt": "2026-11-25T19:34:50.933Z"
     },
     "2094": {
       "failures": 0,
       "lastStatus": "ok",
-      "checkedAt": "2026-11-22T16:33:39.066Z"
+      "checkedAt": "2026-11-25T19:34:51.107Z"
     },
     "2102": {
       "failures": 0,
       "lastStatus": "ok",
-      "checkedAt": "2026-11-22T16:33:39.325Z"
+      "checkedAt": "2026-11-25T19:34:51.420Z"
     },
     "2106": {
       "failures": 0,
       "lastStatus": "ok",
-      "checkedAt": "2026-11-22T16:33:39.486Z"
+      "checkedAt": "2026-11-25T19:34:51.581Z"
     },
     "2107": {
       "failures": 0,
       "lastStatus": "ok",
-      "checkedAt": "2026-11-22T16:33:39.723Z"
+      "checkedAt": "2026-11-25T19:34:51.626Z"
     },
     "2123": {
       "failures": 0,
       "lastStatus": "ok",
-      "checkedAt": "2026-11-22T16:33:39.864Z"
+      "checkedAt": "2026-11-25T19:34:51.771Z"
     },
     "2124": {
       "failures": 0,
       "lastStatus": "ok",
-      "checkedAt": "2026-11-22T16:33:40.093Z"
+      "checkedAt": "2026-11-25T19:34:51.957Z"
     },
     "2129": {
       "failures": 0,
       "lastStatus": "ok",
-      "checkedAt": "2026-11-22T16:33:40.318Z"
+      "checkedAt": "2026-11-25T19:34:52.001Z"
     },
     "2134": {
       "failures": 0,
       "lastStatus": "ok",
-      "checkedAt": "2026-11-22T16:33:40.581Z"
+      "checkedAt": "2026-11-25T19:34:52.222Z"
     },
     "2135": {
       "failures": 0,
       "lastStatus": "ok",
-      "checkedAt": "2026-11-22T16:33:40.795Z"
+      "checkedAt": "2026-11-25T19:34:52.376Z"
     },
     "2144": {
       "failures": 0,
       "lastStatus": "ok",
-      "checkedAt": "2026-11-22T16:34:56.068Z"
+      "checkedAt": "2026-11-25T19:34:52.584Z"
     },
     "2148": {
       "failures": 0,
       "lastStatus": "ok",
-      "checkedAt": "2026-11-22T16:34:56.342Z"
+      "checkedAt": "2026-11-25T19:34:52.810Z"
     },
     "2149": {
       "failures": 0,
       "lastStatus": "ok",
-      "checkedAt": "2026-11-22T16:34:56.575Z"
+      "checkedAt": "2026-11-25T19:34:53.014Z"
     },
     "2150": {
       "failures": 0,
       "lastStatus": "ok",
-      "checkedAt": "2026-11-22T16:34:56.858Z"
+      "checkedAt": "2026-11-25T19:34:53.222Z"
     },
     "2152": {
       "failures": 0,
@@ -2440,17 +2440,17 @@
     "2161": {
       "failures": 0,
       "lastStatus": "ok",
-      "checkedAt": "2026-11-24T13:08:48.269Z"
+      "checkedAt": "2026-11-25T19:34:53.264Z"
     },
     "2164": {
       "failures": 0,
       "lastStatus": "ok",
-      "checkedAt": "2026-11-24T13:08:48.295Z"
+      "checkedAt": "2026-11-25T19:34:53.310Z"
     },
     "2165": {
       "failures": 0,
       "lastStatus": "ok",
-      "checkedAt": "2026-11-24T13:08:48.305Z"
+      "checkedAt": "2026-11-25T19:34:53.362Z"
     },
     "2166": {
       "failures": 0,
@@ -2465,37 +2465,37 @@
     "2168": {
       "failures": 0,
       "lastStatus": "ok",
-      "checkedAt": "2026-11-24T13:08:48.330Z"
+      "checkedAt": "2026-11-25T19:34:53.576Z"
     },
     "2169": {
       "failures": 0,
       "lastStatus": "ok",
-      "checkedAt": "2026-11-24T13:08:48.339Z"
+      "checkedAt": "2026-11-25T19:34:53.622Z"
     },
     "2170": {
       "failures": 0,
       "lastStatus": "ok",
-      "checkedAt": "2026-11-24T14:24:36.719Z"
+      "checkedAt": "2026-11-25T19:34:53.671Z"
     },
     "2181": {
       "failures": 0,
       "lastStatus": "ok",
-      "checkedAt": "2026-11-24T14:24:36.817Z"
+      "checkedAt": "2026-11-25T19:34:53.714Z"
     },
     "2182": {
       "failures": 0,
       "lastStatus": "ok",
-      "checkedAt": "2026-11-24T14:24:36.909Z"
+      "checkedAt": "2026-11-25T19:34:53.753Z"
     },
     "2183": {
       "failures": 0,
       "lastStatus": "ok",
-      "checkedAt": "2026-11-24T14:24:37.019Z"
+      "checkedAt": "2026-11-25T19:34:53.794Z"
     },
     "2186": {
       "failures": 0,
       "lastStatus": "ok",
-      "checkedAt": "2026-11-24T14:24:37.087Z"
+      "checkedAt": "2026-11-25T19:34:53.839Z"
     },
     "2190": {
       "failures": 0,
@@ -8209,37 +8209,89 @@
     "2658": {
       "at": "2026-11-25T18:33:18.187Z",
       "hits": 0
+    },
+    "2659": {
+      "at": "2026-11-25T19:34:57.129Z",
+      "hits": 0
+    },
+    "2660": {
+      "at": "2026-11-25T19:34:58.250Z",
+      "hits": 0
+    },
+    "2667": {
+      "at": "2026-11-25T19:34:59.830Z",
+      "hits": 0
+    },
+    "2669": {
+      "at": "2026-11-25T19:35:01.734Z",
+      "hits": 0
+    },
+    "2671": {
+      "at": "2026-11-25T19:35:04.114Z",
+      "hits": 0
+    },
+    "2674": {
+      "at": "2026-11-25T19:35:05.951Z",
+      "hits": 0
+    },
+    "2675": {
+      "at": "2026-11-25T19:35:07.610Z",
+      "hits": 0
+    },
+    "2677": {
+      "at": "2026-11-25T19:35:09.934Z",
+      "hits": 0
+    },
+    "2678": {
+      "at": "2026-11-25T19:35:11.721Z",
+      "hits": 0
+    },
+    "2680": {
+      "at": "2026-11-25T19:35:13.645Z",
+      "hits": 0
+    },
+    "2681": {
+      "at": "2026-11-25T19:35:15.231Z",
+      "hits": 0
+    },
+    "2682": {
+      "at": "2026-11-25T19:35:16.875Z",
+      "hits": 0
+    },
+    "2695": {
+      "at": "2026-11-25T19:35:18.600Z",
+      "hits": 0
     }
   },
-  "lastRun": "2026-11-25T18:33:19.297Z",
+  "lastRun": "2026-11-25T19:35:19.762Z",
   "lastCatalogSize": 4489,
   "searchPipeline": {
-    "remainingMissing": 491,
+    "remainingMissing": 475,
     "remainingSuspect": 41,
-    "eligibleThisRun": 532
+    "eligibleThisRun": 516
   },
   "providerHealth": {
     "commons.wikimedia.org": {
       "failures": 1,
-      "retryAt": "2026-11-25T18:53:18.895Z",
-      "lastSuccess": "2026-11-25T18:33:17.786Z",
+      "retryAt": "2026-11-25T19:55:19.361Z",
+      "lastSuccess": "2026-11-25T19:35:18.200Z",
       "lastError": "429"
     },
     "world.openfoodfacts.org": {
-      "failures": 3,
-      "retryAt": "2026-11-25T19:12:48.437Z",
+      "failures": 4,
+      "retryAt": "2026-11-25T20:54:57.128Z",
       "lastSuccess": "2026-11-25T16:48:57.365Z",
       "lastError": "503"
     },
     "eg-drugs-api.mahmoudfalous.workers.dev": {
       "failures": 0,
       "retryAt": null,
-      "lastSuccess": "2026-11-25T18:33:11.320Z"
+      "lastSuccess": "2026-11-25T19:35:19.341Z"
     },
     "world.openbeautyfacts.org": {
       "failures": 0,
       "retryAt": null,
-      "lastSuccess": "2026-11-25T18:33:16.325Z"
+      "lastSuccess": "2026-11-25T19:35:11.721Z"
     }
   },
   "publishedChecks": {
@@ -8997,7 +9049,47 @@
       "failures": 0,
       "lastStatus": "ok",
       "checkedAt": "2026-11-25T18:32:46.392Z"
+    },
+    "813": {
+      "failures": 0,
+      "lastStatus": "unknown",
+      "checkedAt": "2026-11-25T19:34:53.900Z"
+    },
+    "817": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-25T19:34:54.437Z"
+    },
+    "818": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-25T19:34:54.551Z"
+    },
+    "820": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-25T19:34:54.599Z"
+    },
+    "823": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-25T19:34:54.714Z"
+    },
+    "824": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-25T19:34:55.311Z"
+    },
+    "828": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-25T19:34:55.361Z"
+    },
+    "829": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-25T19:34:55.412Z"
     }
   },
-  "publishedCursor": 224
+  "publishedCursor": 232
 }
