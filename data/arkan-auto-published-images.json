@@ -555,6 +555,20 @@
       "attribution": "Azzam Pharmacy",
       "note": "External candidate preview; image availability and visual package not independently verified."
     },
+    "251": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/251.webp",
+      "source": "egyptdwa.com",
+      "sourcePage": "https://egyptdwa.com/m/1144",
+      "originalImageUrl": "https://egyptdwa.com/dwa/avamys-nasal-spray-1144.jpg",
+      "catalogName": "افامايس اسبراى",
+      "title": "Avamys nasal spray, 27.5 micrograms per spray",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "cd3a713df681f2178778c49c3290b52006ffaf0dd1c73b038ed383d8184d2ed9"
+    },
     "253": {
       "catalogName": "افوبينو كبسول",
       "englishName": "Avobeano Capsules",
@@ -895,6 +909,34 @@
       "attribution": "Rosheta",
       "license": "external retailer photo; redistribution license not established",
       "note": "Photo visibly matches the brand Ultra Feet and 50g cream. External link only, not hosted or certified."
+    },
+    "345": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/345.webp",
+      "source": "www.rosheta.com",
+      "sourcePage": "https://www.rosheta.com/en-ae/1979/ultranyl",
+      "originalImageUrl": "https://www.rosheta.com/upload/445c815197989ba9f26d003bed09b3af482629968ade9745fafcea6afead4111.webp",
+      "catalogName": "الترانيل20ك",
+      "title": "Ultranyl cod liver oil, 20 soft gelatin capsules",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "8355678c319284f36589302e311f98b4b9e7d49cc4585ea6d616da09200f0c4d"
+    },
+    "347": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/347.webp",
+      "source": "www.delmar-attalla.com",
+      "sourcePage": "https://www.delmar-attalla.com/products/altiazem-60-mg-20-tab/2014",
+      "originalImageUrl": "https://delmar-test.linkedgates.com/images/items/2014-v1.JPEG",
+      "catalogName": "التيازيم اقراص",
+      "title": "Altiazem 60 mg, 20 sustained-action tablets",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "56a8be405530794bd4e502d6ab1dac251a6bf6f62405af28f1862bf161839b31"
     },
     "349": {
       "catalogName": "الجيزال كريم",
@@ -1289,6 +1331,20 @@
       "manualVisualInspected": true,
       "matchReason": "manual_visible_pack_and_product_source_match",
       "sha256": "661aab1c0a29aa7dd872494a1a8828de90930b22176074793692f075693f2559"
+    },
+    "430": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/430.webp",
+      "source": "sfccstg.elezabyonline.com",
+      "sourcePage": "https://sfccstg.elezabyonline.com/3207586.html",
+      "originalImageUrl": "https://sfccstg.elezabyonline.com/on/demandware.static/-/Sites-elezaby-master/default/dw9e3759b8/images/3207586.jpg",
+      "catalogName": "اليكسولايت محلول جفاف موز س.ج",
+      "title": "Alexolyte Rehydration Drink – Banana, 360 ml",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "98eb70ad989d0dd26c3d2eecd5a499184479d64ae8fa7ffbdfe4558f4dc017b4"
     },
     "433": {
       "catalogName": "اليمبوسيس2.5مجم اقراص",
@@ -1787,6 +1843,20 @@
       "attribution": "Azzam Pharmacy",
       "note": "External candidate preview; image availability and visual package not independently verified."
     },
+    "550": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/550.webp",
+      "source": "www.parishiapharma.com",
+      "sourcePage": "https://www.parishiapharma.com/products/insuest",
+      "originalImageUrl": "https://www.parishiapharma.com/cdn/shop/files/INSUEST_ab236778-9091-4f3b-bbaa-caed18f1fa5d.webp?v=1782290728",
+      "catalogName": "انسوايست كبسول",
+      "title": "Insuest, 30 hard gelatin capsules",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "2f9fb1c96aa0056fd233fc3f9ce26157612d366303c5093a112b1aea48464b39"
+    },
     "560": {
       "catalogName": "انفﻼمكسير نقط",
       "englishName": "Inflamxir Drops",
@@ -1830,6 +1900,20 @@
       "sha256": "5bff132b606835f6f75360d71579ecae2813bc3d1f92a59b08782376a0630359",
       "manualVisualInspected": true,
       "matchReason": "product_pack_visually_checked_against_catalog_and_source_listing"
+    },
+    "568": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/568.webp",
+      "source": "www.dawaagate.com",
+      "sourcePage": "https://www.dawaagate.com/medicine/inletair-4mg-14-sachets",
+      "originalImageUrl": "https://cdn.dawaagate.com/images/medicines/inletair-4mg-14-sachets-11003-8e03d1.webp",
+      "catalogName": "انلت اير اكياس",
+      "title": "Inletair 4 mg, 14 granule sachets",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "8f5d8f0426a9c81711ebdb643f1a165301f6309b90908a8f2ff5955bc86539d3"
     },
     "569": {
       "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/569.webp",
@@ -1888,6 +1972,20 @@
       "sha256": "0219a486ddcb155bb9217824f7d1273322f81dc25e5256e75b133786e9442db2",
       "manualVisualInspected": true,
       "matchReason": "product_pack_visually_checked_against_catalog_and_source_listing"
+    },
+    "582": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/582.webp",
+      "source": "taypharmacies.com",
+      "sourcePage": "https://taypharmacies.com/product/930816/o-z-skin-soothing-cream-50gm",
+      "originalImageUrl": "https://taypharmacies.com/wp-content/uploads/2024/06/2024-06-22T122558.572.png",
+      "catalogName": "او زد كريم50 جرام",
+      "title": "O.Z Skin Soothing Cream, 50 g",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "05aa552cb0e7f2e630870c715a3a8639e1528f974f3a9b42356fd014141eadfd"
     },
     "586": {
       "catalogName": "اوبتاديرول بلس كبسول",
