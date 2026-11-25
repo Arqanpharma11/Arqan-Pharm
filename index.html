@@ -7819,7 +7819,13 @@
             try { firestoreDB.collection('productImages').onSnapshot((snap) => {
                 snap.docChanges().forEach(ch => {
                     if (ch.type === 'removed') { delete PROD_IMAGES[ch.doc.id]; delete PROD_IMG_VERIFIED[ch.doc.id]; delete PROD_IMG_SRC[ch.doc.id]; }
-                    else if (ch.doc.data().src && ch.doc.data().verified === true) { const photo = ch.doc.data(); const staleAptamil = ch.doc.id === '5' && photo.src === 'https://alfouadpharmacies.com/cdn/shop/files/rn-image_picker_lib_temp_e032c83d-078c-446c-bc0a-5e7fe2d6d2d6.jpg?v=1771526633'; PROD_IMAGES[ch.doc.id] = staleAptamil ? 'https://kidzmarket-eg.com/cdn/shop/files/Aptamil_Advance_2_Follow-On_Formula_6_12M_400g.webp?v=1752456614' : photo.src; PROD_IMG_VERIFIED[ch.doc.id] = true; if (staleAptamil) PROD_IMG_SRC[ch.doc.id] = 'Kidz Market Egypt — Aptamil Advance Stage 2, 400 g; visible pack and stage checked, external delivery and reuse rights not guaranteed'; else if (photo.source) PROD_IMG_SRC[ch.doc.id] = photo.source; }
+                    else if (ch.doc.data().src && ch.doc.data().verified === true) {
+                        const photo = ch.doc.data();
+                        const local = getRehostedProductPhoto(ch.doc.id, photo.src);
+                        PROD_IMAGES[ch.doc.id] = local?.src || photo.src;
+                        PROD_IMG_VERIFIED[ch.doc.id] = true;
+                        if (local || photo.source) PROD_IMG_SRC[ch.doc.id] = local?.source || photo.source;
+                    }
                     else { delete PROD_IMAGES[ch.doc.id]; delete PROD_IMG_VERIFIED[ch.doc.id]; }
                 });
                 persistState(KEY_IMAGES, PROD_IMAGES);
@@ -7855,7 +7861,7 @@
 
                 // Verified package-photo seed: Apple-Lite 30 tablets (catalog item #10).
                 // Source page shows the exact Apple-Lite pack; do not use lookalike images.
-                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v65';;;;;
+                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v66';
                 if (localStorage.getItem(IMAGE_SEED_VERSION) !== '1') {
                     // Individually checked package photos: brand, strength/stage and form match.
                     const verifiedImageSeeds = {
@@ -7863,7 +7869,7 @@
                         '2': { src: 'https://taypharmacies.com/wp-content/uploads/2025/01/2025-01-05T113747.508.png', source: 'Tay Pharmacies — Update Whitening Cream 50 gm; exact Update cream pack verified' },
                         '3': { src: 'assets/product-images/3.jpg', source: 'Re3aya Pharmacy — Ibandrocare 150 mg, 2 film-coated tablets; package photo cross-checked' },
                         '4': { src: 'assets/product-images/4.webp', source: 'Kidz Market Egypt — Aptamil Advance Stage 1, 400 g; exact stage and brand verified' },
-                        '5': { src: 'https://kidzmarket-eg.com/cdn/shop/files/Aptamil_Advance_2_Follow-On_Formula_6_12M_400g.webp?v=1752456614', source: 'Kidz Market Egypt — Aptamil Advance Stage 2, 400 g; visible pack and stage checked, external delivery and reuse rights not guaranteed' },
+                        '5': { src: 'assets/product-images/5.webp', source: 'Kidz Market Egypt — Aptamil Advance Stage 2 follow-on formula, 400 g' },
                         '6': { src: 'https://cdnprod.mafretailproxy.com/sys-master-root/he5/h6f/48488005533726/480Wx480H_557896_main.jpg', source: 'Carrefour Egypt — Aptajunior Stage 3, 400 g; exact product and stage verified' },
                         '7': { src: 'assets/product-images/7.webp', source: 'Fooz Pharmacy — Aprovel 300 mg, 28 tablets; exact brand and strength verified' },
                         '8': { src: 'assets/product-images/8.jpg', source: 'Mawareed — Aprovel 150 mg, 28 tablets; exact brand and strength verified' },
@@ -7920,7 +7926,7 @@
                         '136': { src: 'https://adwia.com/upfiles/thumbs/000/0005388_2.png', source: 'Adwia official — Adwiflam 50 ER, 20 extended-release capsules; exact strength and form verified' },
                         '137': { src: 'https://www.lotusonline.com/cdn/shop/files/3000034_1.jpg?v=1767615532', source: 'Lotus Pharmacies — Adwiflam 75 mg, 5 suppositories; exact strength and form verified' },
                         '99': { src: 'assets/product-images/99.png', source: 'Mohieldeen Pharmacy — Atorstat 10 mg, 14 film-coated tablets; exact brand, strength and pack verified' },
-                        '100': { src: 'https://www.lotusonline.com/cdn/shop/files/3000161_1.jpg?v=1767615853', source: 'Lotus Pharmacies — Atorstat 40 mg, 14 scored tablets; exact brand, strength and pack verified' },
+                        '100': { src: 'assets/product-images/100.webp', source: 'Delmar & Attalla — Atorstat 40 mg, 14 film-coated tablets' },
                         '101': { src: 'assets/product-images/101.jpg', source: 'Delmar & Attalla — Atorstat 80 mg, 10 film-coated tablets; package photo cross-checked' },
                         '102': { src: 'https://www.lotusonline.com/cdn/shop/files/3003745_1.jpg?v=1767615945&width=1500', source: 'Lotus Pharmacies — Atoreza 10/20 mg, 21 film-coated tablets; exact brand and dual strength verified' },
                         '108': { src: 'assets/product-images/108.png', source: 'Sydalyaty — Atomox Apex 10 mg, 30 capsules; exact brand, strength and pack verified' },
@@ -7943,7 +7949,7 @@
                         '178': { src: 'assets/product-images/178.jpg', source: 'Pharma eMarket — Arcoxia 60 mg, 14 film-coated tablets; exact strength and pack verified' },
                         '179': { src: 'assets/product-images/179.jpg', source: 'Lotus Pharmacies — Arcoxia 90 mg, 14 tablets; exact strength and pack verified' },
                         '181': { src: 'https://taypharmacies.com/wp-content/uploads/2023/09/Untitled-design-11.png', source: 'Tay Pharmacies — Aromalock 2.5 mg, 30 film-coated tablets; exact brand, strength and pack verified' },
-                        '185': { src: 'https://www.lotusonline.com/cdn/shop/files/3004740_processed.jpg?v=1773305716', source: 'Lotus Pharmacies — Aricept 10 mg, 14 film-coated tablets; exact brand, strength and pack verified' },
+                        '185': { src: 'assets/product-images/185.webp', source: 'Bloom Pharmacy — Aricept 10 mg, 14 tablets' },
                         '190': { src: 'assets/product-images/190.jpg', source: 'Delmar & Attalla — Arimidex 1 mg, 28 film-coated tablets; exact brand and pack verified' },
                         '191': { src: 'https://www.lotusonline.com/cdn/shop/files/3008447_processed.jpg?v=1767614971&width=750', source: 'Lotus Pharmacies — Evapharma Azathioprine 50 mg, 30 film-coated tablets; exact strength and manufacturer verified' },
                         '194': { src: 'assets/product-images/194.webp', source: 'Al Sultan Pharmacy — Azarga eye drops 5 ml; exact brand and dosage combination verified' },
@@ -8405,7 +8411,7 @@
                         '37': { src: 'assets/product-images/37.jpg', source: 'Bloom Pharmacy — Apifortyl, 30 capsules; exact October Pharma brand and pack verified' },
                         '38': { src: 'assets/product-images/38.jpg', source: 'Delmar & Attalla — Epifenac 100 mg sustained-release, 10 film-coated tablets; exact EIPICO brand and strength verified' },
                         '46': { src: 'https://www.lotusonline.com/cdn/shop/files/3007384_1.jpg?v=1767615875', source: 'Lotus Pharmacies — Apixatrack 2.5 mg, 30 film-coated tablets; exact Evapharm brand and strength verified' },
-                        '47': { src: 'https://www.lotusonline.com/cdn/shop/files/3007383_1.jpg?v=1767615929', source: 'Lotus Pharmacies — Apixatrack 5 mg, 30 film-coated tablets; exact Evapharm brand and strength verified' },
+                        '47': { src: 'assets/product-images/47.webp', source: 'Vezeeta Pharmacy — Apixatrack 5 mg, 30 film-coated tablets' },
                         '48': { src: 'assets/product-images/48.jpg', source: 'DwaPrices — Apixaguard 2.5 mg, 30 film-coated tablets; exact brand, strength and pack verified' },
                         '49': { src: 'https://www.mouradpharmacy.com/web/image/product.product/96/image_1024/%5Bcode%20in%20gad%3A68504--code%20in%20mourad%3A%5D%20Apixaguard%205mg%2030%20Tabs%20-%20%D8%A7%D8%A8%D9%8A%D9%83%D8%B3%D8%A7%D8%AC%D8%A7%D8%B1%D8%AF%205%20%D9%85%D8%AC%D9%85%2030%20%D9%82%D8%B1%D8%B5?unique=ea1b271', source: 'Mourad Pharmacy — Apixaguard 5 mg, 30 film-coated tablets; exact brand, strength and pack verified' },
                         '20': { src: 'assets/product-images/20.jpg', source: 'DwaPrices — Sanofi Apidra insulin glulisine 100 units/ml, pack of 5 x 3 ml cartridges; exact cartridge pack visually verified' },
@@ -8417,7 +8423,7 @@
                         '71': { src: 'assets/product-images/71.jpg', source: 'Delmar & Attalla — Epimiraflu oseltamivir 75 mg, 10 hard-gelatin capsules; exact EIPICO brand, strength and pack verified' },
                         '72': { src: 'assets/product-images/72.png', source: 'EIPICO manufacturer — Epinor norfloxacin 400 mg, 14 tablets; exact official product, strength and pack verified' },
                         '79': { src: 'https://mtalaatpharmacy.com/storage/products/1759665557.png', source: 'Dr. Mohamed Talaat Pharmacy — Itracon 100 mg, 14 capsules; exact Global Napi brand, strength and pack verified' },
-                        '82': { src: 'https://www.lotusonline.com/cdn/shop/files/3006672_1.jpg?v=1767615842&width=1500', source: 'Lotus Pharmacies — Atrozemb 20/10 mg, 30 film-coated tablets; exact Liptis brand and combination verified' },
+                        '82': { src: 'assets/product-images/82.webp', source: 'Delmar & Attalla — Atrozemb 20/10 mg, 30 film-coated tablets' },
                         '83': { src: 'https://www.lotusonline.com/cdn/shop/files/3008741_processed.jpg?v=1767615005', source: 'Lotus Pharmacies — Atrozemb 40/10 mg, 30 film-coated tablets; exact Liptis brand and combination verified' },
                         '87': { src: 'https://www.lotusonline.com/cdn/shop/files/3007717_1.jpg?v=1767616447&width=1500', source: 'Lotus Pharmacies — Atcogliflozin 10 mg, 30 film-coated tablets; exact ATCO brand and strength verified' },
                         '88': { src: 'assets/product-images/88.jpg', source: 'Delmar & Attalla — Atcogliflozin 25 mg, 30 film-coated tablets; exact ATCO brand and strength verified' },
@@ -8502,6 +8508,9 @@
                         '750': { src: 'https://lifemasr.com/wp-content/uploads/2023/08/6222001400229.png', source: 'Life Pharmacy — Itomash itopride 50 mg 30 tablets; actual box and tablet form visually matched' },
                         '767': { src: 'https://dkud4u09qff41.cloudfront.net/Products/59bdb74c-69e7-4515-963b-18cb1519399e.jpeg', source: 'Vezeeta Pharmacy — Eraloner eplerenone 50 mg 20 film-coated tablets; exact box visually matched' },
                         '768': { src: 'https://re3ayapharmacy.com/cdn/shop/files/eraloner-25mg-20-tablets-514939.jpg?v=1735257563', source: 'Re3aya Pharmacy — Eraloner eplerenone 25 mg 20 film-coated tablets; exact box visually matched' },
+                        '230481': { src: 'assets/product-images/230481.webp', source: 'Limitless Naturals — Limitless Prenatal Original, 30 tablets' },
+                        '230561': { src: 'assets/product-images/230561.webp', source: 'Nour Pharmacies — Pentaburn topical ointment, 30 g' },
+                        '230562': { src: 'assets/product-images/230562.webp', source: 'Chefaa — Hero Baby Nutradefense Plus Stage 3, 400 g' },
                     };
                     // Apply the verified image seed set once, then batch cloud writes.
                     const imageSeedBatches = (typeof firestoreDB !== 'undefined' && firestoreDB) ? [] : null;
@@ -8519,7 +8528,7 @@
                     const correctedPharmacyPhotoIds = new Set(['16','427','429','496','506','507','519','521','522','533','545','546','608']);
                     const imageLegacySeedSources = {"3": "Lotus Pharmacies — Ibandrocare 150 mg, 2 film-coated tablets; exact brand and strength verified", "36": "PharmaciaTy — Epifasi 5000 IU, 1 ampoule plus solvent; exact brand and strength verified", "75": "Lotus Pharmacies — Atacand 4 mg, 14 tablets; exact brand and strength verified", "101": "Lotus Pharmacies — Atorstat 80 mg, 10 scored tablets; exact brand, strength and pack verified", "85": "Al-Dawaa Pharmacy — Atrovent 500 mcg/2 ml, 20 unit-dose inhalation vials; exact strength and pack verified", "86": "Al-Dawaa Pharmacy — Atrovent 250 mcg/2 ml, 20 unit-dose inhalation vials; exact strength and pack verified"};
                     Object.entries(verifiedImageSeeds).forEach(([id, seed]) => {
-                        if (seed.src && (PROD_IMG_VERIFIED[id] !== true || PROD_IMG_SRC[id] === seed.source || (String(id) === '5' && (PROD_IMAGES[id] === 'https://alfouadpharmacies.com/cdn/shop/files/rn-image_picker_lib_temp_e032c83d-078c-446c-bc0a-5e7fe2d6d2d6.jpg?v=1771526633' || PROD_IMG_SRC[id] === 'AlFouad Pharmacies — Aptamil Milk Stage 2, 400 g; exact stage and brand verified')) || (seed.src.startsWith('assets/product-images/') && Object.prototype.hasOwnProperty.call(imageLegacySeedSources, String(id)) && imageLegacySeedSources[String(id)] === PROD_IMG_SRC[id]) || (correctedPharmacyPhotoIds.has(String(id)) && (/^(Abdin Pharmacies|Rosheta)\s*—/.test(PROD_IMG_SRC[id] || ''))))) {
+                        if (seed.src && (PROD_IMG_VERIFIED[id] !== true || PROD_IMG_SRC[id] === seed.source || getRehostedProductPhoto(id, PROD_IMAGES[id])?.src === seed.src || (seed.src.startsWith('assets/product-images/') && Object.prototype.hasOwnProperty.call(imageLegacySeedSources, String(id)) && imageLegacySeedSources[String(id)] === PROD_IMG_SRC[id]) || (correctedPharmacyPhotoIds.has(String(id)) && (/^(Abdin Pharmacies|Rosheta)\s*—/.test(PROD_IMG_SRC[id] || ''))))) {
                             const alreadySynced = PROD_IMG_VERIFIED[id] === true && PROD_IMAGES[id] === seed.src && PROD_IMG_SRC[id] === seed.source;
                             PROD_IMAGES[id] = seed.src;
                             PROD_IMG_SRC[id] = seed.source;
@@ -20560,6 +20569,39 @@ ${window.location.href}
         const KEY_IMAGES = 'arkan_cairo_prod_images_v1';
         const KEY_IMG_SRC = 'arkan_cairo_prod_images_src_v1';
         const KEY_IMG_VERIFIED = 'arkan_cairo_prod_images_verified_v1';
+        const REHOSTED_PRODUCT_PHOTOS = {
+            '5': {
+                legacy: ['https://kidzmarket-eg.com/cdn/shop/files/Aptamil_Advance_2_Follow-On_Formula_6_12M_400g.webp?v=1752456614', 'https://alfouadpharmacies.com/cdn/shop/files/rn-image_picker_lib_temp_e032c83d-078c-446c-bc0a-5e7fe2d6d2d6.jpg?v=1771526633'],
+                src: 'assets/product-images/5.webp',
+                source: 'Kidz Market Egypt — Aptamil Advance Stage 2 follow-on formula, 400 g'
+            },
+            '47': {
+                legacy: ['https://www.lotusonline.com/cdn/shop/files/3007383_1.jpg?v=1767615929'],
+                src: 'assets/product-images/47.webp',
+                source: 'Vezeeta Pharmacy — Apixatrack 5 mg, 30 film-coated tablets'
+            },
+            '82': {
+                legacy: ['https://www.lotusonline.com/cdn/shop/files/3006672_1.jpg?v=1767615842&width=1500'],
+                src: 'assets/product-images/82.webp',
+                source: 'Delmar & Attalla — Atrozemb 20/10 mg, 30 film-coated tablets'
+            },
+            '100': {
+                legacy: ['https://www.lotusonline.com/cdn/shop/files/3000161_1.jpg?v=1767615853'],
+                src: 'assets/product-images/100.webp',
+                source: 'Delmar & Attalla — Atorstat 40 mg, 14 film-coated tablets'
+            },
+            '185': {
+                legacy: ['https://www.lotusonline.com/cdn/shop/files/3004740_processed.jpg?v=1773305716'],
+                src: 'assets/product-images/185.webp',
+                source: 'Bloom Pharmacy — Aricept 10 mg, 14 tablets'
+            },
+        };
+
+        function getRehostedProductPhoto(id, url) {
+            const photo = REHOSTED_PRODUCT_PHOTOS[id];
+            return photo?.legacy.includes(url) ? photo : null;
+        }
+
         let PROD_IMAGES = {};
         let PROD_IMG_SRC = {};
         let PROD_IMG_VERIFIED = {};
