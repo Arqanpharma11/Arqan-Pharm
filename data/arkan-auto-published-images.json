@@ -36708,6 +36708,22 @@
       "manualVisualInspected": true,
       "matchReason": "product_pack_visually_checked_against_catalog_and_source_listing"
     },
+    "4160": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/4160.webp",
+      "source": "souqaldawaa.com",
+      "sourcePage": "https://souqaldawaa.com/هيليكيور-helicure-أقراص-مضاد-حيوى-لعلاج-قرحة/",
+      "originalImageUrl": "https://souqaldawaa.com/wp-content/uploads/2018/10/هيليكيور-Helicure.jpg",
+      "catalogName": "هيليكيور اقراص",
+      "englishName": "",
+      "title": "هيليكيور اقراص",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "matchScore": 1,
+      "matchReason": "multi_source_2",
+      "sha256": "1577d2ccd3647d32f326a96014a198bbeec06365f43f181ba9121bdf01d3897a",
+      "provenance": "Image downloaded and matched by image discovery bot; commercial reuse license unverified"
+    },
     "4163": {
       "catalogName": "هيموتايزر120مل شراب",
       "englishName": "Himotaizr 120 ml Syrup",
@@ -37459,6 +37475,22 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Dr. Magdy El-Haddad Pharmacies"
     },
+    "230019": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/230019.webp",
+      "source": "www.rosheta.com",
+      "sourcePage": "https://www.rosheta.com/ar-sa/345/اتوموكس-ابكس-كبسولات-60-مليجرام",
+      "originalImageUrl": "https://www.rosheta.com/upload/7276ea9f642679f5f7fd5dc421bd8c80d562f26423a3850c634491272be5e068.webp",
+      "catalogName": "اتوموكس60مجم",
+      "englishName": "",
+      "title": "اتوموكس60مجم",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "matchScore": 1,
+      "matchReason": "ocr",
+      "sha256": "524c0b4bf7e7972a509364b93ba2eedd5208e77c2569f34cdc23c93e97b29dab",
+      "provenance": "Image downloaded and matched by image discovery bot; commercial reuse license unverified"
+    },
     "230021": {
       "catalogName": "ارباتج شراب",
       "englishName": "Arbateg Syrup",
@@ -37980,6 +38012,22 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Azzam Pharmacy",
       "sha256": "dda9af99ab0734f75b1b15de48d88f89ba4ce32d7ceae9c121c1a1138ac93b3f"
+    },
+    "230074": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/230074.webp",
+      "source": "www.aljawab24.com",
+      "sourcePage": "https://www.aljawab24.com/ادوية-وعلاجات/مرهم-اكرتين/",
+      "originalImageUrl": "https://www.aljawab24.com/wp-content/uploads/2022/04/مرهم-اكرتين.jpg",
+      "catalogName": "اوركاكورتين مرهم",
+      "englishName": "",
+      "title": "اوركاكورتين مرهم",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "matchScore": 1,
+      "matchReason": "ocr",
+      "sha256": "4dde7111121ed03fa78b6233e6aa425ef65c68b9b489dd4eebeba3e51f525b3e",
+      "provenance": "Image downloaded and matched by image discovery bot; commercial reuse license unverified"
     },
     "230075": {
       "catalogName": "اوزمبك 0.25أقلام",
@@ -38709,6 +38757,22 @@
       "attribution": "Lotus Pharmacies",
       "sha256": "a5362b172983e2bddf9bde93dcd33d8c7da88cdf627e8d0d5d2e3b829eb3281e",
       "matchReason": "catalog_name_and_pack_details_checked_against_retailer_listing_and_image_ocr"
+    },
+    "230172": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/230172.webp",
+      "source": "i0.wp.com",
+      "sourcePage": "https://elmqal.com/tegral-200-tablets/",
+      "originalImageUrl": "https://i0.wp.com/elmqal.com/wp-content/uploads/2021/07/دواء-تيجرال2.jpg?fit=850,500&ssl=1",
+      "catalogName": "تيجرال 200مل ق",
+      "englishName": "",
+      "title": "تيجرال 200مل ق",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "matchScore": 1,
+      "matchReason": "ocr",
+      "sha256": "ae469d9309d56d6e79507225c311f2205d5b5d56ce7b84275b6cbb3914b9eb22",
+      "provenance": "Image downloaded and matched by image discovery bot; commercial reuse license unverified"
     },
     "230176": {
       "catalogName": "ثيوتاسيد 300مركب",
