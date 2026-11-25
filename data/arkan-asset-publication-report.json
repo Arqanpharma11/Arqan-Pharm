@@ -1,9 +1,10 @@
 {
-  "processed": 667,
+  "processed": 100,
   "published": 0,
-  "skipped": 11,
+  "skipped": 0,
   "rejected": {
-    "not_high_confidence": 656
+    "not_high_confidence": 99,
+    "duplicate_image": 1
   },
   "ids": []
 }
