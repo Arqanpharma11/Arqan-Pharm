@@ -19430,6 +19430,22 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Lotus Pharmacies"
     },
+    "2288": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/2288.webp",
+      "source": "doctormpharmacy.com",
+      "sourcePage": "https://doctormpharmacy.com/products/strepsils-lemon-honey-24-lozenges-عرض-120",
+      "originalImageUrl": "https://doctormpharmacy.com/cdn/shop/files/109975.jpg?v=1755362948&width=1946",
+      "catalogName": "ستربسيلزعسل وليمون عرض",
+      "englishName": "",
+      "title": "ستربسيلزعسل وليمون عرض",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "matchScore": 1,
+      "matchReason": "ocr",
+      "sha256": "bebd336456fab74afb6dc2584912a305ef0c08c2f8216fbcfe10805df201ee8a",
+      "provenance": "Image downloaded and matched by image discovery bot; commercial reuse license unverified"
+    },
     "2289": {
       "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/2289.webp",
       "source": "ebrampharmacies.com",
@@ -22357,6 +22373,22 @@
       "attribution": "Azzam Pharmacy",
       "note": "External candidate preview; image availability and visual package not independently verified."
     },
+    "2545": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/2545.webp",
+      "source": "sidalih.com",
+      "sourcePage": "https://sidalih.com/products/سيفيتيل-1-جم-12-قرص-فوار",
+      "originalImageUrl": "https://sidalih.com/cdn/shop/files/syfytyl-1-jm-12-krs-foar-178020_4d7521d5-3467-4600-b821-d82e7a5d0ee6.jpg?v=1725233516",
+      "catalogName": "سيفيتيل فوار10ق",
+      "englishName": "Cevitil",
+      "title": "Cevitil سيفيتيل فوار10ق",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "matchScore": 1,
+      "matchReason": "multi_source_2",
+      "sha256": "7bfaa0f9f0c6c017e4fe839afc3ed7702837438360525573464b0faa1f23abf8",
+      "provenance": "Image downloaded and matched by image discovery bot; commercial reuse license unverified"
+    },
     "2546": {
       "catalogName": "سيفيديم1جم",
       "englishName": "Cefidime",
@@ -24942,6 +24974,22 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Lotus Pharmacies",
       "sha256": "73d717de75ce687d6b3b5d4629b141fe8233effc29c2501805611faf0ad150bb"
+    },
+    "2772": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/2772.webp",
+      "source": "img.ananinja.com",
+      "sourcePage": "https://ananinja.com/sa/ar/pharmacy/product/ferosac-amp-100-mg5ml-19353177",
+      "originalImageUrl": "https://img.ananinja.com/media/ninja-catalog-42/Mostafa/Batch5and6/6281086010761_1.png?w=3840&q=75",
+      "catalogName": "فروساك امبول",
+      "englishName": "",
+      "title": "فروساك امبول",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "matchScore": 1,
+      "matchReason": "ocr",
+      "sha256": "e122d0da0664d191f2ddaff09047c0e8756e00ab044de74fadfccfc1ee5fcf04",
+      "provenance": "Image downloaded and matched by image discovery bot; commercial reuse license unverified"
     },
     "2773": {
       "catalogName": "فروست جل",
