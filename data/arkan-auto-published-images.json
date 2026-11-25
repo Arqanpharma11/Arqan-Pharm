@@ -5108,6 +5108,20 @@
       "license": "external retailer image; rights not independently verified",
       "note": "Real retailer product image URL; exact pixels and availability not independently verified"
     },
+    "1084": {
+      "catalogName": "بكسى فريش اسبرى للفم",
+      "englishName": "PixE Fresh mouth spray 60 ml",
+      "title": "PixE Fresh mouth spray 60 ml",
+      "url": "https://www.np-pharmaceutical.com/UploadFiles/Product/021A66900988.png",
+      "source": "np-pharmaceutical.com",
+      "sourcePage": "https://np-pharmaceutical.com/ar/Product-%D9%85%D9%86%D8%AA%D8%AC%D8%A7%D8%AA-%D8%A7%D9%84%D8%B9%D9%86%D8%A7%D9%8A%D9%87-%D8%A8%D8%A7%D9%84%D9%81%D9%85/1010/%D8%A8%D9%83%D8%B3%D9%8A-%D9%81%D8%B1%D9%8A%D8%B4-%D8%B3%D8%A8%D8%B1%D8%A7%D9%8A-%D9%84%D9%84%D9%81%D9%85",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "visual_pack_and_source_title_review",
+      "note": "External preview. Reuse rights and live storefront delivery unconfirmed. Where source slug differs from packaging, pack count follows visible photo and official metadata."
+    },
     "1085": {
       "url": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/358064.webp?v=1786660210",
       "source": "azzampharmacy.com",
@@ -7422,6 +7436,20 @@
       "attribution": "DwaPrices",
       "sha256": "ff2577f4fef51bbb7907c0f1ed370f406f258c80e1ca56b3853e9f98a50703e6",
       "matchReason": "catalog_name_and_pack_details_checked_against_retailer_listing_and_image_ocr"
+    },
+    "1298": {
+      "catalogName": "تادالاسيبى20 مج اقراص",
+      "englishName": "Tadalasby 20 mg 2 film coated tablets",
+      "title": "Tadalasby 20 mg 2 film coated tablets",
+      "url": "https://www.lotusonline.com/cdn/shop/files/3008942_processed.jpg?v=1767613897&width=750",
+      "source": "www.lotusonline.com",
+      "sourcePage": "https://www.lotusonline.com/products/tadalasby-20mg-4-tab",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "visual_pack_and_source_title_review",
+      "note": "External preview. Reuse rights and live storefront delivery unconfirmed. Where source slug differs from packaging, pack count follows visible photo and official metadata."
     },
     "1299": {
       "catalogName": "تادالونج20 مجم",
@@ -11337,6 +11365,20 @@
       "attribution": "www.lotusonline.com",
       "license": "third-party visual source; commercial reuse rights not independently verified",
       "note": "Real commercial product image link, packaging matched by review; live browser and rights verification pending."
+    },
+    "1610": {
+      "catalogName": "جليم مكس غسول",
+      "englishName": "Gleam Mix facial wash 150 ml",
+      "title": "Gleam Mix facial wash 150 ml",
+      "url": "https://api.c0umyt3cda-pharmaove1-p1-public.model-t.cc.commerce.ondemand.com/medias/000000000000049659.webp?context=bWFzdGVyfGltYWdlc3wyMjM4N3xpbWFnZS9qcGVnfGFHUmlMMmcyTWk4eE1qZzFNak15T0RZeU9ESTFOQzh3TURBd01EQXdNREF3TURBd05EazJOVGt1ZDJWaWNBfGMwMzI5ZmZiZjdhNzU2MzAzZDkzMDhmYzExZjI3OGM3Mjk4MWIyYTg2MDJhZjUwNTdlMzBmN2Y0NzgxNmQ1Mzg",
+      "source": "shop.pharmaemarket.com",
+      "sourcePage": "https://shop.pharmaemarket.com/pharma/en/EGP/product/000000000000049659/GLEAM%20MIX%20FACIAL%20WASH%20150%20ML",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "visual_pack_and_source_title_review",
+      "note": "External preview. Reuse rights and live storefront delivery unconfirmed. Where source slug differs from packaging, pack count follows visible photo and official metadata."
     },
     "1611": {
       "catalogName": "جليم ميكس صن سكرين",
