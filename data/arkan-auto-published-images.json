@@ -31381,6 +31381,22 @@
       "attribution": "Azzam Pharmacy",
       "note": "External candidate preview; image availability and visual package not independently verified."
     },
+    "3630": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/3630.webp",
+      "source": "elsaeedpharmacyeg.com",
+      "sourcePage": "https://elsaeedpharmacyeg.com/en/product/water-for-injection/",
+      "originalImageUrl": "https://elsaeedpharmacyeg.com/wp-content/uploads/2025/12/13000610-tms-1738304543229749-tms-.jpg",
+      "catalogName": "ماء حقن",
+      "englishName": "",
+      "title": "ماء حقن",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "matchScore": 1,
+      "matchReason": "multi_source_2",
+      "sha256": "c3ce0eca30c3e26d4a0cce0988d3ea6e47822528e6c9ba145e02375a2694825d",
+      "provenance": "Image downloaded and matched by image discovery bot; commercial reuse license unverified"
+    },
     "3631": {
       "catalogName": "ماء غريب سمايل شراب",
       "englishName": "Gripe Water",
