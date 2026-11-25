@@ -25586,6 +25586,22 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Azzam Pharmacy"
     },
+    "3082": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/3082.webp",
+      "source": "www.syd24.com",
+      "sourcePage": "https://www.syd24.com/carnitol/",
+      "originalImageUrl": "https://www.syd24.com/wp-content/uploads/2019/07/كارنيتول-شراب-CARNITOL-SYRUP.jpg",
+      "catalogName": "كارنيتول اقراص",
+      "englishName": "",
+      "title": "كارنيتول اقراص",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "matchScore": 1,
+      "matchReason": "ocr",
+      "sha256": "b007fd7ab585f39f135de6ffbc4b6dca45a2f62e2aaf11ba64a76f8172c1a23c",
+      "provenance": "Image downloaded and matched by image discovery bot; commercial reuse license unverified"
+    },
     "3083": {
       "catalogName": "كارنيتول بلس",
       "title": "Carnitol Plus 1000mg L-Carnitine Tartrate & 50mg Zinc Gluconate Supplement",
@@ -27498,6 +27514,22 @@
       "sha256": "00819e2082e2d865ad38b7e16589deecfb7bc3f9ff1a3f6d5052bfb333954ae7",
       "manualVisualInspected": true,
       "matchReason": "product_pack_visually_checked_against_catalog_and_source_listing"
+    },
+    "3278": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/3278.webp",
+      "source": "alfouadpharmacies.com",
+      "sourcePage": "https://alfouadpharmacies.com/products/kolagra-roll-on-cotton-candy-1-1-off",
+      "originalImageUrl": "https://alfouadpharmacies.com/cdn/shop/files/kolagra_cotton_candy_rollon_1615x1615_747ac5fa-7736-4fa0-8b41-1bd24244d933.webp?v=1772694908&width=1946",
+      "catalogName": "كولاجرا رول اون بيرى1*3بروموباك 1+1",
+      "englishName": "Kolagra",
+      "title": "Kolagra كولاجرا رول اون بيرى1*3بروموباك 1+1",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "matchScore": 1,
+      "matchReason": "ocr",
+      "sha256": "6b5ea681c92e1b976861fbcdfd27fb8d782b6b564e49cd3c93d41b827a150ee8",
+      "provenance": "Image downloaded and matched by image discovery bot; commercial reuse license unverified"
     },
     "3279": {
       "catalogName": "كولاجرا رول اون جوز الهند كوتون بروموباك 1+1",
@@ -31029,6 +31061,22 @@
       "manualVisualInspected": true,
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Lotus Pharmacies"
+    },
+    "3595": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/3595.webp",
+      "source": "eg.jumia.is",
+      "sourcePage": "https://www.jumia.com.eg/ar/limitless-omega-3-fish-oil-30-10-cap-133622253.html",
+      "originalImageUrl": "https://eg.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/35/2226331/1.jpg?9296",
+      "catalogName": "ليمتليس اوميجا30 قرص",
+      "englishName": "Limitless Naturals",
+      "title": "Limitless Naturals ليمتليس اوميجا30 قرص",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "matchScore": 1,
+      "matchReason": "ocr",
+      "sha256": "0af96bc83d553317d1ebe9294070bfa3537b6ba7820920f1dc109f667b93853b",
+      "provenance": "Image downloaded and matched by image discovery bot; commercial reuse license unverified"
     },
     "3599": {
       "catalogName": "ليمتليس جوينت افويلس30 قرص",
