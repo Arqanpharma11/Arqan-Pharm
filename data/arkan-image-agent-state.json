@@ -1,5 +1,5 @@
 {
-  "cursor": 830,
+  "cursor": 25,
   "searchCursor": 0,
   "checks": {
     "28": {
@@ -40,7 +40,7 @@
     "50": {
       "failures": 0,
       "lastStatus": "ok",
-      "checkedAt": "2026-11-23T09:14:33.891Z"
+      "checkedAt": "2026-11-25T07:24:29.246Z"
     },
     "51": {
       "failures": 0,
@@ -70,7 +70,7 @@
     "64": {
       "failures": 0,
       "lastStatus": "ok",
-      "checkedAt": "2026-11-23T09:14:33.917Z"
+      "checkedAt": "2026-11-25T07:24:29.294Z"
     },
     "69": {
       "failures": 0,
@@ -80,7 +80,7 @@
     "70": {
       "failures": 0,
       "lastStatus": "ok",
-      "checkedAt": "2026-11-23T09:14:33.931Z"
+      "checkedAt": "2026-11-25T07:24:29.482Z"
     },
     "82": {
       "failures": 0,
@@ -120,7 +120,7 @@
     "141": {
       "failures": 0,
       "lastStatus": "ok",
-      "checkedAt": "2026-11-23T09:14:34.077Z"
+      "checkedAt": "2026-11-25T07:24:29.501Z"
     },
     "154": {
       "failures": 0,
@@ -155,7 +155,7 @@
     "186": {
       "failures": 0,
       "lastStatus": "ok",
-      "checkedAt": "2026-11-23T10:31:48.817Z"
+      "checkedAt": "2026-11-25T07:24:29.545Z"
     },
     "198": {
       "failures": 0,
@@ -190,7 +190,7 @@
     "230": {
       "failures": 0,
       "lastStatus": "ok",
-      "checkedAt": "2026-11-23T10:31:49.204Z"
+      "checkedAt": "2026-11-25T07:24:29.587Z"
     },
     "231": {
       "failures": 0,
@@ -205,7 +205,7 @@
     "244": {
       "failures": 0,
       "lastStatus": "ok",
-      "checkedAt": "2026-11-23T10:31:49.376Z"
+      "checkedAt": "2026-11-25T07:24:29.726Z"
     },
     "248": {
       "failures": 0,
@@ -215,7 +215,7 @@
     "260": {
       "failures": 0,
       "lastStatus": "ok",
-      "checkedAt": "2026-11-23T10:31:49.553Z"
+      "checkedAt": "2026-11-25T07:24:29.924Z"
     },
     "261": {
       "failures": 0,
@@ -235,7 +235,7 @@
     "286": {
       "failures": 0,
       "lastStatus": "ok",
-      "checkedAt": "2026-11-23T10:31:49.895Z"
+      "checkedAt": "2026-11-25T07:24:30.151Z"
     },
     "290": {
       "failures": 0,
@@ -245,12 +245,12 @@
     "294": {
       "failures": 0,
       "lastStatus": "ok",
-      "checkedAt": "2026-11-23T10:31:50.072Z"
+      "checkedAt": "2026-11-25T07:24:30.331Z"
     },
     "297": {
       "failures": 0,
       "lastStatus": "ok",
-      "checkedAt": "2026-11-23T10:31:50.282Z"
+      "checkedAt": "2026-11-25T07:24:30.536Z"
     },
     "318": {
       "failures": 0,
@@ -260,7 +260,7 @@
     "324": {
       "failures": 0,
       "lastStatus": "ok",
-      "checkedAt": "2026-11-23T10:31:50.646Z"
+      "checkedAt": "2026-11-25T07:24:30.683Z"
     },
     "326": {
       "failures": 0,
@@ -270,7 +270,7 @@
     "330": {
       "failures": 0,
       "lastStatus": "ok",
-      "checkedAt": "2026-11-23T10:31:51.006Z"
+      "checkedAt": "2026-11-25T07:24:30.723Z"
     },
     "344": {
       "failures": 0,
@@ -285,12 +285,12 @@
     "354": {
       "failures": 0,
       "lastStatus": "ok",
-      "checkedAt": "2026-11-23T10:31:51.149Z"
+      "checkedAt": "2026-11-25T07:24:30.759Z"
     },
     "358": {
       "failures": 0,
       "lastStatus": "ok",
-      "checkedAt": "2026-11-23T10:31:51.338Z"
+      "checkedAt": "2026-11-25T07:24:30.799Z"
     },
     "360": {
       "failures": 0,
@@ -300,12 +300,12 @@
     "371": {
       "failures": 0,
       "lastStatus": "ok",
-      "checkedAt": "2026-11-23T10:31:51.645Z"
+      "checkedAt": "2026-11-25T07:24:30.829Z"
     },
     "389": {
       "failures": 0,
       "lastStatus": "ok",
-      "checkedAt": "2026-11-23T10:31:51.886Z"
+      "checkedAt": "2026-11-25T07:24:30.862Z"
     },
     "390": {
       "failures": 0,
@@ -320,7 +320,7 @@
     "395": {
       "failures": 0,
       "lastStatus": "ok",
-      "checkedAt": "2026-11-23T10:31:52.047Z"
+      "checkedAt": "2026-11-25T07:24:30.900Z"
     },
     "400": {
       "failures": 0,
@@ -345,12 +345,12 @@
     "411": {
       "failures": 0,
       "lastStatus": "ok",
-      "checkedAt": "2026-11-23T10:31:52.363Z"
+      "checkedAt": "2026-11-25T07:24:31.054Z"
     },
     "412": {
       "failures": 0,
       "lastStatus": "ok",
-      "checkedAt": "2026-11-23T10:31:52.720Z"
+      "checkedAt": "2026-11-25T07:24:31.341Z"
     },
     "416": {
       "failures": 0,
@@ -370,12 +370,12 @@
     "434": {
       "failures": 0,
       "lastStatus": "ok",
-      "checkedAt": "2026-11-23T10:31:52.913Z"
+      "checkedAt": "2026-11-25T07:24:31.377Z"
     },
     "436": {
       "failures": 0,
       "lastStatus": "ok",
-      "checkedAt": "2026-11-23T10:31:53.071Z"
+      "checkedAt": "2026-11-25T07:24:31.408Z"
     },
     "445": {
       "failures": 0,
@@ -395,17 +395,17 @@
     "476": {
       "failures": 0,
       "lastStatus": "ok",
-      "checkedAt": "2026-11-23T10:31:53.214Z"
+      "checkedAt": "2026-11-25T07:24:31.568Z"
     },
     "490": {
       "failures": 0,
       "lastStatus": "ok",
-      "checkedAt": "2026-11-23T10:31:53.408Z"
+      "checkedAt": "2026-11-25T07:24:31.765Z"
     },
     "499": {
       "failures": 0,
       "lastStatus": "ok",
-      "checkedAt": "2026-11-23T10:31:53.597Z"
+      "checkedAt": "2026-11-25T07:24:31.931Z"
     },
     "504": {
       "failures": 0,
@@ -5020,27 +5020,27 @@
     "4205": {
       "failures": 0,
       "lastStatus": "ok",
-      "checkedAt": "2026-11-23T09:14:33.063Z"
+      "checkedAt": "2026-11-25T07:24:28.244Z"
     },
     "4206": {
       "failures": 0,
       "lastStatus": "ok",
-      "checkedAt": "2026-11-23T09:14:33.268Z"
+      "checkedAt": "2026-11-25T07:24:28.463Z"
     },
     "4212": {
       "failures": 0,
       "lastStatus": "ok",
-      "checkedAt": "2026-11-23T09:14:33.424Z"
+      "checkedAt": "2026-11-25T07:24:28.664Z"
     },
     "4214": {
       "failures": 0,
       "lastStatus": "ok",
-      "checkedAt": "2026-11-23T09:14:33.674Z"
+      "checkedAt": "2026-11-25T07:24:28.848Z"
     },
     "4218": {
       "failures": 0,
       "lastStatus": "ok",
-      "checkedAt": "2026-11-23T09:14:33.878Z"
+      "checkedAt": "2026-11-25T07:24:29.057Z"
     }
   },
   "searched": {
@@ -7587,32 +7587,72 @@
     "1848": {
       "at": "2026-11-25T06:02:47.489Z",
       "hits": 0
+    },
+    "1849": {
+      "at": "2026-11-25T07:24:36.037Z",
+      "hits": 0
+    },
+    "1850": {
+      "at": "2026-11-25T07:24:37.820Z",
+      "hits": 0
+    },
+    "1851": {
+      "at": "2026-11-25T07:24:39.675Z",
+      "hits": 0
+    },
+    "1875": {
+      "at": "2026-11-25T07:24:41.716Z",
+      "hits": 0
+    },
+    "1885": {
+      "at": "2026-11-25T07:24:43.202Z",
+      "hits": 0
+    },
+    "1887": {
+      "at": "2026-11-25T07:24:44.701Z",
+      "hits": 0
+    },
+    "1888": {
+      "at": "2026-11-25T07:24:46.250Z",
+      "hits": 0
+    },
+    "1900": {
+      "at": "2026-11-25T07:24:47.766Z",
+      "hits": 0
+    },
+    "1906": {
+      "at": "2026-11-25T07:24:49.411Z",
+      "hits": 0
+    },
+    "1907": {
+      "at": "2026-11-25T07:24:50.943Z",
+      "hits": 0
     }
   },
-  "lastRun": "2026-11-25T06:02:48.597Z",
+  "lastRun": "2026-11-25T07:24:52.080Z",
   "lastCatalogSize": 4489,
   "searchPipeline": {
-    "remainingMissing": 872,
+    "remainingMissing": 862,
     "remainingSuspect": 71,
-    "eligibleThisRun": 943
+    "eligibleThisRun": 933
   },
   "providerHealth": {
     "commons.wikimedia.org": {
       "failures": 1,
-      "retryAt": "2026-11-25T06:22:48.196Z",
-      "lastSuccess": "2026-11-25T06:02:47.089Z",
+      "retryAt": "2026-11-25T07:44:51.679Z",
+      "lastSuccess": "2026-11-25T07:24:50.542Z",
       "lastError": "429"
     },
     "world.openfoodfacts.org": {
-      "failures": 4,
-      "retryAt": "2026-11-25T07:22:32.472Z",
-      "lastSuccess": "2026-11-25T02:52:12.315Z",
+      "failures": 1,
+      "retryAt": "2026-11-25T07:44:41.716Z",
+      "lastSuccess": "2026-11-25T07:24:39.675Z",
       "lastError": "503"
     },
     "eg-drugs-api.mahmoudfalous.workers.dev": {
       "failures": 0,
       "retryAt": null,
-      "lastSuccess": "2026-11-25T06:02:42.792Z"
+      "lastSuccess": "2026-11-25T07:24:51.674Z"
     },
     "world.openbeautyfacts.org": {
       "failures": 0,
@@ -8105,7 +8145,47 @@
       "failures": 0,
       "lastStatus": "ok",
       "checkedAt": "2026-11-25T06:02:30.545Z"
+    },
+    "646": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-25T07:24:32.304Z"
+    },
+    "649": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-25T07:24:32.467Z"
+    },
+    "662": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-25T07:24:32.746Z"
+    },
+    "663": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-25T07:24:32.987Z"
+    },
+    "667": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-25T07:24:33.196Z"
+    },
+    "668": {
+      "failures": 0,
+      "lastStatus": "unknown",
+      "checkedAt": "2026-11-25T07:24:33.235Z"
+    },
+    "672": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-25T07:24:33.267Z"
+    },
+    "675": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-25T07:24:33.807Z"
     }
   },
-  "publishedCursor": 136
+  "publishedCursor": 144
 }
