@@ -21854,6 +21854,22 @@
       "attribution": "AlFouad Pharmacies",
       "note": "External candidate preview; image availability and visual package not independently verified."
     },
+    "2501": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/2501.webp",
+      "source": "elayada.net",
+      "sourcePage": "https://elayada.net/shop/seropipe-hair-dropper/",
+      "originalImageUrl": "https://elayada.net/wp-content/uploads/2025/10/Seropipe-Hair-Growth-Accelerator-Dropper-10-ML-X-7-Vials.jpg",
+      "catalogName": "سيروبيب امبولات شعر",
+      "englishName": "",
+      "title": "سيروبيب امبولات شعر",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "matchScore": 1,
+      "matchReason": "ocr",
+      "sha256": "41fc115b2bb203446e70c7d728c1e5a7eb042b7e40f1c5b33af6013554fa66a9",
+      "provenance": "Image downloaded and matched by image discovery bot; commercial reuse license unverified"
+    },
     "2502": {
       "catalogName": "سيروكسات سى ار12.5مجم",
       "englishName": "Seroxat Cr",
