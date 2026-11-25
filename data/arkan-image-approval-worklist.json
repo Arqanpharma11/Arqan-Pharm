@@ -8,11 +8,11 @@
  "rejectionCounts": {
   "metadata_pass_needs_visual_review": 637,
   "modified_release_not_confirmed": 1,
-  "strength_or_stage_not_present_in_catalog": 967,
+  "strength_or_stage_not_present_in_catalog": 968,
   "strength_stage_or_pack_mismatch": 80,
   "previous_verified_listing_form_mismatch": 4,
   "dosage_form_mismatch": 12,
-  "commercial_brand_mismatch": 116,
+  "commercial_brand_mismatch": 117,
   "english_trade_name_missing": 66,
   "unconfirmed_trade_variant": 31
  },
@@ -798,6 +798,11 @@
    "reviewCandidates": [],
    "excluded": [
     {
+     "title": "Acti Colla C - 30 Sachets",
+     "source": "Bloom Pharmacy",
+     "reason": "commercial_brand_mismatch"
+    },
+    {
      "title": "Acti Colla C Advanced - 30 Sachets",
      "source": "Re3aya Pharmacy",
      "reason": "commercial_brand_mismatch"
@@ -1437,6 +1442,11 @@
    "exactMatchConfirmed": false,
    "reviewCandidates": [],
    "excluded": [
+    {
+     "title": "Immulant - 20 Capsules",
+     "source": "Bloom Pharmacy",
+     "reason": "strength_or_stage_not_present_in_catalog"
+    },
     {
      "title": "Immulant Plus - 20 Capsules",
      "source": "Bloom Pharmacy",
@@ -21901,17 +21911,17 @@
    "reviewCandidates": [],
    "excluded": [
     {
+     "title": "Listerine Fresh Burst Pocketmist Spray - 140 Mists Sprays",
+     "source": "Bloom Pharmacy",
+     "reason": "strength_or_stage_not_present_in_catalog"
+    },
+    {
+     "title": "Listerine Cool Mint Pocketmist - 2 Pack",
+     "source": "Bloom Pharmacy",
+     "reason": "strength_or_stage_not_present_in_catalog"
+    },
+    {
      "title": "Listerine Fresh Burst Mouthwash - 250ml",
-     "source": "Bloom Pharmacy",
-     "reason": "strength_or_stage_not_present_in_catalog"
-    },
-    {
-     "title": "Listerine Total Care Milder Taste Mouthwash - 250ml",
-     "source": "Bloom Pharmacy",
-     "reason": "strength_or_stage_not_present_in_catalog"
-    },
-    {
-     "title": "Listerine Cool Mint Milder Taste Mouthwash - 250ml",
      "source": "Bloom Pharmacy",
      "reason": "strength_or_stage_not_present_in_catalog"
     }
@@ -21926,17 +21936,17 @@
    "reviewCandidates": [],
    "excluded": [
     {
+     "title": "Listerine Fresh Burst Pocketmist Spray - 140 Mists Sprays",
+     "source": "Bloom Pharmacy",
+     "reason": "strength_or_stage_not_present_in_catalog"
+    },
+    {
+     "title": "Listerine Cool Mint Pocketmist - 2 Pack",
+     "source": "Bloom Pharmacy",
+     "reason": "strength_or_stage_not_present_in_catalog"
+    },
+    {
      "title": "Listerine Fresh Burst Mouthwash - 250ml",
-     "source": "Bloom Pharmacy",
-     "reason": "strength_or_stage_not_present_in_catalog"
-    },
-    {
-     "title": "Listerine Total Care Milder Taste Mouthwash - 250ml",
-     "source": "Bloom Pharmacy",
-     "reason": "strength_or_stage_not_present_in_catalog"
-    },
-    {
-     "title": "Listerine Cool Mint Milder Taste Mouthwash - 250ml",
      "source": "Bloom Pharmacy",
      "reason": "strength_or_stage_not_present_in_catalog"
     }
@@ -23482,6 +23492,14 @@
    "exactMatchConfirmed": false,
    "reviewCandidates": [
     {
+     "title": "Mounjaro Kwikpen 2.5 Mg / 0.6 Ml x 4 Doses",
+     "imageUrl": "https://cdn.shopify.com/s/files/1/0774/7151/4932/files/mounjaro-25-mg-prefilled-pen-1-pen-4-doses-1060295.jpg?v=1755044892",
+     "sourceName": "Bloom Pharmacy",
+     "productPage": "https://www.bloompharmacy.com/products/mounjaro-2-5-mg-prefilled-pen-1-pen-4-doses",
+     "score": 0.76,
+     "status": "needs_visual_pack_review"
+    },
+    {
      "title": "MOUNJARO 2.5 MG 1 PEN Mounjaro",
      "imageUrl": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/rn-image_picker_lib_temp_711cec57-5ae7-4f6d-b287-15f5a1920ce4.jpg?v=1784326715",
      "sourceName": "Re3aya Pharmacy",
@@ -23496,14 +23514,6 @@
      "productPage": "https://azzampharmacy.com/products/mounjaro-2-5-mg-0-5-ml-s-c-4-vial-32370",
      "score": 0.76,
      "status": "needs_visual_pack_review"
-    },
-    {
-     "title": "Mounjaro  2.5 Mg / 0.6 Ml  S.c.  1 Kwik-Pen  2.4 Ml / 4 Doses",
-     "imageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/616583-1.webp?v=1786651810",
-     "sourceName": "Azzam Pharmacy",
-     "productPage": "https://azzampharmacy.com/products/mounjaro-2-5-mg-0-6-ml-s-c-1-kwik-pen-2-4-ml-4-doses-37761",
-     "score": 0.76,
-     "status": "needs_visual_pack_review"
     }
    ],
    "excluded": []
@@ -23516,23 +23526,23 @@
    "exactMatchConfirmed": false,
    "reviewCandidates": [
     {
-     "title": "MOUNJARO 5 MG 1 PEN Mounjaro",
-     "imageUrl": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/rn-image_picker_lib_temp_5decfce4-e37e-4f8c-9469-d5810c2027a4.jpg?v=1784329613",
-     "sourceName": "Re3aya Pharmacy",
-     "productPage": "https://re3ayapharmacy.com/products/mounjaro-5-mg-1-pen-mounjaro-copy",
+     "title": "Mounjaro Kwikpen 5 Mg / 0.6 Ml x 4 Doses",
+     "imageUrl": "https://cdn.shopify.com/s/files/1/0774/7151/4932/files/mounjaro-5-mg-prefilled-pen-1-pen-4-doses-5227845.jpg?v=1755044894",
+     "sourceName": "Bloom Pharmacy",
+     "productPage": "https://www.bloompharmacy.com/products/mounjaro-5-mg-prefilled-pen-1-pen-4-doses",
      "score": 0.76,
      "status": "needs_visual_pack_review"
     }
    ],
    "excluded": [
     {
-     "title": "Mounjaro Kwikpen 12.5 Mg / 0.6 Ml x 4 Doses",
+     "title": "Mounjaro Kwikpen 2.5 Mg / 0.6 Ml x 4 Doses",
      "source": "Bloom Pharmacy",
      "reason": "strength_stage_or_pack_mismatch"
     },
     {
-     "title": "MOUNJARO 2.5 MG 1 PEN Mounjaro",
-     "source": "Re3aya Pharmacy",
+     "title": "Mounjaro Kwikpen 7.5 Mg / 0.6 Ml x 4 Doses",
+     "source": "Bloom Pharmacy",
      "reason": "strength_stage_or_pack_mismatch"
     }
    ]
@@ -23544,6 +23554,14 @@
    "status": "metadata_pass_needs_visual_review",
    "exactMatchConfirmed": false,
    "reviewCandidates": [
+    {
+     "title": "Mounjaro Kwikpen 7.5 Mg / 0.6 Ml x 4 Doses",
+     "imageUrl": "https://cdn.shopify.com/s/files/1/0774/7151/4932/files/mounjaro-75-mg-prefilled-pen-1-pen-4-doses-7932409.jpg?v=1755044894",
+     "sourceName": "Bloom Pharmacy",
+     "productPage": "https://www.bloompharmacy.com/products/mounjaro-7-5-mg-prefilled-pen-1-pen-4-doses",
+     "score": 0.76,
+     "status": "needs_visual_pack_review"
+    },
     {
      "title": "Mounjaro  7.5 Mg / 0.5 Ml  S.c.  4 Vial",
      "imageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/615204.webp?v=1786657708",
