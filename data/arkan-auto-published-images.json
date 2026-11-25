@@ -2263,6 +2263,36 @@
       "sha256": "c9975904e1923cec67abba2109e19636fc35686675a41b7fe8e96e82fdb6f40f",
       "matchReason": "catalog_name_and_pack_details_checked_against_retailer_listing_and_image_ocr"
     },
+    "622": {
+      "catalogName": "اورا توب غرغره نعناع",
+      "englishName": "Oratop Mint Mouthwash 250 ml",
+      "title": "Oratop Mint Mouthwash 250 ml",
+      "url": "https://mtalaatpharmacy.com/storage/external-product-thumbnails/40593.webp",
+      "source": "mtalaatpharmacy.com",
+      "sourcePage": "https://mtalaatpharmacy.com/products/40593/aora-tob-ghsol-llfm-250-ml-naanaaa",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "visual_pack_and_source_title_review",
+      "attribution": "mtalaatpharmacy.com",
+      "note": "Image visually inspected at source. External delivery and reuse rights not independently confirmed; not for dispensing identification."
+    },
+    "623": {
+      "catalogName": "اورا زد مضمضة س.ج",
+      "englishName": "Ora Zed Mouthwash 120 ml",
+      "title": "Ora Zed Mouthwash 120 ml",
+      "url": "https://mtalaatpharmacy.com/storage/external-product-thumbnails/10074.webp",
+      "source": "mtalaatpharmacy.com",
+      "sourcePage": "https://mtalaatpharmacy.com/products/10074/aorazd-mdmdh-llfm-120-ml",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "visual_pack_and_source_title_review",
+      "attribution": "mtalaatpharmacy.com",
+      "note": "Image visually inspected at source. External delivery and reuse rights not independently confirmed; not for dispensing identification."
+    },
     "624": {
       "catalogName": "اورازون شراب",
       "englishName": "Orazone",
@@ -5061,6 +5091,21 @@
       "manualVisualInspected": true,
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Azzam Pharmacy"
+    },
+    "1094": {
+      "catalogName": "بلندى بون30 قرص",
+      "englishName": "Blendibone 30 tablets",
+      "title": "Blendibone 30 tablets",
+      "url": "https://dwaprices.com/upload/1785256976.png",
+      "source": "dwaprices.com",
+      "sourcePage": "https://dwaprices.com/med.php?id=8846",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "visual_pack_and_source_title_review",
+      "attribution": "dwaprices.com",
+      "note": "Image visually inspected at source. External delivery and reuse rights not independently confirmed; not for dispensing identification."
     },
     "1099": {
       "catalogName": "بلوك الفا كبسول",
@@ -15311,6 +15356,21 @@
       "matchReason": "visual_pack_and_source_title_review",
       "attribution": "ravennavalley.com",
       "note": "External image visually matched; reuse rights and live portal rendering not independently verified."
+    },
+    "1984": {
+      "catalogName": "رافينا فالي غسول نسائي بروتيكشن",
+      "englishName": "Ravenna Valley Female Care Protection Intimate Wash 250 ml",
+      "title": "Ravenna Valley Female Care Protection Intimate Wash 250 ml",
+      "url": "https://ravennavalley.com/cdn/shop/files/ravenna-valley-female-care-protection-with-box.png?v=1789725210&width=1500",
+      "source": "ravennavalley.com",
+      "sourcePage": "https://ravennavalley.com/products/female-care-protection",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "visual_pack_and_source_title_review",
+      "attribution": "ravennavalley.com",
+      "note": "Image visually inspected at source. External delivery and reuse rights not independently confirmed; not for dispensing identification."
     },
     "1985": {
       "catalogName": "رافينا فالي غسول نسائي ديليكت",
@@ -29270,6 +29330,21 @@
       "manualVisualInspected": true,
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Lotus Pharmacies"
+    },
+    "3210": {
+      "catalogName": "كلير فيس صابونه",
+      "englishName": "Lavage Clear Face Soap Bar",
+      "title": "Lavage Clear Face Soap Bar",
+      "url": "https://mtalaatpharmacy.com/storage/external-product-thumbnails/2952.webp",
+      "source": "mtalaatpharmacy.com",
+      "sourcePage": "https://mtalaatpharmacy.com/products/2952/klyr-fys-lafag-sabon-100-mgm",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "visual_pack_and_source_title_review",
+      "attribution": "mtalaatpharmacy.com",
+      "note": "Image visually inspected at source. External delivery and reuse rights not independently confirmed; not for dispensing identification."
     },
     "3211": {
       "catalogName": "كليراير10مجم",
