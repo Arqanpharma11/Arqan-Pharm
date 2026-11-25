@@ -6756,7 +6756,7 @@
       "note": "External candidate preview; image availability and visual package not independently verified."
     },
     "1241": {
-      "catalogName": "بيستول6.25\\\\2.5بلس 20 ق",
+      "catalogName": "بيستول6.25\\2.5بلس 20 ق",
       "englishName": "Bistol Plus",
       "title": "Bistol  Plus  2.5 / 6.25 Mg  20 Tab",
       "url": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/183178.webp?v=1786649147",
@@ -17698,6 +17698,21 @@
       "manualVisualInspected": true,
       "matchReason": "manual_visible_pack_and_product_source_match",
       "sha256": "6895b4a14bbaae560cc699c576f66b3f01e12fcba0071b787af9aa9e50d540f7"
+    },
+    "2146": {
+      "catalogName": "زوفاترون8مل حقن",
+      "title": "Zofatrone 8 mg/4 ml 3 ampoules",
+      "englishName": "Zofatrone 8 mg/4 ml 3 ampoules",
+      "url": "https://doctormpharmacy.com/cdn/shop/files/43605.png?v=1755299007&width=1946",
+      "sourcePage": "https://doctormpharmacy.com/products/zofatrone-8-mg-4-ml-3-amp",
+      "source": "doctormpharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_source_title_match",
+      "attribution": "doctormpharmacy.com",
+      "note": "Catalog uses 8 ml shorthand; Egyptian retailer lists 8 mg/4 ml and catalog price matches. Preview only; confirm physical SKU."
     },
     "2147": {
       "catalogName": "زوفاترون4 مل حقن",
@@ -30350,6 +30365,21 @@
       "matchReason": "manual_catalog_and_retailer_title_comparison",
       "attribution": "Re3aya Pharmacy",
       "note": "External candidate preview; image availability and visual package not independently verified."
+    },
+    "3269": {
+      "catalogName": "كوفيرام10/5 /اخضر *اصفر",
+      "title": "Coveram 10 mg/5 mg 15 tablets",
+      "englishName": "Coveram 10 mg/5 mg 15 tablets",
+      "url": "https://re3ayapharmacy.com/cdn/shop/files/coveram-10-mg-5-mg-15-tablets-844031.jpg?v=1735256938&width=600",
+      "sourcePage": "https://re3ayapharmacy.com/products/coveram-10-mg-5-mg-15-tablets",
+      "source": "re3ayapharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_source_title_match",
+      "attribution": "re3ayapharmacy.com",
+      "note": "External image; reuse rights and live portal rendering not independently verified."
     },
     "3270": {
       "catalogName": "كوكاست4 مجم قرص",
