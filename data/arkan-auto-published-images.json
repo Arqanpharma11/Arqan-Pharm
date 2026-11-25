@@ -2540,6 +2540,22 @@
       "manualVisualInspected": true,
       "matchReason": "product_pack_visually_checked_against_catalog_and_source_listing"
     },
+    "671": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/671.webp",
+      "source": "onemg.gumlet.io",
+      "sourcePage": "https://www.1mg.com/drugs/osteolade-xt-tablet-1048772",
+      "originalImageUrl": "https://onemg.gumlet.io/l_watermark_346,w_480,h_480/a_ignore,w_480,h_480,c_fit,q_auto,f_auto/eef27b9807b94fbf96c5251ab231228b.jpg?dpr=3&format=auto",
+      "catalogName": "اوستيولاج اقراص//جديد",
+      "englishName": "Osteolage",
+      "title": "Osteolage اوستيولاج اقراص//جديد",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "matchScore": 1,
+      "matchReason": "ocr",
+      "sha256": "c97cd97ca3a549905644d4e256908de9728e3e0653c3544d1dbdf64654b6d86d",
+      "provenance": "Image downloaded and matched by image discovery bot; commercial reuse license unverified"
+    },
     "672": {
       "catalogName": "اوستيونات ق",
       "englishName": "Osteonate Tablets",
@@ -44802,6 +44818,22 @@
       "manualVisualInspected": true,
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Re3aya Pharmacy"
+    },
+    "230299": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/230299.webp",
+      "source": "blog.rosheta.com",
+      "sourcePage": "https://blog.rosheta.com/كبسولات-سوبر-جنكو-مكمل-غذائي-لعلاج-اضط/",
+      "originalImageUrl": "https://blog.rosheta.com/wp-content/uploads/2020/02/7f6f897d0dfc902ebf5d6833b8a0ed7452ddd2d6c1a88b83e335f89ee71855ec.jpg",
+      "catalogName": "سوبر جنكو كبسول",
+      "englishName": "",
+      "title": "سوبر جنكو كبسول",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "matchScore": 1,
+      "matchReason": "ocr",
+      "sha256": "90de2012d0e1550b21b1dfbdfc7ea1958db36c2bb50058a94788c62633ba2dab",
+      "provenance": "Image downloaded and matched by image discovery bot; commercial reuse license unverified"
     },
     "230300": {
       "catalogName": "سوبر كيدز 1*3فراوله ميلتشيك 500 ملل بينك",
