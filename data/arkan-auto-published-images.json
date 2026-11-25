@@ -292,6 +292,21 @@
       "sha256": "dadd2a68436ad73e3ecc6e396129d36af0ff39d0f96dc0b6ab13f30522128198",
       "matchReason": "catalog_name_and_pack_details_checked_against_retailer_listing_and_image_ocr"
     },
+    "113": {
+      "catalogName": "اتوميتافلوزين500/12.5",
+      "englishName": "Atometaflozine 12.5/500 mg 30 film-coated tablets",
+      "title": "Atometaflozine 12.5/500 mg 30 film-coated tablets",
+      "url": "https://www.dwaprices.com/upload/1787691561.png",
+      "source": "dwaprices.com",
+      "sourcePage": "https://www.dwaprices.com/med.php?id=28263",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "visual_pack_and_source_title_review",
+      "attribution": "dwaprices.com",
+      "note": "External image visually matched; reuse rights and live portal rendering not independently verified."
+    },
     "115": {
       "catalogName": "اتينو50/25 سى",
       "title": "أتينو سي 50 ملغ أتينولول و 25 ملغ كلورثاليدون",
