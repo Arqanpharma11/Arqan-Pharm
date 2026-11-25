@@ -33322,6 +33322,22 @@
       "attribution": "Azzam Pharmacy",
       "note": "External candidate preview; image availability and visual package not independently verified."
     },
+    "3501": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/3501.webp",
+      "source": "shoprite-ecommerce-prod-cdn.azureedge.net",
+      "sourcePage": "https://www.transpharm.co.za/ethicals/cardio-vascular-agents/plasma-expanders/losaar-plus-100mg-30-tablets/p/58988EA",
+      "originalImageUrl": "https://shoprite-ecommerce-prod-cdn.azureedge.net/sys-master-images/h75/h9b/9479782203422/515Wx515H_58988_01.jpg",
+      "catalogName": "لوسار بلس3ش",
+      "englishName": "",
+      "title": "لوسار بلس3ش",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "matchScore": 1,
+      "matchReason": "ocr",
+      "sha256": "3e87b5bfcc658230b149445d17c3839381c204482e6038abb33cb7096c6e2d22",
+      "provenance": "Image downloaded and matched by image discovery bot; commercial reuse license unverified"
+    },
     "3502": {
       "catalogName": "لوسيدريل250 مجم",
       "englishName": "Lucidril",
