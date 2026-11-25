@@ -44155,6 +44155,22 @@
       "manualVisualInspected": true,
       "matchReason": "product_pack_visually_checked_against_catalog_and_source_listing"
     },
+    "230246": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/230246.webp",
+      "source": "dwaprices.com",
+      "sourcePage": "https://dwaprices.com/ause.php?id=67",
+      "originalImageUrl": "https://dwaprices.com/upload/1780708328.png",
+      "catalogName": "روتاداجست 30كبسوله",
+      "englishName": "",
+      "title": "روتاداجست 30كبسوله",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "matchScore": 1,
+      "matchReason": "ocr",
+      "sha256": "9f8bf17f0a51fd9cc1c328d39ffa31e99769fcd2dad28d23676b6c0c9b15fe02",
+      "provenance": "Image downloaded and matched by image discovery bot; commercial reuse license unverified"
+    },
     "230249": {
       "catalogName": "روزاليا سيرم",
       "englishName": "Rozalia Serum",
