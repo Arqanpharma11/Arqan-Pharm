@@ -35,7 +35,7 @@ const offset=prior?Math.max(0,next):Number(cursor.offset||0)%Math.max(1,active.l
 const budget=Math.max(1,Math.min(250,Number.parseInt(process.env.ARKAN_V2_BATCH_SIZE,10)||24));
 const batch=[...active.slice(offset),...active.slice(0,offset)].slice(0,budget);
 const dest='data/arkan-v2-search-input.csv';
-if(!process.argv.includes('--ingest'))fs.writeFileSync(dest,'\uFEFFcode,name,name_en,category\n'+batch.map(x=>[x.id,x.name,english[x.name]?.brand||'',x.cat].map(csvValue).join(',')).join('\n')+'\n');
+if(!process.argv.includes('--ingest'))fs.writeFileSync(dest,'\uFEFFcode,name,name_en,category\n'+batch.map(x=>[x.id,x.name,english[x.name]?.full||english[x.name]?.brand||'',x.cat].map(csvValue).join(',')).join('\n')+'\n');
 console.log(JSON.stringify({catalogItems:items.length,uncovered:active.length,excluded:exclusions.size,offset,batch:batch.length}));
 function splitCSV(line){
   let out=[],current='',quoted=false;

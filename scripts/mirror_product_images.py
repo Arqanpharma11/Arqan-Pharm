@@ -41,7 +41,7 @@ already_failed = lambda pid,url: failed_urls.get(pid) == url
 # original URL overwrite a reviewed candidate during de-duplication.
 selected = []
 queued_ids = set()
-for pid, url, line in candidates + entries:
+for pid, url, line in sorted(candidates + entries, key=lambda row: row[0] != "5"):
     if pid in queued_ids or not url.startswith("https://") or already_failed(pid, url):
         continue
     if pid in replacements and url != replacements[pid]["url"]:

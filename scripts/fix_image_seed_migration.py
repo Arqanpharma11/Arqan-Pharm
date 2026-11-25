@@ -22,7 +22,7 @@ anchor = "Object.entries(verifiedImageSeeds).forEach(([id, seed]) => {"
 if original.count(anchor) != 1:
     raise SystemExit("Unsafe: expected exactly one image seed merge")
 start = original.index("const verifiedImageSeeds = {")
-end = original.index("const imageSeedBatches", start)
+end = original.index("// Quarantine placeholder links", start)
 prefix = original[:start]
 block = original[start:end]
 suffix = original[end:]
