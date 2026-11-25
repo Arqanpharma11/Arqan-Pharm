@@ -6514,6 +6514,22 @@
       "attribution": "Lotus Pharmacies",
       "sha256": "b99bcc99a2675481047f4ff6e89b5ce57168b054fe137d6bcc8b0739286620c9"
     },
+    "1311": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/1311.webp",
+      "source": "www.syd24.com",
+      "sourcePage": "https://www.syd24.com/trajenta/",
+      "originalImageUrl": "https://www.syd24.com/wp-content/uploads/2019/05/TRAJENTA-499x405.png",
+      "catalogName": "تارجينتا اقراص س ج",
+      "englishName": "",
+      "title": "تارجينتا اقراص س ج",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "matchScore": 1,
+      "matchReason": "ocr",
+      "sha256": "6b475bd153d4456666674532f8a8af04fc6bbd1dc692fcf715a4569a216f39eb",
+      "provenance": "Image downloaded and matched by image discovery bot; commercial reuse license unverified"
+    },
     "1312": {
       "catalogName": "تاردانزا",
       "englishName": "Tardanza",
@@ -6995,6 +7011,22 @@
       "matchReason": "manual_catalog_and_retailer_title_comparison",
       "attribution": "Azzam Pharmacy",
       "note": "External candidate preview; image availability and visual package not independently verified."
+    },
+    "1351": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/1351.webp",
+      "source": "www.rosheta.com",
+      "sourcePage": "https://www.rosheta.com/ar/13452/ترايوكوبافيت",
+      "originalImageUrl": "https://www.rosheta.com/upload/0905c87f2ac2ae123f8c154128108d903fb51ea496180a243abe18804c7c68cb.webp",
+      "catalogName": "ترايكوبافيت كبسول",
+      "englishName": "",
+      "title": "ترايكوبافيت كبسول",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "matchScore": 1,
+      "matchReason": "ocr",
+      "sha256": "97780b5d3ebe317b5e05ae6ff8854087c67a470dca37bd8a7ebbdb99ddc99742",
+      "provenance": "Image downloaded and matched by image discovery bot; commercial reuse license unverified"
     },
     "1353": {
       "catalogName": "ترايكوجين غسول نسائى200مل سعر جديد",
@@ -8629,6 +8661,22 @@
       "attribution": "Azzam Pharmacy",
       "sha256": "618c00d4107b728678583cb6e53caea412d5c3c9643ac192b99deb15532ce69a",
       "matchReason": "catalog_name_and_pack_details_checked_against_retailer_listing_and_image_ocr"
+    },
+    "1493": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/1493.webp",
+      "source": "dwaprices.com",
+      "sourcePage": "https://dwaprices.com/med.php?id=11342",
+      "originalImageUrl": "https://dwaprices.com/upload/1776884699.png",
+      "catalogName": "تيندوزيم20قرص",
+      "englishName": "",
+      "title": "تيندوزيم20قرص",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "matchScore": 1,
+      "matchReason": "ocr",
+      "sha256": "a8ce6f391ddad2a746d2fa9abcc219e91ce7b48ab023859d77ceea7249b21da8",
+      "provenance": "Image downloaded and matched by image discovery bot; commercial reuse license unverified"
     },
     "1494": {
       "url": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/tenormin-50-mg-28-tablets-102041.jpg?v=1735257268",
