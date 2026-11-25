@@ -3949,6 +3949,20 @@
       "attribution": "Azzam Pharmacy",
       "note": "External candidate preview; image availability and visual package not independently verified."
     },
+    "928": {
+      "catalogName": "بانتومكس لوسيون120مم",
+      "englishName": "Pantomix lotion 120 ml",
+      "title": "Pantomix lotion 120 ml",
+      "url": "https://api.c0umyt3cda-pharmaove1-p1-public.model-t.cc.commerce.ondemand.com/medias/000000000000024912.jpg?context=bWFzdGVyfGltYWdlc3w0MDQ0OTJ8aW1hZ2UvanBlZ3xhREprTDJnd01DOHhNRGc1TnpVNU16VXpNalEwTmk4d01EQXdNREF3TURBd01EQXdNalE1TVRJdWFuQm58ZTNkZTQ3ODVmMzkyZDA5N2JmYmM5NmRkZTA3NjczN2U1ZjljY2Q0ZjlhZGUzNzIyNmJkNzdkM2UyMDBjYTVkOA",
+      "source": "shop.pharmaemarket.com",
+      "sourcePage": "https://shop.pharmaemarket.com/pharma/en/EGP/product/000000000000024912/Pantomix%20lotion%20120%20ml/",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "visual_pack_and_source_title_review",
+      "note": "External photo; catalog shorthand interpreted where unambiguous. Reuse rights and live storefront delivery unconfirmed."
+    },
     "930": {
       "catalogName": "بانتوناب40 مجم 14 قرص",
       "englishName": "Pantonap 40 mg 14 Tablets",
@@ -5775,6 +5789,20 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "sha256": "57e9e57b569157ac10265ed71c1237879aebe20da7688d7dc89b765d48844e35"
     },
+    "1157": {
+      "catalogName": "بى ريدى كريم",
+      "englishName": "Be Ready Antiperspirant Cream 50 g",
+      "title": "Be Ready Antiperspirant Cream 50 g",
+      "url": "https://mobicheckin-assets.s3.amazonaws.com/uploads/events/64cd1a777f55ae01a76d112a/guests/64e0dc8ef44ca220dbf9e4b1/guest_products/6505fa537ee91b352ea74ac9/illustration/small_be_ready_cream.png",
+      "source": "icce20233.eventmaker.io",
+      "sourcePage": "https://icce20233.eventmaker.io/products-detailed-vue/6505ef9184a1383678fc30f1",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "visual_pack_and_source_title_review",
+      "note": "External photo; catalog shorthand interpreted where unambiguous. Reuse rights and live storefront delivery unconfirmed."
+    },
     "1158": {
       "catalogName": "بى فريش احمر",
       "englishName": "B-Fresh Red",
@@ -6534,6 +6562,20 @@
       "manualVisualInspected": true,
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "AlFouad Pharmacies"
+    },
+    "1223": {
+      "catalogName": "بيرفورما سبراى",
+      "englishName": "Performa Extra Strength 5% spray 60 ml",
+      "title": "Performa Extra Strength 5% spray 60 ml",
+      "url": "https://f.nooncdn.com/p/pzsku/Z52BC38895CF11CC74F21Z/45/_/1737766243/32944659-64f6-4c2b-b9ca-837bc5bf7297.jpg?width=480",
+      "source": "www.noon.com",
+      "sourcePage": "https://www.noon.com/egypt-en/performa-extra-strength-5-spray-60ml/Z52BC38895CF11CC74F21Z/p/",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "visual_pack_and_source_title_review",
+      "note": "External photo; catalog shorthand interpreted where unambiguous. Reuse rights and live storefront delivery unconfirmed."
     },
     "1224": {
       "catalogName": "بيرلا كريم تفتيح",
@@ -11548,6 +11590,20 @@
       "sha256": "c4a42cfff42f4d47722ecc59a7b83142754601cdd85494b19d68a0899098b513",
       "manualVisualInspected": true,
       "matchReason": "product_pack_visually_checked_against_catalog_and_source_listing"
+    },
+    "1629": {
+      "catalogName": "جنجر اقراص",
+      "englishName": "Ginger Mepaco 400 mg 30 tablets",
+      "title": "Ginger Mepaco 400 mg 30 tablets",
+      "url": "https://taypharmacies.com/wp-content/uploads/2022/12/GINGER-30TAB.jpg",
+      "source": "taypharmacies.com",
+      "sourcePage": "https://taypharmacies.com/product/ginger-30tab/",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "visual_pack_and_source_title_review",
+      "note": "External photo; catalog shorthand interpreted where unambiguous. Reuse rights and live storefront delivery unconfirmed."
     },
     "1630": {
       "catalogName": "جنكو بﻼس كبسول",
