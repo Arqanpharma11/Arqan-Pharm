@@ -17645,6 +17645,22 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Azzam Pharmacy"
     },
+    "2328": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/2328.webp",
+      "source": "i.ytimg.com",
+      "sourcePage": "https://www.youtube.com/watch?v=NvaX_6Q-P4w",
+      "originalImageUrl": "https://i.ytimg.com/vi/NvaX_6Q-P4w/maxresdefault.jpg",
+      "catalogName": "سريبروماب اقراص",
+      "englishName": "",
+      "title": "سريبروماب اقراص",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "matchScore": 1,
+      "matchReason": "ocr",
+      "sha256": "ef47837c1aa35423c9702ceca528acc6436aa8830ed570155cabc9e994887f01",
+      "provenance": "Image downloaded and matched by image discovery bot; commercial reuse license unverified"
+    },
     "2329": {
       "catalogName": "سريوبرازول40 مجم",
       "englishName": "Zarroprazole 40 mg",
