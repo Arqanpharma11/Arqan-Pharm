@@ -1,5 +1,5 @@
 {
-  "runAt": "2026-11-25T08:47:20.795Z",
+  "runAt": "2026-11-25T09:55:45.302Z",
   "masterItems": 4489,
   "cloudItems": 0,
   "catalogItems": 4489,
@@ -7,16 +7,16 @@
   "unapprovedCatalogItems": 3900,
   "autoPublishedCount": 2902,
   "publishedThisRun": 0,
-  "searchAttempted": 20,
+  "searchAttempted": 11,
   "searchHits": 0,
-  "searchErrors": 0,
+  "searchErrors": 1,
   "rejectionReasons": {},
   "missingWithoutCandidate": 1005,
   "checked": 30,
   "healthy": 30,
   "gone": 0,
   "queuedThisRun": 0,
-  "pendingReview": 641,
+  "pendingReview": 651,
   "searchEnabled": true,
   "searchProviders": [
     "Wikimedia Commons",
@@ -31,13 +31,13 @@
   "providerHealth": {
     "commons.wikimedia.org": {
       "failures": 1,
-      "retryAt": "2026-11-25T09:07:17.905Z",
-      "lastSuccess": "2026-11-25T08:47:16.799Z",
+      "retryAt": "2026-11-25T10:15:44.078Z",
+      "lastSuccess": "2026-11-25T09:55:42.869Z",
       "lastError": "429"
     },
     "world.openfoodfacts.org": {
-      "failures": 2,
-      "retryAt": "2026-11-25T09:06:48.703Z",
+      "failures": 3,
+      "retryAt": "2026-11-25T10:35:45.302Z",
       "lastSuccess": "2026-11-25T07:24:39.675Z",
       "lastError": "503"
     },
@@ -49,7 +49,7 @@
     "world.openbeautyfacts.org": {
       "failures": 0,
       "retryAt": null,
-      "lastSuccess": "2026-11-25T08:47:20.095Z"
+      "lastSuccess": "2026-11-25T09:55:43.372Z"
     }
   },
   "disclaimer": "Automated candidate discovery is not photo verification. Existing approved photos are never overwritten. Automatically published images remain marked as external, not verified packaging."
