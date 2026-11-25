@@ -31289,6 +31289,22 @@
       "attribution": "Azzam Pharmacy",
       "note": "External candidate preview; image availability and visual package not independently verified."
     },
+    "3379": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/3379.webp",
+      "source": "cdn.shortpixel.ai",
+      "sourcePage": "https://elshazlypharmacy.com/product/كيبرون-تي-اس-ار-300-مجم-100-قرص/",
+      "originalImageUrl": "https://cdn.shortpixel.ai/spai/q_lossy+ret_img+to_auto/https://elshazlypharmacy.com/wp-content/uploads/2026/01/quibron-t-sr-300-mg-100-tablets-346962-600x600.webp",
+      "catalogName": "كيبرون100 قرص",
+      "englishName": "",
+      "title": "كيبرون100 قرص",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "matchScore": 1,
+      "matchReason": "ocr",
+      "sha256": "4b1eabfe06394e58229e601bc523c89795ad0feea69f323a2f93c6a30a05e966",
+      "provenance": "Image downloaded and matched by image discovery bot; commercial reuse license unverified"
+    },
     "3380": {
       "catalogName": "كيبوركس1 جم",
       "englishName": "Ceporex",
