@@ -4504,6 +4504,21 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Azzam Pharmacy"
     },
+    "1010": {
+      "catalogName": "بروفين فوار",
+      "englishName": "Brufen 600 mg effervescent granules 20 sachets",
+      "title": "Brufen 600 mg effervescent granules 20 sachets",
+      "url": "https://doctormpharmacy.com/cdn/shop/files/35044.jpg?v=1755292700&width=1946",
+      "source": "doctormpharmacy.com",
+      "sourcePage": "https://doctormpharmacy.com/products/brufen-600-mg-eff-20-sachets",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "visual_pack_and_source_title_review",
+      "attribution": "doctormpharmacy.com",
+      "note": "Source image visually reviewed against available catalog name; external delivery, exact stock pack variant and reuse rights not independently confirmed. Not for dispensing identification."
+    },
     "1011": {
       "catalogName": "بروكاسوفت1 مج",
       "title": "Prucasoft 1mg Prucalopride",
@@ -5391,6 +5406,36 @@
       "sha256": "dcc9390dc224698f4aeb400b66fa87acb823126ac6706753d2412dc5f4f765b9",
       "manualVisualInspected": true,
       "matchReason": "product_pack_visually_checked_against_catalog_and_source_listing"
+    },
+    "1125": {
+      "catalogName": "بوباى كريم تينتيد حماية",
+      "englishName": "Bobai Tinted Sunscreen Cream SPF50 60 g",
+      "title": "Bobai Tinted Sunscreen Cream SPF50 60 g",
+      "url": "https://nefroglow.com/cdn/shop/files/70_8648f329-bbc5-4b0e-b7e5-6d9fa87b5403_1200x1200.png?v=1770048494",
+      "source": "nefroglow.com",
+      "sourcePage": "https://nefroglow.com/products/bobai-sunscreen-tinted-cream-spf50-60-gm",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "visual_pack_and_source_title_review",
+      "attribution": "nefroglow.com",
+      "note": "Source image visually reviewed against available catalog name; external delivery, exact stock pack variant and reuse rights not independently confirmed. Not for dispensing identification."
+    },
+    "1126": {
+      "catalogName": "بوباى كريم صن سكرين50",
+      "englishName": "Bobai Sunscreen Cream SPF50+ 50 g",
+      "title": "Bobai Sunscreen Cream SPF50+ 50 g",
+      "url": "https://alfouadpharmacies.com/cdn/shop/files/BobaiSunBlockCreamSPF50_50ml.webp?v=1771843220",
+      "source": "alfouadpharmacies.com",
+      "sourcePage": "https://alfouadpharmacies.com/products/bobai-sun-block-cream-spf50-50ml",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "visual_pack_and_source_title_review",
+      "attribution": "alfouadpharmacies.com",
+      "note": "Source image visually reviewed against available catalog name; external delivery, exact stock pack variant and reuse rights not independently confirmed. Not for dispensing identification."
     },
     "1127": {
       "catalogName": "بوباى كيدز صن بلوك",
@@ -6723,6 +6768,21 @@
       "attribution": "Azzam Pharmacy",
       "note": "External candidate preview; image availability and visual package not independently verified."
     },
+    "1247": {
+      "catalogName": "بيسكالدين300مجم 450ج",
+      "englishName": "Piascledine 300 mg 15 capsules",
+      "title": "Piascledine 300 mg 15 capsules",
+      "url": "https://www.bloompharmacy.com/cdn/shop/products/piascledine-300-mg-15-capsules-892743.jpg?v=1687731423",
+      "source": "www.bloompharmacy.com",
+      "sourcePage": "https://www.bloompharmacy.com/products/piascledine-300-mg-15-capsules",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "visual_pack_and_source_title_review",
+      "attribution": "www.bloompharmacy.com",
+      "note": "Source image visually reviewed against available catalog name; external delivery, exact stock pack variant and reuse rights not independently confirmed. Not for dispensing identification."
+    },
     "1248": {
       "catalogName": "بيسلوك10 مج",
       "englishName": "Bisolock 10 mg",
@@ -7627,6 +7687,21 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Re3aya Pharmacy"
     },
+    "1328": {
+      "catalogName": "تانتم جيل",
+      "englishName": "Tantum Gel 20 g",
+      "title": "Tantum Gel 20 g",
+      "url": "https://www.medilinespharma.com/assets/images/1721806362Tantum%20Gel.png",
+      "source": "www.medilinespharma.com",
+      "sourcePage": "https://www.medilinespharma.com/product/tantum-gel",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "visual_pack_and_source_title_review",
+      "attribution": "www.medilinespharma.com",
+      "note": "Source image visually reviewed against available catalog name; external delivery, exact stock pack variant and reuse rights not independently confirmed. Not for dispensing identification."
+    },
     "1329": {
       "catalogName": "تانتم روز اكياس",
       "englishName": "Tantum Rose Sachets",
@@ -8427,6 +8502,21 @@
       "attribution": "Azzam Pharmacy",
       "license": "external retailer image; rights not independently verified",
       "note": "Real retailer image URL; packaging pixels and remote availability not independently verified"
+    },
+    "1387": {
+      "catalogName": "تريس زيت شعر250 مجم",
+      "englishName": "Tress Hair Oil 250 ml",
+      "title": "Tress Hair Oil 250 ml",
+      "url": "https://img.dawaaegypt.com/photos/6182VIyVdPL._AC_SL1500_.jpg",
+      "source": "dawaaegypt.com",
+      "sourcePage": "https://dawaaegypt.com/product/macro-tress-hair-oil-250ml-01UKH",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "visual_pack_and_source_title_review",
+      "attribution": "dawaaegypt.com",
+      "note": "Source image visually reviewed against available catalog name; external delivery, exact stock pack variant and reuse rights not independently confirmed. Not for dispensing identification."
     },
     "1388": {
       "catalogName": "تريفلوكان كبسول",
@@ -14220,6 +14310,21 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Lotus Pharmacies"
     },
+    "1882": {
+      "catalogName": "ديبروساليك لوسيون",
+      "englishName": "Diprosalic Lotion 30 ml",
+      "title": "Diprosalic Lotion 30 ml",
+      "url": "https://almasrypharmacy.com/media/catalog/product/i/s/isg000889.jpg",
+      "source": "almasrypharmacy.com",
+      "sourcePage": "https://almasrypharmacy.com/default/diprosalic-lotion-30-ml.html",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "visual_pack_and_source_title_review",
+      "attribution": "almasrypharmacy.com",
+      "note": "Source image visually reviewed against available catalog name; external delivery, exact stock pack variant and reuse rights not independently confirmed. Not for dispensing identification."
+    },
     "1883": {
       "catalogName": "ديبروساليك مرهم س ج",
       "title": "Diprosalic Betamethasone & Salicylic Acid Topical Ointment",
@@ -14406,6 +14511,21 @@
       "sha256": "b89a06d75c7edceaa91dbd27c886b13fa7aa4b920fdc2d4b27b80a4df9a4c878",
       "manualVisualInspected": true,
       "matchReason": "product_pack_visually_checked_against_catalog_and_source_listing"
+    },
+    "1899": {
+      "catalogName": "ديرموفكس بودر",
+      "englishName": "Dermofix Powder 2% 15 g",
+      "title": "Dermofix Powder 2% 15 g",
+      "url": "https://delmar-test.linkedgates.com/images/items/83832-v1.JPEG",
+      "source": "www.delmar-attalla.com",
+      "sourcePage": "https://www.delmar-attalla.com/products/dermofix-15-gm-topical-powder/83832",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "visual_pack_and_source_title_review",
+      "attribution": "www.delmar-attalla.com",
+      "note": "Source image visually reviewed against available catalog name; external delivery, exact stock pack variant and reuse rights not independently confirmed. Not for dispensing identification."
     },
     "1902": {
       "catalogName": "ديسا اقراص",
@@ -16650,6 +16770,21 @@
       "manualVisualInspected": true,
       "matchReason": "manual_visible_pack_and_product_source_match",
       "sha256": "046f7a15b294552171075638946bcbe13ce732aaa604a2ae17c6a73a3da54755"
+    },
+    "2082": {
+      "catalogName": "ريفيوديرم كريم60مل",
+      "englishName": "Revivoderm 60 g topical cream",
+      "title": "Revivoderm 60 g topical cream",
+      "url": "https://www.lotusonline.com/cdn/shop/files/3008045_processed.jpg?v=1767613730",
+      "source": "www.lotusonline.com",
+      "sourcePage": "https://www.lotusonline.com/products/revivoderm-60gm-cream",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "visual_pack_and_source_title_review",
+      "attribution": "www.lotusonline.com",
+      "note": "Source image visually reviewed against available catalog name; external delivery, exact stock pack variant and reuse rights not independently confirmed. Not for dispensing identification."
     },
     "2083": {
       "catalogName": "ريكوكستيرو60 مجم ق",
@@ -21868,6 +22003,21 @@
       "attribution": "Azzam Pharmacy",
       "note": "External candidate preview; image availability and visual package not independently verified."
     },
+    "2539": {
+      "catalogName": "سيفوتاكس1 جم امبول",
+      "englishName": "Cefotax 1 g vial EIPICO",
+      "title": "Cefotax 1 g vial EIPICO",
+      "url": "https://www.rosheta.com/upload/fd31ea387cbada559a4ec40ccc3da85584552fba36109787eb30d4accee975ed.jpg",
+      "source": "www.rosheta.com",
+      "sourcePage": "https://www.rosheta.com/en/3011/cefotax-eipico",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "visual_pack_and_source_title_review",
+      "attribution": "www.rosheta.com",
+      "note": "Source image visually reviewed against available catalog name; external delivery, exact stock pack variant and reuse rights not independently confirmed. Not for dispensing identification."
+    },
     "2540": {
       "catalogName": "سيفوتاكس1جم المهن يو -بى عضل وريد",
       "englishName": "",
@@ -24160,6 +24310,21 @@
       "attribution": "Bloom Pharmacy",
       "note": "External candidate preview; image availability and visual package not independently verified."
     },
+    "2741": {
+      "catalogName": "فاكيشن نياسينميد سيرم30مل",
+      "englishName": "Vacation Niacinamide 10% serum 30 ml",
+      "title": "Vacation Niacinamide 10% serum 30 ml",
+      "url": "https://anwar.store/cdn/shop/files/1-nia_grande.png?v=1728484351",
+      "source": "anwar.store",
+      "sourcePage": "https://anwar.store/products/vacation-niacinamide-zinc-pca-serum-10-30ml",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "visual_pack_and_source_title_review",
+      "attribution": "anwar.store",
+      "note": "Source image visually reviewed against available catalog name; external delivery, exact stock pack variant and reuse rights not independently confirmed. Not for dispensing identification."
+    },
     "2742": {
       "catalogName": "فالجيستريل اقراص منع الحمل",
       "englishName": "",
@@ -25101,6 +25266,21 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Lotus Pharmacies"
     },
+    "2821": {
+      "catalogName": "فليكتور جل",
+      "englishName": "Flector gel 25 g",
+      "title": "Flector gel 25 g",
+      "url": "https://egyptdwa.com/dwa/flector-gel-25-gm-4933.jpg",
+      "source": "egyptdwa.com",
+      "sourcePage": "https://egyptdwa.com/m/4933",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "visual_pack_and_source_title_review",
+      "attribution": "egyptdwa.com",
+      "note": "Source image visually reviewed against available catalog name; external delivery, exact stock pack variant and reuse rights not independently confirmed. Not for dispensing identification."
+    },
     "2822": {
       "catalogName": "فليكتور كبسول",
       "englishName": "Flector",
@@ -25174,6 +25354,21 @@
       "attribution": "DwaPrices",
       "sha256": "08b2b67aac5b21609411d2f890c1f556b73a05e29a939dbb72159fbe1ea38d8a",
       "matchReason": "catalog_name_and_pack_details_checked_against_retailer_listing_and_image_ocr"
+    },
+    "2833": {
+      "catalogName": "فنتوكف شراب بالسكر",
+      "englishName": "Ventocough syrup with sugar 125 ml",
+      "title": "Ventocough syrup with sugar 125 ml",
+      "url": "https://aptekavhurgade.com/upload/iblock/5f9/dn7hkerfsj0bzpatj53qtktv8unsonkx.JPG",
+      "source": "aptekavhurgade.com",
+      "sourcePage": "https://aptekavhurgade.com/magazin/ventokaf-sirop-125-ml/",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "visual_pack_and_source_title_review",
+      "attribution": "aptekavhurgade.com",
+      "note": "Source image visually reviewed against available catalog name; external delivery, exact stock pack variant and reuse rights not independently confirmed. Not for dispensing identification."
     },
     "2834": {
       "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/2834.webp",
@@ -26071,6 +26266,21 @@
       "attribution": "Dawaa Gate",
       "sha256": "4a87c104d94672a48e1d642b56876482ae81531c3ef5359ac669fe86df124f14",
       "matchReason": "catalog_name_and_pack_details_checked_against_retailer_listing_and_image_ocr"
+    },
+    "2917": {
+      "catalogName": "فيتايامى اقراص",
+      "englishName": "Vitayami Fe 30 Tablets",
+      "title": "Vitayami Fe 30 Tablets",
+      "url": "https://re3ayapharmacy.com/cdn/shop/files/vitayami-fe-30-tablets-762660_7b8926bd-b11c-4ca9-8b03-30dffcf5aaef.jpg?v=1735258521",
+      "source": "re3ayapharmacy.com",
+      "sourcePage": "https://re3ayapharmacy.com/products/vitayami-fe-30-tablets",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "visual_pack_and_source_title_review",
+      "attribution": "re3ayapharmacy.com",
+      "note": "Source image visually reviewed against available catalog name; external delivery, exact stock pack variant and reuse rights not independently confirmed. Not for dispensing identification."
     },
     "2918": {
       "catalogName": "فيتموتوس2شريط",
@@ -29244,6 +29454,21 @@
       "attribution": "Azzam Pharmacy",
       "note": "External candidate preview; image availability and visual package not independently verified."
     },
+    "3198": {
+      "catalogName": "كﻼفيموكس625 جم",
+      "englishName": "Clavimox 625 mg 12 tablets",
+      "title": "Clavimox 625 mg 12 tablets",
+      "url": "https://dkud4u09qff41.cloudfront.net/Products/52c52dcb-9549-48a2-9c7b-08b22bef2507.jpeg",
+      "source": "www.vezeeta.com",
+      "sourcePage": "https://www.vezeeta.com/ar-eg/pharmacy/%D9%83%D9%84%D8%A7%D9%81%D9%8A%D9%85%D9%88%D9%83%D8%B3-625-%D9%85%D8%AC%D9%85-12-%D9%82%D8%B1%D8%B5",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "visual_pack_and_source_title_review",
+      "attribution": "www.vezeeta.com",
+      "note": "Source image visually reviewed against available catalog name; external delivery, exact stock pack variant and reuse rights not independently confirmed. Not for dispensing identification."
+    },
     "3201": {
       "catalogName": "كﻼفيموكس642 شراب",
       "englishName": "Clavimox 642 Syrup",
@@ -30324,6 +30549,21 @@
       "sha256": "5c88f8d739fbbe3f63dae73bc5043cb28adbcd3cc98bd3523bc48d3376eb0523",
       "manualVisualInspected": true,
       "matchReason": "product_pack_visually_checked_against_catalog_and_source_listing"
+    },
+    "3299": {
+      "catalogName": "كولاجرا وايتنج كريم فيتامين سى",
+      "englishName": "Kolagra Vitamin C Whitening Cream 50 ml",
+      "title": "Kolagra Vitamin C Whitening Cream 50 ml",
+      "url": "https://f.nooncdn.com/p/pzsku/ZC47E4048102222FDA34FZ/45/_/1720944909/ef472307-aedc-4ebb-ae58-a842220dc729.jpg?width=480",
+      "source": "www.noon.com",
+      "sourcePage": "https://www.noon.com/egypt-en/kolagra-vitamin-c-whitening-cream-50ml/ZC47E4048102222FDA34FZ/p/",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "visual_pack_and_source_title_review",
+      "attribution": "www.noon.com",
+      "note": "Source image visually reviewed against available catalog name; external delivery, exact stock pack variant and reuse rights not independently confirmed. Not for dispensing identification."
     },
     "3300": {
       "catalogName": "كولاكوجين برتقال30كيس",
@@ -31655,6 +31895,21 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Lotus Pharmacies",
       "sha256": "fe1cd0721abbb4ae816e0cfb4596f171c4997a1017baad1cef6e63444272b01a"
+    },
+    "3413": {
+      "catalogName": "كينو ستار ماكس500 ك",
+      "englishName": "Quinostarmax 500 mg 10 tablets",
+      "title": "Quinostarmax 500 mg 10 tablets",
+      "url": "https://www.lotusonline.com/cdn/shop/files/3009107_processed.jpg?v=1773701721",
+      "source": "www.lotusonline.com",
+      "sourcePage": "https://www.lotusonline.com/products/quinostarmax-500mg-levofloxacin-10-tablets",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "visual_pack_and_source_title_review",
+      "attribution": "www.lotusonline.com",
+      "note": "Source image visually reviewed against available catalog name; external delivery, exact stock pack variant and reuse rights not independently confirmed. Not for dispensing identification."
     },
     "3415": {
       "catalogName": "كينوموكسى400مجم 10 قرص",
@@ -34668,6 +34923,21 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Lotus Pharmacies"
     },
+    "3677": {
+      "catalogName": "ماكسيبيم1 جم حقن",
+      "englishName": "Maxipime 1 g vial",
+      "title": "Maxipime 1 g vial",
+      "url": "https://dkud4u09qff41.cloudfront.net/Products/c2c0cb72-121e-44dd-a45f-268f4f755000.jpeg",
+      "source": "www.vezeeta.com",
+      "sourcePage": "https://www.vezeeta.com/en-eg/pharmacy/maxipime-1-gm-vial",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "visual_pack_and_source_title_review",
+      "attribution": "www.vezeeta.com",
+      "note": "Source image visually reviewed against available catalog name; external delivery, exact stock pack variant and reuse rights not independently confirmed. Not for dispensing identification."
+    },
     "3678": {
       "catalogName": "ماكسيدينير125 شراب",
       "englishName": "Maxdinir 125 Syrup",
@@ -35134,6 +35404,21 @@
       "manualVisualInspected": true,
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Lotus Pharmacies"
+    },
+    "3719": {
+      "catalogName": "موبينورم اسبراى",
+      "englishName": "Mobinorm Massage Spray 120 ml",
+      "title": "Mobinorm Massage Spray 120 ml",
+      "url": "https://taypharmacies.com/wp-content/uploads/2023/03/6222019602943-01.webp",
+      "source": "taypharmacies.com",
+      "sourcePage": "https://taypharmacies.com/product/825043/mobinorm-massage-spray-120ml-11-off",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "visual_pack_and_source_title_review",
+      "attribution": "taypharmacies.com",
+      "note": "Source image visually reviewed against available catalog name; external delivery, exact stock pack variant and reuse rights not independently confirmed. Not for dispensing identification."
     },
     "3720": {
       "catalogName": "موتيليوم اقراص",
@@ -35606,6 +35891,21 @@
       "matchReason": "manual_catalog_and_retailer_title_comparison",
       "attribution": "Azzam Pharmacy",
       "note": "External candidate preview; image availability and visual package not independently verified."
+    },
+    "3760": {
+      "catalogName": "مونجارو15 مج",
+      "englishName": "Mounjaro KwikPen 15 mg/dose",
+      "title": "Mounjaro KwikPen 15 mg/dose",
+      "url": "https://alfouadpharmacies.com/cdn/shop/files/422.webp?v=1777803252&width=1615",
+      "source": "alfouadpharmacies.com",
+      "sourcePage": "https://alfouadpharmacies.com/en/products/mounjaro-15-mg-1-pen",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "visual_pack_and_source_title_review",
+      "attribution": "alfouadpharmacies.com",
+      "note": "Source image visually reviewed against available catalog name; external delivery, exact stock pack variant and reuse rights not independently confirmed. Not for dispensing identification."
     },
     "3761": {
       "catalogName": "مونجارو2.5 فيل",
@@ -39919,6 +40219,21 @@
       "matchReason": "manual_catalog_and_retailer_title_comparison",
       "attribution": "Azzam Pharmacy",
       "note": "External candidate preview; image availability and visual package not independently verified."
+    },
+    "4152": {
+      "catalogName": "هيستازين اقراص",
+      "englishName": "Histazine-1 10 mg 20 tablets",
+      "title": "Histazine-1 10 mg 20 tablets",
+      "url": "https://www.bloompharmacy.com/cdn/shop/products/histazine-1-10-mg-20-tablets-931142.jpg?v=1710450167",
+      "source": "www.bloompharmacy.com",
+      "sourcePage": "https://www.bloompharmacy.com/products/histazine-1-10-mg-20-tablets",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "visual_pack_and_source_title_review",
+      "attribution": "www.bloompharmacy.com",
+      "note": "Source image visually reviewed against available catalog name; external delivery, exact stock pack variant and reuse rights not independently confirmed. Not for dispensing identification."
     },
     "4154": {
       "catalogName": "هيستروجيت200مجم كبسول",
