@@ -1115,6 +1115,20 @@
       "manualVisualInspected": true,
       "matchReason": "product_pack_visually_checked_against_catalog_and_source_listing"
     },
+    "376": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/376.webp",
+      "source": "doctormpharmacy.com",
+      "sourcePage": "https://doctormpharmacy.com/products/alpha-chymotrypsin-3-amp-5-ml",
+      "originalImageUrl": "https://doctormpharmacy.com/cdn/shop/files/104304.webp?v=1755366481",
+      "catalogName": "الفاكيموتريبسين امبول",
+      "title": "Alpha Chymotrypsin 5 mg intramuscular ampoules",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "95996b7276b36603f1fc6912b0bfd33a0e379d6bbb40150eedfd5293c711784c"
+    },
     "377": {
       "catalogName": "الفامور اكياس",
       "englishName": "Alpha More Sachets",
@@ -1234,6 +1248,20 @@
       "sha256": "3bfa345f56de7259dde64932b230d7f41da8e32668319fec0785b77d30601579",
       "matchReason": "catalog_name_and_pack_details_checked_against_retailer_listing_and_image_ocr"
     },
+    "418": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/418.webp",
+      "source": "mtalaatpharmacy.com",
+      "sourcePage": "https://mtalaatpharmacy.com/ar/products/33040/alyrgolybr-shrb",
+      "originalImageUrl": "https://cdn.chefaa.com/public/uploads/products/alergoliber-syrup-120ml-qdql-01672735190.png",
+      "catalogName": "اليرجولبير شرب س ج52 ج",
+      "title": "Alergoliber 1 mg/ml oral solution, 120 ml",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "43cdf826cc09a255f8b2613e737435235921a1fdac8eca65aa422437ea9d111f"
+    },
     "422": {
       "catalogName": "اليرزون كريم سعر40 ج",
       "englishName": "Allerzone Cream",
@@ -1247,6 +1275,20 @@
       "attribution": "Dina Pharmacy",
       "sha256": "4a37ce1796a16b26b42ac8169e86af8eac29a175043c319d1df755ae3f8e0496",
       "matchReason": "catalog_name_and_pack_details_checked_against_retailer_listing_and_image_ocr"
+    },
+    "428": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/428.webp",
+      "source": "shop.pharmaemarket.com",
+      "sourcePage": "https://shop.pharmaemarket.com/pharma/ar/EGP/product/000000000000033488/%D8%A7%D9%84%D9%8A%D9%83%D8%B3%D9%88%D9%84%D8%A7%D9%8A%D8%AA%20%D8%B4%D8%B1%D8%A7%D8%A8%20360%20%D9%85%D9%84%20%D8%A7%D9%86%D8%A7%D9%86%D8%A7%D8%B3/",
+      "originalImageUrl": "https://api.c0umyt3cda-pharmaove1-p1-public.model-t.cc.commerce.ondemand.com/medias/000000000000033488.webp?context=bWFzdGVyfGltYWdlc3wxOTY1MXxpbWFnZS9qcGVnfGFEZG1MMmhpWXk4eE1UTTFOekEyTXprd05UTXhNQzh3TURBd01EQXdNREF3TURBd016TTBPRGd1ZDJWaWNBfDQwNDZhNDA2MGYzMzg1ZDEzZTM1YTZlMWY2MzEwOGUzMGE4MTA2MDE1MGE0ZGYzYjcxZGI3MWI4NDE2YTE1OTU",
+      "catalogName": "اليكسولايت محلول جفاف اناناس",
+      "title": "Alexolyte Rehydration Drink – Pineapple, 360 ml",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "661aab1c0a29aa7dd872494a1a8828de90930b22176074793692f075693f2559"
     },
     "433": {
       "catalogName": "اليمبوسيس2.5مجم اقراص",
@@ -1364,6 +1406,34 @@
       "attribution": "Azzam Pharmacy",
       "license": "external retailer image; rights not independently verified",
       "note": "Real retailer image URL; packaging pixels and remote availability not independently verified"
+    },
+    "480": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/480.webp",
+      "source": "gate.ahram.org.eg",
+      "sourcePage": "https://gate.ahram.org.eg/News/5169925.aspx",
+      "originalImageUrl": "https://gate.ahram.org.eg/Media/News/2025/5/12/2025-638826586602951626-295.jpg",
+      "catalogName": "اميجليسبير500مجم اقراص",
+      "title": "Imeglispire 500 mg, 30 film-coated tablets",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "4586217ae33ba597bde6f396b48c0dba17f4d162b30887792c39d4991d6892ff"
+    },
+    "488": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/488.webp",
+      "source": "taypharmacies.com",
+      "sourcePage": "https://taypharmacies.com/product/767510/immuguard-eff-14-sachets",
+      "originalImageUrl": "https://taypharmacies.com/wp-content/uploads/2023/01/immuguard14-400x400-1.png",
+      "catalogName": "اميوجارد14 كييييس",
+      "title": "Immuguard Vanilla, 14 sachets of 3 g",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "931d29839f1ce8f9104cee09e761096a649615fa29e6a58f8b2e59061c2dab42"
     },
     "489": {
       "catalogName": "اميوجارد اكياس7 كيس",
@@ -1761,6 +1831,20 @@
       "manualVisualInspected": true,
       "matchReason": "product_pack_visually_checked_against_catalog_and_source_listing"
     },
+    "569": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/569.webp",
+      "source": "roshmed.com",
+      "sourcePage": "https://roshmed.com/en/shop/i137510-enemax-enema-solution-120-ml-275119",
+      "originalImageUrl": "https://roshmed.com/web/image/product.product/263829/image_1024/%5BI137510%5D%20ENEMAX%20ENEMA%20SOLUTION%20120%20ML?unique=d662dc6",
+      "catalogName": "انماكس حقنه شرجيه ك25",
+      "title": "Enemax ready-to-use enema, 120 ml",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "20fca4332e3f74956845d000c33cae7d4622da73ba3099298cffe7b4bb90180b"
+    },
     "572": {
       "catalogName": "انوفا اقراص",
       "englishName": "Anuva",
@@ -1833,6 +1917,20 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Lotus Pharmacies",
       "sha256": "85aaad93778a695dd270ae9bedb731f087e6b5b3f08d10743179aef1c3afc208"
+    },
+    "588": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/588.webp",
+      "source": "shop.pharmaemarket.com",
+      "sourcePage": "https://shop.pharmaemarket.com/pharma/en/EGP/product/000000000000023970/OPTAMINESS%20100%20TABS./",
+      "originalImageUrl": "https://api.c0umyt3cda-pharmaove1-p1-public.model-t.cc.commerce.ondemand.com/medias/000000000000023970.jpg?context=bWFzdGVyfGltYWdlc3wzMjQ0NjF8aW1hZ2UvanBlZ3xhR0V4TDJnMk1TOHhNRGc1TnpRNE56QTJPVEl4TkM4d01EQXdNREF3TURBd01EQXdNak01TnpBdWFuQm58NDQ4OTcwODFkZTQwN2ZhNjk2MjQ0ODQ5ZWVhZmU1MDEzZDFmNjA0MmEyMjYzOTNjNjZlZmNmOTY0YTBmMGEyYg",
+      "catalogName": "اوبتامينس100 قرص",
+      "title": "Optaminess, 100 film-coated tablets",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "manual_visible_pack_and_product_source_match",
+      "sha256": "2ca278e37b23378f7cf05ea3fbb886cae6ea293fdad8daef8ab2077b5082551c"
     },
     "592": {
       "catalogName": "اوبتى فونيك نقط",
