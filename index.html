@@ -7874,10 +7874,23 @@
 
                 // Verified package-photo seed: Apple-Lite 30 tablets (catalog item #10).
                 // Source page shows the exact Apple-Lite pack; do not use lookalike images.
-                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v71';
+                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v72';
                 if (localStorage.getItem(IMAGE_SEED_VERSION) !== '1') {
                     // Individually checked package photos: brand, strength/stage and form match.
                     const verifiedImageSeeds = {
+                        '2704': { src: 'assets/product-images/2704.jpg', source: 'Pack photo - Pharmastin eye drops' },
+                        '230507': { src: 'assets/product-images/230507.jpg', source: 'Pack photo - Moist-1 toner 200 ml' },
+                        '230442': { src: 'assets/product-images/230442.jpg', source: 'Pack photo - Coffee Zinc shampoo' },
+                        '230060': { src: 'assets/product-images/230060.jpg', source: 'Pack photo - Anaforten anti-dandruff shampoo' },
+                        '4082': { src: 'assets/product-images/4082.jpg', source: 'Pack photo - Hyalokonex serum' },
+                        '3990': { src: 'assets/product-images/3990.jpg', source: 'Pack photo - Nermostar shampoo' },
+                        '3658': { src: 'assets/product-images/3658.jpg', source: 'Pack photo - Child nebulizer mask' },
+                        '3642': { src: 'assets/product-images/3642.jpg', source: 'Pack photo - Magic Oil 60 ml' },
+                        '3513': { src: 'assets/product-images/3513.jpg', source: 'Pack photo - Lunner whitening cream' },
+                        '3395': { src: 'assets/product-images/3395.jpg', source: 'Pack photo - Keraquoz shampoo' },
+                        '3044': { src: 'assets/product-images/3044.jpg', source: 'Pack photo - Capixy hair serum' },
+                        '3038': { src: 'assets/product-images/3038.jpg', source: 'Pack photo - Capry Top soap' },
+                        '2933': { src: 'assets/product-images/2933.jpg', source: 'Pack photo - First Voc hair cream' },
                         '2626': { src: 'assets/product-images/2626.jpg', source: 'Pack photo - Synobar foaming cleanser' },
                         '3277': { src: 'assets/product-images/3277.jpg', source: 'Pack photo - Kolagra odorless roll-on twin pack' },
                         '3157': { src: 'assets/product-images/3157.jpg', source: 'Pack photo - Kapritage soap' },
@@ -7887,7 +7900,6 @@
                         '1993': { src: 'assets/product-images/1993.jpg', source: 'Pack photo - Ravenna Valley Panthenol Hair Cream 100 g' },
                         '1916': { src: 'assets/product-images/1916.jpg', source: 'Pack photo - Divozine lotion' },
                         '1224': { src: 'assets/product-images/1224.jpg', source: 'Pack photo - Pearla whitening cream' },
-                        '578': { src: 'assets/product-images/578.jpg', source: 'Pack photo - Anona lotion' },
                         '3652': { src: 'assets/product-images/3652.jpg', source: 'Pack photo - Marleoce Shampoo 150 ml' },
                         '2381': { src: 'assets/product-images/2381.jpg', source: 'Pack photo - Soft Ultra Care Lotion' },
                         '998': { src: 'assets/product-images/998.jpg', source: 'Pack photo - Pross Hair Cream 150 gm' },
@@ -8078,7 +8090,7 @@
                         '390': { src: 'https://www.lotusonline.com/cdn/shop/files/3008103_processed.jpg?v=1767615044&width=750', source: 'Lotus Pharmacies — Alkapress Trio 5/160/25 mg, 14 tablets; exact triple strength and pack verified' },
                         '391': { src: 'assets/product-images/391.webp', source: 'Tdawi Egypt — Alkapress Plus 10/160 mg, 20 tablets; exact combination and pack verified' },
                         '399': { src: 'assets/product-images/399.jpg', source: 'Amazon Egypt — Aloekita DSDA shampoo, 250 ml; exact product line and volume matched' },
-                        '400': { src: 'https://chancestoreegy.com/cdn/shop/files/Aloekita_Hair_Nouurishing_Conditioner_200ml.png?v=1765027491', source: 'Chance Store Egypt — Aloekita Hair Nourishing Conditioner, 200 ml; exact product and volume verified' },
+                        '400': { src: 'assets/product-images/400.jpg', source: 'Pack photo - Aloekita pink conditioner' },
                         '401': { src: 'https://stuhm.com/wp-content/uploads/2025/05/%D8%A7%D9%84%D9%88%D9%83%D9%8A%D8%AA%D8%A7-%D9%87%D9%8A%D8%B1-%D8%AC%D8%B1%D9%88%D8%AB-min.png', source: 'Stuhm — Aloekita Hair Growth Spray, 200 ml; exact product and volume verified' },
                         '402': { src: 'assets/product-images/402.jpg', source: 'Pack photo - Aloekita blue shampoo' },
                         '403': { src: 'assets/product-images/403.png', source: 'eBay Egypt listing — Aloekita Anti-Dandruff Shampoo, 200 ml; exact variant and volume verified' },
@@ -8559,7 +8571,7 @@
                     };
                     // Apply repaired links only over known old pharmacy placeholder seeds; do not overwrite admin changes.
                     const correctedPharmacyPhotoIds = new Set(['16','427','429','496','506','507','519','521','522','533','545','546','608']);
-                    const imageLegacySeedSources = {"1040": "Tay Pharmacies — Prettier Facial Exfoliating Gel, 250 g; exact product and size verified", "402": "Anwar Store — Aloekita Caffeine Shampoo Blue, 200 ml; exact color variant and volume verified", "658": "Life Masr — Orovex banana mouthwash, 250 ml; exact flavor and volume verified", "2": "Tay Pharmacies — Update Whitening Cream 50 gm; exact Update cream pack verified", "657": "Lotus Pharmacies — Orovex Miswak mouthwash, 250 ml; exact variant and volume verified", "656": "Tdawi — Orovex clove mouthwash, 250 ml; exact flavor and volume verified", "174": "Tay Pharmacies — Argento Clear Facial Cleanser 200 ml; exact product name matched", "3": "Lotus Pharmacies — Ibandrocare 150 mg, 2 film-coated tablets; exact brand and strength verified", "36": "PharmaciaTy — Epifasi 5000 IU, 1 ampoule plus solvent; exact brand and strength verified", "75": "Lotus Pharmacies — Atacand 4 mg, 14 tablets; exact brand and strength verified", "101": "Lotus Pharmacies — Atorstat 80 mg, 10 scored tablets; exact brand, strength and pack verified", "85": "Al-Dawaa Pharmacy — Atrovent 500 mcg/2 ml, 20 unit-dose inhalation vials; exact strength and pack verified", "86": "Al-Dawaa Pharmacy — Atrovent 250 mcg/2 ml, 20 unit-dose inhalation vials; exact strength and pack verified"};
+                    const imageLegacySeedSources = {"400": "Chance Store Egypt — Aloekita Hair Nourishing Conditioner, 200 ml; exact product and volume verified", "1040": "Tay Pharmacies — Prettier Facial Exfoliating Gel, 250 g; exact product and size verified", "402": "Anwar Store — Aloekita Caffeine Shampoo Blue, 200 ml; exact color variant and volume verified", "658": "Life Masr — Orovex banana mouthwash, 250 ml; exact flavor and volume verified", "2": "Tay Pharmacies — Update Whitening Cream 50 gm; exact Update cream pack verified", "657": "Lotus Pharmacies — Orovex Miswak mouthwash, 250 ml; exact variant and volume verified", "656": "Tdawi — Orovex clove mouthwash, 250 ml; exact flavor and volume verified", "174": "Tay Pharmacies — Argento Clear Facial Cleanser 200 ml; exact product name matched", "3": "Lotus Pharmacies — Ibandrocare 150 mg, 2 film-coated tablets; exact brand and strength verified", "36": "PharmaciaTy — Epifasi 5000 IU, 1 ampoule plus solvent; exact brand and strength verified", "75": "Lotus Pharmacies — Atacand 4 mg, 14 tablets; exact brand and strength verified", "101": "Lotus Pharmacies — Atorstat 80 mg, 10 scored tablets; exact brand, strength and pack verified", "85": "Al-Dawaa Pharmacy — Atrovent 500 mcg/2 ml, 20 unit-dose inhalation vials; exact strength and pack verified", "86": "Al-Dawaa Pharmacy — Atrovent 250 mcg/2 ml, 20 unit-dose inhalation vials; exact strength and pack verified"};
                     Object.entries(verifiedImageSeeds).forEach(([id, seed]) => {
                         if (seed.src && (PROD_IMG_VERIFIED[id] !== true || PROD_IMG_SRC[id] === seed.source || getRehostedProductPhoto(id, PROD_IMAGES[id])?.src === seed.src || (seed.src.startsWith('assets/product-images/') && Object.prototype.hasOwnProperty.call(imageLegacySeedSources, String(id)) && imageLegacySeedSources[String(id)] === PROD_IMG_SRC[id]) || (correctedPharmacyPhotoIds.has(String(id)) && (/^(Abdin Pharmacies|Rosheta)\s*—/.test(PROD_IMG_SRC[id] || ''))))) {
                             const alreadySynced = PROD_IMG_VERIFIED[id] === true && PROD_IMAGES[id] === seed.src && PROD_IMG_SRC[id] === seed.source;
@@ -8574,6 +8586,12 @@
                             }
                         }
                     });
+                    if (PROD_IMG_SRC['578'] === 'Pack photo - Anona lotion') {
+                        delete PROD_IMAGES['578'];
+                        delete PROD_IMG_SRC['578'];
+                        delete PROD_IMG_VERIFIED['578'];
+                        if (imageSeedBatch) { imageSeedBatch.delete(firestoreDB.collection('productImages').doc('578')); queueImageSeedWrite(); }
+                    }
                     // Quarantine placeholder links without a verified alternate product photo.
                     ['428', '430', '495'].forEach(id => {
                         if ((PROD_IMG_SRC[id] || '').startsWith('Abdin Pharmacies')) {
