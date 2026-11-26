@@ -7874,10 +7874,19 @@
 
                 // Verified package-photo seed: Apple-Lite 30 tablets (catalog item #10).
                 // Source page shows the exact Apple-Lite pack; do not use lookalike images.
-                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v73';
+                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v74';
                 if (localStorage.getItem(IMAGE_SEED_VERSION) !== '1') {
                     // Individually checked package photos: brand, strength/stage and form match.
                     const verifiedImageSeeds = {
+                        '1602': { src: 'assets/product-images/1602.jpg', source: 'Pack photo - Luna glycerin transparent soap' },
+                        '2741': { src: 'assets/product-images/2741.jpg', source: 'Pack photo - Vacation Niacinamide serum 30 ml' },
+                        '707': { src: 'assets/product-images/707.jpg', source: 'Pack photo - Always Ultra extra long blue 14 pads value pack' },
+                        '621': { src: 'assets/product-images/621.jpg', source: 'Pack photo - Oratop clove mouthwash - Misr Pharmacies' },
+                        '617': { src: 'assets/product-images/617.jpg', source: 'Pack photo - Oratop-Pro mouthwash' },
+                        '3454': { src: 'assets/product-images/3454.jpg', source: 'Pack photo - Lacrifresh 30 single-dose units' },
+                        '230266': { src: 'assets/product-images/230266.jpg', source: 'Pack photo - StarVille Fresh Breeze 200 ml' },
+                        '1989': { src: 'assets/product-images/1989.jpg', source: 'Pack photo - Ravennavalley Hyaluronic Acid face serum 30 ml' },
+                        '1988': { src: 'assets/product-images/1988.jpg', source: 'Pack photo - Ravennavalley Vitamin C serum 30 ml' },
                         '1490': { src: 'assets/product-images/1490.jpg', source: 'Pack photo - Temppo Cool four cooling sheets - Masco' },
                         '1983': { src: 'assets/product-images/1983.jpg', source: 'Pack photo - Ravennavalley Face Cleanser Gel' },
                         '4136': { src: 'assets/product-images/4136.jpg', source: 'Pack photo - هيرفوجين بلسم' },
@@ -8380,7 +8389,7 @@
                         '917': { src: 'assets/product-images/917.jpg', source: 'AlFouad Pharmacies — Panadol Cold & Flu Day, 24 tablets; exact variant and pack verified' },
                         '919': { src: 'https://www.lotusonline.com/cdn/shop/files/3006174_1.jpg?v=1767615162', source: 'Lotus Pharmacies — Pantazol 40 mg, 14 enteric-coated tablets; exact brand, strength and pack verified' },
                         '933': { src: 'https://www.lotusonline.com/cdn/shop/files/3008962_processed.jpg?v=1773305403', source: 'Lotus Pharmacies — Novex Panthenol moisturizing cream, 30 g; exact brand and size verified' },
-                        '934': { src: 'https://www.lotusonline.com/cdn/shop/files/3008203_processed.jpg?v=1767613865', source: 'Lotus Pharmacies — Spectra Extra Panthenol cream, 30 g; exact brand and size verified' },
+                        '934': { src: 'assets/product-images/934.jpg', source: 'Pack photo - Spectra Panthenol moisturizer 30 gm' },
                         '936': { src: 'assets/product-images/936.jpg', source: 'Al-Jazea — El-Nile Panthenol 5% cream, 50 g; exact manufacturer, strength and size verified' },
                         '937': { src: 'assets/product-images/937.jpg', source: 'Al-Jazea — El-Nile Panthenol 5% cream, 50 g; exact manufacturer, strength and size verified' },
                         '992': { src: 'assets/product-images/992.jpg', source: 'Pharma eMarket — Progest micronized progesterone 200 mg, 30 soft gelatin capsules; exact strength and pack verified' },
@@ -8485,7 +8494,7 @@
                         '320': { src: 'assets/product-images/320.jpg', source: 'Drug Zoom — L-Arginine Mepaco 1000 mg, 60 tablets; exact brand, strength and pack verified' },
                         '321': { src: 'https://www.lotusonline.com/cdn/shop/files/3010083_processed.jpg?v=1773701375&width=750', source: 'Lotus Pharmacies — L.C Plus probiotic drops, 10 ml; exact product, form and volume verified' },
                         '388': { src: 'assets/product-images/388.png', source: 'Wael Samir Pharma — Alkapress Trio 10/320/25 mg, 14 film-coated tablets; exact combination and pack verified' },
-                        '409': { src: 'https://anwar.store/cdn/shop/files/New_Template-Photoroom_10.jpg?v=1733244480', source: 'Anwar Store — Alejon Eye Contour Serum, 30 ml; exact product and volume verified' },
+                        '409': { src: 'assets/product-images/409.jpg', source: 'Pack photo - Alejon Eye Contour Serum 30 ml' },
                         '410': { src: 'assets/product-images/410.jpg', source: 'BeMart — Alejon Sunscreen Gel SPF 50, 75 ml; exact product and SPF verified' },
                         '413': { src: 'assets/product-images/413.jpg', source: 'LadyY — Alejon Whitening Cream, 50 ml; exact product and volume verified' },
                         '414': { src: 'assets/product-images/414.jpg', source: 'Mai Pharmacy — Alejon Hair Lotion 150 ml; exact brand, product and volume visually verified' },
@@ -8617,7 +8626,7 @@
                     };
                     // Apply repaired links only over known old pharmacy placeholder seeds; do not overwrite admin changes.
                     const correctedPharmacyPhotoIds = new Set(['16','427','429','496','506','507','519','521','522','533','545','546','608']);
-                    const imageLegacySeedSources = {"943": "Tay Pharmacies — Pancreat Plus anti-hair-loss lotion, 120 ml; exact brand and volume verified", "400": "Chance Store Egypt — Aloekita Hair Nourishing Conditioner, 200 ml; exact product and volume verified", "1040": "Tay Pharmacies — Prettier Facial Exfoliating Gel, 250 g; exact product and size verified", "402": "Anwar Store — Aloekita Caffeine Shampoo Blue, 200 ml; exact color variant and volume verified", "658": "Life Masr — Orovex banana mouthwash, 250 ml; exact flavor and volume verified", "2": "Tay Pharmacies — Update Whitening Cream 50 gm; exact Update cream pack verified", "657": "Lotus Pharmacies — Orovex Miswak mouthwash, 250 ml; exact variant and volume verified", "656": "Tdawi — Orovex clove mouthwash, 250 ml; exact flavor and volume verified", "174": "Tay Pharmacies — Argento Clear Facial Cleanser 200 ml; exact product name matched", "3": "Lotus Pharmacies — Ibandrocare 150 mg, 2 film-coated tablets; exact brand and strength verified", "36": "PharmaciaTy — Epifasi 5000 IU, 1 ampoule plus solvent; exact brand and strength verified", "75": "Lotus Pharmacies — Atacand 4 mg, 14 tablets; exact brand and strength verified", "101": "Lotus Pharmacies — Atorstat 80 mg, 10 scored tablets; exact brand, strength and pack verified", "85": "Al-Dawaa Pharmacy — Atrovent 500 mcg/2 ml, 20 unit-dose inhalation vials; exact strength and pack verified", "86": "Al-Dawaa Pharmacy — Atrovent 250 mcg/2 ml, 20 unit-dose inhalation vials; exact strength and pack verified"};
+                    const imageLegacySeedSources = {"934": "Lotus Pharmacies — Spectra Extra Panthenol cream, 30 g; exact brand and size verified", "409": "Anwar Store — Alejon Eye Contour Serum, 30 ml; exact product and volume verified", "943": "Tay Pharmacies — Pancreat Plus anti-hair-loss lotion, 120 ml; exact brand and volume verified", "400": "Chance Store Egypt — Aloekita Hair Nourishing Conditioner, 200 ml; exact product and volume verified", "1040": "Tay Pharmacies — Prettier Facial Exfoliating Gel, 250 g; exact product and size verified", "402": "Anwar Store — Aloekita Caffeine Shampoo Blue, 200 ml; exact color variant and volume verified", "658": "Life Masr — Orovex banana mouthwash, 250 ml; exact flavor and volume verified", "2": "Tay Pharmacies — Update Whitening Cream 50 gm; exact Update cream pack verified", "657": "Lotus Pharmacies — Orovex Miswak mouthwash, 250 ml; exact variant and volume verified", "656": "Tdawi — Orovex clove mouthwash, 250 ml; exact flavor and volume verified", "174": "Tay Pharmacies — Argento Clear Facial Cleanser 200 ml; exact product name matched", "3": "Lotus Pharmacies — Ibandrocare 150 mg, 2 film-coated tablets; exact brand and strength verified", "36": "PharmaciaTy — Epifasi 5000 IU, 1 ampoule plus solvent; exact brand and strength verified", "75": "Lotus Pharmacies — Atacand 4 mg, 14 tablets; exact brand and strength verified", "101": "Lotus Pharmacies — Atorstat 80 mg, 10 scored tablets; exact brand, strength and pack verified", "85": "Al-Dawaa Pharmacy — Atrovent 500 mcg/2 ml, 20 unit-dose inhalation vials; exact strength and pack verified", "86": "Al-Dawaa Pharmacy — Atrovent 250 mcg/2 ml, 20 unit-dose inhalation vials; exact strength and pack verified"};
                     Object.entries(verifiedImageSeeds).forEach(([id, seed]) => {
                         if (seed.src && (PROD_IMG_VERIFIED[id] !== true || PROD_IMG_SRC[id] === seed.source || getRehostedProductPhoto(id, PROD_IMAGES[id])?.src === seed.src || (seed.src.startsWith('assets/product-images/') && Object.prototype.hasOwnProperty.call(imageLegacySeedSources, String(id)) && imageLegacySeedSources[String(id)] === PROD_IMG_SRC[id]) || (correctedPharmacyPhotoIds.has(String(id)) && (/^(Abdin Pharmacies|Rosheta)\s*—/.test(PROD_IMG_SRC[id] || ''))))) {
                             const alreadySynced = PROD_IMG_VERIFIED[id] === true && PROD_IMAGES[id] === seed.src && PROD_IMG_SRC[id] === seed.source;
