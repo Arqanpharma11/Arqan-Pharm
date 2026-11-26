@@ -3224,6 +3224,22 @@
       "attribution": "Azzam Pharmacy",
       "note": "External candidate preview; image availability and visual package not independently verified."
     },
+    "780": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/780.webp",
+      "source": "www.carencurepharmacy.com",
+      "sourcePage": "https://www.carencurepharmacy.com/ar/products/ايريس-5-مج-قرص-30-س",
+      "originalImageUrl": "https://www.carencurepharmacy.com/cdn/shop/products/28830_1800x1800.jpg?v=1624695109",
+      "catalogName": "اقراص_ ايريس",
+      "englishName": "",
+      "title": "اقراص_ ايريس",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "matchScore": 1,
+      "matchReason": "multi_source_2",
+      "sha256": "45e1387088c26c9ebab02d59ca7f7f22b0da24eb5108b4a02d8fdbed1cad8a53",
+      "provenance": "Image downloaded and matched by image discovery bot; commercial reuse license unverified"
+    },
     "785": {
       "catalogName": "ايزاليزيبين800مجم",
       "title": "Eslizepine 800mg Eslicarbazepine Acetate Tablets",
