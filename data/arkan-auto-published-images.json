@@ -13640,6 +13640,22 @@
       "attribution": "Lotus Pharmacies",
       "sha256": "123c55c23e224c29c4c7ed0ac05dd4b8d42485955f132f05aa75e2ffd99386bc"
     },
+    "1805": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/1805.webp",
+      "source": "5.imimg.com",
+      "sourcePage": "https://www.indiamart.com/proddetail/doximycin-tablet-doxycycline-100mg-lactobacillus-100million-spores-27255403533.html",
+      "originalImageUrl": "https://5.imimg.com/data5/SELLER/Default/2022/10/EW/PN/BL/161039525/doximycin-tablet-doxycycline-100mg-lactobacillus-100million-spores--1000x1000.png",
+      "catalogName": "دوكسى مايسين اقراص",
+      "englishName": "Doxymycin",
+      "title": "Doxymycin دوكسى مايسين اقراص",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "matchScore": 1,
+      "matchReason": "ocr",
+      "sha256": "d53e05142ddc3be34d3be35661c97bdffa54151bba157067e3d5dd964cf4d31a",
+      "provenance": "Image downloaded and matched by image discovery bot; commercial reuse license unverified"
+    },
     "1807": {
       "catalogName": "دوكسيرازول30مجم",
       "englishName": "",
