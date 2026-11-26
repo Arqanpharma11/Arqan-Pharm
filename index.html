@@ -7874,16 +7874,22 @@
 
                 // Verified package-photo seed: Apple-Lite 30 tablets (catalog item #10).
                 // Source page shows the exact Apple-Lite pack; do not use lookalike images.
-                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v69';
+                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v70';
                 if (localStorage.getItem(IMAGE_SEED_VERSION) !== '1') {
                     // Individually checked package photos: brand, strength/stage and form match.
                     const verifiedImageSeeds = {
+                        '3652': { src: 'assets/product-images/3652.jpg', source: 'Pack photo - Marleoce Shampoo 150 ml' },
+                        '2381': { src: 'assets/product-images/2381.jpg', source: 'Pack photo - Soft Ultra Care Lotion' },
+                        '998': { src: 'assets/product-images/998.jpg', source: 'Pack photo - Pross Hair Cream 150 gm' },
+                        '997': { src: 'assets/product-images/997.jpg', source: 'Pack photo - Pross Shampoo 250 ml' },
+                        '564': { src: 'assets/product-images/564.jpg', source: 'Pack photo - Investa Serum' },
+                        '314': { src: 'assets/product-images/314.jpg', source: 'Pack photo - Acne Vera Soap Bar' },
                         '4029': { src: 'assets/product-images/4029.jpg', source: 'Tay Pharmacies - New Akim Hair Oil 60 ml' },
                         '230059': { src: 'assets/product-images/230059.jpg', source: 'Tay Pharmacies - In and Out Shower Gel 200 ml' },
                         '1426': { src: 'assets/product-images/1426.jpg', source: 'Nour Pharmacies - Topimethrin lotion 50 mg/ml' },
                         '2349': { src: 'assets/product-images/2349.jpg', source: 'Eldawa Elmasry - Smooth Face Medicated Soap, pack visually matched' },
                         '1': { src: 'assets/product-images/1.png', source: 'Dose/DwaPrices — Update Body Oil 60 ml; exact brand, product and size verified' },
-                        '2': { src: 'https://taypharmacies.com/wp-content/uploads/2025/01/2025-01-05T113747.508.png', source: 'Tay Pharmacies — Update Whitening Cream 50 gm; exact Update cream pack verified' },
+                        '2': { src: 'assets/product-images/2.jpg', source: 'Pack photo - Update Whitening Cream' },
                         '3': { src: 'assets/product-images/3.jpg', source: 'Re3aya Pharmacy — Ibandrocare 150 mg, 2 film-coated tablets; package photo cross-checked' },
                         '4': { src: 'assets/product-images/4.webp', source: 'Kidz Market Egypt — Aptamil Advance Stage 1, 400 g; exact stage and brand verified' },
                         '5': { src: 'assets/product-images/5.webp', source: 'Kidz Market Egypt — Aptamil Advance Stage 2 follow-on formula, 400 g' },
@@ -8181,7 +8187,7 @@
                         '655': { src: 'assets/product-images/655.jpg', source: 'MapDent — Orovex strawberry mouthwash, 250 ml; exact flavor and volume verified' },
                         '656': { src: 'assets/product-images/656.webp', source: 'Orovex Clove mouthwash 250 ml — visually matched replacement pack' },
                         '657': { src: 'assets/product-images/657.jpg', source: 'Noon - Orovex Miswak mouthwash' },
-                        '658': { src: 'https://lifemasr.com/wp-content/uploads/2024/03/6224000437749.jpg', source: 'Life Masr — Orovex banana mouthwash, 250 ml; exact flavor and volume verified' },
+                        '658': { src: 'assets/product-images/658.jpg', source: 'Pack photo - Orovex Banana Mouthwash' },
                         '659': { src: 'assets/product-images/659.jpg', source: 'Noon Egypt — Orovex peppermint mouthwash, 250 ml; exact flavor and volume verified' },
                         '673': { src: 'assets/product-images/673.jpg', source: 'Vezeeta Pharmacy — Oframax ceftriaxone 1 g IV vial kit; exact route and presentation verified' },
                         '674': { src: 'https://www.lotusonline.com/cdn/shop/files/3001239_processed.jpg?v=1767613591&width=750', source: 'Lotus Pharmacies — Oflam 50 mg, 20 quicktabs; exact strength and pack verified' },
@@ -8543,7 +8549,7 @@
                     };
                     // Apply repaired links only over known old pharmacy placeholder seeds; do not overwrite admin changes.
                     const correctedPharmacyPhotoIds = new Set(['16','427','429','496','506','507','519','521','522','533','545','546','608']);
-                    const imageLegacySeedSources = {"657": "Lotus Pharmacies — Orovex Miswak mouthwash, 250 ml; exact variant and volume verified", "656": "Tdawi — Orovex clove mouthwash, 250 ml; exact flavor and volume verified", "174": "Tay Pharmacies — Argento Clear Facial Cleanser 200 ml; exact product name matched", "3": "Lotus Pharmacies — Ibandrocare 150 mg, 2 film-coated tablets; exact brand and strength verified", "36": "PharmaciaTy — Epifasi 5000 IU, 1 ampoule plus solvent; exact brand and strength verified", "75": "Lotus Pharmacies — Atacand 4 mg, 14 tablets; exact brand and strength verified", "101": "Lotus Pharmacies — Atorstat 80 mg, 10 scored tablets; exact brand, strength and pack verified", "85": "Al-Dawaa Pharmacy — Atrovent 500 mcg/2 ml, 20 unit-dose inhalation vials; exact strength and pack verified", "86": "Al-Dawaa Pharmacy — Atrovent 250 mcg/2 ml, 20 unit-dose inhalation vials; exact strength and pack verified"};
+                    const imageLegacySeedSources = {"658": "Life Masr — Orovex banana mouthwash, 250 ml; exact flavor and volume verified", "2": "Tay Pharmacies — Update Whitening Cream 50 gm; exact Update cream pack verified", "657": "Lotus Pharmacies — Orovex Miswak mouthwash, 250 ml; exact variant and volume verified", "656": "Tdawi — Orovex clove mouthwash, 250 ml; exact flavor and volume verified", "174": "Tay Pharmacies — Argento Clear Facial Cleanser 200 ml; exact product name matched", "3": "Lotus Pharmacies — Ibandrocare 150 mg, 2 film-coated tablets; exact brand and strength verified", "36": "PharmaciaTy — Epifasi 5000 IU, 1 ampoule plus solvent; exact brand and strength verified", "75": "Lotus Pharmacies — Atacand 4 mg, 14 tablets; exact brand and strength verified", "101": "Lotus Pharmacies — Atorstat 80 mg, 10 scored tablets; exact brand, strength and pack verified", "85": "Al-Dawaa Pharmacy — Atrovent 500 mcg/2 ml, 20 unit-dose inhalation vials; exact strength and pack verified", "86": "Al-Dawaa Pharmacy — Atrovent 250 mcg/2 ml, 20 unit-dose inhalation vials; exact strength and pack verified"};
                     Object.entries(verifiedImageSeeds).forEach(([id, seed]) => {
                         if (seed.src && (PROD_IMG_VERIFIED[id] !== true || PROD_IMG_SRC[id] === seed.source || getRehostedProductPhoto(id, PROD_IMAGES[id])?.src === seed.src || (seed.src.startsWith('assets/product-images/') && Object.prototype.hasOwnProperty.call(imageLegacySeedSources, String(id)) && imageLegacySeedSources[String(id)] === PROD_IMG_SRC[id]) || (correctedPharmacyPhotoIds.has(String(id)) && (/^(Abdin Pharmacies|Rosheta)\s*—/.test(PROD_IMG_SRC[id] || ''))))) {
                             const alreadySynced = PROD_IMG_VERIFIED[id] === true && PROD_IMAGES[id] === seed.src && PROD_IMG_SRC[id] === seed.source;
