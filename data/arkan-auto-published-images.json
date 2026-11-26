@@ -3343,6 +3343,20 @@
       "manualVisualInspected": true,
       "matchReason": "product_pack_visually_checked_against_catalog_and_source_listing"
     },
+    "802": {
+      "catalogName": "ايزى كير معجون اسنان كبير",
+      "title": "EZ-Care Toothpaste 120 gm",
+      "englishName": "EZ-Care Toothpaste 120 gm",
+      "url": "https://www.rosheta.com/upload/f48d4943e7b1e44a0ba72325efd3ed2eea9d2c13826c467e50f747dcac39ad2d.webp",
+      "source": "www.rosheta.com",
+      "sourcePage": "https://www.rosheta.com/ar/4790/-%D9%8A-%D8%B2%D8%AF-%D9%83%D9%8A%D8%B1",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "Source pack image inspected and matched to catalog brand and product type",
+      "note": "External preview; live portal rendering and reuse rights not independently verified."
+    },
     "804": {
       "url": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/53084.webp?v=1786653329",
       "source": "azzampharmacy.com",
@@ -7942,6 +7956,20 @@
       "attribution": "DwaPrices",
       "sha256": "d7feb08e9d46cdf9e72ee5ab9d03202cd46233ce04c7d36537c1a44917464595",
       "matchReason": "catalog_name_and_pack_details_checked_against_retailer_listing_and_image_ocr"
+    },
+    "1323": {
+      "catalogName": "تالينوروز غسول سيدات",
+      "title": "Talinorose Intimate Feminine Wash 250 ml",
+      "englishName": "Talinorose Intimate Feminine Wash 250 ml",
+      "url": "https://drugs.doseshq.com/_next/image?q=75&url=https%3A%2F%2Fdose-images.doseshq.com%2F9d30add1-a24e-4326-8d40-a38cb2ae9741.png&w=384",
+      "source": "drugs.doseshq.com",
+      "sourcePage": "https://drugs.doseshq.com/ar/drugs/db3c820f-e0bd-44a9-be0d-0af9a29664b8/",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "Source pack image inspected and matched to catalog brand and product type",
+      "note": "External preview; live portal rendering and reuse rights not independently verified."
     },
     "1324": {
       "catalogName": "تامسوفيناسين اقراص",
@@ -27086,6 +27114,20 @@
       "attribution": "Lotus Pharmacies",
       "sha256": "b890a21d04aa509bd1120c1371b81b3d8d79d0b8ffdda5b1aa348a621328ced9"
     },
+    "2933": {
+      "catalogName": "فيرست فوج كريم شعر",
+      "title": "First Voc Hair Cream 100 gm",
+      "englishName": "First Voc Hair Cream 100 gm",
+      "url": "https://drdawoodstore.com/wp-content/uploads/2024/05/first-voc-hair-cream100gm.webp",
+      "source": "drdawoodstore.com",
+      "sourcePage": "https://drdawoodstore.com/ar/products/firstvoc-hair-cream100gm",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "Source pack image inspected and matched to catalog brand and product type",
+      "note": "External preview; live portal rendering and reuse rights not independently verified."
+    },
     "2934": {
       "catalogName": "فيرسيرك24 مجم",
       "englishName": "Verserc",
@@ -33822,6 +33864,20 @@
       "sha256": "d40b7d3f7917edf42b04cb6517a523665c62ae1fdac619a8742a6de14830fff4",
       "manualVisualInspected": true,
       "matchReason": "product_pack_visually_checked_against_catalog_and_source_listing"
+    },
+    "3513": {
+      "catalogName": "لونير كريم تفتيح",
+      "title": "Lunner Lighting Cream 50 gm",
+      "englishName": "Lunner Lighting Cream 50 gm",
+      "url": "https://www.rosheta.com/upload/5b0980a69c214cbf21d24f3448a1dfe0dc7b71f901a1a51a5ad2d9964a73a82c.webp",
+      "source": "www.rosheta.com",
+      "sourcePage": "https://www.rosheta.com/ar-eg/8366/%D9%84%D9%88%D9%86%D9%8A%D8%B1",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "Source pack image inspected and matched to catalog brand and product type",
+      "note": "External preview; live portal rendering and reuse rights not independently verified."
     },
     "3514": {
       "catalogName": "لوهيدران محلول جفاف",
@@ -41407,6 +41463,20 @@
       "attribution": "Re3aya Pharmacy",
       "note": "External candidate preview; image availability and visual package not independently verified."
     },
+    "4185": {
+      "catalogName": "ويلثى لوسيون حب الشباب",
+      "title": "Wealthy Lotion 120 ml",
+      "englishName": "Wealthy Lotion 120 ml",
+      "url": "https://drugs.doseshq.com/_next/image?q=75&url=https%3A%2F%2Fdose-images.doseshq.com%2F9136d197-6c54-4df3-b3b3-3f94317a06be.png&w=384",
+      "source": "drugs.doseshq.com",
+      "sourcePage": "https://drugs.doseshq.com/en/drugs/a0a3e633-c018-4242-881b-52d5c91bcd72/wealthy-topical-lotion-120-ml",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "Source pack image inspected and matched to catalog brand and product type",
+      "note": "External preview; live portal rendering and reuse rights not independently verified."
+    },
     "4188": {
       "catalogName": "وينزوكسيب90مجم",
       "title": "Winzoxib 90mg Etoricoxib",
@@ -42266,6 +42336,20 @@
       "manualVisualInspected": true,
       "matchReason": "manual_visible_pack_and_product_source_match",
       "sha256": "3757e4b447c6e0d09ee1281d0b9741c4f01872dd2a1fbde65b17c2234dbb4ad5"
+    },
+    "230038": {
+      "catalogName": "اكرين غسول للوجه عرض",
+      "title": "Infinity Akren Cleanser 250 ml special offer",
+      "englishName": "Infinity Akren Cleanser 250 ml special offer",
+      "url": "https://instachiq.com/cdn/shop/products/1.LighteningHyaluronicAcidSerumArichultra-replenishingserumisrichinantioxidantstoilluminate_re-plump_andquenchthirstyskin.Anintensehydrationboosterthatwillretaintheskin_smoisturec_29.jpg?v=1678546698&width=360",
+      "source": "instachiq.com",
+      "sourcePage": "https://instachiq.com/products/infinity-%D8%BA%D8%B3%D9%88%D9%84-%D8%A3%D8%B1%D9%83%D9%8A%D9%86-%D9%84%D8%A3%D8%B2%D8%A7%D9%84%D8%A9-%D8%A7%D9%84%D8%B1%D8%A4%D9%88%D8%B3-%D8%A7%D9%84%D8%B3%D9%88%D8%AF%D8%A7%D8%A1-%D8%B9%D9%84%D8%A7%D8%AC-%D8%AD%D8%A8-%D8%A7%D9%84%D8%B4%D8%A8%D8%A7%D8%A8",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "Source pack image inspected and matched to catalog brand and product type",
+      "note": "Image shows two Akren cleanser tubes as special offer; source text describes cleanser plus cream; exact offer contents unspecified in catalog. External preview, live rendering and reuse rights not verified."
     },
     "230039": {
       "catalogName": "اكسترا بانتين كريم50جرام",
