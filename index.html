@@ -7874,10 +7874,56 @@
 
                 // Verified package-photo seed: Apple-Lite 30 tablets (catalog item #10).
                 // Source page shows the exact Apple-Lite pack; do not use lookalike images.
-                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v72';
+                const IMAGE_SEED_VERSION = 'arkan_verified_image_seed_v73';
                 if (localStorage.getItem(IMAGE_SEED_VERSION) !== '1') {
                     // Individually checked package photos: brand, strength/stage and form match.
                     const verifiedImageSeeds = {
+                        '1490': { src: 'assets/product-images/1490.jpg', source: 'Pack photo - Temppo Cool four cooling sheets - Masco' },
+                        '1983': { src: 'assets/product-images/1983.jpg', source: 'Pack photo - Ravennavalley Face Cleanser Gel' },
+                        '4136': { src: 'assets/product-images/4136.jpg', source: 'Pack photo - هيرفوجين بلسم' },
+                        '230197': { src: 'assets/product-images/230197.jpg', source: 'Pack photo - جلامى لاب ماتشا غسول فوم للتنقية 150جم لمونى' },
+                        '230040': { src: 'assets/product-images/230040.jpg', source: 'Pack photo - اكسترا بانتين لوسيون' },
+                        '4185': { src: 'assets/product-images/4185.jpg', source: 'Pack photo - ويلثى لوسيون حب الشباب' },
+                        '3644': { src: 'assets/product-images/3644.jpg', source: 'Pack photo - ماجيك كرييم100 جرام س ج' },
+                        '4103': { src: 'assets/product-images/4103.jpg', source: 'Pack photo - هيبتا بانثينول كريم جلد' },
+                        '4102': { src: 'assets/product-images/4102.jpg', source: 'Pack photo - هيبتا بانثينول شامبو للشعر' },
+                        '3756': { src: 'assets/product-images/3756.jpg', source: 'Pack photo - مونتا غسول' },
+                        '3752': { src: 'assets/product-images/3752.jpg', source: 'Pack photo - مول صن كريم' },
+                        '4090': { src: 'assets/product-images/4090.jpg', source: 'Pack photo - هيبتا بانثينول ماكس بادى لوشن' },
+                        '4089': { src: 'assets/product-images/4089.jpg', source: 'Pack photo - هيبتا بانثينول بينك غسول' },
+                        '4081': { src: 'assets/product-images/4081.jpg', source: 'Pack photo - هيالو كونكس غسول للبشره200ملى' },
+                        '3282': { src: 'assets/product-images/3282.jpg', source: 'Pack photo - كولاجرا رول اون عود بروموباك1+1' },
+                        '3247': { src: 'assets/product-images/3247.jpg', source: 'Pack photo - كوربال شامبو ازرق' },
+                        '3942': { src: 'assets/product-images/3942.jpg', source: 'Pack photo - نوبﻼك مضمضه نعناع' },
+                        '2556': { src: 'assets/product-images/2556.jpg', source: 'Pack photo - سيكتور مساج كريم' },
+                        '2395': { src: 'assets/product-images/2395.jpg', source: 'Pack photo - سولديكس جيل منظف200مل' },
+                        '2596': { src: 'assets/product-images/2596.jpg', source: 'Pack photo - سيلينجينا شامبو' },
+                        '2334': { src: 'assets/product-images/2334.jpg', source: 'Pack photo - سكالوجين سيرم' },
+                        '2764': { src: 'assets/product-images/2764.jpg', source: 'Pack photo - فاينال2 شامبو' },
+                        '2671': { src: 'assets/product-images/2671.jpg', source: 'Pack photo - شيرا بانثينول كريم شعر اطفال' },
+                        '2380': { src: 'assets/product-images/2380.jpg', source: 'Pack photo - سوريانا غسول' },
+                        '2677': { src: 'assets/product-images/2677.jpg', source: 'Pack photo - صن توب كريم50 جم' },
+                        '2678': { src: 'assets/product-images/2678.jpg', source: 'Pack photo - صن توب لوشن50 مم' },
+                        '2363': { src: 'assets/product-images/2363.jpg', source: 'Pack photo - سنسوديرم اطفال صابونه' },
+                        '2365': { src: 'assets/product-images/2365.jpg', source: 'Pack photo - سنسوديرم كريم' },
+                        '2276': { src: 'assets/product-images/2276.jpg', source: 'Pack photo - ستارفيل كلينسر ابيض تفتيح' },
+                        '1958': { src: 'assets/product-images/1958.jpg', source: 'Pack photo - ديميكاب غسول جديد س ج' },
+                        '1323': { src: 'assets/product-images/1323.jpg', source: 'Pack photo - تالينوروز غسول سيدات' },
+                        '1898': { src: 'assets/product-images/1898.jpg', source: 'Pack photo - ديرماوايت غسول' },
+                        '1663': { src: 'assets/product-images/1663.jpg', source: 'Pack photo - جيرلى اويل120مل' },
+                        '1642': { src: 'assets/product-images/1642.jpg', source: 'Pack photo - جولد فوم' },
+                        '1611': { src: 'assets/product-images/1611.jpg', source: 'Pack photo - جليم ميكس صن سكرين' },
+                        '1643': { src: 'assets/product-images/1643.jpg', source: 'Pack photo - جولى اويل زيت' },
+                        '1583': { src: 'assets/product-images/1583.jpg', source: 'Pack photo - جلوسى سيرم' },
+                        '1636': { src: 'assets/product-images/1636.jpg', source: 'Pack photo - جوتال وايتنج لوشن' },
+                        '1585': { src: 'assets/product-images/1585.jpg', source: 'Pack photo - جلوسى كريم كوندشير' },
+                        '706': { src: 'assets/product-images/706.jpg', source: 'Pack photo - اولويز الترا ازرق مفرد' },
+                        '1159': { src: 'assets/product-images/1159.jpg', source: 'Pack photo - بى فريش اخضر' },
+                        '1123': { src: 'assets/product-images/1123.jpg', source: 'Pack photo - بوباى جيل صن سكرين' },
+                        '601': { src: 'assets/product-images/601.jpg', source: 'Pack photo - اوبيدال سيرم60مل' },
+                        '578': { src: 'assets/product-images/578.jpg', source: 'Pack photo - انونا لوسيون' },
+                        '802': { src: 'assets/product-images/802.jpg', source: 'Pack photo - ايزى كير معجون اسنان كبير' },
+                        '615': { src: 'assets/product-images/615.jpg', source: 'Pack photo - اودورال مضمضه س.ج' },
                         '2704': { src: 'assets/product-images/2704.jpg', source: 'Pack photo - Pharmastin eye drops' },
                         '230507': { src: 'assets/product-images/230507.jpg', source: 'Pack photo - Moist-1 toner 200 ml' },
                         '230442': { src: 'assets/product-images/230442.jpg', source: 'Pack photo - Coffee Zinc shampoo' },
@@ -8322,7 +8368,7 @@
                         '929': { src: 'assets/product-images/929.jpg', source: 'Delmar & Attalla — Pantomedra pantoprazole 40 mg, 28 enteric-coated tablets; exact strength and pack verified' },
                         '931': { src: 'assets/product-images/931.jpg', source: 'Vezeeta Pharmacy — Panthovera hair-strengthening shampoo, 250 ml; exact brand and volume verified' },
                         '941': { src: 'assets/product-images/941.jpg', source: 'Noon Egypt — Pancreat Plus anti-hair-loss shampoo, 250 ml; exact brand and product type verified' },
-                        '943': { src: 'https://taypharmacies.com/wp-content/uploads/2024/11/2024-11-16T103926.673.png', source: 'Tay Pharmacies — Pancreat Plus anti-hair-loss lotion, 120 ml; exact brand and volume verified' },
+                        '943': { src: 'assets/product-images/943.jpg', source: 'Pack photo - بانكريت بﻼس لوشن120مل' },
                         '946': { src: 'assets/product-images/946.jpg', source: 'Dwa Stores — Power Act protein supplement, 10 sachets × 15 g; exact product and pack verified' }
                     ,
                         '906': { src: 'assets/product-images/906.png', source: 'Almasry Pharmacy — Palminerve 600 mg, 30 capsules; exact brand, strength and pack verified' },
@@ -8571,7 +8617,7 @@
                     };
                     // Apply repaired links only over known old pharmacy placeholder seeds; do not overwrite admin changes.
                     const correctedPharmacyPhotoIds = new Set(['16','427','429','496','506','507','519','521','522','533','545','546','608']);
-                    const imageLegacySeedSources = {"400": "Chance Store Egypt — Aloekita Hair Nourishing Conditioner, 200 ml; exact product and volume verified", "1040": "Tay Pharmacies — Prettier Facial Exfoliating Gel, 250 g; exact product and size verified", "402": "Anwar Store — Aloekita Caffeine Shampoo Blue, 200 ml; exact color variant and volume verified", "658": "Life Masr — Orovex banana mouthwash, 250 ml; exact flavor and volume verified", "2": "Tay Pharmacies — Update Whitening Cream 50 gm; exact Update cream pack verified", "657": "Lotus Pharmacies — Orovex Miswak mouthwash, 250 ml; exact variant and volume verified", "656": "Tdawi — Orovex clove mouthwash, 250 ml; exact flavor and volume verified", "174": "Tay Pharmacies — Argento Clear Facial Cleanser 200 ml; exact product name matched", "3": "Lotus Pharmacies — Ibandrocare 150 mg, 2 film-coated tablets; exact brand and strength verified", "36": "PharmaciaTy — Epifasi 5000 IU, 1 ampoule plus solvent; exact brand and strength verified", "75": "Lotus Pharmacies — Atacand 4 mg, 14 tablets; exact brand and strength verified", "101": "Lotus Pharmacies — Atorstat 80 mg, 10 scored tablets; exact brand, strength and pack verified", "85": "Al-Dawaa Pharmacy — Atrovent 500 mcg/2 ml, 20 unit-dose inhalation vials; exact strength and pack verified", "86": "Al-Dawaa Pharmacy — Atrovent 250 mcg/2 ml, 20 unit-dose inhalation vials; exact strength and pack verified"};
+                    const imageLegacySeedSources = {"943": "Tay Pharmacies — Pancreat Plus anti-hair-loss lotion, 120 ml; exact brand and volume verified", "400": "Chance Store Egypt — Aloekita Hair Nourishing Conditioner, 200 ml; exact product and volume verified", "1040": "Tay Pharmacies — Prettier Facial Exfoliating Gel, 250 g; exact product and size verified", "402": "Anwar Store — Aloekita Caffeine Shampoo Blue, 200 ml; exact color variant and volume verified", "658": "Life Masr — Orovex banana mouthwash, 250 ml; exact flavor and volume verified", "2": "Tay Pharmacies — Update Whitening Cream 50 gm; exact Update cream pack verified", "657": "Lotus Pharmacies — Orovex Miswak mouthwash, 250 ml; exact variant and volume verified", "656": "Tdawi — Orovex clove mouthwash, 250 ml; exact flavor and volume verified", "174": "Tay Pharmacies — Argento Clear Facial Cleanser 200 ml; exact product name matched", "3": "Lotus Pharmacies — Ibandrocare 150 mg, 2 film-coated tablets; exact brand and strength verified", "36": "PharmaciaTy — Epifasi 5000 IU, 1 ampoule plus solvent; exact brand and strength verified", "75": "Lotus Pharmacies — Atacand 4 mg, 14 tablets; exact brand and strength verified", "101": "Lotus Pharmacies — Atorstat 80 mg, 10 scored tablets; exact brand, strength and pack verified", "85": "Al-Dawaa Pharmacy — Atrovent 500 mcg/2 ml, 20 unit-dose inhalation vials; exact strength and pack verified", "86": "Al-Dawaa Pharmacy — Atrovent 250 mcg/2 ml, 20 unit-dose inhalation vials; exact strength and pack verified"};
                     Object.entries(verifiedImageSeeds).forEach(([id, seed]) => {
                         if (seed.src && (PROD_IMG_VERIFIED[id] !== true || PROD_IMG_SRC[id] === seed.source || getRehostedProductPhoto(id, PROD_IMAGES[id])?.src === seed.src || (seed.src.startsWith('assets/product-images/') && Object.prototype.hasOwnProperty.call(imageLegacySeedSources, String(id)) && imageLegacySeedSources[String(id)] === PROD_IMG_SRC[id]) || (correctedPharmacyPhotoIds.has(String(id)) && (/^(Abdin Pharmacies|Rosheta)\s*—/.test(PROD_IMG_SRC[id] || ''))))) {
                             const alreadySynced = PROD_IMG_VERIFIED[id] === true && PROD_IMAGES[id] === seed.src && PROD_IMG_SRC[id] === seed.source;
