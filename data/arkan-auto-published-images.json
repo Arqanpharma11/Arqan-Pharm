@@ -25616,6 +25616,22 @@
       "attribution": "Azzam Pharmacy",
       "note": "External candidate preview; image availability and visual package not independently verified."
     },
+    "2812": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/2812.webp",
+      "source": "5.imimg.com",
+      "sourcePage": "https://www.indiamart.com/proddetail/fluconazole-200mg-tablet-flucryl-200-2851072070730.html",
+      "originalImageUrl": "https://5.imimg.com/data5/SELLER/Default/2023/5/305412371/LU/PR/CY/101167683/whatsapp-image-2023-05-04-at-1-39-37-pm-500x500.jpeg",
+      "catalogName": "فلوكورال اقراص",
+      "englishName": "Flucoral",
+      "title": "Flucoral فلوكورال اقراص",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "matchScore": 1,
+      "matchReason": "ocr",
+      "sha256": "c800c5a0cf31fe2751f15339b274cc0ff9d358b209112df6a5522c001aa877aa",
+      "provenance": "Image downloaded and matched by image discovery bot; commercial reuse license unverified"
+    },
     "2813": {
       "catalogName": "فلوموسيل600 س ج",
       "title": "Fluimucil 600mg Acetylcysteine Mucolytic Effervescent Tablets Lemon Flavor with Aspartame - sugar free",
