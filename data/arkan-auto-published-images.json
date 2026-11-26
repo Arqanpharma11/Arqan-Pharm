@@ -19208,6 +19208,22 @@
       "manualVisualInspected": true,
       "matchReason": "product_pack_visually_checked_against_catalog_and_source_listing"
     },
+    "2253": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/2253.webp",
+      "source": "spika.uk.com",
+      "sourcePage": "https://spika.uk.com/products/spika-s3-large-safe",
+      "originalImageUrl": "https://spika.uk.com/cdn/shop/files/S3Front.jpg?v=1771498144&width=5000",
+      "catalogName": "سبايكا3 شريط",
+      "englishName": "Spika",
+      "title": "Spika سبايكا3 شريط",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "matchScore": 1,
+      "matchReason": "multi_source_2",
+      "sha256": "abb91380316b986f3e54eaf96b56ef30238be32f20428a7880b7eb0b558c49ab",
+      "provenance": "Image downloaded and matched by image discovery bot; commercial reuse license unverified"
+    },
     "2257": {
       "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/2257.webp",
       "source": "www.lotusonline.com",
