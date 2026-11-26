@@ -4791,6 +4791,22 @@
       "license": "external retailer image; rights not independently verified",
       "note": "Real retailer product image URL; exact pixels and availability not independently verified"
     },
+    "1017": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/1017.webp",
+      "source": "netrition.com",
+      "sourcePage": "https://netrition.com/products/procare-health-easy-to-swallow-bariatric-multivitamins-tablets-with-45mg-iron-citrus-grove",
+      "originalImageUrl": "https://netrition.com/cdn/shop/files/45Tab90-Small_800x.jpg?v=1710793652",
+      "catalogName": "بروكير اقراص",
+      "englishName": "Procare",
+      "title": "Procare بروكير اقراص",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "matchScore": 1,
+      "matchReason": "ocr",
+      "sha256": "d6e93cd22454c677a63d08ef268aae080c5472a2ecebfec94d069984a41cbd48",
+      "provenance": "Image downloaded and matched by image discovery bot; commercial reuse license unverified"
+    },
     "1019": {
       "catalogName": "بروماجار نقط15مل",
       "englishName": "Bromagar Drops 15 ml",
@@ -5970,6 +5986,22 @@
       "manualVisualInspected": true,
       "matchReason": "manual_visible_pack_and_product_source_match",
       "sha256": "57e9e57b569157ac10265ed71c1237879aebe20da7688d7dc89b765d48844e35"
+    },
+    "1156": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/1156.webp",
+      "source": "www.linnuobio.com",
+      "sourcePage": "https://www.linnuobio.com/products/capsule/iron-plus-hard-capsule.html",
+      "originalImageUrl": "https://www.linnuobio.com/d/images/Capsule/Iron-Plus-Hard-Capsule-3.png",
+      "catalogName": "بى ايرون بلس كبسول",
+      "englishName": "P Iron Plus",
+      "title": "P Iron Plus بى ايرون بلس كبسول",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "matchScore": 1,
+      "matchReason": "ocr",
+      "sha256": "34b76fac65d8b041d6d07e77666943d297093c08dc9b299f2f648e37fc68d527",
+      "provenance": "Image downloaded and matched by image discovery bot; commercial reuse license unverified"
     },
     "1157": {
       "catalogName": "بى ريدى كريم",

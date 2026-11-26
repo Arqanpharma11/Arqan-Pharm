@@ -1,9 +1,12 @@
 {
   "processed": 100,
-  "published": 0,
+  "published": 2,
   "skipped": 0,
   "rejected": {
-    "not_high_confidence": 100
+    "not_high_confidence": 98
   },
-  "ids": []
+  "ids": [
+    "1017",
+    "1156"
+  ]
 }
