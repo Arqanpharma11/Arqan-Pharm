@@ -12573,12 +12573,12 @@
       "url": "https://dwaprices.com/upload/1779393316.png",
       "sourcePage": "https://dwaprices.com/med.php?id=19683",
       "source": "dwaprices.com",
-      "status": "candidate_preview",
+      "status": "rejected_mismatched_pack",
       "independentlyVerified": false,
-      "shownAsProductThumbnail": true,
+      "shownAsProductThumbnail": false,
       "attribution": "DwaPrices",
       "sha256": "5d8700aed5d98dfc98c8c74344846c3f62e1be6138aefeb5138cfe48a5738ec1",
-      "matchReason": "catalog_name_and_pack_details_checked_against_retailer_listing_and_image_ocr"
+      "matchReason": "Image shows Genica Ray sunscreen instead of Genica Moist lotion"
     },
     "1696": {
       "catalogName": "جيوبروست اقراص",
@@ -45491,12 +45491,12 @@
       "url": "https://cdn.dawaagate.com/images/medicines/strongville-hair-tonic-spray-220-ml-5411-d433f5.webp",
       "sourcePage": "https://www.dawaagate.com/medicine/strongville-hair-tonic-spray-220-ml",
       "source": "www.dawaagate.com",
-      "status": "candidate_preview",
+      "status": "rejected_mismatched_pack",
       "independentlyVerified": false,
-      "shownAsProductThumbnail": true,
+      "shownAsProductThumbnail": false,
       "attribution": "Dawaa Gate",
       "sha256": "7b57bd45327798a619e3eb5356c744ea20532cd677e49a804f371888702deb19",
-      "matchReason": "catalog_name_and_pack_details_checked_against_retailer_listing_and_image_ocr"
+      "matchReason": "Image shows tonic spray instead of hair oil"
     },
     "230290": {
       "catalogName": "سترونج فيل كريم للشعر 120جرام موف",
