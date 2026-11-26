@@ -2401,6 +2401,20 @@
       "sha256": "c9975904e1923cec67abba2109e19636fc35686675a41b7fe8e96e82fdb6f40f",
       "matchReason": "catalog_name_and_pack_details_checked_against_retailer_listing_and_image_ocr"
     },
+    "620": {
+      "catalogName": "اورا توب غرغره اتش كبير",
+      "title": "Oratop-H Mouthwash 250 ml Pineapple",
+      "englishName": "Oratop-H Mouthwash 250 ml Pineapple",
+      "url": "https://mtalaatpharmacy.com/storage/external-product-thumbnails/37982.webp",
+      "source": "mtalaatpharmacy.com",
+      "sourcePage": "https://agpharmacies.com/product/oratop-h-mouth-wash-250-ml--135c7530-bec3-484d-a855-36ca89c1aa3e",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "visible packaging checked against catalog and product listing",
+      "note": "Image itself shows Oratop-H 250 ml; original retailer listing had mismatched metadata, cross-referenced to the correct product listing. Live rendering and reuse rights not verified."
+    },
     "622": {
       "catalogName": "اورا توب غرغره نعناع",
       "englishName": "Oratop Mint Mouthwash 250 ml",
@@ -3005,6 +3019,20 @@
       "manualVisualInspected": true,
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Lotus Pharmacies"
+    },
+    "742": {
+      "catalogName": "ايبافكس شامبوو",
+      "title": "Ebafix Hair Shampoo 200 ml",
+      "englishName": "Ebafix Hair Shampoo 200 ml",
+      "url": "https://4eshopping.com/assets/images/products/aUQlLMMY1674066061.webp",
+      "source": "4eshopping.com",
+      "sourcePage": "https://4eshopping.com/ar/item/%D8%A7%D9%8A%D8%A8%D8%A7%D9%81%D9%83%D8%B3-%D8%B4%D8%A7%D9%85%D8%A8%D9%88-cdc900",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "visible packaging checked against catalog and product listing",
+      "note": "External image preview; live portal rendering and reuse rights not independently verified."
     },
     "744": {
       "catalogName": "ايبانتين100 - ك ج",
@@ -9653,6 +9681,20 @@
       "manualVisualInspected": true,
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Dr. Magdy El-Haddad Pharmacies"
+    },
+    "1462": {
+      "catalogName": "تيب توب جيل مرطب",
+      "title": "Cira Tip Top Moisturizing Gel 50 gm",
+      "englishName": "Cira Tip Top Moisturizing Gel 50 gm",
+      "url": "https://cirashop.net/cdn/shop/files/61OFOFaPclL._AC_SX522.jpg?v=1777877293&width=800",
+      "source": "cirashop.net",
+      "sourcePage": "https://cirashop.net/products/tip-top-gel-moisturizing-gel-50-gm",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "visible packaging checked against catalog and product listing",
+      "note": "External image preview; live portal rendering and reuse rights not independently verified."
     },
     "1463": {
       "catalogName": "تيبوستار مرهم30 جم",
@@ -20626,6 +20668,20 @@
       "attribution": "Bloom Pharmacy",
       "note": "External candidate preview; image availability and visual package not independently verified."
     },
+    "2380": {
+      "catalogName": "سوريانا غسول",
+      "title": "Soriana Intimate Feminine Wash 250 ml",
+      "englishName": "Soriana Intimate Feminine Wash 250 ml",
+      "url": "https://drugs.doseshq.com/_next/image?q=75&url=https%3A%2F%2Fdose-images.doseshq.com%2F918b44a2-6c75-4506-be3e-16738b362f1d.png&w=384",
+      "source": "drugs.doseshq.com",
+      "sourcePage": "https://drugs.doseshq.com/en/drugs/4dc62efc-eb48-4f50-81ff-85029c27034b/soriana-vaginal-doush-250-ml",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "visible packaging checked against catalog and product listing",
+      "note": "External image preview; live portal rendering and reuse rights not independently verified."
+    },
     "2382": {
       "catalogName": "سوفريزا10/10",
       "englishName": "Suvreza 10/10",
@@ -30564,6 +30620,20 @@
       "attribution": "Re3aya Pharmacy",
       "note": "External candidate preview; image availability and visual package not independently verified."
     },
+    "3247": {
+      "catalogName": "كوربال شامبو ازرق",
+      "title": "Corpal anti-dandruff shampoo blue 300 ml",
+      "englishName": "Corpal anti-dandruff shampoo blue 300 ml",
+      "url": "https://drugs.doseshq.com/_next/image?q=75&url=https%3A%2F%2Fdose-images.doseshq.com%2Fdrugs%2F1bc11701-0258-4a9d-a79f-42e71528f0cf.png&w=384",
+      "source": "drugs.doseshq.com",
+      "sourcePage": "https://drugs.doseshq.com/en/drugs/1bc11701-0258-4a9d-a79f-42e71528f0cf/corpal-anti-dandruff-hair-shampoo-300ml",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "visible packaging checked against catalog and product listing",
+      "note": "External image preview; live portal rendering and reuse rights not independently verified."
+    },
     "3249": {
       "catalogName": "كورتوبكت بلس300/12.5",
       "englishName": "Cortopect Plus 300/12.5",
@@ -31079,6 +31149,20 @@
       "attribution": "www.carrefouregypt.com",
       "note": "Source image visually reviewed against available catalog name; external delivery, exact stock pack variant and reuse rights not independently confirmed. Not for dispensing identification."
     },
+    "3291": {
+      "catalogName": "كولاجرا عرض كونسيلر فاتح1+1",
+      "title": "Kolagra Perfecting Concealer Light Shade 1+1 Offer",
+      "englishName": "Kolagra Perfecting Concealer Light Shade 1+1 Offer",
+      "url": "https://glowroom-eg.com/cdn/shop/files/Kolagraconcelearlight.webp?v=1773874681&width=1946",
+      "source": "glowroom-eg.com",
+      "sourcePage": "https://glowroom-eg.com/products/kolagra-perfecting-concealer-light-shade-1-1-offer",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "visible packaging checked against catalog and product listing",
+      "note": "External image preview; live portal rendering and reuse rights not independently verified."
+    },
     "3292": {
       "catalogName": "كولاجرا عرض كونسيلر ميديم1+1",
       "englishName": "Kolagra Consilr Medium 1+1",
@@ -31122,6 +31206,20 @@
       "sha256": "e2796ca972e393202f3d519bca8a104055551762f7405d67c9d291a7622881b8",
       "manualVisualInspected": true,
       "matchReason": "product_pack_visually_checked_against_catalog_and_source_listing"
+    },
+    "3295": {
+      "catalogName": "كولاجرا فاونديشن فاتح",
+      "title": "Kolagra Makeup Foundation SPF30+ Light 30ml",
+      "englishName": "Kolagra Makeup Foundation SPF30+ Light 30ml",
+      "url": "https://anwar.store/cdn/shop/files/kolagra-makeup-foundation-spf30-light-30ml-4718041.webp?v=1783932726",
+      "source": "anwar.store",
+      "sourcePage": "https://anwar.store/products/kolagra-makeup-foundation-spf30-light-30ml",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "visible packaging checked against catalog and product listing",
+      "note": "External image preview; live portal rendering and reuse rights not independently verified."
     },
     "3296": {
       "catalogName": "كولاجرا فاونديشن ميديوم",
@@ -32335,6 +32433,20 @@
       "attribution": "Dawaa Gate",
       "sha256": "df91ff369ca74d53f0a1ae8390e26bae7b4598345bdbee0c2dc69a516bd75042",
       "matchReason": "catalog_name_and_pack_details_checked_against_retailer_listing_and_image_ocr"
+    },
+    "3393": {
+      "catalogName": "كيراكوز امبول لوشن ابيض للصلع",
+      "title": "Keraquoz Hair Tonic Lotion white pack",
+      "englishName": "Keraquoz Hair Tonic Lotion white pack",
+      "url": "https://kmtpharma.shop/cdn/shop/files/Artboard8.png?v=1762774404&width=720",
+      "source": "kmtpharma.shop",
+      "sourcePage": "https://kmtpharma.shop/products/keraquoz-hair-tonic-lotion",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "visible packaging checked against catalog and product listing",
+      "note": "External image preview; live portal rendering and reuse rights not independently verified."
     },
     "3395": {
       "catalogName": "كيراكوز شامبو",
