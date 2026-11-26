@@ -1,5 +1,5 @@
 {
-  "cursor": 65,
+  "cursor": 70,
   "searchCursor": 0,
   "checks": {
     "28": {
@@ -900,7 +900,7 @@
     "954": {
       "failures": 0,
       "lastStatus": "ok",
-      "checkedAt": "2026-11-25T09:55:20.680Z"
+      "checkedAt": "2026-11-26T22:40:39.076Z"
     },
     "958": {
       "failures": 0,
@@ -925,12 +925,12 @@
     "963": {
       "failures": 0,
       "lastStatus": "ok",
-      "checkedAt": "2026-11-25T09:55:21.012Z"
+      "checkedAt": "2026-11-26T22:40:39.456Z"
     },
     "965": {
       "failures": 0,
       "lastStatus": "ok",
-      "checkedAt": "2026-11-25T09:55:21.052Z"
+      "checkedAt": "2026-11-26T22:40:39.527Z"
     },
     "975": {
       "failures": 0,
@@ -955,7 +955,7 @@
     "983": {
       "failures": 0,
       "lastStatus": "ok",
-      "checkedAt": "2026-11-25T09:55:21.227Z"
+      "checkedAt": "2026-11-26T22:40:39.601Z"
     },
     "984": {
       "failures": 0,
@@ -965,7 +965,7 @@
     "1010": {
       "failures": 0,
       "lastStatus": "ok",
-      "checkedAt": "2026-11-25T09:55:21.500Z"
+      "checkedAt": "2026-11-26T22:40:39.858Z"
     },
     "1012": {
       "failures": 0,
@@ -9077,32 +9077,47 @@
     "4054": {
       "at": "2026-11-26T21:38:30.020Z",
       "hits": 0
+    },
+    "4070": {
+      "at": "2026-11-26T22:40:42.795Z",
+      "hits": 0
+    },
+    "4071": {
+      "at": "2026-11-26T22:40:43.944Z",
+      "hits": 0
+    },
+    "4072": {
+      "at": "2026-11-26T22:40:45.113Z",
+      "hits": 0
+    },
+    "4075": {
+      "at": "2026-11-26T22:40:46.262Z",
+      "hits": 0
     }
   },
-  "lastRun": "2026-11-26T21:38:31.184Z",
+  "lastRun": "2026-11-26T22:40:46.962Z",
   "lastCatalogSize": 4489,
   "searchPipeline": {
-    "remainingMissing": 440,
+    "remainingMissing": 429,
     "remainingSuspect": 40,
-    "eligibleThisRun": 480
+    "eligibleThisRun": 469
   },
   "providerHealth": {
     "commons.wikimedia.org": {
-      "failures": 1,
-      "retryAt": "2026-11-26T21:58:30.783Z",
-      "lastSuccess": "2026-11-26T21:38:29.621Z",
-      "lastError": "429"
+      "failures": 0,
+      "retryAt": null,
+      "lastSuccess": "2026-11-26T22:40:45.861Z"
     },
     "world.openfoodfacts.org": {
-      "failures": 1,
-      "retryAt": "2026-11-26T21:58:08.799Z",
+      "failures": 2,
+      "retryAt": "2026-11-26T23:00:42.795Z",
       "lastSuccess": "2026-11-26T21:38:06.755Z",
       "lastError": "503"
     },
     "eg-drugs-api.mahmoudfalous.workers.dev": {
       "failures": 0,
       "retryAt": null,
-      "lastSuccess": "2026-11-26T21:38:30.778Z"
+      "lastSuccess": "2026-11-26T22:40:45.839Z"
     },
     "world.openbeautyfacts.org": {
       "failures": 0,
@@ -10809,13 +10824,43 @@
     "1176": {
       "failures": 0,
       "lastStatus": "ok",
-      "checkedAt": "2026-11-26T21:38:02.949Z"
+      "checkedAt": "2026-11-26T22:40:39.897Z"
     },
     "1177": {
       "failures": 0,
       "lastStatus": "ok",
-      "checkedAt": "2026-11-26T21:38:03.019Z"
+      "checkedAt": "2026-11-26T22:40:39.926Z"
+    },
+    "1178": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-26T22:40:40.156Z"
+    },
+    "1179": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-26T22:40:40.368Z"
+    },
+    "1180": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-26T22:40:40.538Z"
+    },
+    "1181": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-26T22:40:40.554Z"
+    },
+    "1182": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-26T22:40:41.049Z"
+    },
+    "1183": {
+      "failures": 0,
+      "lastStatus": "ok",
+      "checkedAt": "2026-11-26T22:40:41.307Z"
     }
   },
-  "publishedCursor": 424
+  "publishedCursor": 432
 }
