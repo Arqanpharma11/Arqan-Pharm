@@ -1,22 +1,22 @@
 {
-  "runAt": "2026-11-26T16:51:25.419Z",
+  "runAt": "2026-11-26T17:48:16.213Z",
   "masterItems": 4489,
   "cloudItems": 0,
   "catalogItems": 4489,
   "candidateLinks": 835,
   "unapprovedCatalogItems": 3897,
-  "autoPublishedCount": 3331,
+  "autoPublishedCount": 3332,
   "publishedThisRun": 0,
-  "searchAttempted": 11,
+  "searchAttempted": 12,
   "searchHits": 0,
   "searchErrors": 1,
   "rejectionReasons": {},
-  "missingWithoutCandidate": 609,
+  "missingWithoutCandidate": 608,
   "checked": 30,
   "healthy": 30,
   "gone": 0,
   "queuedThisRun": 0,
-  "pendingReview": 920,
+  "pendingReview": 931,
   "searchEnabled": true,
   "searchProviders": [
     "Wikimedia Commons",
@@ -31,8 +31,8 @@
   "providerHealth": {
     "commons.wikimedia.org": {
       "failures": 1,
-      "retryAt": "2026-11-26T17:11:25.019Z",
-      "lastSuccess": "2026-11-26T16:51:23.826Z",
+      "retryAt": "2026-11-26T18:08:15.812Z",
+      "lastSuccess": "2026-11-26T17:48:14.690Z",
       "lastError": "429"
     },
     "world.openfoodfacts.org": {
@@ -44,12 +44,12 @@
     "eg-drugs-api.mahmoudfalous.workers.dev": {
       "failures": 0,
       "retryAt": null,
-      "lastSuccess": "2026-11-26T16:51:24.954Z"
+      "lastSuccess": "2026-11-26T17:48:11.506Z"
     },
     "world.openbeautyfacts.org": {
       "failures": 0,
       "retryAt": null,
-      "lastSuccess": "2026-11-26T15:44:15.642Z"
+      "lastSuccess": "2026-11-26T17:48:03.290Z"
     }
   },
   "disclaimer": "Automated candidate discovery is not photo verification. Existing approved photos are never overwritten. Automatically published images remain marked as external, not verified packaging."
