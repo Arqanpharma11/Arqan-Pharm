@@ -15803,6 +15803,22 @@
       "attribution": "Azzam Pharmacy",
       "note": "External candidate preview; image availability and visual package not independently verified."
     },
+    "1978": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/1978.webp",
+      "source": "images.apollo247.in",
+      "sourcePage": "https://www.apollopharmacy.in/medicine/rabichill-20mg-tab",
+      "originalImageUrl": "https://images.apollo247.in/pub/media/catalog/product/R/A/RAB1022_1.jpg",
+      "catalogName": "رابيكريل20 مجم اقراص",
+      "englishName": "",
+      "title": "رابيكريل20 مجم اقراص",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "matchScore": 1,
+      "matchReason": "ocr",
+      "sha256": "99131a25fd512fe118624c647d76de30b8ed8c8e47162a2f80cf1ff2fdf8d99e",
+      "provenance": "Image downloaded and matched by image discovery bot; commercial reuse license unverified"
+    },
     "1980": {
       "catalogName": "راسب ابيض مرهم",
       "englishName": "White Precipitate Oint Ointment",
