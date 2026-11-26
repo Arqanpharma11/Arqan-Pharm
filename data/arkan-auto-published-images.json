@@ -37683,6 +37683,22 @@
       "sha256": "adbb7e0f1eb01838bfcd24206ac590785cfabc0cae42c04fedf938a630989e00",
       "matchReason": "catalog_name_and_pack_details_checked_against_retailer_listing_and_image_ocr"
     },
+    "3838": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/3838.webp",
+      "source": "ibmpharmaegypt.com",
+      "sourcePage": "https://ibmpharmaegypt.com/product/ميكسترا-اقراص/",
+      "originalImageUrl": "https://ibmpharmaegypt.com/wp-content/uploads/2024/09/MEXTRA.png",
+      "catalogName": "ميكسورا اقراص",
+      "englishName": "Mixora",
+      "title": "Mixora ميكسورا اقراص",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "matchScore": 1,
+      "matchReason": "ocr",
+      "sha256": "e6103422b8a5c7d28faededb49fd268f72d9895b162c34d2daf3bc8dfcc48e59",
+      "provenance": "Image downloaded and matched by image discovery bot; commercial reuse license unverified"
+    },
     "3839": {
       "catalogName": "ميكسيكام15 اقماع",
       "englishName": "Mexicam 15 Suppositories",
@@ -39752,6 +39768,22 @@
       "manualVisualInspected": true,
       "matchReason": "manual_visible_pack_and_product_source_match",
       "sha256": "dc54e1134411a1f21be5edb102c2efc17f975ef77460a20339a427593a334bd5"
+    },
+    "4028": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/4028.webp",
+      "source": "www.ebrampharmacies.com",
+      "sourcePage": "https://ebrampharmacies.com/product/نيو-مووف-اون-فريز-سبراي-200-مل/",
+      "originalImageUrl": "https://www.ebrampharmacies.com/wp-content/uploads/2024/02/sf.png",
+      "catalogName": "نيو مووف فريز سبراى",
+      "englishName": "",
+      "title": "نيو مووف فريز سبراى",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "matchScore": 1,
+      "matchReason": "multi_source_2",
+      "sha256": "71adc481a7ce84eeba2239cf97ef4853db2d56f6984b185cb9bc1eefbd70c5fa",
+      "provenance": "Image downloaded and matched by image discovery bot; commercial reuse license unverified"
     },
     "4030": {
       "url": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/607184-1760869709.webp?v=1786647681",
