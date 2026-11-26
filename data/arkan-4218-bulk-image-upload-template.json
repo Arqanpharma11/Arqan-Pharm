@@ -39462,7 +39462,7 @@
    "category": "أدوية",
    "englishName": "Starkoprex",
    "barcode": "",
-   "imageUrl": "https://cdn.shopify.com/s/files/1/0935/9550/0847/files/108039_11zon.webp?v=1791468328",
+   "imageUrl": "https://cdn.shopify.com/s/files/1/0935/9550/0847/files/STARKOPREX_1615.webp?v=1795606322",
    "sourceName": "AlFouad Pharmacies",
    "exactMatchConfirmed": false,
    "localImagePath": "",
@@ -47802,28 +47802,28 @@
    "category": "مستحضرات تجميل",
    "englishName": "Vacation",
    "barcode": "",
-   "imageUrl": "https://cdn.shopify.com/s/files/1/0774/7151/4932/files/vacation-sebio-control-cream-gel-60ml-9636310.jpg?v=1789961407",
+   "imageUrl": "https://cdn.shopify.com/s/files/1/0774/7151/4932/files/vacation-aqua-repair-spf-30-pina-colada-lip-balm-15gm-1152687.jpg?v=1787867834",
    "sourceName": "Bloom Pharmacy",
    "exactMatchConfirmed": false,
    "localImagePath": "",
    "reviewStatus": "candidate_requires_package_review",
-   "candidateProductPage": "https://www.bloompharmacy.com/products/vacation-sebio-control-cream-gel-60ml",
-   "candidateTitle": "Vacation Sebio Control Cream Gel - 60ml",
+   "candidateProductPage": "https://www.bloompharmacy.com/products/vacation-aqua-repair-spf-30-pina-colada-lip-balm-15gm",
+   "candidateTitle": "Vacation Aqua-Repair SPF 30+ Pina Colada Lip Balm - 15gm",
    "candidateScore": 0.64,
    "otherCandidates": [
-    {
-     "title": "Vacation Aqua-Repair SPF 30+ Pina Colada Lip Balm - 15gm",
-     "imageUrl": "https://cdn.shopify.com/s/files/1/0774/7151/4932/files/vacation-aqua-repair-spf-30-pina-colada-lip-balm-15gm-1152687.jpg?v=1787867834",
-     "sourceName": "Bloom Pharmacy",
-     "productPage": "https://www.bloompharmacy.com/products/vacation-aqua-repair-spf-30-pina-colada-lip-balm-15gm",
-     "score": 0.64,
-     "status": "needs_visual_pack_review"
-    },
     {
      "title": "Vacation Aqua-Repair Micellar Water - 200ml",
      "imageUrl": "https://cdn.shopify.com/s/files/1/0774/7151/4932/files/vacation-aqua-repair-micellar-water-200ml-2420669.jpg?v=1781198718",
      "sourceName": "Bloom Pharmacy",
      "productPage": "https://www.bloompharmacy.com/products/vacation-aqua-repair-micellar-water-200ml",
+     "score": 0.64,
+     "status": "needs_visual_pack_review"
+    },
+    {
+     "title": "Vacation Caffeine 5% Serum - 30ml",
+     "imageUrl": "https://cdn.shopify.com/s/files/1/0774/7151/4932/files/vacation-caffeine-5-serum-30ml-1472772.jpg?v=1767115386",
+     "sourceName": "Bloom Pharmacy",
+     "productPage": "https://www.bloompharmacy.com/products/vacation-caffeine-5-serum-30ml",
      "score": 0.64,
      "status": "needs_visual_pack_review"
     }
@@ -47835,28 +47835,28 @@
    "category": "مستحضرات تجميل",
    "englishName": "Vacation",
    "barcode": "",
-   "imageUrl": "https://cdn.shopify.com/s/files/1/0774/7151/4932/files/vacation-sebio-control-cream-gel-60ml-9636310.jpg?v=1789961407",
+   "imageUrl": "https://cdn.shopify.com/s/files/1/0774/7151/4932/files/vacation-spf-50-sunscreen-cream-60ml-100011.jpg?v=1731319013",
    "sourceName": "Bloom Pharmacy",
    "exactMatchConfirmed": false,
    "localImagePath": "",
    "reviewStatus": "candidate_requires_package_review",
-   "candidateProductPage": "https://www.bloompharmacy.com/products/vacation-sebio-control-cream-gel-60ml",
-   "candidateTitle": "Vacation Sebio Control Cream Gel - 60ml",
+   "candidateProductPage": "https://www.bloompharmacy.com/products/vacation-spf-50-sunscreen-cream-60ml",
+   "candidateTitle": "Vacation SPF 50+ Sunscreen Cream - 60ml",
    "candidateScore": 0.74,
    "otherCandidates": [
-    {
-     "title": "Vacation SPF 50+ Sunscreen Cream - 60ml",
-     "imageUrl": "https://cdn.shopify.com/s/files/1/0774/7151/4932/files/vacation-spf-50-sunscreen-cream-60ml-100011.jpg?v=1731319013",
-     "sourceName": "Bloom Pharmacy",
-     "productPage": "https://www.bloompharmacy.com/products/vacation-spf-50-sunscreen-cream-60ml",
-     "score": 0.74,
-     "status": "needs_visual_pack_review"
-    },
     {
      "title": "Vacation Aqua repair cica cream gel 60ml",
      "imageUrl": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/219tJFefGuL._AC_US40.jpg?v=1787563256",
      "sourceName": "Re3aya Pharmacy",
      "productPage": "https://re3ayapharmacy.com/products/vacation-aqua-repair-cica-cream-gel-60ml",
+     "score": 0.74,
+     "status": "needs_visual_pack_review"
+    },
+    {
+     "title": "Vacation Sunscreen Cream SPF50+ 60 ml | واقي شمس فاكيشن SPF50+ 60 مل",
+     "imageUrl": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/41VZGJ89RjL._AC_SX466.jpg?v=1787429618",
+     "sourceName": "Re3aya Pharmacy",
+     "productPage": "https://re3ayapharmacy.com/products/vacation-sunscreen-cream-spf50-60ml",
      "score": 0.74,
      "status": "needs_visual_pack_review"
     }
@@ -47868,28 +47868,28 @@
    "category": "مستحضرات تجميل",
    "englishName": "Vacation",
    "barcode": "",
-   "imageUrl": "https://cdn.shopify.com/s/files/1/0774/7151/4932/files/vacation-sebio-control-cream-gel-60ml-9636310.jpg?v=1789961407",
+   "imageUrl": "https://cdn.shopify.com/s/files/1/0774/7151/4932/files/vacation-aqua-repair-spf-30-pina-colada-lip-balm-15gm-1152687.jpg?v=1787867834",
    "sourceName": "Bloom Pharmacy",
    "exactMatchConfirmed": false,
    "localImagePath": "",
    "reviewStatus": "candidate_requires_package_review",
-   "candidateProductPage": "https://www.bloompharmacy.com/products/vacation-sebio-control-cream-gel-60ml",
-   "candidateTitle": "Vacation Sebio Control Cream Gel - 60ml",
+   "candidateProductPage": "https://www.bloompharmacy.com/products/vacation-aqua-repair-spf-30-pina-colada-lip-balm-15gm",
+   "candidateTitle": "Vacation Aqua-Repair SPF 30+ Pina Colada Lip Balm - 15gm",
    "candidateScore": 0.64,
    "otherCandidates": [
-    {
-     "title": "Vacation Aqua-Repair SPF 30+ Pina Colada Lip Balm - 15gm",
-     "imageUrl": "https://cdn.shopify.com/s/files/1/0774/7151/4932/files/vacation-aqua-repair-spf-30-pina-colada-lip-balm-15gm-1152687.jpg?v=1787867834",
-     "sourceName": "Bloom Pharmacy",
-     "productPage": "https://www.bloompharmacy.com/products/vacation-aqua-repair-spf-30-pina-colada-lip-balm-15gm",
-     "score": 0.64,
-     "status": "needs_visual_pack_review"
-    },
     {
      "title": "Vacation Aqua-Repair Micellar Water - 200ml",
      "imageUrl": "https://cdn.shopify.com/s/files/1/0774/7151/4932/files/vacation-aqua-repair-micellar-water-200ml-2420669.jpg?v=1781198718",
      "sourceName": "Bloom Pharmacy",
      "productPage": "https://www.bloompharmacy.com/products/vacation-aqua-repair-micellar-water-200ml",
+     "score": 0.64,
+     "status": "needs_visual_pack_review"
+    },
+    {
+     "title": "Vacation Caffeine 5% Serum - 30ml",
+     "imageUrl": "https://cdn.shopify.com/s/files/1/0774/7151/4932/files/vacation-caffeine-5-serum-30ml-1472772.jpg?v=1767115386",
+     "sourceName": "Bloom Pharmacy",
+     "productPage": "https://www.bloompharmacy.com/products/vacation-caffeine-5-serum-30ml",
      "score": 0.64,
      "status": "needs_visual_pack_review"
     }
@@ -47901,28 +47901,28 @@
    "category": "مستحضرات تجميل",
    "englishName": "Vacation",
    "barcode": "",
-   "imageUrl": "https://cdn.shopify.com/s/files/1/0774/7151/4932/files/vacation-sebio-control-cream-gel-60ml-9636310.jpg?v=1789961407",
+   "imageUrl": "https://cdn.shopify.com/s/files/1/0774/7151/4932/files/vacation-aqua-repair-spf-30-pina-colada-lip-balm-15gm-1152687.jpg?v=1787867834",
    "sourceName": "Bloom Pharmacy",
    "exactMatchConfirmed": false,
    "localImagePath": "",
    "reviewStatus": "candidate_requires_package_review",
-   "candidateProductPage": "https://www.bloompharmacy.com/products/vacation-sebio-control-cream-gel-60ml",
-   "candidateTitle": "Vacation Sebio Control Cream Gel - 60ml",
+   "candidateProductPage": "https://www.bloompharmacy.com/products/vacation-aqua-repair-spf-30-pina-colada-lip-balm-15gm",
+   "candidateTitle": "Vacation Aqua-Repair SPF 30+ Pina Colada Lip Balm - 15gm",
    "candidateScore": 0.64,
    "otherCandidates": [
-    {
-     "title": "Vacation Aqua-Repair SPF 30+ Pina Colada Lip Balm - 15gm",
-     "imageUrl": "https://cdn.shopify.com/s/files/1/0774/7151/4932/files/vacation-aqua-repair-spf-30-pina-colada-lip-balm-15gm-1152687.jpg?v=1787867834",
-     "sourceName": "Bloom Pharmacy",
-     "productPage": "https://www.bloompharmacy.com/products/vacation-aqua-repair-spf-30-pina-colada-lip-balm-15gm",
-     "score": 0.64,
-     "status": "needs_visual_pack_review"
-    },
     {
      "title": "Vacation Aqua-Repair Micellar Water - 200ml",
      "imageUrl": "https://cdn.shopify.com/s/files/1/0774/7151/4932/files/vacation-aqua-repair-micellar-water-200ml-2420669.jpg?v=1781198718",
      "sourceName": "Bloom Pharmacy",
      "productPage": "https://www.bloompharmacy.com/products/vacation-aqua-repair-micellar-water-200ml",
+     "score": 0.64,
+     "status": "needs_visual_pack_review"
+    },
+    {
+     "title": "Vacation Caffeine 5% Serum - 30ml",
+     "imageUrl": "https://cdn.shopify.com/s/files/1/0774/7151/4932/files/vacation-caffeine-5-serum-30ml-1472772.jpg?v=1767115386",
+     "sourceName": "Bloom Pharmacy",
+     "productPage": "https://www.bloompharmacy.com/products/vacation-caffeine-5-serum-30ml",
      "score": 0.64,
      "status": "needs_visual_pack_review"
     }
@@ -47950,28 +47950,28 @@
    "category": "مستحضرات تجميل",
    "englishName": "Vacation",
    "barcode": "",
-   "imageUrl": "https://cdn.shopify.com/s/files/1/0774/7151/4932/files/vacation-sebio-control-cream-gel-60ml-9636310.jpg?v=1789961407",
+   "imageUrl": "https://cdn.shopify.com/s/files/1/0774/7151/4932/files/vacation-spf-50-sunscreen-cream-60ml-100011.jpg?v=1731319013",
    "sourceName": "Bloom Pharmacy",
    "exactMatchConfirmed": false,
    "localImagePath": "",
    "reviewStatus": "candidate_requires_package_review",
-   "candidateProductPage": "https://www.bloompharmacy.com/products/vacation-sebio-control-cream-gel-60ml",
-   "candidateTitle": "Vacation Sebio Control Cream Gel - 60ml",
+   "candidateProductPage": "https://www.bloompharmacy.com/products/vacation-spf-50-sunscreen-cream-60ml",
+   "candidateTitle": "Vacation SPF 50+ Sunscreen Cream - 60ml",
    "candidateScore": 0.74,
    "otherCandidates": [
-    {
-     "title": "Vacation SPF 50+ Sunscreen Cream - 60ml",
-     "imageUrl": "https://cdn.shopify.com/s/files/1/0774/7151/4932/files/vacation-spf-50-sunscreen-cream-60ml-100011.jpg?v=1731319013",
-     "sourceName": "Bloom Pharmacy",
-     "productPage": "https://www.bloompharmacy.com/products/vacation-spf-50-sunscreen-cream-60ml",
-     "score": 0.74,
-     "status": "needs_visual_pack_review"
-    },
     {
      "title": "Vacation Aqua repair cica cream gel 60ml",
      "imageUrl": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/219tJFefGuL._AC_US40.jpg?v=1787563256",
      "sourceName": "Re3aya Pharmacy",
      "productPage": "https://re3ayapharmacy.com/products/vacation-aqua-repair-cica-cream-gel-60ml",
+     "score": 0.74,
+     "status": "needs_visual_pack_review"
+    },
+    {
+     "title": "Vacation Sunscreen Cream SPF50+ 60 ml | واقي شمس فاكيشن SPF50+ 60 مل",
+     "imageUrl": "https://cdn.shopify.com/s/files/1/0579/5305/8919/files/41VZGJ89RjL._AC_SX466.jpg?v=1787429618",
+     "sourceName": "Re3aya Pharmacy",
+     "productPage": "https://re3ayapharmacy.com/products/vacation-sunscreen-cream-spf50-60ml",
      "score": 0.74,
      "status": "needs_visual_pack_review"
     }
@@ -47983,28 +47983,28 @@
    "category": "مستحضرات تجميل",
    "englishName": "Vacation",
    "barcode": "",
-   "imageUrl": "https://cdn.shopify.com/s/files/1/0774/7151/4932/files/vacation-sebio-control-cream-gel-60ml-9636310.jpg?v=1789961407",
+   "imageUrl": "https://cdn.shopify.com/s/files/1/0774/7151/4932/files/vacation-aqua-repair-spf-30-pina-colada-lip-balm-15gm-1152687.jpg?v=1787867834",
    "sourceName": "Bloom Pharmacy",
    "exactMatchConfirmed": false,
    "localImagePath": "",
    "reviewStatus": "candidate_requires_package_review",
-   "candidateProductPage": "https://www.bloompharmacy.com/products/vacation-sebio-control-cream-gel-60ml",
-   "candidateTitle": "Vacation Sebio Control Cream Gel - 60ml",
+   "candidateProductPage": "https://www.bloompharmacy.com/products/vacation-aqua-repair-spf-30-pina-colada-lip-balm-15gm",
+   "candidateTitle": "Vacation Aqua-Repair SPF 30+ Pina Colada Lip Balm - 15gm",
    "candidateScore": 0.64,
    "otherCandidates": [
-    {
-     "title": "Vacation Aqua-Repair SPF 30+ Pina Colada Lip Balm - 15gm",
-     "imageUrl": "https://cdn.shopify.com/s/files/1/0774/7151/4932/files/vacation-aqua-repair-spf-30-pina-colada-lip-balm-15gm-1152687.jpg?v=1787867834",
-     "sourceName": "Bloom Pharmacy",
-     "productPage": "https://www.bloompharmacy.com/products/vacation-aqua-repair-spf-30-pina-colada-lip-balm-15gm",
-     "score": 0.64,
-     "status": "needs_visual_pack_review"
-    },
     {
      "title": "Vacation Aqua-Repair Micellar Water - 200ml",
      "imageUrl": "https://cdn.shopify.com/s/files/1/0774/7151/4932/files/vacation-aqua-repair-micellar-water-200ml-2420669.jpg?v=1781198718",
      "sourceName": "Bloom Pharmacy",
      "productPage": "https://www.bloompharmacy.com/products/vacation-aqua-repair-micellar-water-200ml",
+     "score": 0.64,
+     "status": "needs_visual_pack_review"
+    },
+    {
+     "title": "Vacation Caffeine 5% Serum - 30ml",
+     "imageUrl": "https://cdn.shopify.com/s/files/1/0774/7151/4932/files/vacation-caffeine-5-serum-30ml-1472772.jpg?v=1767115386",
+     "sourceName": "Bloom Pharmacy",
+     "productPage": "https://www.bloompharmacy.com/products/vacation-caffeine-5-serum-30ml",
      "score": 0.64,
      "status": "needs_visual_pack_review"
     }
@@ -50790,7 +50790,7 @@
    "otherCandidates": [
     {
      "title": "VITACID C EFF 12 TAB",
-     "imageUrl": "https://cdn.shopify.com/s/files/1/0935/9550/0847/files/vitacid_c_1615x1615_under100kb.webp?v=1791468973",
+     "imageUrl": "https://cdn.shopify.com/s/files/1/0935/9550/0847/files/Vitacid_C_1615x1615_bfdfac55-04f8-4438-b56b-2f93367f3faf.webp?v=1795605849",
      "sourceName": "AlFouad Pharmacies",
      "productPage": "https://alfouadpharmacies.com/products/vitacid-c-eff-12-tab",
      "score": 0.7,
@@ -66143,15 +66143,23 @@
    "category": "أدوية",
    "englishName": "Mounjaro",
    "barcode": "",
-   "imageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/615205.webp?v=1786657707",
-   "sourceName": "Azzam Pharmacy",
+   "imageUrl": "https://cdn.shopify.com/s/files/1/0774/7151/4932/files/mounjaro-kwikpen-10-mg-06-ml-x-4-doses-1622980.jpg?v=1757591978",
+   "sourceName": "Bloom Pharmacy",
    "exactMatchConfirmed": false,
    "localImagePath": "",
    "reviewStatus": "candidate_requires_package_review",
-   "candidateProductPage": "https://azzampharmacy.com/products/mounjaro-10-mg-0-5-ml-s-c-4-vial-32882",
-   "candidateTitle": "Mounjaro  10 Mg / 0.5 Ml  S.c.  4 Vial",
+   "candidateProductPage": "https://www.bloompharmacy.com/products/mounjaro-kwikpen-10-mg-0-6-ml-x-4-doses",
+   "candidateTitle": "Mounjaro Kwikpen 10 Mg / 0.6 Ml X 4 Doses",
    "candidateScore": 0.76,
    "otherCandidates": [
+    {
+     "title": "Mounjaro  10 Mg / 0.5 Ml  S.c.  4 Vial",
+     "imageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/615205.webp?v=1786657707",
+     "sourceName": "Azzam Pharmacy",
+     "productPage": "https://azzampharmacy.com/products/mounjaro-10-mg-0-5-ml-s-c-4-vial-32882",
+     "score": 0.76,
+     "status": "needs_visual_pack_review"
+    },
     {
      "title": "Mounjaro  10 Mg / 0.6 Ml  S.c.  1 Kwik-Pen  2.4 Ml / 4 Doses",
      "imageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/616586.webp?v=1786651044",
@@ -66168,15 +66176,24 @@
    "category": "أدوية",
    "englishName": "Mounjaro",
    "barcode": "",
-   "imageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/616588.webp?v=1786656394",
-   "sourceName": "Azzam Pharmacy",
+   "imageUrl": "https://cdn.shopify.com/s/files/1/0774/7151/4932/files/mounjaro-kwikpen-15-mg-06-ml-x-4-doses-1391073.jpg?v=1760600765",
+   "sourceName": "Bloom Pharmacy",
    "exactMatchConfirmed": false,
    "localImagePath": "",
    "reviewStatus": "candidate_requires_package_review",
-   "candidateProductPage": "https://azzampharmacy.com/products/mounjaro-15-mg-0-6-ml-s-c-1-kwik-pen-2-4-ml-4-doses-37771",
-   "candidateTitle": "Mounjaro  15 Mg / 0.6 Ml  S.c.  1 Kwik-Pen  2.4 Ml / 4 Doses",
+   "candidateProductPage": "https://www.bloompharmacy.com/products/mounjaro-kwikpen-15-mg-0-6-ml-x-4-doses",
+   "candidateTitle": "Mounjaro Kwikpen 15 Mg / 0.6 Ml x 4 Doses",
    "candidateScore": 0.76,
-   "otherCandidates": []
+   "otherCandidates": [
+    {
+     "title": "Mounjaro  15 Mg / 0.6 Ml  S.c.  1 Kwik-Pen  2.4 Ml / 4 Doses",
+     "imageUrl": "https://cdn.shopify.com/s/files/1/0677/4849/5435/files/616588.webp?v=1786656394",
+     "sourceName": "Azzam Pharmacy",
+     "productPage": "https://azzampharmacy.com/products/mounjaro-15-mg-0-6-ml-s-c-1-kwik-pen-2-4-ml-4-doses-37771",
+     "score": 0.76,
+     "status": "needs_visual_pack_review"
+    }
+   ]
   },
   {
    "id": 3761,
