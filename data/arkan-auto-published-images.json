@@ -12569,16 +12569,15 @@
     "1695": {
       "catalogName": "جينيكا مويست لوسيون",
       "englishName": "Genica Moist Lotion",
-      "title": "genica ray sun screen spf 50+ lotion 100 ml",
-      "url": "https://dwaprices.com/upload/1779393316.png",
-      "sourcePage": "https://dwaprices.com/med.php?id=19683",
-      "source": "dwaprices.com",
-      "status": "rejected_mismatched_pack",
+      "title": "Genica Moist Plus Lotion 200 ml",
+      "url": "https://cdn.dawaagate.com/thumbs/320/images/medicines/genica-moist-plus-lotion-200-ml-856-0596c8.webp",
+      "sourcePage": "https://www.dawaagate.com/medicine/genica-moist-plus-lotion-200-ml",
+      "source": "www.dawaagate.com",
+      "status": "candidate_preview",
       "independentlyVerified": false,
-      "shownAsProductThumbnail": false,
-      "attribution": "DwaPrices",
-      "sha256": "5d8700aed5d98dfc98c8c74344846c3f62e1be6138aefeb5138cfe48a5738ec1",
-      "matchReason": "Image shows Genica Ray sunscreen instead of Genica Moist lotion"
+      "shownAsProductThumbnail": true,
+      "attribution": "www.dawaagate.com",
+      "matchReason": "Manually inspected package photograph and matched product name and form; Strongville 220 ml printed on pack where applicable."
     },
     "1696": {
       "catalogName": "جيوبروست اقراص",
@@ -45487,16 +45486,15 @@
     "230289": {
       "catalogName": "سترونج فيل زيت220ملل",
       "englishName": "Strongville Hair Oil 220 ml",
-      "title": "strongville hair tonic spray 220 ml",
-      "url": "https://cdn.dawaagate.com/images/medicines/strongville-hair-tonic-spray-220-ml-5411-d433f5.webp",
-      "sourcePage": "https://www.dawaagate.com/medicine/strongville-hair-tonic-spray-220-ml",
-      "source": "www.dawaagate.com",
-      "status": "rejected_mismatched_pack",
+      "title": "Strongville Advanced Hair Oil 220 ml",
+      "url": "https://elprofstore.com/cdn/shop/files/StrongvilleAdvancedhairoil220ml.webp?v=1763309673&width=720",
+      "sourcePage": "https://elprofstore.com/products/strongville-advanced-hair-oil-200-ml",
+      "source": "elprofstore.com",
+      "status": "candidate_preview",
       "independentlyVerified": false,
-      "shownAsProductThumbnail": false,
-      "attribution": "Dawaa Gate",
-      "sha256": "7b57bd45327798a619e3eb5356c744ea20532cd677e49a804f371888702deb19",
-      "matchReason": "Image shows tonic spray instead of hair oil"
+      "shownAsProductThumbnail": true,
+      "attribution": "elprofstore.com",
+      "matchReason": "Manually inspected package photograph and matched product name and form; Strongville 220 ml printed on pack where applicable."
     },
     "230290": {
       "catalogName": "سترونج فيل كريم للشعر 120جرام موف",
