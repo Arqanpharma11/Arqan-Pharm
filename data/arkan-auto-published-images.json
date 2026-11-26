@@ -2124,6 +2124,20 @@
       "manualVisualInspected": true,
       "matchReason": "product_pack_visually_checked_against_catalog_and_source_listing"
     },
+    "565": {
+      "catalogName": "انفينيتى صن سكري50",
+      "englishName": "Infinity Naturals Sunscreen SPF50+",
+      "title": "Infinity Naturals Sunscreen SPF50+",
+      "url": "https://infinityclinicpharma.com/cdn/shop/files/Infinity_Naturals_Sunscreen_cream.webp?v=1784730144&width=1646",
+      "sourcePage": "https://infinityclinicpharma.com/collections/skin-care/products/infinity-naturals-sunscreen-cream-spf-50-all-skin-types",
+      "source": "infinityclinicpharma.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "Visible package name and form compared with source listing and catalog name; external image.",
+      "attribution": "infinityclinicpharma.com"
+    },
     "568": {
       "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/568.webp",
       "source": "www.dawaagate.com",
@@ -10535,6 +10549,20 @@
       "attribution": "Lotus Pharmacies",
       "sha256": "9eab0caf77bf3776b1a78cd9c99d018e663a66c7bdfe3d2691aefa1a75535d15"
     },
+    "1523": {
+      "catalogName": "جاتيكسيل مرهم للعين/جنيه25.5",
+      "englishName": "Gatyxel eye ointment 0.3%",
+      "title": "Gatyxel eye ointment 0.3%",
+      "url": "https://mtalaatpharmacy.com/storage/external-product-thumbnails/40750.webp",
+      "sourcePage": "https://mtalaatpharmacy.com/products/40750/gatyksyl-mrhm-alaayn",
+      "source": "mtalaatpharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "Visible package name and form compared with source listing and catalog name; external image.",
+      "attribution": "mtalaatpharmacy.com"
+    },
     "1524": {
       "catalogName": "جاراميسين20 مل ج",
       "englishName": "Garamycin",
@@ -12240,6 +12268,20 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Lotus Pharmacies",
       "sha256": "5edc0ca7855194ec0b7b43873dac0e16e32d2705ef16ace71f19cdc34ab565ea"
+    },
+    "1665": {
+      "catalogName": "جيرلى كريم",
+      "englishName": "Girly Hair Cream 100 gm",
+      "title": "Girly Hair Cream 100 gm",
+      "url": "https://mtalaatpharmacy.com/storage/external-product-thumbnails/21951.webp",
+      "sourcePage": "https://mtalaatpharmacy.com/products/21951/gyrly-krym-100-gm",
+      "source": "mtalaatpharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "Visible package name and form compared with source listing and catalog name; external image.",
+      "attribution": "mtalaatpharmacy.com"
     },
     "1666": {
       "catalogName": "جيرون اقراص حديد",
