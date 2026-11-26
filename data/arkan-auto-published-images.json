@@ -16,6 +16,22 @@
       "attribution": "dwaprices.com",
       "note": "External image; reuse rights and live portal rendering not independently verified."
     },
+    "23": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/23.webp",
+      "source": "sidalih.com",
+      "sourcePage": "https://sidalih.com/products/bioderma-sebium-global-for-acne-prone-skin-30-ml",
+      "originalImageUrl": "https://sidalih.com/cdn/shop/files/byodyrma-sybyom-jlobal-krym-lhb-alshbab-30-ml-775214_a11bf956-8977-45ed-b558-46b2d6b88c47.jpg?v=1721223034",
+      "catalogName": "ابيدرم كريم لحب الشباب",
+      "englishName": "",
+      "title": "ابيدرم كريم لحب الشباب",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "matchScore": 1,
+      "matchReason": "ocr",
+      "sha256": "534ecf8f0a32a0240a02623c6340aba1afefba429bf9e60d3af2977e6d67b6d4",
+      "provenance": "Image downloaded and matched by image discovery bot; commercial reuse license unverified"
+    },
     "32": {
       "catalogName": "ابيزيثرو شراب",
       "title": "Epizithro 200 mg/5 ml powder for oral suspension, 30 ml",
