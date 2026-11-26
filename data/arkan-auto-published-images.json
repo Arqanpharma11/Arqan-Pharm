@@ -38718,6 +38718,20 @@
       "sha256": "66362ac18328cacbeda118f024432312c330cf4497efc8d4f55bee015029ec97",
       "matchReason": "catalog_name_and_pack_details_checked_against_retailer_listing_and_image_ocr"
     },
+    "3942": {
+      "catalogName": "نوبﻼك مضمضه نعناع",
+      "title": "No Plac Mint mouth wash 250 ml",
+      "englishName": "No Plac Mint mouth wash 250 ml",
+      "url": "https://drugs.doseshq.com/_next/image?q=75&url=https%3A%2F%2Fdose-images.doseshq.com%2Fdrugs%2F54a11020-e724-4bbd-9ddb-8e26106c8996.png&w=384",
+      "source": "drugs.doseshq.com",
+      "sourcePage": "https://drugs.doseshq.com/en/drugs/54a11020-e724-4bbd-9ddb-8e26106c8996/no-plac-mouth-wash-250-ml",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "visible packaging and product listing match catalog brand and variant",
+      "note": "External image preview; live portal rendering and reuse rights not independently verified."
+    },
     "3943": {
       "catalogName": "نوتوسيل120مل شراب كبير",
       "englishName": "Notosil 120 ml Syrup Large",
@@ -40132,6 +40146,34 @@
       "sha256": "1fe81523ab6bbcc36d03335d1ac6bf023b6accdb906ff053320af76a1b44fe20",
       "matchReason": "catalog_name_and_pack_details_checked_against_retailer_listing_and_image_ocr"
     },
+    "4073": {
+      "catalogName": "هى اي تو زد غسول مهبلى",
+      "title": "Heya A2Z feminine wash 250 ml",
+      "englishName": "Heya A2Z feminine wash 250 ml",
+      "url": "https://cirashop.net/cdn/shop/files/heya-a2z.png?v=1774968266&width=800",
+      "source": "cirashop.net",
+      "sourcePage": "https://cirashop.net/products/heya-a2z",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "visible packaging and product listing match catalog brand and variant",
+      "note": "External image preview; live portal rendering and reuse rights not independently verified."
+    },
+    "4074": {
+      "catalogName": "هى نيو مام غسول",
+      "title": "Heya Neo Mum feminine wash 250 ml",
+      "englishName": "Heya Neo Mum feminine wash 250 ml",
+      "url": "https://cirashop.net/cdn/shop/files/heya-neo-mum.png?v=1774968265&width=800",
+      "source": "cirashop.net",
+      "sourcePage": "https://cirashop.net/products/heya-neo-mum",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "visible packaging and product listing match catalog brand and variant",
+      "note": "External image preview; live portal rendering and reuse rights not independently verified."
+    },
     "4076": {
       "catalogName": "هيالو فور ستارت مرهم30 جم",
       "englishName": "Hyalo For Start Ointment 30 g",
@@ -40204,6 +40246,20 @@
       "attribution": "DwaPrices",
       "sha256": "deb1f50d92b1adb4b36b192e20c11086298e4bb5414ade26daa7cb8aed892e61",
       "matchReason": "catalog_name_and_pack_details_checked_against_retailer_listing_and_image_ocr"
+    },
+    "4081": {
+      "catalogName": "هيالو كونكس غسول للبشره200ملى",
+      "title": "Hyalokonex facial wash 200 ml",
+      "englishName": "Hyalokonex facial wash 200 ml",
+      "url": "https://taypharmacies.com/wp-content/uploads/2025/02/48-1.png",
+      "source": "taypharmacies.com",
+      "sourcePage": "https://taypharmacies.com/product/982102/hyalokonex-facial-wash-200ml?lang=en",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "visible packaging and product listing match catalog brand and variant",
+      "note": "External image preview; live portal rendering and reuse rights not independently verified."
     },
     "4082": {
       "catalogName": "هيالو كونيكس سيرم",
@@ -41601,6 +41657,20 @@
       "matchReason": "manual_catalog_and_retailer_title_comparison",
       "attribution": "Re3aya Pharmacy",
       "note": "External candidate preview; image availability and visual package not independently verified."
+    },
+    "4207": {
+      "catalogName": "يوفى بلوك75 جم اوريجينال",
+      "title": "U.V Block sunscreen cream 75 gm SPF 50+",
+      "englishName": "U.V Block sunscreen cream 75 gm SPF 50+",
+      "url": "https://api.c0umyt3cda-pharmaove1-p1-public.model-t.cc.commerce.ondemand.com/medias/000000000000013148.jpg?context=bWFzdGVyfGltYWdlc3wyNDIxMDl8aW1hZ2UvanBlZ3xhR0poTDJneU9TOHhNRGc1Tmprd05EVTROVEkwTmk4d01EQXdNREF3TURBd01EQXdNVE14TkRndWFuQm58NGFiOGE1MGE4MTUzYjliODdjNGQwZGM3ZjJmMDA0MjhmZTZiZTBkNGIwOGEwODQ2Nzk5MzY1MGI0MmZkM2M5OQ",
+      "source": "api.c0umyt3cda-pharmaove1-p1-public.model-t.cc.commerce.ondemand.com",
+      "sourcePage": "https://shop.pharmaemarket.com/pharma/en/EGP/product/000000000000013148/U.V%20%20SUN%20SCREEN%20CREAM%2075%20GM",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "visible packaging and product listing match catalog brand and variant",
+      "note": "External image preview; live portal rendering and reuse rights not independently verified."
     },
     "4209": {
       "catalogName": "يونى بيوتيك500 مجم",
