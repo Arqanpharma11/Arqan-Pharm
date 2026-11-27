@@ -18,7 +18,7 @@ export default {async fetch(req,env){
  const origin=req.headers.get('Origin');const headers={'Access-Control-Allow-Origin':ORIGIN,'Access-Control-Allow-Methods':'GET, POST, OPTIONS','Access-Control-Allow-Headers':'Content-Type, Authorization','Cache-Control':'no-store','Vary':'Origin','Content-Type':'application/json'};
  const reply=(data,status=200)=>new Response(JSON.stringify(data),{status,headers});
  if(req.method==='OPTIONS')return new Response(null,{status:origin===ORIGIN?204:403,headers});
- if(req.method==='GET')return reply({ok:!!(env.FCM_SERVICE_ACCOUNT_JSON&&env.FIREBASE_WEB_API_KEY),version:1});
+ if(req.method==='GET')return reply({ok:!!(env.FCM_SERVICE_ACCOUNT_JSON&&env.FIREBASE_WEB_API_KEY),version:2});
  if(req.method!=='POST'||origin!==ORIGIN)return reply({error:'Forbidden'},403);
  if(!env.FCM_SERVICE_ACCOUNT_JSON||!env.FIREBASE_WEB_API_KEY)return reply({error:'Service not configured'},503);
  try{
@@ -39,10 +39,11 @@ export default {async fetch(req,env){
  if(!['subscribe','unsubscribe'].includes(b.action))return reply({error:'Unknown action'},400);
  if(typeof b.token!=='string'||b.token.length<50||b.token.length>4096||!/^[A-Za-z0-9_:\-]+$/.test(b.token))return reply({error:'Invalid token'},400);
  const token=await oauth(env);
- const url='https://fcm.googleapis.com/v1/projects/'+PROJECT+'/registrations/'+encodeURIComponent(b.token)+'/topicSubscriptions';
  const sub=b.action==='subscribe';
- const r=await fetch(url+(sub?'?topic_name='+TOPIC:'/'+TOPIC),{method:sub?'POST':'DELETE',headers:{Authorization:'Bearer '+token,'Content-Type':'application/json'},...(sub?{body:'{}'}:{})});
- if(!r.ok&&!(sub&&r.status===409)&&!(!sub&&r.status===404))return reply({error:'Topic operation rejected',upstream:r.status},502);
+ const url='https://iid.googleapis.com/iid/v1:'+(sub?'batchAdd':'batchRemove');
+ const r=await fetch(url,{method:'POST',headers:{Authorization:'Bearer '+token,'access_token_auth':'true','Content-Type':'application/json'},body:JSON.stringify({to:'/topics/'+TOPIC,registration_tokens:[b.token]})});
+ const result=await r.json();
+ if(!r.ok||!Array.isArray(result.results)||result.results.length!==1||result.results[0].error)return reply({error:'Topic operation rejected',upstream:r.status},502);
  return reply({ok:true});
  }catch(e){console.error('Notification worker failed',e.name);return reply({error:'Service unavailable'},502)}
 }};
