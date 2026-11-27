@@ -70,3 +70,47 @@ button.transition-all, a.transition-all, [role="button"].transition-all {
     :is(#portal-gateway-view,#admin-portal-view,#pharmacist-portal-view) button:active {transform:none;}
   }
 }
+
+
+/* Arqan Modern Typography & Icon Depth — presentation only. */
+@media screen {
+  :is(#portal-gateway-view,#admin-portal-view,#pharmacist-portal-view,body>header) :is(h1,h2,h3,h4) {
+    font-family:'Cairo','Tajawal',system-ui,sans-serif;
+    font-weight:800;line-height:1.5;letter-spacing:normal;
+  }
+  :is(#portal-gateway-view,#admin-portal-view,#pharmacist-portal-view,body>header) :is(h1,h2,h3,h4).text-arkan-dark {
+    text-shadow:0 1px 0 #fff,0 2px 2px rgba(62,39,35,.12);
+  }
+  :is(#portal-gateway-view,#admin-portal-view,#pharmacist-portal-view) :is(h1,h2,h3,h4).text-arkan-sand,
+  :is(#portal-gateway-view,#admin-portal-view,#pharmacist-portal-view) .bg-arkan-dark h2,
+  #portal-gateway-view .bg-gradient-to-l h2 {
+    text-shadow:0 2px 2px rgba(20,12,8,.35);
+  }
+  :is(#portal-gateway-view,#admin-portal-view,#pharmacist-portal-view) button {
+    font-family:'Cairo','Tajawal',system-ui,sans-serif;
+    letter-spacing:normal;
+  }
+  :is(#portal-gateway-view,#admin-portal-view,#pharmacist-portal-view) button:is(.bg-arkan-dark,.bg-arkan-primary,.bg-emerald-700,.bg-emerald-600,.bg-indigo-700,.bg-sky-800).text-white {
+    text-shadow:0 1px 1px rgba(0,0,0,.26);
+  }
+  :is(#portal-gateway-view,#admin-portal-view,#pharmacist-portal-view) .num-en {
+    font-variant-numeric:tabular-nums lining-nums;
+  }
+  :is(#portal-gateway-view,#admin-portal-view,#pharmacist-portal-view) span.rounded-2xl.flex.items-center.justify-center.text-2xl,
+  :is(#portal-gateway-view,#admin-portal-view,#pharmacist-portal-view) div.w-10.h-10.rounded-xl.flex.items-center.justify-center {
+    background-image:linear-gradient(145deg,rgba(255,255,255,.19),transparent 60%,rgba(0,0,0,.12));
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.3),0 3px 0 rgba(62,39,35,.16),0 5px 9px rgba(62,39,35,.12);
+    text-shadow:0 2px 2px rgba(0,0,0,.18);
+  }
+  :is(#portal-gateway-view,#admin-portal-view,#pharmacist-portal-view) button svg:not([class*="absolute"]),
+  body>header button svg {
+    filter:drop-shadow(0 1px 1px rgba(62,39,35,.20));
+  }
+  :is(#portal-gateway-view,#admin-portal-view,#pharmacist-portal-view) .credit-lock-icon {
+    text-shadow:0 1px 1px rgba(62,39,35,.25);
+  }
+  #pharm-catalog-tbody .shortage-pill {
+    animation:none;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.7),0 1px 2px rgba(6,78,59,.10);
+  }
+}
