@@ -4,9 +4,9 @@
   "approvedForProduction": false,
   "version": 2,
   "ambiguousLinksSkipped": 20,
-  "generatedAt": "2026-11-27T12:48:53.804Z",
+  "generatedAt": "2026-11-27T18:38:36.715Z",
   "catalogTotal": 4783,
-  "trialImages": 947,
+  "trialImages": 948,
   "notice": "UNVERIFIED IMAGES. Not for dispensing or identifying medicine. Never imported into approved pharmacy photo seeds.",
   "items": [
     {
@@ -1733,6 +1733,18 @@
       "source": "Bloom Pharmacy",
       "sourcePage": "https://www.bloompharmacy.com/products/bran-400-mg-60-capsules",
       "title": "Bran 400 mg - 60 Capsules",
+      "status": "trial_unverified",
+      "catalogMatch": "not_visually_verified",
+      "rights": "source_rights_unconfirmed"
+    },
+    {
+      "id": "979",
+      "name": "بروبيوتك فيم نيو",
+      "category": "مكملات وفيتامينات",
+      "imageUrl": "https://images.openfoodfacts.org/images/products/009/661/919/4261/front_en.199.400.jpg",
+      "source": "world.openfoodfacts.org",
+      "sourcePage": "https://world.openfoodfacts.org/product/0096619194261",
+      "title": "Kirkland Signature Ancient Grains Probiotic Granola 35.3 oz (1 kg)",
       "status": "trial_unverified",
       "catalogMatch": "not_visually_verified",
       "rights": "source_rights_unconfirmed"
