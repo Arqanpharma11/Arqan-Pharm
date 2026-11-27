@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>.hidden{display:none!important}body{background:#F5EFE6;color:#3E2723}
-#arkan-pharm-search-wrap{min-width:200px;flex:1 1 280px;position:relative}
+#arkan-pharm-search-wrap{min-width:0;flex:0 0 100%;width:100%;position:static}
 #arkan-pharm-search-wrap svg{pointer-events:none}
 #pharm-search-input,#adm-search-input{color:#3e2723!important;-webkit-text-fill-color:#3e2723!important;caret-color:#3e2723!important;background:#fff!important;opacity:1!important;text-indent:0!important;visibility:visible!important;font-size:16px!important}
 #pharm-search-input::placeholder,#adm-search-input::placeholder{color:#806b5e!important;-webkit-text-fill-color:#806b5e!important;opacity:1}
 #arkan-pharm-search-wrap:has(>input){max-width:100%}
-@media(min-width:640px){#arkan-pharm-search-wrap{flex-basis:280px}}
+
 </style>
 <script>
 (function(){
@@ -92,7 +92,7 @@ window.arkanTailwindConfig = {
    document.head.appendChild(script);
  }
  const link=document.createElement('link');
- link.rel='stylesheet';link.media='print';link.href='./assets/arkan-ui.css?v=search2';
+ link.rel='stylesheet';link.media='print';link.href='./assets/arkan-ui.css?v=search3';
  link.onload=function(){link.onload=null;link.media='all';requestAnimationFrame(()=>requestAnimationFrame(()=>document.documentElement.classList.add('arkan-ui-ready')));};
  link.onerror=function(){link.remove();fallback();};
  document.head.appendChild(link);
@@ -1015,15 +1015,15 @@ window.arkanFirebaseReady=(function(){
                 <!-- Search, Category & Shortages Filter Card -->
                 <div class="bg-white border border-arkan-sand rounded-2xl p-4 shadow-sm space-y-3 no-print">
                     <div class="flex flex-col sm:flex-row gap-3" style="flex-wrap:wrap">
-                        <div id="arkan-pharm-search-wrap" class="relative flex-1">
-                            <svg class="w-4 h-4 text-arkan-bronze absolute right-3.5 top-1/2 -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                            </svg>
+                        <div id="arkan-pharm-search-wrap" style="display:flex;align-items:center;gap:8px;flex:0 0 100%;width:100%;min-width:0;max-width:100%;position:static;box-sizing:border-box">
                             <input type="text" id="pharm-search-input" oninput="renderPharmacistCatalog()"
-                                placeholder="ابحث بالعربي أو بالإنجليزي (مثال: اوجمنتين، Augmentin، panadol، كونكور...)"
-                                class="w-full bg-arkan-light border border-arkan-sand rounded-xl pr-10 pl-8 py-2.5 text-xs sm:text-sm font-bold focus:bg-white focus:border-arkan-primary focus:outline-none">
+                                placeholder="ابحث باسم الصنف بالعربي أو الإنجليزي"
+                                aria-label="البحث عن صنف" autocomplete="off" dir="auto"
+                                style="display:block!important;position:static!important;box-sizing:border-box!important;flex:1 1 0!important;width:0!important;min-width:0!important;max-width:100%!important;height:48px!important;padding:10px 14px!important;border:1px solid #a1887f!important;border-radius:12px!important;background:#fff!important;color:#251b17!important;-webkit-text-fill-color:#251b17!important;caret-color:#251b17!important;font:700 16px/normal Arial,Tahoma,sans-serif!important;letter-spacing:normal!important;text-indent:0!important;text-shadow:none!important;opacity:1!important;visibility:visible!important;appearance:none!important;-webkit-appearance:none!important;filter:none!important;transform:none!important;clip-path:none!important"
+                                class="font-bold">
                             <button type="button" id="pharm-clear-search" onclick="clearPharmSearch()"
-                                class="hidden absolute left-3 top-1/2 -translate-y-1/2 text-arkan-bronze hover:text-arkan-dark font-bold cursor-pointer">✕</button>
+                                aria-label="مسح البحث" class="hidden text-arkan-dark font-bold cursor-pointer"
+                                style="position:static;flex:0 0 40px;width:40px;height:40px;border:1px solid #d8c6b3;border-radius:10px;background:#f5efe6;color:#3e2723">✕</button>
                         </div>
 
                         <select id="pharm-cat-filter" onchange="renderPharmacistCatalog()"
