@@ -1,6 +1,18 @@
 {
   "version": 2,
   "byId": {
+    "9": {
+      "catalogName": "ابسونا بانثينول مرطب10فى الميه",
+      "englishName": "Absona Panthenol 10%",
+      "title": "Absona Panthenol 10%",
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/9.webp",
+      "source": "user-supplied catalog PDF",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": false,
+      "matchReason": "Image extracted from the corresponding ID row of the user-supplied illustrative catalog; commercial pack authenticity not established"
+    },
     "12": {
       "catalogName": "ابى رايز شراب",
       "englishName": "Appe-raise syrup 120 ml",
@@ -2427,6 +2439,30 @@
       "attribution": "DwaPrices",
       "sha256": "c9975904e1923cec67abba2109e19636fc35686675a41b7fe8e96e82fdb6f40f",
       "matchReason": "catalog_name_and_pack_details_checked_against_retailer_listing_and_image_ocr"
+    },
+    "618": {
+      "catalogName": "اورا توب غرغره تفاح",
+      "englishName": "Oratop Apple Mouthwash",
+      "title": "Oratop Apple Mouthwash",
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/618.webp",
+      "source": "user-supplied catalog PDF",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": false,
+      "matchReason": "Image extracted from the corresponding ID row of the user-supplied illustrative catalog; commercial pack authenticity not established"
+    },
+    "619": {
+      "catalogName": "اورا توب غرغره اتش صغير",
+      "englishName": "Oratop H Mouthwash 125 ml",
+      "title": "Oratop H Mouthwash 125 ml",
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/619.webp",
+      "source": "user-supplied catalog PDF",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": false,
+      "matchReason": "Image extracted from the corresponding ID row of the user-supplied illustrative catalog; commercial pack authenticity not established"
     },
     "620": {
       "catalogName": "اورا توب غرغره اتش كبير",
@@ -6042,6 +6078,18 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "sha256": "57e9e57b569157ac10265ed71c1237879aebe20da7688d7dc89b765d48844e35"
     },
+    "1155": {
+      "catalogName": "بى اند بى كريم مرطب50جم",
+      "englishName": "B&B Moisturizing Cream 50 g",
+      "title": "B&B Moisturizing Cream 50 g",
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/1155.webp",
+      "source": "user-supplied catalog PDF",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": false,
+      "matchReason": "Image extracted from the corresponding ID row of the user-supplied illustrative catalog; commercial pack authenticity not established"
+    },
     "1156": {
       "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/1156.webp",
       "source": "www.linnuobio.com",
@@ -7254,6 +7302,18 @@
       "manualVisualInspected": true,
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Lotus Pharmacies"
+    },
+    "1256": {
+      "catalogName": "بيكسى شامبو",
+      "englishName": "Pixie Shampoo",
+      "title": "Pixie Shampoo",
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/1256.webp",
+      "source": "user-supplied catalog PDF",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": false,
+      "matchReason": "Image extracted from the corresponding ID row of the user-supplied illustrative catalog; commercial pack authenticity not established"
     },
     "1258": {
       "catalogName": "بيكولاكس نقط",
@@ -16261,6 +16321,18 @@
       "attribution": "Azzam Pharmacy",
       "sha256": "0cef8eba42feb40546ce9306d19d74ba275f72627da4d788db681960b04cf609"
     },
+    "2003": {
+      "catalogName": "رانجوفين غسول مهبلي",
+      "englishName": "Rangofin Vaginal Wash",
+      "title": "Rangofin Vaginal Wash",
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/2003.webp",
+      "source": "user-supplied catalog PDF",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": false,
+      "matchReason": "Image extracted from the corresponding ID row of the user-supplied illustrative catalog; commercial pack authenticity not established"
+    },
     "2004": {
       "catalogName": "رانديل10مجم",
       "title": "Randil 10mg Nicorandil",
@@ -19699,6 +19771,18 @@
       "attribution": "Bloom Pharmacy",
       "note": "External candidate preview; image availability and visual package not independently verified."
     },
+    "2275": {
+      "catalogName": "ستارفيل كريم حمايه",
+      "englishName": "Starville Protection Cream",
+      "title": "Starville Protection Cream",
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/2275.webp",
+      "source": "user-supplied catalog PDF",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": false,
+      "matchReason": "Image extracted from the corresponding ID row of the user-supplied illustrative catalog; commercial pack authenticity not established"
+    },
     "2276": {
       "catalogName": "ستارفيل كلينسر ابيض تفتيح",
       "englishName": "StarVille Cleanser White Whitening",
@@ -19873,6 +19957,18 @@
       "attribution": "Talaat Pharmacy",
       "sha256": "ea52d53ba936674c8afa1679c25bcb30768eee203492e145589ee2bf1c8ab5ca",
       "matchReason": "catalog_name_and_pack_details_checked_against_retailer_listing_and_image_ocr"
+    },
+    "2294": {
+      "catalogName": "سترونج فيل كريم تفتيح",
+      "englishName": "Strongville Whitening Cream",
+      "title": "Strongville Whitening Cream",
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/2294.webp",
+      "source": "user-supplied catalog PDF",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": false,
+      "matchReason": "Image extracted from the corresponding ID row of the user-supplied illustrative catalog; commercial pack authenticity not established"
     },
     "2295": {
       "catalogName": "سترونج فيل لوشن",
@@ -21337,6 +21433,18 @@
       "matchReason": "manual_catalog_and_retailer_title_comparison",
       "attribution": "Bloom Pharmacy",
       "note": "External candidate preview; image availability and visual package not independently verified."
+    },
+    "2421": {
+      "catalogName": "سى ليت - سيرم",
+      "englishName": "C Lite Serum",
+      "title": "C Lite Serum",
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/2421.webp",
+      "source": "user-supplied catalog PDF",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": false,
+      "matchReason": "Image extracted from the corresponding ID row of the user-supplied illustrative catalog; commercial pack authenticity not established"
     },
     "2422": {
       "catalogName": "سيالونج10 مجم",
@@ -31854,6 +31962,18 @@
       "attribution": "Lotus Pharmacies",
       "sha256": "43c55620eeecfaa2ad83ebb5071445dd8a095b9614dc51ef9bfe2d9713ca94a2"
     },
+    "3330": {
+      "catalogName": "كومبليت شامبو/باكت30",
+      "englishName": "Complete Shampoo Pack 30",
+      "title": "Complete Shampoo Pack 30",
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/3330.webp",
+      "source": "user-supplied catalog PDF",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": false,
+      "matchReason": "Image extracted from the corresponding ID row of the user-supplied illustrative catalog; commercial pack authenticity not established"
+    },
     "3331": {
       "catalogName": "كومفورت جيل س ج",
       "englishName": "Comfort Gel",
@@ -35951,6 +36071,18 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Dr. Magdy El-Haddad Pharmacies"
     },
+    "3675": {
+      "catalogName": "ماكس لوشن",
+      "englishName": "Max Lotion",
+      "title": "Max Lotion",
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/3675.webp",
+      "source": "user-supplied catalog PDF",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": false,
+      "matchReason": "Image extracted from the corresponding ID row of the user-supplied illustrative catalog; commercial pack authenticity not established"
+    },
     "3676": {
       "catalogName": "ماكسوفاج1000 اكس ار",
       "title": "ماكسوفاج إكس آر 1000 ملغ ميتفورمين هيدروكلوريد",
@@ -37154,6 +37286,18 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Bloom Pharmacy"
     },
+    "3775": {
+      "catalogName": "مويست نيتشر كريم مرطب",
+      "englishName": "Moist Nature Moisturizing Cream",
+      "title": "Moist Nature Moisturizing Cream",
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/3775.webp",
+      "source": "user-supplied catalog PDF",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": false,
+      "matchReason": "Image extracted from the corresponding ID row of the user-supplied illustrative catalog; commercial pack authenticity not established"
+    },
     "3776": {
       "catalogName": "مويست وان كريم",
       "englishName": "Moist One Cream",
@@ -38301,6 +38445,18 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Azzam Pharmacy"
     },
+    "3878": {
+      "catalogName": "مينيمورا300 مجم شامبو اطفال",
+      "englishName": "Minimora Kids Shampoo",
+      "title": "Minimora Kids Shampoo",
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/3878.webp",
+      "source": "user-supplied catalog PDF",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": false,
+      "matchReason": "Image extracted from the corresponding ID row of the user-supplied illustrative catalog; commercial pack authenticity not established"
+    },
     "3879": {
       "catalogName": "ميوبيراكس مرهم10مجم",
       "englishName": "Mupirax",
@@ -39001,6 +39157,18 @@
       "attribution": "DwaPrices",
       "sha256": "66362ac18328cacbeda118f024432312c330cf4497efc8d4f55bee015029ec97",
       "matchReason": "catalog_name_and_pack_details_checked_against_retailer_listing_and_image_ocr"
+    },
+    "3941": {
+      "catalogName": "نوبﻼك مضمضة قرنفل",
+      "englishName": "Noblac Clove Mouthwash",
+      "title": "Noblac Clove Mouthwash",
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/3941.webp",
+      "source": "user-supplied catalog PDF",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": false,
+      "matchReason": "Image extracted from the corresponding ID row of the user-supplied illustrative catalog; commercial pack authenticity not established"
     },
     "3942": {
       "catalogName": "نوبﻼك مضمضه نعناع",
