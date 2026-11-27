@@ -22490,5 +22490,63 @@ ${url}`);
         </div>
     </div>
 <script src="./notifications/portal.js?v=3" async></script>
+<!-- Arqan optional presentation layer: no authentication, storage or network writes. -->
+<style>
+@media screen {
+  @keyframes arqanWelcomeIn {from{opacity:0;transform:translateY(10px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
+  @keyframes arqanSectionIn {from{opacity:.65;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes arqanTapGlow {from{opacity:.28;transform:scale(.6)}to{opacity:0;transform:scale(1.45)}}
+  #arkan-welcome-note{position:fixed;top:max(14px,env(safe-area-inset-top));left:50%;translate:-50% 0;z-index:95;display:flex;align-items:center;gap:12px;width:max-content;max-width:calc(100% - 32px);padding:13px 18px;border:1px solid #a1887f;border-radius:18px;color:#fff;background:linear-gradient(145deg,#765747,#3e2723);box-shadow:0 8px 24px #3e272333,inset 0 1px 0 #ffffff35;direction:rtl;pointer-events:none;animation:arqanWelcomeIn .24s ease-out both;transition:opacity .25s ease,transform .25s ease;font-family:Cairo,Tajawal,system-ui,sans-serif}
+  #arkan-welcome-note .arkan-welcome-icon{width:36px;height:36px;flex:none;border-radius:12px;display:grid;place-items:center;color:#f8eddb;background:linear-gradient(145deg,#a1887f,#65463a);box-shadow:inset 0 1px 0 #ffffff55,0 3px 0 #28191344}
+  #arkan-welcome-note strong{display:block;font-size:14px;line-height:1.6}
+  #arkan-welcome-note small{display:block;font-size:11px;color:#f0e2d1;line-height:1.6}
+  .arkan-section-enter{animation:arqanSectionIn .18s ease-out both}
+  .arkan-tap-glow{position:fixed;z-index:90;pointer-events:none;width:36px;height:36px;margin:-18px;border-radius:50%;background:#d6bfa0;animation:arqanTapGlow .32s ease-out both}
+  #toast-container>div{animation:arqanWelcomeIn .2s ease-out both}
+  @media(prefers-reduced-motion:reduce){#arkan-welcome-note,#toast-container>div,.arkan-section-enter{animation:none;transition:none}.arkan-tap-glow{display:none}}
+}
+@media print{#arkan-welcome-note,.arkan-tap-glow{display:none!important}}
+</style>
+<script>
+(function(){
+  'use strict';
+  const portal=document.getElementById('pharmacist-portal-view');
+  if(!portal)return;
+  const motion=()=>!window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let visible=false, welcomeTimer, removeTimer, note, generation=0;
+  function clearWelcome(){clearTimeout(welcomeTimer);clearTimeout(removeTimer);if(note)note.remove();note=null;}
+  function showWelcome(id){
+    if(id!==generation||portal.classList.contains('hidden'))return;
+    // Do not cover the original splash or the mandatory notification choice.
+    if(document.getElementById('arkan-launch-intro')||document.querySelector('dialog[open][aria-label="إشعارات أركان"]')){
+      welcomeTimer=setTimeout(()=>showWelcome(id),400);return;
+    }
+    note=document.createElement('aside');note.id='arkan-welcome-note';note.setAttribute('role','status');
+    const badge=document.createElement('span');badge.className='arkan-welcome-icon';badge.setAttribute('aria-hidden','true');badge.textContent='✦';
+    const copy=document.createElement('div'),heading=document.createElement('strong'),sub=document.createElement('small');
+    heading.textContent='أهلاً وسهلاً بك في أركان فارم';
+    sub.textContent='نتمنى لك تجربة طلب سهلة ويوم عمل موفق.';
+    copy.append(heading,sub);note.append(badge,copy);document.body.append(note);
+    removeTimer=setTimeout(()=>{if(!note)return;note.style.opacity='0';note.style.transform='translateY(-8px)';const old=note;note=null;setTimeout(()=>old.remove(),280);},3200);
+  }
+  function checkPortal(){const next=!portal.classList.contains('hidden');if(next===visible)return;visible=next;generation++;clearWelcome();if(next)welcomeTimer=setTimeout(()=>showWelcome(generation),450);}
+  new MutationObserver(checkPortal).observe(portal,{attributes:true,attributeFilter:['class']});checkPortal();
+  for(const id of ['pharm-tab-content-catalog','pharm-tab-content-tracking','adm-sec-products','adm-sec-margins','adm-sec-crm']){
+    const node=document.getElementById(id);if(!node)continue;
+    let hidden=node.classList.contains('hidden');
+    new MutationObserver(()=>{const next=node.classList.contains('hidden');if(next===hidden)return;hidden=next;if(!next&&motion()){node.classList.add('arkan-section-enter');setTimeout(()=>node.classList.remove('arkan-section-enter'),220);}}).observe(node,{attributes:true,attributeFilter:['class']});
+  }
+  let glow;
+  document.addEventListener('pointerdown',event=>{
+    if(!motion()||event.button!==0||!event.isPrimary)return;
+    const button=event.target instanceof Element&&event.target.closest('button');
+    if(!button||button.disabled||button.getAttribute('aria-disabled')==='true'||!button.closest('#portal-gateway-view,#admin-portal-view,#pharmacist-portal-view,header'))return;
+    if(glow)glow.remove();
+    glow=document.createElement('span');glow.className='arkan-tap-glow';glow.setAttribute('aria-hidden','true');glow.style.left=event.clientX+'px';glow.style.top=event.clientY+'px';document.body.append(glow);
+    const current=glow;setTimeout(()=>current.remove(),350);
+  },{passive:true});
+})();
+</script>
+
 </body>
 </html>
