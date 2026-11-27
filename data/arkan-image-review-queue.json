@@ -486,7 +486,7 @@
       "en": "",
       "results": [],
       "reason": "no_match_found",
-      "searchedAt": "2026-11-22T17:00:47.730Z"
+      "searchedAt": "2026-11-27T12:37:01.493Z"
     },
     "240": {
       "name": "اسيتابرام20مل",
@@ -498,45 +498,9 @@
     "245": {
       "name": "اشواجاندا اقراص",
       "en": "Ashwagandha",
-      "results": [
-        {
-          "imageUrl": "https://images.openfoodfacts.org/images/products/401/282/440/6025/front_fr.7.400.jpg",
-          "sourcePage": "https://world.openfoodfacts.org/product/4012824406025",
-          "title": "Yogi Tea Ashwagandha relaxation",
-          "provider": "world.openfoodfacts.org",
-          "license": "Open Facts contributors — CC BY-SA 3.0 product photo; database ODbL; attribution/share-alike apply",
-          "foundAt": "2026-11-22T17:00:51.345Z",
-          "status": "pending_manual_packaging_and_license_review"
-        },
-        {
-          "imageUrl": "https://images.openfoodfacts.org/images/products/062/817/635/7409/front_en.30.400.jpg",
-          "sourcePage": "https://world.openfoodfacts.org/product/0628176357409",
-          "title": "Goli Nutrition Ashwagandha Gummies 60 gummies",
-          "provider": "world.openfoodfacts.org",
-          "license": "Open Facts contributors — CC BY-SA 3.0 product photo; database ODbL; attribution/share-alike apply",
-          "foundAt": "2026-11-22T17:00:51.345Z",
-          "status": "pending_manual_packaging_and_license_review"
-        },
-        {
-          "imageUrl": "https://images.openfoodfacts.org/images/products/599/907/623/6572/front_fr.3.400.jpg",
-          "sourcePage": "https://world.openfoodfacts.org/product/5999076236572",
-          "title": "BiotechUSA ASHWAGANDHA",
-          "provider": "world.openfoodfacts.org",
-          "license": "Open Facts contributors — CC BY-SA 3.0 product photo; database ODbL; attribution/share-alike apply",
-          "foundAt": "2026-11-22T17:00:51.345Z",
-          "status": "pending_manual_packaging_and_license_review"
-        },
-        {
-          "imageUrl": "https://images.openfoodfacts.org/images/products/073/373/904/6031/front_fr.3.400.jpg",
-          "sourcePage": "https://world.openfoodfacts.org/product/0733739046031",
-          "title": "ashwagandha",
-          "provider": "world.openfoodfacts.org",
-          "license": "Open Facts contributors — CC BY-SA 3.0 product photo; database ODbL; attribution/share-alike apply",
-          "foundAt": "2026-11-22T17:00:51.345Z",
-          "status": "pending_manual_packaging_and_license_review"
-        }
-      ],
-      "reason": "needs_review"
+      "results": [],
+      "reason": "no_match_found",
+      "searchedAt": "2026-11-27T12:37:03.117Z"
     },
     "250": {
       "name": "افاصويا كبسول س ج",
@@ -656,7 +620,7 @@
       "en": "",
       "results": [],
       "reason": "no_match_found",
-      "searchedAt": "2026-11-22T17:01:11.717Z"
+      "searchedAt": "2026-11-27T12:37:04.546Z"
     },
     "314": {
       "name": "اكنى فيرا صابون",
@@ -739,14 +703,14 @@
       "en": "Ultrasolv",
       "results": [],
       "reason": "no_match_found",
-      "searchedAt": "2026-11-22T17:45:23.418Z"
+      "searchedAt": "2026-11-27T12:37:05.995Z"
     },
     "342": {
       "name": "التراسيبرو1جم ك",
       "en": "",
       "results": [],
       "reason": "no_match_found",
-      "searchedAt": "2026-11-22T17:45:25.352Z"
+      "searchedAt": "2026-11-27T12:37:08.099Z"
     },
     "343": {
       "name": "الترافيت كريم50 جم",
@@ -809,7 +773,7 @@
       "en": "",
       "results": [],
       "reason": "no_match_found",
-      "searchedAt": "2026-11-22T18:26:21.140Z"
+      "searchedAt": "2026-11-27T12:37:09.576Z"
     },
     "362": {
       "name": "السيزول60مجم",
@@ -858,7 +822,7 @@
       "en": "",
       "results": [],
       "reason": "no_match_found",
-      "searchedAt": "2026-11-22T19:26:22.549Z"
+      "searchedAt": "2026-11-27T12:37:11.042Z"
     },
     "370": {
       "name": "الفافيم600 مجم اقراص",
@@ -916,7 +880,7 @@
       "en": "",
       "results": [],
       "reason": "no_match_found",
-      "searchedAt": "2026-11-22T19:26:33.003Z"
+      "searchedAt": "2026-11-27T12:37:12.488Z"
     },
     "382": {
       "name": "الفيولين ب شراب",
@@ -930,7 +894,7 @@
       "en": "",
       "results": [],
       "reason": "no_match_found",
-      "searchedAt": "2026-11-22T20:18:59.767Z"
+      "searchedAt": "2026-11-27T12:37:13.971Z"
     },
     "384": {
       "name": "الكابرايد50 مجم",
@@ -944,7 +908,7 @@
       "en": "Alkanazole 2 50",
       "results": [],
       "reason": "no_match_found",
-      "searchedAt": "2026-11-22T20:19:02.725Z"
+      "searchedAt": "2026-11-27T12:37:15.447Z"
     },
     "393": {
       "name": "الكسوبرين اطفال عادى",
