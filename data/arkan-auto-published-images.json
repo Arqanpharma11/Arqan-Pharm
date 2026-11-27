@@ -32689,6 +32689,19 @@
       "matchReason": "visible packaging checked against catalog and product listing",
       "note": "External image preview; live portal rendering and reuse rights not independently verified."
     },
+    "3394": {
+      "catalogName": "كيراكوز سيرم ابيض للشعر",
+      "englishName": "Keraquoz Hair Serum 100 ml",
+      "title": "Keraquoz Hair Serum 100 ml",
+      "url": "https://kmtpharma.shop/cdn/shop/files/WhatsApp_Image_2026-02-23_at_9.43.42_PM.jpg?v=1772582962&width=600",
+      "sourcePage": "https://kmtpharma.shop/collections/keraquoz",
+      "source": "kmtpharma.shop",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "Manufacturer product image opened; white label, brand and serum form match; catalog size unspecified"
+    },
     "3395": {
       "catalogName": "كيراكوز شامبو",
       "englishName": "Keraquoz Shampoo",
