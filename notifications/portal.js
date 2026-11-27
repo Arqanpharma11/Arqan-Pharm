@@ -1,5 +1,5 @@
 (()=>{'use strict';
-const API="https://us-central1-arkan-pharm.cloudfunctions.net/arqanNotifications",ROOT="https://arqanpharma11.github.io/Arqan-Pharm/",CONFIG={
+const API="https://arqan-notifications.mostafaalaaqweasdq123.workers.dev",ROOT="https://arqanpharma11.github.io/Arqan-Pharm/",CONFIG={
             apiKey: "AIzaSyBLSGAvoS-H-tS2tmh76LZx_nkjoY--7tg",
             authDomain: "arkan-pharm.firebaseapp.com",
             projectId: "arkan-pharm",
