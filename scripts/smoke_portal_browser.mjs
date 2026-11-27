@@ -54,6 +54,40 @@ try {
       }
     }
     await page.screenshot({ path: 'portal-smoke-' + device.label + '.png', fullPage: false });
+    // Read-only catalog benchmark in the isolated local browser; no login or database writes.
+    try {
+      result.catalogPerformance = await bounded(page.evaluate(async () => {
+        const tbody = document.getElementById('pharm-catalog-tbody');
+        if (!tbody || typeof renderPharmacistCatalog !== 'function') return {status:'unavailable'};
+        const t = performance.now();
+        renderPharmacistCatalog();
+        const renderMs = Math.round(performance.now() - t);
+        const images = [...tbody.querySelectorAll('button[onclick^="openProductImage("] > img')];
+        const urls = [...new Set(images.map(img => img.getAttribute('src')).filter(src => src && !src.startsWith('data:')))].slice(0, 6);
+        const probe = async (url) => {
+          const start = performance.now();
+          const img = new Image();
+          const ok = await new Promise(resolve => {
+            const timer = setTimeout(() => { img.removeAttribute('src'); resolve(false); }, 4500);
+            img.onload = () => { clearTimeout(timer); resolve(true); };
+            img.onerror = () => { clearTimeout(timer); resolve(false); };
+            img.src = url;
+          });
+          const entry = performance.getEntriesByName(new URL(url, location.href).href).at(-1);
+          return {local: new URL(url, location.href).origin === location.origin, ok,
+            ms:Math.round(performance.now()-start), transferBytes:entry?.transferSize ?? null};
+        };
+        const first = await Promise.all(urls.map(probe));
+        const repeat = await Promise.all(urls.map(probe));
+        return {status:'measured', renderMs, imageCount:images.length,
+          eager:images.filter(x=>x.loading==='eager').length,
+          lazy:images.filter(x=>x.loading==='lazy').length,
+          sampleCount:urls.length, first, repeat};
+      }), 12000);
+    } catch (error) {
+      result.catalogPerformance = {status:'unavailable', error:String(error).slice(0,500)};
+    }
+
     report.pages.push({ device: device.label, ...result, javascriptErrors: errors });
     if (result.buttons === 0 || !result.responsive) {
       report.fatalErrors.push(device.label + ': no interactive buttons or unresponsive render');
