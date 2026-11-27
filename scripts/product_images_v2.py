@@ -699,12 +699,12 @@ def _process_row(row, a, rl, use_ocr):
         status, reason = "review", "conflicting_images"
     elif any(m["bar"] for m in best):
         status, reason = "auto", "barcode"
-    elif any(m["trusted"] for m in best):
-        status, reason = "auto", "trusted_domain"
     elif support >= MIN_SUPPORT:
         status, reason = "auto", f"multi_source_{support}"
-    elif ocr is True:
+    elif use_ocr and ocr_check(rep["img"], names, strict=True) is True:
         status, reason = "auto", "ocr"
+    elif any(m["trusted"] for m in best):
+        status, reason = "review", "trusted_domain_needs_visual_support"
     else:
         status, reason = "review", "single_source"
     return mk(code, name, status, reason, rep["s"], support, rep["img"], rep["image"], rep["page"])
