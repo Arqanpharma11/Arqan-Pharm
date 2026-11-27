@@ -155,3 +155,26 @@ button.transition-all, a.transition-all, [role="button"].transition-all {
     :is(#portal-gateway-view,#admin-portal-view,#pharmacist-portal-view) button:active {transform:none;}
   }
 }
+
+
+/* Search field contrast: explicit foreground on light search surfaces. */
+#pharmacist-portal-view #pharm-search-input,
+#admin-portal-view #adm-search-input {
+  color:#3e2723 !important;
+  -webkit-text-fill-color:#3e2723 !important;
+  caret-color:#3e2723;
+  background-color:#fff !important;
+  opacity:1;
+}
+#pharmacist-portal-view #pharm-search-input::placeholder,
+#admin-portal-view #adm-search-input::placeholder {
+  color:#806b5e !important;
+  -webkit-text-fill-color:#806b5e !important;
+  opacity:1;
+}
+#pharmacist-portal-view #pharm-search-input:focus,
+#admin-portal-view #adm-search-input:focus {
+  color:#3e2723 !important;
+  -webkit-text-fill-color:#3e2723 !important;
+  background-color:#fff !important;
+}
