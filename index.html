@@ -22797,5 +22797,79 @@ ${url}`);
 })();
 </script>
 
+<!-- Arqan Catalog Concierge v1: optional read-only comparison of visible catalog rows. -->
+<style>
+@media screen {
+ #arkan-concierge{margin:8px 0 12px;padding:10px 12px;border:1px solid #dfd1be;border-radius:15px;background:linear-gradient(135deg,#fffdf9,#f1e7d8);color:#4e342e;font:600 12px/1.65 Cairo,Tajawal,system-ui,sans-serif}
+ #arkan-concierge[hidden],#arkan-compare-panel[hidden]{display:none!important}
+ #arkan-concierge-head{display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap}
+ #arkan-concierge button,.arkan-compare-pick{font:700 12px/1.5 Cairo,Tajawal,system-ui,sans-serif;border:1px solid #d8c6b3;border-radius:9px;padding:6px 10px;background:linear-gradient(#fff,#f3e9dc);color:#4e342e;cursor:pointer;touch-action:manipulation}
+ #arkan-concierge button:focus-visible,.arkan-compare-pick:focus-visible{outline:2px solid #166534;outline-offset:2px}
+ .arkan-compare-pick{margin-top:6px;font-size:11px;padding:3px 8px}
+ .arkan-compare-pick[aria-pressed=true]{color:#14532d;background:#e4f1e7;border-color:#a3c9ad}
+ #arkan-compare-panel{margin-top:10px;overflow-x:auto}
+ #arkan-compare-grid{display:grid;grid-template-columns:repeat(var(--arkan-compare-count,1),minmax(150px,1fr));gap:8px}
+ #arkan-compare-grid article{border:1px solid #e1d5c4;border-radius:12px;background:#fff;padding:10px;overflow-wrap:anywhere}
+ #arkan-compare-grid h4{font-size:13px;font-weight:800;line-height:1.55;margin:0 0 7px}
+ #arkan-compare-grid dl{margin:0;font-size:11px}
+ #arkan-compare-grid dt{color:#72594c;margin-top:5px}
+ #arkan-compare-grid dd{margin:0;font-weight:800;direction:ltr;text-align:right}
+ #arkan-compare-grid dd:last-child{color:#166534}
+ #arkan-compare-note{margin-top:6px;font-size:11px;color:#72594c}
+}
+@media print{#arkan-concierge,.arkan-compare-pick{display:none!important}}
+</style>
+<script>
+(function(){
+ 'use strict';
+ const portal=document.getElementById('pharmacist-portal-view'),catalog=document.getElementById('pharm-tab-content-catalog'),tbody=document.getElementById('pharm-catalog-tbody'),lounge=document.getElementById('arkan-lounge'),search=document.getElementById('pharm-search-input');
+ if(!portal||!catalog||!tbody||!lounge||!search)return;
+ const make=(tag,text)=>{const n=document.createElement(tag);if(text)n.textContent=text;return n;};
+ const box=make('section');box.id='arkan-concierge';box.setAttribute('aria-label','مقارنة الأصناف المعروضة');box.hidden=true;
+ const head=make('div');head.id='arkan-concierge-head';
+ const label=make('strong','مقارنة ذكية للأصناف'),actions=make('div'),toggle=make('button','بدء المقارنة'),clear=make('button','مسح الاختيارات');toggle.type=clear.type='button';clear.hidden=true;toggle.setAttribute('aria-pressed','false');actions.append(toggle,clear);head.append(label,actions);box.append(head);
+ const panel=make('div');panel.id='arkan-compare-panel';panel.hidden=true;
+ const grid=make('div');grid.id='arkan-compare-grid';const note=make('div','اختر حتى 3 أصناف من الصفحة الحالية. المقارنة للسعر والخصم المعروضين فقط، وليست توصية علاجية.');note.id='arkan-compare-note';panel.append(grid,note);box.append(panel);lounge.after(box);
+ let enabled=false,queued=false;
+ const chosen=new Set(),buttons=new Map();
+ function validRows(){return Array.from(tbody.rows).filter(row=>row.cells.length===5&&row.cells[0].querySelector('a[title="فتح بحث صور الصنف في Google Images"]'));}
+ function draw(){
+   grid.replaceChildren();grid.style.setProperty('--arkan-compare-count',String(Math.max(1,chosen.size)));
+   for(const row of chosen){
+     if(!row.isConnected)continue;
+     const cells=row.cells,link=cells[0].querySelector('a[title="فتح بحث صور الصنف في Google Images"]');
+     if(!link)continue;
+     const card=make('article');card.append(make('h4',link.textContent.trim().replace(/\s+/g,' ')));const dl=make('dl');
+     for(const [name,i] of [['سعر الجمهور',1],['خصم الصيدلية',2],['سعر الصيدلي',3]])dl.append(make('dt',name),make('dd',cells[i].textContent.trim()));
+     card.append(dl);grid.append(card);
+   }
+   if(!grid.childElementCount)grid.append(make('p','لم يتم اختيار أصناف بعد.'));
+   label.textContent=enabled?'مقارنة ذكية • '+chosen.size+' / 3':'مقارنة ذكية للأصناف';
+   for(const [row,b] of buttons){b.setAttribute('aria-pressed',String(chosen.has(row)));b.textContent=chosen.has(row)?'✓ تم الاختيار':'＋ قارن';b.disabled=!chosen.has(row)&&chosen.size>=3;}
+ }
+ function removeButtons(){for(const b of buttons.values())b.remove();buttons.clear();chosen.clear();}
+ function refreshRows(){
+   queued=false;if(!enabled)return;
+   for(const [row,b] of buttons)if(!row.isConnected){buttons.delete(row);chosen.delete(row);b.remove();}
+   for(const row of validRows()){
+     if(buttons.has(row))continue;
+     const anchor=row.cells[0].querySelector('a[title="فتح بحث صور الصنف في Google Images"]');
+     const b=make('button','＋ قارن');b.type='button';b.className='arkan-compare-pick';b.setAttribute('aria-pressed','false');
+     b.addEventListener('click',()=>{if(chosen.has(row))chosen.delete(row);else if(chosen.size<3)chosen.add(row);draw();});
+     anchor.parentElement.append(b);buttons.set(row,b);
+   }
+   draw();
+ }
+ // Only watch replacement of direct table rows, not every change within the catalog.
+ new MutationObserver(()=>{if(enabled&&!queued){queued=true;requestAnimationFrame(refreshRows);}}).observe(tbody,{childList:true});
+ function stop(){enabled=false;removeButtons();panel.hidden=true;clear.hidden=true;toggle.textContent='بدء المقارنة';toggle.setAttribute('aria-pressed','false');label.textContent='مقارنة ذكية للأصناف';}
+ toggle.addEventListener('click',()=>{if(enabled){stop();return;}enabled=true;panel.hidden=false;clear.hidden=false;toggle.textContent='إنهاء المقارنة';toggle.setAttribute('aria-pressed','true');refreshRows();});
+ clear.addEventListener('click',()=>{chosen.clear();draw();});
+ function route(){box.hidden=portal.classList.contains('hidden')||catalog.classList.contains('hidden');if(box.hidden&&enabled)stop();}
+ for(const n of [portal,catalog])new MutationObserver(route).observe(n,{attributes:true,attributeFilter:['class']});
+ route();
+})();
+</script>
+
 </body>
 </html>
