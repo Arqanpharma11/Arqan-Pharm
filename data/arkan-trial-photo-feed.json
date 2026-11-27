@@ -4,9 +4,9 @@
   "approvedForProduction": false,
   "version": 2,
   "ambiguousLinksSkipped": 20,
-  "generatedAt": "2026-11-27T03:41:37.237Z",
+  "generatedAt": "2026-11-27T12:48:53.804Z",
   "catalogTotal": 4783,
-  "trialImages": 948,
+  "trialImages": 947,
   "notice": "UNVERIFIED IMAGES. Not for dispensing or identifying medicine. Never imported into approved pharmacy photo seeds.",
   "items": [
     {
@@ -365,18 +365,6 @@
       "source": "Azzam Pharmacy",
       "sourcePage": "https://azzampharmacy.com/products/acyclovir-800-mg-35-tab-stada-2770",
       "title": "Acyclovir  800 Mg  35 Tab ( Stada ) #",
-      "status": "trial_unverified",
-      "catalogMatch": "not_visually_verified",
-      "rights": "source_rights_unconfirmed"
-    },
-    {
-      "id": "245",
-      "name": "اشواجاندا اقراص",
-      "category": "مكملات وفيتامينات",
-      "imageUrl": "https://images.openfoodfacts.org/images/products/401/282/440/6025/front_fr.7.400.jpg",
-      "source": "world.openfoodfacts.org",
-      "sourcePage": "https://world.openfoodfacts.org/product/4012824406025",
-      "title": "Yogi Tea Ashwagandha relaxation",
       "status": "trial_unverified",
       "catalogMatch": "not_visually_verified",
       "rights": "source_rights_unconfirmed"
