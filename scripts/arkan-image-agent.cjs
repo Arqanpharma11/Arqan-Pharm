@@ -279,8 +279,9 @@ async function main(){
   // Recheck automatically published images; retire only after repeated explicit 404/410.
   const publishedEntries=Object.entries(published.byId);
   const publishBudget=Math.min(60,publishedEntries.length);
-  for(let i=0;i<publishBudget;i++){
-    const [id,record]=publishedEntries[(Number(state.publishedCursor||0)+i)%publishedEntries.length];
+  const auditBatch=Array.from({length:publishBudget},(_,i)=>publishedEntries[(Number(state.publishedCursor||0)+i)%publishedEntries.length]);
+  for(let offset=0;offset<auditBatch.length;offset+=5){
+    const results=await Promise.all(auditBatch.slice(offset,offset+5).map(async ([id,record])=>{
     const localMatch=String(record.url||'').match(/^https:\/\/raw\.githubusercontent\.com\/Arqanpharma11\/Arqan-Pharm\/main\/assets\/product-images\/(\d+\.(?:webp|jpg|png))$/);
     let current;
     if(localMatch){
@@ -294,6 +295,9 @@ async function main(){
         current=valid?'ok':'gone';
       }
     }else current=await imageAlive(record.url);
+      return {id,current};
+    }));
+    for(const {id,current} of results){
     const previous=state.publishedChecks?.[id]||{failures:0};
     if(current==='ok') previous.failures=0;
     else if(current==='gone') previous.failures++;
@@ -303,6 +307,7 @@ async function main(){
     if(previous.failures>=3){
       delete published.byId[id];delete state.searched[id];
       queue.byId[id]={name:byId.get(id)?.name||'',reason:'published_image_repeated_404_410',results:[],retiredAt:new Date().toISOString()};
+    }
     }
   }
   if(publishedEntries.length)state.publishedCursor=(Number(state.publishedCursor||0)+publishBudget)%publishedEntries.length;
