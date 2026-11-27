@@ -73,12 +73,10 @@ def download(item):
                 if canonical.mode not in ("RGB", "RGBA"):
                     canonical = canonical.convert("RGBA" if "A" in canonical.getbands() else "RGB")
                 out = BytesIO()
-                if canonical.mode == "RGBA":
-                    ext = ".png"
-                    canonical.save(out, format="PNG", optimize=True)
-                else:
-                    ext = ".jpg"
-                    canonical.save(out, format="JPEG", quality=88, optimize=True)
+                # Limit browse photo dimensions while preserving the full carton.
+                canonical.thumbnail((640, 640), Image.Resampling.LANCZOS)
+                ext = ".webp"
+                canonical.save(out, format="WEBP", quality=85, method=4)
                 raw = out.getvalue()
         except (UnidentifiedImageError, OSError) as exc:
             raise ValueError("image decode failed") from exc
