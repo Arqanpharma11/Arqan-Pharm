@@ -44,3 +44,28 @@ self.addEventListener('fetch', (event) => {
     event.respondWith(caches.match(request).then(cached => cached || fetch(request)));
   }
 });
+
+// Arqan FCM background notifications; preserve existing cache and fetch behavior.
+self.addEventListener('notificationclick', event => {
+ event.notification.close();
+ event.waitUntil((async()=>{
+  const target = new URL('./index.html', self.registration.scope).href;
+  const windows = await self.clients.matchAll({type:'window',includeUncontrolled:true});
+  const existing = windows.find(c=>c.url.startsWith(self.registration.scope));
+  if(existing) return existing.focus();
+  return self.clients.openWindow(target);
+ })());
+});
+try {
+ importScripts('https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js','https://www.gstatic.com/firebasejs/10.14.1/firebase-messaging-compat.js');
+ firebase.initializeApp({
+            apiKey: "AIzaSyBLSGAvoS-H-tS2tmh76LZx_nkjoY--7tg",
+            authDomain: "arkan-pharm.firebaseapp.com",
+            projectId: "arkan-pharm",
+            storageBucket: "arkan-pharm.firebasestorage.app",
+            messagingSenderId: "975951355293",
+            appId: "1:975951355293:web:549cd2fe28682b5cf12374",
+            measurementId: "G-07P81LT4YQ"
+        });
+ firebase.messaging();
+} catch(e) { console.warn('Arqan FCM unavailable:',e); }
