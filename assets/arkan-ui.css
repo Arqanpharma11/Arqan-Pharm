@@ -114,3 +114,44 @@ button.transition-all, a.transition-all, [role="button"].transition-all {
     box-shadow:inset 0 1px 0 rgba(255,255,255,.7),0 1px 2px rgba(6,78,59,.10);
   }
 }
+
+
+/* Arqan Signature — cohesive premium surface system, screen only. */
+@media screen {
+  body {background-image:radial-gradient(ellipse at 100% 0%,#fff9f0 0%,transparent 48%),linear-gradient(145deg,#f8f4ed,#eee6da);background-attachment:scroll;}
+  :is(#portal-gateway-view,#admin-portal-view,#pharmacist-portal-view) {--arkan-edge:#ded1c2;--arkan-depth:0 1px 1px #fff inset,0 3px 8px rgba(62,39,35,.06),0 12px 30px rgba(62,39,35,.07);}
+  body>header.bg-white {border-bottom-color:#d8c7b4;background-image:linear-gradient(110deg,#fff,#faf6ef);box-shadow:0 1px 0 #fff inset,0 4px 16px rgba(62,39,35,.09);}
+  body>header .rounded-2xl.shadow-md {box-shadow:inset 0 1px 1px #ffffff55,0 3px 0 #38231e,0 6px 12px #3e272326;}
+  #portal-gateway-view .bg-gradient-to-l.rounded-3xl {background-image:radial-gradient(ellipse at 90% 0%,#9a79644d,transparent 65%),linear-gradient(115deg,#30201c,#604436 65%,#785647);box-shadow:inset 0 1px 0 #ffffff30,0 5px 0 #39271e22,0 16px 32px #3e272326;}
+  :is(#portal-gateway-view,#admin-portal-view,#pharmacist-portal-view) div.bg-white:is(.rounded-2xl,.rounded-3xl):is(.shadow-sm,.shadow-lg,.shadow-xl) {border-color:var(--arkan-edge);box-shadow:var(--arkan-depth);}
+  #arkan-install-share-section .bg-arkan-light.rounded-2xl {background-image:linear-gradient(150deg,#fff,#f5eee4);box-shadow:inset 0 1px 0 #fff,0 4px 10px #3e27230d;}
+  :is(#portal-gateway-view,#admin-portal-view,#pharmacist-portal-view) label {font-weight:700;}
+  :is(#portal-gateway-view,#admin-portal-view,#pharmacist-portal-view) :is(input:not([type]),input[type=text],input[type=tel],input[type=email],input[type=password],input[type=number],input[type=time],select,textarea):not(.hidden) {border-radius:12px;box-shadow:inset 0 2px 4px #3e27230b;transition:border-color .12s ease,box-shadow .12s ease;}
+  :is(#portal-gateway-view,#admin-portal-view,#pharmacist-portal-view) :is(input:not([type]),input[type=text],input[type=tel],input[type=email],input[type=password],input[type=number],input[type=time],select,textarea):focus {border-color:#a1887f;box-shadow:0 0 0 3px #a1887f30,inset 0 1px 2px #3e27230b;}
+  :is(#portal-gateway-view,#admin-portal-view,#pharmacist-portal-view) button:is(.rounded-lg,.rounded-xl,.rounded-2xl):not(.w-14):not(.w-8),
+  body>header button:is(.rounded-lg,.rounded-xl,.rounded-2xl) {background-image:linear-gradient(180deg,#ffffff20,transparent 60%,#00000008);box-shadow:inset 0 1px 0 #ffffff45,0 2px 0 #3e27231c,0 4px 8px #3e27230e;}
+  :is(#portal-gateway-view,#admin-portal-view,#pharmacist-portal-view) button:is(.rounded-lg,.rounded-xl,.rounded-2xl):disabled {box-shadow:none;}
+  :is(#portal-gateway-view,#admin-portal-view,#pharmacist-portal-view) button:is(.rounded-lg,.rounded-xl,.rounded-2xl):not(:disabled):active {box-shadow:inset 0 2px 3px #3e272321;transform:translateY(1px);}
+  :is(#admin-portal-view,#pharmacist-portal-view) thead tr.bg-arkan-dark {background-image:linear-gradient(180deg,#604438,#3e2723);}
+  :is(#admin-portal-view,#pharmacist-portal-view) thead tr.bg-arkan-cream {background-image:linear-gradient(180deg,#fcf8f0,#eee2d2);}
+  :is(#admin-portal-view,#pharmacist-portal-view) th {font-weight:800;line-height:1.6;box-shadow:inset 0 -1px 0 #3e27231c;}
+  :is(#adm-products-tbody,#pharm-catalog-tbody) tr:nth-child(even):not([class*="bg-arkan-cream"]) {background-color:#fcfaf7;}
+  :is(#adm-products-tbody,#pharm-catalog-tbody) td {border-bottom:1px solid #e7ddd14d;}
+  #pharm-catalog-tbody button.w-14.h-14 {background-image:linear-gradient(145deg,#fff,#f8f4ed);border-color:#e3d9cb;box-shadow:inset 0 1px 0 #fff,0 2px 5px #3e27230e;}
+  #pharm-catalog-tbody .shortage-pill {background-image:linear-gradient(180deg,#ffffff70,transparent);}
+  :is(#admin-portal-view,#pharmacist-portal-view) [class~="rounded-full"][class~="border"] {box-shadow:inset 0 1px 0 #ffffff70;}
+  body>div.fixed>div.bg-white:is(.rounded-2xl,.rounded-3xl) {border-color:#e0d2c2;box-shadow:inset 0 1px 0 #fff,0 12px 36px #24161338;}
+  body>div.fixed>div.bg-white:is(.rounded-2xl,.rounded-3xl) > .bg-arkan-dark {background-image:linear-gradient(135deg,#5e4336,#30201c);}
+  footer {border-color:#d8c7b4;}
+  @media (hover:none) and (pointer:coarse) {
+    :is(#portal-gateway-view,#admin-portal-view,#pharmacist-portal-view) {--arkan-depth:0 1px 0 #fff inset,0 3px 10px #3e27230d;}
+    :is(#portal-gateway-view,#admin-portal-view,#pharmacist-portal-view) input:is([type=text],[type=tel],[type=email],[type=password],[type=number]), #pharm-search-input,#adm-search-input {font-size:16px;}
+  }
+  @media (hover:hover) and (pointer:fine) {
+    :is(#adm-products-tbody,#pharm-catalog-tbody) tr:hover {background-color:#f5efe6;}
+  }
+  @media (prefers-reduced-motion:reduce) {
+    :is(#portal-gateway-view,#admin-portal-view,#pharmacist-portal-view) :is(button,input,select,textarea) {transition:none;}
+    :is(#portal-gateway-view,#admin-portal-view,#pharmacist-portal-view) button:active {transform:none;}
+  }
+}
