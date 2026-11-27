@@ -9046,6 +9046,8 @@ ${window.location.href}
 
             enterPharmacistPortal(newUser);
             showToast(`تم إنشاء حساب ${pharmName} والدخول بنجاح!`);
+            // Optional new-account welcome signal; no persistence or business logic.
+            if (existingIdx === -1) window.dispatchEvent(new Event('arkan-new-pharmacy-welcome'));
         }
 
         function arqanLoginTimeout(promise, ms, message) {
@@ -22663,13 +22665,23 @@ ${url}`);
  for(const n of [gateway,portal,admin])new MutationObserver(end).observe(n,{attributes:true,attributeFilter:['class']});
  const greetings=()=>{const h=new Date().getHours();return h<12?'صباح الخير':h<18?'مساء الخير':'مساء الخير';};
  const name=document.getElementById('session-user-name');
- let previousNote=null;
+ let previousNote=null, newWelcome=false, newWelcomeTimer;
+ window.addEventListener('arkan-new-pharmacy-welcome',()=>{
+   newWelcome=true;clearTimeout(newWelcomeTimer);
+   newWelcomeTimer=setTimeout(()=>{newWelcome=false;},120000);
+ });
+ new MutationObserver(()=>{if(!visible(portal)){newWelcome=false;clearTimeout(newWelcomeTimer);}}).observe(portal,{attributes:true,attributeFilter:['class']});
  // Only observe the direct body children: no catalog subtree observation.
  new MutationObserver(records=>{for(const record of records)for(const node of record.addedNodes){
   if(node.nodeType!==1||node.id!=='arkan-welcome-note'||node===previousNote)continue;
   previousNote=node;const heading=node.querySelector('strong');if(!heading)continue;
   const label=visible(portal)&&name?name.textContent.trim():'';
-  heading.textContent=greetings()+(label&&label!=='صيدلية'?'، '+label:' • أهلاً بك في أركان فارم');
+  if(newWelcome){
+    newWelcome=false;clearTimeout(newWelcomeTimer);
+    heading.textContent='نورت عائلة أركان'+(label&&label!=='صيدلية'?'، '+label:'');
+    const sub=node.querySelector('small');
+    if(sub)sub.textContent='بداية موفقة! سعداء بانضمامك، ونتمنى لك تجربة طلب سهلة.';
+  }else heading.textContent=greetings()+(label&&label!=='صيدلية'?'، '+label:' • أهلاً بك في أركان فارم');
  }}).observe(document.body,{childList:true});
  const toast=document.getElementById('toast-container');
  if(toast)new MutationObserver(records=>{for(const record of records)for(const node of record.addedNodes){
