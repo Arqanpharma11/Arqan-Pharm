@@ -331,7 +331,7 @@ async function main(){
   const oldestFirst=(a,b)=>Date.parse(state.searched[a.id]?.at||'1970-01-01')-Date.parse(state.searched[b.id]?.at||'1970-01-01');
   const outstanding=[...missingPriority,...questionable].sort((a,b)=>{
     const repair=x=>Number(queue.byId[x.id]?.reason==='published_image_repeated_404_410'||queue.byId[x.id]?.reason==='candidate_repeated_404_410');
-    return repair(b)-repair(a)||Number(!!candidates.byId[a.id])-Number(!!candidates.byId[b.id])||oldestFirst(a,b);
+    return Number(!!candidates.byId[a.id] || !!queue.byId[a.id]?.retiredAt)-Number(!!candidates.byId[b.id] || !!queue.byId[b.id]?.retiredAt)||repair(b)-repair(a)||oldestFirst(a,b);
   });
   missing=all.filter(x=>!approvedIds.has(x.id)&&!candidates.byId[x.id] && !published.byId[x.id]).length;
   state.searchPipeline={remainingMissing:missingPriority.length,remainingSuspect:questionable.length,
