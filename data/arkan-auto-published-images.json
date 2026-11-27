@@ -1483,6 +1483,19 @@
       "sha256": "3bfa345f56de7259dde64932b230d7f41da8e32668319fec0785b77d30601579",
       "matchReason": "catalog_name_and_pack_details_checked_against_retailer_listing_and_image_ocr"
     },
+    "411": {
+      "catalogName": "اليجون شامبو",
+      "englishName": "Alejon Anti Hair Loss Shampoo 200 ml",
+      "title": "Alejon Anti Hair Loss Shampoo 200 ml",
+      "url": "https://mohieldeenpharmacy.com/web/image/product.product/1808/image_1024/%D8%A7%D9%84%D9%8A%D8%AC%D9%88%D9%86%20%D8%B4%D8%A7%D9%85%D8%A8%D9%88%20%D9%85%D8%B6%D8%A7%D8%AF%20%D9%84%D8%AA%D8%B3%D8%A7%D9%82%D8%B7%20%D8%A7%D9%84%D8%B4%D8%B9%D8%B1%20200%D9%85%D9%84?unique=fa97561",
+      "sourcePage": "https://mohieldeenpharmacy.com/ar/shop/200-1808",
+      "source": "mohieldeenpharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "Visible brand and product form matched; catalog size unspecified"
+    },
     "412": {
       "catalogName": "اليجون صن سكرين كريم75مجم",
       "englishName": "Alejon Sunscreen Cream SPF50+ 75 ml",
@@ -27009,6 +27022,19 @@
       "matchReason": "manual_catalog_and_retailer_title_comparison",
       "attribution": "Bloom Pharmacy",
       "note": "External candidate preview; image availability and visual package not independently verified."
+    },
+    "2907": {
+      "catalogName": "فيتال زيت شعر",
+      "englishName": "Vital Hair Oil 120 ml",
+      "title": "Vital Hair Oil 120 ml",
+      "url": "https://dinapharmacy.com/wp-content/uploads/2026/04/Vital-Hair-Oil-120-ml.webp",
+      "sourcePage": "https://dinapharmacy.com/vital-hair-oil-120-ml/",
+      "source": "dinapharmacy.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "Visible brand and product form matched; catalog size unspecified"
     },
     "2908": {
       "catalogName": "فيتالو شوك اكياس",
