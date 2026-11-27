@@ -4980,6 +4980,20 @@
       "sha256": "d96dc86e7f250fb095c16fef922a7d621b983522a1a27dc737049d467697cdf9",
       "matchReason": "catalog_name_and_pack_details_checked_against_retailer_listing_and_image_ocr"
     },
+    "1046": {
+      "catalogName": "بريتير فاشيال ووش فومينج",
+      "englishName": "Prettier Facial Wash 200 ml",
+      "title": "Prettier Facial Wash 200 ml",
+      "url": "https://purete-eg.com/cdn/shop/files/prettier-official-facial-wash-front-square.webp?v=1793182170&width=600",
+      "sourcePage": "https://purete-eg.com/products/prettier-facial-wash",
+      "source": "purete-eg.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "Official manufacturer image visually inspected; facial wash 200 ml; foaming designation not explicitly confirmed.",
+      "attribution": "Purete Pharma"
+    },
     "1047": {
       "catalogName": "بريجناستيب اقراص",
       "englishName": "Pregnastep Tablets",
