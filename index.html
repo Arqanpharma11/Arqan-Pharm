@@ -21343,10 +21343,19 @@ ${window.location.href}
         function getArkanCatalogImage(item) {
             if (ARKAN_OWNER_GUIDE_IMAGES[item.id]) return ARKAN_OWNER_GUIDE_IMAGES[item.id];
             if (PROD_IMG_VERIFIED[item.id] === true && PROD_IMAGES[item.id]) return PROD_IMAGES[item.id];
-            return ARKAN_AUTO_PUBLISHED_PACKS[String(item.id)]?.url ||
+            const url = ARKAN_AUTO_PUBLISHED_PACKS[String(item.id)]?.url ||
                 ARKAN_QUICK_PACKS[String(item.id)]?.[0] || ARKAN_MISSING_PHOTO;
+            const prefix = 'https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/';
+            const local = 'assets/product-images/' + String(item.id) + '.webp';
+            return url === prefix + local ? local : url;
         }
         function arkanHandlePackError(img, id) {
+            const raw = ARKAN_AUTO_PUBLISHED_PACKS[String(id)]?.url || ARKAN_QUICK_PACKS[String(id)]?.[0];
+            const local = 'assets/product-images/' + String(id) + '.webp';
+            if (img.getAttribute('src') === local && raw === 'https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/' + local) {
+                img.src = raw;
+                return;
+            }
             img.onerror = null;
             img.src = ARKAN_MISSING_PHOTO;
             img.alt = 'صورة العبوة غير متاحة';
@@ -21543,7 +21552,7 @@ ${window.location.href}
                                     aria-label="عرض صورة عبوة ${item.name}">
                                     <img src="${String(getArkanCatalogImage(item)).replace(/&/g, '&amp;').replace(/"/g, '&quot;')}"
                                         alt="${_escapeDrugCatalogText(arkanImageStatus(item))}: ${_escapeDrugCatalogText(item.name)}"
-                                        loading="${imageIndex < 6 ? 'eager' : 'lazy'}" fetchpriority="${imageIndex < 3 ? 'high' : 'auto'}" decoding="async" width="56" height="56"
+                                        loading="${imageIndex < 6 ? 'eager' : 'lazy'}" fetchpriority="${imageIndex < 3 ? 'high' : imageIndex < 6 ? 'auto' : 'low'}" decoding="async" width="56" height="56"
                                         class="w-full h-full object-contain p-0.5"
                                         onerror="arkanHandlePackError(this,${item.id})">
                                 </button>
