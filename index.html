@@ -22743,5 +22743,59 @@ ${url}`);
 })();
 </script>
 
+<!-- Arqan Shopping Lounge v1: read-only display conveniences. -->
+<style>
+@media screen {
+ #arkan-lounge{margin:0 0 12px;border:1px solid #e0d3c3;border-radius:16px;background:linear-gradient(125deg,#fffdf9,#f4ecdf);color:#4e342e;padding:10px 13px;box-shadow:0 3px 10px #3e27230d;font:600 12px/1.65 Cairo,Tajawal,system-ui,sans-serif}
+ #arkan-lounge[hidden],#arkan-lounge-details[hidden]{display:none!important}
+ #arkan-lounge-toolbar{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
+ #arkan-lounge-actions{display:flex;gap:6px;flex-wrap:wrap}
+ #arkan-lounge button{font:700 12px/1.5 Cairo,Tajawal,system-ui,sans-serif;padding:7px 10px;border:1px solid #d7c6b4;border-radius:10px;color:#4e342e;background:linear-gradient(#fff,#f2e9dc);cursor:pointer;box-shadow:0 2px 0 #3e272318;touch-action:manipulation}
+ #arkan-lounge button:active{box-shadow:inset 0 1px 3px #3e27231a}
+ #arkan-lounge button:focus-visible{outline:2px solid #166534;outline-offset:2px}
+ #arkan-lounge button[aria-pressed=true]{background:#e5f2e9;color:#14532d;border-color:#9cc8aa}
+ #arkan-lounge-details{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:8px;margin-top:10px}
+ #arkan-lounge-details>div{border:1px solid #e5d9c9;border-radius:12px;padding:8px 10px;background:#fffdf9}
+ #arkan-lounge-details span,#arkan-lounge-details strong{display:block}
+ #arkan-lounge-details strong{font:800 15px/1.5 system-ui,sans-serif;direction:ltr;text-align:right;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+ #arkan-lounge-details>div:last-child strong{color:#166534}
+ #pharmacist-portal-view.arkan-comfort-reading #pharm-catalog-tbody td{font-size:15px;line-height:1.65}
+ #pharmacist-portal-view.arkan-comfort-reading #pharm-catalog-tbody :is(.text-xs,.text-sm){font-size:14px;line-height:1.65}
+ #pharmacist-portal-view.arkan-comfort-reading #pharm-catalog-tbody :is(.text-\[10px\],.text-\[11px\]){font-size:12px;line-height:1.65}
+}
+@media print{#arkan-lounge{display:none!important}}
+</style>
+<script>
+(function(){
+ 'use strict';
+ const portal=document.getElementById('pharmacist-portal-view'),catalog=document.getElementById('pharm-tab-content-catalog'),search=document.getElementById('pharm-search-input');
+ if(!portal||!catalog||!search||!catalog.parentElement)return;
+ const make=(tag,text)=>{const n=document.createElement(tag);if(text)n.textContent=text;return n;};
+ const lounge=make('section');lounge.id='arkan-lounge';lounge.setAttribute('aria-label','أدوات راحة التسوق');
+ const toolbar=make('div');toolbar.id='arkan-lounge-toolbar';
+ const title=make('strong','مساحة التسوق المريحة'),actions=make('div');actions.id='arkan-lounge-actions';
+ const searchBtn=make('button','بحث سريع'),readBtn=make('button','خط أوضح'),summaryBtn=make('button','ملخص السلة');
+ for(const b of [searchBtn,readBtn,summaryBtn])b.type='button';
+ readBtn.setAttribute('aria-pressed','false');summaryBtn.setAttribute('aria-expanded','false');summaryBtn.setAttribute('aria-controls','arkan-lounge-details');
+ actions.append(searchBtn,readBtn,summaryBtn);toolbar.append(title,actions);lounge.append(toolbar);
+ const details=make('div');details.id='arkan-lounge-details';details.hidden=true;lounge.append(details);
+ const sources=[['الكمية في السلة','cart-badge-total'],['سعر الجمهور','cart-sum-public'],['إجمالي الصيدلي','cart-sum-net']];
+ const mirrors=[];
+ for(const [label,id] of sources){
+  const source=document.getElementById(id);if(!source)continue;
+  const card=make('div'),value=make('strong');card.append(make('span',label),value);details.append(card);mirrors.push([source,value]);
+ }
+ function sync(){if(details.hidden||lounge.hidden)return;for(const [source,value] of mirrors)value.textContent=source.textContent.trim()||'—';}
+ for(const [source] of mirrors)new MutationObserver(sync).observe(source,{childList:true,characterData:true,subtree:true});
+ function refresh(){lounge.hidden=portal.classList.contains('hidden')||catalog.classList.contains('hidden');if(lounge.hidden){details.hidden=true;summaryBtn.setAttribute('aria-expanded','false');summaryBtn.textContent='ملخص السلة';}}
+ catalog.before(lounge);
+ for(const n of [portal,catalog])new MutationObserver(refresh).observe(n,{attributes:true,attributeFilter:['class']});
+ searchBtn.addEventListener('click',()=>{if(!lounge.hidden)search.focus();});
+ readBtn.addEventListener('click',()=>{const enabled=portal.classList.toggle('arkan-comfort-reading');readBtn.setAttribute('aria-pressed',String(enabled));readBtn.textContent=enabled?'الخط العادي':'خط أوضح';});
+ summaryBtn.addEventListener('click',()=>{details.hidden=!details.hidden;summaryBtn.setAttribute('aria-expanded',String(!details.hidden));summaryBtn.textContent=details.hidden?'ملخص السلة':'إخفاء الملخص';sync();});
+ refresh();
+})();
+</script>
+
 </body>
 </html>
