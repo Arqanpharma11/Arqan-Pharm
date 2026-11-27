@@ -1,8 +1,8 @@
-// Arqan PWA v38: network-first HTML, lightweight static shell, no bulk photo CacheStorage writes.
-const CACHE_NAME = 'arkan-pharma-cloud-v38';
+// Arqan PWA v39: conditional network-first HTML, lightweight static shell, no bulk photo CacheStorage writes.
+const CACHE_NAME = 'arkan-pharma-cloud-v39';
 const SHELL = ['./index.html', './manifest.json', './arkan-logo.svg', './icons/arkan-192.png', './icons/arkan-512.png', './assets/arkan-platform-qr.svg'];
 self.addEventListener('install', (event) => {
-  event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(SHELL)));
+  event.waitUntil(caches.open(CACHE_NAME).then(cache => Promise.allSettled(SHELL.map(path => cache.add(new Request(path, {cache:'reload'}))))));
   self.skipWaiting();
 });
 self.addEventListener('activate', (event) => {
@@ -10,6 +10,7 @@ self.addEventListener('activate', (event) => {
     const names = await caches.keys();
     await Promise.all(names.filter(name => name.startsWith('arkan-pharma-cloud-') && name !== CACHE_NAME)
       .map(name => caches.delete(name)));
+    if (self.registration.navigationPreload) { try { await self.registration.navigationPreload.enable(); } catch (_) {} }
     await self.clients.claim();
   })());
 });
@@ -22,14 +23,18 @@ self.addEventListener('fetch', (event) => {
   if (isHtml) {
     event.respondWith((async () => {
       try {
-        const response = await fetch(new Request(request, { cache: 'no-store' }));
+        const preloaded = await event.preloadResponse;
+        const response = preloaded || await fetch(new Request(request, { cache: 'no-cache' }));
         if (response.ok) {
           const copy = response.clone();
           event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.put(request, copy)).catch(() => {}));
         }
         return response;
       } catch (_) {
-        return await caches.match(request) || await caches.match('./index.html') || Response.error();
+        const cached = await caches.match(request);
+        const root = new URL('./', self.registration.scope);
+        const main = url.pathname === root.pathname || url.pathname === root.pathname + 'index.html';
+        return cached || (main ? await caches.match('./index.html') : null) || Response.error();
       }
     })());
     return;
@@ -41,6 +46,9 @@ self.addEventListener('fetch', (event) => {
   // Static icons and manifest remain available offline without caching catalog media.
   const staticNames = ['/manifest.json', '/arkan-logo.svg', '/icons/arkan-192.png', '/icons/arkan-512.png', '/assets/arkan-platform-qr.svg', '/assets/arkan-ui.css'];
   if (staticNames.some(name => url.pathname.endsWith(name))) {
-    event.respondWith(caches.match(request).then(cached => cached || fetch(request)));
+    event.respondWith((async () => {
+      try { return await fetch(new Request(request, {cache:'no-cache'})); }
+      catch (_) { return await caches.match(request) || Response.error(); }
+    })());
   }
 });
