@@ -5,6 +5,7 @@ on:
       - 'index.html'
       - 'docs/pdf-master-4489-2026-11-23.csv'
       - 'scripts/verify_pdf_master_catalog.cjs'
+      - 'scripts/smoke_portal_browser.mjs'
       - '.github/workflows/verify-portal-recovery.yml'
   workflow_dispatch:
 permissions:
