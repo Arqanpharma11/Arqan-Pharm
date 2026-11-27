@@ -22614,5 +22614,71 @@ ${url}`);
 })();
 </script>
 
+<!-- Arqan Delight v1: local presentation, no business data or network access. -->
+<style>
+@media screen {
+ #arkan-delight-controls{display:flex;gap:6px;flex-wrap:wrap}
+ #arkan-delight-controls button{min-height:32px}
+ #arkan-delight-controls svg{width:17px;height:17px;vertical-align:middle;margin-inline-end:5px;filter:drop-shadow(0 1px 0 #fff)}
+ .arkan-delight-star{position:fixed;z-index:96;pointer-events:none;font-size:22px;color:#ad8752;animation:arkanDelightBurst .65s ease-out both}
+ @keyframes arkanDelightBurst{0%{opacity:0;transform:translate(0,0) scale(.4)}25%{opacity:1}100%{opacity:0;transform:translate(var(--dx),var(--dy)) scale(.8)}}
+ #arkan-delight-tour{margin:0 0 12px;padding:12px 16px;border:1px solid #dfd1bf;border-radius:16px;background:linear-gradient(135deg,#fffdf9,#f4e9d9);color:#4e342e;font:600 13px/1.8 Cairo,Tajawal,system-ui,sans-serif;box-shadow:0 3px 10px #3e27230d}
+ #arkan-delight-tour[hidden]{display:none!important}
+ #arkan-delight-tour button{border:1px solid #d8c6ae;border-radius:10px;padding:5px 12px;background:#fff;color:#4e342e;margin-inline-end:6px;cursor:pointer}
+ #arkan-delight-tour strong{display:block}
+ html.arkan-delight-still :is(.arkan-section-enter,.arkan-tap-glow,.arkan-comfort-pop,.arkan-delight-star,#arkan-welcome-note,#toast-container>div){animation:none!important;transition:none!important}
+ html.arkan-delight-still :is(.arkan-tap-glow,.arkan-delight-star){display:none!important}
+ html.arkan-delight-still :is(#portal-gateway-view,#admin-portal-view,#pharmacist-portal-view) button{transition:none!important;transform:none!important}
+ @media(prefers-reduced-motion:reduce){.arkan-delight-star{display:none}}
+}
+@media print{#arkan-delight-controls,#arkan-delight-tour,.arkan-delight-star{display:none!important}}
+</style>
+<script>
+(function(){
+ 'use strict';
+ const bar=document.getElementById('arkan-comfort-bar'),portal=document.getElementById('pharmacist-portal-view'),gateway=document.getElementById('portal-gateway-view'),admin=document.getElementById('admin-portal-view');
+ if(!bar||!portal||!gateway||!admin)return;
+ const root=document.documentElement,make=(tag,text)=>{const n=document.createElement(tag);if(text)n.textContent=text;return n;};
+ const visible=n=>!n.classList.contains('hidden');
+ const reduced=()=>root.classList.contains('arkan-delight-still')||matchMedia('(prefers-reduced-motion: reduce)').matches;
+ const controls=make('div');controls.id='arkan-delight-controls';
+ const tourBtn=make('button','جولة تعريفية'),motionBtn=make('button','تقليل الحركة');
+ for(const b of [tourBtn,motionBtn])b.type='button';
+ motionBtn.setAttribute('aria-pressed','false');tourBtn.setAttribute('aria-expanded','false');tourBtn.setAttribute('aria-controls','arkan-delight-tour');
+ controls.append(tourBtn,motionBtn);bar.append(controls);
+ const tour=make('div');tour.id='arkan-delight-tour';tour.hidden=true;
+ const title=make('strong'),body=make('p'),next=make('button','التالي'),close=make('button','إنهاء الجولة');next.type=close.type='button';tour.append(title,body,next,close);
+ const journeys={
+  gateway:['سجّل الدخول من بوابة الصيدليات إذا كان لديك حساب.','يمكنك إنشاء حساب من نموذج التسجيل الموجود.','ثبّت التطبيق من قسم التثبيت للاستفادة من تجربة استخدام مباشرة.'],
+  pharm:['استخدم البحث والفلاتر للوصول للصنف المطلوب.','أضف الكمية المطلوبة وراجع الأسعار والإجمالي في السلة.','راجع تفاصيل الطلب قبل التأكيد، ثم تابع حالته من قسم المتابعة.'],
+  admin:['استخدم قسم الأصناف للبحث ومراجعة الكتالوج.','انتقل إلى الخصومات لمراجعة إعداداتها.','تابع الصيادلة والطلبيات من قسم الإدارة المخصص.']
+ };
+ let step=0,mode='';
+ function active(){return visible(portal)?'pharm':visible(admin)?'admin':'gateway';}
+ function end(){tour.hidden=true;tourBtn.setAttribute('aria-expanded','false');}
+ function draw(){const items=journeys[mode];title.textContent='جولة أركان • '+(step+1)+' / '+items.length;body.textContent=items[step];next.textContent=step===items.length-1?'تم':'التالي';}
+ tourBtn.addEventListener('click',()=>{if(!tour.hidden){end();return;}mode=active();step=0;bar.after(tour);draw();tour.hidden=false;tourBtn.setAttribute('aria-expanded','true');});
+ next.addEventListener('click',()=>{if(++step>=journeys[mode].length)end();else draw();});close.addEventListener('click',end);
+ motionBtn.addEventListener('click',()=>{const off=root.classList.toggle('arkan-delight-still');motionBtn.textContent=off?'استعادة الحركة':'تقليل الحركة';motionBtn.setAttribute('aria-pressed',String(off));});
+ for(const n of [gateway,portal,admin])new MutationObserver(end).observe(n,{attributes:true,attributeFilter:['class']});
+ const greetings=()=>{const h=new Date().getHours();return h<12?'صباح الخير':h<18?'مساء الخير':'مساء الخير';};
+ const name=document.getElementById('session-user-name');
+ let previousNote=null;
+ // Only observe the direct body children: no catalog subtree observation.
+ new MutationObserver(records=>{for(const record of records)for(const node of record.addedNodes){
+  if(node.nodeType!==1||node.id!=='arkan-welcome-note'||node===previousNote)continue;
+  previousNote=node;const heading=node.querySelector('strong');if(!heading)continue;
+  const label=visible(portal)&&name?name.textContent.trim():'';
+  heading.textContent=greetings()+(label&&label!=='صيدلية'?'، '+label:' • أهلاً بك في أركان فارم');
+ }}).observe(document.body,{childList:true});
+ const toast=document.getElementById('toast-container');
+ if(toast)new MutationObserver(records=>{for(const record of records)for(const node of record.addedNodes){
+  if(node.nodeType!==1||!visible(portal)||reduced()||!node.textContent.startsWith('تم إتمام الأوردر بنجاح!'))continue;
+  // Acknowledge only the application's own completion message, never infer server delivery.
+  for(let i=0;i<6;i++){const star=make('span','✦');star.className='arkan-delight-star';star.setAttribute('aria-hidden','true');star.style.left='50%';star.style.top='35%';star.style.setProperty('--dx',Math.round(Math.cos(i*Math.PI/3)*85)+'px');star.style.setProperty('--dy',Math.round(Math.sin(i*Math.PI/3)*65)+'px');document.body.append(star);setTimeout(()=>star.remove(),700);}
+ }}).observe(toast,{childList:true});
+})();
+</script>
+
 </body>
 </html>
