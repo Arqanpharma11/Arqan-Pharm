@@ -21,6 +21,49 @@ end = html.index("const imageSeedBatches", begin)
 block = html[begin:end]
 pattern = re.compile(r"(?m)^(\s*'(\d+)': \{ src: ')([^']+)(', source: '[^']+' \},?)")
 entries = [(m.group(2), m.group(3), m.group(0)) for m in pattern.finditer(block)]
+# Optimize existing legacy seed photos in place, keeping every URL and file format.
+# Do not touch content-addressed assets recorded by the automatic publisher.
+def optimize_legacy_photos():
+    manifest_path = ROOT / "data" / "arkan-auto-published-images.json"
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8")) if manifest_path.exists() else {}
+    protected_ids = set(str(key) for key in manifest.get("byId", {}))
+    optimized = saved = 0
+    for pid, src, _ in entries:
+        if pid in protected_ids or src not in ("assets/product-images/" + pid + ".jpg", "assets/product-images/" + pid + ".png"):
+            continue
+        target = ROOT / src
+        if not target.is_file() or target.is_symlink():
+            continue
+        try:
+            original_size = target.stat().st_size
+            if original_size <= 60 * 1024:
+                continue
+            with Image.open(target) as image:
+                if getattr(image, "n_frames", 1) != 1 or image.width * image.height > 20_000_000:
+                    continue
+                photo = ImageOps.exif_transpose(image)
+                photo.thumbnail((640, 640), Image.Resampling.LANCZOS)
+                out = BytesIO()
+                if target.suffix == ".jpg":
+                    photo.convert("RGB").save(out, format="JPEG", quality=85, optimize=True)
+                else:
+                    photo.save(out, format="PNG", optimize=True)
+                candidate = out.getvalue()
+            if len(candidate) >= original_size * 0.85:
+                continue
+            with Image.open(BytesIO(candidate)) as check:
+                check.verify()
+            temporary = target.with_suffix(target.suffix + ".tmp")
+            temporary.write_bytes(candidate)
+            temporary.replace(target)
+            optimized += 1
+            saved += original_size - len(candidate)
+        except (OSError, ValueError, UnidentifiedImageError) as exc:
+            print("Legacy optimization skipped:", pid, str(exc)[:100])
+    print("Legacy photos optimized:", optimized, "bytes saved:", saved)
+
+optimize_legacy_photos()
+
 REPLACEMENTS = ROOT / "scripts" / "verified_image_replacements.json"
 replacements = json.loads(REPLACEMENTS.read_text(encoding="utf-8")) if REPLACEMENTS.exists() else {}
 # Try independently reviewed replacement candidates before ordinary external URLs.
