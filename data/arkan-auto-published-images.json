@@ -16365,6 +16365,20 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Azzam Pharmacy"
     },
+    "2013": {
+      "catalogName": "روتاج شامبو",
+      "englishName": "Rotag Shampoo 75 ml",
+      "title": "Rotag Shampoo 75 ml",
+      "url": "https://www.rosheta.com/upload/1d2b626aa06f6b5b15765b89a5f9895ce38a89c7e1b27846ac1ca496c45d5c5d.webp",
+      "sourcePage": "https://www.rosheta.com/ar/5088/روتاج-شامبو",
+      "source": "rosheta.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "Direct image opened and package label and form visually matched; catalog size unspecified.",
+      "attribution": "rosheta.com"
+    },
     "2014": {
       "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/2014.webp",
       "source": "azzampharmacy.com",
@@ -20091,6 +20105,48 @@
       "attribution": "Dr. Magdy El-Haddad Pharmacies",
       "sha256": "81ff5df39e43868ded66778fa5acdd70b8203c8ec74b0274cf1d7bb6a088ee8a",
       "matchReason": "catalog_name_and_pack_details_checked_against_retailer_listing_and_image_ocr"
+    },
+    "2316": {
+      "catalogName": "ستيم فاشيال ووش",
+      "englishName": "Stem Facial Wash 150 ml",
+      "title": "Stem Facial Wash 150 ml",
+      "url": "https://purete-eg.com/cdn/shop/files/Artboard-1-16.webp?v=1784753932&width=1000",
+      "sourcePage": "https://purete-eg.com/collections/stem",
+      "source": "purete-eg.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "Direct image opened and package label and form visually matched; catalog size unspecified.",
+      "attribution": "purete-eg.com"
+    },
+    "2317": {
+      "catalogName": "ستيم كريم تفتيح",
+      "englishName": "Stem Whitening Cream 50 gm",
+      "title": "Stem Whitening Cream 50 gm",
+      "url": "https://purete-eg.com/cdn/shop/files/Artboard-3-24.webp?v=1784753941&width=1000",
+      "sourcePage": "https://purete-eg.com/collections/stem",
+      "source": "purete-eg.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "Direct image opened and package label and form visually matched; catalog size unspecified.",
+      "attribution": "purete-eg.com"
+    },
+    "2318": {
+      "catalogName": "ستيم لوشن للشعر",
+      "englishName": "Stem Hair Lotion 200 ml",
+      "title": "Stem Hair Lotion 200 ml",
+      "url": "https://purete-eg.com/cdn/shop/files/Artboard-3-2.webp?v=1784753914&width=1000",
+      "sourcePage": "https://purete-eg.com/collections/stem",
+      "source": "purete-eg.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "Direct image opened and package label and form visually matched; catalog size unspecified.",
+      "attribution": "purete-eg.com"
     },
     "2319": {
       "catalogName": "ستيمو ماكس اقراص",
