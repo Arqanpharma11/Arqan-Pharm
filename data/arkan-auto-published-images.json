@@ -2292,6 +2292,17 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "sha256": "2ca278e37b23378f7cf05ea3fbb886cae6ea293fdad8daef8ab2077b5082551c"
     },
+    "591": {
+      "catalogName": "اوبتى فونيك سبراى بديل كولوسول",
+      "title": "اوبتى فونيك سبراى بديل كولوسول",
+      "url": "https://arqanpharma11.github.io/Arqan-Pharm/assets/product-images/591-pack-20261127.webp",
+      "source": "DawaaGate",
+      "sourcePage": "https://www.dawaagate.com/medicine/optiphonic-antifungal-spray",
+      "status": "candidate_preview",
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "independentlyVerified": false
+    },
     "592": {
       "catalogName": "اوبتى فونيك نقط",
       "englishName": "Optiphonic Drops",
@@ -2636,6 +2647,28 @@
       "manualVisualInspected": true,
       "matchReason": "product_pack_visually_checked_against_catalog_and_source_listing"
     },
+    "660": {
+      "catalogName": "اوروكس ايه سى الاحمر",
+      "title": "اوروكس ايه سى الاحمر",
+      "url": "https://arqanpharma11.github.io/Arqan-Pharm/assets/product-images/660-pack-20261127.webp",
+      "source": "DawaaGate",
+      "sourcePage": "https://www.dawaagate.com/medicine/orex-ec-oral-spray-60-ml",
+      "status": "candidate_preview",
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "independentlyVerified": false
+    },
+    "661": {
+      "catalogName": "اوروكس سبراى الاخضر",
+      "title": "اوروكس سبراى الاخضر",
+      "url": "https://arqanpharma11.github.io/Arqan-Pharm/assets/product-images/661-pack-20261127.webp",
+      "source": "DawaaGate",
+      "sourcePage": "https://www.dawaagate.com/medicine/orex-h-spray-60-ml",
+      "status": "candidate_preview",
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "independentlyVerified": false
+    },
     "662": {
       "catalogName": "اوريدال نقط",
       "englishName": "Oridal Drops",
@@ -2755,6 +2788,17 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Lotus Pharmacies"
     },
+    "685": {
+      "catalogName": "اوكسى لاب اكياس",
+      "title": "اوكسى لاب اكياس",
+      "url": "https://arqanpharma11.github.io/Arqan-Pharm/assets/product-images/685-pack-20261127.webp",
+      "source": "DawaaGate",
+      "sourcePage": "https://www.dawaagate.com/medicine/oxilab-sachets-30-sachet-for-women150-gm",
+      "status": "candidate_preview",
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "independentlyVerified": false
+    },
     "686": {
       "catalogName": "اوكسيبروجست150مل فيال",
       "englishName": "Oxyprogest",
@@ -2783,6 +2827,28 @@
       "attribution": "Dawaa Gate",
       "sha256": "578d1cae7bb21a16852f44e2faf5df36b4c72e3ee07bc491279e36cc749b4781",
       "matchReason": "catalog_name_and_pack_details_checked_against_retailer_listing_and_image_ocr"
+    },
+    "689": {
+      "catalogName": "اوكسيلوزيم اقراص",
+      "title": "اوكسيلوزيم اقراص",
+      "url": "https://arqanpharma11.github.io/Arqan-Pharm/assets/product-images/689-pack-20261127.webp",
+      "source": "DawaaGate",
+      "sourcePage": "https://www.dawaagate.com/medicine/oxilozyme-10-tablets",
+      "status": "candidate_preview",
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "independentlyVerified": false
+    },
+    "690": {
+      "catalogName": "اوكسيمت نقط كبار باكو60",
+      "title": "اوكسيمت نقط كبار باكو60",
+      "url": "https://arqanpharma11.github.io/Arqan-Pharm/assets/product-images/690-pack-20261127.webp",
+      "source": "user-supplied PDF, row 39",
+      "sourcePage": "https://www.dawaagate.com/medicine/oxymet-005-adult-nasal-drops-15-ml",
+      "status": "candidate_preview",
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "independentlyVerified": false
     },
     "693": {
       "catalogName": "اوكيوجارد ال اكس كبسول",
@@ -2888,6 +2954,28 @@
       "sha256": "b22115be9471bc8cfe2482c1d0d033670a93f866e617ddbba8f3c63c50cdfdda",
       "manualVisualInspected": true,
       "matchReason": "product_pack_visually_checked_against_catalog_and_source_listing"
+    },
+    "710": {
+      "catalogName": "اومبيور نقط",
+      "title": "اومبيور نقط",
+      "url": "https://arqanpharma11.github.io/Arqan-Pharm/assets/product-images/710-pack-20261127.webp",
+      "source": "DawaaGate",
+      "sourcePage": "https://www.dawaagate.com/medicine/omepure-oral-dps-10-ml",
+      "status": "candidate_preview",
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "independentlyVerified": false
+    },
+    "711": {
+      "catalogName": "اومت سى سبراى للفم",
+      "title": "اومت سى سبراى للفم",
+      "url": "https://arqanpharma11.github.io/Arqan-Pharm/assets/product-images/711-pack-20261127.webp",
+      "source": "DawaaGate",
+      "sourcePage": "https://www.dawaagate.com/medicine/omit-c-mouth-spray-60-ml",
+      "status": "candidate_preview",
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "independentlyVerified": false
     },
     "713": {
       "catalogName": "اومنيفورا امبوول",
@@ -3085,6 +3173,17 @@
       "manualVisualInspected": true,
       "matchReason": "product_pack_visually_checked_against_catalog_and_source_listing"
     },
+    "737": {
+      "catalogName": "اونداميتيك8 مل امبول",
+      "title": "اونداميتيك8 مل امبول",
+      "url": "https://arqanpharma11.github.io/Arqan-Pharm/assets/product-images/737-pack-20261127.webp",
+      "source": "DawaaGate",
+      "sourcePage": "https://www.dawaagate.com/medicine/ondametic-8mg4ml-5-amp",
+      "status": "candidate_preview",
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "independentlyVerified": false
+    },
     "740": {
       "catalogName": "ايبا اكت شامبو",
       "title": "Eba-Act Shampoo with Green Coffee, Protein & Omega 3",
@@ -3199,6 +3298,28 @@
       "matchReason": "ocr",
       "sha256": "5f2c29d8fc4e409dd0af89768a9e1487be48b41add457e08900eba6bebfd66da",
       "provenance": "Image downloaded and matched by image discovery bot; commercial reuse license unverified"
+    },
+    "753": {
+      "catalogName": "ايجى جسترز شراب",
+      "title": "ايجى جسترز شراب",
+      "url": "https://arqanpharma11.github.io/Arqan-Pharm/assets/product-images/753-pack-20261127.webp",
+      "source": "DawaaGate",
+      "sourcePage": "https://www.dawaagate.com/medicine/egygastreaz-100mg5ml-pd-for-oral-60ml-susp",
+      "status": "candidate_preview",
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "independentlyVerified": false
+    },
+    "754": {
+      "catalogName": "ايجى جستريز اقراص",
+      "title": "ايجى جستريز اقراص",
+      "url": "https://arqanpharma11.github.io/Arqan-Pharm/assets/product-images/754-pack-20261127.webp",
+      "source": "DawaaGate",
+      "sourcePage": "https://www.dawaagate.com/medicine/egygastreaz-500mg-20-tab",
+      "status": "candidate_preview",
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "independentlyVerified": false
     },
     "756": {
       "catalogName": "ايجيكوسات شراب",
@@ -3391,6 +3512,17 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Lotus Pharmacies"
     },
+    "787": {
+      "catalogName": "ايزالين شراب ج",
+      "title": "ايزالين شراب ج",
+      "url": "https://arqanpharma11.github.io/Arqan-Pharm/assets/product-images/787-pack-20261127.webp",
+      "source": "DawaaGate",
+      "sourcePage": "https://www.dawaagate.com/medicine/isilin-syrup-120ml",
+      "status": "candidate_preview",
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "independentlyVerified": false
+    },
     "790": {
       "catalogName": "ايزوتريتينون10 مجم",
       "englishName": "Isotretinoin",
@@ -3435,6 +3567,17 @@
       "sha256": "a1d104ec87c03cf4c8e025cd29654ca3b6a12b1d6140010b69209c60205e20c7",
       "manualVisualInspected": true,
       "matchReason": "product_pack_visually_checked_against_catalog_and_source_listing"
+    },
+    "799": {
+      "catalogName": "ايزوميساليكس40 مم",
+      "title": "ايزوميساليكس40 مم",
+      "url": "https://arqanpharma11.github.io/Arqan-Pharm/assets/product-images/799-pack-20261127.webp",
+      "source": "DawaaGate",
+      "sourcePage": "https://www.dawaagate.com/medicine/esomesalix-40mg-14-caps",
+      "status": "candidate_preview",
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "independentlyVerified": false
     },
     "802": {
       "catalogName": "ايزى كير معجون اسنان كبير",
@@ -3681,6 +3824,17 @@
       "manualVisualInspected": true,
       "matchReason": "manual_visible_pack_and_product_source_match",
       "sha256": "2bcc0bfe59ee16ca85fe8f1c8a6225bed5bd04f5ef5710db673fa124a2a6c97e"
+    },
+    "837": {
+      "catalogName": "ايفروسبان شراب ك40",
+      "title": "ايفروسبان شراب ك40",
+      "url": "https://arqanpharma11.github.io/Arqan-Pharm/assets/product-images/837-pack-20261127.webp",
+      "source": "DawaaGate",
+      "sourcePage": "https://www.dawaagate.com/medicine/ivyrospan-syrup-100-ml",
+      "status": "candidate_preview",
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "independentlyVerified": false
     },
     "838": {
       "catalogName": "ايفكتينكس5 مجم",
@@ -49207,160 +49361,6 @@
       "manualVisualInspected": true,
       "matchReason": "manual_visible_pack_and_product_source_match",
       "sha256": "5a571605e01227c35956bae0cef2d7f8a6928d11f0bcd228a37eb29f961ce818"
-    },
-    "591": {
-      "catalogName": "اوبتى فونيك سبراى بديل كولوسول",
-      "title": "اوبتى فونيك سبراى بديل كولوسول",
-      "url": "https://arqanpharma11.github.io/Arqan-Pharm/assets/product-images/591-pack-20261127.webp",
-      "source": "DawaaGate",
-      "sourcePage": "https://www.dawaagate.com/medicine/optiphonic-antifungal-spray",
-      "status": "candidate_preview",
-      "shownAsProductThumbnail": true,
-      "manualVisualInspected": true,
-      "independentlyVerified": false
-    },
-    "660": {
-      "catalogName": "اوروكس ايه سى الاحمر",
-      "title": "اوروكس ايه سى الاحمر",
-      "url": "https://arqanpharma11.github.io/Arqan-Pharm/assets/product-images/660-pack-20261127.webp",
-      "source": "DawaaGate",
-      "sourcePage": "https://www.dawaagate.com/medicine/orex-ec-oral-spray-60-ml",
-      "status": "candidate_preview",
-      "shownAsProductThumbnail": true,
-      "manualVisualInspected": true,
-      "independentlyVerified": false
-    },
-    "661": {
-      "catalogName": "اوروكس سبراى الاخضر",
-      "title": "اوروكس سبراى الاخضر",
-      "url": "https://arqanpharma11.github.io/Arqan-Pharm/assets/product-images/661-pack-20261127.webp",
-      "source": "DawaaGate",
-      "sourcePage": "https://www.dawaagate.com/medicine/orex-h-spray-60-ml",
-      "status": "candidate_preview",
-      "shownAsProductThumbnail": true,
-      "manualVisualInspected": true,
-      "independentlyVerified": false
-    },
-    "685": {
-      "catalogName": "اوكسى لاب اكياس",
-      "title": "اوكسى لاب اكياس",
-      "url": "https://arqanpharma11.github.io/Arqan-Pharm/assets/product-images/685-pack-20261127.webp",
-      "source": "DawaaGate",
-      "sourcePage": "https://www.dawaagate.com/medicine/oxilab-sachets-30-sachet-for-women150-gm",
-      "status": "candidate_preview",
-      "shownAsProductThumbnail": true,
-      "manualVisualInspected": true,
-      "independentlyVerified": false
-    },
-    "689": {
-      "catalogName": "اوكسيلوزيم اقراص",
-      "title": "اوكسيلوزيم اقراص",
-      "url": "https://arqanpharma11.github.io/Arqan-Pharm/assets/product-images/689-pack-20261127.webp",
-      "source": "DawaaGate",
-      "sourcePage": "https://www.dawaagate.com/medicine/oxilozyme-10-tablets",
-      "status": "candidate_preview",
-      "shownAsProductThumbnail": true,
-      "manualVisualInspected": true,
-      "independentlyVerified": false
-    },
-    "690": {
-      "catalogName": "اوكسيمت نقط كبار باكو60",
-      "title": "اوكسيمت نقط كبار باكو60",
-      "url": "https://arqanpharma11.github.io/Arqan-Pharm/assets/product-images/690-pack-20261127.webp",
-      "source": "user-supplied PDF, row 39",
-      "sourcePage": "https://www.dawaagate.com/medicine/oxymet-005-adult-nasal-drops-15-ml",
-      "status": "candidate_preview",
-      "shownAsProductThumbnail": true,
-      "manualVisualInspected": true,
-      "independentlyVerified": false
-    },
-    "710": {
-      "catalogName": "اومبيور نقط",
-      "title": "اومبيور نقط",
-      "url": "https://arqanpharma11.github.io/Arqan-Pharm/assets/product-images/710-pack-20261127.webp",
-      "source": "DawaaGate",
-      "sourcePage": "https://www.dawaagate.com/medicine/omepure-oral-dps-10-ml",
-      "status": "candidate_preview",
-      "shownAsProductThumbnail": true,
-      "manualVisualInspected": true,
-      "independentlyVerified": false
-    },
-    "711": {
-      "catalogName": "اومت سى سبراى للفم",
-      "title": "اومت سى سبراى للفم",
-      "url": "https://arqanpharma11.github.io/Arqan-Pharm/assets/product-images/711-pack-20261127.webp",
-      "source": "DawaaGate",
-      "sourcePage": "https://www.dawaagate.com/medicine/omit-c-mouth-spray-60-ml",
-      "status": "candidate_preview",
-      "shownAsProductThumbnail": true,
-      "manualVisualInspected": true,
-      "independentlyVerified": false
-    },
-    "737": {
-      "catalogName": "اونداميتيك8 مل امبول",
-      "title": "اونداميتيك8 مل امبول",
-      "url": "https://arqanpharma11.github.io/Arqan-Pharm/assets/product-images/737-pack-20261127.webp",
-      "source": "DawaaGate",
-      "sourcePage": "https://www.dawaagate.com/medicine/ondametic-8mg4ml-5-amp",
-      "status": "candidate_preview",
-      "shownAsProductThumbnail": true,
-      "manualVisualInspected": true,
-      "independentlyVerified": false
-    },
-    "753": {
-      "catalogName": "ايجى جسترز شراب",
-      "title": "ايجى جسترز شراب",
-      "url": "https://arqanpharma11.github.io/Arqan-Pharm/assets/product-images/753-pack-20261127.webp",
-      "source": "DawaaGate",
-      "sourcePage": "https://www.dawaagate.com/medicine/egygastreaz-100mg5ml-pd-for-oral-60ml-susp",
-      "status": "candidate_preview",
-      "shownAsProductThumbnail": true,
-      "manualVisualInspected": true,
-      "independentlyVerified": false
-    },
-    "754": {
-      "catalogName": "ايجى جستريز اقراص",
-      "title": "ايجى جستريز اقراص",
-      "url": "https://arqanpharma11.github.io/Arqan-Pharm/assets/product-images/754-pack-20261127.webp",
-      "source": "DawaaGate",
-      "sourcePage": "https://www.dawaagate.com/medicine/egygastreaz-500mg-20-tab",
-      "status": "candidate_preview",
-      "shownAsProductThumbnail": true,
-      "manualVisualInspected": true,
-      "independentlyVerified": false
-    },
-    "787": {
-      "catalogName": "ايزالين شراب ج",
-      "title": "ايزالين شراب ج",
-      "url": "https://arqanpharma11.github.io/Arqan-Pharm/assets/product-images/787-pack-20261127.webp",
-      "source": "DawaaGate",
-      "sourcePage": "https://www.dawaagate.com/medicine/isilin-syrup-120ml",
-      "status": "candidate_preview",
-      "shownAsProductThumbnail": true,
-      "manualVisualInspected": true,
-      "independentlyVerified": false
-    },
-    "799": {
-      "catalogName": "ايزوميساليكس40 مم",
-      "title": "ايزوميساليكس40 مم",
-      "url": "https://arqanpharma11.github.io/Arqan-Pharm/assets/product-images/799-pack-20261127.webp",
-      "source": "DawaaGate",
-      "sourcePage": "https://www.dawaagate.com/medicine/esomesalix-40mg-14-caps",
-      "status": "candidate_preview",
-      "shownAsProductThumbnail": true,
-      "manualVisualInspected": true,
-      "independentlyVerified": false
-    },
-    "837": {
-      "catalogName": "ايفروسبان شراب ك40",
-      "title": "ايفروسبان شراب ك40",
-      "url": "https://arqanpharma11.github.io/Arqan-Pharm/assets/product-images/837-pack-20261127.webp",
-      "source": "DawaaGate",
-      "sourcePage": "https://www.dawaagate.com/medicine/ivyrospan-syrup-100-ml",
-      "status": "candidate_preview",
-      "shownAsProductThumbnail": true,
-      "manualVisualInspected": true,
-      "independentlyVerified": false
     }
   },
   "lastManualBatch": {
