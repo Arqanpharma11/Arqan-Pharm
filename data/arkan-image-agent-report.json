@@ -1,5 +1,5 @@
 {
-  "runAt": "2026-11-27T22:23:47.351Z",
+  "runAt": "2026-11-27T22:24:40.957Z",
   "masterItems": 4489,
   "cloudItems": 0,
   "catalogItems": 4489,
@@ -32,7 +32,7 @@
     "commons.wikimedia.org": {
       "failures": 0,
       "retryAt": null,
-      "lastSuccess": "2026-11-27T22:23:46.250Z"
+      "lastSuccess": "2026-11-27T22:24:39.856Z"
     },
     "world.openfoodfacts.org": {
       "failures": 4,
@@ -43,7 +43,7 @@
     "eg-drugs-api.mahmoudfalous.workers.dev": {
       "failures": 0,
       "retryAt": null,
-      "lastSuccess": "2026-11-27T22:23:45.141Z"
+      "lastSuccess": "2026-11-27T22:24:39.853Z"
     },
     "world.openbeautyfacts.org": {
       "failures": 0,
