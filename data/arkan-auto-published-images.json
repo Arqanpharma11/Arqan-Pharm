@@ -2919,6 +2919,22 @@
       "manualVisualInspected": true,
       "matchReason": "product_pack_visually_checked_against_catalog_and_source_listing"
     },
+    "720": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/720.webp",
+      "source": "alphaomegapeptide.com",
+      "sourcePage": "https://alphaomegapeptide.com/products/ara-290/",
+      "originalImageUrl": "https://alphaomegapeptide.com/wp-content/uploads/2026/02/ARA-290-Peptide-Vial.png",
+      "catalogName": "اوميجا ار اكس عرض290 ج",
+      "englishName": "Omega",
+      "title": "Omega اوميجا ار اكس عرض290 ج",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "matchScore": 1,
+      "matchReason": "ocr",
+      "sha256": "0f3a4bc8c0c1c359e4fe0301f965628103292f0e8ac4910d58fab37549f9650f",
+      "provenance": "Image downloaded and matched by image discovery bot; commercial reuse license unverified"
+    },
     "723": {
       "catalogName": "اوميجابريس1.، مجم",
       "title": "Omegapress  0.1 Mg  30 Tab",
