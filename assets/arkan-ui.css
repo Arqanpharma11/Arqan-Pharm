@@ -21,3 +21,52 @@ button.transition-all, a.transition-all, [role="button"].transition-all {
   }
   html { scroll-behavior: auto; }
 }
+
+
+/* Arqan Modern Depth v1 — presentation only, no layout or data changes. */
+@media screen {
+  :is(#portal-gateway-view,#admin-portal-view,#pharmacist-portal-view) button:is(.bg-arkan-dark,.bg-arkan-primary,.bg-emerald-700,.bg-emerald-600,.bg-indigo-700,.bg-sky-800) {
+    background-image:linear-gradient(180deg,rgba(255,255,255,.13),transparent 55%,rgba(0,0,0,.09));
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.22),0 3px 0 rgba(35,25,20,.20),0 5px 9px rgba(40,25,20,.10);
+    transition:transform 120ms ease,background-color 120ms ease,opacity 120ms ease;
+  }
+  :is(#portal-gateway-view,#admin-portal-view,#pharmacist-portal-view) button:is(.bg-white,.bg-arkan-cream,.bg-arkan-light):not(.overflow-hidden) {
+    background-image:linear-gradient(180deg,rgba(255,255,255,.75),rgba(230,215,195,.12));
+    box-shadow:inset 0 1px 0 #fff,0 2px 0 rgba(78,52,46,.10),0 3px 7px rgba(78,52,46,.06);
+    transition:transform 120ms ease,background-color 120ms ease,color 120ms ease;
+  }
+  :is(#portal-gateway-view,#admin-portal-view,#pharmacist-portal-view) button:is(.bg-arkan-dark,.bg-arkan-primary,.bg-emerald-700,.bg-emerald-600,.bg-indigo-700,.bg-sky-800,.bg-white,.bg-arkan-cream,.bg-arkan-light):not(:disabled):not([aria-disabled="true"]):active {
+    transform:translateY(2px);
+    box-shadow:inset 0 2px 3px rgba(40,25,20,.13),0 1px 2px rgba(40,25,20,.08);
+  }
+  :is(#portal-gateway-view,#admin-portal-view,#pharmacist-portal-view) button:focus-visible,
+  :is(#portal-gateway-view,#admin-portal-view,#pharmacist-portal-view) a:focus-visible {
+    outline:2px solid #a1887f;outline-offset:3px;
+  }
+  :is(#portal-gateway-view,#admin-portal-view,#pharmacist-portal-view) div.bg-white:is(.rounded-2xl,.rounded-3xl):is(.shadow-sm,.shadow-lg,.shadow-xl) {
+    box-shadow:inset 0 1px 0 #fff,0 2px 4px rgba(62,39,35,.05),0 7px 18px rgba(62,39,35,.08);
+  }
+  :is(#portal-gateway-view,#admin-portal-view,#pharmacist-portal-view) div.bg-arkan-dark:is(.rounded-2xl,.rounded-3xl):is(.shadow-lg,.shadow-xl) {
+    background-image:linear-gradient(155deg,rgba(255,255,255,.09),transparent 55%);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 7px 18px rgba(62,39,35,.16);
+  }
+  body>header.bg-white {background-image:linear-gradient(180deg,#fff,#fcfaf7);box-shadow:0 3px 12px rgba(62,39,35,.08);}
+  :is(#portal-gateway-view,#admin-portal-view,#pharmacist-portal-view) :is(input,select,textarea):not([type="checkbox"]):not([type="radio"]):not([type="range"]) {
+    box-shadow:inset 0 1px 3px rgba(62,39,35,.07);
+  }
+  :is(#portal-gateway-view,#admin-portal-view,#pharmacist-portal-view) :is(input,select,textarea):focus {
+    outline-offset:2px;
+  }
+  #pharm-catalog-tbody button.w-14.h-14 {box-shadow:0 2px 5px rgba(62,39,35,.08);}
+  body>div.fixed>div.bg-white:is(.rounded-2xl,.rounded-3xl).shadow-2xl {
+    box-shadow:inset 0 1px 0 #fff,0 14px 36px rgba(35,24,20,.22);
+  }
+  @media (hover:hover) and (pointer:fine) {
+    :is(#portal-gateway-view,#admin-portal-view,#pharmacist-portal-view) button:is(.bg-arkan-dark,.bg-arkan-primary,.bg-emerald-700,.bg-emerald-600):not(:disabled):hover:not(:active) {transform:translateY(-1px);}
+  }
+  @media (prefers-reduced-motion:reduce) {
+    :is(#portal-gateway-view,#admin-portal-view,#pharmacist-portal-view) button {transition:none;}
+    :is(#portal-gateway-view,#admin-portal-view,#pharmacist-portal-view) button:hover,
+    :is(#portal-gateway-view,#admin-portal-view,#pharmacist-portal-view) button:active {transform:none;}
+  }
+}
