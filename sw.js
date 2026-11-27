@@ -1,5 +1,5 @@
-// Arqan PWA v37: network-first HTML, lightweight static shell, no bulk photo CacheStorage writes.
-const CACHE_NAME = 'arkan-pharma-cloud-v37';
+// Arqan PWA v38: network-first HTML, lightweight static shell, no bulk photo CacheStorage writes.
+const CACHE_NAME = 'arkan-pharma-cloud-v38';
 const SHELL = ['./index.html', './manifest.json', './arkan-logo.svg', './icons/arkan-192.png', './icons/arkan-512.png', './assets/arkan-platform-qr.svg'];
 self.addEventListener('install', (event) => {
   event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(SHELL)));
