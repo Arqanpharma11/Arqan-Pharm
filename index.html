@@ -895,6 +895,7 @@
                     </div>
                 </div>
 
+                <a href="./pack-guide.html" target="_blank" rel="noopener" class="text-sm font-bold text-emerald-800 underline">دليل صور الأصناف (58 صورة)</a>
                 <!-- Search, Category & Shortages Filter Card -->
                 <div class="bg-white border border-arkan-sand rounded-2xl p-4 shadow-sm space-y-3 no-print">
                     <div class="flex flex-col sm:flex-row gap-3">
@@ -20913,7 +20914,8 @@ ${window.location.href}
             const official = PROD_IMG_VERIFIED[id] === true && !!PROD_IMAGES[id];
             const auto = !official ? ARKAN_AUTO_PUBLISHED_PACKS[String(id)] : null;
             const candidate = !official && !auto ? ARKAN_QUICK_PACKS[String(id)] : null;
-            const src = official ? PROD_IMAGES[id] : (auto ? auto.url : (candidate ? candidate[0] : null));
+            const guide = ARKAN_OWNER_GUIDE_IMAGES[id];
+            const src = guide || (official ? PROD_IMAGES[id] : (auto ? auto.url : (candidate ? candidate[0] : null)));
             _liveCurrent = { id, shown: official ? src : null };
             document.getElementById('pimg-name-ar').textContent = p.name;
             document.getElementById('pimg-name-en').textContent = getEn(p);
@@ -20931,11 +20933,11 @@ ${window.location.href}
             document.getElementById('product-image-modal').classList.remove('hidden');
             if (src) {
                 showMainImage(src, null);
-                st.textContent = official
+                st.textContent = guide ? "صورة من دليل إدارة المخزن" : official
                     ? 'صورة عبوة مسجلة' + (PROD_IMG_SRC[id] ? ' — ' + PROD_IMG_SRC[id] : '')
                     : auto ? 'صورة مرشحة معروضة من ' + (auto.source || 'مصدر خارجي') + ' — مطابقة بيانات أولية، وليست توثيقًا بصريًا للعبوة'
                     : 'صورة مرشحة غير معتمدة من ' + (candidate?.[2] || 'مصدر خارجي') + ' — راجع الاسم والتركيز والعبوة';
-                if (auto && /^https:\/\//.test(auto.sourcePage || '')) {
+                if (!guide && auto && /^https:\/\//.test(auto.sourcePage || '')) {
                     const sourceLink = document.createElement('a');
                     sourceLink.href = auto.sourcePage;
                     sourceLink.target = '_blank';
@@ -21063,7 +21065,26 @@ ${window.location.href}
             }
             return true;
         }
+        const ARKAN_OWNER_GUIDE_ROWS = {"24": 2, "226": 5, "37": 6, "86": 7, "203": 9, "85": 12, "225": 13, "99": 15, "178": 16, "232": 18, "69": 19, "104": 20, "180": 21, "233": 23, "130": 25, "230017": 26, "102": 27, "591": 29, "636": 30, "648": 31, "660": 32, "661": 33, "678": 34, "683": 35, "685": 36, "688": 37, "689": 38, "690": 39, "710": 40, "711": 41, "719": 42, "737": 43, "739": 44, "753": 45, "754": 46, "769": 47, "772": 48, "774": 49, "776": 50, "777": 51, "787": 52, "797": 53, "799": 54, "800": 55, "825": 56, "837": 57, "847": 58};
+        const ARKAN_OWNER_GUIDE_IMAGES = {
+    "24": "assets/pack-guide/02.webp",
+    "226": "assets/pack-guide/05.webp",
+    "203": "assets/pack-guide/09.webp",
+    "85": "assets/pack-guide/12.webp",
+    "99": "assets/pack-guide/15.webp",
+    "178": "assets/pack-guide/16.webp",
+    "232": "assets/pack-guide/18.webp",
+    "104": "assets/pack-guide/20.webp",
+    "180": "assets/pack-guide/21.webp",
+    "130": "assets/pack-guide/25.webp",
+    "690": "assets/pack-guide/39.webp",
+    "719": "assets/pack-guide/42.webp",
+    "739": "assets/pack-guide/44.webp",
+    "825": "assets/pack-guide/56.webp",
+    "837": "assets/pack-guide/57.webp"
+};
         function getArkanCatalogImage(item) {
+            if (ARKAN_OWNER_GUIDE_IMAGES[item.id]) return ARKAN_OWNER_GUIDE_IMAGES[item.id];
             if (PROD_IMG_VERIFIED[item.id] === true && PROD_IMAGES[item.id]) return PROD_IMAGES[item.id];
             return ARKAN_AUTO_PUBLISHED_PACKS[String(item.id)]?.url ||
                 ARKAN_QUICK_PACKS[String(item.id)]?.[0] || ARKAN_MISSING_PHOTO;
@@ -21074,6 +21095,7 @@ ${window.location.href}
             img.alt = 'صورة العبوة غير متاحة';
         }
         function arkanImageStatus(item) {
+            if (ARKAN_OWNER_GUIDE_IMAGES[item.id]) return "صورة من دليل إدارة المخزن";
             if (PROD_IMG_VERIFIED[item.id] === true && PROD_IMAGES[item.id]) return 'صورة عبوة مسجلة';
             if (ARKAN_AUTO_PUBLISHED_PACKS[String(item.id)]) return 'صورة مرشحة غير معتمدة — تحتاج تحققًا بصريًا';
             if (ARKAN_QUICK_PACKS[String(item.id)]) return 'صورة مرشحة غير معتمدة — اضغط لمراجعتها';
@@ -21263,6 +21285,7 @@ ${window.location.href}
                                         title="فتح بحث صور الصنف في Google Images" aria-label="البحث عن صور ${item.name} في Google Images">
                                         ${item.name} ${enChip(item, 'align-middle')} ${shortageBadge}
                                     </a>
+                                    ${ARKAN_OWNER_GUIDE_ROWS[item.id] ? `<a class="text-xs underline text-emerald-800" href="./pack-guide.html#pack-${ARKAN_OWNER_GUIDE_ROWS[item.id]}" target="_blank" rel="noopener">صورة الدليل</a>` : ''}
                                     <div class="mt-1 flex flex-wrap items-center gap-1"><span class="text-[10px] text-emerald-700 font-bold">${item.cat}</span><span class="inline-block text-[10px] font-extrabold text-emerald-800 bg-emerald-50 border border-emerald-200 rounded-md px-1.5 py-0.5">💊 ${categoryValue}</span></div>
                                     <div class="mt-1 text-[10px] leading-relaxed text-emerald-900"><strong>المادة الفعالة / المكونات:</strong> <span dir="auto">${ingredientValue}</span></div>
                                     <p class="mt-1 text-[10px] leading-relaxed text-emerald-800"><strong>الاستخدام:</strong> ${getProductUseInfo(item)}</p>
