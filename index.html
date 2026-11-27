@@ -21065,24 +21065,153 @@ ${window.location.href}
             }
             return true;
         }
-        const ARKAN_OWNER_GUIDE_ROWS = {"24": 2, "226": 5, "37": 6, "86": 7, "203": 9, "85": 12, "225": 13, "99": 15, "178": 16, "232": 18, "69": 19, "104": 20, "180": 21, "233": 23, "130": 25, "230017": 26, "102": 27, "591": 29, "636": 30, "648": 31, "660": 32, "661": 33, "678": 34, "683": 35, "685": 36, "688": 37, "689": 38, "690": 39, "710": 40, "711": 41, "719": 42, "737": 43, "739": 44, "753": 45, "754": 46, "769": 47, "772": 48, "774": 49, "776": 50, "777": 51, "787": 52, "797": 53, "799": 54, "800": 55, "825": 56, "837": 57, "847": 58};
         const ARKAN_OWNER_GUIDE_IMAGES = {
     "24": "assets/pack-guide/02.webp",
     "226": "assets/pack-guide/05.webp",
+    "37": "assets/pack-guide/06.webp",
     "203": "assets/pack-guide/09.webp",
     "85": "assets/pack-guide/12.webp",
+    "225": "assets/pack-guide/13.webp",
     "99": "assets/pack-guide/15.webp",
     "178": "assets/pack-guide/16.webp",
     "232": "assets/pack-guide/18.webp",
     "104": "assets/pack-guide/20.webp",
     "180": "assets/pack-guide/21.webp",
+    "233": "assets/pack-guide/23.webp",
     "130": "assets/pack-guide/25.webp",
+    "230017": "assets/pack-guide/26.webp",
+    "102": "assets/pack-guide/27.webp",
+    "636": "assets/pack-guide/30.webp",
+    "648": "assets/pack-guide/31.webp",
+    "661": "assets/pack-guide/33.webp",
+    "678": "assets/pack-guide/34.webp",
+    "683": "assets/pack-guide/35.webp",
+    "685": "assets/pack-guide/36.webp",
+    "688": "assets/pack-guide/37.webp",
+    "689": "assets/pack-guide/38.webp",
     "690": "assets/pack-guide/39.webp",
+    "710": "assets/pack-guide/40.webp",
+    "711": "assets/pack-guide/41.webp",
     "719": "assets/pack-guide/42.webp",
+    "737": "assets/pack-guide/43.webp",
     "739": "assets/pack-guide/44.webp",
+    "753": "assets/pack-guide/45.webp",
+    "754": "assets/pack-guide/46.webp",
+    "769": "assets/pack-guide/47.webp",
+    "772": "assets/pack-guide/48.webp",
+    "774": "assets/pack-guide/49.webp",
+    "776": "assets/pack-guide/50.webp",
+    "777": "assets/pack-guide/51.webp",
+    "787": "assets/pack-guide/52.webp",
+    "799": "assets/pack-guide/54.webp",
+    "800": "assets/pack-guide/55.webp",
     "825": "assets/pack-guide/56.webp",
     "837": "assets/pack-guide/57.webp"
 };
+        const ARKAN_GUIDE_ONLY = [
+    {
+        "row": 1,
+        "name": "أسبجيك",
+        "en": "ASPEGLIC",
+        "cat": "أدوية"
+    },
+    {
+        "row": 3,
+        "name": "أبيكوزيم",
+        "en": "APICOZYME",
+        "cat": "أدوية"
+    },
+    {
+        "row": 4,
+        "name": "أركوكسيا 90 مجم",
+        "en": "ARCOXIA 90 mg",
+        "cat": "أدوية"
+    },
+    {
+        "row": 7,
+        "name": "أتروفنت 250 ميكروجرام",
+        "en": "ATROVENT 250 mcg / 2 ml",
+        "cat": "أدوية"
+    },
+    {
+        "row": 8,
+        "name": "أبيزول 20 مجم",
+        "en": "APIZOLE 20 mg",
+        "cat": "أدوية"
+    },
+    {
+        "row": 10,
+        "name": "أثمافنت 2 مجم أقراص",
+        "en": "ASTHMAVENT 2 mg",
+        "cat": "أدوية"
+    },
+    {
+        "row": 11,
+        "name": "أثمافنت شراب",
+        "en": "ASTHMAVENT Syrup",
+        "cat": "أدوية"
+    },
+    {
+        "row": 14,
+        "name": "أكتيفيد أقراص",
+        "en": "Actifed Tablets",
+        "cat": "أدوية"
+    },
+    {
+        "row": 17,
+        "name": "أكريديرم كريم",
+        "en": "ACRIDERM Cream",
+        "cat": "أدوية"
+    },
+    {
+        "row": 19,
+        "name": "أبيمول 325 مجم",
+        "en": "ABIMOL 325 mg",
+        "cat": "أدوية"
+    },
+    {
+        "row": 22,
+        "name": "أزوبت قطرة",
+        "en": "AZOPT 1%",
+        "cat": "أدوية"
+    },
+    {
+        "row": 24,
+        "name": "أكتيفيد شراب",
+        "en": "ACTIFED Syrup",
+        "cat": "أدوية"
+    },
+    {
+        "row": 28,
+        "name": "أكلوك 150 مجم",
+        "en": "ACLOCK 150 mg",
+        "cat": "أدوية"
+    },
+    {
+        "row": 29,
+        "name": "أوبتي فونيك بخاخ أنف",
+        "en": "OBTY FONIK SPRAY",
+        "cat": "أدوية"
+    },
+    {
+        "row": 32,
+        "name": "أوروكس ايه سي أقراص",
+        "en": "OROX AC",
+        "cat": "أدوية"
+    },
+    {
+        "row": 53,
+        "name": "إيزوميبرازول 20 مجم 28 قرص",
+        "en": "ESOMEPRAZOLE 20 mg",
+        "cat": "أدوية"
+    },
+    {
+        "row": 58,
+        "name": "إيكسيدوليب 1 مجم أقراص",
+        "en": "EXIDOLIB 1 mg",
+        "cat": "أدوية"
+    }
+];
         function getArkanCatalogImage(item) {
             if (ARKAN_OWNER_GUIDE_IMAGES[item.id]) return ARKAN_OWNER_GUIDE_IMAGES[item.id];
             if (PROD_IMG_VERIFIED[item.id] === true && PROD_IMAGES[item.id]) return PROD_IMAGES[item.id];
@@ -21230,6 +21359,12 @@ ${window.location.href}
                 return true;
             });
 
+            if (!pharmShortageOnly && selectedUse === 'ALL' && (catFilter === 'ALL' || catFilter === 'أدوية')) {
+                filtered.push(...ARKAN_GUIDE_ONLY.filter(item => !query ||
+                    normAr(item.name).includes(normAr(query)) && /[ء-ي]/.test(query) ||
+                    item.en.toLowerCase().includes(query)));
+            }
+
             document.getElementById('pharm-visible-count').textContent = filtered.length;
 
             if (filtered.length === 0) {
@@ -21247,6 +21382,11 @@ ${window.location.href}
             const pageItems = filtered.slice(startIdx, startIdx + ITEMS_PER_PAGE);
 
             tbody.innerHTML = pageItems.map(item => {
+                if (item.row && ARKAN_GUIDE_ONLY.includes(item)) {
+                    const url = 'assets/pack-guide/' + String(item.row).padStart(2, '0') + '.webp';
+                    return `<tr><td colspan="6" class="py-3 px-4"><a href="${url}" target="_blank" rel="noopener" class="flex items-center gap-3"><img src="${url}" alt="${_escapeDrugCatalogText(item.name)}" loading="lazy" class="w-14 h-14 object-contain"><span><strong>${_escapeDrugCatalogText(item.name)}</strong> <bdi>${_escapeDrugCatalogText(item.en)}</bdi><small class="block">من دليل المخزن · للعرض فقط</small></span></a></td></tr>`;
+                }
+
                 const netClientDisc = calcClientDiscount(item.disc, pharmPaymentMode);
                 const pharmUnitPrice = calcPharmacyPrice(item.price, item.disc, pharmPaymentMode);
                 const qty = cart[item.id] || 0;
@@ -21285,7 +21425,6 @@ ${window.location.href}
                                         title="فتح بحث صور الصنف في Google Images" aria-label="البحث عن صور ${item.name} في Google Images">
                                         ${item.name} ${enChip(item, 'align-middle')} ${shortageBadge}
                                     </a>
-                                    ${ARKAN_OWNER_GUIDE_ROWS[item.id] ? `<a class="text-xs underline text-emerald-800" href="./pack-guide.html#pack-${ARKAN_OWNER_GUIDE_ROWS[item.id]}" target="_blank" rel="noopener">صورة الدليل</a>` : ''}
                                     <div class="mt-1 flex flex-wrap items-center gap-1"><span class="text-[10px] text-emerald-700 font-bold">${item.cat}</span><span class="inline-block text-[10px] font-extrabold text-emerald-800 bg-emerald-50 border border-emerald-200 rounded-md px-1.5 py-0.5">💊 ${categoryValue}</span></div>
                                     <div class="mt-1 text-[10px] leading-relaxed text-emerald-900"><strong>المادة الفعالة / المكونات:</strong> <span dir="auto">${ingredientValue}</span></div>
                                     <p class="mt-1 text-[10px] leading-relaxed text-emerald-800"><strong>الاستخدام:</strong> ${getProductUseInfo(item)}</p>
