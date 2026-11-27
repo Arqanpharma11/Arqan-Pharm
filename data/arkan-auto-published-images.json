@@ -3034,6 +3034,20 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Lotus Pharmacies"
     },
+    "741": {
+      "catalogName": "ايبافكس سيرم س ج",
+      "englishName": "Ebafix Hair Serum 120 ml",
+      "title": "Ebafix Hair Serum 120 ml",
+      "url": "https://alfouadpharmacies.com/cdn/shop/files/Ebafix-Hair-SERUM-120-ml.webp?v=1772279578&width=1946",
+      "sourcePage": "https://alfouadpharmacies.com/products/ebafix-serum-120-ml",
+      "source": "alfouadpharmacies.com",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "manualVisualInspected": true,
+      "matchReason": "Visible Ebafix hair serum 120 ml package; catalog size unspecified.",
+      "attribution": "AlFouad Pharmacies"
+    },
     "742": {
       "catalogName": "ايبافكس شامبوو",
       "title": "Ebafix Hair Shampoo 200 ml",
