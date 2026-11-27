@@ -13855,6 +13855,22 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "sha256": "e1f3f7547ffb5432be10d5c073b601d6d901612be0500d65333ad9c369eb7de2"
     },
+    "1801": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/1801.webp",
+      "source": "www.syd24.com",
+      "sourcePage": "https://www.syd24.com/دوسباتالين-ريتارد/",
+      "originalImageUrl": "https://www.syd24.com/wp-content/uploads/2019/12/أقراص-دوسباتالين-ريتارد-لعلاج-اضطرابات-المعدة-والقولون.jpg",
+      "catalogName": "دوسباتالين ريتارد قرص",
+      "englishName": "Duspatalin Retard",
+      "title": "Duspatalin Retard دوسباتالين ريتارد قرص",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "matchScore": 1,
+      "matchReason": "ocr",
+      "sha256": "c0fa030b8bb65b35ce4cc48ae9da1e707e3a592e8fee84c76000161876d438a5",
+      "provenance": "Image downloaded and matched by image discovery bot; commercial reuse license unverified"
+    },
     "1802": {
       "catalogName": "دوستينكس اقراص",
       "englishName": "Dostinex Tablets",
