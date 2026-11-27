@@ -85,8 +85,8 @@ window.arkanTailwindConfig = {
    document.head.appendChild(script);
  }
  const link=document.createElement('link');
- link.rel='preload';link.as='style';link.href='./assets/arkan-ui.css';
- link.onload=function(){link.onload=null;link.rel='stylesheet';document.documentElement.classList.add('arkan-ui-ready');};
+ link.rel='stylesheet';link.media='print';link.href='./assets/arkan-ui.css';
+ link.onload=function(){link.onload=null;link.media='all';requestAnimationFrame(()=>requestAnimationFrame(()=>document.documentElement.classList.add('arkan-ui-ready')));};
  link.onerror=function(){link.remove();fallback();};
  document.head.appendChild(link);
  setTimeout(function(){if(!document.documentElement.classList.contains('arkan-ui-ready'))fallback();},3500);
@@ -182,8 +182,8 @@ html:not(.arkan-ui-ready) #share-qr-modal>div{background:white;max-width:480px;p
             align-items: center; justify-content: center; padding: 24px;
             overflow: hidden;
             background: radial-gradient(ellipse at 50% 38%, #806052 0%, #4E342E 48%, #241613 100%);
-            opacity: 1; visibility: visible; pointer-events: none;
-            animation: arqanIntroExit .45s cubic-bezier(.4,0,.2,1) 2.55s forwards;
+            opacity: 1; visibility: visible; pointer-events: auto;
+            transition: opacity .32s cubic-bezier(.4,0,.2,1);
             isolation: isolate;
         }
         #arkan-launch-intro::before {
@@ -235,22 +235,15 @@ html:not(.arkan-ui-ready) #share-qr-modal>div{background:white;max-width:480px;p
             #arkan-launch-intro::before, #arkan-launch-intro::after,
             #arkan-launch-intro .arkan-intro-content, #arkan-launch-intro img,
             #arkan-launch-intro .arkan-intro-rule { animation: none !important; }
-            #arkan-launch-intro { animation: arqanIntroExit .3s linear 2.7s forwards; }
+            #arkan-launch-intro { transition-duration: .15s; }
         }
 
 
-        /* Installed PWA: use the native launch screen from manifest icons only. */
-        @media (display-mode: standalone) {
-            #arkan-launch-intro { display: none !important; }
-        }
-        @media (display-mode: fullscreen) {
-            #arkan-launch-intro { display: none !important; }
-        }
-        /* iOS home-screen app mode */
-        @supports (-webkit-touch-callout: none) {
-            @media (display-mode: standalone) {
-                #arkan-launch-intro { display: none !important; }
-            }
+        /* The same branded intro runs once per document, including installed PWAs. */
+        #arkan-launch-intro.arkan-intro-exiting { opacity: 0; pointer-events: none; }
+        @media print { #arkan-launch-intro { display:none !important; } }
+        @media (hover:none) and (pointer:coarse) {
+            #arkan-launch-intro img { animation: arqanLogoFloat 2.4s ease-in-out .35s infinite; }
         }
 
     </style>
@@ -286,6 +279,44 @@ window.arkanFirebaseReady=(function(){
             <div class="arkan-intro-rule"></div>
         </div>
     </div>
+
+    <script>
+    (function(){
+        const intro=document.getElementById('arkan-launch-intro');
+        if(!intro)return;
+        const started=performance.now();
+        let released=false, timer;
+        function reveal(){
+            if(released)return;
+            released=true;clearTimeout(timer);
+            intro.classList.add('arkan-intro-exiting');
+            const remove=()=>intro.remove();
+            intro.addEventListener('transitionend',remove,{once:true});
+            setTimeout(remove,450);
+        }
+        function frame(){return new Promise(resolve=>requestAnimationFrame(resolve));}
+        function waitForStyles(){
+            return new Promise(resolve=>{
+                const root=document.documentElement;
+                if(root.classList.contains('arkan-ui-ready'))return resolve();
+                const observer=new MutationObserver(()=>{if(root.classList.contains('arkan-ui-ready')){observer.disconnect();resolve();}});
+                observer.observe(root,{attributes:true,attributeFilter:['class']});
+                setTimeout(()=>{observer.disconnect();resolve();},6500);
+            });
+        }
+        async function ready(){
+            await waitForStyles();
+            await frame();
+            await frame();
+            const remaining=Math.max(0,2550-(performance.now()-started));
+            setTimeout(reveal,remaining);
+        }
+        timer=setTimeout(reveal,8500);
+        if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',ready,{once:true});
+        else ready();
+        window.addEventListener('pageshow',e=>{if(e.persisted)reveal();});
+    })();
+    </script>
 
     <!-- Toast Notifications Container -->
     <div id="toast-container" class="fixed bottom-5 left-5 z-50 flex flex-col gap-2.5 max-w-sm w-full pointer-events-none px-4 sm:px-0 no-print"></div>
