@@ -2,9 +2,9 @@
   "attempted": 0,
   "mirrored": 0,
   "failed": 0,
-  "locally_stored_unique_product_ids": 427,
-  "locally_referenced_seed_ids": 427,
-  "verified_seed_ids": 608,
+  "locally_stored_unique_product_ids": 945,
+  "locally_referenced_seed_ids": 552,
+  "verified_seed_ids": 717,
   "unresolved_failed_urls": 181,
   "failures": [
     {
@@ -24,13 +24,13 @@
     },
     {
       "id": "28",
-      "url": "https://www.lotusonline.com/cdn/shop/files/3005182_1.jpg?v=1767615836",
-      "error": "HTTP Error 404: Not Found"
+      "url": "https://abdinpharmacies.com/web/image/product.template/28493/image_1920",
+      "error": "HTTP Error 403: Forbidden"
     },
     {
       "id": "51",
-      "url": "https://tdawi.com/media/catalog/product/cache/72f8467a5043ecc9af047df47b9246a4/a/p/apexidone_1_mg_2__hfbwxha2nvafommw.jpg",
-      "error": "invalid size"
+      "url": "https://www.mohieldeenpharmacy.com/web/image/product.template/2130/image_1920",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.mohieldeenpharmacy.com"
     },
     {
       "id": "103",
@@ -39,13 +39,13 @@
     },
     {
       "id": "134",
-      "url": "https://www.lotusonline.com/cdn/shop/files/3005369_1.jpg?v=1767615530&width=1500",
-      "error": "HTTP Error 404: Not Found"
+      "url": "https://abdinpharmacies.com/web/image/product.template/25069/image_1920",
+      "error": "HTTP Error 403: Forbidden"
     },
     {
       "id": "135",
-      "url": "https://www.lotusonline.com/cdn/shop/files/3000031_1.jpg?v=1767615532",
-      "error": "HTTP Error 404: Not Found"
+      "url": "https://abdinpharmacies.com/web/image/product.template/25070/image_1920",
+      "error": "HTTP Error 403: Forbidden"
     },
     {
       "id": "136",
@@ -54,17 +54,12 @@
     },
     {
       "id": "137",
-      "url": "https://www.lotusonline.com/cdn/shop/files/3000034_1.jpg?v=1767615532",
-      "error": "HTTP Error 404: Not Found"
+      "url": "https://abdinpharmacies.com/web/image/product.template/25068/image_1920",
+      "error": "HTTP Error 403: Forbidden"
     },
     {
       "id": "100",
       "url": "https://www.lotusonline.com/cdn/shop/files/3000161_1.jpg?v=1767615853",
-      "error": "HTTP Error 404: Not Found"
-    },
-    {
-      "id": "102",
-      "url": "https://www.lotusonline.com/cdn/shop/files/3003745_1.jpg?v=1767615945&width=1500",
       "error": "HTTP Error 404: Not Found"
     },
     {
@@ -75,11 +70,6 @@
     {
       "id": "119",
       "url": "https://www.lotusonline.com/cdn/shop/files/3000042_processed.jpg?v=1767615071",
-      "error": "HTTP Error 404: Not Found"
-    },
-    {
-      "id": "138",
-      "url": "https://www.lotusonline.com/cdn/shop/files/3004782_1.jpg?v=1767615529&width=1500",
       "error": "HTTP Error 404: Not Found"
     },
     {
@@ -180,11 +170,6 @@
     {
       "id": "394",
       "url": "https://www.lotusonline.com/cdn/shop/files/3000062_1.jpg?v=1767616984&width=1500",
-      "error": "HTTP Error 404: Not Found"
-    },
-    {
-      "id": "415",
-      "url": "https://www.lotusonline.com/cdn/shop/files/3007737_1.jpg?v=1767616744",
       "error": "HTTP Error 404: Not Found"
     },
     {
@@ -908,9 +893,24 @@
       "error": "HTTP Error 404: Not Found"
     },
     {
-      "id": "46",
-      "url": "https://www.lotusonline.com/cdn/shop/files/3007384_1.jpg?v=1767615875",
+      "id": "163",
+      "url": "https://www.lotusonline.com/cdn/shop/files/3009218_processed.jpg?v=1773701742",
       "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "360",
+      "url": "https://www.lotusonline.com/cdn/shop/files/3006622_1.jpg?v=1767616175",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "667",
+      "url": "https://www.lotusonline.com/cdn/shop/files/3009007_processed.jpg?v=1773308250",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "750",
+      "url": "https://lifemasr.com/wp-content/uploads/2023/08/6222001400229.png",
+      "error": "HTTP Error 403: Forbidden"
     }
   ],
   "note": "URLs that could not be fetched are NOT represented as valid photos. Visual pack matching requires separate review."
