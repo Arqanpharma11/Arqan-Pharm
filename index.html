@@ -22548,5 +22548,71 @@ ${url}`);
 })();
 </script>
 
+<!-- Arqan Guest Comfort v1: independent, read-only UX enhancements. -->
+<style>
+@media screen {
+  #arkan-comfort-bar{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin:0 0 12px;padding:10px 14px;border:1px solid #e4d6c4;border-radius:14px;background:linear-gradient(125deg,#fffdf9,#f4ecdf);color:#4e342e;box-shadow:0 3px 9px #3e27230b;font:600 12px/1.65 Cairo,Tajawal,system-ui,sans-serif}
+  #arkan-comfort-bar strong{font-weight:800}
+  #arkan-comfort-bar button,#arkan-back-top{font:700 12px/1.5 Cairo,Tajawal,system-ui,sans-serif;border:1px solid #d7c6b4;border-radius:12px;background:linear-gradient(180deg,#fff,#f0e6d7);color:#4e342e;padding:7px 12px;cursor:pointer;touch-action:manipulation;box-shadow:0 2px 0 #3e272318}
+  #arkan-comfort-bar button:active,#arkan-back-top:active{transform:translateY(1px)}
+  #arkan-back-top{position:fixed;bottom:max(18px,env(safe-area-inset-bottom));right:14px;z-index:29;width:42px;height:42px;padding:0;font-size:20px;display:grid;place-items:center}
+  #arkan-back-top[hidden],#arkan-comfort-bar[hidden]{display:none!important}
+  #arkan-comfort-help{margin:0 0 12px;padding:14px 16px;border:1px solid #dfd1bf;border-radius:16px;background:#fffdf9;color:#4e342e;font:500 13px/1.85 Cairo,Tajawal,system-ui,sans-serif}
+  #arkan-comfort-help ul{list-style:disc;padding-inline-start:20px;margin:6px 0}
+  #arkan-comfort-help[hidden]{display:none!important}
+  .arkan-comfort-pop{animation:arkanComfortPop .24s ease-out}
+  @keyframes arkanComfortPop{0%{transform:scale(1)}40%{transform:scale(1.12)}100%{transform:scale(1)}}
+  #arkan-comfort-bar button:focus-visible,#arkan-back-top:focus-visible{outline:2px solid #166534;outline-offset:3px}
+  @media(prefers-reduced-motion:reduce){.arkan-comfort-pop{animation:none}}
+}
+@media print{#arkan-comfort-bar,#arkan-comfort-help,#arkan-back-top{display:none!important}}
+</style>
+<script>
+(function(){
+  'use strict';
+  const gateway=document.getElementById('portal-gateway-view'),pharm=document.getElementById('pharmacist-portal-view'),admin=document.getElementById('admin-portal-view');
+  if(!gateway||!pharm||!admin)return;
+  const reduce=()=>window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const shown=n=>!n.classList.contains('hidden');
+  const make=(tag,text)=>{const e=document.createElement(tag);if(text)e.textContent=text;return e;};
+  const bar=make('div');bar.id='arkan-comfort-bar';
+  const greeting=make('strong'),helpButton=make('button','دليل الاستخدام');helpButton.type='button';helpButton.setAttribute('aria-expanded','false');helpButton.setAttribute('aria-controls','arkan-comfort-help');
+  bar.append(greeting,helpButton);
+  const help=make('div');help.id='arkan-comfort-help';help.hidden=true;
+  const back=make('button','↑');back.id='arkan-back-top';back.type='button';back.hidden=true;back.setAttribute('aria-label','الرجوع لأعلى الصفحة');document.body.append(back);
+  let current=null,frame=0;
+  const tips={
+    gateway:['لو عندك حساب، اختار تسجيل الدخول للصيدلية.','لو أول مرة، استخدم نموذج التسجيل الموجود في الصفحة.','تقدر تثبّت التطبيق أو تشارك رابط المنصة من قسم التثبيت.'],
+    pharm:['ابحث باسم الصنف بالعربي أو الإنجليزي من خانة البحث.','استخدم فلاتر التصنيف والاستخدام لتضييق النتائج.','راجع الكميات وإجمالي الطلب في الفاتورة قبل التأكيد.','تابع الطلبات السابقة من قسم متابعة الأوردرات.'],
+    admin:['استخدم البحث للوصول إلى الصنف المطلوب.','تنقّل بين الأصناف والخصومات وإدارة الصيادلة من الأزرار الموجودة.','راجع البيانات قبل حفظ أي تعديل.']
+  };
+  function refresh(){
+    const target=shown(pharm)?pharm:shown(admin)?admin:shown(gateway)?gateway:null;
+    if(target!==current){
+      current=target;help.hidden=true;helpButton.setAttribute('aria-expanded','false');helpButton.textContent='دليل الاستخدام';
+      if(!target){bar.remove();help.remove();}
+      else{
+        const key=target===pharm?'pharm':target===admin?'admin':'gateway';
+        greeting.textContent=key==='gateway'?'أهلاً بك في أركان فارم • يسعدنا وجودك':key==='pharm'?'كل احتياجات صيدليتك في مكان واحد':'أهلاً بك في لوحة الإدارة';
+        help.replaceChildren(make('strong','خطوات سريعة'));const ul=make('ul');for(const t of tips[key])ul.append(make('li',t));help.append(ul);
+        // Gateway is a flex centering container: place the strip inside its existing wrapper.
+        const parent=key==='gateway'?target.firstElementChild:target;
+        if(parent){parent.prepend(help);parent.prepend(bar);}
+      }
+    }
+    back.hidden=!current||window.scrollY<650||!!document.getElementById('arkan-launch-intro');
+  }
+  helpButton.addEventListener('click',()=>{help.hidden=!help.hidden;helpButton.setAttribute('aria-expanded',String(!help.hidden));helpButton.textContent=help.hidden?'دليل الاستخدام':'إخفاء الدليل';});
+  back.addEventListener('click',()=>window.scrollTo({top:0,behavior:reduce()?'auto':'smooth'}));
+  for(const node of [gateway,pharm,admin])new MutationObserver(refresh).observe(node,{attributes:true,attributeFilter:['class']});
+  window.addEventListener('scroll',()=>{if(!frame)frame=requestAnimationFrame(()=>{frame=0;refresh();});},{passive:true});
+  for(const id of ['cart-badge-total','mobile-cart-count']){
+    const badge=document.getElementById(id);if(!badge)continue;let last=badge.textContent,timer;
+    new MutationObserver(()=>{const next=badge.textContent;if(next===last)return;last=next;if(!shown(pharm)||reduce())return;badge.classList.add('arkan-comfort-pop');clearTimeout(timer);timer=setTimeout(()=>badge.classList.remove('arkan-comfort-pop'),270);}).observe(badge,{childList:true,characterData:true,subtree:true});
+  }
+  refresh();
+})();
+</script>
+
 </body>
 </html>
