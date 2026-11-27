@@ -305,6 +305,7 @@ window.arkanFirebaseReady=(function(){
                         <span>⬇️ تثبيت التطبيق</span>
                     </button>
 
+                <button id="arkan-notification-settings" type="button" class="bg-arkan-cream text-arkan-dark border border-arkan-sand px-3 py-2 rounded-xl text-xs font-bold">🔔 الإشعارات</button>
                 <div id="header-session-controls" class="hidden flex flex-wrap items-center gap-2.5">
                     <div class="bg-arkan-cream border border-arkan-sand px-3.5 py-1.5 rounded-xl flex items-center gap-2">
                         <span id="session-role-dot" class="w-2.5 h-2.5 rounded-full bg-emerald-600"></span>
@@ -646,6 +647,7 @@ window.arkanFirebaseReady=(function(){
             </div>
         </div>
 
+        <section id="arkan-notification-admin" class="bg-white border border-arkan-sand rounded-2xl p-5"><details><summary style="cursor:pointer;font-weight:bold">🔔 إرسال إشعار جماعي للصيادلة</summary><form style="display:grid;gap:10px;margin-top:12px"><label>عنوان الإشعار<input name="title" maxlength="100" required class="w-full border rounded-xl p-2"></label><label>محتوى الإشعار<textarea name="body" maxlength="500" required rows="3" class="w-full border rounded-xl p-2"></textarea></label><button type="submit" class="bg-emerald-700 text-white rounded-xl p-3">إرسال للمشتركين</button></form><p role="status" aria-live="polite"></p></details></section>
         <!-- ADMIN SECTION 1: FULL PRODUCTS CRUD -->
         <div id="adm-sec-products" class="space-y-5">
             <!-- Add New Product Form -->
@@ -22431,5 +22433,6 @@ ${url}`);
             <div id="arch-list" class="space-y-2 max-h-80 overflow-y-auto"></div>
         </div>
     </div>
+<script src="./notifications/portal.js" defer></script>
 </body>
 </html>
