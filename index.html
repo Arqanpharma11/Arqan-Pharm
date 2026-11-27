@@ -7911,21 +7911,22 @@ window.arkanFirebaseReady=(function(){
             // must happen in the background and must not block the first usable screen.
             try { showGatewayView(); } catch (_) {}
             try {
-                const savedProducts = await loadPersistedState(KEYS.PRODUCTS);
+                const startupReads = new Map([KEYS.PRODUCTS,'arkan_cairo_products_master_v5',KEY_IMAGES,KEY_IMG_SRC,KEY_IMG_VERIFIED,KEYS.MARGINS,KEYS.PHARMACISTS,KEYS.ORDERS,KEYS.ORDERS_ARCHIVE,KEYS.CART,KEYS.SESSION].map(key=>[key,loadPersistedState(key)]));
+                const savedProducts = await startupReads.get(KEYS.PRODUCTS);
                 if (Array.isArray(savedProducts) && savedProducts.length > 0) {
                     products = enrichProducts(reconcileNovemberCatalog(savedProducts));
                 } else {
-                    const previous = await loadPersistedState('arkan_cairo_products_master_v5');
+                    const previous = await startupReads.get('arkan_cairo_products_master_v5');
                     products = enrichProducts(Array.isArray(previous) && previous.length
                         ? reconcileNovemberCatalog(previous) : PDF_APPROVED_CATALOG.map(p => ({ ...p })));
                     persistState(KEYS.PRODUCTS, products);
                 }
 
-                const savedImgs = await loadPersistedState(KEY_IMAGES);
+                const savedImgs = await startupReads.get(KEY_IMAGES);
                 if (savedImgs && typeof savedImgs === 'object') PROD_IMAGES = savedImgs;
-                const savedImgSrc = await loadPersistedState(KEY_IMG_SRC);
+                const savedImgSrc = await startupReads.get(KEY_IMG_SRC);
                 if (savedImgSrc && typeof savedImgSrc === 'object') PROD_IMG_SRC = savedImgSrc;
-                const savedImgVerified = await loadPersistedState(KEY_IMG_VERIFIED);
+                const savedImgVerified = await startupReads.get(KEY_IMG_VERIFIED);
                 if (savedImgVerified && typeof savedImgVerified === 'object') PROD_IMG_VERIFIED = savedImgVerified;
                 Object.keys(PROD_IMAGES).forEach(id => { if (PROD_IMG_VERIFIED[id] !== true) delete PROD_IMAGES[id]; });
 
@@ -8746,30 +8747,30 @@ window.arkanFirebaseReady=(function(){
                     try { localStorage.setItem(IMAGE_SEED_VERSION, '1'); } catch (_) {}
                 }
 
-                const savedMargins = await loadPersistedState(KEYS.MARGINS);
+                const savedMargins = await startupReads.get(KEYS.MARGINS);
                 if (savedMargins) {
                     margins = { ...DEFAULT_MARGINS, ...savedMargins };
                 }
 
-                const savedPharmacists = await loadPersistedState(KEYS.PHARMACISTS);
+                const savedPharmacists = await startupReads.get(KEYS.PHARMACISTS);
                 if (Array.isArray(savedPharmacists)) {
                     pharmacists = savedPharmacists;
                 }
 
-                const savedOrders = await loadPersistedState(KEYS.ORDERS);
+                const savedOrders = await startupReads.get(KEYS.ORDERS);
                 if (Array.isArray(savedOrders)) {
                     orders = savedOrders.map(o => ({ status: 'pending', ...o }));
                 }
 
-                const savedArch = await loadPersistedState(KEYS.ORDERS_ARCHIVE);
+                const savedArch = await startupReads.get(KEYS.ORDERS_ARCHIVE);
                 if (Array.isArray(savedArch)) ordersArchive = savedArch;
 
-                const savedCart = await loadPersistedState(KEYS.CART);
+                const savedCart = await startupReads.get(KEYS.CART);
                 if (savedCart && typeof savedCart === 'object') {
                     cart = savedCart;
                 }
 
-                const savedSession = await loadPersistedState(KEYS.SESSION);
+                const savedSession = await startupReads.get(KEYS.SESSION);
                 if (savedSession) {
                     currentSession = savedSession;
                 }
@@ -8787,9 +8788,9 @@ window.arkanFirebaseReady=(function(){
                         if (user && user.uid === ADMIN_UID) {
                             // One-time cleanup of the legacy plaintext password field.
                             try {
-                                await firestoreDB.collection('settings').doc('global').update({
+                                void firestoreDB.collection('settings').doc('global').update({
                                     adminPass: firebase.firestore.FieldValue.delete()
-                                });
+                                }).catch(err=>console.warn('Legacy cleanup deferred:',err.code));
                             } catch (cleanupErr) {
                                 if (cleanupErr.code !== 'firestore/not-found') {
                                     console.warn('Legacy adminPass cleanup pending:', cleanupErr.code || cleanupErr.message);
@@ -8994,30 +8995,36 @@ ${window.location.href}
             showToast(`تم إنشاء حساب ${pharmName} والدخول بنجاح!`);
         }
 
+        function arqanLoginTimeout(promise, ms, message) {
+            let timer;
+            return Promise.race([promise,new Promise((_,reject)=>{timer=setTimeout(()=>reject(new Error(message)),ms);})]).finally(()=>clearTimeout(timer));
+        }
+        async function arqanLoginReady() {
+            if(window.arkanPlatformReady) await arqanLoginTimeout(window.arkanPlatformReady,18000,'تهيئة المنصة استغرقت وقتاً طويلاً. حاول مرة أخرى.');
+            if(!firestoreDB && typeof firebase!=='undefined') initFirebaseCloud();
+        }
+        function arqanLoginStatus(el,message) { el.textContent=message;el.classList.remove('hidden'); }
         async function handlePharmacistLogin(e) {
             e.preventDefault();
-            if(window.arkanPlatformReady) await window.arkanPlatformReady;
-            const phone = document.getElementById('login-pharm-phone').value.trim();
-            const password = document.getElementById('login-pharm-password').value.trim();
-            const errEl = document.getElementById('pharm-login-error');
-
-            let user = pharmacists.find(p => p.phone === phone && p.password === password);
-            if (!user && firestoreDB) {
-                try {
-                    const docSnap = await firestoreDB.collection('pharmacists').doc(phone).get();
-                    if (docSnap.exists && docSnap.data().password === password) {
-                        user = docSnap.data();
-                    }
-                } catch (_) {}
-            }
-            if (!user) {
-                errEl.classList.remove('hidden');
-                return;
-            }
-
-            errEl.classList.add('hidden');
-            enterPharmacistPortal(user);
-            showToast(`مرحباً بعودتك ${user.pharmName}`);
+            const phone=document.getElementById('login-pharm-phone').value.trim();
+            const password=document.getElementById('login-pharm-password').value.trim();
+            const errEl=document.getElementById('pharm-login-error');
+            const btn=e.submitter||e.target.querySelector('button[type="submit"]');
+            if(btn)btn.disabled=true;
+            arqanLoginStatus(errEl,'جاري التحقق من حساب الصيدلية…');
+            try {
+                await arqanLoginReady();
+                let user=pharmacists.find(p=>p.phone===phone&&p.password===password);
+                if(!user&&firestoreDB){
+                    const docSnap=await arqanLoginTimeout(firestoreDB.collection('pharmacists').doc(phone).get(),12000,'تعذر الاتصال بقاعدة بيانات الصيادلة. حاول مرة أخرى.');
+                    if(docSnap.exists&&docSnap.data().password===password)user=docSnap.data();
+                }
+                if(!user){arqanLoginStatus(errEl,firestoreDB?'رقم الموبايل أو كلمة المرور غير صحيحة.':'الاتصال بالسحابة غير جاهز. حاول مرة أخرى.');return;}
+                enterPharmacistPortal(user);
+                errEl.classList.add('hidden');
+                showToast('مرحباً بعودتك '+user.pharmName);
+            }catch(err){console.error('Pharmacist login:',err);arqanLoginStatus(errEl,err.message||'تعذر تسجيل الدخول. حاول مرة أخرى.');}
+            finally{if(btn)btn.disabled=false;}
         }
 
         function enterPharmacistPortal(user) {
@@ -9113,30 +9120,27 @@ ${window.location.href}
 
         async function handleAdminLogin(e) {
             e.preventDefault();
-            if(window.arkanPlatformReady) await window.arkanPlatformReady;
-            if(typeof firebase === 'undefined' || !firestoreDB){showToast('تعذر الاتصال بالسحابة، حاول مرة أخرى بعد التحقق من الإنترنت.','error');return;}
-            const email = document.getElementById('admin-gateway-email').value.trim();
-            const password = document.getElementById('admin-gateway-password').value;
-            const errEl = document.getElementById('admin-gateway-error');
-            const submitBtn = e.submitter || e.target.querySelector('button[type="submit"]');
-            if (submitBtn) submitBtn.disabled = true;
-            try {
-                const credential = await firebase.auth().signInWithEmailAndPassword(email, password);
-                if (credential.user.uid !== ADMIN_UID) {
-                    await firebase.auth().signOut();
-                    throw new Error('not-authorized-admin');
-                }
-                errEl.classList.add('hidden');
-                document.getElementById('admin-gateway-password').value = '';
+            const email=document.getElementById('admin-gateway-email').value.trim();
+            const password=document.getElementById('admin-gateway-password').value;
+            const errEl=document.getElementById('admin-gateway-error');
+            const btn=e.submitter||e.target.querySelector('button[type="submit"]');
+            if(btn)btn.disabled=true;
+            arqanLoginStatus(errEl,'جاري التحقق من حساب الإدارة…');
+            try{
+                await arqanLoginReady();
+                if(typeof firebase==='undefined'||!firestoreDB){arqanLoginStatus(errEl,'تعذر الاتصال بـ Firebase. تحقق من الإنترنت وحاول مرة أخرى.');return;}
+                const credential=await arqanLoginTimeout(firebase.auth().signInWithEmailAndPassword(email,password),15000,'انتهت مهلة الاتصال بخدمة تسجيل الدخول.');
+                if(credential.user.uid!==ADMIN_UID){await firebase.auth().signOut();throw new Error('not-authorized-admin');}
+                document.getElementById('admin-gateway-password').value='';
                 enterAdminPortal();
-                notifyAdminEvent('نجاح تسجيل دخول الأدمن', { account: email });
+                errEl.classList.add('hidden');
+                void notifyAdminEvent('نجاح تسجيل دخول الأدمن',{account:email});
                 showToast('تم التحقق من هوية الأدمن بنجاح.');
-            } catch (err) {
-                notifyAdminEvent('فشل محاولة تسجيل دخول الأدمن', { account: email, reason: err.code || 'authentication-failed' });
-                console.error('Admin login failed:', err.code || err.message);
-                errEl.textContent = 'بيانات الدخول غير صحيحة أو الحساب غير مصرح له بالإدارة.';
-                errEl.classList.remove('hidden');
-            } finally { if (submitBtn) submitBtn.disabled = false; }
+            }catch(err){
+                console.error('Admin login:',err);
+                const msg=/auth\/network|timeout/i.test(err.code||'')?'تعذر الاتصال بخدمة تسجيل الدخول. حاول مرة أخرى.':err.code||err.message==='not-authorized-admin'?'تعذر تسجيل الدخول. تحقق من البيانات وصلاحية الحساب.':err.message;
+                arqanLoginStatus(errEl,msg||'تعذر تسجيل الدخول. حاول مرة أخرى.');
+            }finally{if(btn)btn.disabled=false;}
         }
 
         function enterAdminPortal() {
