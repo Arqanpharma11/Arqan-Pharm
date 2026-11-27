@@ -30402,6 +30402,22 @@
       "matchReason": "manual_visible_pack_and_product_source_match",
       "attribution": "Re3aya Pharmacy"
     },
+    "3175": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/3175.webp",
+      "source": "i.ytimg.com",
+      "sourcePage": "https://www.youtube.com/watch?v=S34QbeY_Lss",
+      "originalImageUrl": "https://i.ytimg.com/vi/S34QbeY_Lss/maxresdefault.jpg",
+      "catalogName": "كريستوليب10/10 مجم",
+      "englishName": "Crestolip",
+      "title": "Crestolip كريستوليب10/10 مجم",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "matchScore": 1,
+      "matchReason": "ocr",
+      "sha256": "ecc3a82fb471acdcda6b9abc0e4bfc6c4555b3c2b5c28b4f5bf92b2c16764aae",
+      "provenance": "Image downloaded and matched by image discovery bot; commercial reuse license unverified"
+    },
     "3176": {
       "catalogName": "كريستوليب20 مجم",
       "title": "Crestolip 20mg Rosuvastatin",
