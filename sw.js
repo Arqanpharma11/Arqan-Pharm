@@ -1,6 +1,6 @@
-// Arqan PWA v35: network-first HTML, lightweight static shell, no bulk photo CacheStorage writes.
-const CACHE_NAME = 'arkan-pharma-cloud-v35';
-const SHELL = ['./index.html', './manifest.json', './arkan-logo.svg', './icons/arkan-192.png', './icons/arkan-512.png'];
+// Arqan PWA v36: network-first HTML, lightweight static shell, no bulk photo CacheStorage writes.
+const CACHE_NAME = 'arkan-pharma-cloud-v36';
+const SHELL = ['./index.html', './manifest.json', './arkan-logo.svg', './icons/arkan-192.png', './icons/arkan-512.png', './assets/arkan-platform-qr.svg'];
 self.addEventListener('install', (event) => {
   event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(SHELL)));
   self.skipWaiting();
@@ -39,7 +39,7 @@ self.addEventListener('fetch', (event) => {
   // excessive writes and memory pressure when browsing large lists.
   if (url.pathname.includes('/assets/product-images/')) return;
   // Static icons and manifest remain available offline without caching catalog media.
-  const staticNames = ['/manifest.json', '/arkan-logo.svg', '/icons/arkan-192.png', '/icons/arkan-512.png'];
+  const staticNames = ['/manifest.json', '/arkan-logo.svg', '/icons/arkan-192.png', '/icons/arkan-512.png', '/assets/arkan-platform-qr.svg', '/assets/arkan-ui.css'];
   if (staticNames.some(name => url.pathname.endsWith(name))) {
     event.respondWith(caches.match(request).then(cached => cached || fetch(request)));
   }

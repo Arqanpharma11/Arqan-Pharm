@@ -1,0 +1,36 @@
+name: Build local Arqan styles
+on:
+  push:
+    paths:
+      - '.github/workflows/build-arkan-styles.yml'
+      - 'scripts/arkan-tailwind.config.cjs'
+      - 'scripts/arkan-tailwind-input.css'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: arqan-local-styles
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Compile local stylesheet
+        run: |
+          npx --yes tailwindcss@3.4.17 -c scripts/arkan-tailwind.config.cjs -i scripts/arkan-tailwind-input.css -o assets/arkan-ui.css --minify
+          test -s assets/arkan-ui.css
+      - name: Publish stylesheet only
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/arkan-ui.css
+          if ! git diff --cached --quiet; then
+            git commit -m "Build local Arqan portal stylesheet"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi

@@ -28,12 +28,12 @@
         });
         window.addEventListener("appinstalled", function () { window.arkanEarlyInstallPrompt = null; });
     </script>
-    <script src="https://cdn.tailwindcss.com"></script>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <script>
-        tailwind.config = {
+window.arkanTailwindConfig = {
             theme: {
                 extend: {
                     fontFamily: {
@@ -53,8 +53,54 @@
                     }
                 }
             }
-        }
-    </script>
+        };
+(function(){
+ let requested=false;
+ function fallback(){
+   if(requested)return;requested=true;
+   const script=document.createElement('script');
+   script.async=true;script.src='https://cdn.tailwindcss.com';
+   script.onload=function(){if(window.tailwind){window.tailwind.config=window.arkanTailwindConfig;requestAnimationFrame(()=>document.documentElement.classList.add('arkan-ui-ready'));}};
+   script.onerror=function(){console.warn('Arqan: external styles unavailable; local fallback remains active');};
+   document.head.appendChild(script);
+ }
+ const link=document.createElement('link');
+ link.rel='preload';link.as='style';link.href='./assets/arkan-ui.css';
+ link.onload=function(){link.onload=null;link.rel='stylesheet';document.documentElement.classList.add('arkan-ui-ready');};
+ link.onerror=function(){link.remove();fallback();};
+ document.head.appendChild(link);
+ setTimeout(function(){if(!document.documentElement.classList.contains('arkan-ui-ready'))fallback();},3500);
+})();
+</script>
+<style>
+html:not(.arkan-ui-ready) *{box-sizing:border-box}
+html:not(.arkan-ui-ready) body{margin:0;min-height:100vh}
+html:not(.arkan-ui-ready) .flex{display:flex}
+html:not(.arkan-ui-ready) .grid{display:grid}
+html:not(.arkan-ui-ready) .hidden{display:none!important}
+html:not(.arkan-ui-ready) .flex-col{flex-direction:column}
+html:not(.arkan-ui-ready) .flex-wrap{flex-wrap:wrap}
+html:not(.arkan-ui-ready) .items-center{align-items:center}
+html:not(.arkan-ui-ready) .justify-between{justify-content:space-between}
+html:not(.arkan-ui-ready) .justify-center{justify-content:center}
+html:not(.arkan-ui-ready) .grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+html:not(.arkan-ui-ready) header{background:#fff;border-bottom:1px solid #E6D7C3;padding:12px 16px}
+html:not(.arkan-ui-ready) header img{width:56px;height:56px;object-fit:contain}
+html:not(.arkan-ui-ready) #portal-gateway-view{padding:20px 12px}
+html:not(.arkan-ui-ready) #portal-gateway-view>div{width:100%;max-width:1024px;margin:auto}
+html:not(.arkan-ui-ready) #portal-gateway-view>div>div{margin-bottom:16px}
+html:not(.arkan-ui-ready) #portal-gateway-view .bg-white{background:white;border-radius:16px}
+html:not(.arkan-ui-ready) #portal-gateway-view .bg-gradient-to-l{background:#4E342E;color:#fff;padding:20px;border-radius:16px}
+html:not(.arkan-ui-ready) #portal-gateway-view form{padding:16px}
+html:not(.arkan-ui-ready) button{font:inherit;font-size:14px;cursor:pointer;border:1px solid #E6D7C3;border-radius:10px;padding:9px 12px;background:#4E342E;color:white;margin:3px}
+html:not(.arkan-ui-ready) input,html:not(.arkan-ui-ready) select{font:inherit;width:100%;padding:9px;border:1px solid #A1887F;border-radius:8px;background:white;color:#3E2723}
+html:not(.arkan-ui-ready) .gap-2,html:not(.arkan-ui-ready) .gap-3,html:not(.arkan-ui-ready) .gap-6{gap:12px}
+html:not(.arkan-ui-ready) .w-full{width:100%}
+html:not(.arkan-ui-ready) .fixed{position:fixed}
+html:not(.arkan-ui-ready) .inset-0{inset:0}
+html:not(.arkan-ui-ready) #share-qr-modal{z-index:90;padding:16px;overflow:auto;background:#000b}
+html:not(.arkan-ui-ready) #share-qr-modal>div{background:white;max-width:480px;padding:16px;border-radius:16px;margin:auto}
+</style>
     <style>
         body {
             font-family: 'Cairo', 'Tajawal', sans-serif;
@@ -195,11 +241,21 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="مخزن أركان">
     <meta name="mobile-web-app-capable" content="yes">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    
     <!-- Firebase Cloud Sync SDKs (Firestore Real-Time Database) -->
-    <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
+    
+    
+    
+<script>
+window.arkanFirebaseReady=(function(){
+ const urls=['app','firestore','auth'].map(x=>'https://www.gstatic.com/firebasejs/10.14.1/firebase-'+x+'-compat.js');
+ const loads=urls.map(src=>new Promise((resolve,reject)=>{
+   const script=document.createElement('script');script.src=src;script.async=false;
+   script.onload=resolve;script.onerror=()=>reject(new Error('SDK load failed'));document.head.appendChild(script);
+ }));
+ return Promise.race([Promise.all(loads).then(()=>true),new Promise(resolve=>setTimeout(()=>resolve(false),12000))]).catch(()=>false);
+})();
+</script>
 </head>
 <body class="min-h-screen flex flex-col selection:bg-arkan-sand selection:text-arkan-dark">
     <div id="arkan-launch-intro" aria-label="أركان فارما" role="presentation">
@@ -223,7 +279,7 @@
                 <!-- Custom SVG Logo & Brand Title -->
                 <div class="flex items-center gap-3.5">
                     <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-br from-arkan-dark via-arkan-primary to-arkan-bronze p-1.5 shadow-md flex items-center justify-center shrink-0 border border-arkan-sand">
-                        <img src="./arkan-logo.svg?v=3" alt="شعار أركان فارما" class="w-full h-full object-contain" width="512" height="512">
+                        <img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20512%20512%22%3E%0A%3Cdefs%3E%0A%20%3ClinearGradient%20id%3D%22bg%22%20x1%3D%2240%22%20y1%3D%2220%22%20x2%3D%22470%22%20y2%3D%22500%22%20gradientUnits%3D%22userSpaceOnUse%22%3E%3Cstop%20stop-color%3D%22%235D4037%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%232B1B18%22%2F%3E%3C%2FlinearGradient%3E%0A%20%3ClinearGradient%20id%3D%22gold%22%20x1%3D%22100%22%20y1%3D%2270%22%20x2%3D%22390%22%20y2%3D%22440%22%20gradientUnits%3D%22userSpaceOnUse%22%3E%3Cstop%20stop-color%3D%22%23FAF7F2%22%2F%3E%3Cstop%20offset%3D%22.48%22%20stop-color%3D%22%23E6D7C3%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23A1887F%22%2F%3E%3C%2FlinearGradient%3E%0A%20%3ClinearGradient%20id%3D%22pill%22%20x1%3D%22300%22%20y1%3D%22110%22%20x2%3D%22390%22%20y2%3D%22270%22%20gradientUnits%3D%22userSpaceOnUse%22%3E%3Cstop%20stop-color%3D%22%23FFFFFF%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23D7C3A9%22%2F%3E%3C%2FlinearGradient%3E%0A%3C%2Fdefs%3E%0A%3Crect%20width%3D%22512%22%20height%3D%22512%22%20rx%3D%22112%22%20fill%3D%22url(%23bg)%22%2F%3E%0A%3Crect%20x%3D%2212%22%20y%3D%2212%22%20width%3D%22488%22%20height%3D%22488%22%20rx%3D%22102%22%20fill%3D%22none%22%20stroke%3D%22%23E6D7C3%22%20stroke-opacity%3D%22.48%22%20stroke-width%3D%228%22%2F%3E%0A%3Cpath%20d%3D%22M92%20382%20222%20112c14-29%2054-29%2068%200l130%20270h-82L256%20202l-82%20180H92Z%22%20fill%3D%22none%22%20stroke%3D%22url(%23gold)%22%20stroke-width%3D%2234%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%0A%3Cpath%20d%3D%22M169%20312h175%22%20stroke%3D%22%23FAF7F2%22%20stroke-width%3D%2228%22%20stroke-linecap%3D%22round%22%2F%3E%0A%3Cg%20transform%3D%22rotate(34%20356%20170)%22%3E%0A%20%3Crect%20x%3D%22322%22%20y%3D%2294%22%20width%3D%2268%22%20height%3D%22166%22%20rx%3D%2234%22%20fill%3D%22url(%23pill)%22%20stroke%3D%22%23A1887F%22%20stroke-width%3D%229%22%2F%3E%0A%20%3Cpath%20d%3D%22M322%20177h68v49a34%2034%200%200%201-68%200v-49Z%22%20fill%3D%22%23A1887F%22%2F%3E%0A%20%3Cpath%20d%3D%22M356%20104v73%22%20stroke%3D%22%236D4C41%22%20stroke-width%3D%227%22%20opacity%3D%22.35%22%2F%3E%0A%3C%2Fg%3E%0A%3Cpath%20d%3D%22M404%2064v50M379%2089h50%22%20stroke%3D%22%23E6D7C3%22%20stroke-width%3D%2213%22%20stroke-linecap%3D%22round%22%2F%3E%0A%3Ccircle%20cx%3D%22112%22%20cy%3D%22112%22%20r%3D%2213%22%20fill%3D%22%23E6D7C3%22%20opacity%3D%22.85%22%2F%3E%0A%3C%2Fsvg%3E" alt="شعار أركان فارما" class="w-full h-full object-contain" width="56" height="56" style="display:block;max-width:56px;max-height:56px;object-fit:contain">
                     </div>
                     <div>
                         <div class="flex items-center gap-2">
@@ -537,7 +593,7 @@
                                 <button type="button" onclick="openShareAndQRModal()" class="text-[11px] font-extrabold text-arkan-primary underline cursor-pointer">تكبير الكود</button>
                             </div>
                             <div class="bg-white p-2.5 rounded-2xl border border-arkan-sand inline-flex items-center justify-center shadow-sm mx-auto">
-                                <div id="gateway-qr-container" class="w-[116px] h-[116px] flex items-center justify-center"></div>
+                                <div id="gateway-qr-container" class="w-[116px] h-[116px] flex items-center justify-center"><img src="./assets/arkan-platform-qr.svg" width="112" height="112" alt="QR Code" style="display:block;width:112px;height:112px;max-width:100%;object-fit:contain"></div>
                             </div>
                             <p class="text-[11px] text-arkan-bronze font-bold">امسح الكود بكاميرا الموبايل لفتح المنصة وتثبيتها مباشرة</p>
                         </div>
@@ -1366,7 +1422,7 @@
             </div>
             <div class="p-6 space-y-4 text-center">
                 <div class="bg-arkan-light border-2 border-arkan-sand rounded-2xl p-4 inline-flex flex-col items-center justify-center shadow-inner">
-                    <div id="modal-qr-container" class="w-[200px] h-[200px] flex items-center justify-center bg-white p-2 rounded-xl"></div>
+                    <div id="modal-qr-container" class="w-[200px] h-[200px] flex items-center justify-center bg-white p-2 rounded-xl"><img src="./assets/arkan-platform-qr.svg" width="192" height="192" alt="QR Code" style="display:block;width:192px;height:192px;max-width:100%;object-fit:contain"></div>
                     <span class="mt-2 text-[11px] font-extrabold text-arkan-primary">مخزن أركان للأدوية - القاهرة</span>
                 </div>
 
@@ -7598,7 +7654,7 @@
 
         function initFirebaseCloud() {
             try {
-                if (typeof firebase === 'undefined') {
+                if (typeof firebase === 'undefined' || typeof firebase.auth !== 'function' || typeof firebase.firestore !== 'function') {
                     setCloudSyncIndicator('error', 'مكتبة السحابة غير محملة');
                     return false;
                 }
@@ -8725,6 +8781,7 @@
             try { localStorage.removeItem('arkan_cairo_admin_pass_v5'); } catch (_) {}
 
             try {
+                await window.arkanFirebaseReady;
                 if (initFirebaseCloud()) {
                     firebase.auth().onAuthStateChanged(async (user) => {
                         if (user && user.uid === ADMIN_UID) {
@@ -8898,8 +8955,9 @@ ${window.location.href}
             }
         }
 
-        function handlePharmacistRegister(e) {
+        async function handlePharmacistRegister(e) {
             e.preventDefault();
+            if(window.arkanPlatformReady) await window.arkanPlatformReady;
             const pharmName = document.getElementById('reg-pharm-name').value.trim();
             const docName = document.getElementById('reg-doc-name').value.trim();
             const phone = document.getElementById('reg-phone').value.trim();
@@ -8938,6 +8996,7 @@ ${window.location.href}
 
         async function handlePharmacistLogin(e) {
             e.preventDefault();
+            if(window.arkanPlatformReady) await window.arkanPlatformReady;
             const phone = document.getElementById('login-pharm-phone').value.trim();
             const password = document.getElementById('login-pharm-password').value.trim();
             const errEl = document.getElementById('pharm-login-error');
@@ -9054,6 +9113,8 @@ ${window.location.href}
 
         async function handleAdminLogin(e) {
             e.preventDefault();
+            if(window.arkanPlatformReady) await window.arkanPlatformReady;
+            if(typeof firebase === 'undefined' || !firestoreDB){showToast('تعذر الاتصال بالسحابة، حاول مرة أخرى بعد التحقق من الإنترنت.','error');return;}
             const email = document.getElementById('admin-gateway-email').value.trim();
             const password = document.getElementById('admin-gateway-password').value;
             const errEl = document.getElementById('admin-gateway-error');
@@ -21952,10 +22013,6 @@ ${window.location.href}
         let swRegistrationSuccess = false;
 
         function getShareablePlatformUrl() {
-            const href = window.location.href;
-            if (href.startsWith('http://') || href.startsWith('https://')) {
-                return href.split('#')[0];
-            }
             return 'https://arqanpharma11.github.io/Arqan-Pharm/';
         }
 
@@ -21986,21 +22043,19 @@ ${window.location.href}
         }
 
         function renderQRCodeInto(containerId, text, size) {
-            const el = document.getElementById(containerId);
-            if (!el) return;
-            el.innerHTML = '';
-            if (typeof QRCode !== 'undefined') {
-                new QRCode(el, {
-                    text: text,
-                    width: size,
-                    height: size,
-                    colorDark: '#3E2723',
-                    colorLight: '#FFFFFF',
-                    correctLevel: QRCode.CorrectLevel.H
-                });
-            } else {
-                el.innerHTML = `<img src="https://api.qrserver.com/v1/create-qr-code/?size=${size}x${size}&data=${encodeURIComponent(text)}" alt="QR Code" class="w-full h-full object-contain rounded-lg">`;
-            }
+            const el=document.getElementById(containerId);
+            if(!el)return;
+            const canvas=document.createElement('canvas');
+            const matrix=["00000000000000000000000000000000000000000","00000000000000000000000000000000000000000","00000000000000000000000000000000000000000","00000000000000000000000000000000000000000","00001111111000000010001010000011111110000","00001000001011110110010011101010000010000","00001011101010000100111000010010111010000","00001011101011000001000000011010111010000","00001011101000111101011001001010111010000","00001000001001111000110010000010000010000","00001111111010101010101010101011111110000","00000000000010010010001000010000000000000","00001000001010001111010010111110011100000","00000010010100011011101110110000111100000","00000111111110110001001011000000101100000","00000111000100010011000000101001111100000","00000010111010110111111111111010100110000","00000000100111110110100011111011001110000","00000100011100010100010101000110000100000","00001011110110100111000100100101011010000","00000110101000010010010110111101110010000","00000011110001111111111101010010011000000","00001110001011001011000100010101011010000","00001111100011011100111001001000111110000","00001100001001101111100011101101110110000","00001100010101000110111010110000101000000","00001011111101010101101011001001111100000","00001000000011101000000000111101111000000","00001100011011010011000110011111110000000","00000000000010001101100110111000101010000","00001111111000100101001011011010101000000","00001000001000111100100000011000111100000","00001011101001011100001101001111110110000","00001011101001011000100010100101101010000","00001011101001001000110010111001101110000","00001000001000111011101110010001111000000","00001111111010000000010100111101000100000","00000000000000000000000000000000000000000","00000000000000000000000000000000000000000","00000000000000000000000000000000000000000","00000000000000000000000000000000000000000"];
+            const unit=Math.max(2,Math.ceil(size/matrix.length));
+            canvas.width=canvas.height=unit*matrix.length;
+            canvas.style.cssText='display:block;max-width:100%;width:'+size+'px;height:'+size+'px;image-rendering:pixelated';
+            canvas.setAttribute('aria-label','QR Code');
+            const ctx=canvas.getContext('2d');
+            if(!ctx)return;
+            ctx.fillStyle='#fff';ctx.fillRect(0,0,canvas.width,canvas.height);
+            ctx.fillStyle='#3E2723';matrix.forEach((r,y)=>{for(let x=0;x<r.length;x++)if(r[x]==='1')ctx.fillRect(x*unit,y*unit,unit,unit);});
+            el.replaceChildren(canvas);
         }
 
         window.addEventListener('beforeinstallprompt', (e) => {
@@ -22322,10 +22377,13 @@ ${url}`);
         });
 
         window.addEventListener('DOMContentLoaded', () => {
-            initPlatform();
-            initPWAAndShareFeatures();
-            setTimeout(loadArkanQuickImageCandidates, 1500);
-            setTimeout(loadArkanAutoPublishedImages, 1900);
+            try { initPWAAndShareFeatures(); } catch (err) { console.warn('Arqan PWA setup:',err); }
+            window.arkanPlatformReady = new Promise(resolve => setTimeout(resolve,0))
+                .then(() => initPlatform()).catch(err => console.error('Arqan startup:',err));
+            window.arkanPlatformReady.then(() => {
+                setTimeout(loadArkanQuickImageCandidates,1500);
+                setTimeout(loadArkanAutoPublishedImages,1900);
+            });
         });
     </script>
 
