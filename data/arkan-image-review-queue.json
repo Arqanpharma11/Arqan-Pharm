@@ -2631,9 +2631,45 @@
     "979": {
       "name": "بروبيوتك فيم نيو",
       "en": "Probiotic",
-      "results": [],
-      "reason": "no_match_found",
-      "searchedAt": "2026-11-23T16:03:44.356Z"
+      "results": [
+        {
+          "imageUrl": "https://images.openfoodfacts.org/images/products/009/661/919/4261/front_en.199.400.jpg",
+          "sourcePage": "https://world.openfoodfacts.org/product/0096619194261",
+          "title": "Kirkland Signature Ancient Grains Probiotic Granola 35.3 oz (1 kg)",
+          "provider": "world.openfoodfacts.org",
+          "license": "Open Facts contributors — CC BY-SA 3.0 product photo; database ODbL; attribution/share-alike apply",
+          "foundAt": "2026-11-27T18:09:03.869Z",
+          "status": "pending_manual_packaging_and_license_review"
+        },
+        {
+          "imageUrl": "https://images.openfoodfacts.org/images/products/085/177/000/8785/front_en.105.400.jpg",
+          "sourcePage": "https://world.openfoodfacts.org/product/0851770008785",
+          "title": "Orgain COLLAGEN PEPTIDES + PROBIOTICS cada cuánto se toma",
+          "provider": "world.openfoodfacts.org",
+          "license": "Open Facts contributors — CC BY-SA 3.0 product photo; database ODbL; attribution/share-alike apply",
+          "foundAt": "2026-11-27T18:09:03.869Z",
+          "status": "pending_manual_packaging_and_license_review"
+        },
+        {
+          "imageUrl": "https://images.openfoodfacts.org/images/products/084/654/808/5273/front_en.149.400.jpg",
+          "sourcePage": "https://world.openfoodfacts.org/product/0846548085273",
+          "title": "Natures Garden Probiotic Strawberry Yoggies YOGGIES (20g) 0.7 oz",
+          "provider": "world.openfoodfacts.org",
+          "license": "Open Facts contributors — CC BY-SA 3.0 product photo; database ODbL; attribution/share-alike apply",
+          "foundAt": "2026-11-27T18:09:03.869Z",
+          "status": "pending_manual_packaging_and_license_review"
+        },
+        {
+          "imageUrl": "https://images.openfoodfacts.org/images/products/005/215/900/0011/front_en.34.400.jpg",
+          "sourcePage": "https://world.openfoodfacts.org/product/0052159000011",
+          "title": "Stonyfield Organic Plain Whole Milk Probiotic Yogurt 32 oz",
+          "provider": "world.openfoodfacts.org",
+          "license": "Open Facts contributors — CC BY-SA 3.0 product photo; database ODbL; attribution/share-alike apply",
+          "foundAt": "2026-11-27T18:09:03.869Z",
+          "status": "pending_manual_packaging_and_license_review"
+        }
+      ],
+      "reason": "needs_review"
     },
     "980": {
       "name": "بروبيوتك كومبلكس نيو",
@@ -2731,7 +2767,7 @@
       "en": "Prostality",
       "results": [],
       "reason": "no_match_found",
-      "searchedAt": "2026-11-23T17:27:21.463Z"
+      "searchedAt": "2026-11-27T18:09:05.673Z"
     },
     "1002": {
       "name": "بروستريد5 مجم س جديد",
@@ -2752,14 +2788,14 @@
       "en": "",
       "results": [],
       "reason": "no_match_found",
-      "searchedAt": "2026-11-23T18:23:10.287Z"
+      "searchedAt": "2026-11-27T18:09:07.463Z"
     },
     "1009": {
       "name": "بروفين فلو شراب25",
       "en": "",
       "results": [],
       "reason": "no_match_found",
-      "searchedAt": "2026-11-23T18:23:11.785Z"
+      "searchedAt": "2026-11-27T18:09:08.914Z"
     },
     "1011": {
       "name": "بروكاسوفت1 مج",
@@ -2780,7 +2816,7 @@
       "en": "",
       "results": [],
       "reason": "no_match_found",
-      "searchedAt": "2026-11-23T18:23:16.646Z"
+      "searchedAt": "2026-11-27T18:09:10.361Z"
     },
     "1019": {
       "name": "بروماجار نقط15مل",
@@ -2893,7 +2929,7 @@
       "en": "Pregnavix",
       "results": [],
       "reason": "no_match_found",
-      "searchedAt": "2026-11-23T19:29:44.382Z"
+      "searchedAt": "2026-11-27T18:09:11.834Z"
     },
     "1049": {
       "name": "بريجناكير بﻼس كبسول",
@@ -2907,14 +2943,14 @@
       "en": "",
       "results": [],
       "reason": "no_match_found",
-      "searchedAt": "2026-11-23T19:29:48.003Z"
+      "searchedAt": "2026-11-27T18:09:13.348Z"
     },
     "1054": {
       "name": "بريدوفينكس اقراص س ج",
       "en": "",
       "results": [],
       "reason": "no_match_found",
-      "searchedAt": "2026-11-23T19:29:49.603Z"
+      "searchedAt": "2026-11-27T18:09:14.801Z"
     },
     "1055": {
       "name": "بريدوكايين كريم صغير15 جم",
@@ -3005,14 +3041,14 @@
       "en": "",
       "results": [],
       "reason": "no_match_found",
-      "searchedAt": "2026-11-23T20:27:56.691Z"
+      "searchedAt": "2026-11-27T18:09:16.282Z"
     },
     "1074": {
       "name": "بريموفﻼم قطره//اوركيديا لاغى",
       "en": "",
       "results": [],
       "reason": "no_match_found",
-      "searchedAt": "2026-11-23T21:28:33.870Z"
+      "searchedAt": "2026-11-27T18:09:17.728Z"
     },
     "1075": {
       "name": "بريموكسيزار400 مجم 10 قرص",
