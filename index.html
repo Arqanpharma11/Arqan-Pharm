@@ -22692,5 +22692,56 @@ ${url}`);
 })();
 </script>
 
+<!-- Arqan Everyday Comfort v1: optional display-only utilities. -->
+<style>
+@media screen {
+ .arkan-search-assist{display:flex;align-items:center;justify-content:space-between;gap:6px;flex-wrap:wrap;margin:5px 0 0;color:#72594c;font:600 11px/1.6 Cairo,Tajawal,system-ui,sans-serif}
+ .arkan-search-assist[hidden]{display:none!important}
+ .arkan-search-assist kbd{font:600 10px system-ui,sans-serif;direction:ltr;display:inline-block;border:1px solid #ddd0bd;border-bottom-width:2px;border-radius:5px;padding:2px 5px;background:#fff}
+ .arkan-search-assist strong{color:#166534;font-weight:800}
+ #arkan-connection-hint{position:fixed;bottom:max(16px,env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);z-index:40;width:max-content;max-width:calc(100% - 32px);padding:9px 15px;border:1px solid #d9c5a8;border-radius:12px;background:#fffaf0;color:#4e342e;box-shadow:0 4px 16px #3e27231a;font:700 12px/1.6 Cairo,Tajawal,system-ui,sans-serif;pointer-events:none}
+ #arkan-connection-hint[hidden]{display:none!important}
+ #arkan-reading-progress{position:fixed;top:0;left:0;right:0;height:2px;z-index:31;background:linear-gradient(90deg,#a1887f,#166534);transform-origin:right;transform:scaleX(0);pointer-events:none}
+ @media (hover:none),(pointer:coarse){.arkan-desktop-hint{display:none}}
+}
+@media print{.arkan-search-assist,#arkan-connection-hint,#arkan-reading-progress{display:none!important}}
+</style>
+<script>
+(function(){
+ 'use strict';
+ const pharm=document.getElementById('pharmacist-portal-view'),admin=document.getElementById('admin-portal-view'),cat=document.getElementById('pharm-tab-content-catalog');
+ const ps=document.getElementById('pharm-search-input'),as=document.getElementById('adm-search-input'),count=document.getElementById('pharm-visible-count');
+ if(!pharm||!admin||!ps||!as)return;
+ const make=(tag,text)=>{const e=document.createElement(tag);if(text)e.textContent=text;return e;};
+ const visible=e=>!!e&&e.getClientRects().length>0&&!e.closest('.hidden');
+ const assist=make('div');assist.className='arkan-search-assist';
+ const status=make('strong'),tip=make('span','يمكنك البحث بالعربي أو الإنجليزي');
+ const key=make('span');key.className='arkan-desktop-hint';key.append(make('kbd','Alt + /'),document.createTextNode(' للبحث السريع'));
+ assist.append(tip,status,key);
+ // Insert below the search control wrapper without changing its input, value or handlers.
+ if(ps.parentElement)ps.parentElement.after(assist);
+ function updateStatus(){const q=ps.value.trim();status.textContent=q&&count?'النتائج: '+count.textContent.trim():'';}
+ ps.addEventListener('input',updateStatus,{passive:true});
+ if(count)new MutationObserver(updateStatus).observe(count,{childList:true,characterData:true,subtree:true});
+ updateStatus();
+ document.addEventListener('keydown',e=>{
+  if(e.defaultPrevented||e.repeat||!e.altKey||e.ctrlKey||e.metaKey||e.key!=='/'||document.querySelector('dialog[open]')||document.getElementById('arkan-launch-intro'))return;
+  if(e.target instanceof Element&&e.target.closest('input,textarea,select,[contenteditable="true"]'))return;
+  const input=visible(pharm)&&visible(cat)&&visible(ps)?ps:visible(admin)&&visible(as)?as:null;
+  if(!input||document.querySelector('body > div.fixed:not(.hidden)[id$="-modal"]'))return;
+  e.preventDefault();input.focus();
+ });
+ const hint=make('div');hint.id='arkan-connection-hint';hint.hidden=true;hint.setAttribute('role','status');document.body.append(hint);
+ let hintTimer;
+ function connection(online,initial){clearTimeout(hintTimer);if(online&&initial){hint.hidden=true;return;}hint.textContent=online?'عاد اتصال الإنترنت بالجهاز.':'يبدو أن اتصال الإنترنت بالجهاز انقطع. تحقق من الشبكة قبل تأكيد الطلب.';hint.hidden=false;hintTimer=setTimeout(()=>{hint.hidden=true;},online?2200:4500);}
+ window.addEventListener('offline',()=>connection(false,false));window.addEventListener('online',()=>connection(true,false));connection(navigator.onLine,true);
+ const progress=make('div');progress.id='arkan-reading-progress';progress.setAttribute('aria-hidden','true');document.body.append(progress);
+ let frame=0;
+ function paint(){frame=0;const el=document.documentElement;const total=el.scrollHeight-el.clientHeight;const ratio=total>0?Math.max(0,Math.min(1,window.scrollY/total)):0;progress.style.transform='scaleX('+ratio+')';}
+ function schedule(){if(!frame)frame=requestAnimationFrame(paint);}
+ window.addEventListener('scroll',schedule,{passive:true});window.addEventListener('resize',schedule,{passive:true});schedule();
+})();
+</script>
+
 </body>
 </html>
