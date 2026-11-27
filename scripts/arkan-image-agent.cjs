@@ -278,10 +278,22 @@ async function main(){
   if(linked.length)state.cursor=(state.cursor+checked)%linked.length;
   // Recheck automatically published images; retire only after repeated explicit 404/410.
   const publishedEntries=Object.entries(published.byId);
-  const publishBudget=Math.min(8,publishedEntries.length);
+  const publishBudget=Math.min(60,publishedEntries.length);
   for(let i=0;i<publishBudget;i++){
     const [id,record]=publishedEntries[(Number(state.publishedCursor||0)+i)%publishedEntries.length];
-    const current=await imageAlive(record.url);
+    const localMatch=String(record.url||'').match(/^https:\/\/raw\.githubusercontent\.com\/Arqanpharma11\/Arqan-Pharm\/main\/assets\/product-images\/(\d+\.(?:webp|jpg|png))$/);
+    let current;
+    if(localMatch){
+      const file='assets/product-images/'+localMatch[1];
+      if(!fs.existsSync(file)) current='gone';
+      else {
+        const bytes=fs.readFileSync(file);
+        const valid=bytes.length>=100 && (localMatch[1].endsWith('.webp') ?
+          bytes.toString('ascii',0,4)==='RIFF' && bytes.toString('ascii',8,12)==='WEBP' :
+          localMatch[1].endsWith('.jpg') ? bytes[0]===255 && bytes[1]===216 : bytes[0]===137 && bytes.toString('ascii',1,4)==='PNG');
+        current=valid?'ok':'gone';
+      }
+    }else current=await imageAlive(record.url);
     const previous=state.publishedChecks?.[id]||{failures:0};
     if(current==='ok') previous.failures=0;
     else if(current==='gone') previous.failures++;
@@ -302,7 +314,7 @@ async function main(){
     const last=state.searched[x.id]?.at;
     // Missing/uncertain results are retried after one day; do not keep
     // hammering the same API on every scheduled run.
-    const retryHours=Number(state.searched[x.id]?.hits||0)>0?72:24;
+    const retryHours=queue.byId[x.id]?.reason==='published_image_repeated_404_410'?1:(Number(state.searched[x.id]?.hits||0)>0?24:6);
     if(last && Date.now()-Date.parse(last)<retryHours*60*60*1000) return false;
     return true;
   };
@@ -312,7 +324,10 @@ async function main(){
   // Sort by the oldest search attempt. This avoids skipping items as the
   // eligible set shrinks between scheduled executions.
   const oldestFirst=(a,b)=>Date.parse(state.searched[a.id]?.at||'1970-01-01')-Date.parse(state.searched[b.id]?.at||'1970-01-01');
-  const outstanding=[...missingPriority.sort(oldestFirst),...questionable.sort(oldestFirst)];
+  const outstanding=[...missingPriority,...questionable].sort((a,b)=>{
+    const repair=x=>Number(queue.byId[x.id]?.reason==='published_image_repeated_404_410'||queue.byId[x.id]?.reason==='candidate_repeated_404_410');
+    return repair(b)-repair(a)||Number(!!candidates.byId[a.id])-Number(!!candidates.byId[b.id])||oldestFirst(a,b);
+  });
   missing=all.filter(x=>!approvedIds.has(x.id)&&!candidates.byId[x.id] && !published.byId[x.id]).length;
   state.searchPipeline={remainingMissing:missingPriority.length,remainingSuspect:questionable.length,
     eligibleThisRun:outstanding.length};
