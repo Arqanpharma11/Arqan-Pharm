@@ -3,7 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>.hidden{display:none!important}body{background:#F5EFE6;color:#3E2723}</style>
+<style>.hidden{display:none!important}body{background:#F5EFE6;color:#3E2723}
+#arkan-pharm-search-wrap{min-width:200px;flex:1 1 280px;position:relative}
+#arkan-pharm-search-wrap svg{pointer-events:none}
+#pharm-search-input,#adm-search-input{color:#3e2723!important;-webkit-text-fill-color:#3e2723!important;caret-color:#3e2723!important;background:#fff!important;opacity:1!important;text-indent:0!important;visibility:visible!important;font-size:16px!important}
+#pharm-search-input::placeholder,#adm-search-input::placeholder{color:#806b5e!important;-webkit-text-fill-color:#806b5e!important;opacity:1}
+#arkan-pharm-search-wrap:has(>input){max-width:100%}
+@media(min-width:640px){#arkan-pharm-search-wrap{flex-basis:280px}}
+</style>
 <script>
 (function(){
  const handlers={'pharm-login-form':['handlePharmacistLogin','pharm-login-error'],'admin-gateway-form':['handleAdminLogin','admin-gateway-error'],'pharm-register-form':['handlePharmacistRegister',null]};
@@ -85,7 +92,7 @@ window.arkanTailwindConfig = {
    document.head.appendChild(script);
  }
  const link=document.createElement('link');
- link.rel='stylesheet';link.media='print';link.href='./assets/arkan-ui.css';
+ link.rel='stylesheet';link.media='print';link.href='./assets/arkan-ui.css?v=search2';
  link.onload=function(){link.onload=null;link.media='all';requestAnimationFrame(()=>requestAnimationFrame(()=>document.documentElement.classList.add('arkan-ui-ready')));};
  link.onerror=function(){link.remove();fallback();};
  document.head.appendChild(link);
@@ -1007,8 +1014,8 @@ window.arkanFirebaseReady=(function(){
                 <a href="./pack-guide.html" target="_blank" rel="noopener" class="text-sm font-bold text-emerald-800 underline">دليل صور الأصناف (58 صورة)</a>
                 <!-- Search, Category & Shortages Filter Card -->
                 <div class="bg-white border border-arkan-sand rounded-2xl p-4 shadow-sm space-y-3 no-print">
-                    <div class="flex flex-col sm:flex-row gap-3">
-                        <div class="relative flex-1">
+                    <div class="flex flex-col sm:flex-row gap-3" style="flex-wrap:wrap">
+                        <div id="arkan-pharm-search-wrap" class="relative flex-1">
                             <svg class="w-4 h-4 text-arkan-bronze absolute right-3.5 top-1/2 -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                             </svg>
@@ -22719,7 +22726,7 @@ ${url}`);
  const key=make('span');key.className='arkan-desktop-hint';key.append(make('kbd','Alt + /'),document.createTextNode(' للبحث السريع'));
  assist.append(tip,status,key);
  // Insert below the search control wrapper without changing its input, value or handlers.
- if(ps.parentElement)ps.parentElement.after(assist);
+ if(ps.parentElement&&ps.parentElement.parentElement)ps.parentElement.parentElement.after(assist);
  function updateStatus(){const q=ps.value.trim();status.textContent=q&&count?'النتائج: '+count.textContent.trim():'';}
  ps.addEventListener('input',updateStatus,{passive:true});
  if(count)new MutationObserver(updateStatus).observe(count,{childList:true,characterData:true,subtree:true});
