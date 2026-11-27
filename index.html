@@ -21509,7 +21509,7 @@ ${window.location.href}
             const startIdx = (pharmCurrentPage - 1) * ITEMS_PER_PAGE;
             const pageItems = filtered.slice(startIdx, startIdx + ITEMS_PER_PAGE);
 
-            tbody.innerHTML = pageItems.map(item => {
+            const nextCatalogMarkup = pageItems.map((item, imageIndex) => {
                 if (item.row && ARKAN_GUIDE_ONLY.includes(item)) {
                     const url = 'assets/pack-guide/' + String(item.row).padStart(2, '0') + '.webp';
                     return `<tr><td colspan="6" class="py-3 px-4"><a href="${url}" target="_blank" rel="noopener" class="flex items-center gap-3"><img src="${url}" alt="${_escapeDrugCatalogText(item.name)}" loading="lazy" class="w-14 h-14 object-contain"><span><strong>${_escapeDrugCatalogText(item.name)}</strong> <bdi>${_escapeDrugCatalogText(item.en)}</bdi><small class="block">من دليل المخزن · للعرض فقط</small></span></a></td></tr>`;
@@ -21543,7 +21543,7 @@ ${window.location.href}
                                     aria-label="عرض صورة عبوة ${item.name}">
                                     <img src="${String(getArkanCatalogImage(item)).replace(/&/g, '&amp;').replace(/"/g, '&quot;')}"
                                         alt="${_escapeDrugCatalogText(arkanImageStatus(item))}: ${_escapeDrugCatalogText(item.name)}"
-                                        loading="lazy" decoding="async"
+                                        loading="${imageIndex < 6 ? 'eager' : 'lazy'}" fetchpriority="${imageIndex < 3 ? 'high' : 'auto'}" decoding="async" width="56" height="56"
                                         class="w-full h-full object-contain p-0.5"
                                         onerror="arkanHandlePackError(this,${item.id})">
                                 </button>
@@ -21580,6 +21580,28 @@ ${window.location.href}
                     </tr>
                 `;
             }).join('');
+
+            // Reuse unchanged image nodes when search, quantities or optional image maps refresh.
+            // Never reuse a node for a different product or different image URL.
+            const nextRows = document.createElement('template');
+            nextRows.innerHTML = nextCatalogMarkup;
+            const oldImages = new Map();
+            for (const img of tbody.querySelectorAll('button[onclick^="openProductImage("] > img')) {
+                const key = img.parentElement.getAttribute('onclick') + '|' + img.getAttribute('src');
+                if (img.complete && img.naturalWidth > 0) oldImages.set(key, img);
+            }
+            for (const img of nextRows.content.querySelectorAll('button[onclick^="openProductImage("] > img')) {
+                const key = img.parentElement.getAttribute('onclick') + '|' + img.getAttribute('src');
+                const old = oldImages.get(key);
+                if (old) {
+                    old.alt = img.alt;
+                    old.loading = img.loading;
+                    old.setAttribute('fetchpriority', img.getAttribute('fetchpriority') || 'auto');
+                    img.replaceWith(old);
+                    oldImages.delete(key);
+                }
+            }
+            tbody.replaceChildren(nextRows.content);
 
             paginationBar.innerHTML = `
                 <span class="font-bold text-arkan-bronze">
