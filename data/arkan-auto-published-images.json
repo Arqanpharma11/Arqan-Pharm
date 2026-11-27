@@ -21869,6 +21869,22 @@
       "attribution": "Azzam Pharmacy",
       "note": "External candidate preview; image availability and visual package not independently verified."
     },
+    "2439": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/2439.webp",
+      "source": "dwaprices.com",
+      "sourcePage": "https://dwaprices.com/aorder.php?id=2621",
+      "originalImageUrl": "https://dwaprices.com/upload/1778867090.png",
+      "catalogName": "سيبرو نقط",
+      "englishName": "Cipro",
+      "title": "Cipro سيبرو نقط",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "matchScore": 1,
+      "matchReason": "ocr",
+      "sha256": "e37366c5876cf0aa3ed8b0dbe0fede91a69169e3784edf85f425174dc734ea1e",
+      "provenance": "Image downloaded and matched by image discovery bot; commercial reuse license unverified"
+    },
     "2440": {
       "catalogName": "سيبرو500 مجم اقراص ممفيس",
       "englishName": "Cipro 500 mg Tablets Mmafis",
