@@ -27745,6 +27745,22 @@
       "attribution": "Azzam Pharmacy",
       "note": "External candidate preview; image availability and visual package not independently verified."
     },
+    "2943": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/2943.webp",
+      "source": "tabletpharmacy.com.pk",
+      "sourcePage": "https://tabletpharmacy.com.pk/products/ferrotron-capsules",
+      "originalImageUrl": "https://tabletpharmacy.com.pk/cdn/shop/files/FerrotronCapsules_500x.png?v=1703347369",
+      "catalogName": "فيروترون اقراص",
+      "englishName": "Ferrotron",
+      "title": "Ferrotron فيروترون اقراص",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "matchScore": 1,
+      "matchReason": "ocr",
+      "sha256": "249e951b54f663b70375177d41888a4fc11cdb573a76e3f97036b1f26614f206",
+      "provenance": "Image downloaded and matched by image discovery bot; commercial reuse license unverified"
+    },
     "2945": {
       "catalogName": "فيروجلوبين شراب",
       "englishName": "Feroglobin",
