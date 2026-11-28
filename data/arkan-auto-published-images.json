@@ -25785,6 +25785,22 @@
       "attribution": "Lotus Pharmacies",
       "sha256": "73d717de75ce687d6b3b5d4629b141fe8233effc29c2501805611faf0ad150bb"
     },
+    "2771": {
+      "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/2771.webp",
+      "source": "www.onlinestorebd.com",
+      "sourcePage": "https://www.onlinestorebd.com/product/fertinex-m",
+      "originalImageUrl": "https://www.onlinestorebd.com/public/uploads/all/F5qgbKBvUaeCTcrM6lGTmhDVJVbUg2QwcWMYSiSF.jpg",
+      "catalogName": "فرتيتونكس اقراص",
+      "englishName": "Fertitonex",
+      "title": "Fertitonex فرتيتونكس اقراص",
+      "status": "candidate_preview",
+      "independentlyVerified": false,
+      "shownAsProductThumbnail": true,
+      "matchScore": 1,
+      "matchReason": "multi_source_2",
+      "sha256": "f38fc83a253546bb7803043e95917818e0a7fee5c1558107a6d61c178fb032fa",
+      "provenance": "Image downloaded and matched by image discovery bot; commercial reuse license unverified"
+    },
     "2772": {
       "url": "https://raw.githubusercontent.com/Arqanpharma11/Arqan-Pharm/main/assets/product-images/2772.webp",
       "source": "img.ananinja.com",
